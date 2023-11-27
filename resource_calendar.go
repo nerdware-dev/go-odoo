@@ -13,6 +13,7 @@ type ResourceCalendar struct {
 	CreateUid      *Many2One `xmlrpc:"create_uid,omptempty"`
 	DisplayName    *String   `xmlrpc:"display_name,omptempty"`
 	GlobalLeaveIds *Relation `xmlrpc:"global_leave_ids,omptempty"`
+	HoursPerDay    *Float    `xmlrpc:"hours_per_day,omptempty"`
 	Id             *Int      `xmlrpc:"id,omptempty"`
 	LeaveIds       *Relation `xmlrpc:"leave_ids,omptempty"`
 	Name           *String   `xmlrpc:"name,omptempty"`
