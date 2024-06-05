@@ -27,6 +27,7 @@ type EmailTemplatePreview struct {
 	NullValue           *String    `xmlrpc:"null_value,omptempty"`
 	PartnerIds          *Relation  `xmlrpc:"partner_ids,omptempty"`
 	PartnerTo           *String    `xmlrpc:"partner_to,omptempty"`
+	PreviewLang         *Selection `xmlrpc:"preview_lang,omptempty"`
 	RefIrActWindow      *Many2One  `xmlrpc:"ref_ir_act_window,omptempty"`
 	ReplyTo             *String    `xmlrpc:"reply_to,omptempty"`
 	ReportName          *String    `xmlrpc:"report_name,omptempty"`

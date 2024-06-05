@@ -6,24 +6,29 @@ import (
 
 // StockQuant represents stock.quant model.
 type StockQuant struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omptempty"`
-	CompanyId        *Many2One `xmlrpc:"company_id,omptempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omptempty"`
-	Id               *Int      `xmlrpc:"id,omptempty"`
-	InDate           *Time     `xmlrpc:"in_date,omptempty"`
-	LocationId       *Many2One `xmlrpc:"location_id,omptempty"`
-	LotId            *Many2One `xmlrpc:"lot_id,omptempty"`
-	OwnerId          *Many2One `xmlrpc:"owner_id,omptempty"`
-	PackageId        *Many2One `xmlrpc:"package_id,omptempty"`
-	ProductId        *Many2One `xmlrpc:"product_id,omptempty"`
-	ProductTmplId    *Many2One `xmlrpc:"product_tmpl_id,omptempty"`
-	ProductUomId     *Many2One `xmlrpc:"product_uom_id,omptempty"`
-	Quantity         *Float    `xmlrpc:"quantity,omptempty"`
-	ReservedQuantity *Float    `xmlrpc:"reserved_quantity,omptempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omptempty"`
+	CompanyId         *Many2One  `xmlrpc:"company_id,omptempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omptempty"`
+	CurrencyId        *Many2One  `xmlrpc:"currency_id,omptempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omptempty"`
+	Id                *Int       `xmlrpc:"id,omptempty"`
+	InDate            *Time      `xmlrpc:"in_date,omptempty"`
+	InventoryQuantity *Float     `xmlrpc:"inventory_quantity,omptempty"`
+	LocationId        *Many2One  `xmlrpc:"location_id,omptempty"`
+	LotId             *Many2One  `xmlrpc:"lot_id,omptempty"`
+	OnHand            *Bool      `xmlrpc:"on_hand,omptempty"`
+	OwnerId           *Many2One  `xmlrpc:"owner_id,omptempty"`
+	PackageId         *Many2One  `xmlrpc:"package_id,omptempty"`
+	ProductId         *Many2One  `xmlrpc:"product_id,omptempty"`
+	ProductTmplId     *Many2One  `xmlrpc:"product_tmpl_id,omptempty"`
+	ProductUomId      *Many2One  `xmlrpc:"product_uom_id,omptempty"`
+	Quantity          *Float     `xmlrpc:"quantity,omptempty"`
+	ReservedQuantity  *Float     `xmlrpc:"reserved_quantity,omptempty"`
+	Tracking          *Selection `xmlrpc:"tracking,omptempty"`
+	Value             *Float     `xmlrpc:"value,omptempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // StockQuants represents array of stock.quant model.

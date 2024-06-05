@@ -6,16 +6,19 @@ import (
 
 // AccountAnalyticTag represents account.analytic.tag model.
 type AccountAnalyticTag struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omptempty"`
-	Active      *Bool     `xmlrpc:"active,omptempty"`
-	Color       *Int      `xmlrpc:"color,omptempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName *String   `xmlrpc:"display_name,omptempty"`
-	Id          *Int      `xmlrpc:"id,omptempty"`
-	Name        *String   `xmlrpc:"name,omptempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate                 *Time     `xmlrpc:"__last_update,omptempty"`
+	Active                     *Bool     `xmlrpc:"active,omptempty"`
+	ActiveAnalyticDistribution *Bool     `xmlrpc:"active_analytic_distribution,omptempty"`
+	AnalyticDistributionIds    *Relation `xmlrpc:"analytic_distribution_ids,omptempty"`
+	Color                      *Int      `xmlrpc:"color,omptempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omptempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omptempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omptempty"`
+	Id                         *Int      `xmlrpc:"id,omptempty"`
+	Name                       *String   `xmlrpc:"name,omptempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // AccountAnalyticTags represents array of account.analytic.tag model.

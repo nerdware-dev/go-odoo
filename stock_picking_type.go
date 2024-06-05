@@ -8,9 +8,10 @@ import (
 type StockPickingType struct {
 	LastUpdate             *Time      `xmlrpc:"__last_update,omptempty"`
 	Active                 *Bool      `xmlrpc:"active,omptempty"`
-	BarcodeNomenclatureId  *Many2One  `xmlrpc:"barcode_nomenclature_id,omptempty"`
+	Barcode                *String    `xmlrpc:"barcode,omptempty"`
 	Code                   *Selection `xmlrpc:"code,omptempty"`
 	Color                  *Int       `xmlrpc:"color,omptempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omptempty"`
 	CountPicking           *Int       `xmlrpc:"count_picking,omptempty"`
 	CountPickingBackorders *Int       `xmlrpc:"count_picking_backorders,omptempty"`
 	CountPickingDraft      *Int       `xmlrpc:"count_picking_draft,omptempty"`
@@ -23,12 +24,12 @@ type StockPickingType struct {
 	DefaultLocationSrcId   *Many2One  `xmlrpc:"default_location_src_id,omptempty"`
 	DisplayName            *String    `xmlrpc:"display_name,omptempty"`
 	Id                     *Int       `xmlrpc:"id,omptempty"`
-	LastDonePicking        *String    `xmlrpc:"last_done_picking,omptempty"`
 	Name                   *String    `xmlrpc:"name,omptempty"`
 	RatePickingBackorders  *Int       `xmlrpc:"rate_picking_backorders,omptempty"`
 	RatePickingLate        *Int       `xmlrpc:"rate_picking_late,omptempty"`
 	ReturnPickingTypeId    *Many2One  `xmlrpc:"return_picking_type_id,omptempty"`
 	Sequence               *Int       `xmlrpc:"sequence,omptempty"`
+	SequenceCode           *String    `xmlrpc:"sequence_code,omptempty"`
 	SequenceId             *Many2One  `xmlrpc:"sequence_id,omptempty"`
 	ShowEntirePacks        *Bool      `xmlrpc:"show_entire_packs,omptempty"`
 	ShowOperations         *Bool      `xmlrpc:"show_operations,omptempty"`

@@ -7,6 +7,7 @@ import (
 // CalendarAlarm represents calendar.alarm model.
 type CalendarAlarm struct {
 	LastUpdate      *Time      `xmlrpc:"__last_update,omptempty"`
+	AlarmType       *Selection `xmlrpc:"alarm_type,omptempty"`
 	CreateDate      *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid       *Many2One  `xmlrpc:"create_uid,omptempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omptempty"`
@@ -15,7 +16,6 @@ type CalendarAlarm struct {
 	Id              *Int       `xmlrpc:"id,omptempty"`
 	Interval        *Selection `xmlrpc:"interval,omptempty"`
 	Name            *String    `xmlrpc:"name,omptempty"`
-	Type            *Selection `xmlrpc:"type,omptempty"`
 	WriteDate       *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid        *Many2One  `xmlrpc:"write_uid,omptempty"`
 }

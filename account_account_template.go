@@ -19,6 +19,7 @@ type AccountAccountTemplate struct {
 	Nocreate        *Bool     `xmlrpc:"nocreate,omptempty"`
 	Note            *String   `xmlrpc:"note,omptempty"`
 	Reconcile       *Bool     `xmlrpc:"reconcile,omptempty"`
+	RootId          *Many2One `xmlrpc:"root_id,omptempty"`
 	TagIds          *Relation `xmlrpc:"tag_ids,omptempty"`
 	TaxIds          *Relation `xmlrpc:"tax_ids,omptempty"`
 	UserTypeId      *Many2One `xmlrpc:"user_type_id,omptempty"`

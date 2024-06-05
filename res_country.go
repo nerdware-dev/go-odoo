@@ -17,6 +17,7 @@ type ResCountry struct {
 	DisplayName     *String    `xmlrpc:"display_name,omptempty"`
 	Id              *Int       `xmlrpc:"id,omptempty"`
 	Image           *String    `xmlrpc:"image,omptempty"`
+	Intrastat       *Bool      `xmlrpc:"intrastat,omptempty"`
 	Name            *String    `xmlrpc:"name,omptempty"`
 	NamePosition    *Selection `xmlrpc:"name_position,omptempty"`
 	PhoneCode       *Int       `xmlrpc:"phone_code,omptempty"`

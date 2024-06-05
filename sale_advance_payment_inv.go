@@ -12,9 +12,13 @@ type SaleAdvancePaymentInv struct {
 	Count                *Int       `xmlrpc:"count,omptempty"`
 	CreateDate           *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid            *Many2One  `xmlrpc:"create_uid,omptempty"`
+	CurrencyId           *Many2One  `xmlrpc:"currency_id,omptempty"`
+	DeductDownPayments   *Bool      `xmlrpc:"deduct_down_payments,omptempty"`
 	DepositAccountId     *Many2One  `xmlrpc:"deposit_account_id,omptempty"`
 	DepositTaxesId       *Relation  `xmlrpc:"deposit_taxes_id,omptempty"`
 	DisplayName          *String    `xmlrpc:"display_name,omptempty"`
+	FixedAmount          *Float     `xmlrpc:"fixed_amount,omptempty"`
+	HasDownPayments      *Bool      `xmlrpc:"has_down_payments,omptempty"`
 	Id                   *Int       `xmlrpc:"id,omptempty"`
 	ProductId            *Many2One  `xmlrpc:"product_id,omptempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omptempty"`

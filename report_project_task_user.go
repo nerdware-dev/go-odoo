@@ -8,13 +8,12 @@ import (
 type ReportProjectTaskUser struct {
 	LastUpdate          *Time      `xmlrpc:"__last_update,omptempty"`
 	CompanyId           *Many2One  `xmlrpc:"company_id,omptempty"`
+	DateAssign          *Time      `xmlrpc:"date_assign,omptempty"`
 	DateDeadline        *Time      `xmlrpc:"date_deadline,omptempty"`
 	DateEnd             *Time      `xmlrpc:"date_end,omptempty"`
 	DateLastStageUpdate *Time      `xmlrpc:"date_last_stage_update,omptempty"`
-	DateStart           *Time      `xmlrpc:"date_start,omptempty"`
 	DelayEndingsDays    *Float     `xmlrpc:"delay_endings_days,omptempty"`
 	DisplayName         *String    `xmlrpc:"display_name,omptempty"`
-	HoursDelay          *Float     `xmlrpc:"hours_delay,omptempty"`
 	HoursEffective      *Float     `xmlrpc:"hours_effective,omptempty"`
 	HoursPlanned        *Float     `xmlrpc:"hours_planned,omptempty"`
 	Id                  *Int       `xmlrpc:"id,omptempty"`
@@ -27,7 +26,6 @@ type ReportProjectTaskUser struct {
 	RemainingHours      *Float     `xmlrpc:"remaining_hours,omptempty"`
 	StageId             *Many2One  `xmlrpc:"stage_id,omptempty"`
 	State               *Selection `xmlrpc:"state,omptempty"`
-	TotalHours          *Float     `xmlrpc:"total_hours,omptempty"`
 	UserId              *Many2One  `xmlrpc:"user_id,omptempty"`
 	WorkingDaysClose    *Float     `xmlrpc:"working_days_close,omptempty"`
 	WorkingDaysOpen     *Float     `xmlrpc:"working_days_open,omptempty"`

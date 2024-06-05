@@ -7,6 +7,7 @@ import (
 // StockReturnPicking represents stock.return.picking model.
 type StockReturnPicking struct {
 	LastUpdate         *Time     `xmlrpc:"__last_update,omptempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omptempty"`
 	CreateDate         *Time     `xmlrpc:"create_date,omptempty"`
 	CreateUid          *Many2One `xmlrpc:"create_uid,omptempty"`
 	DisplayName        *String   `xmlrpc:"display_name,omptempty"`
@@ -15,8 +16,11 @@ type StockReturnPicking struct {
 	MoveDestExists     *Bool     `xmlrpc:"move_dest_exists,omptempty"`
 	OriginalLocationId *Many2One `xmlrpc:"original_location_id,omptempty"`
 	ParentLocationId   *Many2One `xmlrpc:"parent_location_id,omptempty"`
+	PartnerId          *Many2One `xmlrpc:"partner_id,omptempty"`
 	PickingId          *Many2One `xmlrpc:"picking_id,omptempty"`
 	ProductReturnMoves *Relation `xmlrpc:"product_return_moves,omptempty"`
+	SaleOrderId        *Many2One `xmlrpc:"sale_order_id,omptempty"`
+	TicketId           *Many2One `xmlrpc:"ticket_id,omptempty"`
 	WriteDate          *Time     `xmlrpc:"write_date,omptempty"`
 	WriteUid           *Many2One `xmlrpc:"write_uid,omptempty"`
 }

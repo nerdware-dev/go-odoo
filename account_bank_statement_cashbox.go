@@ -6,14 +6,18 @@ import (
 
 // AccountBankStatementCashbox represents account.bank.statement.cashbox model.
 type AccountBankStatementCashbox struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omptempty"`
-	CashboxLinesIds *Relation `xmlrpc:"cashbox_lines_ids,omptempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omptempty"`
-	Id              *Int      `xmlrpc:"id,omptempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omptempty"`
+	CashboxLinesIds  *Relation `xmlrpc:"cashbox_lines_ids,omptempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omptempty"`
+	CurrencyId       *Many2One `xmlrpc:"currency_id,omptempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omptempty"`
+	EndBankStmtIds   *Relation `xmlrpc:"end_bank_stmt_ids,omptempty"`
+	Id               *Int      `xmlrpc:"id,omptempty"`
+	StartBankStmtIds *Relation `xmlrpc:"start_bank_stmt_ids,omptempty"`
+	Total            *Float    `xmlrpc:"total,omptempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // AccountBankStatementCashboxs represents array of account.bank.statement.cashbox model.

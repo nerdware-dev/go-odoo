@@ -11,7 +11,6 @@ type PortalWizard struct {
 	CreateUid      *Many2One `xmlrpc:"create_uid,omptempty"`
 	DisplayName    *String   `xmlrpc:"display_name,omptempty"`
 	Id             *Int      `xmlrpc:"id,omptempty"`
-	PortalId       *Many2One `xmlrpc:"portal_id,omptempty"`
 	UserIds        *Relation `xmlrpc:"user_ids,omptempty"`
 	WelcomeMessage *String   `xmlrpc:"welcome_message,omptempty"`
 	WriteDate      *Time     `xmlrpc:"write_date,omptempty"`

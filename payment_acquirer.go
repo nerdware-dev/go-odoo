@@ -7,18 +7,20 @@ import (
 // PaymentAcquirer represents payment.acquirer model.
 type PaymentAcquirer struct {
 	LastUpdate                 *Time      `xmlrpc:"__last_update,omptempty"`
+	AuthMsg                    *String    `xmlrpc:"auth_msg,omptempty"`
 	AuthorizeImplemented       *Bool      `xmlrpc:"authorize_implemented,omptempty"`
 	CancelMsg                  *String    `xmlrpc:"cancel_msg,omptempty"`
 	CaptureManually            *Bool      `xmlrpc:"capture_manually,omptempty"`
+	CheckValidity              *Bool      `xmlrpc:"check_validity,omptempty"`
+	Color                      *Int       `xmlrpc:"color,omptempty"`
 	CompanyId                  *Many2One  `xmlrpc:"company_id,omptempty"`
 	CountryIds                 *Relation  `xmlrpc:"country_ids,omptempty"`
 	CreateDate                 *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid                  *Many2One  `xmlrpc:"create_uid,omptempty"`
 	Description                *String    `xmlrpc:"description,omptempty"`
+	DisplayAs                  *String    `xmlrpc:"display_as,omptempty"`
 	DisplayName                *String    `xmlrpc:"display_name,omptempty"`
 	DoneMsg                    *String    `xmlrpc:"done_msg,omptempty"`
-	Environment                *Selection `xmlrpc:"environment,omptempty"`
-	ErrorMsg                   *String    `xmlrpc:"error_msg,omptempty"`
 	FeesActive                 *Bool      `xmlrpc:"fees_active,omptempty"`
 	FeesDomFixed               *Float     `xmlrpc:"fees_dom_fixed,omptempty"`
 	FeesDomVar                 *Float     `xmlrpc:"fees_dom_var,omptempty"`
@@ -26,26 +28,31 @@ type PaymentAcquirer struct {
 	FeesIntFixed               *Float     `xmlrpc:"fees_int_fixed,omptempty"`
 	FeesIntVar                 *Float     `xmlrpc:"fees_int_var,omptempty"`
 	Id                         *Int       `xmlrpc:"id,omptempty"`
-	Image                      *String    `xmlrpc:"image,omptempty"`
-	ImageMedium                *String    `xmlrpc:"image_medium,omptempty"`
-	ImageSmall                 *String    `xmlrpc:"image_small,omptempty"`
+	Image128                   *String    `xmlrpc:"image_128,omptempty"`
+	InboundPaymentMethodIds    *Relation  `xmlrpc:"inbound_payment_method_ids,omptempty"`
 	JournalId                  *Many2One  `xmlrpc:"journal_id,omptempty"`
 	ModuleId                   *Many2One  `xmlrpc:"module_id,omptempty"`
 	ModuleState                *Selection `xmlrpc:"module_state,omptempty"`
+	ModuleToBuy                *Bool      `xmlrpc:"module_to_buy,omptempty"`
 	Name                       *String    `xmlrpc:"name,omptempty"`
 	PaymentFlow                *Selection `xmlrpc:"payment_flow,omptempty"`
 	PaymentIconIds             *Relation  `xmlrpc:"payment_icon_ids,omptempty"`
+	PaypalEmailAccount         *String    `xmlrpc:"paypal_email_account,omptempty"`
+	PaypalPdtToken             *String    `xmlrpc:"paypal_pdt_token,omptempty"`
+	PaypalSellerAccount        *String    `xmlrpc:"paypal_seller_account,omptempty"`
+	PaypalUseIpn               *Bool      `xmlrpc:"paypal_use_ipn,omptempty"`
 	PendingMsg                 *String    `xmlrpc:"pending_msg,omptempty"`
-	PostMsg                    *String    `xmlrpc:"post_msg,omptempty"`
 	PreMsg                     *String    `xmlrpc:"pre_msg,omptempty"`
 	Provider                   *Selection `xmlrpc:"provider,omptempty"`
+	QrCode                     *Bool      `xmlrpc:"qr_code,omptempty"`
 	RegistrationViewTemplateId *Many2One  `xmlrpc:"registration_view_template_id,omptempty"`
 	SaveToken                  *Selection `xmlrpc:"save_token,omptempty"`
 	Sequence                   *Int       `xmlrpc:"sequence,omptempty"`
-	SpecificCountries          *Bool      `xmlrpc:"specific_countries,omptempty"`
+	SoReferenceType            *Selection `xmlrpc:"so_reference_type,omptempty"`
+	State                      *Selection `xmlrpc:"state,omptempty"`
 	TokenImplemented           *Bool      `xmlrpc:"token_implemented,omptempty"`
 	ViewTemplateId             *Many2One  `xmlrpc:"view_template_id,omptempty"`
-	WebsitePublished           *Bool      `xmlrpc:"website_published,omptempty"`
+	WebsiteId                  *Many2One  `xmlrpc:"website_id,omptempty"`
 	WriteDate                  *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid                   *Many2One  `xmlrpc:"write_uid,omptempty"`
 }

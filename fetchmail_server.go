@@ -7,7 +7,6 @@ import (
 // FetchmailServer represents fetchmail.server model.
 type FetchmailServer struct {
 	LastUpdate    *Time      `xmlrpc:"__last_update,omptempty"`
-	ActionId      *Many2One  `xmlrpc:"action_id,omptempty"`
 	Active        *Bool      `xmlrpc:"active,omptempty"`
 	Attach        *Bool      `xmlrpc:"attach,omptempty"`
 	Configuration *String    `xmlrpc:"configuration,omptempty"`
@@ -26,8 +25,8 @@ type FetchmailServer struct {
 	Priority      *Int       `xmlrpc:"priority,omptempty"`
 	Script        *String    `xmlrpc:"script,omptempty"`
 	Server        *String    `xmlrpc:"server,omptempty"`
+	ServerType    *Selection `xmlrpc:"server_type,omptempty"`
 	State         *Selection `xmlrpc:"state,omptempty"`
-	Type          *Selection `xmlrpc:"type,omptempty"`
 	User          *String    `xmlrpc:"user,omptempty"`
 	WriteDate     *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid      *Many2One  `xmlrpc:"write_uid,omptempty"`

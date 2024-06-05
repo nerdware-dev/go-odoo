@@ -17,7 +17,6 @@ type MailChannel struct {
 	AliasParentModelId        *Many2One  `xmlrpc:"alias_parent_model_id,omptempty"`
 	AliasParentThreadId       *Int       `xmlrpc:"alias_parent_thread_id,omptempty"`
 	AliasUserId               *Many2One  `xmlrpc:"alias_user_id,omptempty"`
-	AnonymousName             *String    `xmlrpc:"anonymous_name,omptempty"`
 	ChannelLastSeenPartnerIds *Relation  `xmlrpc:"channel_last_seen_partner_ids,omptempty"`
 	ChannelMessageIds         *Relation  `xmlrpc:"channel_message_ids,omptempty"`
 	ChannelPartnerIds         *Relation  `xmlrpc:"channel_partner_ids,omptempty"`
@@ -30,29 +29,42 @@ type MailChannel struct {
 	GroupIds                  *Relation  `xmlrpc:"group_ids,omptempty"`
 	GroupPublicId             *Many2One  `xmlrpc:"group_public_id,omptempty"`
 	Id                        *Int       `xmlrpc:"id,omptempty"`
-	Image                     *String    `xmlrpc:"image,omptempty"`
-	ImageMedium               *String    `xmlrpc:"image_medium,omptempty"`
-	ImageSmall                *String    `xmlrpc:"image_small,omptempty"`
+	Image128                  *String    `xmlrpc:"image_128,omptempty"`
+	IsChat                    *Bool      `xmlrpc:"is_chat,omptempty"`
 	IsMember                  *Bool      `xmlrpc:"is_member,omptempty"`
+	IsModerator               *Bool      `xmlrpc:"is_moderator,omptempty"`
 	IsSubscribed              *Bool      `xmlrpc:"is_subscribed,omptempty"`
-	LivechatChannelId         *Many2One  `xmlrpc:"livechat_channel_id,omptempty"`
+	MessageAttachmentCount    *Int       `xmlrpc:"message_attachment_count,omptempty"`
 	MessageChannelIds         *Relation  `xmlrpc:"message_channel_ids,omptempty"`
 	MessageFollowerIds        *Relation  `xmlrpc:"message_follower_ids,omptempty"`
+	MessageHasError           *Bool      `xmlrpc:"message_has_error,omptempty"`
+	MessageHasErrorCounter    *Int       `xmlrpc:"message_has_error_counter,omptempty"`
+	MessageHasSmsError        *Bool      `xmlrpc:"message_has_sms_error,omptempty"`
 	MessageIds                *Relation  `xmlrpc:"message_ids,omptempty"`
 	MessageIsFollower         *Bool      `xmlrpc:"message_is_follower,omptempty"`
-	MessageLastPost           *Time      `xmlrpc:"message_last_post,omptempty"`
+	MessageMainAttachmentId   *Many2One  `xmlrpc:"message_main_attachment_id,omptempty"`
 	MessageNeedaction         *Bool      `xmlrpc:"message_needaction,omptempty"`
 	MessageNeedactionCounter  *Int       `xmlrpc:"message_needaction_counter,omptempty"`
 	MessagePartnerIds         *Relation  `xmlrpc:"message_partner_ids,omptempty"`
 	MessageUnread             *Bool      `xmlrpc:"message_unread,omptempty"`
 	MessageUnreadCounter      *Int       `xmlrpc:"message_unread_counter,omptempty"`
+	Moderation                *Bool      `xmlrpc:"moderation,omptempty"`
+	ModerationCount           *Int       `xmlrpc:"moderation_count,omptempty"`
+	ModerationGuidelines      *Bool      `xmlrpc:"moderation_guidelines,omptempty"`
+	ModerationGuidelinesMsg   *String    `xmlrpc:"moderation_guidelines_msg,omptempty"`
+	ModerationIds             *Relation  `xmlrpc:"moderation_ids,omptempty"`
+	ModerationNotify          *Bool      `xmlrpc:"moderation_notify,omptempty"`
+	ModerationNotifyMsg       *String    `xmlrpc:"moderation_notify_msg,omptempty"`
+	ModeratorIds              *Relation  `xmlrpc:"moderator_ids,omptempty"`
 	Name                      *String    `xmlrpc:"name,omptempty"`
 	Public                    *Selection `xmlrpc:"public,omptempty"`
+	RatingAvg                 *Float     `xmlrpc:"rating_avg,omptempty"`
 	RatingCount               *Int       `xmlrpc:"rating_count,omptempty"`
 	RatingIds                 *Relation  `xmlrpc:"rating_ids,omptempty"`
 	RatingLastFeedback        *String    `xmlrpc:"rating_last_feedback,omptempty"`
 	RatingLastImage           *String    `xmlrpc:"rating_last_image,omptempty"`
 	RatingLastValue           *Float     `xmlrpc:"rating_last_value,omptempty"`
+	SubscriptionDepartmentIds *Relation  `xmlrpc:"subscription_department_ids,omptempty"`
 	Uuid                      *String    `xmlrpc:"uuid,omptempty"`
 	WebsiteMessageIds         *Relation  `xmlrpc:"website_message_ids,omptempty"`
 	WriteDate                 *Time      `xmlrpc:"write_date,omptempty"`

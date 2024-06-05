@@ -11,6 +11,7 @@ type AccountCashboxLine struct {
 	CoinValue   *Float    `xmlrpc:"coin_value,omptempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omptempty"`
 	DisplayName *String   `xmlrpc:"display_name,omptempty"`
 	Id          *Int      `xmlrpc:"id,omptempty"`
 	Number      *Int      `xmlrpc:"number,omptempty"`

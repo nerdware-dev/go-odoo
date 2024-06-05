@@ -6,19 +6,22 @@ import (
 
 // ResourceCalendar represents resource.calendar model.
 type ResourceCalendar struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omptempty"`
-	AttendanceIds  *Relation `xmlrpc:"attendance_ids,omptempty"`
-	CompanyId      *Many2One `xmlrpc:"company_id,omptempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omptempty"`
-	GlobalLeaveIds *Relation `xmlrpc:"global_leave_ids,omptempty"`
-	HoursPerDay    *Float    `xmlrpc:"hours_per_day,omptempty"`
-	Id             *Int      `xmlrpc:"id,omptempty"`
-	LeaveIds       *Relation `xmlrpc:"leave_ids,omptempty"`
-	Name           *String   `xmlrpc:"name,omptempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omptempty"`
+	AttendanceIds       *Relation  `xmlrpc:"attendance_ids,omptempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omptempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omptempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omptempty"`
+	GlobalLeaveIds      *Relation  `xmlrpc:"global_leave_ids,omptempty"`
+	HoursPerDay         *Float     `xmlrpc:"hours_per_day,omptempty"`
+	Id                  *Int       `xmlrpc:"id,omptempty"`
+	LeaveIds            *Relation  `xmlrpc:"leave_ids,omptempty"`
+	Name                *String    `xmlrpc:"name,omptempty"`
+	TwoWeeksCalendar    *Bool      `xmlrpc:"two_weeks_calendar,omptempty"`
+	TwoWeeksExplanation *String    `xmlrpc:"two_weeks_explanation,omptempty"`
+	Tz                  *Selection `xmlrpc:"tz,omptempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // ResourceCalendars represents array of resource.calendar model.

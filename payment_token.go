@@ -10,6 +10,7 @@ type PaymentToken struct {
 	AcquirerId  *Many2One `xmlrpc:"acquirer_id,omptempty"`
 	AcquirerRef *String   `xmlrpc:"acquirer_ref,omptempty"`
 	Active      *Bool     `xmlrpc:"active,omptempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omptempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
 	DisplayName *String   `xmlrpc:"display_name,omptempty"`

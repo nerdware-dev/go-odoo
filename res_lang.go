@@ -21,7 +21,8 @@ type ResLang struct {
 	Name         *String    `xmlrpc:"name,omptempty"`
 	ThousandsSep *String    `xmlrpc:"thousands_sep,omptempty"`
 	TimeFormat   *String    `xmlrpc:"time_format,omptempty"`
-	Translatable *Bool      `xmlrpc:"translatable,omptempty"`
+	UrlCode      *String    `xmlrpc:"url_code,omptempty"`
+	WeekStart    *Selection `xmlrpc:"week_start,omptempty"`
 	WriteDate    *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid     *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
