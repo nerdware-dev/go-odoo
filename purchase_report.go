@@ -21,20 +21,17 @@ type PurchaseReport struct {
 	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omptempty"`
 	Id                  *Int       `xmlrpc:"id,omptempty"`
 	NbrLines            *Int       `xmlrpc:"nbr_lines,omptempty"`
-	OrderId             *Many2One  `xmlrpc:"order_id,omptempty"`
+	Negociation         *Float     `xmlrpc:"negociation,omptempty"`
 	PartnerId           *Many2One  `xmlrpc:"partner_id,omptempty"`
 	PickingTypeId       *Many2One  `xmlrpc:"picking_type_id,omptempty"`
 	PriceAverage        *Float     `xmlrpc:"price_average,omptempty"`
+	PriceStandard       *Float     `xmlrpc:"price_standard,omptempty"`
 	PriceTotal          *Float     `xmlrpc:"price_total,omptempty"`
 	ProductId           *Many2One  `xmlrpc:"product_id,omptempty"`
 	ProductTmplId       *Many2One  `xmlrpc:"product_tmpl_id,omptempty"`
 	ProductUom          *Many2One  `xmlrpc:"product_uom,omptempty"`
-	QtyBilled           *Float     `xmlrpc:"qty_billed,omptempty"`
-	QtyOrdered          *Float     `xmlrpc:"qty_ordered,omptempty"`
-	QtyReceived         *Float     `xmlrpc:"qty_received,omptempty"`
-	QtyToBeBilled       *Float     `xmlrpc:"qty_to_be_billed,omptempty"`
 	State               *Selection `xmlrpc:"state,omptempty"`
-	UntaxedTotal        *Float     `xmlrpc:"untaxed_total,omptempty"`
+	UnitQuantity        *Float     `xmlrpc:"unit_quantity,omptempty"`
 	UserId              *Many2One  `xmlrpc:"user_id,omptempty"`
 	Volume              *Float     `xmlrpc:"volume,omptempty"`
 	Weight              *Float     `xmlrpc:"weight,omptempty"`

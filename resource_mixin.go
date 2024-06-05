@@ -6,13 +6,12 @@ import (
 
 // ResourceMixin represents resource.mixin model.
 type ResourceMixin struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omptempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omptempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omptempty"`
-	Id                 *Int       `xmlrpc:"id,omptempty"`
-	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omptempty"`
-	ResourceId         *Many2One  `xmlrpc:"resource_id,omptempty"`
-	Tz                 *Selection `xmlrpc:"tz,omptempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omptempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omptempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omptempty"`
+	Id                 *Int      `xmlrpc:"id,omptempty"`
+	ResourceCalendarId *Many2One `xmlrpc:"resource_calendar_id,omptempty"`
+	ResourceId         *Many2One `xmlrpc:"resource_id,omptempty"`
 }
 
 // ResourceMixins represents array of resource.mixin model.

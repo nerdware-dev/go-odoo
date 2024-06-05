@@ -18,12 +18,12 @@ type StockLocationRoute struct {
 	ProductCategSelectable *Bool     `xmlrpc:"product_categ_selectable,omptempty"`
 	ProductIds             *Relation `xmlrpc:"product_ids,omptempty"`
 	ProductSelectable      *Bool     `xmlrpc:"product_selectable,omptempty"`
-	RuleIds                *Relation `xmlrpc:"rule_ids,omptempty"`
+	PullIds                *Relation `xmlrpc:"pull_ids,omptempty"`
+	PushIds                *Relation `xmlrpc:"push_ids,omptempty"`
 	SaleSelectable         *Bool     `xmlrpc:"sale_selectable,omptempty"`
 	Sequence               *Int      `xmlrpc:"sequence,omptempty"`
 	SuppliedWhId           *Many2One `xmlrpc:"supplied_wh_id,omptempty"`
 	SupplierWhId           *Many2One `xmlrpc:"supplier_wh_id,omptempty"`
-	WarehouseDomainIds     *Relation `xmlrpc:"warehouse_domain_ids,omptempty"`
 	WarehouseIds           *Relation `xmlrpc:"warehouse_ids,omptempty"`
 	WarehouseSelectable    *Bool     `xmlrpc:"warehouse_selectable,omptempty"`
 	WriteDate              *Time     `xmlrpc:"write_date,omptempty"`

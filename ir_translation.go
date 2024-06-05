@@ -14,6 +14,7 @@ type IrTranslation struct {
 	Module      *String    `xmlrpc:"module,omptempty"`
 	Name        *String    `xmlrpc:"name,omptempty"`
 	ResId       *Int       `xmlrpc:"res_id,omptempty"`
+	Source      *String    `xmlrpc:"source,omptempty"`
 	Src         *String    `xmlrpc:"src,omptempty"`
 	State       *Selection `xmlrpc:"state,omptempty"`
 	Type        *Selection `xmlrpc:"type,omptempty"`

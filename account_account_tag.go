@@ -6,20 +6,17 @@ import (
 
 // AccountAccountTag represents account.account.tag model.
 type AccountAccountTag struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omptempty"`
-	Active           *Bool      `xmlrpc:"active,omptempty"`
-	Applicability    *Selection `xmlrpc:"applicability,omptempty"`
-	Color            *Int       `xmlrpc:"color,omptempty"`
-	CountryId        *Many2One  `xmlrpc:"country_id,omptempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omptempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omptempty"`
-	Id               *Int       `xmlrpc:"id,omptempty"`
-	Name             *String    `xmlrpc:"name,omptempty"`
-	TaxNegate        *Bool      `xmlrpc:"tax_negate,omptempty"`
-	TaxReportLineIds *Relation  `xmlrpc:"tax_report_line_ids,omptempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omptempty"`
+	Active        *Bool      `xmlrpc:"active,omptempty"`
+	Applicability *Selection `xmlrpc:"applicability,omptempty"`
+	Color         *Int       `xmlrpc:"color,omptempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omptempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omptempty"`
+	Id            *Int       `xmlrpc:"id,omptempty"`
+	Name          *String    `xmlrpc:"name,omptempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // AccountAccountTags represents array of account.account.tag model.

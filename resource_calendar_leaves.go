@@ -18,7 +18,7 @@ type ResourceCalendarLeaves struct {
 	Id          *Int       `xmlrpc:"id,omptempty"`
 	Name        *String    `xmlrpc:"name,omptempty"`
 	ResourceId  *Many2One  `xmlrpc:"resource_id,omptempty"`
-	TimeType    *Selection `xmlrpc:"time_type,omptempty"`
+	Tz          *Selection `xmlrpc:"tz,omptempty"`
 	WriteDate   *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid    *Many2One  `xmlrpc:"write_uid,omptempty"`
 }

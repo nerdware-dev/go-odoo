@@ -6,35 +6,22 @@ import (
 
 // MailActivityType represents mail.activity.type model.
 type MailActivityType struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omptempty"`
-	Active             *Bool      `xmlrpc:"active,omptempty"`
-	Category           *Selection `xmlrpc:"category,omptempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omptempty"`
-	DecorationType     *Selection `xmlrpc:"decoration_type,omptempty"`
-	DefaultDescription *String    `xmlrpc:"default_description,omptempty"`
-	DefaultNextTypeId  *Many2One  `xmlrpc:"default_next_type_id,omptempty"`
-	DefaultUserId      *Many2One  `xmlrpc:"default_user_id,omptempty"`
-	DelayCount         *Int       `xmlrpc:"delay_count,omptempty"`
-	DelayFrom          *Selection `xmlrpc:"delay_from,omptempty"`
-	DelayUnit          *Selection `xmlrpc:"delay_unit,omptempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omptempty"`
-	FolderId           *Many2One  `xmlrpc:"folder_id,omptempty"`
-	ForceNext          *Bool      `xmlrpc:"force_next,omptempty"`
-	Icon               *String    `xmlrpc:"icon,omptempty"`
-	Id                 *Int       `xmlrpc:"id,omptempty"`
-	InitialResModelId  *Many2One  `xmlrpc:"initial_res_model_id,omptempty"`
-	MailTemplateIds    *Relation  `xmlrpc:"mail_template_ids,omptempty"`
-	Name               *String    `xmlrpc:"name,omptempty"`
-	NextTypeIds        *Relation  `xmlrpc:"next_type_ids,omptempty"`
-	PreviousTypeIds    *Relation  `xmlrpc:"previous_type_ids,omptempty"`
-	ResModelChange     *Bool      `xmlrpc:"res_model_change,omptempty"`
-	ResModelId         *Many2One  `xmlrpc:"res_model_id,omptempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omptempty"`
-	Summary            *String    `xmlrpc:"summary,omptempty"`
-	TagIds             *Relation  `xmlrpc:"tag_ids,omptempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omptempty"`
+	Category        *Selection `xmlrpc:"category,omptempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omptempty"`
+	Days            *Int       `xmlrpc:"days,omptempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omptempty"`
+	Icon            *String    `xmlrpc:"icon,omptempty"`
+	Id              *Int       `xmlrpc:"id,omptempty"`
+	Name            *String    `xmlrpc:"name,omptempty"`
+	NextTypeIds     *Relation  `xmlrpc:"next_type_ids,omptempty"`
+	PreviousTypeIds *Relation  `xmlrpc:"previous_type_ids,omptempty"`
+	ResModelId      *Many2One  `xmlrpc:"res_model_id,omptempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omptempty"`
+	Summary         *String    `xmlrpc:"summary,omptempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // MailActivityTypes represents array of mail.activity.type model.

@@ -9,7 +9,6 @@ type RatingMixin struct {
 	LastUpdate         *Time     `xmlrpc:"__last_update,omptempty"`
 	DisplayName        *String   `xmlrpc:"display_name,omptempty"`
 	Id                 *Int      `xmlrpc:"id,omptempty"`
-	RatingAvg          *Float    `xmlrpc:"rating_avg,omptempty"`
 	RatingCount        *Int      `xmlrpc:"rating_count,omptempty"`
 	RatingIds          *Relation `xmlrpc:"rating_ids,omptempty"`
 	RatingLastFeedback *String   `xmlrpc:"rating_last_feedback,omptempty"`

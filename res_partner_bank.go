@@ -6,26 +6,24 @@ import (
 
 // ResPartnerBank represents res.partner.bank model.
 type ResPartnerBank struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omptempty"`
-	AccHolderName      *String    `xmlrpc:"acc_holder_name,omptempty"`
-	AccNumber          *String    `xmlrpc:"acc_number,omptempty"`
-	AccType            *Selection `xmlrpc:"acc_type,omptempty"`
-	BankBic            *String    `xmlrpc:"bank_bic,omptempty"`
-	BankId             *Many2One  `xmlrpc:"bank_id,omptempty"`
-	BankName           *String    `xmlrpc:"bank_name,omptempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omptempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omptempty"`
-	CurrencyId         *Many2One  `xmlrpc:"currency_id,omptempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omptempty"`
-	Id                 *Int       `xmlrpc:"id,omptempty"`
-	JournalId          *Relation  `xmlrpc:"journal_id,omptempty"`
-	PartnerId          *Many2One  `xmlrpc:"partner_id,omptempty"`
-	QrCodeValid        *Bool      `xmlrpc:"qr_code_valid,omptempty"`
-	SanitizedAccNumber *String    `xmlrpc:"sanitized_acc_number,omptempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omptempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omptempty"`
+	AccNumber          *String   `xmlrpc:"acc_number,omptempty"`
+	AccType            *String   `xmlrpc:"acc_type,omptempty"`
+	BankBic            *String   `xmlrpc:"bank_bic,omptempty"`
+	BankId             *Many2One `xmlrpc:"bank_id,omptempty"`
+	BankName           *String   `xmlrpc:"bank_name,omptempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omptempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omptempty"`
+	CurrencyId         *Many2One `xmlrpc:"currency_id,omptempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omptempty"`
+	Id                 *Int      `xmlrpc:"id,omptempty"`
+	JournalId          *Relation `xmlrpc:"journal_id,omptempty"`
+	PartnerId          *Many2One `xmlrpc:"partner_id,omptempty"`
+	SanitizedAccNumber *String   `xmlrpc:"sanitized_acc_number,omptempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omptempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // ResPartnerBanks represents array of res.partner.bank model.

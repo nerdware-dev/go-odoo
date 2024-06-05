@@ -12,7 +12,6 @@ type ResPartnerTitle struct {
 	DisplayName *String   `xmlrpc:"display_name,omptempty"`
 	Id          *Int      `xmlrpc:"id,omptempty"`
 	Name        *String   `xmlrpc:"name,omptempty"`
-	Salutation  *String   `xmlrpc:"salutation,omptempty"`
 	Shortcut    *String   `xmlrpc:"shortcut,omptempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`

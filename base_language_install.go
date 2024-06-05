@@ -14,7 +14,6 @@ type BaseLanguageInstall struct {
 	Lang        *Selection `xmlrpc:"lang,omptempty"`
 	Overwrite   *Bool      `xmlrpc:"overwrite,omptempty"`
 	State       *Selection `xmlrpc:"state,omptempty"`
-	WebsiteIds  *Relation  `xmlrpc:"website_ids,omptempty"`
 	WriteDate   *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid    *Many2One  `xmlrpc:"write_uid,omptempty"`
 }

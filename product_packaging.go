@@ -6,27 +6,18 @@ import (
 
 // ProductPackaging represents product.packaging model.
 type ProductPackaging struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omptempty"`
-	Barcode            *String    `xmlrpc:"barcode,omptempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omptempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omptempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omptempty"`
-	Height             *Int       `xmlrpc:"height,omptempty"`
-	Id                 *Int       `xmlrpc:"id,omptempty"`
-	Length             *Int       `xmlrpc:"length,omptempty"`
-	MaxWeight          *Float     `xmlrpc:"max_weight,omptempty"`
-	Name               *String    `xmlrpc:"name,omptempty"`
-	PackageCarrierType *Selection `xmlrpc:"package_carrier_type,omptempty"`
-	ProductId          *Many2One  `xmlrpc:"product_id,omptempty"`
-	ProductUomId       *Many2One  `xmlrpc:"product_uom_id,omptempty"`
-	Qty                *Float     `xmlrpc:"qty,omptempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omptempty"`
-	ShipperPackageCode *String    `xmlrpc:"shipper_package_code,omptempty"`
-	WeightUomName      *String    `xmlrpc:"weight_uom_name,omptempty"`
-	Width              *Int       `xmlrpc:"width,omptempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omptempty"`
+	Barcode     *String   `xmlrpc:"barcode,omptempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
+	DisplayName *String   `xmlrpc:"display_name,omptempty"`
+	Id          *Int      `xmlrpc:"id,omptempty"`
+	Name        *String   `xmlrpc:"name,omptempty"`
+	ProductId   *Many2One `xmlrpc:"product_id,omptempty"`
+	Qty         *Float    `xmlrpc:"qty,omptempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omptempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // ProductPackagings represents array of product.packaging model.

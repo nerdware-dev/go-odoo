@@ -17,14 +17,11 @@ type PaymentTransaction struct {
 	CreateDate        *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid         *Many2One  `xmlrpc:"create_uid,omptempty"`
 	CurrencyId        *Many2One  `xmlrpc:"currency_id,omptempty"`
-	Date              *Time      `xmlrpc:"date,omptempty"`
+	DateValidate      *Time      `xmlrpc:"date_validate,omptempty"`
 	DisplayName       *String    `xmlrpc:"display_name,omptempty"`
 	Fees              *Float     `xmlrpc:"fees,omptempty"`
 	Html3Ds           *String    `xmlrpc:"html_3ds,omptempty"`
 	Id                *Int       `xmlrpc:"id,omptempty"`
-	InvoiceIds        *Relation  `xmlrpc:"invoice_ids,omptempty"`
-	InvoiceIdsNbr     *Int       `xmlrpc:"invoice_ids_nbr,omptempty"`
-	IsProcessed       *Bool      `xmlrpc:"is_processed,omptempty"`
 	PartnerAddress    *String    `xmlrpc:"partner_address,omptempty"`
 	PartnerCity       *String    `xmlrpc:"partner_city,omptempty"`
 	PartnerCountryId  *Many2One  `xmlrpc:"partner_country_id,omptempty"`
@@ -34,15 +31,9 @@ type PaymentTransaction struct {
 	PartnerName       *String    `xmlrpc:"partner_name,omptempty"`
 	PartnerPhone      *String    `xmlrpc:"partner_phone,omptempty"`
 	PartnerZip        *String    `xmlrpc:"partner_zip,omptempty"`
-	PaymentId         *Many2One  `xmlrpc:"payment_id,omptempty"`
 	PaymentTokenId    *Many2One  `xmlrpc:"payment_token_id,omptempty"`
-	PaypalTxnType     *String    `xmlrpc:"paypal_txn_type,omptempty"`
 	Provider          *Selection `xmlrpc:"provider,omptempty"`
 	Reference         *String    `xmlrpc:"reference,omptempty"`
-	RenewalAllowed    *Bool      `xmlrpc:"renewal_allowed,omptempty"`
-	ReturnUrl         *String    `xmlrpc:"return_url,omptempty"`
-	SaleOrderIds      *Relation  `xmlrpc:"sale_order_ids,omptempty"`
-	SaleOrderIdsNbr   *Int       `xmlrpc:"sale_order_ids_nbr,omptempty"`
 	State             *Selection `xmlrpc:"state,omptempty"`
 	StateMessage      *String    `xmlrpc:"state_message,omptempty"`
 	Type              *Selection `xmlrpc:"type,omptempty"`

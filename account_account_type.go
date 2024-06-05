@@ -12,7 +12,6 @@ type AccountAccountType struct {
 	DisplayName           *String    `xmlrpc:"display_name,omptempty"`
 	Id                    *Int       `xmlrpc:"id,omptempty"`
 	IncludeInitialBalance *Bool      `xmlrpc:"include_initial_balance,omptempty"`
-	InternalGroup         *Selection `xmlrpc:"internal_group,omptempty"`
 	Name                  *String    `xmlrpc:"name,omptempty"`
 	Note                  *String    `xmlrpc:"note,omptempty"`
 	Type                  *Selection `xmlrpc:"type,omptempty"`

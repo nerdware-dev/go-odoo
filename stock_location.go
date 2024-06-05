@@ -19,11 +19,13 @@ type StockLocation struct {
 	Id                    *Int       `xmlrpc:"id,omptempty"`
 	LocationId            *Many2One  `xmlrpc:"location_id,omptempty"`
 	Name                  *String    `xmlrpc:"name,omptempty"`
-	ParentPath            *String    `xmlrpc:"parent_path,omptempty"`
+	ParentLeft            *Int       `xmlrpc:"parent_left,omptempty"`
+	ParentRight           *Int       `xmlrpc:"parent_right,omptempty"`
+	PartnerId             *Many2One  `xmlrpc:"partner_id,omptempty"`
 	Posx                  *Int       `xmlrpc:"posx,omptempty"`
 	Posy                  *Int       `xmlrpc:"posy,omptempty"`
 	Posz                  *Int       `xmlrpc:"posz,omptempty"`
-	PutawayRuleIds        *Relation  `xmlrpc:"putaway_rule_ids,omptempty"`
+	PutawayStrategyId     *Many2One  `xmlrpc:"putaway_strategy_id,omptempty"`
 	QuantIds              *Relation  `xmlrpc:"quant_ids,omptempty"`
 	RemovalStrategyId     *Many2One  `xmlrpc:"removal_strategy_id,omptempty"`
 	ReturnLocation        *Bool      `xmlrpc:"return_location,omptempty"`

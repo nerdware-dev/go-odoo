@@ -6,21 +6,18 @@ import (
 
 // ProductAttribute represents product.attribute model.
 type ProductAttribute struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omptempty"`
-	AttributeLineIds *Relation  `xmlrpc:"attribute_line_ids,omptempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omptempty"`
-	CreateVariant    *Selection `xmlrpc:"create_variant,omptempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omptempty"`
-	DisplayType      *Selection `xmlrpc:"display_type,omptempty"`
-	Id               *Int       `xmlrpc:"id,omptempty"`
-	IsUsedOnProducts *Bool      `xmlrpc:"is_used_on_products,omptempty"`
-	Name             *String    `xmlrpc:"name,omptempty"`
-	ProductTmplIds   *Relation  `xmlrpc:"product_tmpl_ids,omptempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omptempty"`
-	ValueIds         *Relation  `xmlrpc:"value_ids,omptempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omptempty"`
+	AttributeLineIds *Relation `xmlrpc:"attribute_line_ids,omptempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omptempty"`
+	CreateVariant    *Bool     `xmlrpc:"create_variant,omptempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omptempty"`
+	Id               *Int      `xmlrpc:"id,omptempty"`
+	Name             *String   `xmlrpc:"name,omptempty"`
+	Sequence         *Int      `xmlrpc:"sequence,omptempty"`
+	ValueIds         *Relation `xmlrpc:"value_ids,omptempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // ProductAttributes represents array of product.attribute model.

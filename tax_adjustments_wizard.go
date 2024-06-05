@@ -10,7 +10,6 @@ type TaxAdjustmentsWizard struct {
 	AdjustmentType    *Selection `xmlrpc:"adjustment_type,omptempty"`
 	Amount            *Float     `xmlrpc:"amount,omptempty"`
 	CompanyCurrencyId *Many2One  `xmlrpc:"company_currency_id,omptempty"`
-	CountryId         *Many2One  `xmlrpc:"country_id,omptempty"`
 	CreateDate        *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid         *Many2One  `xmlrpc:"create_uid,omptempty"`
 	CreditAccountId   *Many2One  `xmlrpc:"credit_account_id,omptempty"`
@@ -20,7 +19,7 @@ type TaxAdjustmentsWizard struct {
 	Id                *Int       `xmlrpc:"id,omptempty"`
 	JournalId         *Many2One  `xmlrpc:"journal_id,omptempty"`
 	Reason            *String    `xmlrpc:"reason,omptempty"`
-	TaxReportLineId   *Many2One  `xmlrpc:"tax_report_line_id,omptempty"`
+	TaxId             *Many2One  `xmlrpc:"tax_id,omptempty"`
 	WriteDate         *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid          *Many2One  `xmlrpc:"write_uid,omptempty"`
 }

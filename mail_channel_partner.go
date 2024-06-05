@@ -6,22 +6,20 @@ import (
 
 // MailChannelPartner represents mail.channel.partner model.
 type MailChannelPartner struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omptempty"`
-	ChannelId         *Many2One  `xmlrpc:"channel_id,omptempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omptempty"`
-	CustomChannelName *String    `xmlrpc:"custom_channel_name,omptempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omptempty"`
-	FetchedMessageId  *Many2One  `xmlrpc:"fetched_message_id,omptempty"`
-	FoldState         *Selection `xmlrpc:"fold_state,omptempty"`
-	Id                *Int       `xmlrpc:"id,omptempty"`
-	IsMinimized       *Bool      `xmlrpc:"is_minimized,omptempty"`
-	IsPinned          *Bool      `xmlrpc:"is_pinned,omptempty"`
-	PartnerEmail      *String    `xmlrpc:"partner_email,omptempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omptempty"`
-	SeenMessageId     *Many2One  `xmlrpc:"seen_message_id,omptempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omptempty"`
+	ChannelId     *Many2One  `xmlrpc:"channel_id,omptempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omptempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omptempty"`
+	FoldState     *Selection `xmlrpc:"fold_state,omptempty"`
+	Id            *Int       `xmlrpc:"id,omptempty"`
+	IsMinimized   *Bool      `xmlrpc:"is_minimized,omptempty"`
+	IsPinned      *Bool      `xmlrpc:"is_pinned,omptempty"`
+	PartnerEmail  *String    `xmlrpc:"partner_email,omptempty"`
+	PartnerId     *Many2One  `xmlrpc:"partner_id,omptempty"`
+	SeenMessageId *Many2One  `xmlrpc:"seen_message_id,omptempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // MailChannelPartners represents array of mail.channel.partner model.

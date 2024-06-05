@@ -26,8 +26,8 @@ type AccountFiscalPosition struct {
 	VatRequired    *Bool     `xmlrpc:"vat_required,omptempty"`
 	WriteDate      *Time     `xmlrpc:"write_date,omptempty"`
 	WriteUid       *Many2One `xmlrpc:"write_uid,omptempty"`
-	ZipFrom        *String   `xmlrpc:"zip_from,omptempty"`
-	ZipTo          *String   `xmlrpc:"zip_to,omptempty"`
+	ZipFrom        *Int      `xmlrpc:"zip_from,omptempty"`
+	ZipTo          *Int      `xmlrpc:"zip_to,omptempty"`
 }
 
 // AccountFiscalPositions represents array of account.fiscal.position model.

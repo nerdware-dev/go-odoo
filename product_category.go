@@ -13,10 +13,10 @@ type ProductCategory struct {
 	CreateUid                                   *Many2One  `xmlrpc:"create_uid,omptempty"`
 	DisplayName                                 *String    `xmlrpc:"display_name,omptempty"`
 	Id                                          *Int       `xmlrpc:"id,omptempty"`
-	IntrastatId                                 *Many2One  `xmlrpc:"intrastat_id,omptempty"`
 	Name                                        *String    `xmlrpc:"name,omptempty"`
 	ParentId                                    *Many2One  `xmlrpc:"parent_id,omptempty"`
-	ParentPath                                  *String    `xmlrpc:"parent_path,omptempty"`
+	ParentLeft                                  *Int       `xmlrpc:"parent_left,omptempty"`
+	ParentRight                                 *Int       `xmlrpc:"parent_right,omptempty"`
 	ProductCount                                *Int       `xmlrpc:"product_count,omptempty"`
 	PropertyAccountCreditorPriceDifferenceCateg *Many2One  `xmlrpc:"property_account_creditor_price_difference_categ,omptempty"`
 	PropertyAccountExpenseCategId               *Many2One  `xmlrpc:"property_account_expense_categ_id,omptempty"`
@@ -27,7 +27,6 @@ type ProductCategory struct {
 	PropertyStockJournal                        *Many2One  `xmlrpc:"property_stock_journal,omptempty"`
 	PropertyStockValuationAccountId             *Many2One  `xmlrpc:"property_stock_valuation_account_id,omptempty"`
 	PropertyValuation                           *Selection `xmlrpc:"property_valuation,omptempty"`
-	PutawayRuleIds                              *Relation  `xmlrpc:"putaway_rule_ids,omptempty"`
 	RemovalStrategyId                           *Many2One  `xmlrpc:"removal_strategy_id,omptempty"`
 	RouteIds                                    *Relation  `xmlrpc:"route_ids,omptempty"`
 	TotalRouteIds                               *Relation  `xmlrpc:"total_route_ids,omptempty"`

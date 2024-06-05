@@ -7,7 +7,6 @@ import (
 // ProductPricelistItem represents product.pricelist.item model.
 type ProductPricelistItem struct {
 	LastUpdate      *Time      `xmlrpc:"__last_update,omptempty"`
-	Active          *Bool      `xmlrpc:"active,omptempty"`
 	AppliedOn       *Selection `xmlrpc:"applied_on,omptempty"`
 	Base            *Selection `xmlrpc:"base,omptempty"`
 	BasePricelistId *Many2One  `xmlrpc:"base_pricelist_id,omptempty"`

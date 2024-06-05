@@ -6,27 +6,14 @@ import (
 
 // UtmCampaign represents utm.campaign model.
 type UtmCampaign struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omptempty"`
-	ClickCount       *Int      `xmlrpc:"click_count,omptempty"`
-	Color            *Int      `xmlrpc:"color,omptempty"`
-	CompanyId        *Many2One `xmlrpc:"company_id,omptempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omptempty"`
-	CrmLeadActivated *Bool     `xmlrpc:"crm_lead_activated,omptempty"`
-	CurrencyId       *Many2One `xmlrpc:"currency_id,omptempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omptempty"`
-	Id               *Int      `xmlrpc:"id,omptempty"`
-	InvoicedAmount   *Int      `xmlrpc:"invoiced_amount,omptempty"`
-	IsWebsite        *Bool     `xmlrpc:"is_website,omptempty"`
-	LeadCount        *Int      `xmlrpc:"lead_count,omptempty"`
-	Name             *String   `xmlrpc:"name,omptempty"`
-	OpportunityCount *Int      `xmlrpc:"opportunity_count,omptempty"`
-	QuotationCount   *Int      `xmlrpc:"quotation_count,omptempty"`
-	StageId          *Many2One `xmlrpc:"stage_id,omptempty"`
-	TagIds           *Relation `xmlrpc:"tag_ids,omptempty"`
-	UserId           *Many2One `xmlrpc:"user_id,omptempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omptempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
+	DisplayName *String   `xmlrpc:"display_name,omptempty"`
+	Id          *Int      `xmlrpc:"id,omptempty"`
+	Name        *String   `xmlrpc:"name,omptempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // UtmCampaigns represents array of utm.campaign model.

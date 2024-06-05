@@ -11,7 +11,7 @@ type MailFollowers struct {
 	DisplayName *String   `xmlrpc:"display_name,omptempty"`
 	Id          *Int      `xmlrpc:"id,omptempty"`
 	PartnerId   *Many2One `xmlrpc:"partner_id,omptempty"`
-	ResId       *Many2One `xmlrpc:"res_id,omptempty"`
+	ResId       *Int      `xmlrpc:"res_id,omptempty"`
 	ResModel    *String   `xmlrpc:"res_model,omptempty"`
 	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omptempty"`
 }

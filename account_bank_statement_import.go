@@ -6,14 +6,15 @@ import (
 
 // AccountBankStatementImport represents account.bank.statement.import model.
 type AccountBankStatementImport struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omptempty"`
-	AttachmentIds *Relation `xmlrpc:"attachment_ids,omptempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omptempty"`
-	Id            *Int      `xmlrpc:"id,omptempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omptempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
+	DataFile    *String   `xmlrpc:"data_file,omptempty"`
+	DisplayName *String   `xmlrpc:"display_name,omptempty"`
+	Filename    *String   `xmlrpc:"filename,omptempty"`
+	Id          *Int      `xmlrpc:"id,omptempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // AccountBankStatementImports represents array of account.bank.statement.import model.

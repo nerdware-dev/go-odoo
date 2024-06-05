@@ -17,7 +17,6 @@ type ResourceResource struct {
 	Name           *String    `xmlrpc:"name,omptempty"`
 	ResourceType   *Selection `xmlrpc:"resource_type,omptempty"`
 	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omptempty"`
-	Tz             *Selection `xmlrpc:"tz,omptempty"`
 	UserId         *Many2One  `xmlrpc:"user_id,omptempty"`
 	WriteDate      *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid       *Many2One  `xmlrpc:"write_uid,omptempty"`

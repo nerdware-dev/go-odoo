@@ -6,20 +6,19 @@ import (
 
 // AccountPaymentTermLine represents account.payment.term.line model.
 type AccountPaymentTermLine struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omptempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omptempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omptempty"`
-	DayOfTheMonth *Int       `xmlrpc:"day_of_the_month,omptempty"`
-	Days          *Int       `xmlrpc:"days,omptempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omptempty"`
-	Id            *Int       `xmlrpc:"id,omptempty"`
-	Option        *Selection `xmlrpc:"option,omptempty"`
-	PaymentId     *Many2One  `xmlrpc:"payment_id,omptempty"`
-	Sequence      *Int       `xmlrpc:"sequence,omptempty"`
-	Value         *Selection `xmlrpc:"value,omptempty"`
-	ValueAmount   *Float     `xmlrpc:"value_amount,omptempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omptempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omptempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omptempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omptempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omptempty"`
+	Days        *Int       `xmlrpc:"days,omptempty"`
+	DisplayName *String    `xmlrpc:"display_name,omptempty"`
+	Id          *Int       `xmlrpc:"id,omptempty"`
+	Option      *Selection `xmlrpc:"option,omptempty"`
+	PaymentId   *Many2One  `xmlrpc:"payment_id,omptempty"`
+	Sequence    *Int       `xmlrpc:"sequence,omptempty"`
+	Value       *Selection `xmlrpc:"value,omptempty"`
+	ValueAmount *Float     `xmlrpc:"value_amount,omptempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omptempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omptempty"`
 }
 
 // AccountPaymentTermLines represents array of account.payment.term.line model.
