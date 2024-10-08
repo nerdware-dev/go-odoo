@@ -2,33 +2,34 @@ package odoo
 
 // AccountTax represents account.tax model.
 type AccountTax struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId          *Many2One  `xmlrpc:"account_id,omitempty"`
-	Active             *Bool      `xmlrpc:"active,omitempty"`
-	Amount             *Float     `xmlrpc:"amount,omitempty"`
-	AmountType         *Selection `xmlrpc:"amount_type,omitempty"`
-	Analytic           *Bool      `xmlrpc:"analytic,omitempty"`
-	CashBasisAccount   *Many2One  `xmlrpc:"cash_basis_account,omitempty"`
-	ChildrenTaxIds     *Relation  `xmlrpc:"children_tax_ids,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description        *String    `xmlrpc:"description,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	HideTaxExigibility *Bool      `xmlrpc:"hide_tax_exigibility,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	IncludeBaseAmount  *Bool      `xmlrpc:"include_base_amount,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	PriceInclude       *Bool      `xmlrpc:"price_include,omitempty"`
-	RefundAccountId    *Many2One  `xmlrpc:"refund_account_id,omitempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omitempty"`
-	TagIds             *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaxAdjustment      *Bool      `xmlrpc:"tax_adjustment,omitempty"`
-	TaxExigibility     *Selection `xmlrpc:"tax_exigibility,omitempty"`
-	TaxGroupId         *Many2One  `xmlrpc:"tax_group_id,omitempty"`
-	TypeTaxUse         *Selection `xmlrpc:"type_tax_use,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
+	Active                       *Bool      `xmlrpc:"active,omitempty"`
+	Amount                       *Float     `xmlrpc:"amount,omitempty"`
+	AmountType                   *Selection `xmlrpc:"amount_type,omitempty"`
+	Analytic                     *Bool      `xmlrpc:"analytic,omitempty"`
+	CashBasisBaseAccountId       *Many2One  `xmlrpc:"cash_basis_base_account_id,omitempty"`
+	CashBasisTransitionAccountId *Many2One  `xmlrpc:"cash_basis_transition_account_id,omitempty"`
+	ChildrenTaxIds               *Relation  `xmlrpc:"children_tax_ids,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
+	CountryId                    *Many2One  `xmlrpc:"country_id,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
+	Description                  *String    `xmlrpc:"description,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
+	HideTaxExigibility           *Bool      `xmlrpc:"hide_tax_exigibility,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty"`
+	IncludeBaseAmount            *Bool      `xmlrpc:"include_base_amount,omitempty"`
+	InvoiceRepartitionLineIds    *Relation  `xmlrpc:"invoice_repartition_line_ids,omitempty"`
+	L10NDeDatevCode              *String    `xmlrpc:"l10n_de_datev_code,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty"`
+	PriceInclude                 *Bool      `xmlrpc:"price_include,omitempty"`
+	RefundRepartitionLineIds     *Relation  `xmlrpc:"refund_repartition_line_ids,omitempty"`
+	Sequence                     *Int       `xmlrpc:"sequence,omitempty"`
+	TaxExigibility               *Selection `xmlrpc:"tax_exigibility,omitempty"`
+	TaxGroupId                   *Many2One  `xmlrpc:"tax_group_id,omitempty"`
+	TypeTaxUse                   *Selection `xmlrpc:"type_tax_use,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountTaxs represents array of account.tax model.
@@ -54,7 +55,7 @@ func (c *Client) CreateAccountTax(at *AccountTax) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateAccountTaxs creates a new account.tax model and returns its id.
+// CreateAccountTax creates a new account.tax model and returns its id.
 func (c *Client) CreateAccountTaxs(ats []*AccountTax) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ats {

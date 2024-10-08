@@ -6,6 +6,7 @@ type TaxAdjustmentsWizard struct {
 	AdjustmentType    *Selection `xmlrpc:"adjustment_type,omitempty"`
 	Amount            *Float     `xmlrpc:"amount,omitempty"`
 	CompanyCurrencyId *Many2One  `xmlrpc:"company_currency_id,omitempty"`
+	CountryId         *Many2One  `xmlrpc:"country_id,omitempty"`
 	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
 	CreditAccountId   *Many2One  `xmlrpc:"credit_account_id,omitempty"`
@@ -15,7 +16,7 @@ type TaxAdjustmentsWizard struct {
 	Id                *Int       `xmlrpc:"id,omitempty"`
 	JournalId         *Many2One  `xmlrpc:"journal_id,omitempty"`
 	Reason            *String    `xmlrpc:"reason,omitempty"`
-	TaxId             *Many2One  `xmlrpc:"tax_id,omitempty"`
+	TaxReportLineId   *Many2One  `xmlrpc:"tax_report_line_id,omitempty"`
 	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
@@ -43,7 +44,7 @@ func (c *Client) CreateTaxAdjustmentsWizard(taw *TaxAdjustmentsWizard) (int64, e
 	return ids[0], nil
 }
 
-// CreateTaxAdjustmentsWizards creates a new tax.adjustments.wizard model and returns its id.
+// CreateTaxAdjustmentsWizard creates a new tax.adjustments.wizard model and returns its id.
 func (c *Client) CreateTaxAdjustmentsWizards(taws []*TaxAdjustmentsWizard) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range taws {

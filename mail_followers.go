@@ -7,7 +7,7 @@ type MailFollowers struct {
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	ResId       *Int      `xmlrpc:"res_id,omitempty"`
+	ResId       *Many2One `xmlrpc:"res_id,omitempty"`
 	ResModel    *String   `xmlrpc:"res_model,omitempty"`
 	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omitempty"`
 }
@@ -35,7 +35,7 @@ func (c *Client) CreateMailFollowers(mf *MailFollowers) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateMailFollowerss creates a new mail.followers model and returns its id.
+// CreateMailFollowers creates a new mail.followers model and returns its id.
 func (c *Client) CreateMailFollowerss(mfs []*MailFollowers) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range mfs {

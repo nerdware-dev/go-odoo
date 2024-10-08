@@ -15,13 +15,11 @@ type StockLocation struct {
 	Id                    *Int       `xmlrpc:"id,omitempty"`
 	LocationId            *Many2One  `xmlrpc:"location_id,omitempty"`
 	Name                  *String    `xmlrpc:"name,omitempty"`
-	ParentLeft            *Int       `xmlrpc:"parent_left,omitempty"`
-	ParentRight           *Int       `xmlrpc:"parent_right,omitempty"`
-	PartnerId             *Many2One  `xmlrpc:"partner_id,omitempty"`
+	ParentPath            *String    `xmlrpc:"parent_path,omitempty"`
 	Posx                  *Int       `xmlrpc:"posx,omitempty"`
 	Posy                  *Int       `xmlrpc:"posy,omitempty"`
 	Posz                  *Int       `xmlrpc:"posz,omitempty"`
-	PutawayStrategyId     *Many2One  `xmlrpc:"putaway_strategy_id,omitempty"`
+	PutawayRuleIds        *Relation  `xmlrpc:"putaway_rule_ids,omitempty"`
 	QuantIds              *Relation  `xmlrpc:"quant_ids,omitempty"`
 	RemovalStrategyId     *Many2One  `xmlrpc:"removal_strategy_id,omitempty"`
 	ReturnLocation        *Bool      `xmlrpc:"return_location,omitempty"`
@@ -56,7 +54,7 @@ func (c *Client) CreateStockLocation(sl *StockLocation) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateStockLocations creates a new stock.location model and returns its id.
+// CreateStockLocation creates a new stock.location model and returns its id.
 func (c *Client) CreateStockLocations(sls []*StockLocation) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range sls {

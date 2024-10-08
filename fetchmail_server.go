@@ -3,7 +3,6 @@ package odoo
 // FetchmailServer represents fetchmail.server model.
 type FetchmailServer struct {
 	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId      *Many2One  `xmlrpc:"action_id,omitempty"`
 	Active        *Bool      `xmlrpc:"active,omitempty"`
 	Attach        *Bool      `xmlrpc:"attach,omitempty"`
 	Configuration *String    `xmlrpc:"configuration,omitempty"`
@@ -22,8 +21,8 @@ type FetchmailServer struct {
 	Priority      *Int       `xmlrpc:"priority,omitempty"`
 	Script        *String    `xmlrpc:"script,omitempty"`
 	Server        *String    `xmlrpc:"server,omitempty"`
+	ServerType    *Selection `xmlrpc:"server_type,omitempty"`
 	State         *Selection `xmlrpc:"state,omitempty"`
-	Type          *Selection `xmlrpc:"type,omitempty"`
 	User          *String    `xmlrpc:"user,omitempty"`
 	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
@@ -52,7 +51,7 @@ func (c *Client) CreateFetchmailServer(fs *FetchmailServer) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateFetchmailServers creates a new fetchmail.server model and returns its id.
+// CreateFetchmailServer creates a new fetchmail.server model and returns its id.
 func (c *Client) CreateFetchmailServers(fss []*FetchmailServer) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range fss {

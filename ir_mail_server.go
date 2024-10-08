@@ -43,7 +43,7 @@ func (c *Client) CreateIrMailServer(im *IrMailServer) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateIrMailServers creates a new ir.mail_server model and returns its id.
+// CreateIrMailServer creates a new ir.mail_server model and returns its id.
 func (c *Client) CreateIrMailServers(ims []*IrMailServer) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ims {

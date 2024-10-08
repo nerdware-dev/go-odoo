@@ -2,17 +2,18 @@ package odoo
 
 // ResourceTest represents resource.test model.
 type ResourceTest struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	ResourceCalendarId *Many2One `xmlrpc:"resource_calendar_id,omitempty"`
-	ResourceId         *Many2One `xmlrpc:"resource_id,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty"`
+	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omitempty"`
+	ResourceId         *Many2One  `xmlrpc:"resource_id,omitempty"`
+	Tz                 *Selection `xmlrpc:"tz,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // ResourceTests represents array of resource.test model.
@@ -38,7 +39,7 @@ func (c *Client) CreateResourceTest(rt *ResourceTest) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateResourceTests creates a new resource.test model and returns its id.
+// CreateResourceTest creates a new resource.test model and returns its id.
 func (c *Client) CreateResourceTests(rts []*ResourceTest) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rts {

@@ -13,11 +13,14 @@ type PaymentTransaction struct {
 	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
 	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DateValidate      *Time      `xmlrpc:"date_validate,omitempty"`
+	Date              *Time      `xmlrpc:"date,omitempty"`
 	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
 	Fees              *Float     `xmlrpc:"fees,omitempty"`
 	Html3Ds           *String    `xmlrpc:"html_3ds,omitempty"`
 	Id                *Int       `xmlrpc:"id,omitempty"`
+	InvoiceIds        *Relation  `xmlrpc:"invoice_ids,omitempty"`
+	InvoiceIdsNbr     *Int       `xmlrpc:"invoice_ids_nbr,omitempty"`
+	IsProcessed       *Bool      `xmlrpc:"is_processed,omitempty"`
 	PartnerAddress    *String    `xmlrpc:"partner_address,omitempty"`
 	PartnerCity       *String    `xmlrpc:"partner_city,omitempty"`
 	PartnerCountryId  *Many2One  `xmlrpc:"partner_country_id,omitempty"`
@@ -27,9 +30,15 @@ type PaymentTransaction struct {
 	PartnerName       *String    `xmlrpc:"partner_name,omitempty"`
 	PartnerPhone      *String    `xmlrpc:"partner_phone,omitempty"`
 	PartnerZip        *String    `xmlrpc:"partner_zip,omitempty"`
+	PaymentId         *Many2One  `xmlrpc:"payment_id,omitempty"`
 	PaymentTokenId    *Many2One  `xmlrpc:"payment_token_id,omitempty"`
+	PaypalTxnType     *String    `xmlrpc:"paypal_txn_type,omitempty"`
 	Provider          *Selection `xmlrpc:"provider,omitempty"`
 	Reference         *String    `xmlrpc:"reference,omitempty"`
+	RenewalAllowed    *Bool      `xmlrpc:"renewal_allowed,omitempty"`
+	ReturnUrl         *String    `xmlrpc:"return_url,omitempty"`
+	SaleOrderIds      *Relation  `xmlrpc:"sale_order_ids,omitempty"`
+	SaleOrderIdsNbr   *Int       `xmlrpc:"sale_order_ids_nbr,omitempty"`
 	State             *Selection `xmlrpc:"state,omitempty"`
 	StateMessage      *String    `xmlrpc:"state_message,omitempty"`
 	Type              *Selection `xmlrpc:"type,omitempty"`
@@ -60,7 +69,7 @@ func (c *Client) CreatePaymentTransaction(pt *PaymentTransaction) (int64, error)
 	return ids[0], nil
 }
 
-// CreatePaymentTransactions creates a new payment.transaction model and returns its id.
+// CreatePaymentTransaction creates a new payment.transaction model and returns its id.
 func (c *Client) CreatePaymentTransactions(pts []*PaymentTransaction) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pts {

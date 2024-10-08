@@ -2,27 +2,52 @@ package odoo
 
 // AccountReconcileModelTemplate represents account.reconcile.model.template model.
 type AccountReconcileModelTemplate struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId        *Many2One  `xmlrpc:"account_id,omitempty"`
-	Amount           *Float     `xmlrpc:"amount,omitempty"`
-	AmountType       *Selection `xmlrpc:"amount_type,omitempty"`
-	ChartTemplateId  *Many2One  `xmlrpc:"chart_template_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	HasSecondLine    *Bool      `xmlrpc:"has_second_line,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Label            *String    `xmlrpc:"label,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	SecondAccountId  *Many2One  `xmlrpc:"second_account_id,omitempty"`
-	SecondAmount     *Float     `xmlrpc:"second_amount,omitempty"`
-	SecondAmountType *Selection `xmlrpc:"second_amount_type,omitempty"`
-	SecondLabel      *String    `xmlrpc:"second_label,omitempty"`
-	SecondTaxId      *Many2One  `xmlrpc:"second_tax_id,omitempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omitempty"`
-	TaxId            *Many2One  `xmlrpc:"tax_id,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
+	AccountId                  *Many2One  `xmlrpc:"account_id,omitempty"`
+	Amount                     *Float     `xmlrpc:"amount,omitempty"`
+	AmountFromLabelRegex       *String    `xmlrpc:"amount_from_label_regex,omitempty"`
+	AmountType                 *Selection `xmlrpc:"amount_type,omitempty"`
+	AutoReconcile              *Bool      `xmlrpc:"auto_reconcile,omitempty"`
+	ChartTemplateId            *Many2One  `xmlrpc:"chart_template_id,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DecimalSeparator           *String    `xmlrpc:"decimal_separator,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
+	ForceSecondTaxIncluded     *Bool      `xmlrpc:"force_second_tax_included,omitempty"`
+	ForceTaxIncluded           *Bool      `xmlrpc:"force_tax_included,omitempty"`
+	HasSecondLine              *Bool      `xmlrpc:"has_second_line,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty"`
+	Label                      *String    `xmlrpc:"label,omitempty"`
+	MatchAmount                *Selection `xmlrpc:"match_amount,omitempty"`
+	MatchAmountMax             *Float     `xmlrpc:"match_amount_max,omitempty"`
+	MatchAmountMin             *Float     `xmlrpc:"match_amount_min,omitempty"`
+	MatchJournalIds            *Relation  `xmlrpc:"match_journal_ids,omitempty"`
+	MatchLabel                 *Selection `xmlrpc:"match_label,omitempty"`
+	MatchLabelParam            *String    `xmlrpc:"match_label_param,omitempty"`
+	MatchNature                *Selection `xmlrpc:"match_nature,omitempty"`
+	MatchNote                  *Selection `xmlrpc:"match_note,omitempty"`
+	MatchNoteParam             *String    `xmlrpc:"match_note_param,omitempty"`
+	MatchPartner               *Bool      `xmlrpc:"match_partner,omitempty"`
+	MatchPartnerCategoryIds    *Relation  `xmlrpc:"match_partner_category_ids,omitempty"`
+	MatchPartnerIds            *Relation  `xmlrpc:"match_partner_ids,omitempty"`
+	MatchSameCurrency          *Bool      `xmlrpc:"match_same_currency,omitempty"`
+	MatchTotalAmount           *Bool      `xmlrpc:"match_total_amount,omitempty"`
+	MatchTotalAmountParam      *Float     `xmlrpc:"match_total_amount_param,omitempty"`
+	MatchTransactionType       *Selection `xmlrpc:"match_transaction_type,omitempty"`
+	MatchTransactionTypeParam  *String    `xmlrpc:"match_transaction_type_param,omitempty"`
+	Name                       *String    `xmlrpc:"name,omitempty"`
+	RuleType                   *Selection `xmlrpc:"rule_type,omitempty"`
+	SecondAccountId            *Many2One  `xmlrpc:"second_account_id,omitempty"`
+	SecondAmount               *Float     `xmlrpc:"second_amount,omitempty"`
+	SecondAmountFromLabelRegex *String    `xmlrpc:"second_amount_from_label_regex,omitempty"`
+	SecondAmountType           *Selection `xmlrpc:"second_amount_type,omitempty"`
+	SecondLabel                *String    `xmlrpc:"second_label,omitempty"`
+	SecondTaxIds               *Relation  `xmlrpc:"second_tax_ids,omitempty"`
+	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
+	TaxIds                     *Relation  `xmlrpc:"tax_ids,omitempty"`
+	ToCheck                    *Bool      `xmlrpc:"to_check,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountReconcileModelTemplates represents array of account.reconcile.model.template model.
@@ -48,7 +73,7 @@ func (c *Client) CreateAccountReconcileModelTemplate(armt *AccountReconcileModel
 	return ids[0], nil
 }
 
-// CreateAccountReconcileModelTemplates creates a new account.reconcile.model.template model and returns its id.
+// CreateAccountReconcileModelTemplate creates a new account.reconcile.model.template model and returns its id.
 func (c *Client) CreateAccountReconcileModelTemplates(armts []*AccountReconcileModelTemplate) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range armts {

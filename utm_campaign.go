@@ -2,14 +2,45 @@ package odoo
 
 // UtmCampaign represents utm.campaign model.
 type UtmCampaign struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
+	Bounced            *Int      `xmlrpc:"bounced,omitempty"`
+	BouncedRatio       *Int      `xmlrpc:"bounced_ratio,omitempty"`
+	ClickCount         *Int      `xmlrpc:"click_count,omitempty"`
+	Color              *Int      `xmlrpc:"color,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
+	CrmLeadActivated   *Bool     `xmlrpc:"crm_lead_activated,omitempty"`
+	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty"`
+	Delivered          *Int      `xmlrpc:"delivered,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
+	Failed             *Int      `xmlrpc:"failed,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty"`
+	Ignored            *Int      `xmlrpc:"ignored,omitempty"`
+	InvoicedAmount     *Int      `xmlrpc:"invoiced_amount,omitempty"`
+	IsWebsite          *Bool     `xmlrpc:"is_website,omitempty"`
+	LeadCount          *Int      `xmlrpc:"lead_count,omitempty"`
+	MailingClicked     *Int      `xmlrpc:"mailing_clicked,omitempty"`
+	MailingClicksRatio *Int      `xmlrpc:"mailing_clicks_ratio,omitempty"`
+	MailingItems       *Int      `xmlrpc:"mailing_items,omitempty"`
+	MailingMailCount   *Int      `xmlrpc:"mailing_mail_count,omitempty"`
+	MailingMailIds     *Relation `xmlrpc:"mailing_mail_ids,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty"`
+	Opened             *Int      `xmlrpc:"opened,omitempty"`
+	OpenedRatio        *Int      `xmlrpc:"opened_ratio,omitempty"`
+	OpportunityCount   *Int      `xmlrpc:"opportunity_count,omitempty"`
+	QuotationCount     *Int      `xmlrpc:"quotation_count,omitempty"`
+	ReceivedRatio      *Int      `xmlrpc:"received_ratio,omitempty"`
+	Replied            *Int      `xmlrpc:"replied,omitempty"`
+	RepliedRatio       *Int      `xmlrpc:"replied_ratio,omitempty"`
+	Scheduled          *Int      `xmlrpc:"scheduled,omitempty"`
+	Sent               *Int      `xmlrpc:"sent,omitempty"`
+	StageId            *Many2One `xmlrpc:"stage_id,omitempty"`
+	TagIds             *Relation `xmlrpc:"tag_ids,omitempty"`
+	Total              *Int      `xmlrpc:"total,omitempty"`
+	UserId             *Many2One `xmlrpc:"user_id,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // UtmCampaigns represents array of utm.campaign model.
@@ -35,7 +66,7 @@ func (c *Client) CreateUtmCampaign(uc *UtmCampaign) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateUtmCampaigns creates a new utm.campaign model and returns its id.
+// CreateUtmCampaign creates a new utm.campaign model and returns its id.
 func (c *Client) CreateUtmCampaigns(ucs []*UtmCampaign) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ucs {

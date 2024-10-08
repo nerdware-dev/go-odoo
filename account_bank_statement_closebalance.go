@@ -34,7 +34,7 @@ func (c *Client) CreateAccountBankStatementClosebalance(absc *AccountBankStateme
 	return ids[0], nil
 }
 
-// CreateAccountBankStatementClosebalances creates a new account.bank.statement.closebalance model and returns its id.
+// CreateAccountBankStatementClosebalance creates a new account.bank.statement.closebalance model and returns its id.
 func (c *Client) CreateAccountBankStatementClosebalances(abscs []*AccountBankStatementClosebalance) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range abscs {

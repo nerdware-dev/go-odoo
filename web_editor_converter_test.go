@@ -14,7 +14,6 @@ type WebEditorConverterTest struct {
 	Html         *String    `xmlrpc:"html,omitempty"`
 	Id           *Int       `xmlrpc:"id,omitempty"`
 	Integer      *Int       `xmlrpc:"integer,omitempty"`
-	Many2One     *Many2One  `xmlrpc:"many2one,omitempty"`
 	Numeric      *Float     `xmlrpc:"numeric,omitempty"`
 	Selection    *Selection `xmlrpc:"selection,omitempty"`
 	SelectionStr *Selection `xmlrpc:"selection_str,omitempty"`

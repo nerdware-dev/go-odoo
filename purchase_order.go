@@ -2,60 +2,74 @@ package odoo
 
 // PurchaseOrder represents purchase.order model.
 type PurchaseOrder struct {
-	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadline       *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityIds                *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState              *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary            *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId             *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId             *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AmountTax                  *Float     `xmlrpc:"amount_tax,omitempty"`
-	AmountTotal                *Float     `xmlrpc:"amount_total,omitempty"`
-	AmountUntaxed              *Float     `xmlrpc:"amount_untaxed,omitempty"`
-	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                 *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DateApprove                *Time      `xmlrpc:"date_approve,omitempty"`
-	DateOrder                  *Time      `xmlrpc:"date_order,omitempty"`
-	DatePlanned                *Time      `xmlrpc:"date_planned,omitempty"`
-	DefaultLocationDestIdUsage *Selection `xmlrpc:"default_location_dest_id_usage,omitempty"`
-	DestAddressId              *Many2One  `xmlrpc:"dest_address_id,omitempty"`
-	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
-	FiscalPositionId           *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
-	GroupId                    *Many2One  `xmlrpc:"group_id,omitempty"`
-	Id                         *Int       `xmlrpc:"id,omitempty"`
-	IncotermId                 *Many2One  `xmlrpc:"incoterm_id,omitempty"`
-	InvoiceCount               *Int       `xmlrpc:"invoice_count,omitempty"`
-	InvoiceIds                 *Relation  `xmlrpc:"invoice_ids,omitempty"`
-	InvoiceStatus              *Selection `xmlrpc:"invoice_status,omitempty"`
-	IsShipped                  *Bool      `xmlrpc:"is_shipped,omitempty"`
-	MessageChannelIds          *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageLastPost            *Time      `xmlrpc:"message_last_post,omitempty"`
-	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread              *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter       *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                       *String    `xmlrpc:"name,omitempty"`
-	Notes                      *String    `xmlrpc:"notes,omitempty"`
-	OrderLine                  *Relation  `xmlrpc:"order_line,omitempty"`
-	Origin                     *String    `xmlrpc:"origin,omitempty"`
-	PartnerId                  *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerRef                 *String    `xmlrpc:"partner_ref,omitempty"`
-	PaymentTermId              *Many2One  `xmlrpc:"payment_term_id,omitempty"`
-	PickingCount               *Int       `xmlrpc:"picking_count,omitempty"`
-	PickingIds                 *Relation  `xmlrpc:"picking_ids,omitempty"`
-	PickingTypeId              *Many2One  `xmlrpc:"picking_type_id,omitempty"`
-	ProductId                  *Many2One  `xmlrpc:"product_id,omitempty"`
-	State                      *Selection `xmlrpc:"state,omitempty"`
-	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WebsiteUrl                 *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
+	AccessToken                 *String    `xmlrpc:"access_token,omitempty"`
+	AccessUrl                   *String    `xmlrpc:"access_url,omitempty"`
+	AccessWarning               *String    `xmlrpc:"access_warning,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
+	AmountTax                   *Float     `xmlrpc:"amount_tax,omitempty"`
+	AmountTotal                 *Float     `xmlrpc:"amount_total,omitempty"`
+	AmountUntaxed               *Float     `xmlrpc:"amount_untaxed,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty"`
+	CurrencyRate                *Float     `xmlrpc:"currency_rate,omitempty"`
+	DateApprove                 *Time      `xmlrpc:"date_approve,omitempty"`
+	DateOrder                   *Time      `xmlrpc:"date_order,omitempty"`
+	DatePlanned                 *Time      `xmlrpc:"date_planned,omitempty"`
+	DefaultLocationDestIdUsage  *Selection `xmlrpc:"default_location_dest_id_usage,omitempty"`
+	DestAddressId               *Many2One  `xmlrpc:"dest_address_id,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
+	FiscalPositionId            *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
+	GroupId                     *Many2One  `xmlrpc:"group_id,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty"`
+	IncotermId                  *Many2One  `xmlrpc:"incoterm_id,omitempty"`
+	InvoiceCount                *Int       `xmlrpc:"invoice_count,omitempty"`
+	InvoiceIds                  *Relation  `xmlrpc:"invoice_ids,omitempty"`
+	InvoiceStatus               *Selection `xmlrpc:"invoice_status,omitempty"`
+	IsShipped                   *Bool      `xmlrpc:"is_shipped,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty"`
+	Notes                       *String    `xmlrpc:"notes,omitempty"`
+	OrderLine                   *Relation  `xmlrpc:"order_line,omitempty"`
+	Origin                      *String    `xmlrpc:"origin,omitempty"`
+	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty"`
+	PartnerRef                  *String    `xmlrpc:"partner_ref,omitempty"`
+	PaymentTermId               *Many2One  `xmlrpc:"payment_term_id,omitempty"`
+	PickingCount                *Int       `xmlrpc:"picking_count,omitempty"`
+	PickingIds                  *Relation  `xmlrpc:"picking_ids,omitempty"`
+	PickingTypeId               *Many2One  `xmlrpc:"picking_type_id,omitempty"`
+	ProductId                   *Many2One  `xmlrpc:"product_id,omitempty"`
+	PurchaseConfirmation        *String    `xmlrpc:"purchase_confirmation,omitempty"`
+	PurchaseRfq                 *String    `xmlrpc:"purchase_rfq,omitempty"`
+	ReportComputeDate           *Time      `xmlrpc:"report_compute_date,omitempty"`
+	ReportLineIndex             *Int       `xmlrpc:"report_line_index,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty"`
+	UserId                      *Many2One  `xmlrpc:"user_id,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // PurchaseOrders represents array of purchase.order model.
@@ -81,7 +95,7 @@ func (c *Client) CreatePurchaseOrder(po *PurchaseOrder) (int64, error) {
 	return ids[0], nil
 }
 
-// CreatePurchaseOrders creates a new purchase.order model and returns its id.
+// CreatePurchaseOrder creates a new purchase.order model and returns its id.
 func (c *Client) CreatePurchaseOrders(pos []*PurchaseOrder) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pos {

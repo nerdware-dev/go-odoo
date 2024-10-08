@@ -9,10 +9,10 @@ type ProductCategory struct {
 	CreateUid                                   *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName                                 *String    `xmlrpc:"display_name,omitempty"`
 	Id                                          *Int       `xmlrpc:"id,omitempty"`
+	IntrastatId                                 *Many2One  `xmlrpc:"intrastat_id,omitempty"`
 	Name                                        *String    `xmlrpc:"name,omitempty"`
 	ParentId                                    *Many2One  `xmlrpc:"parent_id,omitempty"`
-	ParentLeft                                  *Int       `xmlrpc:"parent_left,omitempty"`
-	ParentRight                                 *Int       `xmlrpc:"parent_right,omitempty"`
+	ParentPath                                  *String    `xmlrpc:"parent_path,omitempty"`
 	ProductCount                                *Int       `xmlrpc:"product_count,omitempty"`
 	PropertyAccountCreditorPriceDifferenceCateg *Many2One  `xmlrpc:"property_account_creditor_price_difference_categ,omitempty"`
 	PropertyAccountExpenseCategId               *Many2One  `xmlrpc:"property_account_expense_categ_id,omitempty"`
@@ -23,6 +23,7 @@ type ProductCategory struct {
 	PropertyStockJournal                        *Many2One  `xmlrpc:"property_stock_journal,omitempty"`
 	PropertyStockValuationAccountId             *Many2One  `xmlrpc:"property_stock_valuation_account_id,omitempty"`
 	PropertyValuation                           *Selection `xmlrpc:"property_valuation,omitempty"`
+	PutawayRuleIds                              *Relation  `xmlrpc:"putaway_rule_ids,omitempty"`
 	RemovalStrategyId                           *Many2One  `xmlrpc:"removal_strategy_id,omitempty"`
 	RouteIds                                    *Relation  `xmlrpc:"route_ids,omitempty"`
 	TotalRouteIds                               *Relation  `xmlrpc:"total_route_ids,omitempty"`
@@ -53,7 +54,7 @@ func (c *Client) CreateProductCategory(pc *ProductCategory) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateProductCategorys creates a new product.category model and returns its id.
+// CreateProductCategory creates a new product.category model and returns its id.
 func (c *Client) CreateProductCategorys(pcs []*ProductCategory) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pcs {

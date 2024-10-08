@@ -5,11 +5,15 @@ type MailThread struct {
 	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty"`
 	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
 	Id                       *Int      `xmlrpc:"id,omitempty"`
+	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty"`
 	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty"`
 	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty"`
 	MessageIds               *Relation `xmlrpc:"message_ids,omitempty"`
 	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty"`
-	MessageLastPost          *Time     `xmlrpc:"message_last_post,omitempty"`
+	MessageMainAttachmentId  *Many2One `xmlrpc:"message_main_attachment_id,omitempty"`
 	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty"`
 	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty"`
 	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty"`
@@ -41,7 +45,7 @@ func (c *Client) CreateMailThread(mt *MailThread) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateMailThreads creates a new mail.thread model and returns its id.
+// CreateMailThread creates a new mail.thread model and returns its id.
 func (c *Client) CreateMailThreads(mts []*MailThread) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range mts {

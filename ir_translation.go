@@ -10,7 +10,6 @@ type IrTranslation struct {
 	Module      *String    `xmlrpc:"module,omitempty"`
 	Name        *String    `xmlrpc:"name,omitempty"`
 	ResId       *Int       `xmlrpc:"res_id,omitempty"`
-	Source      *String    `xmlrpc:"source,omitempty"`
 	Src         *String    `xmlrpc:"src,omitempty"`
 	State       *Selection `xmlrpc:"state,omitempty"`
 	Type        *Selection `xmlrpc:"type,omitempty"`
@@ -40,7 +39,7 @@ func (c *Client) CreateIrTranslation(it *IrTranslation) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateIrTranslations creates a new ir.translation model and returns its id.
+// CreateIrTranslation creates a new ir.translation model and returns its id.
 func (c *Client) CreateIrTranslations(its []*IrTranslation) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range its {

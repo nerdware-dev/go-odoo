@@ -3,18 +3,20 @@ package odoo
 // PaymentAcquirer represents payment.acquirer model.
 type PaymentAcquirer struct {
 	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
+	AuthMsg                    *String    `xmlrpc:"auth_msg,omitempty"`
 	AuthorizeImplemented       *Bool      `xmlrpc:"authorize_implemented,omitempty"`
 	CancelMsg                  *String    `xmlrpc:"cancel_msg,omitempty"`
 	CaptureManually            *Bool      `xmlrpc:"capture_manually,omitempty"`
+	CheckValidity              *Bool      `xmlrpc:"check_validity,omitempty"`
+	Color                      *Int       `xmlrpc:"color,omitempty"`
 	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
 	CountryIds                 *Relation  `xmlrpc:"country_ids,omitempty"`
 	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
 	Description                *String    `xmlrpc:"description,omitempty"`
+	DisplayAs                  *String    `xmlrpc:"display_as,omitempty"`
 	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
 	DoneMsg                    *String    `xmlrpc:"done_msg,omitempty"`
-	Environment                *Selection `xmlrpc:"environment,omitempty"`
-	ErrorMsg                   *String    `xmlrpc:"error_msg,omitempty"`
 	FeesActive                 *Bool      `xmlrpc:"fees_active,omitempty"`
 	FeesDomFixed               *Float     `xmlrpc:"fees_dom_fixed,omitempty"`
 	FeesDomVar                 *Float     `xmlrpc:"fees_dom_var,omitempty"`
@@ -22,26 +24,31 @@ type PaymentAcquirer struct {
 	FeesIntFixed               *Float     `xmlrpc:"fees_int_fixed,omitempty"`
 	FeesIntVar                 *Float     `xmlrpc:"fees_int_var,omitempty"`
 	Id                         *Int       `xmlrpc:"id,omitempty"`
-	Image                      *String    `xmlrpc:"image,omitempty"`
-	ImageMedium                *String    `xmlrpc:"image_medium,omitempty"`
-	ImageSmall                 *String    `xmlrpc:"image_small,omitempty"`
+	Image128                   *String    `xmlrpc:"image_128,omitempty"`
+	InboundPaymentMethodIds    *Relation  `xmlrpc:"inbound_payment_method_ids,omitempty"`
 	JournalId                  *Many2One  `xmlrpc:"journal_id,omitempty"`
 	ModuleId                   *Many2One  `xmlrpc:"module_id,omitempty"`
 	ModuleState                *Selection `xmlrpc:"module_state,omitempty"`
+	ModuleToBuy                *Bool      `xmlrpc:"module_to_buy,omitempty"`
 	Name                       *String    `xmlrpc:"name,omitempty"`
 	PaymentFlow                *Selection `xmlrpc:"payment_flow,omitempty"`
 	PaymentIconIds             *Relation  `xmlrpc:"payment_icon_ids,omitempty"`
+	PaypalEmailAccount         *String    `xmlrpc:"paypal_email_account,omitempty"`
+	PaypalPdtToken             *String    `xmlrpc:"paypal_pdt_token,omitempty"`
+	PaypalSellerAccount        *String    `xmlrpc:"paypal_seller_account,omitempty"`
+	PaypalUseIpn               *Bool      `xmlrpc:"paypal_use_ipn,omitempty"`
 	PendingMsg                 *String    `xmlrpc:"pending_msg,omitempty"`
-	PostMsg                    *String    `xmlrpc:"post_msg,omitempty"`
 	PreMsg                     *String    `xmlrpc:"pre_msg,omitempty"`
 	Provider                   *Selection `xmlrpc:"provider,omitempty"`
+	QrCode                     *Bool      `xmlrpc:"qr_code,omitempty"`
 	RegistrationViewTemplateId *Many2One  `xmlrpc:"registration_view_template_id,omitempty"`
 	SaveToken                  *Selection `xmlrpc:"save_token,omitempty"`
 	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
-	SpecificCountries          *Bool      `xmlrpc:"specific_countries,omitempty"`
+	SoReferenceType            *Selection `xmlrpc:"so_reference_type,omitempty"`
+	State                      *Selection `xmlrpc:"state,omitempty"`
 	TokenImplemented           *Bool      `xmlrpc:"token_implemented,omitempty"`
 	ViewTemplateId             *Many2One  `xmlrpc:"view_template_id,omitempty"`
-	WebsitePublished           *Bool      `xmlrpc:"website_published,omitempty"`
+	WebsiteId                  *Many2One  `xmlrpc:"website_id,omitempty"`
 	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
@@ -69,7 +76,7 @@ func (c *Client) CreatePaymentAcquirer(pa *PaymentAcquirer) (int64, error) {
 	return ids[0], nil
 }
 
-// CreatePaymentAcquirers creates a new payment.acquirer model and returns its id.
+// CreatePaymentAcquirer creates a new payment.acquirer model and returns its id.
 func (c *Client) CreatePaymentAcquirers(pas []*PaymentAcquirer) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pas {

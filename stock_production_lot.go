@@ -2,30 +2,49 @@ package odoo
 
 // StockProductionLot represents stock.production.lot model.
 type StockProductionLot struct {
-	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate               *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
-	MessageIds               *Relation `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty"`
-	MessageLastPost          *Time     `xmlrpc:"message_last_post,omitempty"`
-	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool     `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int      `xmlrpc:"message_unread_counter,omitempty"`
-	Name                     *String   `xmlrpc:"name,omitempty"`
-	ProductId                *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductQty               *Float    `xmlrpc:"product_qty,omitempty"`
-	ProductUomId             *Many2One `xmlrpc:"product_uom_id,omitempty"`
-	QuantIds                 *Relation `xmlrpc:"quant_ids,omitempty"`
-	Ref                      *String   `xmlrpc:"ref,omitempty"`
-	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayComplete             *Bool      `xmlrpc:"display_complete,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty"`
+	Note                        *String    `xmlrpc:"note,omitempty"`
+	ProductId                   *Many2One  `xmlrpc:"product_id,omitempty"`
+	ProductQty                  *Float     `xmlrpc:"product_qty,omitempty"`
+	ProductUomId                *Many2One  `xmlrpc:"product_uom_id,omitempty"`
+	PurchaseOrderCount          *Int       `xmlrpc:"purchase_order_count,omitempty"`
+	PurchaseOrderIds            *Relation  `xmlrpc:"purchase_order_ids,omitempty"`
+	QuantIds                    *Relation  `xmlrpc:"quant_ids,omitempty"`
+	Ref                         *String    `xmlrpc:"ref,omitempty"`
+	SaleOrderCount              *Int       `xmlrpc:"sale_order_count,omitempty"`
+	SaleOrderIds                *Relation  `xmlrpc:"sale_order_ids,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // StockProductionLots represents array of stock.production.lot model.
@@ -51,7 +70,7 @@ func (c *Client) CreateStockProductionLot(spl *StockProductionLot) (int64, error
 	return ids[0], nil
 }
 
-// CreateStockProductionLots creates a new stock.production.lot model and returns its id.
+// CreateStockProductionLot creates a new stock.production.lot model and returns its id.
 func (c *Client) CreateStockProductionLots(spls []*StockProductionLot) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range spls {

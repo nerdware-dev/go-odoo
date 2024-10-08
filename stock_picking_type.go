@@ -4,9 +4,10 @@ package odoo
 type StockPickingType struct {
 	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
 	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	BarcodeNomenclatureId  *Many2One  `xmlrpc:"barcode_nomenclature_id,omitempty"`
+	Barcode                *String    `xmlrpc:"barcode,omitempty"`
 	Code                   *Selection `xmlrpc:"code,omitempty"`
 	Color                  *Int       `xmlrpc:"color,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
 	CountPicking           *Int       `xmlrpc:"count_picking,omitempty"`
 	CountPickingBackorders *Int       `xmlrpc:"count_picking_backorders,omitempty"`
 	CountPickingDraft      *Int       `xmlrpc:"count_picking_draft,omitempty"`
@@ -19,12 +20,12 @@ type StockPickingType struct {
 	DefaultLocationSrcId   *Many2One  `xmlrpc:"default_location_src_id,omitempty"`
 	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
 	Id                     *Int       `xmlrpc:"id,omitempty"`
-	LastDonePicking        *String    `xmlrpc:"last_done_picking,omitempty"`
 	Name                   *String    `xmlrpc:"name,omitempty"`
 	RatePickingBackorders  *Int       `xmlrpc:"rate_picking_backorders,omitempty"`
 	RatePickingLate        *Int       `xmlrpc:"rate_picking_late,omitempty"`
 	ReturnPickingTypeId    *Many2One  `xmlrpc:"return_picking_type_id,omitempty"`
 	Sequence               *Int       `xmlrpc:"sequence,omitempty"`
+	SequenceCode           *String    `xmlrpc:"sequence_code,omitempty"`
 	SequenceId             *Many2One  `xmlrpc:"sequence_id,omitempty"`
 	ShowEntirePacks        *Bool      `xmlrpc:"show_entire_packs,omitempty"`
 	ShowOperations         *Bool      `xmlrpc:"show_operations,omitempty"`
@@ -59,7 +60,7 @@ func (c *Client) CreateStockPickingType(spt *StockPickingType) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateStockPickingTypes creates a new stock.picking.type model and returns its id.
+// CreateStockPickingType creates a new stock.picking.type model and returns its id.
 func (c *Client) CreateStockPickingTypes(spts []*StockPickingType) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range spts {

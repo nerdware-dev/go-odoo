@@ -5,6 +5,7 @@ type RatingMixin struct {
 	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
 	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
 	Id                 *Int      `xmlrpc:"id,omitempty"`
+	RatingAvg          *Float    `xmlrpc:"rating_avg,omitempty"`
 	RatingCount        *Int      `xmlrpc:"rating_count,omitempty"`
 	RatingIds          *Relation `xmlrpc:"rating_ids,omitempty"`
 	RatingLastFeedback *String   `xmlrpc:"rating_last_feedback,omitempty"`
@@ -35,7 +36,7 @@ func (c *Client) CreateRatingMixin(rm *RatingMixin) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateRatingMixins creates a new rating.mixin model and returns its id.
+// CreateRatingMixin creates a new rating.mixin model and returns its id.
 func (c *Client) CreateRatingMixins(rms []*RatingMixin) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rms {

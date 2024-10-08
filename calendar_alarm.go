@@ -3,6 +3,7 @@ package odoo
 // CalendarAlarm represents calendar.alarm model.
 type CalendarAlarm struct {
 	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
+	AlarmType       *Selection `xmlrpc:"alarm_type,omitempty"`
 	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
@@ -11,7 +12,6 @@ type CalendarAlarm struct {
 	Id              *Int       `xmlrpc:"id,omitempty"`
 	Interval        *Selection `xmlrpc:"interval,omitempty"`
 	Name            *String    `xmlrpc:"name,omitempty"`
-	Type            *Selection `xmlrpc:"type,omitempty"`
 	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
@@ -39,7 +39,7 @@ func (c *Client) CreateCalendarAlarm(ca *CalendarAlarm) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateCalendarAlarms creates a new calendar.alarm model and returns its id.
+// CreateCalendarAlarm creates a new calendar.alarm model and returns its id.
 func (c *Client) CreateCalendarAlarms(cas []*CalendarAlarm) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range cas {

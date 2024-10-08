@@ -7,6 +7,7 @@ type CalendarEvent struct {
 	ActivityIds              *Relation  `xmlrpc:"activity_ids,omitempty"`
 	AlarmIds                 *Relation  `xmlrpc:"alarm_ids,omitempty"`
 	Allday                   *Bool      `xmlrpc:"allday,omitempty"`
+	ApplicantId              *Many2One  `xmlrpc:"applicant_id,omitempty"`
 	AttendeeIds              *Relation  `xmlrpc:"attendee_ids,omitempty"`
 	AttendeeStatus           *Selection `xmlrpc:"attendee_status,omitempty"`
 	Byday                    *Selection `xmlrpc:"byday,omitempty"`
@@ -21,6 +22,7 @@ type CalendarEvent struct {
 	DisplayTime              *String    `xmlrpc:"display_time,omitempty"`
 	Duration                 *Float     `xmlrpc:"duration,omitempty"`
 	EndType                  *Selection `xmlrpc:"end_type,omitempty"`
+	EventTz                  *Selection `xmlrpc:"event_tz,omitempty"`
 	FinalDate                *Time      `xmlrpc:"final_date,omitempty"`
 	Fr                       *Bool      `xmlrpc:"fr,omitempty"`
 	Id                       *Int       `xmlrpc:"id,omitempty"`
@@ -28,11 +30,15 @@ type CalendarEvent struct {
 	IsAttendee               *Bool      `xmlrpc:"is_attendee,omitempty"`
 	IsHighlighted            *Bool      `xmlrpc:"is_highlighted,omitempty"`
 	Location                 *String    `xmlrpc:"location,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
 	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty"`
 	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
 	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
 	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageLastPost          *Time      `xmlrpc:"message_last_post,omitempty"`
+	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
 	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
 	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
 	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
@@ -96,7 +102,7 @@ func (c *Client) CreateCalendarEvent(ce *CalendarEvent) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateCalendarEvents creates a new calendar.event model and returns its id.
+// CreateCalendarEvent creates a new calendar.event model and returns its id.
 func (c *Client) CreateCalendarEvents(ces []*CalendarEvent) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ces {

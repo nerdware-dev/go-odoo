@@ -13,6 +13,7 @@ type ResCountry struct {
 	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty"`
 	Image           *String    `xmlrpc:"image,omitempty"`
+	Intrastat       *Bool      `xmlrpc:"intrastat,omitempty"`
 	Name            *String    `xmlrpc:"name,omitempty"`
 	NamePosition    *Selection `xmlrpc:"name_position,omitempty"`
 	PhoneCode       *Int       `xmlrpc:"phone_code,omitempty"`
@@ -45,7 +46,7 @@ func (c *Client) CreateResCountry(rc *ResCountry) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateResCountrys creates a new res.country model and returns its id.
+// CreateResCountry creates a new res.country model and returns its id.
 func (c *Client) CreateResCountrys(rcs []*ResCountry) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rcs {

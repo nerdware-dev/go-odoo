@@ -2,29 +2,25 @@ package odoo
 
 // StockInventory represents stock.inventory model.
 type StockInventory struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountingDate *Time      `xmlrpc:"accounting_date,omitempty"`
-	CategoryId     *Many2One  `xmlrpc:"category_id,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date           *Time      `xmlrpc:"date,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Exhausted      *Bool      `xmlrpc:"exhausted,omitempty"`
-	Filter         *Selection `xmlrpc:"filter,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	LineIds        *Relation  `xmlrpc:"line_ids,omitempty"`
-	LocationId     *Many2One  `xmlrpc:"location_id,omitempty"`
-	LotId          *Many2One  `xmlrpc:"lot_id,omitempty"`
-	MoveIds        *Relation  `xmlrpc:"move_ids,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	PackageId      *Many2One  `xmlrpc:"package_id,omitempty"`
-	PartnerId      *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ProductId      *Many2One  `xmlrpc:"product_id,omitempty"`
-	State          *Selection `xmlrpc:"state,omitempty"`
-	TotalQty       *Float     `xmlrpc:"total_qty,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
+	AccountingDate         *Time      `xmlrpc:"accounting_date,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
+	Date                   *Time      `xmlrpc:"date,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
+	HasAccountMoves        *Bool      `xmlrpc:"has_account_moves,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty"`
+	LineIds                *Relation  `xmlrpc:"line_ids,omitempty"`
+	LocationIds            *Relation  `xmlrpc:"location_ids,omitempty"`
+	MoveIds                *Relation  `xmlrpc:"move_ids,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty"`
+	PrefillCountedQuantity *Selection `xmlrpc:"prefill_counted_quantity,omitempty"`
+	ProductIds             *Relation  `xmlrpc:"product_ids,omitempty"`
+	StartEmpty             *Bool      `xmlrpc:"start_empty,omitempty"`
+	State                  *Selection `xmlrpc:"state,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // StockInventorys represents array of stock.inventory model.
@@ -50,7 +46,7 @@ func (c *Client) CreateStockInventory(si *StockInventory) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateStockInventorys creates a new stock.inventory model and returns its id.
+// CreateStockInventory creates a new stock.inventory model and returns its id.
 func (c *Client) CreateStockInventorys(sis []*StockInventory) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range sis {

@@ -2,29 +2,31 @@ package odoo
 
 // StockInventoryLine represents stock.inventory.line model.
 type StockInventoryLine struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	InventoryId         *Many2One  `xmlrpc:"inventory_id,omitempty"`
-	InventoryLocationId *Many2One  `xmlrpc:"inventory_location_id,omitempty"`
-	LocationId          *Many2One  `xmlrpc:"location_id,omitempty"`
-	LocationName        *String    `xmlrpc:"location_name,omitempty"`
-	PackageId           *Many2One  `xmlrpc:"package_id,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ProdLotId           *Many2One  `xmlrpc:"prod_lot_id,omitempty"`
-	ProdlotName         *String    `xmlrpc:"prodlot_name,omitempty"`
-	ProductCode         *String    `xmlrpc:"product_code,omitempty"`
-	ProductId           *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductName         *String    `xmlrpc:"product_name,omitempty"`
-	ProductQty          *Float     `xmlrpc:"product_qty,omitempty"`
-	ProductUomId        *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	TheoreticalQty      *Float     `xmlrpc:"theoretical_qty,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
+	CategId         *Many2One  `xmlrpc:"categ_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DifferenceQty   *Float     `xmlrpc:"difference_qty,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
+	DummyId         *String    `xmlrpc:"dummy_id,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty"`
+	InventoryDate   *Time      `xmlrpc:"inventory_date,omitempty"`
+	InventoryId     *Many2One  `xmlrpc:"inventory_id,omitempty"`
+	IsEditable      *Bool      `xmlrpc:"is_editable,omitempty"`
+	LocationId      *Many2One  `xmlrpc:"location_id,omitempty"`
+	Outdated        *Bool      `xmlrpc:"outdated,omitempty"`
+	PackageId       *Many2One  `xmlrpc:"package_id,omitempty"`
+	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty"`
+	ProdLotId       *Many2One  `xmlrpc:"prod_lot_id,omitempty"`
+	ProductId       *Many2One  `xmlrpc:"product_id,omitempty"`
+	ProductQty      *Float     `xmlrpc:"product_qty,omitempty"`
+	ProductTracking *Selection `xmlrpc:"product_tracking,omitempty"`
+	ProductUomId    *Many2One  `xmlrpc:"product_uom_id,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty"`
+	TheoreticalQty  *Float     `xmlrpc:"theoretical_qty,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // StockInventoryLines represents array of stock.inventory.line model.
@@ -50,7 +52,7 @@ func (c *Client) CreateStockInventoryLine(sil *StockInventoryLine) (int64, error
 	return ids[0], nil
 }
 
-// CreateStockInventoryLines creates a new stock.inventory.line model and returns its id.
+// CreateStockInventoryLine creates a new stock.inventory.line model and returns its id.
 func (c *Client) CreateStockInventoryLines(sils []*StockInventoryLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range sils {

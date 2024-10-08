@@ -36,7 +36,7 @@ func (c *Client) CreateCrmLeadTag(clt *CrmLeadTag) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateCrmLeadTags creates a new crm.lead.tag model and returns its id.
+// CreateCrmLeadTag creates a new crm.lead.tag model and returns its id.
 func (c *Client) CreateCrmLeadTags(clts []*CrmLeadTag) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range clts {

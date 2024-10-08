@@ -4,13 +4,12 @@ package odoo
 type ReportProjectTaskUser struct {
 	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
 	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
+	DateAssign          *Time      `xmlrpc:"date_assign,omitempty"`
 	DateDeadline        *Time      `xmlrpc:"date_deadline,omitempty"`
 	DateEnd             *Time      `xmlrpc:"date_end,omitempty"`
 	DateLastStageUpdate *Time      `xmlrpc:"date_last_stage_update,omitempty"`
-	DateStart           *Time      `xmlrpc:"date_start,omitempty"`
 	DelayEndingsDays    *Float     `xmlrpc:"delay_endings_days,omitempty"`
 	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	HoursDelay          *Float     `xmlrpc:"hours_delay,omitempty"`
 	HoursEffective      *Float     `xmlrpc:"hours_effective,omitempty"`
 	HoursPlanned        *Float     `xmlrpc:"hours_planned,omitempty"`
 	Id                  *Int       `xmlrpc:"id,omitempty"`
@@ -23,7 +22,6 @@ type ReportProjectTaskUser struct {
 	RemainingHours      *Float     `xmlrpc:"remaining_hours,omitempty"`
 	StageId             *Many2One  `xmlrpc:"stage_id,omitempty"`
 	State               *Selection `xmlrpc:"state,omitempty"`
-	TotalHours          *Float     `xmlrpc:"total_hours,omitempty"`
 	UserId              *Many2One  `xmlrpc:"user_id,omitempty"`
 	WorkingDaysClose    *Float     `xmlrpc:"working_days_close,omitempty"`
 	WorkingDaysOpen     *Float     `xmlrpc:"working_days_open,omitempty"`
@@ -52,7 +50,7 @@ func (c *Client) CreateReportProjectTaskUser(rptu *ReportProjectTaskUser) (int64
 	return ids[0], nil
 }
 
-// CreateReportProjectTaskUsers creates a new report.project.task.user model and returns its id.
+// CreateReportProjectTaskUser creates a new report.project.task.user model and returns its id.
 func (c *Client) CreateReportProjectTaskUsers(rptus []*ReportProjectTaskUser) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rptus {

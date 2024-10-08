@@ -3,7 +3,9 @@ package odoo
 // AccountBankStatement represents account.bank.statement model.
 type AccountBankStatement struct {
 	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
+	AccountingDate           *Time      `xmlrpc:"accounting_date,omitempty"`
 	AllLinesReconciled       *Bool      `xmlrpc:"all_lines_reconciled,omitempty"`
+	AttachmentIds            *Relation  `xmlrpc:"attachment_ids,omitempty"`
 	BalanceEnd               *Float     `xmlrpc:"balance_end,omitempty"`
 	BalanceEndReal           *Float     `xmlrpc:"balance_end_real,omitempty"`
 	BalanceStart             *Float     `xmlrpc:"balance_start,omitempty"`
@@ -22,11 +24,15 @@ type AccountBankStatement struct {
 	JournalId                *Many2One  `xmlrpc:"journal_id,omitempty"`
 	JournalType              *Selection `xmlrpc:"journal_type,omitempty"`
 	LineIds                  *Relation  `xmlrpc:"line_ids,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
 	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty"`
 	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
 	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
 	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageLastPost          *Time      `xmlrpc:"message_last_post,omitempty"`
+	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
 	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
 	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
 	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
@@ -67,7 +73,7 @@ func (c *Client) CreateAccountBankStatement(abs *AccountBankStatement) (int64, e
 	return ids[0], nil
 }
 
-// CreateAccountBankStatements creates a new account.bank.statement model and returns its id.
+// CreateAccountBankStatement creates a new account.bank.statement model and returns its id.
 func (c *Client) CreateAccountBankStatements(abss []*AccountBankStatement) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range abss {

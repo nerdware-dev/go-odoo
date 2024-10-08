@@ -30,7 +30,7 @@ func (c *Client) CreateIrFieldsConverter(ifc *IrFieldsConverter) (int64, error) 
 	return ids[0], nil
 }
 
-// CreateIrFieldsConverters creates a new ir.fields.converter model and returns its id.
+// CreateIrFieldsConverter creates a new ir.fields.converter model and returns its id.
 func (c *Client) CreateIrFieldsConverters(ifcs []*IrFieldsConverter) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ifcs {

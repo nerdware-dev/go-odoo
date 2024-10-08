@@ -15,6 +15,7 @@ type AccountAccountTemplate struct {
 	Nocreate        *Bool     `xmlrpc:"nocreate,omitempty"`
 	Note            *String   `xmlrpc:"note,omitempty"`
 	Reconcile       *Bool     `xmlrpc:"reconcile,omitempty"`
+	RootId          *Many2One `xmlrpc:"root_id,omitempty"`
 	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
 	TaxIds          *Relation `xmlrpc:"tax_ids,omitempty"`
 	UserTypeId      *Many2One `xmlrpc:"user_type_id,omitempty"`
@@ -45,7 +46,7 @@ func (c *Client) CreateAccountAccountTemplate(aat *AccountAccountTemplate) (int6
 	return ids[0], nil
 }
 
-// CreateAccountAccountTemplates creates a new account.account.template model and returns its id.
+// CreateAccountAccountTemplate creates a new account.account.template model and returns its id.
 func (c *Client) CreateAccountAccountTemplates(aats []*AccountAccountTemplate) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range aats {

@@ -6,6 +6,7 @@ type PaymentToken struct {
 	AcquirerId  *Many2One `xmlrpc:"acquirer_id,omitempty"`
 	AcquirerRef *String   `xmlrpc:"acquirer_ref,omitempty"`
 	Active      *Bool     `xmlrpc:"active,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -42,7 +43,7 @@ func (c *Client) CreatePaymentToken(pt *PaymentToken) (int64, error) {
 	return ids[0], nil
 }
 
-// CreatePaymentTokens creates a new payment.token model and returns its id.
+// CreatePaymentToken creates a new payment.token model and returns its id.
 func (c *Client) CreatePaymentTokens(pts []*PaymentToken) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pts {

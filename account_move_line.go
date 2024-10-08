@@ -2,57 +2,88 @@ package odoo
 
 // AccountMoveLine represents account.move.line model.
 type AccountMoveLine struct {
-	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountId                *Many2One `xmlrpc:"account_id,omitempty"`
-	AmountCurrency           *Float    `xmlrpc:"amount_currency,omitempty"`
-	AmountResidual           *Float    `xmlrpc:"amount_residual,omitempty"`
-	AmountResidualCurrency   *Float    `xmlrpc:"amount_residual_currency,omitempty"`
-	AnalyticAccountId        *Many2One `xmlrpc:"analytic_account_id,omitempty"`
-	AnalyticLineIds          *Relation `xmlrpc:"analytic_line_ids,omitempty"`
-	AnalyticTagIds           *Relation `xmlrpc:"analytic_tag_ids,omitempty"`
-	Balance                  *Float    `xmlrpc:"balance,omitempty"`
-	BalanceCashBasis         *Float    `xmlrpc:"balance_cash_basis,omitempty"`
-	Blocked                  *Bool     `xmlrpc:"blocked,omitempty"`
-	CompanyCurrencyId        *Many2One `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId                *Many2One `xmlrpc:"company_id,omitempty"`
-	Counterpart              *String   `xmlrpc:"counterpart,omitempty"`
-	CreateDate               *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty"`
-	Credit                   *Float    `xmlrpc:"credit,omitempty"`
-	CreditCashBasis          *Float    `xmlrpc:"credit_cash_basis,omitempty"`
-	CurrencyId               *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date                     *Time     `xmlrpc:"date,omitempty"`
-	DateMaturity             *Time     `xmlrpc:"date_maturity,omitempty"`
-	Debit                    *Float    `xmlrpc:"debit,omitempty"`
-	DebitCashBasis           *Float    `xmlrpc:"debit_cash_basis,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	FullReconcileId          *Many2One `xmlrpc:"full_reconcile_id,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	InvoiceId                *Many2One `xmlrpc:"invoice_id,omitempty"`
-	IsUnaffectedEarningsLine *Bool     `xmlrpc:"is_unaffected_earnings_line,omitempty"`
-	JournalId                *Many2One `xmlrpc:"journal_id,omitempty"`
-	MatchedCreditIds         *Relation `xmlrpc:"matched_credit_ids,omitempty"`
-	MatchedDebitIds          *Relation `xmlrpc:"matched_debit_ids,omitempty"`
-	MoveId                   *Many2One `xmlrpc:"move_id,omitempty"`
-	Name                     *String   `xmlrpc:"name,omitempty"`
-	Narration                *String   `xmlrpc:"narration,omitempty"`
-	ParentState              *String   `xmlrpc:"parent_state,omitempty"`
-	PartnerId                *Many2One `xmlrpc:"partner_id,omitempty"`
-	PaymentId                *Many2One `xmlrpc:"payment_id,omitempty"`
-	ProductId                *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomId             *Many2One `xmlrpc:"product_uom_id,omitempty"`
-	Quantity                 *Float    `xmlrpc:"quantity,omitempty"`
-	Reconciled               *Bool     `xmlrpc:"reconciled,omitempty"`
-	Ref                      *String   `xmlrpc:"ref,omitempty"`
-	StatementId              *Many2One `xmlrpc:"statement_id,omitempty"`
-	StatementLineId          *Many2One `xmlrpc:"statement_line_id,omitempty"`
-	TaxBaseAmount            *Float    `xmlrpc:"tax_base_amount,omitempty"`
-	TaxExigible              *Bool     `xmlrpc:"tax_exigible,omitempty"`
-	TaxIds                   *Relation `xmlrpc:"tax_ids,omitempty"`
-	TaxLineId                *Many2One `xmlrpc:"tax_line_id,omitempty"`
-	UserTypeId               *Many2One `xmlrpc:"user_type_id,omitempty"`
-	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty"`
+	AccountId               *Many2One  `xmlrpc:"account_id,omitempty"`
+	AccountInternalType     *Selection `xmlrpc:"account_internal_type,omitempty"`
+	AccountRootId           *Many2One  `xmlrpc:"account_root_id,omitempty"`
+	AlwaysSetCurrencyId     *Many2One  `xmlrpc:"always_set_currency_id,omitempty"`
+	AmountCurrency          *Float     `xmlrpc:"amount_currency,omitempty"`
+	AmountResidual          *Float     `xmlrpc:"amount_residual,omitempty"`
+	AmountResidualCurrency  *Float     `xmlrpc:"amount_residual_currency,omitempty"`
+	AnalyticAccountId       *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
+	AnalyticLineIds         *Relation  `xmlrpc:"analytic_line_ids,omitempty"`
+	AnalyticTagIds          *Relation  `xmlrpc:"analytic_tag_ids,omitempty"`
+	AssetId                 *Many2One  `xmlrpc:"asset_id,omitempty"`
+	Balance                 *Float     `xmlrpc:"balance,omitempty"`
+	Blocked                 *Bool      `xmlrpc:"blocked,omitempty"`
+	CanBePaid               *Selection `xmlrpc:"can_be_paid,omitempty"`
+	CompanyCurrencyId       *Many2One  `xmlrpc:"company_currency_id,omitempty"`
+	CompanyId               *Many2One  `xmlrpc:"company_id,omitempty"`
+	CountryId               *Many2One  `xmlrpc:"country_id,omitempty"`
+	CreateDate              *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty"`
+	Credit                  *Float     `xmlrpc:"credit,omitempty"`
+	CurrencyId              *Many2One  `xmlrpc:"currency_id,omitempty"`
+	Date                    *Time      `xmlrpc:"date,omitempty"`
+	DateMaturity            *Time      `xmlrpc:"date_maturity,omitempty"`
+	Debit                   *Float     `xmlrpc:"debit,omitempty"`
+	Discount                *Float     `xmlrpc:"discount,omitempty"`
+	DisplayName             *String    `xmlrpc:"display_name,omitempty"`
+	DisplayType             *Selection `xmlrpc:"display_type,omitempty"`
+	ExcludeFromInvoiceTab   *Bool      `xmlrpc:"exclude_from_invoice_tab,omitempty"`
+	ExpectedPayDate         *Time      `xmlrpc:"expected_pay_date,omitempty"`
+	ExpenseId               *Many2One  `xmlrpc:"expense_id,omitempty"`
+	FollowupDate            *Time      `xmlrpc:"followup_date,omitempty"`
+	FollowupLineId          *Many2One  `xmlrpc:"followup_line_id,omitempty"`
+	FullReconcileId         *Many2One  `xmlrpc:"full_reconcile_id,omitempty"`
+	Id                      *Int       `xmlrpc:"id,omitempty"`
+	InternalNote            *String    `xmlrpc:"internal_note,omitempty"`
+	IntrastatTransactionId  *Many2One  `xmlrpc:"intrastat_transaction_id,omitempty"`
+	IsAngloSaxonLine        *Bool      `xmlrpc:"is_anglo_saxon_line,omitempty"`
+	IsRoundingLine          *Bool      `xmlrpc:"is_rounding_line,omitempty"`
+	JournalId               *Many2One  `xmlrpc:"journal_id,omitempty"`
+	MatchedCreditIds        *Relation  `xmlrpc:"matched_credit_ids,omitempty"`
+	MatchedDebitIds         *Relation  `xmlrpc:"matched_debit_ids,omitempty"`
+	MoveAttachmentIds       *Relation  `xmlrpc:"move_attachment_ids,omitempty"`
+	MoveId                  *Many2One  `xmlrpc:"move_id,omitempty"`
+	MoveName                *String    `xmlrpc:"move_name,omitempty"`
+	Name                    *String    `xmlrpc:"name,omitempty"`
+	NextActionDate          *Time      `xmlrpc:"next_action_date,omitempty"`
+	ParentState             *Selection `xmlrpc:"parent_state,omitempty"`
+	PartnerId               *Many2One  `xmlrpc:"partner_id,omitempty"`
+	PaymentId               *Many2One  `xmlrpc:"payment_id,omitempty"`
+	PriceSubtotal           *Float     `xmlrpc:"price_subtotal,omitempty"`
+	PriceTotal              *Float     `xmlrpc:"price_total,omitempty"`
+	PriceUnit               *Float     `xmlrpc:"price_unit,omitempty"`
+	ProductId               *Many2One  `xmlrpc:"product_id,omitempty"`
+	ProductUomId            *Many2One  `xmlrpc:"product_uom_id,omitempty"`
+	PurchaseLineId          *Many2One  `xmlrpc:"purchase_line_id,omitempty"`
+	Quantity                *Float     `xmlrpc:"quantity,omitempty"`
+	RecomputeTaxLine        *Bool      `xmlrpc:"recompute_tax_line,omitempty"`
+	ReconcileModelId        *Many2One  `xmlrpc:"reconcile_model_id,omitempty"`
+	Reconciled              *Bool      `xmlrpc:"reconciled,omitempty"`
+	ReconciliationInvoiceId *Relation  `xmlrpc:"reconciliation_invoice_id,omitempty"`
+	Ref                     *String    `xmlrpc:"ref,omitempty"`
+	ReportComputeDate       *Time      `xmlrpc:"report_compute_date,omitempty"`
+	ReportLineIndex         *Int       `xmlrpc:"report_line_index,omitempty"`
+	SaleLineIds             *Relation  `xmlrpc:"sale_line_ids,omitempty"`
+	Sequence                *Int       `xmlrpc:"sequence,omitempty"`
+	StatementId             *Many2One  `xmlrpc:"statement_id,omitempty"`
+	StatementLineId         *Many2One  `xmlrpc:"statement_line_id,omitempty"`
+	SubscriptionEndDate     *Time      `xmlrpc:"subscription_end_date,omitempty"`
+	SubscriptionId          *Many2One  `xmlrpc:"subscription_id,omitempty"`
+	SubscriptionMrr         *Float     `xmlrpc:"subscription_mrr,omitempty"`
+	SubscriptionStartDate   *Time      `xmlrpc:"subscription_start_date,omitempty"`
+	TagIds                  *Relation  `xmlrpc:"tag_ids,omitempty"`
+	TaxAudit                *String    `xmlrpc:"tax_audit,omitempty"`
+	TaxBaseAmount           *Float     `xmlrpc:"tax_base_amount,omitempty"`
+	TaxExigible             *Bool      `xmlrpc:"tax_exigible,omitempty"`
+	TaxGroupId              *Many2One  `xmlrpc:"tax_group_id,omitempty"`
+	TaxIds                  *Relation  `xmlrpc:"tax_ids,omitempty"`
+	TaxLineId               *Many2One  `xmlrpc:"tax_line_id,omitempty"`
+	TaxRepartitionLineId    *Many2One  `xmlrpc:"tax_repartition_line_id,omitempty"`
+	WriteDate               *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountMoveLines represents array of account.move.line model.
@@ -78,7 +109,7 @@ func (c *Client) CreateAccountMoveLine(aml *AccountMoveLine) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateAccountMoveLines creates a new account.move.line model and returns its id.
+// CreateAccountMoveLine creates a new account.move.line model and returns its id.
 func (c *Client) CreateAccountMoveLines(amls []*AccountMoveLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range amls {

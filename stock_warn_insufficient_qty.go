@@ -33,7 +33,7 @@ func (c *Client) CreateStockWarnInsufficientQty(swiq *StockWarnInsufficientQty) 
 	return ids[0], nil
 }
 
-// CreateStockWarnInsufficientQtys creates a new stock.warn.insufficient.qty model and returns its id.
+// CreateStockWarnInsufficientQty creates a new stock.warn.insufficient.qty model and returns its id.
 func (c *Client) CreateStockWarnInsufficientQtys(swiqs []*StockWarnInsufficientQty) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range swiqs {

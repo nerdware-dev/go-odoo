@@ -2,14 +2,18 @@ package odoo
 
 // AccountBankStatementCashbox represents account.bank.statement.cashbox model.
 type AccountBankStatementCashbox struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CashboxLinesIds *Relation `xmlrpc:"cashbox_lines_ids,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
+	CashboxLinesIds  *Relation `xmlrpc:"cashbox_lines_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
+	CurrencyId       *Many2One `xmlrpc:"currency_id,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
+	EndBankStmtIds   *Relation `xmlrpc:"end_bank_stmt_ids,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty"`
+	StartBankStmtIds *Relation `xmlrpc:"start_bank_stmt_ids,omitempty"`
+	Total            *Float    `xmlrpc:"total,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountBankStatementCashboxs represents array of account.bank.statement.cashbox model.
@@ -35,7 +39,7 @@ func (c *Client) CreateAccountBankStatementCashbox(absc *AccountBankStatementCas
 	return ids[0], nil
 }
 
-// CreateAccountBankStatementCashboxs creates a new account.bank.statement.cashbox model and returns its id.
+// CreateAccountBankStatementCashbox creates a new account.bank.statement.cashbox model and returns its id.
 func (c *Client) CreateAccountBankStatementCashboxs(abscs []*AccountBankStatementCashbox) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range abscs {

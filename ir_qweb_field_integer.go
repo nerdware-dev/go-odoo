@@ -30,7 +30,7 @@ func (c *Client) CreateIrQwebFieldInteger(iqfi *IrQwebFieldInteger) (int64, erro
 	return ids[0], nil
 }
 
-// CreateIrQwebFieldIntegers creates a new ir.qweb.field.integer model and returns its id.
+// CreateIrQwebFieldInteger creates a new ir.qweb.field.integer model and returns its id.
 func (c *Client) CreateIrQwebFieldIntegers(iqfis []*IrQwebFieldInteger) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range iqfis {

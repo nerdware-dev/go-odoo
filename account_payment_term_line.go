@@ -2,19 +2,20 @@ package odoo
 
 // AccountPaymentTermLine represents account.payment.term.line model.
 type AccountPaymentTermLine struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Days        *Int       `xmlrpc:"days,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Option      *Selection `xmlrpc:"option,omitempty"`
-	PaymentId   *Many2One  `xmlrpc:"payment_id,omitempty"`
-	Sequence    *Int       `xmlrpc:"sequence,omitempty"`
-	Value       *Selection `xmlrpc:"value,omitempty"`
-	ValueAmount *Float     `xmlrpc:"value_amount,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DayOfTheMonth *Int       `xmlrpc:"day_of_the_month,omitempty"`
+	Days          *Int       `xmlrpc:"days,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty"`
+	Option        *Selection `xmlrpc:"option,omitempty"`
+	PaymentId     *Many2One  `xmlrpc:"payment_id,omitempty"`
+	Sequence      *Int       `xmlrpc:"sequence,omitempty"`
+	Value         *Selection `xmlrpc:"value,omitempty"`
+	ValueAmount   *Float     `xmlrpc:"value_amount,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountPaymentTermLines represents array of account.payment.term.line model.
@@ -40,7 +41,7 @@ func (c *Client) CreateAccountPaymentTermLine(aptl *AccountPaymentTermLine) (int
 	return ids[0], nil
 }
 
-// CreateAccountPaymentTermLines creates a new account.payment.term.line model and returns its id.
+// CreateAccountPaymentTermLine creates a new account.payment.term.line model and returns its id.
 func (c *Client) CreateAccountPaymentTermLines(aptls []*AccountPaymentTermLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range aptls {

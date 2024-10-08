@@ -2,18 +2,27 @@ package odoo
 
 // ProductPackaging represents product.packaging model.
 type ProductPackaging struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Barcode     *String   `xmlrpc:"barcode,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	ProductId   *Many2One `xmlrpc:"product_id,omitempty"`
-	Qty         *Float    `xmlrpc:"qty,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
+	Barcode            *String    `xmlrpc:"barcode,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
+	Height             *Int       `xmlrpc:"height,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty"`
+	Length             *Int       `xmlrpc:"length,omitempty"`
+	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty"`
+	PackageCarrierType *Selection `xmlrpc:"package_carrier_type,omitempty"`
+	ProductId          *Many2One  `xmlrpc:"product_id,omitempty"`
+	ProductUomId       *Many2One  `xmlrpc:"product_uom_id,omitempty"`
+	Qty                *Float     `xmlrpc:"qty,omitempty"`
+	Sequence           *Int       `xmlrpc:"sequence,omitempty"`
+	ShipperPackageCode *String    `xmlrpc:"shipper_package_code,omitempty"`
+	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty"`
+	Width              *Int       `xmlrpc:"width,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // ProductPackagings represents array of product.packaging model.
@@ -39,7 +48,7 @@ func (c *Client) CreateProductPackaging(pp *ProductPackaging) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateProductPackagings creates a new product.packaging model and returns its id.
+// CreateProductPackaging creates a new product.packaging model and returns its id.
 func (c *Client) CreateProductPackagings(pps []*ProductPackaging) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pps {

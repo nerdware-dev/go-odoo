@@ -14,12 +14,12 @@ type StockLocationRoute struct {
 	ProductCategSelectable *Bool     `xmlrpc:"product_categ_selectable,omitempty"`
 	ProductIds             *Relation `xmlrpc:"product_ids,omitempty"`
 	ProductSelectable      *Bool     `xmlrpc:"product_selectable,omitempty"`
-	PullIds                *Relation `xmlrpc:"pull_ids,omitempty"`
-	PushIds                *Relation `xmlrpc:"push_ids,omitempty"`
+	RuleIds                *Relation `xmlrpc:"rule_ids,omitempty"`
 	SaleSelectable         *Bool     `xmlrpc:"sale_selectable,omitempty"`
 	Sequence               *Int      `xmlrpc:"sequence,omitempty"`
 	SuppliedWhId           *Many2One `xmlrpc:"supplied_wh_id,omitempty"`
 	SupplierWhId           *Many2One `xmlrpc:"supplier_wh_id,omitempty"`
+	WarehouseDomainIds     *Relation `xmlrpc:"warehouse_domain_ids,omitempty"`
 	WarehouseIds           *Relation `xmlrpc:"warehouse_ids,omitempty"`
 	WarehouseSelectable    *Bool     `xmlrpc:"warehouse_selectable,omitempty"`
 	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
@@ -49,7 +49,7 @@ func (c *Client) CreateStockLocationRoute(slr *StockLocationRoute) (int64, error
 	return ids[0], nil
 }
 
-// CreateStockLocationRoutes creates a new stock.location.route model and returns its id.
+// CreateStockLocationRoute creates a new stock.location.route model and returns its id.
 func (c *Client) CreateStockLocationRoutes(slrs []*StockLocationRoute) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range slrs {

@@ -2,16 +2,19 @@ package odoo
 
 // AccountAnalyticTag represents account.analytic.tag model.
 type AccountAnalyticTag struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	Color       *Int      `xmlrpc:"color,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                 *Time     `xmlrpc:"__last_update,omitempty"`
+	Active                     *Bool     `xmlrpc:"active,omitempty"`
+	ActiveAnalyticDistribution *Bool     `xmlrpc:"active_analytic_distribution,omitempty"`
+	AnalyticDistributionIds    *Relation `xmlrpc:"analytic_distribution_ids,omitempty"`
+	Color                      *Int      `xmlrpc:"color,omitempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty"`
+	Name                       *String   `xmlrpc:"name,omitempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountAnalyticTags represents array of account.analytic.tag model.
@@ -37,7 +40,7 @@ func (c *Client) CreateAccountAnalyticTag(aat *AccountAnalyticTag) (int64, error
 	return ids[0], nil
 }
 
-// CreateAccountAnalyticTags creates a new account.analytic.tag model and returns its id.
+// CreateAccountAnalyticTag creates a new account.analytic.tag model and returns its id.
 func (c *Client) CreateAccountAnalyticTags(aats []*AccountAnalyticTag) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range aats {

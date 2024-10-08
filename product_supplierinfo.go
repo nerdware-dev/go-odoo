@@ -49,7 +49,7 @@ func (c *Client) CreateProductSupplierinfo(ps *ProductSupplierinfo) (int64, erro
 	return ids[0], nil
 }
 
-// CreateProductSupplierinfos creates a new product.supplierinfo model and returns its id.
+// CreateProductSupplierinfo creates a new product.supplierinfo model and returns its id.
 func (c *Client) CreateProductSupplierinfos(pss []*ProductSupplierinfo) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range pss {

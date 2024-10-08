@@ -17,7 +17,8 @@ type ResLang struct {
 	Name         *String    `xmlrpc:"name,omitempty"`
 	ThousandsSep *String    `xmlrpc:"thousands_sep,omitempty"`
 	TimeFormat   *String    `xmlrpc:"time_format,omitempty"`
-	Translatable *Bool      `xmlrpc:"translatable,omitempty"`
+	UrlCode      *String    `xmlrpc:"url_code,omitempty"`
+	WeekStart    *Selection `xmlrpc:"week_start,omitempty"`
 	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
@@ -45,7 +46,7 @@ func (c *Client) CreateResLang(rl *ResLang) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateResLangs creates a new res.lang model and returns its id.
+// CreateResLang creates a new res.lang model and returns its id.
 func (c *Client) CreateResLangs(rls []*ResLang) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rls {

@@ -7,6 +7,7 @@ type AccountCashboxLine struct {
 	CoinValue   *Float    `xmlrpc:"coin_value,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	Number      *Int      `xmlrpc:"number,omitempty"`
@@ -38,7 +39,7 @@ func (c *Client) CreateAccountCashboxLine(acl *AccountCashboxLine) (int64, error
 	return ids[0], nil
 }
 
-// CreateAccountCashboxLines creates a new account.cashbox.line model and returns its id.
+// CreateAccountCashboxLine creates a new account.cashbox.line model and returns its id.
 func (c *Client) CreateAccountCashboxLines(acls []*AccountCashboxLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range acls {

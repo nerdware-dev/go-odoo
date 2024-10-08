@@ -30,7 +30,7 @@ func (c *Client) CreateBase(b *Base) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateBases creates a new base model and returns its id.
+// CreateBase creates a new base model and returns its id.
 func (c *Client) CreateBases(bs []*Base) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range bs {

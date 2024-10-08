@@ -8,6 +8,7 @@ type MailTrackingValue struct {
 	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
 	Field            *String   `xmlrpc:"field,omitempty"`
 	FieldDesc        *String   `xmlrpc:"field_desc,omitempty"`
+	FieldGroups      *String   `xmlrpc:"field_groups,omitempty"`
 	FieldType        *String   `xmlrpc:"field_type,omitempty"`
 	Id               *Int      `xmlrpc:"id,omitempty"`
 	MailMessageId    *Many2One `xmlrpc:"mail_message_id,omitempty"`
@@ -23,6 +24,7 @@ type MailTrackingValue struct {
 	OldValueInteger  *Int      `xmlrpc:"old_value_integer,omitempty"`
 	OldValueMonetary *Float    `xmlrpc:"old_value_monetary,omitempty"`
 	OldValueText     *String   `xmlrpc:"old_value_text,omitempty"`
+	TrackingSequence *Int      `xmlrpc:"tracking_sequence,omitempty"`
 	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
 }
@@ -50,7 +52,7 @@ func (c *Client) CreateMailTrackingValue(mtv *MailTrackingValue) (int64, error) 
 	return ids[0], nil
 }
 
-// CreateMailTrackingValues creates a new mail.tracking.value model and returns its id.
+// CreateMailTrackingValue creates a new mail.tracking.value model and returns its id.
 func (c *Client) CreateMailTrackingValues(mtvs []*MailTrackingValue) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range mtvs {

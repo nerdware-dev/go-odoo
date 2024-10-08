@@ -2,15 +2,14 @@ package odoo
 
 // AccountBankStatementImport represents account.bank.statement.import model.
 type AccountBankStatementImport struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DataFile    *String   `xmlrpc:"data_file,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Filename    *String   `xmlrpc:"filename,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
+	AttachmentIds *Relation `xmlrpc:"attachment_ids,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountBankStatementImports represents array of account.bank.statement.import model.
@@ -36,7 +35,7 @@ func (c *Client) CreateAccountBankStatementImport(absi *AccountBankStatementImpo
 	return ids[0], nil
 }
 
-// CreateAccountBankStatementImports creates a new account.bank.statement.import model and returns its id.
+// CreateAccountBankStatementImport creates a new account.bank.statement.import model and returns its id.
 func (c *Client) CreateAccountBankStatementImports(absis []*AccountBankStatementImport) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range absis {

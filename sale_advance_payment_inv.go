@@ -8,9 +8,13 @@ type SaleAdvancePaymentInv struct {
 	Count                *Int       `xmlrpc:"count,omitempty"`
 	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
+	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty"`
+	DeductDownPayments   *Bool      `xmlrpc:"deduct_down_payments,omitempty"`
 	DepositAccountId     *Many2One  `xmlrpc:"deposit_account_id,omitempty"`
 	DepositTaxesId       *Relation  `xmlrpc:"deposit_taxes_id,omitempty"`
 	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
+	FixedAmount          *Float     `xmlrpc:"fixed_amount,omitempty"`
+	HasDownPayments      *Bool      `xmlrpc:"has_down_payments,omitempty"`
 	Id                   *Int       `xmlrpc:"id,omitempty"`
 	ProductId            *Many2One  `xmlrpc:"product_id,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
@@ -40,7 +44,7 @@ func (c *Client) CreateSaleAdvancePaymentInv(sapi *SaleAdvancePaymentInv) (int64
 	return ids[0], nil
 }
 
-// CreateSaleAdvancePaymentInvs creates a new sale.advance.payment.inv model and returns its id.
+// CreateSaleAdvancePaymentInv creates a new sale.advance.payment.inv model and returns its id.
 func (c *Client) CreateSaleAdvancePaymentInvs(sapis []*SaleAdvancePaymentInv) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range sapis {

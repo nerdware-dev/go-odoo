@@ -23,6 +23,7 @@ type EmailTemplatePreview struct {
 	NullValue           *String    `xmlrpc:"null_value,omitempty"`
 	PartnerIds          *Relation  `xmlrpc:"partner_ids,omitempty"`
 	PartnerTo           *String    `xmlrpc:"partner_to,omitempty"`
+	PreviewLang         *Selection `xmlrpc:"preview_lang,omitempty"`
 	RefIrActWindow      *Many2One  `xmlrpc:"ref_ir_act_window,omitempty"`
 	ReplyTo             *String    `xmlrpc:"reply_to,omitempty"`
 	ReportName          *String    `xmlrpc:"report_name,omitempty"`
@@ -61,7 +62,7 @@ func (c *Client) CreateEmailTemplatePreview(ep *EmailTemplatePreview) (int64, er
 	return ids[0], nil
 }
 
-// CreateEmailTemplatePreviews creates a new email_template.preview model and returns its id.
+// CreateEmailTemplatePreview creates a new email_template.preview model and returns its id.
 func (c *Client) CreateEmailTemplatePreviews(eps []*EmailTemplatePreview) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range eps {

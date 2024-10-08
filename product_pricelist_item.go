@@ -3,6 +3,7 @@ package odoo
 // ProductPricelistItem represents product.pricelist.item model.
 type ProductPricelistItem struct {
 	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
+	Active          *Bool      `xmlrpc:"active,omitempty"`
 	AppliedOn       *Selection `xmlrpc:"applied_on,omitempty"`
 	Base            *Selection `xmlrpc:"base,omitempty"`
 	BasePricelistId *Many2One  `xmlrpc:"base_pricelist_id,omitempty"`
@@ -56,7 +57,7 @@ func (c *Client) CreateProductPricelistItem(ppi *ProductPricelistItem) (int64, e
 	return ids[0], nil
 }
 
-// CreateProductPricelistItems creates a new product.pricelist.item model and returns its id.
+// CreateProductPricelistItem creates a new product.pricelist.item model and returns its id.
 func (c *Client) CreateProductPricelistItems(ppis []*ProductPricelistItem) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ppis {

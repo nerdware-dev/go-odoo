@@ -4,6 +4,7 @@ package odoo
 type AccountCashRounding struct {
 	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
 	AccountId      *Many2One  `xmlrpc:"account_id,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
@@ -39,7 +40,7 @@ func (c *Client) CreateAccountCashRounding(acr *AccountCashRounding) (int64, err
 	return ids[0], nil
 }
 
-// CreateAccountCashRoundings creates a new account.cash.rounding model and returns its id.
+// CreateAccountCashRounding creates a new account.cash.rounding model and returns its id.
 func (c *Client) CreateAccountCashRoundings(acrs []*AccountCashRounding) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range acrs {

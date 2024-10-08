@@ -31,7 +31,7 @@ func (c *Client) CreateBarcodesBarcodeEventsMixin(bb *BarcodesBarcodeEventsMixin
 	return ids[0], nil
 }
 
-// CreateBarcodesBarcodeEventsMixins creates a new barcodes.barcode_events_mixin model and returns its id.
+// CreateBarcodesBarcodeEventsMixin creates a new barcodes.barcode_events_mixin model and returns its id.
 func (c *Client) CreateBarcodesBarcodeEventsMixins(bbs []*BarcodesBarcodeEventsMixin) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range bbs {

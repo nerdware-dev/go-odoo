@@ -2,33 +2,38 @@ package odoo
 
 // AccountBankStatementLine represents account.bank.statement.line model.
 type AccountBankStatementLine struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId         *Many2One  `xmlrpc:"account_id,omitempty"`
-	Amount            *Float     `xmlrpc:"amount,omitempty"`
-	AmountCurrency    *Float     `xmlrpc:"amount_currency,omitempty"`
-	BankAccountId     *Many2One  `xmlrpc:"bank_account_id,omitempty"`
-	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date              *Time      `xmlrpc:"date,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	JournalCurrencyId *Many2One  `xmlrpc:"journal_currency_id,omitempty"`
-	JournalEntryIds   *Relation  `xmlrpc:"journal_entry_ids,omitempty"`
-	JournalId         *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MoveName          *String    `xmlrpc:"move_name,omitempty"`
-	Name              *String    `xmlrpc:"name,omitempty"`
-	Note              *String    `xmlrpc:"note,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerName       *String    `xmlrpc:"partner_name,omitempty"`
-	Ref               *String    `xmlrpc:"ref,omitempty"`
-	Sequence          *Int       `xmlrpc:"sequence,omitempty"`
-	State             *Selection `xmlrpc:"state,omitempty"`
-	StatementId       *Many2One  `xmlrpc:"statement_id,omitempty"`
-	UniqueImportId    *String    `xmlrpc:"unique_import_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
+	AccountId                *Many2One  `xmlrpc:"account_id,omitempty"`
+	AccountNumber            *String    `xmlrpc:"account_number,omitempty"`
+	Amount                   *Float     `xmlrpc:"amount,omitempty"`
+	AmountCurrency           *Float     `xmlrpc:"amount_currency,omitempty"`
+	BankAccountId            *Many2One  `xmlrpc:"bank_account_id,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
+	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty"`
+	Date                     *Time      `xmlrpc:"date,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty"`
+	JournalCurrencyId        *Many2One  `xmlrpc:"journal_currency_id,omitempty"`
+	JournalEntryIds          *Relation  `xmlrpc:"journal_entry_ids,omitempty"`
+	JournalId                *Many2One  `xmlrpc:"journal_id,omitempty"`
+	MoveName                 *String    `xmlrpc:"move_name,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty"`
+	Note                     *String    `xmlrpc:"note,omitempty"`
+	OnlineIdentifier         *String    `xmlrpc:"online_identifier,omitempty"`
+	OnlinePartnerBankAccount *String    `xmlrpc:"online_partner_bank_account,omitempty"`
+	OnlinePartnerVendorName  *String    `xmlrpc:"online_partner_vendor_name,omitempty"`
+	PartnerId                *Many2One  `xmlrpc:"partner_id,omitempty"`
+	PartnerName              *String    `xmlrpc:"partner_name,omitempty"`
+	Ref                      *String    `xmlrpc:"ref,omitempty"`
+	Sequence                 *Int       `xmlrpc:"sequence,omitempty"`
+	State                    *Selection `xmlrpc:"state,omitempty"`
+	StatementId              *Many2One  `xmlrpc:"statement_id,omitempty"`
+	TransactionType          *String    `xmlrpc:"transaction_type,omitempty"`
+	UniqueImportId           *String    `xmlrpc:"unique_import_id,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountBankStatementLines represents array of account.bank.statement.line model.
@@ -54,7 +59,7 @@ func (c *Client) CreateAccountBankStatementLine(absl *AccountBankStatementLine) 
 	return ids[0], nil
 }
 
-// CreateAccountBankStatementLines creates a new account.bank.statement.line model and returns its id.
+// CreateAccountBankStatementLine creates a new account.bank.statement.line model and returns its id.
 func (c *Client) CreateAccountBankStatementLines(absls []*AccountBankStatementLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range absls {

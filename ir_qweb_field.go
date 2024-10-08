@@ -30,7 +30,7 @@ func (c *Client) CreateIrQwebField(iqf *IrQwebField) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateIrQwebFields creates a new ir.qweb.field model and returns its id.
+// CreateIrQwebField creates a new ir.qweb.field model and returns its id.
 func (c *Client) CreateIrQwebFields(iqfs []*IrQwebField) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range iqfs {
