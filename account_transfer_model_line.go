@@ -2,18 +2,18 @@ package odoo
 
 // AccountTransferModelLine represents account.transfer.model.line model.
 type AccountTransferModelLine struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountId          *Many2One `xmlrpc:"account_id,omitempty"`
-	AnalyticAccountIds *Relation `xmlrpc:"analytic_account_ids,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Percent            *Float    `xmlrpc:"percent,omitempty"`
-	PercentIsReadonly  *Bool     `xmlrpc:"percent_is_readonly,omitempty"`
-	TransferModelId    *Many2One `xmlrpc:"transfer_model_id,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountId          *Many2One `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	AnalyticAccountIds *Relation `xmlrpc:"analytic_account_ids,omitempty" json:"analytic_account_ids,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Percent            *Float    `xmlrpc:"percent,omitempty" json:"percent,omitempty"`
+	PercentIsReadonly  *Bool     `xmlrpc:"percent_is_readonly,omitempty" json:"percent_is_readonly,omitempty"`
+	TransferModelId    *Many2One `xmlrpc:"transfer_model_id,omitempty" json:"transfer_model_id,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTransferModelLines represents array of account.transfer.model.line model.

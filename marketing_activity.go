@@ -2,44 +2,44 @@ package odoo
 
 // MarketingActivity represents marketing.activity model.
 type MarketingActivity struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDomain           *String    `xmlrpc:"activity_domain,omitempty"`
-	ActivityType             *Selection `xmlrpc:"activity_type,omitempty"`
-	CampaignId               *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	ChildIds                 *Relation  `xmlrpc:"child_ids,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	Domain                   *String    `xmlrpc:"domain,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	IntervalNumber           *Int       `xmlrpc:"interval_number,omitempty"`
-	IntervalStandardized     *Int       `xmlrpc:"interval_standardized,omitempty"`
-	IntervalType             *Selection `xmlrpc:"interval_type,omitempty"`
-	MassMailingId            *Many2One  `xmlrpc:"mass_mailing_id,omitempty"`
-	MassMailingIdMailingType *Selection `xmlrpc:"mass_mailing_id_mailing_type,omitempty"`
-	ModelId                  *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelName                *String    `xmlrpc:"model_name,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	ParentId                 *Many2One  `xmlrpc:"parent_id,omitempty"`
-	Processed                *Int       `xmlrpc:"processed,omitempty"`
-	Rejected                 *Int       `xmlrpc:"rejected,omitempty"`
-	RequireSync              *Bool      `xmlrpc:"require_sync,omitempty"`
-	ServerActionId           *Many2One  `xmlrpc:"server_action_id,omitempty"`
-	StatisticsGraphData      *String    `xmlrpc:"statistics_graph_data,omitempty"`
-	TotalBounce              *Int       `xmlrpc:"total_bounce,omitempty"`
-	TotalClick               *Int       `xmlrpc:"total_click,omitempty"`
-	TotalOpen                *Int       `xmlrpc:"total_open,omitempty"`
-	TotalReply               *Int       `xmlrpc:"total_reply,omitempty"`
-	TotalSent                *Int       `xmlrpc:"total_sent,omitempty"`
-	TraceIds                 *Relation  `xmlrpc:"trace_ids,omitempty"`
-	TriggerType              *Selection `xmlrpc:"trigger_type,omitempty"`
-	UtmCampaignId            *Many2One  `xmlrpc:"utm_campaign_id,omitempty"`
-	UtmSourceId              *Many2One  `xmlrpc:"utm_source_id,omitempty"`
-	ValidityDuration         *Bool      `xmlrpc:"validity_duration,omitempty"`
-	ValidityDurationNumber   *Int       `xmlrpc:"validity_duration_number,omitempty"`
-	ValidityDurationType     *Selection `xmlrpc:"validity_duration_type,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityDomain           *String    `xmlrpc:"activity_domain,omitempty" json:"activity_domain,omitempty"`
+	ActivityType             *Selection `xmlrpc:"activity_type,omitempty" json:"activity_type,omitempty"`
+	CampaignId               *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	ChildIds                 *Relation  `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain                   *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IntervalNumber           *Int       `xmlrpc:"interval_number,omitempty" json:"interval_number,omitempty"`
+	IntervalStandardized     *Int       `xmlrpc:"interval_standardized,omitempty" json:"interval_standardized,omitempty"`
+	IntervalType             *Selection `xmlrpc:"interval_type,omitempty" json:"interval_type,omitempty"`
+	MassMailingId            *Many2One  `xmlrpc:"mass_mailing_id,omitempty" json:"mass_mailing_id,omitempty"`
+	MassMailingIdMailingType *Selection `xmlrpc:"mass_mailing_id_mailing_type,omitempty" json:"mass_mailing_id_mailing_type,omitempty"`
+	ModelId                  *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelName                *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId                 *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Processed                *Int       `xmlrpc:"processed,omitempty" json:"processed,omitempty"`
+	Rejected                 *Int       `xmlrpc:"rejected,omitempty" json:"rejected,omitempty"`
+	RequireSync              *Bool      `xmlrpc:"require_sync,omitempty" json:"require_sync,omitempty"`
+	ServerActionId           *Many2One  `xmlrpc:"server_action_id,omitempty" json:"server_action_id,omitempty"`
+	StatisticsGraphData      *String    `xmlrpc:"statistics_graph_data,omitempty" json:"statistics_graph_data,omitempty"`
+	TotalBounce              *Int       `xmlrpc:"total_bounce,omitempty" json:"total_bounce,omitempty"`
+	TotalClick               *Int       `xmlrpc:"total_click,omitempty" json:"total_click,omitempty"`
+	TotalOpen                *Int       `xmlrpc:"total_open,omitempty" json:"total_open,omitempty"`
+	TotalReply               *Int       `xmlrpc:"total_reply,omitempty" json:"total_reply,omitempty"`
+	TotalSent                *Int       `xmlrpc:"total_sent,omitempty" json:"total_sent,omitempty"`
+	TraceIds                 *Relation  `xmlrpc:"trace_ids,omitempty" json:"trace_ids,omitempty"`
+	TriggerType              *Selection `xmlrpc:"trigger_type,omitempty" json:"trigger_type,omitempty"`
+	UtmCampaignId            *Many2One  `xmlrpc:"utm_campaign_id,omitempty" json:"utm_campaign_id,omitempty"`
+	UtmSourceId              *Many2One  `xmlrpc:"utm_source_id,omitempty" json:"utm_source_id,omitempty"`
+	ValidityDuration         *Bool      `xmlrpc:"validity_duration,omitempty" json:"validity_duration,omitempty"`
+	ValidityDurationNumber   *Int       `xmlrpc:"validity_duration_number,omitempty" json:"validity_duration_number,omitempty"`
+	ValidityDurationType     *Selection `xmlrpc:"validity_duration_type,omitempty" json:"validity_duration_type,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MarketingActivitys represents array of marketing.activity model.

@@ -2,14 +2,14 @@ package odoo
 
 // HrTimesheetAttendanceReport represents hr.timesheet.attendance.report model.
 type HrTimesheetAttendanceReport struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	Date            *Time     `xmlrpc:"date,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	TotalAttendance *Float    `xmlrpc:"total_attendance,omitempty"`
-	TotalDifference *Float    `xmlrpc:"total_difference,omitempty"`
-	TotalTimesheet  *Float    `xmlrpc:"total_timesheet,omitempty"`
-	UserId          *Many2One `xmlrpc:"user_id,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Date            *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TotalAttendance *Float    `xmlrpc:"total_attendance,omitempty" json:"total_attendance,omitempty"`
+	TotalDifference *Float    `xmlrpc:"total_difference,omitempty" json:"total_difference,omitempty"`
+	TotalTimesheet  *Float    `xmlrpc:"total_timesheet,omitempty" json:"total_timesheet,omitempty"`
+	UserId          *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // HrTimesheetAttendanceReports represents array of hr.timesheet.attendance.report model.

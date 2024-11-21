@@ -2,13 +2,13 @@ package odoo
 
 // WebsiteTrack represents website.track model.
 type WebsiteTrack struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	PageId        *Many2One `xmlrpc:"page_id,omitempty"`
-	Url           *String   `xmlrpc:"url,omitempty"`
-	VisitDatetime *Time     `xmlrpc:"visit_datetime,omitempty"`
-	VisitorId     *Many2One `xmlrpc:"visitor_id,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PageId        *Many2One `xmlrpc:"page_id,omitempty" json:"page_id,omitempty"`
+	Url           *String   `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	VisitDatetime *Time     `xmlrpc:"visit_datetime,omitempty" json:"visit_datetime,omitempty"`
+	VisitorId     *Many2One `xmlrpc:"visitor_id,omitempty" json:"visitor_id,omitempty"`
 }
 
 // WebsiteTracks represents array of website.track model.

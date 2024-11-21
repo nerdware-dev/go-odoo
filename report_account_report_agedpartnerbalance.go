@@ -2,9 +2,9 @@ package odoo
 
 // ReportAccountReportAgedpartnerbalance represents report.account.report_agedpartnerbalance model.
 type ReportAccountReportAgedpartnerbalance struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // ReportAccountReportAgedpartnerbalances represents array of report.account.report_agedpartnerbalance model.

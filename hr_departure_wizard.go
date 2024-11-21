@@ -2,17 +2,17 @@ package odoo
 
 // HrDepartureWizard represents hr.departure.wizard model.
 type HrDepartureWizard struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DepartureDescription *String    `xmlrpc:"departure_description,omitempty"`
-	DepartureReason      *Selection `xmlrpc:"departure_reason,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	PlanId               *Many2One  `xmlrpc:"plan_id,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DepartureDescription *String    `xmlrpc:"departure_description,omitempty" json:"departure_description,omitempty"`
+	DepartureReason      *Selection `xmlrpc:"departure_reason,omitempty" json:"departure_reason,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PlanId               *Many2One  `xmlrpc:"plan_id,omitempty" json:"plan_id,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrDepartureWizards represents array of hr.departure.wizard model.

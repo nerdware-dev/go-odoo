@@ -2,37 +2,37 @@ package odoo
 
 // ForumTag represents forum.tag model.
 type ForumTag struct {
-	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate               *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	ForumId                  *Many2One `xmlrpc:"forum_id,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	IsSeoOptimized           *Bool     `xmlrpc:"is_seo_optimized,omitempty"`
-	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId  *Many2One `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool     `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int      `xmlrpc:"message_unread_counter,omitempty"`
-	Name                     *String   `xmlrpc:"name,omitempty"`
-	PostIds                  *Relation `xmlrpc:"post_ids,omitempty"`
-	PostsCount               *Int      `xmlrpc:"posts_count,omitempty"`
-	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty"`
-	WebsiteMetaDescription   *String   `xmlrpc:"website_meta_description,omitempty"`
-	WebsiteMetaKeywords      *String   `xmlrpc:"website_meta_keywords,omitempty"`
-	WebsiteMetaOgImg         *String   `xmlrpc:"website_meta_og_img,omitempty"`
-	WebsiteMetaTitle         *String   `xmlrpc:"website_meta_title,omitempty"`
-	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForumId                  *Many2One `xmlrpc:"forum_id,omitempty" json:"forum_id,omitempty"`
+	Id                       *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSeoOptimized           *Bool     `xmlrpc:"is_seo_optimized,omitempty" json:"is_seo_optimized,omitempty"`
+	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId  *Many2One `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread            *Bool     `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter     *Int      `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                     *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PostIds                  *Relation `xmlrpc:"post_ids,omitempty" json:"post_ids,omitempty"`
+	PostsCount               *Int      `xmlrpc:"posts_count,omitempty" json:"posts_count,omitempty"`
+	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WebsiteMetaDescription   *String   `xmlrpc:"website_meta_description,omitempty" json:"website_meta_description,omitempty"`
+	WebsiteMetaKeywords      *String   `xmlrpc:"website_meta_keywords,omitempty" json:"website_meta_keywords,omitempty"`
+	WebsiteMetaOgImg         *String   `xmlrpc:"website_meta_og_img,omitempty" json:"website_meta_og_img,omitempty"`
+	WebsiteMetaTitle         *String   `xmlrpc:"website_meta_title,omitempty" json:"website_meta_title,omitempty"`
+	WriteDate                *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ForumTags represents array of forum.tag model.

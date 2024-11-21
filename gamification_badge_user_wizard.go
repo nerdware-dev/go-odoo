@@ -2,17 +2,17 @@ package odoo
 
 // GamificationBadgeUserWizard represents gamification.badge.user.wizard model.
 type GamificationBadgeUserWizard struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	BadgeId     *Many2One `xmlrpc:"badge_id,omitempty"`
-	Comment     *String   `xmlrpc:"comment,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BadgeId     *Many2One `xmlrpc:"badge_id,omitempty" json:"badge_id,omitempty"`
+	Comment     *String   `xmlrpc:"comment,omitempty" json:"comment,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationBadgeUserWizards represents array of gamification.badge.user.wizard model.

@@ -2,18 +2,18 @@ package odoo
 
 // AccountPaymentRegister represents account.payment.register model.
 type AccountPaymentRegister struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	GroupPayment    *Bool     `xmlrpc:"group_payment,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	InvoiceIds      *Relation `xmlrpc:"invoice_ids,omitempty"`
-	JournalId       *Many2One `xmlrpc:"journal_id,omitempty"`
-	PaymentDate     *Time     `xmlrpc:"payment_date,omitempty"`
-	PaymentMethodId *Many2One `xmlrpc:"payment_method_id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupPayment    *Bool     `xmlrpc:"group_payment,omitempty" json:"group_payment,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceIds      *Relation `xmlrpc:"invoice_ids,omitempty" json:"invoice_ids,omitempty"`
+	JournalId       *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	PaymentDate     *Time     `xmlrpc:"payment_date,omitempty" json:"payment_date,omitempty"`
+	PaymentMethodId *Many2One `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentRegisters represents array of account.payment.register model.

@@ -2,9 +2,9 @@ package odoo
 
 // IrFieldsConverter represents ir.fields.converter model.
 type IrFieldsConverter struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // IrFieldsConverters represents array of ir.fields.converter model.

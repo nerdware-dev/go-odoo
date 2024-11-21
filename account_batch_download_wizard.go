@@ -2,17 +2,17 @@ package odoo
 
 // AccountBatchDownloadWizard represents account.batch.download.wizard model.
 type AccountBatchDownloadWizard struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	BatchPaymentId *Many2One `xmlrpc:"batch_payment_id,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	ExportFile     *String   `xmlrpc:"export_file,omitempty"`
-	ExportFilename *String   `xmlrpc:"export_filename,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	WarningMessage *String   `xmlrpc:"warning_message,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BatchPaymentId *Many2One `xmlrpc:"batch_payment_id,omitempty" json:"batch_payment_id,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportFile     *String   `xmlrpc:"export_file,omitempty" json:"export_file,omitempty"`
+	ExportFilename *String   `xmlrpc:"export_filename,omitempty" json:"export_filename,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WarningMessage *String   `xmlrpc:"warning_message,omitempty" json:"warning_message,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBatchDownloadWizards represents array of account.batch.download.wizard model.

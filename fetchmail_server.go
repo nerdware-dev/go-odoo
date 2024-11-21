@@ -2,30 +2,30 @@ package odoo
 
 // FetchmailServer represents fetchmail.server model.
 type FetchmailServer struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	Active        *Bool      `xmlrpc:"active,omitempty"`
-	Attach        *Bool      `xmlrpc:"attach,omitempty"`
-	Configuration *String    `xmlrpc:"configuration,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	IsSsl         *Bool      `xmlrpc:"is_ssl,omitempty"`
-	MessageIds    *Relation  `xmlrpc:"message_ids,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	ObjectId      *Many2One  `xmlrpc:"object_id,omitempty"`
-	Original      *Bool      `xmlrpc:"original,omitempty"`
-	Password      *String    `xmlrpc:"password,omitempty"`
-	Port          *Int       `xmlrpc:"port,omitempty"`
-	Priority      *Int       `xmlrpc:"priority,omitempty"`
-	Script        *String    `xmlrpc:"script,omitempty"`
-	Server        *String    `xmlrpc:"server,omitempty"`
-	ServerType    *Selection `xmlrpc:"server_type,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	User          *String    `xmlrpc:"user,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active        *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Attach        *Bool      `xmlrpc:"attach,omitempty" json:"attach,omitempty"`
+	Configuration *String    `xmlrpc:"configuration,omitempty" json:"configuration,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date          *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSsl         *Bool      `xmlrpc:"is_ssl,omitempty" json:"is_ssl,omitempty"`
+	MessageIds    *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ObjectId      *Many2One  `xmlrpc:"object_id,omitempty" json:"object_id,omitempty"`
+	Original      *Bool      `xmlrpc:"original,omitempty" json:"original,omitempty"`
+	Password      *String    `xmlrpc:"password,omitempty" json:"password,omitempty"`
+	Port          *Int       `xmlrpc:"port,omitempty" json:"port,omitempty"`
+	Priority      *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Script        *String    `xmlrpc:"script,omitempty" json:"script,omitempty"`
+	Server        *String    `xmlrpc:"server,omitempty" json:"server,omitempty"`
+	ServerType    *Selection `xmlrpc:"server_type,omitempty" json:"server_type,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	User          *String    `xmlrpc:"user,omitempty" json:"user,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FetchmailServers represents array of fetchmail.server model.

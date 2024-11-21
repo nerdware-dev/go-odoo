@@ -2,11 +2,11 @@ package odoo
 
 // KnowsystemNode represents knowsystem.node model.
 type KnowsystemNode struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool   `xmlrpc:"active,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
-	Sequence    *Int    `xmlrpc:"sequence,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active      *Bool   `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Sequence    *Int    `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 }
 
 // KnowsystemNodes represents array of knowsystem.node model.

@@ -2,14 +2,14 @@ package odoo
 
 // PlanningSlotReportAnalysis represents planning.slot.report.analysis model.
 type PlanningSlotReportAnalysis struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	EntryDate   *Time     `xmlrpc:"entry_date,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	NumberHours *Float    `xmlrpc:"number_hours,omitempty"`
-	RoleId      *Many2One `xmlrpc:"role_id,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EntryDate   *Time     `xmlrpc:"entry_date,omitempty" json:"entry_date,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NumberHours *Float    `xmlrpc:"number_hours,omitempty" json:"number_hours,omitempty"`
+	RoleId      *Many2One `xmlrpc:"role_id,omitempty" json:"role_id,omitempty"`
 }
 
 // PlanningSlotReportAnalysiss represents array of planning.slot.report.analysis model.

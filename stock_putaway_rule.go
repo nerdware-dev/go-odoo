@@ -2,19 +2,19 @@ package odoo
 
 // StockPutawayRule represents stock.putaway.rule model.
 type StockPutawayRule struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CategoryId    *Many2One `xmlrpc:"category_id,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	LocationInId  *Many2One `xmlrpc:"location_in_id,omitempty"`
-	LocationOutId *Many2One `xmlrpc:"location_out_id,omitempty"`
-	ProductId     *Many2One `xmlrpc:"product_id,omitempty"`
-	Sequence      *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CategoryId    *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationInId  *Many2One `xmlrpc:"location_in_id,omitempty" json:"location_in_id,omitempty"`
+	LocationOutId *Many2One `xmlrpc:"location_out_id,omitempty" json:"location_out_id,omitempty"`
+	ProductId     *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	Sequence      *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPutawayRules represents array of stock.putaway.rule model.

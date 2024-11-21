@@ -2,22 +2,22 @@ package odoo
 
 // DeliveryPriceRule represents delivery.price.rule model.
 type DeliveryPriceRule struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	CarrierId      *Many2One  `xmlrpc:"carrier_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	ListBasePrice  *Float     `xmlrpc:"list_base_price,omitempty"`
-	ListPrice      *Float     `xmlrpc:"list_price,omitempty"`
-	MaxValue       *Float     `xmlrpc:"max_value,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	Operator       *Selection `xmlrpc:"operator,omitempty"`
-	Sequence       *Int       `xmlrpc:"sequence,omitempty"`
-	Variable       *Selection `xmlrpc:"variable,omitempty"`
-	VariableFactor *Selection `xmlrpc:"variable_factor,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CarrierId      *Many2One  `xmlrpc:"carrier_id,omitempty" json:"carrier_id,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ListBasePrice  *Float     `xmlrpc:"list_base_price,omitempty" json:"list_base_price,omitempty"`
+	ListPrice      *Float     `xmlrpc:"list_price,omitempty" json:"list_price,omitempty"`
+	MaxValue       *Float     `xmlrpc:"max_value,omitempty" json:"max_value,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Operator       *Selection `xmlrpc:"operator,omitempty" json:"operator,omitempty"`
+	Sequence       *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Variable       *Selection `xmlrpc:"variable,omitempty" json:"variable,omitempty"`
+	VariableFactor *Selection `xmlrpc:"variable_factor,omitempty" json:"variable_factor,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DeliveryPriceRules represents array of delivery.price.rule model.

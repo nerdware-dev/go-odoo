@@ -2,43 +2,43 @@ package odoo
 
 // AccountAnalyticLine represents account.analytic.line model.
 type AccountAnalyticLine struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId            *Many2One  `xmlrpc:"account_id,omitempty"`
-	Amount               *Float     `xmlrpc:"amount,omitempty"`
-	Code                 *String    `xmlrpc:"code,omitempty"`
-	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                 *Time      `xmlrpc:"date,omitempty"`
-	DepartmentId         *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty"`
-	EncodingUomId        *Many2One  `xmlrpc:"encoding_uom_id,omitempty"`
-	GeneralAccountId     *Many2One  `xmlrpc:"general_account_id,omitempty"`
-	GroupId              *Many2One  `xmlrpc:"group_id,omitempty"`
-	HelpdeskTicketId     *Many2One  `xmlrpc:"helpdesk_ticket_id,omitempty"`
-	HolidayId            *Many2One  `xmlrpc:"holiday_id,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	IsTimesheet          *Bool      `xmlrpc:"is_timesheet,omitempty"`
-	MoveId               *Many2One  `xmlrpc:"move_id,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	PartnerId            *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ProductId            *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One  `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomId         *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	ProjectId            *Many2One  `xmlrpc:"project_id,omitempty"`
-	Ref                  *String    `xmlrpc:"ref,omitempty"`
-	SoLine               *Many2One  `xmlrpc:"so_line,omitempty"`
-	TagIds               *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaskId               *Many2One  `xmlrpc:"task_id,omitempty"`
-	TimesheetInvoiceId   *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty"`
-	TimesheetInvoiceType *Selection `xmlrpc:"timesheet_invoice_type,omitempty"`
-	UnitAmount           *Float     `xmlrpc:"unit_amount,omitempty"`
-	UserId               *Many2One  `xmlrpc:"user_id,omitempty"`
-	Validated            *Bool      `xmlrpc:"validated,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountId            *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	Amount               *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	Code                 *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                 *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DepartmentId         *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EncodingUomId        *Many2One  `xmlrpc:"encoding_uom_id,omitempty" json:"encoding_uom_id,omitempty"`
+	GeneralAccountId     *Many2One  `xmlrpc:"general_account_id,omitempty" json:"general_account_id,omitempty"`
+	GroupId              *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	HelpdeskTicketId     *Many2One  `xmlrpc:"helpdesk_ticket_id,omitempty" json:"helpdesk_ticket_id,omitempty"`
+	HolidayId            *Many2One  `xmlrpc:"holiday_id,omitempty" json:"holiday_id,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTimesheet          *Bool      `xmlrpc:"is_timesheet,omitempty" json:"is_timesheet,omitempty"`
+	MoveId               *Many2One  `xmlrpc:"move_id,omitempty" json:"move_id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId            *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProductId            *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One  `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomId         *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	ProjectId            *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	Ref                  *String    `xmlrpc:"ref,omitempty" json:"ref,omitempty"`
+	SoLine               *Many2One  `xmlrpc:"so_line,omitempty" json:"so_line,omitempty"`
+	TagIds               *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaskId               *Many2One  `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimesheetInvoiceId   *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty" json:"timesheet_invoice_id,omitempty"`
+	TimesheetInvoiceType *Selection `xmlrpc:"timesheet_invoice_type,omitempty" json:"timesheet_invoice_type,omitempty"`
+	UnitAmount           *Float     `xmlrpc:"unit_amount,omitempty" json:"unit_amount,omitempty"`
+	UserId               *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Validated            *Bool      `xmlrpc:"validated,omitempty" json:"validated,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticLines represents array of account.analytic.line model.

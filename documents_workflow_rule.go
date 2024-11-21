@@ -2,38 +2,38 @@ package odoo
 
 // DocumentsWorkflowRule represents documents.workflow.rule model.
 type DocumentsWorkflowRule struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
-	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
-	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
-	ActivityOption                *Bool      `xmlrpc:"activity_option,omitempty"`
-	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	ConditionType                 *Selection `xmlrpc:"condition_type,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateModel                   *Selection `xmlrpc:"create_model,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CriteriaOwnerId               *Many2One  `xmlrpc:"criteria_owner_id,omitempty"`
-	CriteriaPartnerId             *Many2One  `xmlrpc:"criteria_partner_id,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	Domain                        *String    `xmlrpc:"domain,omitempty"`
-	DomainFolderId                *Many2One  `xmlrpc:"domain_folder_id,omitempty"`
-	ExcludedTagIds                *Relation  `xmlrpc:"excluded_tag_ids,omitempty"`
-	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty"`
-	HasBusinessOption             *Bool      `xmlrpc:"has_business_option,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	LimitedToSingleRecord         *Bool      `xmlrpc:"limited_to_single_record,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	Note                          *String    `xmlrpc:"note,omitempty"`
-	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	RemoveActivities              *Bool      `xmlrpc:"remove_activities,omitempty"`
-	RequiredTagIds                *Relation  `xmlrpc:"required_tag_ids,omitempty"`
-	Sequence                      *Int       `xmlrpc:"sequence,omitempty"`
-	TagActionIds                  *Relation  `xmlrpc:"tag_action_ids,omitempty"`
-	UserId                        *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty" json:"activity_date_deadline_range,omitempty"`
+	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty" json:"activity_date_deadline_range_type,omitempty"`
+	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty" json:"activity_note,omitempty"`
+	ActivityOption                *Bool      `xmlrpc:"activity_option,omitempty" json:"activity_option,omitempty"`
+	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	ConditionType                 *Selection `xmlrpc:"condition_type,omitempty" json:"condition_type,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateModel                   *Selection `xmlrpc:"create_model,omitempty" json:"create_model,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CriteriaOwnerId               *Many2One  `xmlrpc:"criteria_owner_id,omitempty" json:"criteria_owner_id,omitempty"`
+	CriteriaPartnerId             *Many2One  `xmlrpc:"criteria_partner_id,omitempty" json:"criteria_partner_id,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain                        *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	DomainFolderId                *Many2One  `xmlrpc:"domain_folder_id,omitempty" json:"domain_folder_id,omitempty"`
+	ExcludedTagIds                *Relation  `xmlrpc:"excluded_tag_ids,omitempty" json:"excluded_tag_ids,omitempty"`
+	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	HasBusinessOption             *Bool      `xmlrpc:"has_business_option,omitempty" json:"has_business_option,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LimitedToSingleRecord         *Bool      `xmlrpc:"limited_to_single_record,omitempty" json:"limited_to_single_record,omitempty"`
+	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note                          *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	RemoveActivities              *Bool      `xmlrpc:"remove_activities,omitempty" json:"remove_activities,omitempty"`
+	RequiredTagIds                *Relation  `xmlrpc:"required_tag_ids,omitempty" json:"required_tag_ids,omitempty"`
+	Sequence                      *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TagActionIds                  *Relation  `xmlrpc:"tag_action_ids,omitempty" json:"tag_action_ids,omitempty"`
+	UserId                        *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsWorkflowRules represents array of documents.workflow.rule model.

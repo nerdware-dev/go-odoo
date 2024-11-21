@@ -2,21 +2,21 @@ package odoo
 
 // HelpdeskSlaStatus represents helpdesk.sla.status model.
 type HelpdeskSlaStatus struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	Color           *Int       `xmlrpc:"color,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Deadline        *Time      `xmlrpc:"deadline,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	ExceededDays    *Float     `xmlrpc:"exceeded_days,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	ReachedDatetime *Time      `xmlrpc:"reached_datetime,omitempty"`
-	SlaId           *Many2One  `xmlrpc:"sla_id,omitempty"`
-	SlaStageId      *Many2One  `xmlrpc:"sla_stage_id,omitempty"`
-	Status          *Selection `xmlrpc:"status,omitempty"`
-	TicketId        *Many2One  `xmlrpc:"ticket_id,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Color           *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Deadline        *Time      `xmlrpc:"deadline,omitempty" json:"deadline,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExceededDays    *Float     `xmlrpc:"exceeded_days,omitempty" json:"exceeded_days,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ReachedDatetime *Time      `xmlrpc:"reached_datetime,omitempty" json:"reached_datetime,omitempty"`
+	SlaId           *Many2One  `xmlrpc:"sla_id,omitempty" json:"sla_id,omitempty"`
+	SlaStageId      *Many2One  `xmlrpc:"sla_stage_id,omitempty" json:"sla_stage_id,omitempty"`
+	Status          *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
+	TicketId        *Many2One  `xmlrpc:"ticket_id,omitempty" json:"ticket_id,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HelpdeskSlaStatuss represents array of helpdesk.sla.status model.

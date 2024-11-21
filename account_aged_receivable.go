@@ -2,9 +2,9 @@ package odoo
 
 // AccountAgedReceivable represents account.aged.receivable model.
 type AccountAgedReceivable struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // AccountAgedReceivables represents array of account.aged.receivable model.

@@ -2,31 +2,31 @@ package odoo
 
 // GamificationGoalDefinition represents gamification.goal.definition model.
 type GamificationGoalDefinition struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId              *Many2One  `xmlrpc:"action_id,omitempty"`
-	BatchDistinctiveField *Many2One  `xmlrpc:"batch_distinctive_field,omitempty"`
-	BatchMode             *Bool      `xmlrpc:"batch_mode,omitempty"`
-	BatchUserExpression   *String    `xmlrpc:"batch_user_expression,omitempty"`
-	ComputationMode       *Selection `xmlrpc:"computation_mode,omitempty"`
-	ComputeCode           *String    `xmlrpc:"compute_code,omitempty"`
-	Condition             *Selection `xmlrpc:"condition,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description           *String    `xmlrpc:"description,omitempty"`
-	DisplayMode           *Selection `xmlrpc:"display_mode,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	Domain                *String    `xmlrpc:"domain,omitempty"`
-	FieldDateId           *Many2One  `xmlrpc:"field_date_id,omitempty"`
-	FieldId               *Many2One  `xmlrpc:"field_id,omitempty"`
-	FullSuffix            *String    `xmlrpc:"full_suffix,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	ModelId               *Many2One  `xmlrpc:"model_id,omitempty"`
-	Monetary              *Bool      `xmlrpc:"monetary,omitempty"`
-	Name                  *String    `xmlrpc:"name,omitempty"`
-	ResIdField            *String    `xmlrpc:"res_id_field,omitempty"`
-	Suffix                *String    `xmlrpc:"suffix,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActionId              *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	BatchDistinctiveField *Many2One  `xmlrpc:"batch_distinctive_field,omitempty" json:"batch_distinctive_field,omitempty"`
+	BatchMode             *Bool      `xmlrpc:"batch_mode,omitempty" json:"batch_mode,omitempty"`
+	BatchUserExpression   *String    `xmlrpc:"batch_user_expression,omitempty" json:"batch_user_expression,omitempty"`
+	ComputationMode       *Selection `xmlrpc:"computation_mode,omitempty" json:"computation_mode,omitempty"`
+	ComputeCode           *String    `xmlrpc:"compute_code,omitempty" json:"compute_code,omitempty"`
+	Condition             *Selection `xmlrpc:"condition,omitempty" json:"condition,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description           *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayMode           *Selection `xmlrpc:"display_mode,omitempty" json:"display_mode,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain                *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	FieldDateId           *Many2One  `xmlrpc:"field_date_id,omitempty" json:"field_date_id,omitempty"`
+	FieldId               *Many2One  `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	FullSuffix            *String    `xmlrpc:"full_suffix,omitempty" json:"full_suffix,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelId               *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Monetary              *Bool      `xmlrpc:"monetary,omitempty" json:"monetary,omitempty"`
+	Name                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResIdField            *String    `xmlrpc:"res_id_field,omitempty" json:"res_id_field,omitempty"`
+	Suffix                *String    `xmlrpc:"suffix,omitempty" json:"suffix,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationGoalDefinitions represents array of gamification.goal.definition model.

@@ -2,9 +2,9 @@ package odoo
 
 // IrQwebFieldSelection represents ir.qweb.field.selection model.
 type IrQwebFieldSelection struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // IrQwebFieldSelections represents array of ir.qweb.field.selection model.

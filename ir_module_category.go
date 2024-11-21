@@ -2,23 +2,23 @@ package odoo
 
 // IrModuleCategory represents ir.module.category model.
 type IrModuleCategory struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	ChildIds    *Relation `xmlrpc:"child_ids,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description *String   `xmlrpc:"description,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Exclusive   *Bool     `xmlrpc:"exclusive,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModuleIds   *Relation `xmlrpc:"module_ids,omitempty"`
-	ModuleNr    *Int      `xmlrpc:"module_nr,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	Visible     *Bool     `xmlrpc:"visible,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
-	XmlId       *String   `xmlrpc:"xml_id,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChildIds    *Relation `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Exclusive   *Bool     `xmlrpc:"exclusive,omitempty" json:"exclusive,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleIds   *Relation `xmlrpc:"module_ids,omitempty" json:"module_ids,omitempty"`
+	ModuleNr    *Int      `xmlrpc:"module_nr,omitempty" json:"module_nr,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Visible     *Bool     `xmlrpc:"visible,omitempty" json:"visible,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId       *String   `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrModuleCategorys represents array of ir.module.category model.

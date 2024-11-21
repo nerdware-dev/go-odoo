@@ -2,21 +2,21 @@ package odoo
 
 // ProductAttribute represents product.attribute model.
 type ProductAttribute struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	AttributeLineIds *Relation  `xmlrpc:"attribute_line_ids,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CreateVariant    *Selection `xmlrpc:"create_variant,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType      *Selection `xmlrpc:"display_type,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	IsUsedOnProducts *Bool      `xmlrpc:"is_used_on_products,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	ProductTmplIds   *Relation  `xmlrpc:"product_tmpl_ids,omitempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omitempty"`
-	ValueIds         *Relation  `xmlrpc:"value_ids,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AttributeLineIds *Relation  `xmlrpc:"attribute_line_ids,omitempty" json:"attribute_line_ids,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CreateVariant    *Selection `xmlrpc:"create_variant,omitempty" json:"create_variant,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType      *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsUsedOnProducts *Bool      `xmlrpc:"is_used_on_products,omitempty" json:"is_used_on_products,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductTmplIds   *Relation  `xmlrpc:"product_tmpl_ids,omitempty" json:"product_tmpl_ids,omitempty"`
+	Sequence         *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ValueIds         *Relation  `xmlrpc:"value_ids,omitempty" json:"value_ids,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductAttributes represents array of product.attribute model.

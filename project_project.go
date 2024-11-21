@@ -2,78 +2,78 @@ package odoo
 
 // ProjectProject represents project.project model.
 type ProjectProject struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessToken                  *String    `xmlrpc:"access_token,omitempty"`
-	AccessUrl                    *String    `xmlrpc:"access_url,omitempty"`
-	AccessWarning                *String    `xmlrpc:"access_warning,omitempty"`
-	Active                       *Bool      `xmlrpc:"active,omitempty"`
-	AliasContact                 *Selection `xmlrpc:"alias_contact,omitempty"`
-	AliasDefaults                *String    `xmlrpc:"alias_defaults,omitempty"`
-	AliasDomain                  *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasForceThreadId           *Int       `xmlrpc:"alias_force_thread_id,omitempty"`
-	AliasId                      *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasModelId                 *Many2One  `xmlrpc:"alias_model_id,omitempty"`
-	AliasName                    *String    `xmlrpc:"alias_name,omitempty"`
-	AliasParentModelId           *Many2One  `xmlrpc:"alias_parent_model_id,omitempty"`
-	AliasParentThreadId          *Int       `xmlrpc:"alias_parent_thread_id,omitempty"`
-	AliasUserId                  *Many2One  `xmlrpc:"alias_user_id,omitempty"`
-	AllowBillable                *Bool      `xmlrpc:"allow_billable,omitempty"`
-	AllowTimesheetTimer          *Bool      `xmlrpc:"allow_timesheet_timer,omitempty"`
-	AllowTimesheets              *Bool      `xmlrpc:"allow_timesheets,omitempty"`
-	AnalyticAccountId            *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	BillableType                 *Selection `xmlrpc:"billable_type,omitempty"`
-	Color                        *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                         *Time      `xmlrpc:"date,omitempty"`
-	DateStart                    *Time      `xmlrpc:"date_start,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	DocCount                     *Int       `xmlrpc:"doc_count,omitempty"`
-	FavoriteUserIds              *Relation  `xmlrpc:"favorite_user_ids,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	IsFavorite                   *Bool      `xmlrpc:"is_favorite,omitempty"`
-	LabelTasks                   *String    `xmlrpc:"label_tasks,omitempty"`
-	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds            *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId      *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread                *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter         *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PortalShowRating             *Bool      `xmlrpc:"portal_show_rating,omitempty"`
-	PrivacyVisibility            *Selection `xmlrpc:"privacy_visibility,omitempty"`
-	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty"`
-	RatingPercentageSatisfaction *Int       `xmlrpc:"rating_percentage_satisfaction,omitempty"`
-	RatingRequestDeadline        *Time      `xmlrpc:"rating_request_deadline,omitempty"`
-	RatingStatus                 *Selection `xmlrpc:"rating_status,omitempty"`
-	RatingStatusPeriod           *Selection `xmlrpc:"rating_status_period,omitempty"`
-	ResourceCalendarId           *Many2One  `xmlrpc:"resource_calendar_id,omitempty"`
-	SaleLineEmployeeIds          *Relation  `xmlrpc:"sale_line_employee_ids,omitempty"`
-	SaleLineId                   *Many2One  `xmlrpc:"sale_line_id,omitempty"`
-	SaleOrderId                  *Many2One  `xmlrpc:"sale_order_id,omitempty"`
-	Sequence                     *Int       `xmlrpc:"sequence,omitempty"`
-	SubtaskProjectId             *Many2One  `xmlrpc:"subtask_project_id,omitempty"`
-	TaskCount                    *Int       `xmlrpc:"task_count,omitempty"`
-	TaskIds                      *Relation  `xmlrpc:"task_ids,omitempty"`
-	Tasks                        *Relation  `xmlrpc:"tasks,omitempty"`
-	TicketCount                  *Int       `xmlrpc:"ticket_count,omitempty"`
-	TicketIds                    *Relation  `xmlrpc:"ticket_ids,omitempty"`
-	TypeIds                      *Relation  `xmlrpc:"type_ids,omitempty"`
-	UserId                       *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken                  *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	AccessUrl                    *String    `xmlrpc:"access_url,omitempty" json:"access_url,omitempty"`
+	AccessWarning                *String    `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	Active                       *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AliasContact                 *Selection `xmlrpc:"alias_contact,omitempty" json:"alias_contact,omitempty"`
+	AliasDefaults                *String    `xmlrpc:"alias_defaults,omitempty" json:"alias_defaults,omitempty"`
+	AliasDomain                  *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasForceThreadId           *Int       `xmlrpc:"alias_force_thread_id,omitempty" json:"alias_force_thread_id,omitempty"`
+	AliasId                      *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasModelId                 *Many2One  `xmlrpc:"alias_model_id,omitempty" json:"alias_model_id,omitempty"`
+	AliasName                    *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AliasParentModelId           *Many2One  `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
+	AliasParentThreadId          *Int       `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
+	AliasUserId                  *Many2One  `xmlrpc:"alias_user_id,omitempty" json:"alias_user_id,omitempty"`
+	AllowBillable                *Bool      `xmlrpc:"allow_billable,omitempty" json:"allow_billable,omitempty"`
+	AllowTimesheetTimer          *Bool      `xmlrpc:"allow_timesheet_timer,omitempty" json:"allow_timesheet_timer,omitempty"`
+	AllowTimesheets              *Bool      `xmlrpc:"allow_timesheets,omitempty" json:"allow_timesheets,omitempty"`
+	AnalyticAccountId            *Many2One  `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	BillableType                 *Selection `xmlrpc:"billable_type,omitempty" json:"billable_type,omitempty"`
+	Color                        *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                         *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DateStart                    *Time      `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocCount                     *Int       `xmlrpc:"doc_count,omitempty" json:"doc_count,omitempty"`
+	FavoriteUserIds              *Relation  `xmlrpc:"favorite_user_ids,omitempty" json:"favorite_user_ids,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsFavorite                   *Bool      `xmlrpc:"is_favorite,omitempty" json:"is_favorite,omitempty"`
+	LabelTasks                   *String    `xmlrpc:"label_tasks,omitempty" json:"label_tasks,omitempty"`
+	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds            *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId      *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread                *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter         *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PortalShowRating             *Bool      `xmlrpc:"portal_show_rating,omitempty" json:"portal_show_rating,omitempty"`
+	PrivacyVisibility            *Selection `xmlrpc:"privacy_visibility,omitempty" json:"privacy_visibility,omitempty"`
+	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RatingPercentageSatisfaction *Int       `xmlrpc:"rating_percentage_satisfaction,omitempty" json:"rating_percentage_satisfaction,omitempty"`
+	RatingRequestDeadline        *Time      `xmlrpc:"rating_request_deadline,omitempty" json:"rating_request_deadline,omitempty"`
+	RatingStatus                 *Selection `xmlrpc:"rating_status,omitempty" json:"rating_status,omitempty"`
+	RatingStatusPeriod           *Selection `xmlrpc:"rating_status_period,omitempty" json:"rating_status_period,omitempty"`
+	ResourceCalendarId           *Many2One  `xmlrpc:"resource_calendar_id,omitempty" json:"resource_calendar_id,omitempty"`
+	SaleLineEmployeeIds          *Relation  `xmlrpc:"sale_line_employee_ids,omitempty" json:"sale_line_employee_ids,omitempty"`
+	SaleLineId                   *Many2One  `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	SaleOrderId                  *Many2One  `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	Sequence                     *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SubtaskProjectId             *Many2One  `xmlrpc:"subtask_project_id,omitempty" json:"subtask_project_id,omitempty"`
+	TaskCount                    *Int       `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
+	TaskIds                      *Relation  `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
+	Tasks                        *Relation  `xmlrpc:"tasks,omitempty" json:"tasks,omitempty"`
+	TicketCount                  *Int       `xmlrpc:"ticket_count,omitempty" json:"ticket_count,omitempty"`
+	TicketIds                    *Relation  `xmlrpc:"ticket_ids,omitempty" json:"ticket_ids,omitempty"`
+	TypeIds                      *Relation  `xmlrpc:"type_ids,omitempty" json:"type_ids,omitempty"`
+	UserId                       *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectProjects represents array of project.project model.

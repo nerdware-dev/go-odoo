@@ -2,19 +2,19 @@ package odoo
 
 // MailingContactSubscription represents mailing.contact.subscription model.
 type MailingContactSubscription struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	ContactId          *Many2One `xmlrpc:"contact_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	IsBlacklisted      *Bool     `xmlrpc:"is_blacklisted,omitempty"`
-	ListId             *Many2One `xmlrpc:"list_id,omitempty"`
-	MessageBounce      *Int      `xmlrpc:"message_bounce,omitempty"`
-	OptOut             *Bool     `xmlrpc:"opt_out,omitempty"`
-	UnsubscriptionDate *Time     `xmlrpc:"unsubscription_date,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ContactId          *Many2One `xmlrpc:"contact_id,omitempty" json:"contact_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsBlacklisted      *Bool     `xmlrpc:"is_blacklisted,omitempty" json:"is_blacklisted,omitempty"`
+	ListId             *Many2One `xmlrpc:"list_id,omitempty" json:"list_id,omitempty"`
+	MessageBounce      *Int      `xmlrpc:"message_bounce,omitempty" json:"message_bounce,omitempty"`
+	OptOut             *Bool     `xmlrpc:"opt_out,omitempty" json:"opt_out,omitempty"`
+	UnsubscriptionDate *Time     `xmlrpc:"unsubscription_date,omitempty" json:"unsubscription_date,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailingContactSubscriptions represents array of mailing.contact.subscription model.

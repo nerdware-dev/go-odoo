@@ -2,83 +2,83 @@ package odoo
 
 // AccountBankStatementImportJournalCreation represents account.bank.statement.import.journal.creation model.
 type AccountBankStatementImportJournalCreation struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountControlIds           *Relation  `xmlrpc:"account_control_ids,omitempty"`
-	AccountOnlineJournalId      *Many2One  `xmlrpc:"account_online_journal_id,omitempty"`
-	AccountOnlineProviderId     *Many2One  `xmlrpc:"account_online_provider_id,omitempty"`
-	Active                      *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AliasDomain                 *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasId                     *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasName                   *String    `xmlrpc:"alias_name,omitempty"`
-	AtLeastOneInbound           *Bool      `xmlrpc:"at_least_one_inbound,omitempty"`
-	AtLeastOneOutbound          *Bool      `xmlrpc:"at_least_one_outbound,omitempty"`
-	BankAccNumber               *String    `xmlrpc:"bank_acc_number,omitempty"`
-	BankAccountId               *Many2One  `xmlrpc:"bank_account_id,omitempty"`
-	BankId                      *Many2One  `xmlrpc:"bank_id,omitempty"`
-	BankStatementCreation       *Selection `xmlrpc:"bank_statement_creation,omitempty"`
-	BankStatementsSource        *Selection `xmlrpc:"bank_statements_source,omitempty"`
-	Code                        *String    `xmlrpc:"code,omitempty"`
-	Color                       *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CompanyPartnerId            *Many2One  `xmlrpc:"company_partner_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DefaultCreditAccountId      *Many2One  `xmlrpc:"default_credit_account_id,omitempty"`
-	DefaultDebitAccountId       *Many2One  `xmlrpc:"default_debit_account_id,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	InboundPaymentMethodIds     *Relation  `xmlrpc:"inbound_payment_method_ids,omitempty"`
-	InvoiceReferenceModel       *Selection `xmlrpc:"invoice_reference_model,omitempty"`
-	InvoiceReferenceType        *Selection `xmlrpc:"invoice_reference_type,omitempty"`
-	JournalGroupIds             *Relation  `xmlrpc:"journal_group_ids,omitempty"`
-	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty"`
-	JsonActivityData            *String    `xmlrpc:"json_activity_data,omitempty"`
-	KanbanDashboard             *String    `xmlrpc:"kanban_dashboard,omitempty"`
-	KanbanDashboardGraph        *String    `xmlrpc:"kanban_dashboard_graph,omitempty"`
-	LossAccountId               *Many2One  `xmlrpc:"loss_account_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	NextSynchronization         *Time      `xmlrpc:"next_synchronization,omitempty"`
-	OutboundPaymentMethodIds    *Relation  `xmlrpc:"outbound_payment_method_ids,omitempty"`
-	PostAt                      *Selection `xmlrpc:"post_at,omitempty"`
-	ProfitAccountId             *Many2One  `xmlrpc:"profit_account_id,omitempty"`
-	RefundSequence              *Bool      `xmlrpc:"refund_sequence,omitempty"`
-	RefundSequenceId            *Many2One  `xmlrpc:"refund_sequence_id,omitempty"`
-	RefundSequenceNumberNext    *Int       `xmlrpc:"refund_sequence_number_next,omitempty"`
-	RestrictModeHashTable       *Bool      `xmlrpc:"restrict_mode_hash_table,omitempty"`
-	SecureSequenceId            *Many2One  `xmlrpc:"secure_sequence_id,omitempty"`
-	Sequence                    *Int       `xmlrpc:"sequence,omitempty"`
-	SequenceId                  *Many2One  `xmlrpc:"sequence_id,omitempty"`
-	SequenceNumberNext          *Int       `xmlrpc:"sequence_number_next,omitempty"`
-	ShowOnDashboard             *Bool      `xmlrpc:"show_on_dashboard,omitempty"`
-	SynchronizationStatus       *String    `xmlrpc:"synchronization_status,omitempty"`
-	Type                        *Selection `xmlrpc:"type,omitempty"`
-	TypeControlIds              *Relation  `xmlrpc:"type_control_ids,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountControlIds           *Relation  `xmlrpc:"account_control_ids,omitempty" json:"account_control_ids,omitempty"`
+	AccountOnlineJournalId      *Many2One  `xmlrpc:"account_online_journal_id,omitempty" json:"account_online_journal_id,omitempty"`
+	AccountOnlineProviderId     *Many2One  `xmlrpc:"account_online_provider_id,omitempty" json:"account_online_provider_id,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AliasDomain                 *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasId                     *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasName                   *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AtLeastOneInbound           *Bool      `xmlrpc:"at_least_one_inbound,omitempty" json:"at_least_one_inbound,omitempty"`
+	AtLeastOneOutbound          *Bool      `xmlrpc:"at_least_one_outbound,omitempty" json:"at_least_one_outbound,omitempty"`
+	BankAccNumber               *String    `xmlrpc:"bank_acc_number,omitempty" json:"bank_acc_number,omitempty"`
+	BankAccountId               *Many2One  `xmlrpc:"bank_account_id,omitempty" json:"bank_account_id,omitempty"`
+	BankId                      *Many2One  `xmlrpc:"bank_id,omitempty" json:"bank_id,omitempty"`
+	BankStatementCreation       *Selection `xmlrpc:"bank_statement_creation,omitempty" json:"bank_statement_creation,omitempty"`
+	BankStatementsSource        *Selection `xmlrpc:"bank_statements_source,omitempty" json:"bank_statements_source,omitempty"`
+	Code                        *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	Color                       *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompanyPartnerId            *Many2One  `xmlrpc:"company_partner_id,omitempty" json:"company_partner_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DefaultCreditAccountId      *Many2One  `xmlrpc:"default_credit_account_id,omitempty" json:"default_credit_account_id,omitempty"`
+	DefaultDebitAccountId       *Many2One  `xmlrpc:"default_debit_account_id,omitempty" json:"default_debit_account_id,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InboundPaymentMethodIds     *Relation  `xmlrpc:"inbound_payment_method_ids,omitempty" json:"inbound_payment_method_ids,omitempty"`
+	InvoiceReferenceModel       *Selection `xmlrpc:"invoice_reference_model,omitempty" json:"invoice_reference_model,omitempty"`
+	InvoiceReferenceType        *Selection `xmlrpc:"invoice_reference_type,omitempty" json:"invoice_reference_type,omitempty"`
+	JournalGroupIds             *Relation  `xmlrpc:"journal_group_ids,omitempty" json:"journal_group_ids,omitempty"`
+	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	JsonActivityData            *String    `xmlrpc:"json_activity_data,omitempty" json:"json_activity_data,omitempty"`
+	KanbanDashboard             *String    `xmlrpc:"kanban_dashboard,omitempty" json:"kanban_dashboard,omitempty"`
+	KanbanDashboardGraph        *String    `xmlrpc:"kanban_dashboard_graph,omitempty" json:"kanban_dashboard_graph,omitempty"`
+	LossAccountId               *Many2One  `xmlrpc:"loss_account_id,omitempty" json:"loss_account_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NextSynchronization         *Time      `xmlrpc:"next_synchronization,omitempty" json:"next_synchronization,omitempty"`
+	OutboundPaymentMethodIds    *Relation  `xmlrpc:"outbound_payment_method_ids,omitempty" json:"outbound_payment_method_ids,omitempty"`
+	PostAt                      *Selection `xmlrpc:"post_at,omitempty" json:"post_at,omitempty"`
+	ProfitAccountId             *Many2One  `xmlrpc:"profit_account_id,omitempty" json:"profit_account_id,omitempty"`
+	RefundSequence              *Bool      `xmlrpc:"refund_sequence,omitempty" json:"refund_sequence,omitempty"`
+	RefundSequenceId            *Many2One  `xmlrpc:"refund_sequence_id,omitempty" json:"refund_sequence_id,omitempty"`
+	RefundSequenceNumberNext    *Int       `xmlrpc:"refund_sequence_number_next,omitempty" json:"refund_sequence_number_next,omitempty"`
+	RestrictModeHashTable       *Bool      `xmlrpc:"restrict_mode_hash_table,omitempty" json:"restrict_mode_hash_table,omitempty"`
+	SecureSequenceId            *Many2One  `xmlrpc:"secure_sequence_id,omitempty" json:"secure_sequence_id,omitempty"`
+	Sequence                    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SequenceId                  *Many2One  `xmlrpc:"sequence_id,omitempty" json:"sequence_id,omitempty"`
+	SequenceNumberNext          *Int       `xmlrpc:"sequence_number_next,omitempty" json:"sequence_number_next,omitempty"`
+	ShowOnDashboard             *Bool      `xmlrpc:"show_on_dashboard,omitempty" json:"show_on_dashboard,omitempty"`
+	SynchronizationStatus       *String    `xmlrpc:"synchronization_status,omitempty" json:"synchronization_status,omitempty"`
+	Type                        *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	TypeControlIds              *Relation  `xmlrpc:"type_control_ids,omitempty" json:"type_control_ids,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankStatementImportJournalCreations represents array of account.bank.statement.import.journal.creation model.

@@ -2,75 +2,75 @@ package odoo
 
 // HrLeave represents hr.leave model.
 type HrLeave struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	CanApprove                  *Bool      `xmlrpc:"can_approve,omitempty"`
-	CanReset                    *Bool      `xmlrpc:"can_reset,omitempty"`
-	CategoryId                  *Many2One  `xmlrpc:"category_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateFrom                    *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo                      *Time      `xmlrpc:"date_to,omitempty"`
-	DepartmentId                *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	DurationDisplay             *String    `xmlrpc:"duration_display,omitempty"`
-	EmployeeId                  *Many2One  `xmlrpc:"employee_id,omitempty"`
-	FirstApproverId             *Many2One  `xmlrpc:"first_approver_id,omitempty"`
-	HolidayStatusId             *Many2One  `xmlrpc:"holiday_status_id,omitempty"`
-	HolidayType                 *Selection `xmlrpc:"holiday_type,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	LeaveTypeRequestUnit        *Selection `xmlrpc:"leave_type_request_unit,omitempty"`
-	LinkedRequestIds            *Relation  `xmlrpc:"linked_request_ids,omitempty"`
-	ManagerId                   *Many2One  `xmlrpc:"manager_id,omitempty"`
-	MeetingId                   *Many2One  `xmlrpc:"meeting_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	ModeCompanyId               *Many2One  `xmlrpc:"mode_company_id,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	Notes                       *String    `xmlrpc:"notes,omitempty"`
-	NumberOfDays                *Float     `xmlrpc:"number_of_days,omitempty"`
-	NumberOfDaysDisplay         *Float     `xmlrpc:"number_of_days_display,omitempty"`
-	NumberOfHoursDisplay        *Float     `xmlrpc:"number_of_hours_display,omitempty"`
-	ParentId                    *Many2One  `xmlrpc:"parent_id,omitempty"`
-	PayslipStatus               *Bool      `xmlrpc:"payslip_status,omitempty"`
-	ReportNote                  *String    `xmlrpc:"report_note,omitempty"`
-	RequestDateFrom             *Time      `xmlrpc:"request_date_from,omitempty"`
-	RequestDateFromPeriod       *Selection `xmlrpc:"request_date_from_period,omitempty"`
-	RequestDateTo               *Time      `xmlrpc:"request_date_to,omitempty"`
-	RequestHourFrom             *Selection `xmlrpc:"request_hour_from,omitempty"`
-	RequestHourTo               *Selection `xmlrpc:"request_hour_to,omitempty"`
-	RequestUnitCustom           *Bool      `xmlrpc:"request_unit_custom,omitempty"`
-	RequestUnitHalf             *Bool      `xmlrpc:"request_unit_half,omitempty"`
-	RequestUnitHours            *Bool      `xmlrpc:"request_unit_hours,omitempty"`
-	SecondApproverId            *Many2One  `xmlrpc:"second_approver_id,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	TimesheetIds                *Relation  `xmlrpc:"timesheet_ids,omitempty"`
-	Tz                          *Selection `xmlrpc:"tz,omitempty"`
-	TzMismatch                  *Bool      `xmlrpc:"tz_mismatch,omitempty"`
-	UserId                      *Many2One  `xmlrpc:"user_id,omitempty"`
-	ValidationType              *Selection `xmlrpc:"validation_type,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	CanApprove                  *Bool      `xmlrpc:"can_approve,omitempty" json:"can_approve,omitempty"`
+	CanReset                    *Bool      `xmlrpc:"can_reset,omitempty" json:"can_reset,omitempty"`
+	CategoryId                  *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom                    *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo                      *Time      `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DepartmentId                *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DurationDisplay             *String    `xmlrpc:"duration_display,omitempty" json:"duration_display,omitempty"`
+	EmployeeId                  *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	FirstApproverId             *Many2One  `xmlrpc:"first_approver_id,omitempty" json:"first_approver_id,omitempty"`
+	HolidayStatusId             *Many2One  `xmlrpc:"holiday_status_id,omitempty" json:"holiday_status_id,omitempty"`
+	HolidayType                 *Selection `xmlrpc:"holiday_type,omitempty" json:"holiday_type,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveTypeRequestUnit        *Selection `xmlrpc:"leave_type_request_unit,omitempty" json:"leave_type_request_unit,omitempty"`
+	LinkedRequestIds            *Relation  `xmlrpc:"linked_request_ids,omitempty" json:"linked_request_ids,omitempty"`
+	ManagerId                   *Many2One  `xmlrpc:"manager_id,omitempty" json:"manager_id,omitempty"`
+	MeetingId                   *Many2One  `xmlrpc:"meeting_id,omitempty" json:"meeting_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	ModeCompanyId               *Many2One  `xmlrpc:"mode_company_id,omitempty" json:"mode_company_id,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Notes                       *String    `xmlrpc:"notes,omitempty" json:"notes,omitempty"`
+	NumberOfDays                *Float     `xmlrpc:"number_of_days,omitempty" json:"number_of_days,omitempty"`
+	NumberOfDaysDisplay         *Float     `xmlrpc:"number_of_days_display,omitempty" json:"number_of_days_display,omitempty"`
+	NumberOfHoursDisplay        *Float     `xmlrpc:"number_of_hours_display,omitempty" json:"number_of_hours_display,omitempty"`
+	ParentId                    *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	PayslipStatus               *Bool      `xmlrpc:"payslip_status,omitempty" json:"payslip_status,omitempty"`
+	ReportNote                  *String    `xmlrpc:"report_note,omitempty" json:"report_note,omitempty"`
+	RequestDateFrom             *Time      `xmlrpc:"request_date_from,omitempty" json:"request_date_from,omitempty"`
+	RequestDateFromPeriod       *Selection `xmlrpc:"request_date_from_period,omitempty" json:"request_date_from_period,omitempty"`
+	RequestDateTo               *Time      `xmlrpc:"request_date_to,omitempty" json:"request_date_to,omitempty"`
+	RequestHourFrom             *Selection `xmlrpc:"request_hour_from,omitempty" json:"request_hour_from,omitempty"`
+	RequestHourTo               *Selection `xmlrpc:"request_hour_to,omitempty" json:"request_hour_to,omitempty"`
+	RequestUnitCustom           *Bool      `xmlrpc:"request_unit_custom,omitempty" json:"request_unit_custom,omitempty"`
+	RequestUnitHalf             *Bool      `xmlrpc:"request_unit_half,omitempty" json:"request_unit_half,omitempty"`
+	RequestUnitHours            *Bool      `xmlrpc:"request_unit_hours,omitempty" json:"request_unit_hours,omitempty"`
+	SecondApproverId            *Many2One  `xmlrpc:"second_approver_id,omitempty" json:"second_approver_id,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TimesheetIds                *Relation  `xmlrpc:"timesheet_ids,omitempty" json:"timesheet_ids,omitempty"`
+	Tz                          *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	TzMismatch                  *Bool      `xmlrpc:"tz_mismatch,omitempty" json:"tz_mismatch,omitempty"`
+	UserId                      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	ValidationType              *Selection `xmlrpc:"validation_type,omitempty" json:"validation_type,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrLeaves represents array of hr.leave model.

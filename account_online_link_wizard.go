@@ -2,21 +2,21 @@ package odoo
 
 // AccountOnlineLinkWizard represents account.online.link.wizard model.
 type AccountOnlineLinkWizard struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountNumber             *String    `xmlrpc:"account_number,omitempty"`
-	AccountOnlineWizardId     *Many2One  `xmlrpc:"account_online_wizard_id,omitempty"`
-	Action                    *Selection `xmlrpc:"action,omitempty"`
-	Balance                   *Float     `xmlrpc:"balance,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	JournalStatementsCreation *Selection `xmlrpc:"journal_statements_creation,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	OnlineAccountId           *Many2One  `xmlrpc:"online_account_id,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountNumber             *String    `xmlrpc:"account_number,omitempty" json:"account_number,omitempty"`
+	AccountOnlineWizardId     *Many2One  `xmlrpc:"account_online_wizard_id,omitempty" json:"account_online_wizard_id,omitempty"`
+	Action                    *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	Balance                   *Float     `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	JournalStatementsCreation *Selection `xmlrpc:"journal_statements_creation,omitempty" json:"journal_statements_creation,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OnlineAccountId           *Many2One  `xmlrpc:"online_account_id,omitempty" json:"online_account_id,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountOnlineLinkWizards represents array of account.online.link.wizard model.

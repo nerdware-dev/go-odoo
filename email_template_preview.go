@@ -2,41 +2,41 @@ package odoo
 
 // EmailTemplatePreview represents email_template.preview model.
 type EmailTemplatePreview struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AttachmentIds       *Relation  `xmlrpc:"attachment_ids,omitempty"`
-	AutoDelete          *Bool      `xmlrpc:"auto_delete,omitempty"`
-	BodyHtml            *String    `xmlrpc:"body_html,omitempty"`
-	Copyvalue           *String    `xmlrpc:"copyvalue,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	EmailCc             *String    `xmlrpc:"email_cc,omitempty"`
-	EmailFrom           *String    `xmlrpc:"email_from,omitempty"`
-	EmailTo             *String    `xmlrpc:"email_to,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Lang                *String    `xmlrpc:"lang,omitempty"`
-	MailServerId        *Many2One  `xmlrpc:"mail_server_id,omitempty"`
-	Model               *String    `xmlrpc:"model,omitempty"`
-	ModelId             *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelObjectField    *Many2One  `xmlrpc:"model_object_field,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	NullValue           *String    `xmlrpc:"null_value,omitempty"`
-	PartnerIds          *Relation  `xmlrpc:"partner_ids,omitempty"`
-	PartnerTo           *String    `xmlrpc:"partner_to,omitempty"`
-	PreviewLang         *Selection `xmlrpc:"preview_lang,omitempty"`
-	RefIrActWindow      *Many2One  `xmlrpc:"ref_ir_act_window,omitempty"`
-	ReplyTo             *String    `xmlrpc:"reply_to,omitempty"`
-	ReportName          *String    `xmlrpc:"report_name,omitempty"`
-	ReportTemplate      *Many2One  `xmlrpc:"report_template,omitempty"`
-	ResId               *Selection `xmlrpc:"res_id,omitempty"`
-	ScheduledDate       *String    `xmlrpc:"scheduled_date,omitempty"`
-	SubModelObjectField *Many2One  `xmlrpc:"sub_model_object_field,omitempty"`
-	SubObject           *Many2One  `xmlrpc:"sub_object,omitempty"`
-	Subject             *String    `xmlrpc:"subject,omitempty"`
-	UseDefaultTo        *Bool      `xmlrpc:"use_default_to,omitempty"`
-	UserSignature       *Bool      `xmlrpc:"user_signature,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AttachmentIds       *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	AutoDelete          *Bool      `xmlrpc:"auto_delete,omitempty" json:"auto_delete,omitempty"`
+	BodyHtml            *String    `xmlrpc:"body_html,omitempty" json:"body_html,omitempty"`
+	Copyvalue           *String    `xmlrpc:"copyvalue,omitempty" json:"copyvalue,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmailCc             *String    `xmlrpc:"email_cc,omitempty" json:"email_cc,omitempty"`
+	EmailFrom           *String    `xmlrpc:"email_from,omitempty" json:"email_from,omitempty"`
+	EmailTo             *String    `xmlrpc:"email_to,omitempty" json:"email_to,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang                *String    `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	MailServerId        *Many2One  `xmlrpc:"mail_server_id,omitempty" json:"mail_server_id,omitempty"`
+	Model               *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelId             *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelObjectField    *Many2One  `xmlrpc:"model_object_field,omitempty" json:"model_object_field,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NullValue           *String    `xmlrpc:"null_value,omitempty" json:"null_value,omitempty"`
+	PartnerIds          *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	PartnerTo           *String    `xmlrpc:"partner_to,omitempty" json:"partner_to,omitempty"`
+	PreviewLang         *Selection `xmlrpc:"preview_lang,omitempty" json:"preview_lang,omitempty"`
+	RefIrActWindow      *Many2One  `xmlrpc:"ref_ir_act_window,omitempty" json:"ref_ir_act_window,omitempty"`
+	ReplyTo             *String    `xmlrpc:"reply_to,omitempty" json:"reply_to,omitempty"`
+	ReportName          *String    `xmlrpc:"report_name,omitempty" json:"report_name,omitempty"`
+	ReportTemplate      *Many2One  `xmlrpc:"report_template,omitempty" json:"report_template,omitempty"`
+	ResId               *Selection `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ScheduledDate       *String    `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
+	SubModelObjectField *Many2One  `xmlrpc:"sub_model_object_field,omitempty" json:"sub_model_object_field,omitempty"`
+	SubObject           *Many2One  `xmlrpc:"sub_object,omitempty" json:"sub_object,omitempty"`
+	Subject             *String    `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	UseDefaultTo        *Bool      `xmlrpc:"use_default_to,omitempty" json:"use_default_to,omitempty"`
+	UserSignature       *Bool      `xmlrpc:"user_signature,omitempty" json:"user_signature,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // EmailTemplatePreviews represents array of email_template.preview model.

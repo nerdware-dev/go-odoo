@@ -2,24 +2,24 @@ package odoo
 
 // ResCurrency represents res.currency model.
 type ResCurrency struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	Active               *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencySubunitLabel *String    `xmlrpc:"currency_subunit_label,omitempty"`
-	CurrencyUnitLabel    *String    `xmlrpc:"currency_unit_label,omitempty"`
-	Date                 *Time      `xmlrpc:"date,omitempty"`
-	DecimalPlaces        *Int       `xmlrpc:"decimal_places,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	Position             *Selection `xmlrpc:"position,omitempty"`
-	Rate                 *Float     `xmlrpc:"rate,omitempty"`
-	RateIds              *Relation  `xmlrpc:"rate_ids,omitempty"`
-	Rounding             *Float     `xmlrpc:"rounding,omitempty"`
-	Symbol               *String    `xmlrpc:"symbol,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active               *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencySubunitLabel *String    `xmlrpc:"currency_subunit_label,omitempty" json:"currency_subunit_label,omitempty"`
+	CurrencyUnitLabel    *String    `xmlrpc:"currency_unit_label,omitempty" json:"currency_unit_label,omitempty"`
+	Date                 *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DecimalPlaces        *Int       `xmlrpc:"decimal_places,omitempty" json:"decimal_places,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Position             *Selection `xmlrpc:"position,omitempty" json:"position,omitempty"`
+	Rate                 *Float     `xmlrpc:"rate,omitempty" json:"rate,omitempty"`
+	RateIds              *Relation  `xmlrpc:"rate_ids,omitempty" json:"rate_ids,omitempty"`
+	Rounding             *Float     `xmlrpc:"rounding,omitempty" json:"rounding,omitempty"`
+	Symbol               *String    `xmlrpc:"symbol,omitempty" json:"symbol,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResCurrencys represents array of res.currency model.

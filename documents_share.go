@@ -2,60 +2,60 @@ package odoo
 
 // DocumentsShare represents documents.share model.
 type DocumentsShare struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessToken                   *String    `xmlrpc:"access_token,omitempty"`
-	Action                        *Selection `xmlrpc:"action,omitempty"`
-	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
-	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
-	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
-	ActivityOption                *Bool      `xmlrpc:"activity_option,omitempty"`
-	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AliasContact                  *Selection `xmlrpc:"alias_contact,omitempty"`
-	AliasDefaults                 *String    `xmlrpc:"alias_defaults,omitempty"`
-	AliasDomain                   *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasForceThreadId            *Int       `xmlrpc:"alias_force_thread_id,omitempty"`
-	AliasId                       *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasModelId                  *Many2One  `xmlrpc:"alias_model_id,omitempty"`
-	AliasName                     *String    `xmlrpc:"alias_name,omitempty"`
-	AliasParentModelId            *Many2One  `xmlrpc:"alias_parent_model_id,omitempty"`
-	AliasParentThreadId           *Int       `xmlrpc:"alias_parent_thread_id,omitempty"`
-	AliasUserId                   *Many2One  `xmlrpc:"alias_user_id,omitempty"`
-	CanUpload                     *Bool      `xmlrpc:"can_upload,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateDeadline                  *Time      `xmlrpc:"date_deadline,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	DocumentIds                   *Relation  `xmlrpc:"document_ids,omitempty"`
-	Domain                        *String    `xmlrpc:"domain,omitempty"`
-	EmailDrop                     *Bool      `xmlrpc:"email_drop,omitempty"`
-	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty"`
-	FullUrl                       *String    `xmlrpc:"full_url,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	MessageAttachmentCount        *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds             *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds            *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError               *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter        *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError            *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                    *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower             *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId       *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction             *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter      *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds             *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread                 *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter          *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	OwnerId                       *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	State                         *Selection `xmlrpc:"state,omitempty"`
-	TagIds                        *Relation  `xmlrpc:"tag_ids,omitempty"`
-	Type                          *Selection `xmlrpc:"type,omitempty"`
-	WebsiteMessageIds             *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken                   *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	Action                        *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty" json:"activity_date_deadline_range,omitempty"`
+	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty" json:"activity_date_deadline_range_type,omitempty"`
+	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty" json:"activity_note,omitempty"`
+	ActivityOption                *Bool      `xmlrpc:"activity_option,omitempty" json:"activity_option,omitempty"`
+	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AliasContact                  *Selection `xmlrpc:"alias_contact,omitempty" json:"alias_contact,omitempty"`
+	AliasDefaults                 *String    `xmlrpc:"alias_defaults,omitempty" json:"alias_defaults,omitempty"`
+	AliasDomain                   *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasForceThreadId            *Int       `xmlrpc:"alias_force_thread_id,omitempty" json:"alias_force_thread_id,omitempty"`
+	AliasId                       *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasModelId                  *Many2One  `xmlrpc:"alias_model_id,omitempty" json:"alias_model_id,omitempty"`
+	AliasName                     *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AliasParentModelId            *Many2One  `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
+	AliasParentThreadId           *Int       `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
+	AliasUserId                   *Many2One  `xmlrpc:"alias_user_id,omitempty" json:"alias_user_id,omitempty"`
+	CanUpload                     *Bool      `xmlrpc:"can_upload,omitempty" json:"can_upload,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateDeadline                  *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentIds                   *Relation  `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
+	Domain                        *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	EmailDrop                     *Bool      `xmlrpc:"email_drop,omitempty" json:"email_drop,omitempty"`
+	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	FullUrl                       *String    `xmlrpc:"full_url,omitempty" json:"full_url,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageAttachmentCount        *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds             *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds            *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError               *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter        *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError            *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                    *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower             *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId       *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction             *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter      *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds             *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread                 *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter          *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OwnerId                       *Many2One  `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	State                         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TagIds                        *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	Type                          *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WebsiteMessageIds             *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsShares represents array of documents.share model.

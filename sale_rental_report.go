@@ -2,24 +2,24 @@ package odoo
 
 // SaleRentalReport represents sale.rental.report model.
 type SaleRentalReport struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CategId       *Many2One  `xmlrpc:"categ_id,omitempty"`
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	CurrencyId    *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	OrderId       *Many2One  `xmlrpc:"order_id,omitempty"`
-	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Price         *Float     `xmlrpc:"price,omitempty"`
-	ProductId     *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUom    *Many2One  `xmlrpc:"product_uom,omitempty"`
-	QtyDelivered  *Float     `xmlrpc:"qty_delivered,omitempty"`
-	QtyReturned   *Float     `xmlrpc:"qty_returned,omitempty"`
-	Quantity      *Float     `xmlrpc:"quantity,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	UserId        *Many2One  `xmlrpc:"user_id,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CategId       *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId    *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date          *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OrderId       *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Price         *Float     `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	ProductId     *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUom    *Many2One  `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	QtyDelivered  *Float     `xmlrpc:"qty_delivered,omitempty" json:"qty_delivered,omitempty"`
+	QtyReturned   *Float     `xmlrpc:"qty_returned,omitempty" json:"qty_returned,omitempty"`
+	Quantity      *Float     `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UserId        *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // SaleRentalReports represents array of sale.rental.report model.

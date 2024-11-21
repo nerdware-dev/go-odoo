@@ -2,19 +2,19 @@ package odoo
 
 // RentalOrderWizard represents rental.order.wizard model.
 type RentalOrderWizard struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	HasLateLines         *Bool      `xmlrpc:"has_late_lines,omitempty"`
-	HasLinesMissingStock *Bool      `xmlrpc:"has_lines_missing_stock,omitempty"`
-	HasTrackedLines      *Bool      `xmlrpc:"has_tracked_lines,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	OrderId              *Many2One  `xmlrpc:"order_id,omitempty"`
-	RentalWizardLineIds  *Relation  `xmlrpc:"rental_wizard_line_ids,omitempty"`
-	Status               *Selection `xmlrpc:"status,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasLateLines         *Bool      `xmlrpc:"has_late_lines,omitempty" json:"has_late_lines,omitempty"`
+	HasLinesMissingStock *Bool      `xmlrpc:"has_lines_missing_stock,omitempty" json:"has_lines_missing_stock,omitempty"`
+	HasTrackedLines      *Bool      `xmlrpc:"has_tracked_lines,omitempty" json:"has_tracked_lines,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OrderId              *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	RentalWizardLineIds  *Relation  `xmlrpc:"rental_wizard_line_ids,omitempty" json:"rental_wizard_line_ids,omitempty"`
+	Status               *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // RentalOrderWizards represents array of rental.order.wizard model.

@@ -2,24 +2,24 @@ package odoo
 
 // ChooseDeliveryCarrier represents choose.delivery.carrier model.
 type ChooseDeliveryCarrier struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AvailableCarrierIds *Relation  `xmlrpc:"available_carrier_ids,omitempty"`
-	CarrierId           *Many2One  `xmlrpc:"carrier_id,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DeliveryMessage     *String    `xmlrpc:"delivery_message,omitempty"`
-	DeliveryPrice       *Float     `xmlrpc:"delivery_price,omitempty"`
-	DeliveryType        *Selection `xmlrpc:"delivery_type,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	DisplayPrice        *Float     `xmlrpc:"display_price,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	InvoicingMessage    *String    `xmlrpc:"invoicing_message,omitempty"`
-	OrderId             *Many2One  `xmlrpc:"order_id,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AvailableCarrierIds *Relation  `xmlrpc:"available_carrier_ids,omitempty" json:"available_carrier_ids,omitempty"`
+	CarrierId           *Many2One  `xmlrpc:"carrier_id,omitempty" json:"carrier_id,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DeliveryMessage     *String    `xmlrpc:"delivery_message,omitempty" json:"delivery_message,omitempty"`
+	DeliveryPrice       *Float     `xmlrpc:"delivery_price,omitempty" json:"delivery_price,omitempty"`
+	DeliveryType        *Selection `xmlrpc:"delivery_type,omitempty" json:"delivery_type,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayPrice        *Float     `xmlrpc:"display_price,omitempty" json:"display_price,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoicingMessage    *String    `xmlrpc:"invoicing_message,omitempty" json:"invoicing_message,omitempty"`
+	OrderId             *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ChooseDeliveryCarriers represents array of choose.delivery.carrier model.

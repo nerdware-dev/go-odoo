@@ -2,17 +2,17 @@ package odoo
 
 // AccountFullReconcile represents account.full.reconcile model.
 type AccountFullReconcile struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	ExchangeMoveId      *Many2One `xmlrpc:"exchange_move_id,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	Name                *String   `xmlrpc:"name,omitempty"`
-	PartialReconcileIds *Relation `xmlrpc:"partial_reconcile_ids,omitempty"`
-	ReconciledLineIds   *Relation `xmlrpc:"reconciled_line_ids,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExchangeMoveId      *Many2One `xmlrpc:"exchange_move_id,omitempty" json:"exchange_move_id,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartialReconcileIds *Relation `xmlrpc:"partial_reconcile_ids,omitempty" json:"partial_reconcile_ids,omitempty"`
+	ReconciledLineIds   *Relation `xmlrpc:"reconciled_line_ids,omitempty" json:"reconciled_line_ids,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFullReconciles represents array of account.full.reconcile model.

@@ -2,57 +2,57 @@ package odoo
 
 // WebsitePage represents website.page model.
 type WebsitePage struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	Arch                   *String    `xmlrpc:"arch,omitempty"`
-	ArchBase               *String    `xmlrpc:"arch_base,omitempty"`
-	ArchDb                 *String    `xmlrpc:"arch_db,omitempty"`
-	ArchFs                 *String    `xmlrpc:"arch_fs,omitempty"`
-	ArchPrev               *String    `xmlrpc:"arch_prev,omitempty"`
-	ArchUpdated            *Bool      `xmlrpc:"arch_updated,omitempty"`
-	CanPublish             *Bool      `xmlrpc:"can_publish,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomizeShow          *Bool      `xmlrpc:"customize_show,omitempty"`
-	DatePublish            *Time      `xmlrpc:"date_publish,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	FieldParent            *String    `xmlrpc:"field_parent,omitempty"`
-	FirstPageId            *Many2One  `xmlrpc:"first_page_id,omitempty"`
-	GroupsId               *Relation  `xmlrpc:"groups_id,omitempty"`
-	HeaderColor            *String    `xmlrpc:"header_color,omitempty"`
-	HeaderOverlay          *Bool      `xmlrpc:"header_overlay,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	InheritChildrenIds     *Relation  `xmlrpc:"inherit_children_ids,omitempty"`
-	InheritId              *Many2One  `xmlrpc:"inherit_id,omitempty"`
-	IsHomepage             *Bool      `xmlrpc:"is_homepage,omitempty"`
-	IsPublished            *Bool      `xmlrpc:"is_published,omitempty"`
-	IsSeoOptimized         *Bool      `xmlrpc:"is_seo_optimized,omitempty"`
-	IsVisible              *Bool      `xmlrpc:"is_visible,omitempty"`
-	Key                    *String    `xmlrpc:"key,omitempty"`
-	MenuIds                *Relation  `xmlrpc:"menu_ids,omitempty"`
-	Mode                   *Selection `xmlrpc:"mode,omitempty"`
-	Model                  *String    `xmlrpc:"model,omitempty"`
-	ModelDataId            *Many2One  `xmlrpc:"model_data_id,omitempty"`
-	ModelIds               *Relation  `xmlrpc:"model_ids,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PageIds                *Relation  `xmlrpc:"page_ids,omitempty"`
-	Priority               *Int       `xmlrpc:"priority,omitempty"`
-	ThemeTemplateId        *Many2One  `xmlrpc:"theme_template_id,omitempty"`
-	Track                  *Bool      `xmlrpc:"track,omitempty"`
-	Type                   *Selection `xmlrpc:"type,omitempty"`
-	Url                    *String    `xmlrpc:"url,omitempty"`
-	ViewId                 *Many2One  `xmlrpc:"view_id,omitempty"`
-	WebsiteId              *Many2One  `xmlrpc:"website_id,omitempty"`
-	WebsiteIndexed         *Bool      `xmlrpc:"website_indexed,omitempty"`
-	WebsiteMetaDescription *String    `xmlrpc:"website_meta_description,omitempty"`
-	WebsiteMetaKeywords    *String    `xmlrpc:"website_meta_keywords,omitempty"`
-	WebsiteMetaOgImg       *String    `xmlrpc:"website_meta_og_img,omitempty"`
-	WebsiteMetaTitle       *String    `xmlrpc:"website_meta_title,omitempty"`
-	WebsitePublished       *Bool      `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl             *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId                  *String    `xmlrpc:"xml_id,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Arch                   *String    `xmlrpc:"arch,omitempty" json:"arch,omitempty"`
+	ArchBase               *String    `xmlrpc:"arch_base,omitempty" json:"arch_base,omitempty"`
+	ArchDb                 *String    `xmlrpc:"arch_db,omitempty" json:"arch_db,omitempty"`
+	ArchFs                 *String    `xmlrpc:"arch_fs,omitempty" json:"arch_fs,omitempty"`
+	ArchPrev               *String    `xmlrpc:"arch_prev,omitempty" json:"arch_prev,omitempty"`
+	ArchUpdated            *Bool      `xmlrpc:"arch_updated,omitempty" json:"arch_updated,omitempty"`
+	CanPublish             *Bool      `xmlrpc:"can_publish,omitempty" json:"can_publish,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomizeShow          *Bool      `xmlrpc:"customize_show,omitempty" json:"customize_show,omitempty"`
+	DatePublish            *Time      `xmlrpc:"date_publish,omitempty" json:"date_publish,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldParent            *String    `xmlrpc:"field_parent,omitempty" json:"field_parent,omitempty"`
+	FirstPageId            *Many2One  `xmlrpc:"first_page_id,omitempty" json:"first_page_id,omitempty"`
+	GroupsId               *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	HeaderColor            *String    `xmlrpc:"header_color,omitempty" json:"header_color,omitempty"`
+	HeaderOverlay          *Bool      `xmlrpc:"header_overlay,omitempty" json:"header_overlay,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InheritChildrenIds     *Relation  `xmlrpc:"inherit_children_ids,omitempty" json:"inherit_children_ids,omitempty"`
+	InheritId              *Many2One  `xmlrpc:"inherit_id,omitempty" json:"inherit_id,omitempty"`
+	IsHomepage             *Bool      `xmlrpc:"is_homepage,omitempty" json:"is_homepage,omitempty"`
+	IsPublished            *Bool      `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	IsSeoOptimized         *Bool      `xmlrpc:"is_seo_optimized,omitempty" json:"is_seo_optimized,omitempty"`
+	IsVisible              *Bool      `xmlrpc:"is_visible,omitempty" json:"is_visible,omitempty"`
+	Key                    *String    `xmlrpc:"key,omitempty" json:"key,omitempty"`
+	MenuIds                *Relation  `xmlrpc:"menu_ids,omitempty" json:"menu_ids,omitempty"`
+	Mode                   *Selection `xmlrpc:"mode,omitempty" json:"mode,omitempty"`
+	Model                  *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelDataId            *Many2One  `xmlrpc:"model_data_id,omitempty" json:"model_data_id,omitempty"`
+	ModelIds               *Relation  `xmlrpc:"model_ids,omitempty" json:"model_ids,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PageIds                *Relation  `xmlrpc:"page_ids,omitempty" json:"page_ids,omitempty"`
+	Priority               *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	ThemeTemplateId        *Many2One  `xmlrpc:"theme_template_id,omitempty" json:"theme_template_id,omitempty"`
+	Track                  *Bool      `xmlrpc:"track,omitempty" json:"track,omitempty"`
+	Type                   *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Url                    *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	ViewId                 *Many2One  `xmlrpc:"view_id,omitempty" json:"view_id,omitempty"`
+	WebsiteId              *Many2One  `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WebsiteIndexed         *Bool      `xmlrpc:"website_indexed,omitempty" json:"website_indexed,omitempty"`
+	WebsiteMetaDescription *String    `xmlrpc:"website_meta_description,omitempty" json:"website_meta_description,omitempty"`
+	WebsiteMetaKeywords    *String    `xmlrpc:"website_meta_keywords,omitempty" json:"website_meta_keywords,omitempty"`
+	WebsiteMetaOgImg       *String    `xmlrpc:"website_meta_og_img,omitempty" json:"website_meta_og_img,omitempty"`
+	WebsiteMetaTitle       *String    `xmlrpc:"website_meta_title,omitempty" json:"website_meta_title,omitempty"`
+	WebsitePublished       *Bool      `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	WebsiteUrl             *String    `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId                  *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // WebsitePages represents array of website.page model.

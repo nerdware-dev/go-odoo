@@ -2,21 +2,21 @@ package odoo
 
 // HrLeaveReport represents hr.leave.report model.
 type HrLeaveReport struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty"`
-	DateFrom        *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo          *Time      `xmlrpc:"date_to,omitempty"`
-	DepartmentId    *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId      *Many2One  `xmlrpc:"employee_id,omitempty"`
-	HolidayStatusId *Many2One  `xmlrpc:"holiday_status_id,omitempty"`
-	HolidayType     *Selection `xmlrpc:"holiday_type,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	LeaveType       *Selection `xmlrpc:"leave_type,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	NumberOfDays    *Float     `xmlrpc:"number_of_days,omitempty"`
-	PayslipStatus   *Bool      `xmlrpc:"payslip_status,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	DateFrom        *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo          *Time      `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DepartmentId    *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId      *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	HolidayStatusId *Many2One  `xmlrpc:"holiday_status_id,omitempty" json:"holiday_status_id,omitempty"`
+	HolidayType     *Selection `xmlrpc:"holiday_type,omitempty" json:"holiday_type,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveType       *Selection `xmlrpc:"leave_type,omitempty" json:"leave_type,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NumberOfDays    *Float     `xmlrpc:"number_of_days,omitempty" json:"number_of_days,omitempty"`
+	PayslipStatus   *Bool      `xmlrpc:"payslip_status,omitempty" json:"payslip_status,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 }
 
 // HrLeaveReports represents array of hr.leave.report model.

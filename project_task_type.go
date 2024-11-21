@@ -2,25 +2,25 @@ package odoo
 
 // ProjectTaskType represents project.task.type model.
 type ProjectTaskType struct {
-	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty"`
-	AutoValidationKanbanState *Bool     `xmlrpc:"auto_validation_kanban_state,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description               *String   `xmlrpc:"description,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	Fold                      *Bool     `xmlrpc:"fold,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	IsClosed                  *Bool     `xmlrpc:"is_closed,omitempty"`
-	LegendBlocked             *String   `xmlrpc:"legend_blocked,omitempty"`
-	LegendDone                *String   `xmlrpc:"legend_done,omitempty"`
-	LegendNormal              *String   `xmlrpc:"legend_normal,omitempty"`
-	MailTemplateId            *Many2One `xmlrpc:"mail_template_id,omitempty"`
-	Name                      *String   `xmlrpc:"name,omitempty"`
-	ProjectIds                *Relation `xmlrpc:"project_ids,omitempty"`
-	RatingTemplateId          *Many2One `xmlrpc:"rating_template_id,omitempty"`
-	Sequence                  *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AutoValidationKanbanState *Bool     `xmlrpc:"auto_validation_kanban_state,omitempty" json:"auto_validation_kanban_state,omitempty"`
+	CreateDate                *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description               *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName               *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Fold                      *Bool     `xmlrpc:"fold,omitempty" json:"fold,omitempty"`
+	Id                        *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsClosed                  *Bool     `xmlrpc:"is_closed,omitempty" json:"is_closed,omitempty"`
+	LegendBlocked             *String   `xmlrpc:"legend_blocked,omitempty" json:"legend_blocked,omitempty"`
+	LegendDone                *String   `xmlrpc:"legend_done,omitempty" json:"legend_done,omitempty"`
+	LegendNormal              *String   `xmlrpc:"legend_normal,omitempty" json:"legend_normal,omitempty"`
+	MailTemplateId            *Many2One `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Name                      *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProjectIds                *Relation `xmlrpc:"project_ids,omitempty" json:"project_ids,omitempty"`
+	RatingTemplateId          *Many2One `xmlrpc:"rating_template_id,omitempty" json:"rating_template_id,omitempty"`
+	Sequence                  *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate                 *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTaskTypes represents array of project.task.type model.

@@ -2,21 +2,21 @@ package odoo
 
 // MailingTraceReport represents mailing.trace.report model.
 type MailingTraceReport struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	Bounced       *Int       `xmlrpc:"bounced,omitempty"`
-	Campaign      *String    `xmlrpc:"campaign,omitempty"`
-	Clicked       *Int       `xmlrpc:"clicked,omitempty"`
-	Delivered     *Int       `xmlrpc:"delivered,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	EmailFrom     *String    `xmlrpc:"email_from,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	MailingType   *Selection `xmlrpc:"mailing_type,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	Opened        *Int       `xmlrpc:"opened,omitempty"`
-	Replied       *Int       `xmlrpc:"replied,omitempty"`
-	ScheduledDate *Time      `xmlrpc:"scheduled_date,omitempty"`
-	Sent          *Int       `xmlrpc:"sent,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Bounced       *Int       `xmlrpc:"bounced,omitempty" json:"bounced,omitempty"`
+	Campaign      *String    `xmlrpc:"campaign,omitempty" json:"campaign,omitempty"`
+	Clicked       *Int       `xmlrpc:"clicked,omitempty" json:"clicked,omitempty"`
+	Delivered     *Int       `xmlrpc:"delivered,omitempty" json:"delivered,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmailFrom     *String    `xmlrpc:"email_from,omitempty" json:"email_from,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailingType   *Selection `xmlrpc:"mailing_type,omitempty" json:"mailing_type,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Opened        *Int       `xmlrpc:"opened,omitempty" json:"opened,omitempty"`
+	Replied       *Int       `xmlrpc:"replied,omitempty" json:"replied,omitempty"`
+	ScheduledDate *Time      `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
+	Sent          *Int       `xmlrpc:"sent,omitempty" json:"sent,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 }
 
 // MailingTraceReports represents array of mailing.trace.report model.

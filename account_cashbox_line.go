@@ -2,18 +2,18 @@ package odoo
 
 // AccountCashboxLine represents account.cashbox.line model.
 type AccountCashboxLine struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CashboxId   *Many2One `xmlrpc:"cashbox_id,omitempty"`
-	CoinValue   *Float    `xmlrpc:"coin_value,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Number      *Int      `xmlrpc:"number,omitempty"`
-	Subtotal    *Float    `xmlrpc:"subtotal,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CashboxId   *Many2One `xmlrpc:"cashbox_id,omitempty" json:"cashbox_id,omitempty"`
+	CoinValue   *Float    `xmlrpc:"coin_value,omitempty" json:"coin_value,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Number      *Int      `xmlrpc:"number,omitempty" json:"number,omitempty"`
+	Subtotal    *Float    `xmlrpc:"subtotal,omitempty" json:"subtotal,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountCashboxLines represents array of account.cashbox.line model.

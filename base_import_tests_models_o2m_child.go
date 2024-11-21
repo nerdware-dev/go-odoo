@@ -2,15 +2,15 @@ package odoo
 
 // BaseImportTestsModelsO2MChild represents base_import.tests.models.o2m.child model.
 type BaseImportTestsModelsO2MChild struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
-	Value       *Int      `xmlrpc:"value,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ParentId    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Value       *Int      `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportTestsModelsO2MChilds represents array of base_import.tests.models.o2m.child model.

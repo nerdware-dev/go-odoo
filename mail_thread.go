@@ -2,24 +2,24 @@ package odoo
 
 // MailThread represents mail.thread model.
 type MailThread struct {
-	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId  *Many2One `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool     `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int      `xmlrpc:"message_unread_counter,omitempty"`
-	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty"`
+	LastUpdate               *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                       *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds        *Relation `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId  *Many2One `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread            *Bool     `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter     *Int      `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 }
 
 // MailThreads represents array of mail.thread model.

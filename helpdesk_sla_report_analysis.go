@@ -2,31 +2,31 @@ package odoo
 
 // HelpdeskSlaReportAnalysis represents helpdesk.sla.report.analysis model.
 type HelpdeskSlaReportAnalysis struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Priority               *Selection `xmlrpc:"priority,omitempty"`
-	SlaDeadline            *Time      `xmlrpc:"sla_deadline,omitempty"`
-	SlaExceededDays        *Int       `xmlrpc:"sla_exceeded_days,omitempty"`
-	SlaId                  *Many2One  `xmlrpc:"sla_id,omitempty"`
-	SlaReachedDatetime     *Time      `xmlrpc:"sla_reached_datetime,omitempty"`
-	SlaStageId             *Many2One  `xmlrpc:"sla_stage_id,omitempty"`
-	SlaStatus              *Selection `xmlrpc:"sla_status,omitempty"`
-	SlaStatusFailed        *Bool      `xmlrpc:"sla_status_failed,omitempty"`
-	TeamId                 *Many2One  `xmlrpc:"team_id,omitempty"`
-	TicketAssignationHours *Int       `xmlrpc:"ticket_assignation_hours,omitempty"`
-	TicketCloseHours       *Int       `xmlrpc:"ticket_close_hours,omitempty"`
-	TicketClosed           *Bool      `xmlrpc:"ticket_closed,omitempty"`
-	TicketDeadline         *Time      `xmlrpc:"ticket_deadline,omitempty"`
-	TicketFailed           *Bool      `xmlrpc:"ticket_failed,omitempty"`
-	TicketId               *Many2One  `xmlrpc:"ticket_id,omitempty"`
-	TicketOpenHours        *Int       `xmlrpc:"ticket_open_hours,omitempty"`
-	TicketStageId          *Many2One  `xmlrpc:"ticket_stage_id,omitempty"`
-	TicketTypeId           *Many2One  `xmlrpc:"ticket_type_id,omitempty"`
-	UserId                 *Many2One  `xmlrpc:"user_id,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Priority               *Selection `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	SlaDeadline            *Time      `xmlrpc:"sla_deadline,omitempty" json:"sla_deadline,omitempty"`
+	SlaExceededDays        *Int       `xmlrpc:"sla_exceeded_days,omitempty" json:"sla_exceeded_days,omitempty"`
+	SlaId                  *Many2One  `xmlrpc:"sla_id,omitempty" json:"sla_id,omitempty"`
+	SlaReachedDatetime     *Time      `xmlrpc:"sla_reached_datetime,omitempty" json:"sla_reached_datetime,omitempty"`
+	SlaStageId             *Many2One  `xmlrpc:"sla_stage_id,omitempty" json:"sla_stage_id,omitempty"`
+	SlaStatus              *Selection `xmlrpc:"sla_status,omitempty" json:"sla_status,omitempty"`
+	SlaStatusFailed        *Bool      `xmlrpc:"sla_status_failed,omitempty" json:"sla_status_failed,omitempty"`
+	TeamId                 *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	TicketAssignationHours *Int       `xmlrpc:"ticket_assignation_hours,omitempty" json:"ticket_assignation_hours,omitempty"`
+	TicketCloseHours       *Int       `xmlrpc:"ticket_close_hours,omitempty" json:"ticket_close_hours,omitempty"`
+	TicketClosed           *Bool      `xmlrpc:"ticket_closed,omitempty" json:"ticket_closed,omitempty"`
+	TicketDeadline         *Time      `xmlrpc:"ticket_deadline,omitempty" json:"ticket_deadline,omitempty"`
+	TicketFailed           *Bool      `xmlrpc:"ticket_failed,omitempty" json:"ticket_failed,omitempty"`
+	TicketId               *Many2One  `xmlrpc:"ticket_id,omitempty" json:"ticket_id,omitempty"`
+	TicketOpenHours        *Int       `xmlrpc:"ticket_open_hours,omitempty" json:"ticket_open_hours,omitempty"`
+	TicketStageId          *Many2One  `xmlrpc:"ticket_stage_id,omitempty" json:"ticket_stage_id,omitempty"`
+	TicketTypeId           *Many2One  `xmlrpc:"ticket_type_id,omitempty" json:"ticket_type_id,omitempty"`
+	UserId                 *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // HelpdeskSlaReportAnalysiss represents array of helpdesk.sla.report.analysis model.

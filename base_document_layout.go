@@ -2,28 +2,28 @@ package odoo
 
 // BaseDocumentLayout represents base.document.layout model.
 type BaseDocumentLayout struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomColors           *Bool      `xmlrpc:"custom_colors,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	ExternalReportLayoutId *Many2One  `xmlrpc:"external_report_layout_id,omitempty"`
-	Font                   *Selection `xmlrpc:"font,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Logo                   *String    `xmlrpc:"logo,omitempty"`
-	LogoPrimaryColor       *String    `xmlrpc:"logo_primary_color,omitempty"`
-	LogoSecondaryColor     *String    `xmlrpc:"logo_secondary_color,omitempty"`
-	PaperformatId          *Many2One  `xmlrpc:"paperformat_id,omitempty"`
-	Preview                *String    `xmlrpc:"preview,omitempty"`
-	PreviewLogo            *String    `xmlrpc:"preview_logo,omitempty"`
-	PrimaryColor           *String    `xmlrpc:"primary_color,omitempty"`
-	ReportFooter           *String    `xmlrpc:"report_footer,omitempty"`
-	ReportHeader           *String    `xmlrpc:"report_header,omitempty"`
-	ReportLayoutId         *Many2One  `xmlrpc:"report_layout_id,omitempty"`
-	SecondaryColor         *String    `xmlrpc:"secondary_color,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomColors           *Bool      `xmlrpc:"custom_colors,omitempty" json:"custom_colors,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExternalReportLayoutId *Many2One  `xmlrpc:"external_report_layout_id,omitempty" json:"external_report_layout_id,omitempty"`
+	Font                   *Selection `xmlrpc:"font,omitempty" json:"font,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Logo                   *String    `xmlrpc:"logo,omitempty" json:"logo,omitempty"`
+	LogoPrimaryColor       *String    `xmlrpc:"logo_primary_color,omitempty" json:"logo_primary_color,omitempty"`
+	LogoSecondaryColor     *String    `xmlrpc:"logo_secondary_color,omitempty" json:"logo_secondary_color,omitempty"`
+	PaperformatId          *Many2One  `xmlrpc:"paperformat_id,omitempty" json:"paperformat_id,omitempty"`
+	Preview                *String    `xmlrpc:"preview,omitempty" json:"preview,omitempty"`
+	PreviewLogo            *String    `xmlrpc:"preview_logo,omitempty" json:"preview_logo,omitempty"`
+	PrimaryColor           *String    `xmlrpc:"primary_color,omitempty" json:"primary_color,omitempty"`
+	ReportFooter           *String    `xmlrpc:"report_footer,omitempty" json:"report_footer,omitempty"`
+	ReportHeader           *String    `xmlrpc:"report_header,omitempty" json:"report_header,omitempty"`
+	ReportLayoutId         *Many2One  `xmlrpc:"report_layout_id,omitempty" json:"report_layout_id,omitempty"`
+	SecondaryColor         *String    `xmlrpc:"secondary_color,omitempty" json:"secondary_color,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseDocumentLayouts represents array of base.document.layout model.

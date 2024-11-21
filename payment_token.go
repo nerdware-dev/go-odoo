@@ -2,22 +2,22 @@ package odoo
 
 // PaymentToken represents payment.token model.
 type PaymentToken struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	AcquirerId  *Many2One `xmlrpc:"acquirer_id,omitempty"`
-	AcquirerRef *String   `xmlrpc:"acquirer_ref,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	PaymentIds  *Relation `xmlrpc:"payment_ids,omitempty"`
-	ShortName   *String   `xmlrpc:"short_name,omitempty"`
-	Verified    *Bool     `xmlrpc:"verified,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AcquirerId  *Many2One `xmlrpc:"acquirer_id,omitempty" json:"acquirer_id,omitempty"`
+	AcquirerRef *String   `xmlrpc:"acquirer_ref,omitempty" json:"acquirer_ref,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PaymentIds  *Relation `xmlrpc:"payment_ids,omitempty" json:"payment_ids,omitempty"`
+	ShortName   *String   `xmlrpc:"short_name,omitempty" json:"short_name,omitempty"`
+	Verified    *Bool     `xmlrpc:"verified,omitempty" json:"verified,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentTokens represents array of payment.token model.

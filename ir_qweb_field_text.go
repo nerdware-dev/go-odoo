@@ -2,9 +2,9 @@ package odoo
 
 // IrQwebFieldText represents ir.qweb.field.text model.
 type IrQwebFieldText struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // IrQwebFieldTexts represents array of ir.qweb.field.text model.

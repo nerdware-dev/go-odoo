@@ -2,35 +2,35 @@ package odoo
 
 // DeliveryCarrier represents delivery.carrier model.
 type DeliveryCarrier struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                   *Bool      `xmlrpc:"active,omitempty"`
-	Amount                   *Float     `xmlrpc:"amount,omitempty"`
-	CanGenerateReturn        *Bool      `xmlrpc:"can_generate_return,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryIds               *Relation  `xmlrpc:"country_ids,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DebugLogging             *Bool      `xmlrpc:"debug_logging,omitempty"`
-	DeliveryType             *Selection `xmlrpc:"delivery_type,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	FixedPrice               *Float     `xmlrpc:"fixed_price,omitempty"`
-	FreeOver                 *Bool      `xmlrpc:"free_over,omitempty"`
-	GetReturnLabelFromPortal *Bool      `xmlrpc:"get_return_label_from_portal,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	IntegrationLevel         *Selection `xmlrpc:"integration_level,omitempty"`
-	InvoicePolicy            *Selection `xmlrpc:"invoice_policy,omitempty"`
-	Margin                   *Float     `xmlrpc:"margin,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	PriceRuleIds             *Relation  `xmlrpc:"price_rule_ids,omitempty"`
-	ProdEnvironment          *Bool      `xmlrpc:"prod_environment,omitempty"`
-	ProductId                *Many2One  `xmlrpc:"product_id,omitempty"`
-	ReturnLabelOnDelivery    *Bool      `xmlrpc:"return_label_on_delivery,omitempty"`
-	Sequence                 *Int       `xmlrpc:"sequence,omitempty"`
-	StateIds                 *Relation  `xmlrpc:"state_ids,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
-	ZipFrom                  *String    `xmlrpc:"zip_from,omitempty"`
-	ZipTo                    *String    `xmlrpc:"zip_to,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                   *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Amount                   *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CanGenerateReturn        *Bool      `xmlrpc:"can_generate_return,omitempty" json:"can_generate_return,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryIds               *Relation  `xmlrpc:"country_ids,omitempty" json:"country_ids,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DebugLogging             *Bool      `xmlrpc:"debug_logging,omitempty" json:"debug_logging,omitempty"`
+	DeliveryType             *Selection `xmlrpc:"delivery_type,omitempty" json:"delivery_type,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FixedPrice               *Float     `xmlrpc:"fixed_price,omitempty" json:"fixed_price,omitempty"`
+	FreeOver                 *Bool      `xmlrpc:"free_over,omitempty" json:"free_over,omitempty"`
+	GetReturnLabelFromPortal *Bool      `xmlrpc:"get_return_label_from_portal,omitempty" json:"get_return_label_from_portal,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IntegrationLevel         *Selection `xmlrpc:"integration_level,omitempty" json:"integration_level,omitempty"`
+	InvoicePolicy            *Selection `xmlrpc:"invoice_policy,omitempty" json:"invoice_policy,omitempty"`
+	Margin                   *Float     `xmlrpc:"margin,omitempty" json:"margin,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PriceRuleIds             *Relation  `xmlrpc:"price_rule_ids,omitempty" json:"price_rule_ids,omitempty"`
+	ProdEnvironment          *Bool      `xmlrpc:"prod_environment,omitempty" json:"prod_environment,omitempty"`
+	ProductId                *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ReturnLabelOnDelivery    *Bool      `xmlrpc:"return_label_on_delivery,omitempty" json:"return_label_on_delivery,omitempty"`
+	Sequence                 *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StateIds                 *Relation  `xmlrpc:"state_ids,omitempty" json:"state_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ZipFrom                  *String    `xmlrpc:"zip_from,omitempty" json:"zip_from,omitempty"`
+	ZipTo                    *String    `xmlrpc:"zip_to,omitempty" json:"zip_to,omitempty"`
 }
 
 // DeliveryCarriers represents array of delivery.carrier model.

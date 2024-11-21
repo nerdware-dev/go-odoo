@@ -2,19 +2,19 @@ package odoo
 
 // CustomExtraFieldSelection represents custom.extra.field.selection model.
 type CustomExtraFieldSelection struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldId     *Int      `xmlrpc:"field_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Key         *String   `xmlrpc:"key,omitempty"`
-	Model       *String   `xmlrpc:"model,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	Value       *String   `xmlrpc:"value,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId     *Int      `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Key         *String   `xmlrpc:"key,omitempty" json:"key,omitempty"`
+	Model       *String   `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Value       *String   `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CustomExtraFieldSelections represents array of custom.extra.field.selection model.

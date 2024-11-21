@@ -2,32 +2,32 @@ package odoo
 
 // AccountFinancialHtmlReportLine represents account.financial.html.report.line model.
 type AccountFinancialHtmlReportLine struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId           *Many2One  `xmlrpc:"action_id,omitempty"`
-	ChildrenIds        *Relation  `xmlrpc:"children_ids,omitempty"`
-	Code               *String    `xmlrpc:"code,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Domain             *String    `xmlrpc:"domain,omitempty"`
-	FigureType         *Selection `xmlrpc:"figure_type,omitempty"`
-	FinancialReportId  *Many2One  `xmlrpc:"financial_report_id,omitempty"`
-	Formulas           *String    `xmlrpc:"formulas,omitempty"`
-	GreenOnPositive    *Bool      `xmlrpc:"green_on_positive,omitempty"`
-	Groupby            *String    `xmlrpc:"groupby,omitempty"`
-	HideIfEmpty        *Bool      `xmlrpc:"hide_if_empty,omitempty"`
-	HideIfZero         *Bool      `xmlrpc:"hide_if_zero,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	Level              *Int       `xmlrpc:"level,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	ParentId           *Many2One  `xmlrpc:"parent_id,omitempty"`
-	ParentPath         *String    `xmlrpc:"parent_path,omitempty"`
-	PrintOnNewPage     *Bool      `xmlrpc:"print_on_new_page,omitempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omitempty"`
-	ShowDomain         *Selection `xmlrpc:"show_domain,omitempty"`
-	SpecialDateChanger *Selection `xmlrpc:"special_date_changer,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActionId           *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	ChildrenIds        *Relation  `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
+	Code               *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain             *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	FigureType         *Selection `xmlrpc:"figure_type,omitempty" json:"figure_type,omitempty"`
+	FinancialReportId  *Many2One  `xmlrpc:"financial_report_id,omitempty" json:"financial_report_id,omitempty"`
+	Formulas           *String    `xmlrpc:"formulas,omitempty" json:"formulas,omitempty"`
+	GreenOnPositive    *Bool      `xmlrpc:"green_on_positive,omitempty" json:"green_on_positive,omitempty"`
+	Groupby            *String    `xmlrpc:"groupby,omitempty" json:"groupby,omitempty"`
+	HideIfEmpty        *Bool      `xmlrpc:"hide_if_empty,omitempty" json:"hide_if_empty,omitempty"`
+	HideIfZero         *Bool      `xmlrpc:"hide_if_zero,omitempty" json:"hide_if_zero,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Level              *Int       `xmlrpc:"level,omitempty" json:"level,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId           *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath         *String    `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	PrintOnNewPage     *Bool      `xmlrpc:"print_on_new_page,omitempty" json:"print_on_new_page,omitempty"`
+	Sequence           *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShowDomain         *Selection `xmlrpc:"show_domain,omitempty" json:"show_domain,omitempty"`
+	SpecialDateChanger *Selection `xmlrpc:"special_date_changer,omitempty" json:"special_date_changer,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFinancialHtmlReportLines represents array of account.financial.html.report.line model.

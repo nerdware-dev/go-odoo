@@ -2,18 +2,18 @@ package odoo
 
 // HrPlanActivityType represents hr.plan.activity.type model.
 type HrPlanActivityType struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityTypeId *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Note           *String    `xmlrpc:"note,omitempty"`
-	Responsible    *Selection `xmlrpc:"responsible,omitempty"`
-	ResponsibleId  *Many2One  `xmlrpc:"responsible_id,omitempty"`
-	Summary        *String    `xmlrpc:"summary,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityTypeId *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Note           *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Responsible    *Selection `xmlrpc:"responsible,omitempty" json:"responsible,omitempty"`
+	ResponsibleId  *Many2One  `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	Summary        *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrPlanActivityTypes represents array of hr.plan.activity.type model.

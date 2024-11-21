@@ -2,15 +2,15 @@ package odoo
 
 // RatingMixin represents rating.mixin model.
 type RatingMixin struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	RatingAvg          *Float    `xmlrpc:"rating_avg,omitempty"`
-	RatingCount        *Int      `xmlrpc:"rating_count,omitempty"`
-	RatingIds          *Relation `xmlrpc:"rating_ids,omitempty"`
-	RatingLastFeedback *String   `xmlrpc:"rating_last_feedback,omitempty"`
-	RatingLastImage    *String   `xmlrpc:"rating_last_image,omitempty"`
-	RatingLastValue    *Float    `xmlrpc:"rating_last_value,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RatingAvg          *Float    `xmlrpc:"rating_avg,omitempty" json:"rating_avg,omitempty"`
+	RatingCount        *Int      `xmlrpc:"rating_count,omitempty" json:"rating_count,omitempty"`
+	RatingIds          *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RatingLastFeedback *String   `xmlrpc:"rating_last_feedback,omitempty" json:"rating_last_feedback,omitempty"`
+	RatingLastImage    *String   `xmlrpc:"rating_last_image,omitempty" json:"rating_last_image,omitempty"`
+	RatingLastValue    *Float    `xmlrpc:"rating_last_value,omitempty" json:"rating_last_value,omitempty"`
 }
 
 // RatingMixins represents array of rating.mixin model.

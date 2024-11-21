@@ -2,33 +2,33 @@ package odoo
 
 // StockLocation represents stock.location model.
 type StockLocation struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                *Bool      `xmlrpc:"active,omitempty"`
-	Barcode               *String    `xmlrpc:"barcode,omitempty"`
-	ChildIds              *Relation  `xmlrpc:"child_ids,omitempty"`
-	Comment               *String    `xmlrpc:"comment,omitempty"`
-	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty"`
-	CompleteName          *String    `xmlrpc:"complete_name,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	LocationId            *Many2One  `xmlrpc:"location_id,omitempty"`
-	Name                  *String    `xmlrpc:"name,omitempty"`
-	ParentPath            *String    `xmlrpc:"parent_path,omitempty"`
-	Posx                  *Int       `xmlrpc:"posx,omitempty"`
-	Posy                  *Int       `xmlrpc:"posy,omitempty"`
-	Posz                  *Int       `xmlrpc:"posz,omitempty"`
-	PutawayRuleIds        *Relation  `xmlrpc:"putaway_rule_ids,omitempty"`
-	QuantIds              *Relation  `xmlrpc:"quant_ids,omitempty"`
-	RemovalStrategyId     *Many2One  `xmlrpc:"removal_strategy_id,omitempty"`
-	ReturnLocation        *Bool      `xmlrpc:"return_location,omitempty"`
-	ScrapLocation         *Bool      `xmlrpc:"scrap_location,omitempty"`
-	Usage                 *Selection `xmlrpc:"usage,omitempty"`
-	ValuationInAccountId  *Many2One  `xmlrpc:"valuation_in_account_id,omitempty"`
-	ValuationOutAccountId *Many2One  `xmlrpc:"valuation_out_account_id,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Barcode               *String    `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	ChildIds              *Relation  `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	Comment               *String    `xmlrpc:"comment,omitempty" json:"comment,omitempty"`
+	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompleteName          *String    `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationId            *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Name                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentPath            *String    `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	Posx                  *Int       `xmlrpc:"posx,omitempty" json:"posx,omitempty"`
+	Posy                  *Int       `xmlrpc:"posy,omitempty" json:"posy,omitempty"`
+	Posz                  *Int       `xmlrpc:"posz,omitempty" json:"posz,omitempty"`
+	PutawayRuleIds        *Relation  `xmlrpc:"putaway_rule_ids,omitempty" json:"putaway_rule_ids,omitempty"`
+	QuantIds              *Relation  `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	RemovalStrategyId     *Many2One  `xmlrpc:"removal_strategy_id,omitempty" json:"removal_strategy_id,omitempty"`
+	ReturnLocation        *Bool      `xmlrpc:"return_location,omitempty" json:"return_location,omitempty"`
+	ScrapLocation         *Bool      `xmlrpc:"scrap_location,omitempty" json:"scrap_location,omitempty"`
+	Usage                 *Selection `xmlrpc:"usage,omitempty" json:"usage,omitempty"`
+	ValuationInAccountId  *Many2One  `xmlrpc:"valuation_in_account_id,omitempty" json:"valuation_in_account_id,omitempty"`
+	ValuationOutAccountId *Many2One  `xmlrpc:"valuation_out_account_id,omitempty" json:"valuation_out_account_id,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockLocations represents array of stock.location model.

@@ -2,19 +2,19 @@ package odoo
 
 // ArticleSearch represents article.search model.
 type ArticleSearch struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	ArticleIds         *Relation `xmlrpc:"article_ids,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	NoSelection        *Bool     `xmlrpc:"no_selection,omitempty"`
-	Search             *String   `xmlrpc:"search,omitempty"`
-	SectionIds         *Relation `xmlrpc:"section_ids,omitempty"`
-	SelectedArticleIds *Relation `xmlrpc:"selected_article_ids,omitempty"`
-	TagIds             *Relation `xmlrpc:"tag_ids,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ArticleIds         *Relation `xmlrpc:"article_ids,omitempty" json:"article_ids,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NoSelection        *Bool     `xmlrpc:"no_selection,omitempty" json:"no_selection,omitempty"`
+	Search             *String   `xmlrpc:"search,omitempty" json:"search,omitempty"`
+	SectionIds         *Relation `xmlrpc:"section_ids,omitempty" json:"section_ids,omitempty"`
+	SelectedArticleIds *Relation `xmlrpc:"selected_article_ids,omitempty" json:"selected_article_ids,omitempty"`
+	TagIds             *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ArticleSearchs represents array of article.search model.

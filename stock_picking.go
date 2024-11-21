@@ -2,98 +2,98 @@ package odoo
 
 // StockPicking represents stock.picking model.
 type StockPicking struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	BarcodeScanned              *String    `xmlrpc:"_barcode_scanned,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	BackorderId                 *Many2One  `xmlrpc:"backorder_id,omitempty"`
-	BackorderIds                *Relation  `xmlrpc:"backorder_ids,omitempty"`
-	CarrierId                   *Many2One  `xmlrpc:"carrier_id,omitempty"`
-	CarrierPrice                *Float     `xmlrpc:"carrier_price,omitempty"`
-	CarrierTrackingRef          *String    `xmlrpc:"carrier_tracking_ref,omitempty"`
-	CarrierTrackingUrl          *String    `xmlrpc:"carrier_tracking_url,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date                        *Time      `xmlrpc:"date,omitempty"`
-	DateDone                    *Time      `xmlrpc:"date_done,omitempty"`
-	DeliveryPackagingIds        *Relation  `xmlrpc:"delivery_packaging_ids,omitempty"`
-	DeliveryType                *Selection `xmlrpc:"delivery_type,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	GroupId                     *Many2One  `xmlrpc:"group_id,omitempty"`
-	HasPackages                 *Bool      `xmlrpc:"has_packages,omitempty"`
-	HasScrapMove                *Bool      `xmlrpc:"has_scrap_move,omitempty"`
-	HasTracking                 *Bool      `xmlrpc:"has_tracking,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	ImmediateTransfer           *Bool      `xmlrpc:"immediate_transfer,omitempty"`
-	IsLocked                    *Bool      `xmlrpc:"is_locked,omitempty"`
-	IsReturnPicking             *Bool      `xmlrpc:"is_return_picking,omitempty"`
-	LocationDestId              *Many2One  `xmlrpc:"location_dest_id,omitempty"`
-	LocationId                  *Many2One  `xmlrpc:"location_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	MoveIdsWithoutPackage       *Relation  `xmlrpc:"move_ids_without_package,omitempty"`
-	MoveLineExist               *Bool      `xmlrpc:"move_line_exist,omitempty"`
-	MoveLineIds                 *Relation  `xmlrpc:"move_line_ids,omitempty"`
-	MoveLineIdsWithoutPackage   *Relation  `xmlrpc:"move_line_ids_without_package,omitempty"`
-	MoveLineNosuggestIds        *Relation  `xmlrpc:"move_line_nosuggest_ids,omitempty"`
-	MoveLines                   *Relation  `xmlrpc:"move_lines,omitempty"`
-	MoveType                    *Selection `xmlrpc:"move_type,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	Note                        *String    `xmlrpc:"note,omitempty"`
-	Origin                      *String    `xmlrpc:"origin,omitempty"`
-	OwnerId                     *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PackageIds                  *Relation  `xmlrpc:"package_ids,omitempty"`
-	PackageLevelIds             *Relation  `xmlrpc:"package_level_ids,omitempty"`
-	PackageLevelIdsDetails      *Relation  `xmlrpc:"package_level_ids_details,omitempty"`
-	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PickingTypeCode             *Selection `xmlrpc:"picking_type_code,omitempty"`
-	PickingTypeEntirePacks      *Bool      `xmlrpc:"picking_type_entire_packs,omitempty"`
-	PickingTypeId               *Many2One  `xmlrpc:"picking_type_id,omitempty"`
-	Printed                     *Bool      `xmlrpc:"printed,omitempty"`
-	Priority                    *Selection `xmlrpc:"priority,omitempty"`
-	ProductId                   *Many2One  `xmlrpc:"product_id,omitempty"`
-	PurchaseId                  *Many2One  `xmlrpc:"purchase_id,omitempty"`
-	ReportComputeDate           *Time      `xmlrpc:"report_compute_date,omitempty"`
-	ReportLineIndex             *Int       `xmlrpc:"report_line_index,omitempty"`
-	ReturnLabelIds              *Relation  `xmlrpc:"return_label_ids,omitempty"`
-	SaleId                      *Many2One  `xmlrpc:"sale_id,omitempty"`
-	ScheduledDate               *Time      `xmlrpc:"scheduled_date,omitempty"`
-	ShippingWeight              *Float     `xmlrpc:"shipping_weight,omitempty"`
-	ShowCheckAvailability       *Bool      `xmlrpc:"show_check_availability,omitempty"`
-	ShowLotsText                *Bool      `xmlrpc:"show_lots_text,omitempty"`
-	ShowMarkAsTodo              *Bool      `xmlrpc:"show_mark_as_todo,omitempty"`
-	ShowOperations              *Bool      `xmlrpc:"show_operations,omitempty"`
-	ShowReserved                *Bool      `xmlrpc:"show_reserved,omitempty"`
-	ShowValidate                *Bool      `xmlrpc:"show_validate,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	UseCreateLots               *Bool      `xmlrpc:"use_create_lots,omitempty"`
-	UserId                      *Many2One  `xmlrpc:"user_id,omitempty"`
-	Volume                      *Float     `xmlrpc:"volume,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	Weight                      *Float     `xmlrpc:"weight,omitempty"`
-	WeightBulk                  *Float     `xmlrpc:"weight_bulk,omitempty"`
-	WeightUomName               *String    `xmlrpc:"weight_uom_name,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BarcodeScanned              *String    `xmlrpc:"_barcode_scanned,omitempty" json:"_barcode_scanned,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	BackorderId                 *Many2One  `xmlrpc:"backorder_id,omitempty" json:"backorder_id,omitempty"`
+	BackorderIds                *Relation  `xmlrpc:"backorder_ids,omitempty" json:"backorder_ids,omitempty"`
+	CarrierId                   *Many2One  `xmlrpc:"carrier_id,omitempty" json:"carrier_id,omitempty"`
+	CarrierPrice                *Float     `xmlrpc:"carrier_price,omitempty" json:"carrier_price,omitempty"`
+	CarrierTrackingRef          *String    `xmlrpc:"carrier_tracking_ref,omitempty" json:"carrier_tracking_ref,omitempty"`
+	CarrierTrackingUrl          *String    `xmlrpc:"carrier_tracking_url,omitempty" json:"carrier_tracking_url,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                        *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DateDone                    *Time      `xmlrpc:"date_done,omitempty" json:"date_done,omitempty"`
+	DeliveryPackagingIds        *Relation  `xmlrpc:"delivery_packaging_ids,omitempty" json:"delivery_packaging_ids,omitempty"`
+	DeliveryType                *Selection `xmlrpc:"delivery_type,omitempty" json:"delivery_type,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId                     *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	HasPackages                 *Bool      `xmlrpc:"has_packages,omitempty" json:"has_packages,omitempty"`
+	HasScrapMove                *Bool      `xmlrpc:"has_scrap_move,omitempty" json:"has_scrap_move,omitempty"`
+	HasTracking                 *Bool      `xmlrpc:"has_tracking,omitempty" json:"has_tracking,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImmediateTransfer           *Bool      `xmlrpc:"immediate_transfer,omitempty" json:"immediate_transfer,omitempty"`
+	IsLocked                    *Bool      `xmlrpc:"is_locked,omitempty" json:"is_locked,omitempty"`
+	IsReturnPicking             *Bool      `xmlrpc:"is_return_picking,omitempty" json:"is_return_picking,omitempty"`
+	LocationDestId              *Many2One  `xmlrpc:"location_dest_id,omitempty" json:"location_dest_id,omitempty"`
+	LocationId                  *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	MoveIdsWithoutPackage       *Relation  `xmlrpc:"move_ids_without_package,omitempty" json:"move_ids_without_package,omitempty"`
+	MoveLineExist               *Bool      `xmlrpc:"move_line_exist,omitempty" json:"move_line_exist,omitempty"`
+	MoveLineIds                 *Relation  `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	MoveLineIdsWithoutPackage   *Relation  `xmlrpc:"move_line_ids_without_package,omitempty" json:"move_line_ids_without_package,omitempty"`
+	MoveLineNosuggestIds        *Relation  `xmlrpc:"move_line_nosuggest_ids,omitempty" json:"move_line_nosuggest_ids,omitempty"`
+	MoveLines                   *Relation  `xmlrpc:"move_lines,omitempty" json:"move_lines,omitempty"`
+	MoveType                    *Selection `xmlrpc:"move_type,omitempty" json:"move_type,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note                        *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Origin                      *String    `xmlrpc:"origin,omitempty" json:"origin,omitempty"`
+	OwnerId                     *Many2One  `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PackageIds                  *Relation  `xmlrpc:"package_ids,omitempty" json:"package_ids,omitempty"`
+	PackageLevelIds             *Relation  `xmlrpc:"package_level_ids,omitempty" json:"package_level_ids,omitempty"`
+	PackageLevelIdsDetails      *Relation  `xmlrpc:"package_level_ids_details,omitempty" json:"package_level_ids_details,omitempty"`
+	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PickingTypeCode             *Selection `xmlrpc:"picking_type_code,omitempty" json:"picking_type_code,omitempty"`
+	PickingTypeEntirePacks      *Bool      `xmlrpc:"picking_type_entire_packs,omitempty" json:"picking_type_entire_packs,omitempty"`
+	PickingTypeId               *Many2One  `xmlrpc:"picking_type_id,omitempty" json:"picking_type_id,omitempty"`
+	Printed                     *Bool      `xmlrpc:"printed,omitempty" json:"printed,omitempty"`
+	Priority                    *Selection `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	ProductId                   *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	PurchaseId                  *Many2One  `xmlrpc:"purchase_id,omitempty" json:"purchase_id,omitempty"`
+	ReportComputeDate           *Time      `xmlrpc:"report_compute_date,omitempty" json:"report_compute_date,omitempty"`
+	ReportLineIndex             *Int       `xmlrpc:"report_line_index,omitempty" json:"report_line_index,omitempty"`
+	ReturnLabelIds              *Relation  `xmlrpc:"return_label_ids,omitempty" json:"return_label_ids,omitempty"`
+	SaleId                      *Many2One  `xmlrpc:"sale_id,omitempty" json:"sale_id,omitempty"`
+	ScheduledDate               *Time      `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
+	ShippingWeight              *Float     `xmlrpc:"shipping_weight,omitempty" json:"shipping_weight,omitempty"`
+	ShowCheckAvailability       *Bool      `xmlrpc:"show_check_availability,omitempty" json:"show_check_availability,omitempty"`
+	ShowLotsText                *Bool      `xmlrpc:"show_lots_text,omitempty" json:"show_lots_text,omitempty"`
+	ShowMarkAsTodo              *Bool      `xmlrpc:"show_mark_as_todo,omitempty" json:"show_mark_as_todo,omitempty"`
+	ShowOperations              *Bool      `xmlrpc:"show_operations,omitempty" json:"show_operations,omitempty"`
+	ShowReserved                *Bool      `xmlrpc:"show_reserved,omitempty" json:"show_reserved,omitempty"`
+	ShowValidate                *Bool      `xmlrpc:"show_validate,omitempty" json:"show_validate,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UseCreateLots               *Bool      `xmlrpc:"use_create_lots,omitempty" json:"use_create_lots,omitempty"`
+	UserId                      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Volume                      *Float     `xmlrpc:"volume,omitempty" json:"volume,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	Weight                      *Float     `xmlrpc:"weight,omitempty" json:"weight,omitempty"`
+	WeightBulk                  *Float     `xmlrpc:"weight_bulk,omitempty" json:"weight_bulk,omitempty"`
+	WeightUomName               *String    `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPickings represents array of stock.picking model.

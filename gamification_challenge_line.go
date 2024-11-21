@@ -2,22 +2,22 @@ package odoo
 
 // GamificationChallengeLine represents gamification.challenge.line model.
 type GamificationChallengeLine struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	ChallengeId          *Many2One  `xmlrpc:"challenge_id,omitempty"`
-	Condition            *Selection `xmlrpc:"condition,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefinitionFullSuffix *String    `xmlrpc:"definition_full_suffix,omitempty"`
-	DefinitionId         *Many2One  `xmlrpc:"definition_id,omitempty"`
-	DefinitionMonetary   *Bool      `xmlrpc:"definition_monetary,omitempty"`
-	DefinitionSuffix     *String    `xmlrpc:"definition_suffix,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	Sequence             *Int       `xmlrpc:"sequence,omitempty"`
-	TargetGoal           *Float     `xmlrpc:"target_goal,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChallengeId          *Many2One  `xmlrpc:"challenge_id,omitempty" json:"challenge_id,omitempty"`
+	Condition            *Selection `xmlrpc:"condition,omitempty" json:"condition,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefinitionFullSuffix *String    `xmlrpc:"definition_full_suffix,omitempty" json:"definition_full_suffix,omitempty"`
+	DefinitionId         *Many2One  `xmlrpc:"definition_id,omitempty" json:"definition_id,omitempty"`
+	DefinitionMonetary   *Bool      `xmlrpc:"definition_monetary,omitempty" json:"definition_monetary,omitempty"`
+	DefinitionSuffix     *String    `xmlrpc:"definition_suffix,omitempty" json:"definition_suffix,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TargetGoal           *Float     `xmlrpc:"target_goal,omitempty" json:"target_goal,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationChallengeLines represents array of gamification.challenge.line model.

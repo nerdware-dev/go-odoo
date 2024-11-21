@@ -2,48 +2,48 @@ package odoo
 
 // Website represents website model.
 type Website struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
-	AuthSignupUninvited          *Selection `xmlrpc:"auth_signup_uninvited,omitempty"`
-	AutoRedirectLang             *Bool      `xmlrpc:"auto_redirect_lang,omitempty"`
-	CdnActivated                 *Bool      `xmlrpc:"cdn_activated,omitempty"`
-	CdnFilters                   *String    `xmlrpc:"cdn_filters,omitempty"`
-	CdnUrl                       *String    `xmlrpc:"cdn_url,omitempty"`
-	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryGroupIds              *Relation  `xmlrpc:"country_group_ids,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CrmDefaultTeamId             *Many2One  `xmlrpc:"crm_default_team_id,omitempty"`
-	CrmDefaultUserId             *Many2One  `xmlrpc:"crm_default_user_id,omitempty"`
-	DefaultLangId                *Many2One  `xmlrpc:"default_lang_id,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	Domain                       *String    `xmlrpc:"domain,omitempty"`
-	Favicon                      *String    `xmlrpc:"favicon,omitempty"`
-	ForumsCount                  *Int       `xmlrpc:"forums_count,omitempty"`
-	GoogleAnalyticsKey           *String    `xmlrpc:"google_analytics_key,omitempty"`
-	GoogleManagementClientId     *String    `xmlrpc:"google_management_client_id,omitempty"`
-	GoogleManagementClientSecret *String    `xmlrpc:"google_management_client_secret,omitempty"`
-	GoogleMapsApiKey             *String    `xmlrpc:"google_maps_api_key,omitempty"`
-	HomepageId                   *Many2One  `xmlrpc:"homepage_id,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	KarmaProfileMin              *Int       `xmlrpc:"karma_profile_min,omitempty"`
-	LanguageIds                  *Relation  `xmlrpc:"language_ids,omitempty"`
-	Logo                         *String    `xmlrpc:"logo,omitempty"`
-	MenuId                       *Many2One  `xmlrpc:"menu_id,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	SocialDefaultImage           *String    `xmlrpc:"social_default_image,omitempty"`
-	SocialFacebook               *String    `xmlrpc:"social_facebook,omitempty"`
-	SocialGithub                 *String    `xmlrpc:"social_github,omitempty"`
-	SocialInstagram              *String    `xmlrpc:"social_instagram,omitempty"`
-	SocialLinkedin               *String    `xmlrpc:"social_linkedin,omitempty"`
-	SocialTwitter                *String    `xmlrpc:"social_twitter,omitempty"`
-	SocialYoutube                *String    `xmlrpc:"social_youtube,omitempty"`
-	SpecificUserAccount          *Bool      `xmlrpc:"specific_user_account,omitempty"`
-	ThemeId                      *Many2One  `xmlrpc:"theme_id,omitempty"`
-	UserId                       *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteFormEnableMetadata    *Bool      `xmlrpc:"website_form_enable_metadata,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AuthSignupUninvited          *Selection `xmlrpc:"auth_signup_uninvited,omitempty" json:"auth_signup_uninvited,omitempty"`
+	AutoRedirectLang             *Bool      `xmlrpc:"auto_redirect_lang,omitempty" json:"auto_redirect_lang,omitempty"`
+	CdnActivated                 *Bool      `xmlrpc:"cdn_activated,omitempty" json:"cdn_activated,omitempty"`
+	CdnFilters                   *String    `xmlrpc:"cdn_filters,omitempty" json:"cdn_filters,omitempty"`
+	CdnUrl                       *String    `xmlrpc:"cdn_url,omitempty" json:"cdn_url,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryGroupIds              *Relation  `xmlrpc:"country_group_ids,omitempty" json:"country_group_ids,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrmDefaultTeamId             *Many2One  `xmlrpc:"crm_default_team_id,omitempty" json:"crm_default_team_id,omitempty"`
+	CrmDefaultUserId             *Many2One  `xmlrpc:"crm_default_user_id,omitempty" json:"crm_default_user_id,omitempty"`
+	DefaultLangId                *Many2One  `xmlrpc:"default_lang_id,omitempty" json:"default_lang_id,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain                       *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	Favicon                      *String    `xmlrpc:"favicon,omitempty" json:"favicon,omitempty"`
+	ForumsCount                  *Int       `xmlrpc:"forums_count,omitempty" json:"forums_count,omitempty"`
+	GoogleAnalyticsKey           *String    `xmlrpc:"google_analytics_key,omitempty" json:"google_analytics_key,omitempty"`
+	GoogleManagementClientId     *String    `xmlrpc:"google_management_client_id,omitempty" json:"google_management_client_id,omitempty"`
+	GoogleManagementClientSecret *String    `xmlrpc:"google_management_client_secret,omitempty" json:"google_management_client_secret,omitempty"`
+	GoogleMapsApiKey             *String    `xmlrpc:"google_maps_api_key,omitempty" json:"google_maps_api_key,omitempty"`
+	HomepageId                   *Many2One  `xmlrpc:"homepage_id,omitempty" json:"homepage_id,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	KarmaProfileMin              *Int       `xmlrpc:"karma_profile_min,omitempty" json:"karma_profile_min,omitempty"`
+	LanguageIds                  *Relation  `xmlrpc:"language_ids,omitempty" json:"language_ids,omitempty"`
+	Logo                         *String    `xmlrpc:"logo,omitempty" json:"logo,omitempty"`
+	MenuId                       *Many2One  `xmlrpc:"menu_id,omitempty" json:"menu_id,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	SocialDefaultImage           *String    `xmlrpc:"social_default_image,omitempty" json:"social_default_image,omitempty"`
+	SocialFacebook               *String    `xmlrpc:"social_facebook,omitempty" json:"social_facebook,omitempty"`
+	SocialGithub                 *String    `xmlrpc:"social_github,omitempty" json:"social_github,omitempty"`
+	SocialInstagram              *String    `xmlrpc:"social_instagram,omitempty" json:"social_instagram,omitempty"`
+	SocialLinkedin               *String    `xmlrpc:"social_linkedin,omitempty" json:"social_linkedin,omitempty"`
+	SocialTwitter                *String    `xmlrpc:"social_twitter,omitempty" json:"social_twitter,omitempty"`
+	SocialYoutube                *String    `xmlrpc:"social_youtube,omitempty" json:"social_youtube,omitempty"`
+	SpecificUserAccount          *Bool      `xmlrpc:"specific_user_account,omitempty" json:"specific_user_account,omitempty"`
+	ThemeId                      *Many2One  `xmlrpc:"theme_id,omitempty" json:"theme_id,omitempty"`
+	UserId                       *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteFormEnableMetadata    *Bool      `xmlrpc:"website_form_enable_metadata,omitempty" json:"website_form_enable_metadata,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // Websites represents array of website model.

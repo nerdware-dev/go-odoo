@@ -2,25 +2,25 @@ package odoo
 
 // AccountAccountTemplate represents account.account.template model.
 type AccountAccountTemplate struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	ChartTemplateId *Many2One `xmlrpc:"chart_template_id,omitempty"`
-	Code            *String   `xmlrpc:"code,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	GroupId         *Many2One `xmlrpc:"group_id,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	Nocreate        *Bool     `xmlrpc:"nocreate,omitempty"`
-	Note            *String   `xmlrpc:"note,omitempty"`
-	Reconcile       *Bool     `xmlrpc:"reconcile,omitempty"`
-	RootId          *Many2One `xmlrpc:"root_id,omitempty"`
-	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
-	TaxIds          *Relation `xmlrpc:"tax_ids,omitempty"`
-	UserTypeId      *Many2One `xmlrpc:"user_type_id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChartTemplateId *Many2One `xmlrpc:"chart_template_id,omitempty" json:"chart_template_id,omitempty"`
+	Code            *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId         *Many2One `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Nocreate        *Bool     `xmlrpc:"nocreate,omitempty" json:"nocreate,omitempty"`
+	Note            *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Reconcile       *Bool     `xmlrpc:"reconcile,omitempty" json:"reconcile,omitempty"`
+	RootId          *Many2One `xmlrpc:"root_id,omitempty" json:"root_id,omitempty"`
+	TagIds          *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaxIds          *Relation `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	UserTypeId      *Many2One `xmlrpc:"user_type_id,omitempty" json:"user_type_id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccountTemplates represents array of account.account.template model.

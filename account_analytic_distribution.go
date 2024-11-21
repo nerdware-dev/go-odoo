@@ -2,17 +2,17 @@ package odoo
 
 // AccountAnalyticDistribution represents account.analytic.distribution model.
 type AccountAnalyticDistribution struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountId   *Many2One `xmlrpc:"account_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Percentage  *Float    `xmlrpc:"percentage,omitempty"`
-	TagId       *Many2One `xmlrpc:"tag_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountId   *Many2One `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Percentage  *Float    `xmlrpc:"percentage,omitempty" json:"percentage,omitempty"`
+	TagId       *Many2One `xmlrpc:"tag_id,omitempty" json:"tag_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticDistributions represents array of account.analytic.distribution model.

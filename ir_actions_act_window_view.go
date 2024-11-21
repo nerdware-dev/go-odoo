@@ -2,18 +2,18 @@ package odoo
 
 // IrActionsActWindowView represents ir.actions.act_window.view model.
 type IrActionsActWindowView struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActWindowId *Many2One  `xmlrpc:"act_window_id,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Multi       *Bool      `xmlrpc:"multi,omitempty"`
-	Sequence    *Int       `xmlrpc:"sequence,omitempty"`
-	ViewId      *Many2One  `xmlrpc:"view_id,omitempty"`
-	ViewMode    *Selection `xmlrpc:"view_mode,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActWindowId *Many2One  `xmlrpc:"act_window_id,omitempty" json:"act_window_id,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Multi       *Bool      `xmlrpc:"multi,omitempty" json:"multi,omitempty"`
+	Sequence    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ViewId      *Many2One  `xmlrpc:"view_id,omitempty" json:"view_id,omitempty"`
+	ViewMode    *Selection `xmlrpc:"view_mode,omitempty" json:"view_mode,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrActionsActWindowViews represents array of ir.actions.act_window.view model.

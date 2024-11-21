@@ -2,28 +2,28 @@ package odoo
 
 // WebsiteMenu represents website.menu model.
 type WebsiteMenu struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	ChildId         *Relation `xmlrpc:"child_id,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	GroupIds        *Relation `xmlrpc:"group_ids,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	IsMegaMenu      *Bool     `xmlrpc:"is_mega_menu,omitempty"`
-	IsVisible       *Bool     `xmlrpc:"is_visible,omitempty"`
-	MegaMenuClasses *String   `xmlrpc:"mega_menu_classes,omitempty"`
-	MegaMenuContent *String   `xmlrpc:"mega_menu_content,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	NewWindow       *Bool     `xmlrpc:"new_window,omitempty"`
-	PageId          *Many2One `xmlrpc:"page_id,omitempty"`
-	ParentId        *Many2One `xmlrpc:"parent_id,omitempty"`
-	ParentPath      *String   `xmlrpc:"parent_path,omitempty"`
-	Sequence        *Int      `xmlrpc:"sequence,omitempty"`
-	ThemeTemplateId *Many2One `xmlrpc:"theme_template_id,omitempty"`
-	Url             *String   `xmlrpc:"url,omitempty"`
-	WebsiteId       *Many2One `xmlrpc:"website_id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChildId         *Relation `xmlrpc:"child_id,omitempty" json:"child_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupIds        *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMegaMenu      *Bool     `xmlrpc:"is_mega_menu,omitempty" json:"is_mega_menu,omitempty"`
+	IsVisible       *Bool     `xmlrpc:"is_visible,omitempty" json:"is_visible,omitempty"`
+	MegaMenuClasses *String   `xmlrpc:"mega_menu_classes,omitempty" json:"mega_menu_classes,omitempty"`
+	MegaMenuContent *String   `xmlrpc:"mega_menu_content,omitempty" json:"mega_menu_content,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NewWindow       *Bool     `xmlrpc:"new_window,omitempty" json:"new_window,omitempty"`
+	PageId          *Many2One `xmlrpc:"page_id,omitempty" json:"page_id,omitempty"`
+	ParentId        *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath      *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	Sequence        *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ThemeTemplateId *Many2One `xmlrpc:"theme_template_id,omitempty" json:"theme_template_id,omitempty"`
+	Url             *String   `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	WebsiteId       *Many2One `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebsiteMenus represents array of website.menu model.

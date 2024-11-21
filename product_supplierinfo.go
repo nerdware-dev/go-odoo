@@ -2,28 +2,28 @@ package odoo
 
 // ProductSupplierinfo represents product.supplierinfo model.
 type ProductSupplierinfo struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty"`
-	DateEnd             *Time     `xmlrpc:"date_end,omitempty"`
-	DateStart           *Time     `xmlrpc:"date_start,omitempty"`
-	Delay               *Int      `xmlrpc:"delay,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	MinQty              *Float    `xmlrpc:"min_qty,omitempty"`
-	Name                *Many2One `xmlrpc:"name,omitempty"`
-	Price               *Float    `xmlrpc:"price,omitempty"`
-	ProductCode         *String   `xmlrpc:"product_code,omitempty"`
-	ProductId           *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductName         *String   `xmlrpc:"product_name,omitempty"`
-	ProductTmplId       *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUom          *Many2One `xmlrpc:"product_uom,omitempty"`
-	ProductVariantCount *Int      `xmlrpc:"product_variant_count,omitempty"`
-	Sequence            *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DateEnd             *Time     `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateStart           *Time     `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	Delay               *Int      `xmlrpc:"delay,omitempty" json:"delay,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MinQty              *Float    `xmlrpc:"min_qty,omitempty" json:"min_qty,omitempty"`
+	Name                *Many2One `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Price               *Float    `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	ProductCode         *String   `xmlrpc:"product_code,omitempty" json:"product_code,omitempty"`
+	ProductId           *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductName         *String   `xmlrpc:"product_name,omitempty" json:"product_name,omitempty"`
+	ProductTmplId       *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUom          *Many2One `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductVariantCount *Int      `xmlrpc:"product_variant_count,omitempty" json:"product_variant_count,omitempty"`
+	Sequence            *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductSupplierinfos represents array of product.supplierinfo model.

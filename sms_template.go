@@ -2,24 +2,24 @@ package odoo
 
 // SmsTemplate represents sms.template model.
 type SmsTemplate struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	Body                *String   `xmlrpc:"body,omitempty"`
-	Copyvalue           *String   `xmlrpc:"copyvalue,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	Lang                *String   `xmlrpc:"lang,omitempty"`
-	Model               *String   `xmlrpc:"model,omitempty"`
-	ModelId             *Many2One `xmlrpc:"model_id,omitempty"`
-	ModelObjectField    *Many2One `xmlrpc:"model_object_field,omitempty"`
-	Name                *String   `xmlrpc:"name,omitempty"`
-	NullValue           *String   `xmlrpc:"null_value,omitempty"`
-	SidebarActionId     *Many2One `xmlrpc:"sidebar_action_id,omitempty"`
-	SubModelObjectField *Many2One `xmlrpc:"sub_model_object_field,omitempty"`
-	SubObject           *Many2One `xmlrpc:"sub_object,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Body                *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	Copyvalue           *String   `xmlrpc:"copyvalue,omitempty" json:"copyvalue,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang                *String   `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	Model               *String   `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelId             *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelObjectField    *Many2One `xmlrpc:"model_object_field,omitempty" json:"model_object_field,omitempty"`
+	Name                *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NullValue           *String   `xmlrpc:"null_value,omitempty" json:"null_value,omitempty"`
+	SidebarActionId     *Many2One `xmlrpc:"sidebar_action_id,omitempty" json:"sidebar_action_id,omitempty"`
+	SubModelObjectField *Many2One `xmlrpc:"sub_model_object_field,omitempty" json:"sub_model_object_field,omitempty"`
+	SubObject           *Many2One `xmlrpc:"sub_object,omitempty" json:"sub_object,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsTemplates represents array of sms.template model.

@@ -2,18 +2,18 @@ package odoo
 
 // IrTranslation represents ir.translation model.
 type IrTranslation struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Comments    *String    `xmlrpc:"comments,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Lang        *Selection `xmlrpc:"lang,omitempty"`
-	Module      *String    `xmlrpc:"module,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	ResId       *Int       `xmlrpc:"res_id,omitempty"`
-	Src         *String    `xmlrpc:"src,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	Type        *Selection `xmlrpc:"type,omitempty"`
-	Value       *String    `xmlrpc:"value,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Comments    *String    `xmlrpc:"comments,omitempty" json:"comments,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang        *Selection `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	Module      *String    `xmlrpc:"module,omitempty" json:"module,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResId       *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	Src         *String    `xmlrpc:"src,omitempty" json:"src,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Type        *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Value       *String    `xmlrpc:"value,omitempty" json:"value,omitempty"`
 }
 
 // IrTranslations represents array of ir.translation model.

@@ -2,19 +2,19 @@ package odoo
 
 // AccountReportManager represents account.report.manager model.
 type AccountReportManager struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	FinancialReportId *Many2One `xmlrpc:"financial_report_id,omitempty"`
-	FootnotesIds      *Relation `xmlrpc:"footnotes_ids,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty"`
-	ReportName        *String   `xmlrpc:"report_name,omitempty"`
-	Summary           *String   `xmlrpc:"summary,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FinancialReportId *Many2One `xmlrpc:"financial_report_id,omitempty" json:"financial_report_id,omitempty"`
+	FootnotesIds      *Relation `xmlrpc:"footnotes_ids,omitempty" json:"footnotes_ids,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ReportName        *String   `xmlrpc:"report_name,omitempty" json:"report_name,omitempty"`
+	Summary           *String   `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportManagers represents array of account.report.manager model.

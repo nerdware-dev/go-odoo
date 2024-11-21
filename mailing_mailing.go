@@ -2,88 +2,88 @@ package odoo
 
 // MailingMailing represents mailing.mailing model.
 type MailingMailing struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                      *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AttachmentIds               *Relation  `xmlrpc:"attachment_ids,omitempty"`
-	BodyArch                    *String    `xmlrpc:"body_arch,omitempty"`
-	BodyHtml                    *String    `xmlrpc:"body_html,omitempty"`
-	Bounced                     *Int       `xmlrpc:"bounced,omitempty"`
-	BouncedRatio                *Int       `xmlrpc:"bounced_ratio,omitempty"`
-	CampaignId                  *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	Clicked                     *Int       `xmlrpc:"clicked,omitempty"`
-	ClicksRatio                 *Int       `xmlrpc:"clicks_ratio,omitempty"`
-	Color                       *Int       `xmlrpc:"color,omitempty"`
-	ContactAbPc                 *Int       `xmlrpc:"contact_ab_pc,omitempty"`
-	ContactListIds              *Relation  `xmlrpc:"contact_list_ids,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CrmLeadActivated            *Bool      `xmlrpc:"crm_lead_activated,omitempty"`
-	CrmLeadCount                *Int       `xmlrpc:"crm_lead_count,omitempty"`
-	CrmOpportunitiesCount       *Int       `xmlrpc:"crm_opportunities_count,omitempty"`
-	Delivered                   *Int       `xmlrpc:"delivered,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	EmailFrom                   *String    `xmlrpc:"email_from,omitempty"`
-	Expected                    *Int       `xmlrpc:"expected,omitempty"`
-	Failed                      *Int       `xmlrpc:"failed,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	Ignored                     *Int       `xmlrpc:"ignored,omitempty"`
-	KeepArchives                *Bool      `xmlrpc:"keep_archives,omitempty"`
-	MailServerId                *Many2One  `xmlrpc:"mail_server_id,omitempty"`
-	MailingDomain               *String    `xmlrpc:"mailing_domain,omitempty"`
-	MailingModelId              *Many2One  `xmlrpc:"mailing_model_id,omitempty"`
-	MailingModelName            *String    `xmlrpc:"mailing_model_name,omitempty"`
-	MailingModelReal            *String    `xmlrpc:"mailing_model_real,omitempty"`
-	MailingTraceIds             *Relation  `xmlrpc:"mailing_trace_ids,omitempty"`
-	MailingType                 *Selection `xmlrpc:"mailing_type,omitempty"`
-	MarketingActivityIds        *Relation  `xmlrpc:"marketing_activity_ids,omitempty"`
-	MediumId                    *Many2One  `xmlrpc:"medium_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	NextDeparture               *Time      `xmlrpc:"next_departure,omitempty"`
-	Opened                      *Int       `xmlrpc:"opened,omitempty"`
-	OpenedRatio                 *Int       `xmlrpc:"opened_ratio,omitempty"`
-	ReceivedRatio               *Int       `xmlrpc:"received_ratio,omitempty"`
-	Replied                     *Int       `xmlrpc:"replied,omitempty"`
-	RepliedRatio                *Int       `xmlrpc:"replied_ratio,omitempty"`
-	ReplyTo                     *String    `xmlrpc:"reply_to,omitempty"`
-	ReplyToMode                 *Selection `xmlrpc:"reply_to_mode,omitempty"`
-	SaleInvoicedAmount          *Int       `xmlrpc:"sale_invoiced_amount,omitempty"`
-	SaleQuotationCount          *Int       `xmlrpc:"sale_quotation_count,omitempty"`
-	ScheduleDate                *Time      `xmlrpc:"schedule_date,omitempty"`
-	Scheduled                   *Int       `xmlrpc:"scheduled,omitempty"`
-	Sent                        *Int       `xmlrpc:"sent,omitempty"`
-	SentDate                    *Time      `xmlrpc:"sent_date,omitempty"`
-	SourceId                    *Many2One  `xmlrpc:"source_id,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	Subject                     *String    `xmlrpc:"subject,omitempty"`
-	Total                       *Int       `xmlrpc:"total,omitempty"`
-	UniqueAbTesting             *Bool      `xmlrpc:"unique_ab_testing,omitempty"`
-	UseInMarketingAutomation    *Bool      `xmlrpc:"use_in_marketing_automation,omitempty"`
-	UserId                      *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AttachmentIds               *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	BodyArch                    *String    `xmlrpc:"body_arch,omitempty" json:"body_arch,omitempty"`
+	BodyHtml                    *String    `xmlrpc:"body_html,omitempty" json:"body_html,omitempty"`
+	Bounced                     *Int       `xmlrpc:"bounced,omitempty" json:"bounced,omitempty"`
+	BouncedRatio                *Int       `xmlrpc:"bounced_ratio,omitempty" json:"bounced_ratio,omitempty"`
+	CampaignId                  *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	Clicked                     *Int       `xmlrpc:"clicked,omitempty" json:"clicked,omitempty"`
+	ClicksRatio                 *Int       `xmlrpc:"clicks_ratio,omitempty" json:"clicks_ratio,omitempty"`
+	Color                       *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	ContactAbPc                 *Int       `xmlrpc:"contact_ab_pc,omitempty" json:"contact_ab_pc,omitempty"`
+	ContactListIds              *Relation  `xmlrpc:"contact_list_ids,omitempty" json:"contact_list_ids,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrmLeadActivated            *Bool      `xmlrpc:"crm_lead_activated,omitempty" json:"crm_lead_activated,omitempty"`
+	CrmLeadCount                *Int       `xmlrpc:"crm_lead_count,omitempty" json:"crm_lead_count,omitempty"`
+	CrmOpportunitiesCount       *Int       `xmlrpc:"crm_opportunities_count,omitempty" json:"crm_opportunities_count,omitempty"`
+	Delivered                   *Int       `xmlrpc:"delivered,omitempty" json:"delivered,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmailFrom                   *String    `xmlrpc:"email_from,omitempty" json:"email_from,omitempty"`
+	Expected                    *Int       `xmlrpc:"expected,omitempty" json:"expected,omitempty"`
+	Failed                      *Int       `xmlrpc:"failed,omitempty" json:"failed,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Ignored                     *Int       `xmlrpc:"ignored,omitempty" json:"ignored,omitempty"`
+	KeepArchives                *Bool      `xmlrpc:"keep_archives,omitempty" json:"keep_archives,omitempty"`
+	MailServerId                *Many2One  `xmlrpc:"mail_server_id,omitempty" json:"mail_server_id,omitempty"`
+	MailingDomain               *String    `xmlrpc:"mailing_domain,omitempty" json:"mailing_domain,omitempty"`
+	MailingModelId              *Many2One  `xmlrpc:"mailing_model_id,omitempty" json:"mailing_model_id,omitempty"`
+	MailingModelName            *String    `xmlrpc:"mailing_model_name,omitempty" json:"mailing_model_name,omitempty"`
+	MailingModelReal            *String    `xmlrpc:"mailing_model_real,omitempty" json:"mailing_model_real,omitempty"`
+	MailingTraceIds             *Relation  `xmlrpc:"mailing_trace_ids,omitempty" json:"mailing_trace_ids,omitempty"`
+	MailingType                 *Selection `xmlrpc:"mailing_type,omitempty" json:"mailing_type,omitempty"`
+	MarketingActivityIds        *Relation  `xmlrpc:"marketing_activity_ids,omitempty" json:"marketing_activity_ids,omitempty"`
+	MediumId                    *Many2One  `xmlrpc:"medium_id,omitempty" json:"medium_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NextDeparture               *Time      `xmlrpc:"next_departure,omitempty" json:"next_departure,omitempty"`
+	Opened                      *Int       `xmlrpc:"opened,omitempty" json:"opened,omitempty"`
+	OpenedRatio                 *Int       `xmlrpc:"opened_ratio,omitempty" json:"opened_ratio,omitempty"`
+	ReceivedRatio               *Int       `xmlrpc:"received_ratio,omitempty" json:"received_ratio,omitempty"`
+	Replied                     *Int       `xmlrpc:"replied,omitempty" json:"replied,omitempty"`
+	RepliedRatio                *Int       `xmlrpc:"replied_ratio,omitempty" json:"replied_ratio,omitempty"`
+	ReplyTo                     *String    `xmlrpc:"reply_to,omitempty" json:"reply_to,omitempty"`
+	ReplyToMode                 *Selection `xmlrpc:"reply_to_mode,omitempty" json:"reply_to_mode,omitempty"`
+	SaleInvoicedAmount          *Int       `xmlrpc:"sale_invoiced_amount,omitempty" json:"sale_invoiced_amount,omitempty"`
+	SaleQuotationCount          *Int       `xmlrpc:"sale_quotation_count,omitempty" json:"sale_quotation_count,omitempty"`
+	ScheduleDate                *Time      `xmlrpc:"schedule_date,omitempty" json:"schedule_date,omitempty"`
+	Scheduled                   *Int       `xmlrpc:"scheduled,omitempty" json:"scheduled,omitempty"`
+	Sent                        *Int       `xmlrpc:"sent,omitempty" json:"sent,omitempty"`
+	SentDate                    *Time      `xmlrpc:"sent_date,omitempty" json:"sent_date,omitempty"`
+	SourceId                    *Many2One  `xmlrpc:"source_id,omitempty" json:"source_id,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Subject                     *String    `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	Total                       *Int       `xmlrpc:"total,omitempty" json:"total,omitempty"`
+	UniqueAbTesting             *Bool      `xmlrpc:"unique_ab_testing,omitempty" json:"unique_ab_testing,omitempty"`
+	UseInMarketingAutomation    *Bool      `xmlrpc:"use_in_marketing_automation,omitempty" json:"use_in_marketing_automation,omitempty"`
+	UserId                      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailingMailings represents array of mailing.mailing model.

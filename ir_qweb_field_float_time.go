@@ -2,9 +2,9 @@ package odoo
 
 // IrQwebFieldFloatTime represents ir.qweb.field.float_time model.
 type IrQwebFieldFloatTime struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // IrQwebFieldFloatTimes represents array of ir.qweb.field.float_time model.

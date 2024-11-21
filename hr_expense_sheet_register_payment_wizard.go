@@ -2,26 +2,26 @@ package odoo
 
 // HrExpenseSheetRegisterPaymentWizard represents hr.expense.sheet.register.payment.wizard model.
 type HrExpenseSheetRegisterPaymentWizard struct {
-	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty"`
-	Amount                    *Float    `xmlrpc:"amount,omitempty"`
-	Communication             *String   `xmlrpc:"communication,omitempty"`
-	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	ExpenseSheetId            *Many2One `xmlrpc:"expense_sheet_id,omitempty"`
-	HidePaymentMethod         *Bool     `xmlrpc:"hide_payment_method,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	JournalId                 *Many2One `xmlrpc:"journal_id,omitempty"`
-	PartnerBankAccountId      *Many2One `xmlrpc:"partner_bank_account_id,omitempty"`
-	PartnerId                 *Many2One `xmlrpc:"partner_id,omitempty"`
-	PaymentDate               *Time     `xmlrpc:"payment_date,omitempty"`
-	PaymentMethodId           *Many2One `xmlrpc:"payment_method_id,omitempty"`
-	RequirePartnerBankAccount *Bool     `xmlrpc:"require_partner_bank_account,omitempty"`
-	ShowPartnerBankAccount    *Bool     `xmlrpc:"show_partner_bank_account,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Amount                    *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	Communication             *String   `xmlrpc:"communication,omitempty" json:"communication,omitempty"`
+	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName               *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseSheetId            *Many2One `xmlrpc:"expense_sheet_id,omitempty" json:"expense_sheet_id,omitempty"`
+	HidePaymentMethod         *Bool     `xmlrpc:"hide_payment_method,omitempty" json:"hide_payment_method,omitempty"`
+	Id                        *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                 *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	PartnerBankAccountId      *Many2One `xmlrpc:"partner_bank_account_id,omitempty" json:"partner_bank_account_id,omitempty"`
+	PartnerId                 *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PaymentDate               *Time     `xmlrpc:"payment_date,omitempty" json:"payment_date,omitempty"`
+	PaymentMethodId           *Many2One `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	RequirePartnerBankAccount *Bool     `xmlrpc:"require_partner_bank_account,omitempty" json:"require_partner_bank_account,omitempty"`
+	ShowPartnerBankAccount    *Bool     `xmlrpc:"show_partner_bank_account,omitempty" json:"show_partner_bank_account,omitempty"`
+	WriteDate                 *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrExpenseSheetRegisterPaymentWizards represents array of hr.expense.sheet.register.payment.wizard model.

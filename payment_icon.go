@@ -2,17 +2,17 @@ package odoo
 
 // PaymentIcon represents payment.icon model.
 type PaymentIcon struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	AcquirerIds      *Relation `xmlrpc:"acquirer_ids,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Image            *String   `xmlrpc:"image,omitempty"`
-	ImagePaymentForm *String   `xmlrpc:"image_payment_form,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AcquirerIds      *Relation `xmlrpc:"acquirer_ids,omitempty" json:"acquirer_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image            *String   `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	ImagePaymentForm *String   `xmlrpc:"image_payment_form,omitempty" json:"image_payment_form,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentIcons represents array of payment.icon model.

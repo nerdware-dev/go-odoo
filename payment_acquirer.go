@@ -2,55 +2,55 @@ package odoo
 
 // PaymentAcquirer represents payment.acquirer model.
 type PaymentAcquirer struct {
-	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
-	AuthMsg                    *String    `xmlrpc:"auth_msg,omitempty"`
-	AuthorizeImplemented       *Bool      `xmlrpc:"authorize_implemented,omitempty"`
-	CancelMsg                  *String    `xmlrpc:"cancel_msg,omitempty"`
-	CaptureManually            *Bool      `xmlrpc:"capture_manually,omitempty"`
-	CheckValidity              *Bool      `xmlrpc:"check_validity,omitempty"`
-	Color                      *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryIds                 *Relation  `xmlrpc:"country_ids,omitempty"`
-	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description                *String    `xmlrpc:"description,omitempty"`
-	DisplayAs                  *String    `xmlrpc:"display_as,omitempty"`
-	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
-	DoneMsg                    *String    `xmlrpc:"done_msg,omitempty"`
-	FeesActive                 *Bool      `xmlrpc:"fees_active,omitempty"`
-	FeesDomFixed               *Float     `xmlrpc:"fees_dom_fixed,omitempty"`
-	FeesDomVar                 *Float     `xmlrpc:"fees_dom_var,omitempty"`
-	FeesImplemented            *Bool      `xmlrpc:"fees_implemented,omitempty"`
-	FeesIntFixed               *Float     `xmlrpc:"fees_int_fixed,omitempty"`
-	FeesIntVar                 *Float     `xmlrpc:"fees_int_var,omitempty"`
-	Id                         *Int       `xmlrpc:"id,omitempty"`
-	Image128                   *String    `xmlrpc:"image_128,omitempty"`
-	InboundPaymentMethodIds    *Relation  `xmlrpc:"inbound_payment_method_ids,omitempty"`
-	JournalId                  *Many2One  `xmlrpc:"journal_id,omitempty"`
-	ModuleId                   *Many2One  `xmlrpc:"module_id,omitempty"`
-	ModuleState                *Selection `xmlrpc:"module_state,omitempty"`
-	ModuleToBuy                *Bool      `xmlrpc:"module_to_buy,omitempty"`
-	Name                       *String    `xmlrpc:"name,omitempty"`
-	PaymentFlow                *Selection `xmlrpc:"payment_flow,omitempty"`
-	PaymentIconIds             *Relation  `xmlrpc:"payment_icon_ids,omitempty"`
-	PaypalEmailAccount         *String    `xmlrpc:"paypal_email_account,omitempty"`
-	PaypalPdtToken             *String    `xmlrpc:"paypal_pdt_token,omitempty"`
-	PaypalSellerAccount        *String    `xmlrpc:"paypal_seller_account,omitempty"`
-	PaypalUseIpn               *Bool      `xmlrpc:"paypal_use_ipn,omitempty"`
-	PendingMsg                 *String    `xmlrpc:"pending_msg,omitempty"`
-	PreMsg                     *String    `xmlrpc:"pre_msg,omitempty"`
-	Provider                   *Selection `xmlrpc:"provider,omitempty"`
-	QrCode                     *Bool      `xmlrpc:"qr_code,omitempty"`
-	RegistrationViewTemplateId *Many2One  `xmlrpc:"registration_view_template_id,omitempty"`
-	SaveToken                  *Selection `xmlrpc:"save_token,omitempty"`
-	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
-	SoReferenceType            *Selection `xmlrpc:"so_reference_type,omitempty"`
-	State                      *Selection `xmlrpc:"state,omitempty"`
-	TokenImplemented           *Bool      `xmlrpc:"token_implemented,omitempty"`
-	ViewTemplateId             *Many2One  `xmlrpc:"view_template_id,omitempty"`
-	WebsiteId                  *Many2One  `xmlrpc:"website_id,omitempty"`
-	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AuthMsg                    *String    `xmlrpc:"auth_msg,omitempty" json:"auth_msg,omitempty"`
+	AuthorizeImplemented       *Bool      `xmlrpc:"authorize_implemented,omitempty" json:"authorize_implemented,omitempty"`
+	CancelMsg                  *String    `xmlrpc:"cancel_msg,omitempty" json:"cancel_msg,omitempty"`
+	CaptureManually            *Bool      `xmlrpc:"capture_manually,omitempty" json:"capture_manually,omitempty"`
+	CheckValidity              *Bool      `xmlrpc:"check_validity,omitempty" json:"check_validity,omitempty"`
+	Color                      *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryIds                 *Relation  `xmlrpc:"country_ids,omitempty" json:"country_ids,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description                *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayAs                  *String    `xmlrpc:"display_as,omitempty" json:"display_as,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DoneMsg                    *String    `xmlrpc:"done_msg,omitempty" json:"done_msg,omitempty"`
+	FeesActive                 *Bool      `xmlrpc:"fees_active,omitempty" json:"fees_active,omitempty"`
+	FeesDomFixed               *Float     `xmlrpc:"fees_dom_fixed,omitempty" json:"fees_dom_fixed,omitempty"`
+	FeesDomVar                 *Float     `xmlrpc:"fees_dom_var,omitempty" json:"fees_dom_var,omitempty"`
+	FeesImplemented            *Bool      `xmlrpc:"fees_implemented,omitempty" json:"fees_implemented,omitempty"`
+	FeesIntFixed               *Float     `xmlrpc:"fees_int_fixed,omitempty" json:"fees_int_fixed,omitempty"`
+	FeesIntVar                 *Float     `xmlrpc:"fees_int_var,omitempty" json:"fees_int_var,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image128                   *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	InboundPaymentMethodIds    *Relation  `xmlrpc:"inbound_payment_method_ids,omitempty" json:"inbound_payment_method_ids,omitempty"`
+	JournalId                  *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	ModuleId                   *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	ModuleState                *Selection `xmlrpc:"module_state,omitempty" json:"module_state,omitempty"`
+	ModuleToBuy                *Bool      `xmlrpc:"module_to_buy,omitempty" json:"module_to_buy,omitempty"`
+	Name                       *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentFlow                *Selection `xmlrpc:"payment_flow,omitempty" json:"payment_flow,omitempty"`
+	PaymentIconIds             *Relation  `xmlrpc:"payment_icon_ids,omitempty" json:"payment_icon_ids,omitempty"`
+	PaypalEmailAccount         *String    `xmlrpc:"paypal_email_account,omitempty" json:"paypal_email_account,omitempty"`
+	PaypalPdtToken             *String    `xmlrpc:"paypal_pdt_token,omitempty" json:"paypal_pdt_token,omitempty"`
+	PaypalSellerAccount        *String    `xmlrpc:"paypal_seller_account,omitempty" json:"paypal_seller_account,omitempty"`
+	PaypalUseIpn               *Bool      `xmlrpc:"paypal_use_ipn,omitempty" json:"paypal_use_ipn,omitempty"`
+	PendingMsg                 *String    `xmlrpc:"pending_msg,omitempty" json:"pending_msg,omitempty"`
+	PreMsg                     *String    `xmlrpc:"pre_msg,omitempty" json:"pre_msg,omitempty"`
+	Provider                   *Selection `xmlrpc:"provider,omitempty" json:"provider,omitempty"`
+	QrCode                     *Bool      `xmlrpc:"qr_code,omitempty" json:"qr_code,omitempty"`
+	RegistrationViewTemplateId *Many2One  `xmlrpc:"registration_view_template_id,omitempty" json:"registration_view_template_id,omitempty"`
+	SaveToken                  *Selection `xmlrpc:"save_token,omitempty" json:"save_token,omitempty"`
+	Sequence                   *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SoReferenceType            *Selection `xmlrpc:"so_reference_type,omitempty" json:"so_reference_type,omitempty"`
+	State                      *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TokenImplemented           *Bool      `xmlrpc:"token_implemented,omitempty" json:"token_implemented,omitempty"`
+	ViewTemplateId             *Many2One  `xmlrpc:"view_template_id,omitempty" json:"view_template_id,omitempty"`
+	WebsiteId                  *Many2One  `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentAcquirers represents array of payment.acquirer model.

@@ -2,48 +2,48 @@ package odoo
 
 // IrActionsServer represents ir.actions.server model.
 type IrActionsServer struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
-	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
-	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
-	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserFieldName         *String    `xmlrpc:"activity_user_field_name,omitempty"`
-	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty"`
-	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType                   *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty"`
-	ChannelIds                    *Relation  `xmlrpc:"channel_ids,omitempty"`
-	ChildIds                      *Relation  `xmlrpc:"child_ids,omitempty"`
-	Code                          *String    `xmlrpc:"code,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CrudModelId                   *Many2One  `xmlrpc:"crud_model_id,omitempty"`
-	CrudModelName                 *String    `xmlrpc:"crud_model_name,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	FieldsLines                   *Relation  `xmlrpc:"fields_lines,omitempty"`
-	GroupsId                      *Relation  `xmlrpc:"groups_id,omitempty"`
-	Help                          *String    `xmlrpc:"help,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	LinkFieldId                   *Many2One  `xmlrpc:"link_field_id,omitempty"`
-	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelName                     *String    `xmlrpc:"model_name,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty"`
-	Sequence                      *Int       `xmlrpc:"sequence,omitempty"`
-	SmsMassKeepLog                *Bool      `xmlrpc:"sms_mass_keep_log,omitempty"`
-	SmsTemplateId                 *Many2One  `xmlrpc:"sms_template_id,omitempty"`
-	State                         *Selection `xmlrpc:"state,omitempty"`
-	TemplateId                    *Many2One  `xmlrpc:"template_id,omitempty"`
-	Type                          *String    `xmlrpc:"type,omitempty"`
-	Usage                         *Selection `xmlrpc:"usage,omitempty"`
-	WebsitePath                   *String    `xmlrpc:"website_path,omitempty"`
-	WebsitePublished              *Bool      `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl                    *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId                         *String    `xmlrpc:"xml_id,omitempty"`
+	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty" json:"activity_date_deadline_range,omitempty"`
+	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty" json:"activity_date_deadline_range_type,omitempty"`
+	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty" json:"activity_note,omitempty"`
+	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserFieldName         *String    `xmlrpc:"activity_user_field_name,omitempty" json:"activity_user_field_name,omitempty"`
+	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty" json:"activity_user_type,omitempty"`
+	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
+	BindingType                   *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
+	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
+	ChannelIds                    *Relation  `xmlrpc:"channel_ids,omitempty" json:"channel_ids,omitempty"`
+	ChildIds                      *Relation  `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	Code                          *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrudModelId                   *Many2One  `xmlrpc:"crud_model_id,omitempty" json:"crud_model_id,omitempty"`
+	CrudModelName                 *String    `xmlrpc:"crud_model_name,omitempty" json:"crud_model_name,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldsLines                   *Relation  `xmlrpc:"fields_lines,omitempty" json:"fields_lines,omitempty"`
+	GroupsId                      *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	Help                          *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LinkFieldId                   *Many2One  `xmlrpc:"link_field_id,omitempty" json:"link_field_id,omitempty"`
+	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelName                     *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
+	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	Sequence                      *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SmsMassKeepLog                *Bool      `xmlrpc:"sms_mass_keep_log,omitempty" json:"sms_mass_keep_log,omitempty"`
+	SmsTemplateId                 *Many2One  `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	State                         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TemplateId                    *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	Type                          *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Usage                         *Selection `xmlrpc:"usage,omitempty" json:"usage,omitempty"`
+	WebsitePath                   *String    `xmlrpc:"website_path,omitempty" json:"website_path,omitempty"`
+	WebsitePublished              *Bool      `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	WebsiteUrl                    *String    `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId                         *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrActionsServers represents array of ir.actions.server model.

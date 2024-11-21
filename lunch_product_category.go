@@ -2,31 +2,31 @@ package odoo
 
 // LunchProductCategory represents lunch.product.category model.
 type LunchProductCategory struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId        *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId       *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Image1024        *String    `xmlrpc:"image_1024,omitempty"`
-	Image128         *String    `xmlrpc:"image_128,omitempty"`
-	Image1920        *String    `xmlrpc:"image_1920,omitempty"`
-	Image256         *String    `xmlrpc:"image_256,omitempty"`
-	Image512         *String    `xmlrpc:"image_512,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	ProductCount     *Int       `xmlrpc:"product_count,omitempty"`
-	ToppingIds1      *Relation  `xmlrpc:"topping_ids_1,omitempty"`
-	ToppingIds2      *Relation  `xmlrpc:"topping_ids_2,omitempty"`
-	ToppingIds3      *Relation  `xmlrpc:"topping_ids_3,omitempty"`
-	ToppingLabel1    *String    `xmlrpc:"topping_label_1,omitempty"`
-	ToppingLabel2    *String    `xmlrpc:"topping_label_2,omitempty"`
-	ToppingLabel3    *String    `xmlrpc:"topping_label_3,omitempty"`
-	ToppingQuantity1 *Selection `xmlrpc:"topping_quantity_1,omitempty"`
-	ToppingQuantity2 *Selection `xmlrpc:"topping_quantity_2,omitempty"`
-	ToppingQuantity3 *Selection `xmlrpc:"topping_quantity_3,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId        *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId       *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image1024        *String    `xmlrpc:"image_1024,omitempty" json:"image_1024,omitempty"`
+	Image128         *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	Image1920        *String    `xmlrpc:"image_1920,omitempty" json:"image_1920,omitempty"`
+	Image256         *String    `xmlrpc:"image_256,omitempty" json:"image_256,omitempty"`
+	Image512         *String    `xmlrpc:"image_512,omitempty" json:"image_512,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductCount     *Int       `xmlrpc:"product_count,omitempty" json:"product_count,omitempty"`
+	ToppingIds1      *Relation  `xmlrpc:"topping_ids_1,omitempty" json:"topping_ids_1,omitempty"`
+	ToppingIds2      *Relation  `xmlrpc:"topping_ids_2,omitempty" json:"topping_ids_2,omitempty"`
+	ToppingIds3      *Relation  `xmlrpc:"topping_ids_3,omitempty" json:"topping_ids_3,omitempty"`
+	ToppingLabel1    *String    `xmlrpc:"topping_label_1,omitempty" json:"topping_label_1,omitempty"`
+	ToppingLabel2    *String    `xmlrpc:"topping_label_2,omitempty" json:"topping_label_2,omitempty"`
+	ToppingLabel3    *String    `xmlrpc:"topping_label_3,omitempty" json:"topping_label_3,omitempty"`
+	ToppingQuantity1 *Selection `xmlrpc:"topping_quantity_1,omitempty" json:"topping_quantity_1,omitempty"`
+	ToppingQuantity2 *Selection `xmlrpc:"topping_quantity_2,omitempty" json:"topping_quantity_2,omitempty"`
+	ToppingQuantity3 *Selection `xmlrpc:"topping_quantity_3,omitempty" json:"topping_quantity_3,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // LunchProductCategorys represents array of lunch.product.category model.

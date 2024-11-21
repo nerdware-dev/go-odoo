@@ -2,27 +2,27 @@ package odoo
 
 // ProductPackaging represents product.packaging model.
 type ProductPackaging struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	Barcode            *String    `xmlrpc:"barcode,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Height             *Int       `xmlrpc:"height,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	Length             *Int       `xmlrpc:"length,omitempty"`
-	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	PackageCarrierType *Selection `xmlrpc:"package_carrier_type,omitempty"`
-	ProductId          *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomId       *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	Qty                *Float     `xmlrpc:"qty,omitempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omitempty"`
-	ShipperPackageCode *String    `xmlrpc:"shipper_package_code,omitempty"`
-	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty"`
-	Width              *Int       `xmlrpc:"width,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Barcode            *String    `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Height             *Int       `xmlrpc:"height,omitempty" json:"height,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Length             *Int       `xmlrpc:"length,omitempty" json:"length,omitempty"`
+	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty" json:"max_weight,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PackageCarrierType *Selection `xmlrpc:"package_carrier_type,omitempty" json:"package_carrier_type,omitempty"`
+	ProductId          *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId       *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Qty                *Float     `xmlrpc:"qty,omitempty" json:"qty,omitempty"`
+	Sequence           *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShipperPackageCode *String    `xmlrpc:"shipper_package_code,omitempty" json:"shipper_package_code,omitempty"`
+	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	Width              *Int       `xmlrpc:"width,omitempty" json:"width,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductPackagings represents array of product.packaging model.

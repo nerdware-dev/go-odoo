@@ -2,31 +2,31 @@ package odoo
 
 // StockInventoryLine represents stock.inventory.line model.
 type StockInventoryLine struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	CategId         *Many2One  `xmlrpc:"categ_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DifferenceQty   *Float     `xmlrpc:"difference_qty,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	DummyId         *String    `xmlrpc:"dummy_id,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	InventoryDate   *Time      `xmlrpc:"inventory_date,omitempty"`
-	InventoryId     *Many2One  `xmlrpc:"inventory_id,omitempty"`
-	IsEditable      *Bool      `xmlrpc:"is_editable,omitempty"`
-	LocationId      *Many2One  `xmlrpc:"location_id,omitempty"`
-	Outdated        *Bool      `xmlrpc:"outdated,omitempty"`
-	PackageId       *Many2One  `xmlrpc:"package_id,omitempty"`
-	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ProdLotId       *Many2One  `xmlrpc:"prod_lot_id,omitempty"`
-	ProductId       *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductQty      *Float     `xmlrpc:"product_qty,omitempty"`
-	ProductTracking *Selection `xmlrpc:"product_tracking,omitempty"`
-	ProductUomId    *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
-	TheoreticalQty  *Float     `xmlrpc:"theoretical_qty,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CategId         *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DifferenceQty   *Float     `xmlrpc:"difference_qty,omitempty" json:"difference_qty,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DummyId         *String    `xmlrpc:"dummy_id,omitempty" json:"dummy_id,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InventoryDate   *Time      `xmlrpc:"inventory_date,omitempty" json:"inventory_date,omitempty"`
+	InventoryId     *Many2One  `xmlrpc:"inventory_id,omitempty" json:"inventory_id,omitempty"`
+	IsEditable      *Bool      `xmlrpc:"is_editable,omitempty" json:"is_editable,omitempty"`
+	LocationId      *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Outdated        *Bool      `xmlrpc:"outdated,omitempty" json:"outdated,omitempty"`
+	PackageId       *Many2One  `xmlrpc:"package_id,omitempty" json:"package_id,omitempty"`
+	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProdLotId       *Many2One  `xmlrpc:"prod_lot_id,omitempty" json:"prod_lot_id,omitempty"`
+	ProductId       *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductQty      *Float     `xmlrpc:"product_qty,omitempty" json:"product_qty,omitempty"`
+	ProductTracking *Selection `xmlrpc:"product_tracking,omitempty" json:"product_tracking,omitempty"`
+	ProductUomId    *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TheoreticalQty  *Float     `xmlrpc:"theoretical_qty,omitempty" json:"theoretical_qty,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockInventoryLines represents array of stock.inventory.line model.

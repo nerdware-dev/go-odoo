@@ -2,40 +2,40 @@ package odoo
 
 // HrLeaveType represents hr.leave.type model.
 type HrLeaveType struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                   *Bool      `xmlrpc:"active,omitempty"`
-	AllocationNotifSubtypeId *Many2One  `xmlrpc:"allocation_notif_subtype_id,omitempty"`
-	AllocationType           *Selection `xmlrpc:"allocation_type,omitempty"`
-	Code                     *String    `xmlrpc:"code,omitempty"`
-	ColorName                *Selection `xmlrpc:"color_name,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateCalendarMeeting    *Bool      `xmlrpc:"create_calendar_meeting,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	GroupDaysAllocation      *Float     `xmlrpc:"group_days_allocation,omitempty"`
-	GroupDaysLeave           *Float     `xmlrpc:"group_days_leave,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	LeaveNotifSubtypeId      *Many2One  `xmlrpc:"leave_notif_subtype_id,omitempty"`
-	LeavesTaken              *Float     `xmlrpc:"leaves_taken,omitempty"`
-	MaxLeaves                *Float     `xmlrpc:"max_leaves,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	RemainingLeaves          *Float     `xmlrpc:"remaining_leaves,omitempty"`
-	RequestUnit              *Selection `xmlrpc:"request_unit,omitempty"`
-	ResponsibleId            *Many2One  `xmlrpc:"responsible_id,omitempty"`
-	Sequence                 *Int       `xmlrpc:"sequence,omitempty"`
-	TimeType                 *Selection `xmlrpc:"time_type,omitempty"`
-	TimesheetGenerate        *Bool      `xmlrpc:"timesheet_generate,omitempty"`
-	TimesheetProjectId       *Many2One  `xmlrpc:"timesheet_project_id,omitempty"`
-	TimesheetTaskId          *Many2One  `xmlrpc:"timesheet_task_id,omitempty"`
-	Unpaid                   *Bool      `xmlrpc:"unpaid,omitempty"`
-	Valid                    *Bool      `xmlrpc:"valid,omitempty"`
-	ValidationType           *Selection `xmlrpc:"validation_type,omitempty"`
-	ValidityStart            *Time      `xmlrpc:"validity_start,omitempty"`
-	ValidityStop             *Time      `xmlrpc:"validity_stop,omitempty"`
-	VirtualRemainingLeaves   *Float     `xmlrpc:"virtual_remaining_leaves,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                   *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AllocationNotifSubtypeId *Many2One  `xmlrpc:"allocation_notif_subtype_id,omitempty" json:"allocation_notif_subtype_id,omitempty"`
+	AllocationType           *Selection `xmlrpc:"allocation_type,omitempty" json:"allocation_type,omitempty"`
+	Code                     *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	ColorName                *Selection `xmlrpc:"color_name,omitempty" json:"color_name,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateCalendarMeeting    *Bool      `xmlrpc:"create_calendar_meeting,omitempty" json:"create_calendar_meeting,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupDaysAllocation      *Float     `xmlrpc:"group_days_allocation,omitempty" json:"group_days_allocation,omitempty"`
+	GroupDaysLeave           *Float     `xmlrpc:"group_days_leave,omitempty" json:"group_days_leave,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveNotifSubtypeId      *Many2One  `xmlrpc:"leave_notif_subtype_id,omitempty" json:"leave_notif_subtype_id,omitempty"`
+	LeavesTaken              *Float     `xmlrpc:"leaves_taken,omitempty" json:"leaves_taken,omitempty"`
+	MaxLeaves                *Float     `xmlrpc:"max_leaves,omitempty" json:"max_leaves,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RemainingLeaves          *Float     `xmlrpc:"remaining_leaves,omitempty" json:"remaining_leaves,omitempty"`
+	RequestUnit              *Selection `xmlrpc:"request_unit,omitempty" json:"request_unit,omitempty"`
+	ResponsibleId            *Many2One  `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	Sequence                 *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TimeType                 *Selection `xmlrpc:"time_type,omitempty" json:"time_type,omitempty"`
+	TimesheetGenerate        *Bool      `xmlrpc:"timesheet_generate,omitempty" json:"timesheet_generate,omitempty"`
+	TimesheetProjectId       *Many2One  `xmlrpc:"timesheet_project_id,omitempty" json:"timesheet_project_id,omitempty"`
+	TimesheetTaskId          *Many2One  `xmlrpc:"timesheet_task_id,omitempty" json:"timesheet_task_id,omitempty"`
+	Unpaid                   *Bool      `xmlrpc:"unpaid,omitempty" json:"unpaid,omitempty"`
+	Valid                    *Bool      `xmlrpc:"valid,omitempty" json:"valid,omitempty"`
+	ValidationType           *Selection `xmlrpc:"validation_type,omitempty" json:"validation_type,omitempty"`
+	ValidityStart            *Time      `xmlrpc:"validity_start,omitempty" json:"validity_start,omitempty"`
+	ValidityStop             *Time      `xmlrpc:"validity_stop,omitempty" json:"validity_stop,omitempty"`
+	VirtualRemainingLeaves   *Float     `xmlrpc:"virtual_remaining_leaves,omitempty" json:"virtual_remaining_leaves,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrLeaveTypes represents array of hr.leave.type model.

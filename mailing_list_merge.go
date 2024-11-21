@@ -2,18 +2,18 @@ package odoo
 
 // MailingListMerge represents mailing.list.merge model.
 type MailingListMerge struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	ArchiveSrcLists *Bool      `xmlrpc:"archive_src_lists,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DestListId      *Many2One  `xmlrpc:"dest_list_id,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	MergeOptions    *Selection `xmlrpc:"merge_options,omitempty"`
-	NewListName     *String    `xmlrpc:"new_list_name,omitempty"`
-	SrcListIds      *Relation  `xmlrpc:"src_list_ids,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ArchiveSrcLists *Bool      `xmlrpc:"archive_src_lists,omitempty" json:"archive_src_lists,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DestListId      *Many2One  `xmlrpc:"dest_list_id,omitempty" json:"dest_list_id,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MergeOptions    *Selection `xmlrpc:"merge_options,omitempty" json:"merge_options,omitempty"`
+	NewListName     *String    `xmlrpc:"new_list_name,omitempty" json:"new_list_name,omitempty"`
+	SrcListIds      *Relation  `xmlrpc:"src_list_ids,omitempty" json:"src_list_ids,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailingListMerges represents array of mailing.list.merge model.

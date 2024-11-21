@@ -2,16 +2,16 @@ package odoo
 
 // StockChangeStandardPrice represents stock.change.standard.price model.
 type StockChangeStandardPrice struct {
-	LastUpdate                   *Time     `xmlrpc:"__last_update,omitempty"`
-	CounterpartAccountId         *Many2One `xmlrpc:"counterpart_account_id,omitempty"`
-	CounterpartAccountIdRequired *Bool     `xmlrpc:"counterpart_account_id_required,omitempty"`
-	CreateDate                   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                  *String   `xmlrpc:"display_name,omitempty"`
-	Id                           *Int      `xmlrpc:"id,omitempty"`
-	NewPrice                     *Float    `xmlrpc:"new_price,omitempty"`
-	WriteDate                    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CounterpartAccountId         *Many2One `xmlrpc:"counterpart_account_id,omitempty" json:"counterpart_account_id,omitempty"`
+	CounterpartAccountIdRequired *Bool     `xmlrpc:"counterpart_account_id_required,omitempty" json:"counterpart_account_id_required,omitempty"`
+	CreateDate                   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NewPrice                     *Float    `xmlrpc:"new_price,omitempty" json:"new_price,omitempty"`
+	WriteDate                    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockChangeStandardPrices represents array of stock.change.standard.price model.

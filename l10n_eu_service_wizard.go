@@ -2,19 +2,19 @@ package odoo
 
 // L10NEuServiceWizard represents l10n_eu_service.wizard model.
 type L10NEuServiceWizard struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountCollectedId *Many2One `xmlrpc:"account_collected_id,omitempty"`
-	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	DoneCountryIds     *Relation `xmlrpc:"done_country_ids,omitempty"`
-	FiscalPositionId   *Many2One `xmlrpc:"fiscal_position_id,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	TaxId              *Many2One `xmlrpc:"tax_id,omitempty"`
-	TodoCountryIds     *Relation `xmlrpc:"todo_country_ids,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountCollectedId *Many2One `xmlrpc:"account_collected_id,omitempty" json:"account_collected_id,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DoneCountryIds     *Relation `xmlrpc:"done_country_ids,omitempty" json:"done_country_ids,omitempty"`
+	FiscalPositionId   *Many2One `xmlrpc:"fiscal_position_id,omitempty" json:"fiscal_position_id,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TaxId              *Many2One `xmlrpc:"tax_id,omitempty" json:"tax_id,omitempty"`
+	TodoCountryIds     *Relation `xmlrpc:"todo_country_ids,omitempty" json:"todo_country_ids,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // L10NEuServiceWizards represents array of l10n_eu_service.wizard model.

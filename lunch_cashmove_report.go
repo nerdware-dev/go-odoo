@@ -2,14 +2,14 @@ package odoo
 
 // LunchCashmoveReport represents lunch.cashmove.report model.
 type LunchCashmoveReport struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Amount      *Float    `xmlrpc:"amount,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date        *Time     `xmlrpc:"date,omitempty"`
-	Description *String   `xmlrpc:"description,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Amount      *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date        *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	Description *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // LunchCashmoveReports represents array of lunch.cashmove.report model.

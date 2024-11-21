@@ -2,16 +2,16 @@ package odoo
 
 // WebsiteMassMailingPopup represents website.mass_mailing.popup model.
 type WebsiteMassMailingPopup struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	MailingListId *Many2One `xmlrpc:"mailing_list_id,omitempty"`
-	PopupContent  *String   `xmlrpc:"popup_content,omitempty"`
-	WebsiteId     *Many2One `xmlrpc:"website_id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailingListId *Many2One `xmlrpc:"mailing_list_id,omitempty" json:"mailing_list_id,omitempty"`
+	PopupContent  *String   `xmlrpc:"popup_content,omitempty" json:"popup_content,omitempty"`
+	WebsiteId     *Many2One `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebsiteMassMailingPopups represents array of website.mass_mailing.popup model.

@@ -2,10 +2,10 @@ package odoo
 
 // MailAddressMixin represents mail.address.mixin model.
 type MailAddressMixin struct {
-	LastUpdate      *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName     *String `xmlrpc:"display_name,omitempty"`
-	EmailNormalized *String `xmlrpc:"email_normalized,omitempty"`
-	Id              *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate      *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName     *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmailNormalized *String `xmlrpc:"email_normalized,omitempty" json:"email_normalized,omitempty"`
+	Id              *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // MailAddressMixins represents array of mail.address.mixin model.

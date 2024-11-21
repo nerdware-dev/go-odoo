@@ -2,20 +2,20 @@ package odoo
 
 // MailNotification represents mail.notification model.
 type MailNotification struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	FailureReason      *String    `xmlrpc:"failure_reason,omitempty"`
-	FailureType        *Selection `xmlrpc:"failure_type,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	IsRead             *Bool      `xmlrpc:"is_read,omitempty"`
-	MailId             *Many2One  `xmlrpc:"mail_id,omitempty"`
-	MailMessageId      *Many2One  `xmlrpc:"mail_message_id,omitempty"`
-	NotificationStatus *Selection `xmlrpc:"notification_status,omitempty"`
-	NotificationType   *Selection `xmlrpc:"notification_type,omitempty"`
-	ReadDate           *Time      `xmlrpc:"read_date,omitempty"`
-	ResPartnerId       *Many2One  `xmlrpc:"res_partner_id,omitempty"`
-	SmsId              *Many2One  `xmlrpc:"sms_id,omitempty"`
-	SmsNumber          *String    `xmlrpc:"sms_number,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureReason      *String    `xmlrpc:"failure_reason,omitempty" json:"failure_reason,omitempty"`
+	FailureType        *Selection `xmlrpc:"failure_type,omitempty" json:"failure_type,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsRead             *Bool      `xmlrpc:"is_read,omitempty" json:"is_read,omitempty"`
+	MailId             *Many2One  `xmlrpc:"mail_id,omitempty" json:"mail_id,omitempty"`
+	MailMessageId      *Many2One  `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	NotificationStatus *Selection `xmlrpc:"notification_status,omitempty" json:"notification_status,omitempty"`
+	NotificationType   *Selection `xmlrpc:"notification_type,omitempty" json:"notification_type,omitempty"`
+	ReadDate           *Time      `xmlrpc:"read_date,omitempty" json:"read_date,omitempty"`
+	ResPartnerId       *Many2One  `xmlrpc:"res_partner_id,omitempty" json:"res_partner_id,omitempty"`
+	SmsId              *Many2One  `xmlrpc:"sms_id,omitempty" json:"sms_id,omitempty"`
+	SmsNumber          *String    `xmlrpc:"sms_number,omitempty" json:"sms_number,omitempty"`
 }
 
 // MailNotifications represents array of mail.notification model.

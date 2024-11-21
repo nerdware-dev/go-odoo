@@ -2,21 +2,21 @@ package odoo
 
 // RentalPricing represents rental.pricing model.
 type RentalPricing struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Duration          *Int       `xmlrpc:"duration,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	Price             *Float     `xmlrpc:"price,omitempty"`
-	PricelistId       *Many2One  `xmlrpc:"pricelist_id,omitempty"`
-	ProductTemplateId *Many2One  `xmlrpc:"product_template_id,omitempty"`
-	ProductVariantIds *Relation  `xmlrpc:"product_variant_ids,omitempty"`
-	Unit              *Selection `xmlrpc:"unit,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration          *Int       `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Price             *Float     `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	PricelistId       *Many2One  `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
+	ProductTemplateId *Many2One  `xmlrpc:"product_template_id,omitempty" json:"product_template_id,omitempty"`
+	ProductVariantIds *Relation  `xmlrpc:"product_variant_ids,omitempty" json:"product_variant_ids,omitempty"`
+	Unit              *Selection `xmlrpc:"unit,omitempty" json:"unit,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // RentalPricings represents array of rental.pricing model.

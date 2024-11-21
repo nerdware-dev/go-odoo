@@ -2,19 +2,19 @@ package odoo
 
 // AccountAnalyticTag represents account.analytic.tag model.
 type AccountAnalyticTag struct {
-	LastUpdate                 *Time     `xmlrpc:"__last_update,omitempty"`
-	Active                     *Bool     `xmlrpc:"active,omitempty"`
-	ActiveAnalyticDistribution *Bool     `xmlrpc:"active_analytic_distribution,omitempty"`
-	AnalyticDistributionIds    *Relation `xmlrpc:"analytic_distribution_ids,omitempty"`
-	Color                      *Int      `xmlrpc:"color,omitempty"`
-	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                 *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                *String   `xmlrpc:"display_name,omitempty"`
-	Id                         *Int      `xmlrpc:"id,omitempty"`
-	Name                       *String   `xmlrpc:"name,omitempty"`
-	WriteDate                  *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                 *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                     *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActiveAnalyticDistribution *Bool     `xmlrpc:"active_analytic_distribution,omitempty" json:"active_analytic_distribution,omitempty"`
+	AnalyticDistributionIds    *Relation `xmlrpc:"analytic_distribution_ids,omitempty" json:"analytic_distribution_ids,omitempty"`
+	Color                      *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                       *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticTags represents array of account.analytic.tag model.

@@ -2,23 +2,23 @@ package odoo
 
 // SaleAdvancePaymentInv represents sale.advance.payment.inv model.
 type SaleAdvancePaymentInv struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	AdvancePaymentMethod *Selection `xmlrpc:"advance_payment_method,omitempty"`
-	Amount               *Float     `xmlrpc:"amount,omitempty"`
-	Count                *Int       `xmlrpc:"count,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DeductDownPayments   *Bool      `xmlrpc:"deduct_down_payments,omitempty"`
-	DepositAccountId     *Many2One  `xmlrpc:"deposit_account_id,omitempty"`
-	DepositTaxesId       *Relation  `xmlrpc:"deposit_taxes_id,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	FixedAmount          *Float     `xmlrpc:"fixed_amount,omitempty"`
-	HasDownPayments      *Bool      `xmlrpc:"has_down_payments,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	ProductId            *Many2One  `xmlrpc:"product_id,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AdvancePaymentMethod *Selection `xmlrpc:"advance_payment_method,omitempty" json:"advance_payment_method,omitempty"`
+	Amount               *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	Count                *Int       `xmlrpc:"count,omitempty" json:"count,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DeductDownPayments   *Bool      `xmlrpc:"deduct_down_payments,omitempty" json:"deduct_down_payments,omitempty"`
+	DepositAccountId     *Many2One  `xmlrpc:"deposit_account_id,omitempty" json:"deposit_account_id,omitempty"`
+	DepositTaxesId       *Relation  `xmlrpc:"deposit_taxes_id,omitempty" json:"deposit_taxes_id,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FixedAmount          *Float     `xmlrpc:"fixed_amount,omitempty" json:"fixed_amount,omitempty"`
+	HasDownPayments      *Bool      `xmlrpc:"has_down_payments,omitempty" json:"has_down_payments,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductId            *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleAdvancePaymentInvs represents array of sale.advance.payment.inv model.

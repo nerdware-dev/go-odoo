@@ -2,22 +2,22 @@ package odoo
 
 // HrContractEmployeeReport represents hr.contract.employee.report model.
 type HrContractEmployeeReport struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	AgeSum            *Float     `xmlrpc:"age_sum,omitempty"`
-	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty"`
-	ContractId        *Many2One  `xmlrpc:"contract_id,omitempty"`
-	CountEmployeeExit *Int       `xmlrpc:"count_employee_exit,omitempty"`
-	CountNewEmployee  *Int       `xmlrpc:"count_new_employee,omitempty"`
-	Date              *Time      `xmlrpc:"date,omitempty"`
-	DateEndContract   *Time      `xmlrpc:"date_end_contract,omitempty"`
-	DepartmentId      *Many2One  `xmlrpc:"department_id,omitempty"`
-	DepartureReason   *Selection `xmlrpc:"departure_reason,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId        *Many2One  `xmlrpc:"employee_id,omitempty"`
-	EndDateMonths     *Int       `xmlrpc:"end_date_months,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	StartDateMonths   *Int       `xmlrpc:"start_date_months,omitempty"`
-	Wage              *Float     `xmlrpc:"wage,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AgeSum            *Float     `xmlrpc:"age_sum,omitempty" json:"age_sum,omitempty"`
+	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	ContractId        *Many2One  `xmlrpc:"contract_id,omitempty" json:"contract_id,omitempty"`
+	CountEmployeeExit *Int       `xmlrpc:"count_employee_exit,omitempty" json:"count_employee_exit,omitempty"`
+	CountNewEmployee  *Int       `xmlrpc:"count_new_employee,omitempty" json:"count_new_employee,omitempty"`
+	Date              *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DateEndContract   *Time      `xmlrpc:"date_end_contract,omitempty" json:"date_end_contract,omitempty"`
+	DepartmentId      *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DepartureReason   *Selection `xmlrpc:"departure_reason,omitempty" json:"departure_reason,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId        *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EndDateMonths     *Int       `xmlrpc:"end_date_months,omitempty" json:"end_date_months,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	StartDateMonths   *Int       `xmlrpc:"start_date_months,omitempty" json:"start_date_months,omitempty"`
+	Wage              *Float     `xmlrpc:"wage,omitempty" json:"wage,omitempty"`
 }
 
 // HrContractEmployeeReports represents array of hr.contract.employee.report model.

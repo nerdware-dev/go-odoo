@@ -2,17 +2,17 @@ package odoo
 
 // StockAssignSerial represents stock.assign.serial model.
 type StockAssignSerial struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	MoveId           *Many2One `xmlrpc:"move_id,omitempty"`
-	NextSerialCount  *Int      `xmlrpc:"next_serial_count,omitempty"`
-	NextSerialNumber *String   `xmlrpc:"next_serial_number,omitempty"`
-	ProductId        *Many2One `xmlrpc:"product_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MoveId           *Many2One `xmlrpc:"move_id,omitempty" json:"move_id,omitempty"`
+	NextSerialCount  *Int      `xmlrpc:"next_serial_count,omitempty" json:"next_serial_count,omitempty"`
+	NextSerialNumber *String   `xmlrpc:"next_serial_number,omitempty" json:"next_serial_number,omitempty"`
+	ProductId        *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockAssignSerials represents array of stock.assign.serial model.

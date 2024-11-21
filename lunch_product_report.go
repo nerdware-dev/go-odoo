@@ -2,24 +2,24 @@ package odoo
 
 // LunchProductReport represents lunch.product.report model.
 type LunchProductReport struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	Active        *Bool     `xmlrpc:"active,omitempty"`
-	CategoryId    *Many2One `xmlrpc:"category_id,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty"`
-	CurrencyId    *Many2One `xmlrpc:"currency_id,omitempty"`
-	Description   *String   `xmlrpc:"description,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Image128      *String   `xmlrpc:"image_128,omitempty"`
-	IsAvailableAt *Many2One `xmlrpc:"is_available_at,omitempty"`
-	IsFavorite    *Bool     `xmlrpc:"is_favorite,omitempty"`
-	IsNew         *Bool     `xmlrpc:"is_new,omitempty"`
-	LastOrderDate *Time     `xmlrpc:"last_order_date,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	Price         *Float    `xmlrpc:"price,omitempty"`
-	ProductId     *Many2One `xmlrpc:"product_id,omitempty"`
-	SupplierId    *Many2One `xmlrpc:"supplier_id,omitempty"`
-	UserId        *Many2One `xmlrpc:"user_id,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active        *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategoryId    *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId    *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Description   *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image128      *String   `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	IsAvailableAt *Many2One `xmlrpc:"is_available_at,omitempty" json:"is_available_at,omitempty"`
+	IsFavorite    *Bool     `xmlrpc:"is_favorite,omitempty" json:"is_favorite,omitempty"`
+	IsNew         *Bool     `xmlrpc:"is_new,omitempty" json:"is_new,omitempty"`
+	LastOrderDate *Time     `xmlrpc:"last_order_date,omitempty" json:"last_order_date,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Price         *Float    `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	ProductId     *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	SupplierId    *Many2One `xmlrpc:"supplier_id,omitempty" json:"supplier_id,omitempty"`
+	UserId        *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // LunchProductReports represents array of lunch.product.report model.

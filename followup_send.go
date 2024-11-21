@@ -2,18 +2,18 @@ package odoo
 
 // FollowupSend represents followup.send model.
 type FollowupSend struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	InvalidAddresses  *Int      `xmlrpc:"invalid_addresses,omitempty"`
-	InvalidPartnerIds *Relation `xmlrpc:"invalid_partner_ids,omitempty"`
-	LettersQty        *Int      `xmlrpc:"letters_qty,omitempty"`
-	PartnerIds        *Relation `xmlrpc:"partner_ids,omitempty"`
-	SnailmailCost     *Float    `xmlrpc:"snailmail_cost,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvalidAddresses  *Int      `xmlrpc:"invalid_addresses,omitempty" json:"invalid_addresses,omitempty"`
+	InvalidPartnerIds *Relation `xmlrpc:"invalid_partner_ids,omitempty" json:"invalid_partner_ids,omitempty"`
+	LettersQty        *Int      `xmlrpc:"letters_qty,omitempty" json:"letters_qty,omitempty"`
+	PartnerIds        *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	SnailmailCost     *Float    `xmlrpc:"snailmail_cost,omitempty" json:"snailmail_cost,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FollowupSends represents array of followup.send model.

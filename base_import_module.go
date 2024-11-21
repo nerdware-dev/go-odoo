@@ -2,17 +2,17 @@ package odoo
 
 // BaseImportModule represents base.import.module model.
 type BaseImportModule struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Force         *Bool      `xmlrpc:"force,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	ImportMessage *String    `xmlrpc:"import_message,omitempty"`
-	ModuleFile    *String    `xmlrpc:"module_file,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Force         *Bool      `xmlrpc:"force,omitempty" json:"force,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImportMessage *String    `xmlrpc:"import_message,omitempty" json:"import_message,omitempty"`
+	ModuleFile    *String    `xmlrpc:"module_file,omitempty" json:"module_file,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportModules represents array of base.import.module model.

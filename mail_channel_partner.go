@@ -2,22 +2,22 @@ package odoo
 
 // MailChannelPartner represents mail.channel.partner model.
 type MailChannelPartner struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	ChannelId         *Many2One  `xmlrpc:"channel_id,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomChannelName *String    `xmlrpc:"custom_channel_name,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	FetchedMessageId  *Many2One  `xmlrpc:"fetched_message_id,omitempty"`
-	FoldState         *Selection `xmlrpc:"fold_state,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	IsMinimized       *Bool      `xmlrpc:"is_minimized,omitempty"`
-	IsPinned          *Bool      `xmlrpc:"is_pinned,omitempty"`
-	PartnerEmail      *String    `xmlrpc:"partner_email,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	SeenMessageId     *Many2One  `xmlrpc:"seen_message_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChannelId         *Many2One  `xmlrpc:"channel_id,omitempty" json:"channel_id,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomChannelName *String    `xmlrpc:"custom_channel_name,omitempty" json:"custom_channel_name,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FetchedMessageId  *Many2One  `xmlrpc:"fetched_message_id,omitempty" json:"fetched_message_id,omitempty"`
+	FoldState         *Selection `xmlrpc:"fold_state,omitempty" json:"fold_state,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMinimized       *Bool      `xmlrpc:"is_minimized,omitempty" json:"is_minimized,omitempty"`
+	IsPinned          *Bool      `xmlrpc:"is_pinned,omitempty" json:"is_pinned,omitempty"`
+	PartnerEmail      *String    `xmlrpc:"partner_email,omitempty" json:"partner_email,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	SeenMessageId     *Many2One  `xmlrpc:"seen_message_id,omitempty" json:"seen_message_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailChannelPartners represents array of mail.channel.partner model.

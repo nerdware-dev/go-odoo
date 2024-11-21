@@ -2,25 +2,25 @@ package odoo
 
 // KnowsystemTour represents knowsystem.tour model.
 type KnowsystemTour struct {
-	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty"`
-	AccessUserIds             *Relation `xmlrpc:"access_user_ids,omitempty"`
-	Active                    *Bool     `xmlrpc:"active,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrentArticleDescription *String   `xmlrpc:"current_article_description,omitempty"`
-	CurrentArticleTitle       *String   `xmlrpc:"current_article_title,omitempty"`
-	Description               *String   `xmlrpc:"description,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	Name                      *String   `xmlrpc:"name,omitempty"`
-	Progress                  *Float    `xmlrpc:"progress,omitempty"`
-	Sequence                  *Int      `xmlrpc:"sequence,omitempty"`
-	ThisUserProgressId        *Many2One `xmlrpc:"this_user_progress_id,omitempty"`
-	TourArticleIds            *Relation `xmlrpc:"tour_article_ids,omitempty"`
-	UserGroupIds              *Relation `xmlrpc:"user_group_ids,omitempty"`
-	UserIds                   *Relation `xmlrpc:"user_ids,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessUserIds             *Relation `xmlrpc:"access_user_ids,omitempty" json:"access_user_ids,omitempty"`
+	Active                    *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate                *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrentArticleDescription *String   `xmlrpc:"current_article_description,omitempty" json:"current_article_description,omitempty"`
+	CurrentArticleTitle       *String   `xmlrpc:"current_article_title,omitempty" json:"current_article_title,omitempty"`
+	Description               *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName               *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                        *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                      *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Progress                  *Float    `xmlrpc:"progress,omitempty" json:"progress,omitempty"`
+	Sequence                  *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ThisUserProgressId        *Many2One `xmlrpc:"this_user_progress_id,omitempty" json:"this_user_progress_id,omitempty"`
+	TourArticleIds            *Relation `xmlrpc:"tour_article_ids,omitempty" json:"tour_article_ids,omitempty"`
+	UserGroupIds              *Relation `xmlrpc:"user_group_ids,omitempty" json:"user_group_ids,omitempty"`
+	UserIds                   *Relation `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate                 *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // KnowsystemTours represents array of knowsystem.tour model.

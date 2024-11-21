@@ -2,9 +2,9 @@ package odoo
 
 // ReportBaseReportIrmodulereference represents report.base.report_irmodulereference model.
 type ReportBaseReportIrmodulereference struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // ReportBaseReportIrmodulereferences represents array of report.base.report_irmodulereference model.

@@ -2,18 +2,18 @@ package odoo
 
 // ChooseDeliveryPackage represents choose.delivery.package model.
 type ChooseDeliveryPackage struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DeliveryPackagingId *Many2One `xmlrpc:"delivery_packaging_id,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	PickingId           *Many2One `xmlrpc:"picking_id,omitempty"`
-	ShippingWeight      *Float    `xmlrpc:"shipping_weight,omitempty"`
-	WeightUomName       *String   `xmlrpc:"weight_uom_name,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DeliveryPackagingId *Many2One `xmlrpc:"delivery_packaging_id,omitempty" json:"delivery_packaging_id,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PickingId           *Many2One `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	ShippingWeight      *Float    `xmlrpc:"shipping_weight,omitempty" json:"shipping_weight,omitempty"`
+	WeightUomName       *String   `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ChooseDeliveryPackages represents array of choose.delivery.package model.

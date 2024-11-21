@@ -2,22 +2,22 @@ package odoo
 
 // AuditRule represents audit.rule model.
 type AuditRule struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId    *Many2One  `xmlrpc:"action_id,omitempty"`
-	Active      *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	GroupId     *Many2One  `xmlrpc:"group_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	LogCreate   *Bool      `xmlrpc:"log_create,omitempty"`
-	LogUnlink   *Bool      `xmlrpc:"log_unlink,omitempty"`
-	LogWrite    *Bool      `xmlrpc:"log_write,omitempty"`
-	ModelId     *Many2One  `xmlrpc:"model_id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActionId    *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	Active      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId     *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LogCreate   *Bool      `xmlrpc:"log_create,omitempty" json:"log_create,omitempty"`
+	LogUnlink   *Bool      `xmlrpc:"log_unlink,omitempty" json:"log_unlink,omitempty"`
+	LogWrite    *Bool      `xmlrpc:"log_write,omitempty" json:"log_write,omitempty"`
+	ModelId     *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AuditRules represents array of audit.rule model.

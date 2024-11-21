@@ -2,54 +2,54 @@ package odoo
 
 // HrExpenseSheet represents hr.expense.sheet model.
 type HrExpenseSheet struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountMoveId               *Many2One  `xmlrpc:"account_move_id,omitempty"`
-	AccountingDate              *Time      `xmlrpc:"accounting_date,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AddressId                   *Many2One  `xmlrpc:"address_id,omitempty"`
-	AttachmentNumber            *Int       `xmlrpc:"attachment_number,omitempty"`
-	BankJournalId               *Many2One  `xmlrpc:"bank_journal_id,omitempty"`
-	CanReset                    *Bool      `xmlrpc:"can_reset,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DepartmentId                *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId                  *Many2One  `xmlrpc:"employee_id,omitempty"`
-	ExpenseLineIds              *Relation  `xmlrpc:"expense_line_ids,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	IsMultipleCurrency          *Bool      `xmlrpc:"is_multiple_currency,omitempty"`
-	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	PaymentMode                 *Selection `xmlrpc:"payment_mode,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	TotalAmount                 *Float     `xmlrpc:"total_amount,omitempty"`
-	UserId                      *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountMoveId               *Many2One  `xmlrpc:"account_move_id,omitempty" json:"account_move_id,omitempty"`
+	AccountingDate              *Time      `xmlrpc:"accounting_date,omitempty" json:"accounting_date,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AddressId                   *Many2One  `xmlrpc:"address_id,omitempty" json:"address_id,omitempty"`
+	AttachmentNumber            *Int       `xmlrpc:"attachment_number,omitempty" json:"attachment_number,omitempty"`
+	BankJournalId               *Many2One  `xmlrpc:"bank_journal_id,omitempty" json:"bank_journal_id,omitempty"`
+	CanReset                    *Bool      `xmlrpc:"can_reset,omitempty" json:"can_reset,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DepartmentId                *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId                  *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	ExpenseLineIds              *Relation  `xmlrpc:"expense_line_ids,omitempty" json:"expense_line_ids,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMultipleCurrency          *Bool      `xmlrpc:"is_multiple_currency,omitempty" json:"is_multiple_currency,omitempty"`
+	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentMode                 *Selection `xmlrpc:"payment_mode,omitempty" json:"payment_mode,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TotalAmount                 *Float     `xmlrpc:"total_amount,omitempty" json:"total_amount,omitempty"`
+	UserId                      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrExpenseSheets represents array of hr.expense.sheet model.

@@ -2,36 +2,36 @@ package odoo
 
 // WebsiteVisitor represents website.visitor model.
 type WebsiteVisitor struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessToken            *String    `xmlrpc:"access_token,omitempty"`
-	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	CountryFlag            *String    `xmlrpc:"country_flag,omitempty"`
-	CountryId              *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Email                  *String    `xmlrpc:"email,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	IsConnected            *Bool      `xmlrpc:"is_connected,omitempty"`
-	LangId                 *Many2One  `xmlrpc:"lang_id,omitempty"`
-	LastConnectionDatetime *Time      `xmlrpc:"last_connection_datetime,omitempty"`
-	LastVisitedPageId      *Many2One  `xmlrpc:"last_visited_page_id,omitempty"`
-	LeadCount              *Int       `xmlrpc:"lead_count,omitempty"`
-	LeadIds                *Relation  `xmlrpc:"lead_ids,omitempty"`
-	Mobile                 *String    `xmlrpc:"mobile,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PageCount              *Int       `xmlrpc:"page_count,omitempty"`
-	PageIds                *Relation  `xmlrpc:"page_ids,omitempty"`
-	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerImage           *String    `xmlrpc:"partner_image,omitempty"`
-	TimeSinceLastAction    *String    `xmlrpc:"time_since_last_action,omitempty"`
-	Timezone               *Selection `xmlrpc:"timezone,omitempty"`
-	VisitCount             *Int       `xmlrpc:"visit_count,omitempty"`
-	VisitorPageCount       *Int       `xmlrpc:"visitor_page_count,omitempty"`
-	WebsiteId              *Many2One  `xmlrpc:"website_id,omitempty"`
-	WebsiteTrackIds        *Relation  `xmlrpc:"website_track_ids,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken            *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CountryFlag            *String    `xmlrpc:"country_flag,omitempty" json:"country_flag,omitempty"`
+	CountryId              *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email                  *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsConnected            *Bool      `xmlrpc:"is_connected,omitempty" json:"is_connected,omitempty"`
+	LangId                 *Many2One  `xmlrpc:"lang_id,omitempty" json:"lang_id,omitempty"`
+	LastConnectionDatetime *Time      `xmlrpc:"last_connection_datetime,omitempty" json:"last_connection_datetime,omitempty"`
+	LastVisitedPageId      *Many2One  `xmlrpc:"last_visited_page_id,omitempty" json:"last_visited_page_id,omitempty"`
+	LeadCount              *Int       `xmlrpc:"lead_count,omitempty" json:"lead_count,omitempty"`
+	LeadIds                *Relation  `xmlrpc:"lead_ids,omitempty" json:"lead_ids,omitempty"`
+	Mobile                 *String    `xmlrpc:"mobile,omitempty" json:"mobile,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PageCount              *Int       `xmlrpc:"page_count,omitempty" json:"page_count,omitempty"`
+	PageIds                *Relation  `xmlrpc:"page_ids,omitempty" json:"page_ids,omitempty"`
+	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerImage           *String    `xmlrpc:"partner_image,omitempty" json:"partner_image,omitempty"`
+	TimeSinceLastAction    *String    `xmlrpc:"time_since_last_action,omitempty" json:"time_since_last_action,omitempty"`
+	Timezone               *Selection `xmlrpc:"timezone,omitempty" json:"timezone,omitempty"`
+	VisitCount             *Int       `xmlrpc:"visit_count,omitempty" json:"visit_count,omitempty"`
+	VisitorPageCount       *Int       `xmlrpc:"visitor_page_count,omitempty" json:"visitor_page_count,omitempty"`
+	WebsiteId              *Many2One  `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WebsiteTrackIds        *Relation  `xmlrpc:"website_track_ids,omitempty" json:"website_track_ids,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebsiteVisitors represents array of website.visitor model.

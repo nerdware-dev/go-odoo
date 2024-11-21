@@ -2,11 +2,11 @@ package odoo
 
 // RatingParentMixin represents rating.parent.mixin model.
 type RatingParentMixin struct {
-	LastUpdate                   *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName                  *String   `xmlrpc:"display_name,omitempty"`
-	Id                           *Int      `xmlrpc:"id,omitempty"`
-	RatingIds                    *Relation `xmlrpc:"rating_ids,omitempty"`
-	RatingPercentageSatisfaction *Int      `xmlrpc:"rating_percentage_satisfaction,omitempty"`
+	LastUpdate                   *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName                  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RatingIds                    *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RatingPercentageSatisfaction *Int      `xmlrpc:"rating_percentage_satisfaction,omitempty" json:"rating_percentage_satisfaction,omitempty"`
 }
 
 // RatingParentMixins represents array of rating.parent.mixin model.

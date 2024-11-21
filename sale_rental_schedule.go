@@ -2,39 +2,39 @@ package odoo
 
 // SaleRentalSchedule represents sale.rental.schedule model.
 type SaleRentalSchedule struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AnalyticAccountId   *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	CardName            *String    `xmlrpc:"card_name,omitempty"`
-	CategId             *Many2One  `xmlrpc:"categ_id,omitempty"`
-	Color               *Int       `xmlrpc:"color,omitempty"`
-	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId           *Many2One  `xmlrpc:"country_id,omitempty"`
-	Description         *String    `xmlrpc:"description,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Late                *Bool      `xmlrpc:"late,omitempty"`
-	LotId               *Many2One  `xmlrpc:"lot_id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	OrderDate           *Time      `xmlrpc:"order_date,omitempty"`
-	OrderId             *Many2One  `xmlrpc:"order_id,omitempty"`
-	OrderLineId         *Many2One  `xmlrpc:"order_line_id,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PickupDate          *Time      `xmlrpc:"pickup_date,omitempty"`
-	ProductId           *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductName         *String    `xmlrpc:"product_name,omitempty"`
-	ProductTmplId       *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUom          *Many2One  `xmlrpc:"product_uom,omitempty"`
-	ProductUomQty       *Float     `xmlrpc:"product_uom_qty,omitempty"`
-	QtyDelivered        *Float     `xmlrpc:"qty_delivered,omitempty"`
-	QtyReturned         *Float     `xmlrpc:"qty_returned,omitempty"`
-	RentalStatus        *Selection `xmlrpc:"rental_status,omitempty"`
-	ReportLineStatus    *Selection `xmlrpc:"report_line_status,omitempty"`
-	ReturnDate          *Time      `xmlrpc:"return_date,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	TeamId              *Many2One  `xmlrpc:"team_id,omitempty"`
-	UserId              *Many2One  `xmlrpc:"user_id,omitempty"`
-	WarehouseId         *Many2One  `xmlrpc:"warehouse_id,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AnalyticAccountId   *Many2One  `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	CardName            *String    `xmlrpc:"card_name,omitempty" json:"card_name,omitempty"`
+	CategId             *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	Color               *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId           *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	Description         *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Late                *Bool      `xmlrpc:"late,omitempty" json:"late,omitempty"`
+	LotId               *Many2One  `xmlrpc:"lot_id,omitempty" json:"lot_id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OrderDate           *Time      `xmlrpc:"order_date,omitempty" json:"order_date,omitempty"`
+	OrderId             *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	OrderLineId         *Many2One  `xmlrpc:"order_line_id,omitempty" json:"order_line_id,omitempty"`
+	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PickupDate          *Time      `xmlrpc:"pickup_date,omitempty" json:"pickup_date,omitempty"`
+	ProductId           *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductName         *String    `xmlrpc:"product_name,omitempty" json:"product_name,omitempty"`
+	ProductTmplId       *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUom          *Many2One  `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductUomQty       *Float     `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	QtyDelivered        *Float     `xmlrpc:"qty_delivered,omitempty" json:"qty_delivered,omitempty"`
+	QtyReturned         *Float     `xmlrpc:"qty_returned,omitempty" json:"qty_returned,omitempty"`
+	RentalStatus        *Selection `xmlrpc:"rental_status,omitempty" json:"rental_status,omitempty"`
+	ReportLineStatus    *Selection `xmlrpc:"report_line_status,omitempty" json:"report_line_status,omitempty"`
+	ReturnDate          *Time      `xmlrpc:"return_date,omitempty" json:"return_date,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TeamId              *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UserId              *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WarehouseId         *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
 }
 
 // SaleRentalSchedules represents array of sale.rental.schedule model.

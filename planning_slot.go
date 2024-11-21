@@ -2,39 +2,39 @@ package odoo
 
 // PlanningSlot represents planning.slot model.
 type PlanningSlot struct {
-	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty"`
-	AllocatedHours          *Float     `xmlrpc:"allocated_hours,omitempty"`
-	AllocatedPercentage     *Float     `xmlrpc:"allocated_percentage,omitempty"`
-	AllocationType          *Selection `xmlrpc:"allocation_type,omitempty"`
-	AllowSelfUnassign       *Bool      `xmlrpc:"allow_self_unassign,omitempty"`
-	Color                   *Int       `xmlrpc:"color,omitempty"`
-	CompanyId               *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate              *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId              *Many2One  `xmlrpc:"employee_id,omitempty"`
-	EndDatetime             *Time      `xmlrpc:"end_datetime,omitempty"`
-	Id                      *Int       `xmlrpc:"id,omitempty"`
-	IsAssignedToMe          *Bool      `xmlrpc:"is_assigned_to_me,omitempty"`
-	IsPublished             *Bool      `xmlrpc:"is_published,omitempty"`
-	Name                    *String    `xmlrpc:"name,omitempty"`
-	OverlapSlotCount        *Int       `xmlrpc:"overlap_slot_count,omitempty"`
-	PublicationWarning      *Bool      `xmlrpc:"publication_warning,omitempty"`
-	RecurrencyId            *Many2One  `xmlrpc:"recurrency_id,omitempty"`
-	Repeat                  *Bool      `xmlrpc:"repeat,omitempty"`
-	RepeatInterval          *Int       `xmlrpc:"repeat_interval,omitempty"`
-	RepeatType              *Selection `xmlrpc:"repeat_type,omitempty"`
-	RepeatUntil             *Time      `xmlrpc:"repeat_until,omitempty"`
-	RoleId                  *Many2One  `xmlrpc:"role_id,omitempty"`
-	StartDatetime           *Time      `xmlrpc:"start_datetime,omitempty"`
-	TemplateAutocompleteIds *Relation  `xmlrpc:"template_autocomplete_ids,omitempty"`
-	TemplateCreation        *Bool      `xmlrpc:"template_creation,omitempty"`
-	TemplateId              *Many2One  `xmlrpc:"template_id,omitempty"`
-	UserId                  *Many2One  `xmlrpc:"user_id,omitempty"`
-	WasCopied               *Bool      `xmlrpc:"was_copied,omitempty"`
-	WorkingDaysCount        *Int       `xmlrpc:"working_days_count,omitempty"`
-	WriteDate               *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AllocatedHours          *Float     `xmlrpc:"allocated_hours,omitempty" json:"allocated_hours,omitempty"`
+	AllocatedPercentage     *Float     `xmlrpc:"allocated_percentage,omitempty" json:"allocated_percentage,omitempty"`
+	AllocationType          *Selection `xmlrpc:"allocation_type,omitempty" json:"allocation_type,omitempty"`
+	AllowSelfUnassign       *Bool      `xmlrpc:"allow_self_unassign,omitempty" json:"allow_self_unassign,omitempty"`
+	Color                   *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId               *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate              *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName             *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId              *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EndDatetime             *Time      `xmlrpc:"end_datetime,omitempty" json:"end_datetime,omitempty"`
+	Id                      *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAssignedToMe          *Bool      `xmlrpc:"is_assigned_to_me,omitempty" json:"is_assigned_to_me,omitempty"`
+	IsPublished             *Bool      `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	Name                    *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OverlapSlotCount        *Int       `xmlrpc:"overlap_slot_count,omitempty" json:"overlap_slot_count,omitempty"`
+	PublicationWarning      *Bool      `xmlrpc:"publication_warning,omitempty" json:"publication_warning,omitempty"`
+	RecurrencyId            *Many2One  `xmlrpc:"recurrency_id,omitempty" json:"recurrency_id,omitempty"`
+	Repeat                  *Bool      `xmlrpc:"repeat,omitempty" json:"repeat,omitempty"`
+	RepeatInterval          *Int       `xmlrpc:"repeat_interval,omitempty" json:"repeat_interval,omitempty"`
+	RepeatType              *Selection `xmlrpc:"repeat_type,omitempty" json:"repeat_type,omitempty"`
+	RepeatUntil             *Time      `xmlrpc:"repeat_until,omitempty" json:"repeat_until,omitempty"`
+	RoleId                  *Many2One  `xmlrpc:"role_id,omitempty" json:"role_id,omitempty"`
+	StartDatetime           *Time      `xmlrpc:"start_datetime,omitempty" json:"start_datetime,omitempty"`
+	TemplateAutocompleteIds *Relation  `xmlrpc:"template_autocomplete_ids,omitempty" json:"template_autocomplete_ids,omitempty"`
+	TemplateCreation        *Bool      `xmlrpc:"template_creation,omitempty" json:"template_creation,omitempty"`
+	TemplateId              *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	UserId                  *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WasCopied               *Bool      `xmlrpc:"was_copied,omitempty" json:"was_copied,omitempty"`
+	WorkingDaysCount        *Int       `xmlrpc:"working_days_count,omitempty" json:"working_days_count,omitempty"`
+	WriteDate               *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PlanningSlots represents array of planning.slot model.

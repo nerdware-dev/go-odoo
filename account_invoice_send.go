@@ -2,50 +2,50 @@ package odoo
 
 // AccountInvoiceSend represents account.invoice.send model.
 type AccountInvoiceSend struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	ActiveDomain        *String    `xmlrpc:"active_domain,omitempty"`
-	AddSign             *Bool      `xmlrpc:"add_sign,omitempty"`
-	AttachmentIds       *Relation  `xmlrpc:"attachment_ids,omitempty"`
-	AuthorId            *Many2One  `xmlrpc:"author_id,omitempty"`
-	AutoDelete          *Bool      `xmlrpc:"auto_delete,omitempty"`
-	AutoDeleteMessage   *Bool      `xmlrpc:"auto_delete_message,omitempty"`
-	Body                *String    `xmlrpc:"body,omitempty"`
-	CampaignId          *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	ComposerId          *Many2One  `xmlrpc:"composer_id,omitempty"`
-	CompositionMode     *Selection `xmlrpc:"composition_mode,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	EmailFrom           *String    `xmlrpc:"email_from,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	InvoiceIds          *Relation  `xmlrpc:"invoice_ids,omitempty"`
-	InvoiceWithoutEmail *String    `xmlrpc:"invoice_without_email,omitempty"`
-	IsEmail             *Bool      `xmlrpc:"is_email,omitempty"`
-	IsLog               *Bool      `xmlrpc:"is_log,omitempty"`
-	IsPrint             *Bool      `xmlrpc:"is_print,omitempty"`
-	Layout              *String    `xmlrpc:"layout,omitempty"`
-	MailActivityTypeId  *Many2One  `xmlrpc:"mail_activity_type_id,omitempty"`
-	MailServerId        *Many2One  `xmlrpc:"mail_server_id,omitempty"`
-	MailingListIds      *Relation  `xmlrpc:"mailing_list_ids,omitempty"`
-	MarketingActivityId *Many2One  `xmlrpc:"marketing_activity_id,omitempty"`
-	MassMailingId       *Many2One  `xmlrpc:"mass_mailing_id,omitempty"`
-	MassMailingName     *String    `xmlrpc:"mass_mailing_name,omitempty"`
-	MessageType         *Selection `xmlrpc:"message_type,omitempty"`
-	Model               *String    `xmlrpc:"model,omitempty"`
-	NoAutoThread        *Bool      `xmlrpc:"no_auto_thread,omitempty"`
-	Notify              *Bool      `xmlrpc:"notify,omitempty"`
-	ParentId            *Many2One  `xmlrpc:"parent_id,omitempty"`
-	PartnerIds          *Relation  `xmlrpc:"partner_ids,omitempty"`
-	Printed             *Bool      `xmlrpc:"printed,omitempty"`
-	RecordName          *String    `xmlrpc:"record_name,omitempty"`
-	ReplyTo             *String    `xmlrpc:"reply_to,omitempty"`
-	ResId               *Int       `xmlrpc:"res_id,omitempty"`
-	Subject             *String    `xmlrpc:"subject,omitempty"`
-	SubtypeId           *Many2One  `xmlrpc:"subtype_id,omitempty"`
-	TemplateId          *Many2One  `xmlrpc:"template_id,omitempty"`
-	UseActiveDomain     *Bool      `xmlrpc:"use_active_domain,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActiveDomain        *String    `xmlrpc:"active_domain,omitempty" json:"active_domain,omitempty"`
+	AddSign             *Bool      `xmlrpc:"add_sign,omitempty" json:"add_sign,omitempty"`
+	AttachmentIds       *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	AuthorId            *Many2One  `xmlrpc:"author_id,omitempty" json:"author_id,omitempty"`
+	AutoDelete          *Bool      `xmlrpc:"auto_delete,omitempty" json:"auto_delete,omitempty"`
+	AutoDeleteMessage   *Bool      `xmlrpc:"auto_delete_message,omitempty" json:"auto_delete_message,omitempty"`
+	Body                *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CampaignId          *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	ComposerId          *Many2One  `xmlrpc:"composer_id,omitempty" json:"composer_id,omitempty"`
+	CompositionMode     *Selection `xmlrpc:"composition_mode,omitempty" json:"composition_mode,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmailFrom           *String    `xmlrpc:"email_from,omitempty" json:"email_from,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceIds          *Relation  `xmlrpc:"invoice_ids,omitempty" json:"invoice_ids,omitempty"`
+	InvoiceWithoutEmail *String    `xmlrpc:"invoice_without_email,omitempty" json:"invoice_without_email,omitempty"`
+	IsEmail             *Bool      `xmlrpc:"is_email,omitempty" json:"is_email,omitempty"`
+	IsLog               *Bool      `xmlrpc:"is_log,omitempty" json:"is_log,omitempty"`
+	IsPrint             *Bool      `xmlrpc:"is_print,omitempty" json:"is_print,omitempty"`
+	Layout              *String    `xmlrpc:"layout,omitempty" json:"layout,omitempty"`
+	MailActivityTypeId  *Many2One  `xmlrpc:"mail_activity_type_id,omitempty" json:"mail_activity_type_id,omitempty"`
+	MailServerId        *Many2One  `xmlrpc:"mail_server_id,omitempty" json:"mail_server_id,omitempty"`
+	MailingListIds      *Relation  `xmlrpc:"mailing_list_ids,omitempty" json:"mailing_list_ids,omitempty"`
+	MarketingActivityId *Many2One  `xmlrpc:"marketing_activity_id,omitempty" json:"marketing_activity_id,omitempty"`
+	MassMailingId       *Many2One  `xmlrpc:"mass_mailing_id,omitempty" json:"mass_mailing_id,omitempty"`
+	MassMailingName     *String    `xmlrpc:"mass_mailing_name,omitempty" json:"mass_mailing_name,omitempty"`
+	MessageType         *Selection `xmlrpc:"message_type,omitempty" json:"message_type,omitempty"`
+	Model               *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	NoAutoThread        *Bool      `xmlrpc:"no_auto_thread,omitempty" json:"no_auto_thread,omitempty"`
+	Notify              *Bool      `xmlrpc:"notify,omitempty" json:"notify,omitempty"`
+	ParentId            *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	PartnerIds          *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	Printed             *Bool      `xmlrpc:"printed,omitempty" json:"printed,omitempty"`
+	RecordName          *String    `xmlrpc:"record_name,omitempty" json:"record_name,omitempty"`
+	ReplyTo             *String    `xmlrpc:"reply_to,omitempty" json:"reply_to,omitempty"`
+	ResId               *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	Subject             *String    `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	SubtypeId           *Many2One  `xmlrpc:"subtype_id,omitempty" json:"subtype_id,omitempty"`
+	TemplateId          *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	UseActiveDomain     *Bool      `xmlrpc:"use_active_domain,omitempty" json:"use_active_domain,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountInvoiceSends represents array of account.invoice.send model.

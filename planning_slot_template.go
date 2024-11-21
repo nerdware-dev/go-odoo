@@ -2,16 +2,16 @@ package odoo
 
 // PlanningSlotTemplate represents planning.slot.template model.
 type PlanningSlotTemplate struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Duration    *Float    `xmlrpc:"duration,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	RoleId      *Many2One `xmlrpc:"role_id,omitempty"`
-	StartTime   *Float    `xmlrpc:"start_time,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration    *Float    `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RoleId      *Many2One `xmlrpc:"role_id,omitempty" json:"role_id,omitempty"`
+	StartTime   *Float    `xmlrpc:"start_time,omitempty" json:"start_time,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PlanningSlotTemplates represents array of planning.slot.template model.

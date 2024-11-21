@@ -2,22 +2,22 @@ package odoo
 
 // HrRecruitmentStage represents hr.recruitment.stage model.
 type HrRecruitmentStage struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Fold          *Bool     `xmlrpc:"fold,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	JobIds        *Relation `xmlrpc:"job_ids,omitempty"`
-	LegendBlocked *String   `xmlrpc:"legend_blocked,omitempty"`
-	LegendDone    *String   `xmlrpc:"legend_done,omitempty"`
-	LegendNormal  *String   `xmlrpc:"legend_normal,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	Requirements  *String   `xmlrpc:"requirements,omitempty"`
-	Sequence      *Int      `xmlrpc:"sequence,omitempty"`
-	TemplateId    *Many2One `xmlrpc:"template_id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Fold          *Bool     `xmlrpc:"fold,omitempty" json:"fold,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JobIds        *Relation `xmlrpc:"job_ids,omitempty" json:"job_ids,omitempty"`
+	LegendBlocked *String   `xmlrpc:"legend_blocked,omitempty" json:"legend_blocked,omitempty"`
+	LegendDone    *String   `xmlrpc:"legend_done,omitempty" json:"legend_done,omitempty"`
+	LegendNormal  *String   `xmlrpc:"legend_normal,omitempty" json:"legend_normal,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Requirements  *String   `xmlrpc:"requirements,omitempty" json:"requirements,omitempty"`
+	Sequence      *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TemplateId    *Many2One `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrRecruitmentStages represents array of hr.recruitment.stage model.

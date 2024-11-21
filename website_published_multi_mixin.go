@@ -2,14 +2,14 @@ package odoo
 
 // WebsitePublishedMultiMixin represents website.published.multi.mixin model.
 type WebsitePublishedMultiMixin struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CanPublish       *Bool     `xmlrpc:"can_publish,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	IsPublished      *Bool     `xmlrpc:"is_published,omitempty"`
-	WebsiteId        *Many2One `xmlrpc:"website_id,omitempty"`
-	WebsitePublished *Bool     `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl       *String   `xmlrpc:"website_url,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CanPublish       *Bool     `xmlrpc:"can_publish,omitempty" json:"can_publish,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPublished      *Bool     `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	WebsiteId        *Many2One `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WebsitePublished *Bool     `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	WebsiteUrl       *String   `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
 }
 
 // WebsitePublishedMultiMixins represents array of website.published.multi.mixin model.

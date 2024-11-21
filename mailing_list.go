@@ -2,21 +2,21 @@ package odoo
 
 // MailingList represents mailing.list model.
 type MailingList struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	Active          *Bool     `xmlrpc:"active,omitempty"`
-	ContactIds      *Relation `xmlrpc:"contact_ids,omitempty"`
-	ContactNbr      *Int      `xmlrpc:"contact_nbr,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	IsPublic        *Bool     `xmlrpc:"is_public,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	SubscriptionIds *Relation `xmlrpc:"subscription_ids,omitempty"`
-	ToastContent    *String   `xmlrpc:"toast_content,omitempty"`
-	WebsitePopupIds *Relation `xmlrpc:"website_popup_ids,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active          *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ContactIds      *Relation `xmlrpc:"contact_ids,omitempty" json:"contact_ids,omitempty"`
+	ContactNbr      *Int      `xmlrpc:"contact_nbr,omitempty" json:"contact_nbr,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPublic        *Bool     `xmlrpc:"is_public,omitempty" json:"is_public,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SubscriptionIds *Relation `xmlrpc:"subscription_ids,omitempty" json:"subscription_ids,omitempty"`
+	ToastContent    *String   `xmlrpc:"toast_content,omitempty" json:"toast_content,omitempty"`
+	WebsitePopupIds *Relation `xmlrpc:"website_popup_ids,omitempty" json:"website_popup_ids,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailingLists represents array of mailing.list model.

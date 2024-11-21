@@ -2,21 +2,21 @@ package odoo
 
 // GamificationBadgeUser represents gamification.badge.user model.
 type GamificationBadgeUser struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	BadgeId     *Many2One  `xmlrpc:"badge_id,omitempty"`
-	BadgeName   *String    `xmlrpc:"badge_name,omitempty"`
-	ChallengeId *Many2One  `xmlrpc:"challenge_id,omitempty"`
-	Comment     *String    `xmlrpc:"comment,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Level       *Selection `xmlrpc:"level,omitempty"`
-	SenderId    *Many2One  `xmlrpc:"sender_id,omitempty"`
-	UserId      *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BadgeId     *Many2One  `xmlrpc:"badge_id,omitempty" json:"badge_id,omitempty"`
+	BadgeName   *String    `xmlrpc:"badge_name,omitempty" json:"badge_name,omitempty"`
+	ChallengeId *Many2One  `xmlrpc:"challenge_id,omitempty" json:"challenge_id,omitempty"`
+	Comment     *String    `xmlrpc:"comment,omitempty" json:"comment,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId  *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Level       *Selection `xmlrpc:"level,omitempty" json:"level,omitempty"`
+	SenderId    *Many2One  `xmlrpc:"sender_id,omitempty" json:"sender_id,omitempty"`
+	UserId      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationBadgeUsers represents array of gamification.badge.user model.

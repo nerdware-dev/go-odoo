@@ -2,35 +2,35 @@ package odoo
 
 // MailingTrace represents mailing.trace model.
 type MailingTrace struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	Bounced          *Time      `xmlrpc:"bounced,omitempty"`
-	CampaignId       *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	Clicked          *Time      `xmlrpc:"clicked,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Email            *String    `xmlrpc:"email,omitempty"`
-	Exception        *Time      `xmlrpc:"exception,omitempty"`
-	FailureType      *Selection `xmlrpc:"failure_type,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Ignored          *Time      `xmlrpc:"ignored,omitempty"`
-	LinksClickIds    *Relation  `xmlrpc:"links_click_ids,omitempty"`
-	MailMailId       *Many2One  `xmlrpc:"mail_mail_id,omitempty"`
-	MailMailIdInt    *Int       `xmlrpc:"mail_mail_id_int,omitempty"`
-	MarketingTraceId *Many2One  `xmlrpc:"marketing_trace_id,omitempty"`
-	MassMailingId    *Many2One  `xmlrpc:"mass_mailing_id,omitempty"`
-	MessageId        *String    `xmlrpc:"message_id,omitempty"`
-	Model            *String    `xmlrpc:"model,omitempty"`
-	Opened           *Time      `xmlrpc:"opened,omitempty"`
-	Replied          *Time      `xmlrpc:"replied,omitempty"`
-	ResId            *Int       `xmlrpc:"res_id,omitempty"`
-	Scheduled        *Time      `xmlrpc:"scheduled,omitempty"`
-	Sent             *Time      `xmlrpc:"sent,omitempty"`
-	State            *Selection `xmlrpc:"state,omitempty"`
-	StateUpdate      *Time      `xmlrpc:"state_update,omitempty"`
-	TraceType        *Selection `xmlrpc:"trace_type,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Bounced          *Time      `xmlrpc:"bounced,omitempty" json:"bounced,omitempty"`
+	CampaignId       *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	Clicked          *Time      `xmlrpc:"clicked,omitempty" json:"clicked,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email            *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Exception        *Time      `xmlrpc:"exception,omitempty" json:"exception,omitempty"`
+	FailureType      *Selection `xmlrpc:"failure_type,omitempty" json:"failure_type,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Ignored          *Time      `xmlrpc:"ignored,omitempty" json:"ignored,omitempty"`
+	LinksClickIds    *Relation  `xmlrpc:"links_click_ids,omitempty" json:"links_click_ids,omitempty"`
+	MailMailId       *Many2One  `xmlrpc:"mail_mail_id,omitempty" json:"mail_mail_id,omitempty"`
+	MailMailIdInt    *Int       `xmlrpc:"mail_mail_id_int,omitempty" json:"mail_mail_id_int,omitempty"`
+	MarketingTraceId *Many2One  `xmlrpc:"marketing_trace_id,omitempty" json:"marketing_trace_id,omitempty"`
+	MassMailingId    *Many2One  `xmlrpc:"mass_mailing_id,omitempty" json:"mass_mailing_id,omitempty"`
+	MessageId        *String    `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	Model            *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	Opened           *Time      `xmlrpc:"opened,omitempty" json:"opened,omitempty"`
+	Replied          *Time      `xmlrpc:"replied,omitempty" json:"replied,omitempty"`
+	ResId            *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	Scheduled        *Time      `xmlrpc:"scheduled,omitempty" json:"scheduled,omitempty"`
+	Sent             *Time      `xmlrpc:"sent,omitempty" json:"sent,omitempty"`
+	State            *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StateUpdate      *Time      `xmlrpc:"state_update,omitempty" json:"state_update,omitempty"`
+	TraceType        *Selection `xmlrpc:"trace_type,omitempty" json:"trace_type,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailingTraces represents array of mailing.trace model.

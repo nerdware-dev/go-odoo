@@ -2,29 +2,29 @@ package odoo
 
 // ReportProjectTaskUser represents report.project.task.user model.
 type ReportProjectTaskUser struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	DateAssign          *Time      `xmlrpc:"date_assign,omitempty"`
-	DateDeadline        *Time      `xmlrpc:"date_deadline,omitempty"`
-	DateEnd             *Time      `xmlrpc:"date_end,omitempty"`
-	DateLastStageUpdate *Time      `xmlrpc:"date_last_stage_update,omitempty"`
-	DelayEndingsDays    *Float     `xmlrpc:"delay_endings_days,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	HoursEffective      *Float     `xmlrpc:"hours_effective,omitempty"`
-	HoursPlanned        *Float     `xmlrpc:"hours_planned,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	Nbr                 *Int       `xmlrpc:"nbr,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Priority            *Selection `xmlrpc:"priority,omitempty"`
-	Progress            *Float     `xmlrpc:"progress,omitempty"`
-	ProjectId           *Many2One  `xmlrpc:"project_id,omitempty"`
-	RemainingHours      *Float     `xmlrpc:"remaining_hours,omitempty"`
-	StageId             *Many2One  `xmlrpc:"stage_id,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	UserId              *Many2One  `xmlrpc:"user_id,omitempty"`
-	WorkingDaysClose    *Float     `xmlrpc:"working_days_close,omitempty"`
-	WorkingDaysOpen     *Float     `xmlrpc:"working_days_open,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DateAssign          *Time      `xmlrpc:"date_assign,omitempty" json:"date_assign,omitempty"`
+	DateDeadline        *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DateEnd             *Time      `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateLastStageUpdate *Time      `xmlrpc:"date_last_stage_update,omitempty" json:"date_last_stage_update,omitempty"`
+	DelayEndingsDays    *Float     `xmlrpc:"delay_endings_days,omitempty" json:"delay_endings_days,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HoursEffective      *Float     `xmlrpc:"hours_effective,omitempty" json:"hours_effective,omitempty"`
+	HoursPlanned        *Float     `xmlrpc:"hours_planned,omitempty" json:"hours_planned,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Nbr                 *Int       `xmlrpc:"nbr,omitempty" json:"nbr,omitempty"`
+	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Priority            *Selection `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Progress            *Float     `xmlrpc:"progress,omitempty" json:"progress,omitempty"`
+	ProjectId           *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	RemainingHours      *Float     `xmlrpc:"remaining_hours,omitempty" json:"remaining_hours,omitempty"`
+	StageId             *Many2One  `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UserId              *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WorkingDaysClose    *Float     `xmlrpc:"working_days_close,omitempty" json:"working_days_close,omitempty"`
+	WorkingDaysOpen     *Float     `xmlrpc:"working_days_open,omitempty" json:"working_days_open,omitempty"`
 }
 
 // ReportProjectTaskUsers represents array of report.project.task.user model.

@@ -2,18 +2,18 @@ package odoo
 
 // CalendarAlarm represents calendar.alarm model.
 type CalendarAlarm struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AlarmType       *Selection `xmlrpc:"alarm_type,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Duration        *Int       `xmlrpc:"duration,omitempty"`
-	DurationMinutes *Int       `xmlrpc:"duration_minutes,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Interval        *Selection `xmlrpc:"interval,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AlarmType       *Selection `xmlrpc:"alarm_type,omitempty" json:"alarm_type,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration        *Int       `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	DurationMinutes *Int       `xmlrpc:"duration_minutes,omitempty" json:"duration_minutes,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Interval        *Selection `xmlrpc:"interval,omitempty" json:"interval,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarAlarms represents array of calendar.alarm model.

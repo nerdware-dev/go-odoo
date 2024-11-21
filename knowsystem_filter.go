@@ -2,16 +2,16 @@ package odoo
 
 // KnowsystemFilter represents knowsystem.filter model.
 type KnowsystemFilter struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Domain      *String    `xmlrpc:"domain,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Model       *Selection `xmlrpc:"model,omitempty"`
-	TagId       *Many2One  `xmlrpc:"tag_id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain      *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Model       *Selection `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	TagId       *Many2One  `xmlrpc:"tag_id,omitempty" json:"tag_id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // KnowsystemFilters represents array of knowsystem.filter model.

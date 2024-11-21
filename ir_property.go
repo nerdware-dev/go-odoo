@@ -2,24 +2,24 @@ package odoo
 
 // IrProperty represents ir.property model.
 type IrProperty struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FieldsId       *Many2One  `xmlrpc:"fields_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	ResId          *String    `xmlrpc:"res_id,omitempty"`
-	Type           *Selection `xmlrpc:"type,omitempty"`
-	ValueBinary    *String    `xmlrpc:"value_binary,omitempty"`
-	ValueDatetime  *Time      `xmlrpc:"value_datetime,omitempty"`
-	ValueFloat     *Float     `xmlrpc:"value_float,omitempty"`
-	ValueInteger   *Int       `xmlrpc:"value_integer,omitempty"`
-	ValueReference *String    `xmlrpc:"value_reference,omitempty"`
-	ValueText      *String    `xmlrpc:"value_text,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldsId       *Many2One  `xmlrpc:"fields_id,omitempty" json:"fields_id,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResId          *String    `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	Type           *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	ValueBinary    *String    `xmlrpc:"value_binary,omitempty" json:"value_binary,omitempty"`
+	ValueDatetime  *Time      `xmlrpc:"value_datetime,omitempty" json:"value_datetime,omitempty"`
+	ValueFloat     *Float     `xmlrpc:"value_float,omitempty" json:"value_float,omitempty"`
+	ValueInteger   *Int       `xmlrpc:"value_integer,omitempty" json:"value_integer,omitempty"`
+	ValueReference *String    `xmlrpc:"value_reference,omitempty" json:"value_reference,omitempty"`
+	ValueText      *String    `xmlrpc:"value_text,omitempty" json:"value_text,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrPropertys represents array of ir.property model.

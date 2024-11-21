@@ -2,12 +2,12 @@ package odoo
 
 // UtmMixin represents utm.mixin model.
 type UtmMixin struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CampaignId  *Many2One `xmlrpc:"campaign_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	MediumId    *Many2One `xmlrpc:"medium_id,omitempty"`
-	SourceId    *Many2One `xmlrpc:"source_id,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CampaignId  *Many2One `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MediumId    *Many2One `xmlrpc:"medium_id,omitempty" json:"medium_id,omitempty"`
+	SourceId    *Many2One `xmlrpc:"source_id,omitempty" json:"source_id,omitempty"`
 }
 
 // UtmMixins represents array of utm.mixin model.

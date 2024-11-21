@@ -2,22 +2,22 @@ package odoo
 
 // AccountAssetSell represents account.asset.sell model.
 type AccountAssetSell struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	Action              *Selection `xmlrpc:"action,omitempty"`
-	AssetId             *Many2One  `xmlrpc:"asset_id,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	GainAccountId       *Many2One  `xmlrpc:"gain_account_id,omitempty"`
-	GainOrLoss          *Selection `xmlrpc:"gain_or_loss,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	InvoiceId           *Many2One  `xmlrpc:"invoice_id,omitempty"`
-	InvoiceLineId       *Many2One  `xmlrpc:"invoice_line_id,omitempty"`
-	LossAccountId       *Many2One  `xmlrpc:"loss_account_id,omitempty"`
-	SelectInvoiceLineId *Bool      `xmlrpc:"select_invoice_line_id,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Action              *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	AssetId             *Many2One  `xmlrpc:"asset_id,omitempty" json:"asset_id,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GainAccountId       *Many2One  `xmlrpc:"gain_account_id,omitempty" json:"gain_account_id,omitempty"`
+	GainOrLoss          *Selection `xmlrpc:"gain_or_loss,omitempty" json:"gain_or_loss,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceId           *Many2One  `xmlrpc:"invoice_id,omitempty" json:"invoice_id,omitempty"`
+	InvoiceLineId       *Many2One  `xmlrpc:"invoice_line_id,omitempty" json:"invoice_line_id,omitempty"`
+	LossAccountId       *Many2One  `xmlrpc:"loss_account_id,omitempty" json:"loss_account_id,omitempty"`
+	SelectInvoiceLineId *Bool      `xmlrpc:"select_invoice_line_id,omitempty" json:"select_invoice_line_id,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAssetSells represents array of account.asset.sell model.

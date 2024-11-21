@@ -2,16 +2,16 @@ package odoo
 
 // BaseImportTestsModelsFloat represents base_import.tests.models.float model.
 type BaseImportTestsModelsFloat struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Value       *Float    `xmlrpc:"value,omitempty"`
-	Value2      *Float    `xmlrpc:"value2,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Value       *Float    `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	Value2      *Float    `xmlrpc:"value2,omitempty" json:"value2,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportTestsModelsFloats represents array of base_import.tests.models.float model.

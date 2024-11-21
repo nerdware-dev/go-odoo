@@ -2,19 +2,19 @@ package odoo
 
 // SmsSms represents sms.sms model.
 type SmsSms struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	Body          *String    `xmlrpc:"body,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	ErrorCode     *Selection `xmlrpc:"error_code,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	MailMessageId *Many2One  `xmlrpc:"mail_message_id,omitempty"`
-	Number        *String    `xmlrpc:"number,omitempty"`
-	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Body          *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ErrorCode     *Selection `xmlrpc:"error_code,omitempty" json:"error_code,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId *Many2One  `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	Number        *String    `xmlrpc:"number,omitempty" json:"number,omitempty"`
+	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsSmss represents array of sms.sms model.

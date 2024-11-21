@@ -2,20 +2,20 @@ package odoo
 
 // HrResumeLine represents hr.resume.line model.
 type HrResumeLine struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateEnd     *Time      `xmlrpc:"date_end,omitempty"`
-	DateStart   *Time      `xmlrpc:"date_start,omitempty"`
-	Description *String    `xmlrpc:"description,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType *Selection `xmlrpc:"display_type,omitempty"`
-	EmployeeId  *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	LineTypeId  *Many2One  `xmlrpc:"line_type_id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateEnd     *Time      `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateStart   *Time      `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	Description *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	EmployeeId  *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineTypeId  *Many2One  `xmlrpc:"line_type_id,omitempty" json:"line_type_id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrResumeLines represents array of hr.resume.line model.

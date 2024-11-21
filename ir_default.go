@@ -2,18 +2,18 @@ package odoo
 
 // IrDefault represents ir.default model.
 type IrDefault struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	Condition   *String   `xmlrpc:"condition,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldId     *Many2One `xmlrpc:"field_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	JsonValue   *String   `xmlrpc:"json_value,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Condition   *String   `xmlrpc:"condition,omitempty" json:"condition,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId     *Many2One `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JsonValue   *String   `xmlrpc:"json_value,omitempty" json:"json_value,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrDefaults represents array of ir.default model.

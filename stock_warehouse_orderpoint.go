@@ -2,28 +2,28 @@ package odoo
 
 // StockWarehouseOrderpoint represents stock.warehouse.orderpoint model.
 type StockWarehouseOrderpoint struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	Active             *Bool      `xmlrpc:"active,omitempty"`
-	AllowedLocationIds *Relation  `xmlrpc:"allowed_location_ids,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	GroupId            *Many2One  `xmlrpc:"group_id,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	LeadDays           *Int       `xmlrpc:"lead_days,omitempty"`
-	LeadType           *Selection `xmlrpc:"lead_type,omitempty"`
-	LocationId         *Many2One  `xmlrpc:"location_id,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	ProductId          *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductMaxQty      *Float     `xmlrpc:"product_max_qty,omitempty"`
-	ProductMinQty      *Float     `xmlrpc:"product_min_qty,omitempty"`
-	ProductUom         *Many2One  `xmlrpc:"product_uom,omitempty"`
-	ProductUomName     *String    `xmlrpc:"product_uom_name,omitempty"`
-	QtyMultiple        *Float     `xmlrpc:"qty_multiple,omitempty"`
-	WarehouseId        *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AllowedLocationIds *Relation  `xmlrpc:"allowed_location_ids,omitempty" json:"allowed_location_ids,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId            *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeadDays           *Int       `xmlrpc:"lead_days,omitempty" json:"lead_days,omitempty"`
+	LeadType           *Selection `xmlrpc:"lead_type,omitempty" json:"lead_type,omitempty"`
+	LocationId         *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductId          *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductMaxQty      *Float     `xmlrpc:"product_max_qty,omitempty" json:"product_max_qty,omitempty"`
+	ProductMinQty      *Float     `xmlrpc:"product_min_qty,omitempty" json:"product_min_qty,omitempty"`
+	ProductUom         *Many2One  `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductUomName     *String    `xmlrpc:"product_uom_name,omitempty" json:"product_uom_name,omitempty"`
+	QtyMultiple        *Float     `xmlrpc:"qty_multiple,omitempty" json:"qty_multiple,omitempty"`
+	WarehouseId        *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockWarehouseOrderpoints represents array of stock.warehouse.orderpoint model.

@@ -2,39 +2,39 @@ package odoo
 
 // IrAttachment represents ir.attachment model.
 type IrAttachment struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessToken     *String    `xmlrpc:"access_token,omitempty"`
-	Checksum        *String    `xmlrpc:"checksum,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Datas           *String    `xmlrpc:"datas,omitempty"`
-	DbDatas         *String    `xmlrpc:"db_datas,omitempty"`
-	Description     *String    `xmlrpc:"description,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	FileSize        *Int       `xmlrpc:"file_size,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	ImageHeight     *Int       `xmlrpc:"image_height,omitempty"`
-	ImageSrc        *String    `xmlrpc:"image_src,omitempty"`
-	ImageWidth      *Int       `xmlrpc:"image_width,omitempty"`
-	IndexContent    *String    `xmlrpc:"index_content,omitempty"`
-	Key             *String    `xmlrpc:"key,omitempty"`
-	LocalUrl        *String    `xmlrpc:"local_url,omitempty"`
-	Mimetype        *String    `xmlrpc:"mimetype,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	Public          *Bool      `xmlrpc:"public,omitempty"`
-	ResField        *String    `xmlrpc:"res_field,omitempty"`
-	ResId           *Many2One  `xmlrpc:"res_id,omitempty"`
-	ResModel        *String    `xmlrpc:"res_model,omitempty"`
-	ResName         *String    `xmlrpc:"res_name,omitempty"`
-	StoreFname      *String    `xmlrpc:"store_fname,omitempty"`
-	ThemeTemplateId *Many2One  `xmlrpc:"theme_template_id,omitempty"`
-	Type            *Selection `xmlrpc:"type,omitempty"`
-	Url             *String    `xmlrpc:"url,omitempty"`
-	WebsiteId       *Many2One  `xmlrpc:"website_id,omitempty"`
-	WebsiteUrl      *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken     *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	Checksum        *String    `xmlrpc:"checksum,omitempty" json:"checksum,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Datas           *String    `xmlrpc:"datas,omitempty" json:"datas,omitempty"`
+	DbDatas         *String    `xmlrpc:"db_datas,omitempty" json:"db_datas,omitempty"`
+	Description     *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FileSize        *Int       `xmlrpc:"file_size,omitempty" json:"file_size,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImageHeight     *Int       `xmlrpc:"image_height,omitempty" json:"image_height,omitempty"`
+	ImageSrc        *String    `xmlrpc:"image_src,omitempty" json:"image_src,omitempty"`
+	ImageWidth      *Int       `xmlrpc:"image_width,omitempty" json:"image_width,omitempty"`
+	IndexContent    *String    `xmlrpc:"index_content,omitempty" json:"index_content,omitempty"`
+	Key             *String    `xmlrpc:"key,omitempty" json:"key,omitempty"`
+	LocalUrl        *String    `xmlrpc:"local_url,omitempty" json:"local_url,omitempty"`
+	Mimetype        *String    `xmlrpc:"mimetype,omitempty" json:"mimetype,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Public          *Bool      `xmlrpc:"public,omitempty" json:"public,omitempty"`
+	ResField        *String    `xmlrpc:"res_field,omitempty" json:"res_field,omitempty"`
+	ResId           *Many2One  `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel        *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResName         *String    `xmlrpc:"res_name,omitempty" json:"res_name,omitempty"`
+	StoreFname      *String    `xmlrpc:"store_fname,omitempty" json:"store_fname,omitempty"`
+	ThemeTemplateId *Many2One  `xmlrpc:"theme_template_id,omitempty" json:"theme_template_id,omitempty"`
+	Type            *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Url             *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	WebsiteId       *Many2One  `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WebsiteUrl      *String    `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrAttachments represents array of ir.attachment model.

@@ -2,23 +2,23 @@ package odoo
 
 // MailAliasMixin represents mail.alias.mixin model.
 type MailAliasMixin struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AliasContact        *Selection `xmlrpc:"alias_contact,omitempty"`
-	AliasDefaults       *String    `xmlrpc:"alias_defaults,omitempty"`
-	AliasDomain         *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasForceThreadId  *Int       `xmlrpc:"alias_force_thread_id,omitempty"`
-	AliasId             *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasModelId        *Many2One  `xmlrpc:"alias_model_id,omitempty"`
-	AliasName           *String    `xmlrpc:"alias_name,omitempty"`
-	AliasParentModelId  *Many2One  `xmlrpc:"alias_parent_model_id,omitempty"`
-	AliasParentThreadId *Int       `xmlrpc:"alias_parent_thread_id,omitempty"`
-	AliasUserId         *Many2One  `xmlrpc:"alias_user_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AliasContact        *Selection `xmlrpc:"alias_contact,omitempty" json:"alias_contact,omitempty"`
+	AliasDefaults       *String    `xmlrpc:"alias_defaults,omitempty" json:"alias_defaults,omitempty"`
+	AliasDomain         *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasForceThreadId  *Int       `xmlrpc:"alias_force_thread_id,omitempty" json:"alias_force_thread_id,omitempty"`
+	AliasId             *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasModelId        *Many2One  `xmlrpc:"alias_model_id,omitempty" json:"alias_model_id,omitempty"`
+	AliasName           *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AliasParentModelId  *Many2One  `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
+	AliasParentThreadId *Int       `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
+	AliasUserId         *Many2One  `xmlrpc:"alias_user_id,omitempty" json:"alias_user_id,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailAliasMixins represents array of mail.alias.mixin model.

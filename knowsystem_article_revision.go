@@ -2,26 +2,26 @@ package odoo
 
 // KnowsystemArticleRevision represents knowsystem.article.revision model.
 type KnowsystemArticleRevision struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	ArticleId         *Many2One `xmlrpc:"article_id,omitempty"`
-	AttachmentIds     *Relation `xmlrpc:"attachment_ids,omitempty"`
-	AttachmentsChange *Bool     `xmlrpc:"attachments_change,omitempty"`
-	AuthorId          *Many2One `xmlrpc:"author_id,omitempty"`
-	ChangeDatetime    *Time     `xmlrpc:"change_datetime,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description       *String   `xmlrpc:"description,omitempty"`
-	DescriptionChange *Int      `xmlrpc:"description_change,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	Name              *String   `xmlrpc:"name,omitempty"`
-	NameChange        *Bool     `xmlrpc:"name_change,omitempty"`
-	SectionChange     *Bool     `xmlrpc:"section_change,omitempty"`
-	SectionId         *Many2One `xmlrpc:"section_id,omitempty"`
-	TagIds            *Relation `xmlrpc:"tag_ids,omitempty"`
-	TagsChange        *Bool     `xmlrpc:"tags_change,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ArticleId         *Many2One `xmlrpc:"article_id,omitempty" json:"article_id,omitempty"`
+	AttachmentIds     *Relation `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	AttachmentsChange *Bool     `xmlrpc:"attachments_change,omitempty" json:"attachments_change,omitempty"`
+	AuthorId          *Many2One `xmlrpc:"author_id,omitempty" json:"author_id,omitempty"`
+	ChangeDatetime    *Time     `xmlrpc:"change_datetime,omitempty" json:"change_datetime,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description       *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DescriptionChange *Int      `xmlrpc:"description_change,omitempty" json:"description_change,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name              *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NameChange        *Bool     `xmlrpc:"name_change,omitempty" json:"name_change,omitempty"`
+	SectionChange     *Bool     `xmlrpc:"section_change,omitempty" json:"section_change,omitempty"`
+	SectionId         *Many2One `xmlrpc:"section_id,omitempty" json:"section_id,omitempty"`
+	TagIds            *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TagsChange        *Bool     `xmlrpc:"tags_change,omitempty" json:"tags_change,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // KnowsystemArticleRevisions represents array of knowsystem.article.revision model.

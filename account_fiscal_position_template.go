@@ -2,26 +2,26 @@ package odoo
 
 // AccountFiscalPositionTemplate represents account.fiscal.position.template model.
 type AccountFiscalPositionTemplate struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountIds      *Relation `xmlrpc:"account_ids,omitempty"`
-	AutoApply       *Bool     `xmlrpc:"auto_apply,omitempty"`
-	ChartTemplateId *Many2One `xmlrpc:"chart_template_id,omitempty"`
-	CountryGroupId  *Many2One `xmlrpc:"country_group_id,omitempty"`
-	CountryId       *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	Note            *String   `xmlrpc:"note,omitempty"`
-	Sequence        *Int      `xmlrpc:"sequence,omitempty"`
-	StateIds        *Relation `xmlrpc:"state_ids,omitempty"`
-	TaxIds          *Relation `xmlrpc:"tax_ids,omitempty"`
-	VatRequired     *Bool     `xmlrpc:"vat_required,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
-	ZipFrom         *String   `xmlrpc:"zip_from,omitempty"`
-	ZipTo           *String   `xmlrpc:"zip_to,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountIds      *Relation `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	AutoApply       *Bool     `xmlrpc:"auto_apply,omitempty" json:"auto_apply,omitempty"`
+	ChartTemplateId *Many2One `xmlrpc:"chart_template_id,omitempty" json:"chart_template_id,omitempty"`
+	CountryGroupId  *Many2One `xmlrpc:"country_group_id,omitempty" json:"country_group_id,omitempty"`
+	CountryId       *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note            *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Sequence        *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StateIds        *Relation `xmlrpc:"state_ids,omitempty" json:"state_ids,omitempty"`
+	TaxIds          *Relation `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	VatRequired     *Bool     `xmlrpc:"vat_required,omitempty" json:"vat_required,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ZipFrom         *String   `xmlrpc:"zip_from,omitempty" json:"zip_from,omitempty"`
+	ZipTo           *String   `xmlrpc:"zip_to,omitempty" json:"zip_to,omitempty"`
 }
 
 // AccountFiscalPositionTemplates represents array of account.fiscal.position.template model.

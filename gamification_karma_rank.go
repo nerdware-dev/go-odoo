@@ -2,23 +2,23 @@ package odoo
 
 // GamificationKarmaRank represents gamification.karma.rank model.
 type GamificationKarmaRank struct {
-	LastUpdate              *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate              *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description             *String   `xmlrpc:"description,omitempty"`
-	DescriptionMotivational *String   `xmlrpc:"description_motivational,omitempty"`
-	DisplayName             *String   `xmlrpc:"display_name,omitempty"`
-	Id                      *Int      `xmlrpc:"id,omitempty"`
-	Image1024               *String   `xmlrpc:"image_1024,omitempty"`
-	Image128                *String   `xmlrpc:"image_128,omitempty"`
-	Image1920               *String   `xmlrpc:"image_1920,omitempty"`
-	Image256                *String   `xmlrpc:"image_256,omitempty"`
-	Image512                *String   `xmlrpc:"image_512,omitempty"`
-	KarmaMin                *Int      `xmlrpc:"karma_min,omitempty"`
-	Name                    *String   `xmlrpc:"name,omitempty"`
-	UserIds                 *Relation `xmlrpc:"user_ids,omitempty"`
-	WriteDate               *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate              *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate              *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description             *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DescriptionMotivational *String   `xmlrpc:"description_motivational,omitempty" json:"description_motivational,omitempty"`
+	DisplayName             *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                      *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image1024               *String   `xmlrpc:"image_1024,omitempty" json:"image_1024,omitempty"`
+	Image128                *String   `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	Image1920               *String   `xmlrpc:"image_1920,omitempty" json:"image_1920,omitempty"`
+	Image256                *String   `xmlrpc:"image_256,omitempty" json:"image_256,omitempty"`
+	Image512                *String   `xmlrpc:"image_512,omitempty" json:"image_512,omitempty"`
+	KarmaMin                *Int      `xmlrpc:"karma_min,omitempty" json:"karma_min,omitempty"`
+	Name                    *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	UserIds                 *Relation `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate               *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationKarmaRanks represents array of gamification.karma.rank model.

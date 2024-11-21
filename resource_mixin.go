@@ -2,13 +2,13 @@ package odoo
 
 // ResourceMixin represents resource.mixin model.
 type ResourceMixin struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omitempty"`
-	ResourceId         *Many2One  `xmlrpc:"resource_id,omitempty"`
-	Tz                 *Selection `xmlrpc:"tz,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omitempty" json:"resource_calendar_id,omitempty"`
+	ResourceId         *Many2One  `xmlrpc:"resource_id,omitempty" json:"resource_id,omitempty"`
+	Tz                 *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
 }
 
 // ResourceMixins represents array of resource.mixin model.

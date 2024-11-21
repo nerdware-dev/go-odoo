@@ -2,21 +2,21 @@ package odoo
 
 // MarketingParticipant represents marketing.participant model.
 type MarketingParticipant struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CampaignId  *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	IsTest      *Bool      `xmlrpc:"is_test,omitempty"`
-	ModelId     *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelName   *String    `xmlrpc:"model_name,omitempty"`
-	ResId       *Int       `xmlrpc:"res_id,omitempty"`
-	ResourceRef *String    `xmlrpc:"resource_ref,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	TraceIds    *Relation  `xmlrpc:"trace_ids,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CampaignId  *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTest      *Bool      `xmlrpc:"is_test,omitempty" json:"is_test,omitempty"`
+	ModelId     *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelName   *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
+	ResId       *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResourceRef *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TraceIds    *Relation  `xmlrpc:"trace_ids,omitempty" json:"trace_ids,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MarketingParticipants represents array of marketing.participant model.

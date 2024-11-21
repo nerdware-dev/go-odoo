@@ -2,9 +2,9 @@ package odoo
 
 // L10NDeReportPartnerVatIntra represents l10n.de.report.partner.vat.intra model.
 type L10NDeReportPartnerVatIntra struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // L10NDeReportPartnerVatIntras represents array of l10n.de.report.partner.vat.intra model.

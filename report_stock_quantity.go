@@ -2,17 +2,17 @@ package odoo
 
 // ReportStockQuantity represents report.stock.quantity model.
 type ReportStockQuantity struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	Date          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	MoveIds       *Relation  `xmlrpc:"move_ids,omitempty"`
-	ProductId     *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductQty    *Float     `xmlrpc:"product_qty,omitempty"`
-	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	WarehouseId   *Many2One  `xmlrpc:"warehouse_id,omitempty"`
+	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Date          *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MoveIds       *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	ProductId     *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductQty    *Float     `xmlrpc:"product_qty,omitempty" json:"product_qty,omitempty"`
+	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WarehouseId   *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
 }
 
 // ReportStockQuantitys represents array of report.stock.quantity model.

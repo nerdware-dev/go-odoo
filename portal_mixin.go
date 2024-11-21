@@ -2,12 +2,12 @@ package odoo
 
 // PortalMixin represents portal.mixin model.
 type PortalMixin struct {
-	LastUpdate    *Time   `xmlrpc:"__last_update,omitempty"`
-	AccessToken   *String `xmlrpc:"access_token,omitempty"`
-	AccessUrl     *String `xmlrpc:"access_url,omitempty"`
-	AccessWarning *String `xmlrpc:"access_warning,omitempty"`
-	DisplayName   *String `xmlrpc:"display_name,omitempty"`
-	Id            *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate    *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken   *String `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	AccessUrl     *String `xmlrpc:"access_url,omitempty" json:"access_url,omitempty"`
+	AccessWarning *String `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	DisplayName   *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // PortalMixins represents array of portal.mixin model.

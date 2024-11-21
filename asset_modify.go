@@ -2,27 +2,27 @@ package odoo
 
 // AssetModify represents asset.modify model.
 type AssetModify struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountAssetCounterpartId    *Many2One  `xmlrpc:"account_asset_counterpart_id,omitempty"`
-	AccountAssetId               *Many2One  `xmlrpc:"account_asset_id,omitempty"`
-	AccountDepreciationExpenseId *Many2One  `xmlrpc:"account_depreciation_expense_id,omitempty"`
-	AccountDepreciationId        *Many2One  `xmlrpc:"account_depreciation_id,omitempty"`
-	AssetId                      *Many2One  `xmlrpc:"asset_id,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                         *Time      `xmlrpc:"date,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	GainValue                    *Bool      `xmlrpc:"gain_value,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	MethodNumber                 *Int       `xmlrpc:"method_number,omitempty"`
-	MethodPeriod                 *Selection `xmlrpc:"method_period,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	NeedDate                     *Bool      `xmlrpc:"need_date,omitempty"`
-	SalvageValue                 *Float     `xmlrpc:"salvage_value,omitempty"`
-	ValueResidual                *Float     `xmlrpc:"value_residual,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountAssetCounterpartId    *Many2One  `xmlrpc:"account_asset_counterpart_id,omitempty" json:"account_asset_counterpart_id,omitempty"`
+	AccountAssetId               *Many2One  `xmlrpc:"account_asset_id,omitempty" json:"account_asset_id,omitempty"`
+	AccountDepreciationExpenseId *Many2One  `xmlrpc:"account_depreciation_expense_id,omitempty" json:"account_depreciation_expense_id,omitempty"`
+	AccountDepreciationId        *Many2One  `xmlrpc:"account_depreciation_id,omitempty" json:"account_depreciation_id,omitempty"`
+	AssetId                      *Many2One  `xmlrpc:"asset_id,omitempty" json:"asset_id,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                         *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GainValue                    *Bool      `xmlrpc:"gain_value,omitempty" json:"gain_value,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MethodNumber                 *Int       `xmlrpc:"method_number,omitempty" json:"method_number,omitempty"`
+	MethodPeriod                 *Selection `xmlrpc:"method_period,omitempty" json:"method_period,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NeedDate                     *Bool      `xmlrpc:"need_date,omitempty" json:"need_date,omitempty"`
+	SalvageValue                 *Float     `xmlrpc:"salvage_value,omitempty" json:"salvage_value,omitempty"`
+	ValueResidual                *Float     `xmlrpc:"value_residual,omitempty" json:"value_residual,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AssetModifys represents array of asset.modify model.

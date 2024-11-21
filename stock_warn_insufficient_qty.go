@@ -2,12 +2,12 @@ package odoo
 
 // StockWarnInsufficientQty represents stock.warn.insufficient.qty model.
 type StockWarnInsufficientQty struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LocationId  *Many2One `xmlrpc:"location_id,omitempty"`
-	ProductId   *Many2One `xmlrpc:"product_id,omitempty"`
-	QuantIds    *Relation `xmlrpc:"quant_ids,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationId  *Many2One `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	ProductId   *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	QuantIds    *Relation `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
 }
 
 // StockWarnInsufficientQtys represents array of stock.warn.insufficient.qty model.

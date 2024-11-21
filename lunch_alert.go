@@ -2,31 +2,31 @@ package odoo
 
 // LunchAlert represents lunch.alert model.
 type LunchAlert struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	Active              *Bool      `xmlrpc:"active,omitempty"`
-	AvailableToday      *Bool      `xmlrpc:"available_today,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	LocationIds         *Relation  `xmlrpc:"location_ids,omitempty"`
-	Message             *String    `xmlrpc:"message,omitempty"`
-	Mode                *Selection `xmlrpc:"mode,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	NotificationMoment  *Selection `xmlrpc:"notification_moment,omitempty"`
-	NotificationTime    *Float     `xmlrpc:"notification_time,omitempty"`
-	Recipients          *Selection `xmlrpc:"recipients,omitempty"`
-	RecurrencyFriday    *Bool      `xmlrpc:"recurrency_friday,omitempty"`
-	RecurrencyMonday    *Bool      `xmlrpc:"recurrency_monday,omitempty"`
-	RecurrencySaturday  *Bool      `xmlrpc:"recurrency_saturday,omitempty"`
-	RecurrencySunday    *Bool      `xmlrpc:"recurrency_sunday,omitempty"`
-	RecurrencyThursday  *Bool      `xmlrpc:"recurrency_thursday,omitempty"`
-	RecurrencyTuesday   *Bool      `xmlrpc:"recurrency_tuesday,omitempty"`
-	RecurrencyWednesday *Bool      `xmlrpc:"recurrency_wednesday,omitempty"`
-	Tz                  *Selection `xmlrpc:"tz,omitempty"`
-	Until               *Time      `xmlrpc:"until,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active              *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AvailableToday      *Bool      `xmlrpc:"available_today,omitempty" json:"available_today,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationIds         *Relation  `xmlrpc:"location_ids,omitempty" json:"location_ids,omitempty"`
+	Message             *String    `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	Mode                *Selection `xmlrpc:"mode,omitempty" json:"mode,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NotificationMoment  *Selection `xmlrpc:"notification_moment,omitempty" json:"notification_moment,omitempty"`
+	NotificationTime    *Float     `xmlrpc:"notification_time,omitempty" json:"notification_time,omitempty"`
+	Recipients          *Selection `xmlrpc:"recipients,omitempty" json:"recipients,omitempty"`
+	RecurrencyFriday    *Bool      `xmlrpc:"recurrency_friday,omitempty" json:"recurrency_friday,omitempty"`
+	RecurrencyMonday    *Bool      `xmlrpc:"recurrency_monday,omitempty" json:"recurrency_monday,omitempty"`
+	RecurrencySaturday  *Bool      `xmlrpc:"recurrency_saturday,omitempty" json:"recurrency_saturday,omitempty"`
+	RecurrencySunday    *Bool      `xmlrpc:"recurrency_sunday,omitempty" json:"recurrency_sunday,omitempty"`
+	RecurrencyThursday  *Bool      `xmlrpc:"recurrency_thursday,omitempty" json:"recurrency_thursday,omitempty"`
+	RecurrencyTuesday   *Bool      `xmlrpc:"recurrency_tuesday,omitempty" json:"recurrency_tuesday,omitempty"`
+	RecurrencyWednesday *Bool      `xmlrpc:"recurrency_wednesday,omitempty" json:"recurrency_wednesday,omitempty"`
+	Tz                  *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	Until               *Time      `xmlrpc:"until,omitempty" json:"until,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // LunchAlerts represents array of lunch.alert model.

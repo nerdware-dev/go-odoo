@@ -2,21 +2,21 @@ package odoo
 
 // CustomExtraField represents custom.extra.field model.
 type CustomExtraField struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	Active          *Bool      `xmlrpc:"active,omitempty"`
-	BinaryFieldId   *Many2One  `xmlrpc:"binary_field_id,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	FieldId         *Many2One  `xmlrpc:"field_id,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	InputPlacement  *Selection `xmlrpc:"input_placement,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	Placement       *Selection `xmlrpc:"placement,omitempty"`
-	PortalPlacement *Selection `xmlrpc:"portal_placement,omitempty"`
-	Required        *Bool      `xmlrpc:"required,omitempty"`
-	ResModel        *Selection `xmlrpc:"res_model,omitempty"`
-	SelOptionsIds   *Relation  `xmlrpc:"sel_options_ids,omitempty"`
-	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
-	Ttype           *Selection `xmlrpc:"ttype,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active          *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	BinaryFieldId   *Many2One  `xmlrpc:"binary_field_id,omitempty" json:"binary_field_id,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId         *Many2One  `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InputPlacement  *Selection `xmlrpc:"input_placement,omitempty" json:"input_placement,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Placement       *Selection `xmlrpc:"placement,omitempty" json:"placement,omitempty"`
+	PortalPlacement *Selection `xmlrpc:"portal_placement,omitempty" json:"portal_placement,omitempty"`
+	Required        *Bool      `xmlrpc:"required,omitempty" json:"required,omitempty"`
+	ResModel        *Selection `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	SelOptionsIds   *Relation  `xmlrpc:"sel_options_ids,omitempty" json:"sel_options_ids,omitempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Ttype           *Selection `xmlrpc:"ttype,omitempty" json:"ttype,omitempty"`
 }
 
 // CustomExtraFields represents array of custom.extra.field model.

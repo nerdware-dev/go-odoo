@@ -2,21 +2,21 @@ package odoo
 
 // WebsiteRewrite represents website.rewrite model.
 type WebsiteRewrite struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	Active       *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	Name         *String    `xmlrpc:"name,omitempty"`
-	RedirectType *Selection `xmlrpc:"redirect_type,omitempty"`
-	RouteId      *Many2One  `xmlrpc:"route_id,omitempty"`
-	Sequence     *Int       `xmlrpc:"sequence,omitempty"`
-	UrlFrom      *String    `xmlrpc:"url_from,omitempty"`
-	UrlTo        *String    `xmlrpc:"url_to,omitempty"`
-	WebsiteId    *Many2One  `xmlrpc:"website_id,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active       *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RedirectType *Selection `xmlrpc:"redirect_type,omitempty" json:"redirect_type,omitempty"`
+	RouteId      *Many2One  `xmlrpc:"route_id,omitempty" json:"route_id,omitempty"`
+	Sequence     *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	UrlFrom      *String    `xmlrpc:"url_from,omitempty" json:"url_from,omitempty"`
+	UrlTo        *String    `xmlrpc:"url_to,omitempty" json:"url_to,omitempty"`
+	WebsiteId    *Many2One  `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebsiteRewrites represents array of website.rewrite model.

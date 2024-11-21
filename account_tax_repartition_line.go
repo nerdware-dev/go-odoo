@@ -2,24 +2,24 @@ package odoo
 
 // AccountTaxRepartitionLine represents account.tax.repartition.line model.
 type AccountTaxRepartitionLine struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId       *Many2One  `xmlrpc:"account_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId       *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Factor          *Float     `xmlrpc:"factor,omitempty"`
-	FactorPercent   *Float     `xmlrpc:"factor_percent,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	InvoiceTaxId    *Many2One  `xmlrpc:"invoice_tax_id,omitempty"`
-	RefundTaxId     *Many2One  `xmlrpc:"refund_tax_id,omitempty"`
-	RepartitionType *Selection `xmlrpc:"repartition_type,omitempty"`
-	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
-	TagIds          *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaxId           *Many2One  `xmlrpc:"tax_id,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountId       *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId       *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Factor          *Float     `xmlrpc:"factor,omitempty" json:"factor,omitempty"`
+	FactorPercent   *Float     `xmlrpc:"factor_percent,omitempty" json:"factor_percent,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceTaxId    *Many2One  `xmlrpc:"invoice_tax_id,omitempty" json:"invoice_tax_id,omitempty"`
+	RefundTaxId     *Many2One  `xmlrpc:"refund_tax_id,omitempty" json:"refund_tax_id,omitempty"`
+	RepartitionType *Selection `xmlrpc:"repartition_type,omitempty" json:"repartition_type,omitempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TagIds          *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaxId           *Many2One  `xmlrpc:"tax_id,omitempty" json:"tax_id,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxRepartitionLines represents array of account.tax.repartition.line model.

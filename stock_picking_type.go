@@ -2,39 +2,39 @@ package odoo
 
 // StockPickingType represents stock.picking.type model.
 type StockPickingType struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	Barcode                *String    `xmlrpc:"barcode,omitempty"`
-	Code                   *Selection `xmlrpc:"code,omitempty"`
-	Color                  *Int       `xmlrpc:"color,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountPicking           *Int       `xmlrpc:"count_picking,omitempty"`
-	CountPickingBackorders *Int       `xmlrpc:"count_picking_backorders,omitempty"`
-	CountPickingDraft      *Int       `xmlrpc:"count_picking_draft,omitempty"`
-	CountPickingLate       *Int       `xmlrpc:"count_picking_late,omitempty"`
-	CountPickingReady      *Int       `xmlrpc:"count_picking_ready,omitempty"`
-	CountPickingWaiting    *Int       `xmlrpc:"count_picking_waiting,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefaultLocationDestId  *Many2One  `xmlrpc:"default_location_dest_id,omitempty"`
-	DefaultLocationSrcId   *Many2One  `xmlrpc:"default_location_src_id,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	RatePickingBackorders  *Int       `xmlrpc:"rate_picking_backorders,omitempty"`
-	RatePickingLate        *Int       `xmlrpc:"rate_picking_late,omitempty"`
-	ReturnPickingTypeId    *Many2One  `xmlrpc:"return_picking_type_id,omitempty"`
-	Sequence               *Int       `xmlrpc:"sequence,omitempty"`
-	SequenceCode           *String    `xmlrpc:"sequence_code,omitempty"`
-	SequenceId             *Many2One  `xmlrpc:"sequence_id,omitempty"`
-	ShowEntirePacks        *Bool      `xmlrpc:"show_entire_packs,omitempty"`
-	ShowOperations         *Bool      `xmlrpc:"show_operations,omitempty"`
-	ShowReserved           *Bool      `xmlrpc:"show_reserved,omitempty"`
-	UseCreateLots          *Bool      `xmlrpc:"use_create_lots,omitempty"`
-	UseExistingLots        *Bool      `xmlrpc:"use_existing_lots,omitempty"`
-	WarehouseId            *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Barcode                *String    `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	Code                   *Selection `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	Color                  *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountPicking           *Int       `xmlrpc:"count_picking,omitempty" json:"count_picking,omitempty"`
+	CountPickingBackorders *Int       `xmlrpc:"count_picking_backorders,omitempty" json:"count_picking_backorders,omitempty"`
+	CountPickingDraft      *Int       `xmlrpc:"count_picking_draft,omitempty" json:"count_picking_draft,omitempty"`
+	CountPickingLate       *Int       `xmlrpc:"count_picking_late,omitempty" json:"count_picking_late,omitempty"`
+	CountPickingReady      *Int       `xmlrpc:"count_picking_ready,omitempty" json:"count_picking_ready,omitempty"`
+	CountPickingWaiting    *Int       `xmlrpc:"count_picking_waiting,omitempty" json:"count_picking_waiting,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultLocationDestId  *Many2One  `xmlrpc:"default_location_dest_id,omitempty" json:"default_location_dest_id,omitempty"`
+	DefaultLocationSrcId   *Many2One  `xmlrpc:"default_location_src_id,omitempty" json:"default_location_src_id,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RatePickingBackorders  *Int       `xmlrpc:"rate_picking_backorders,omitempty" json:"rate_picking_backorders,omitempty"`
+	RatePickingLate        *Int       `xmlrpc:"rate_picking_late,omitempty" json:"rate_picking_late,omitempty"`
+	ReturnPickingTypeId    *Many2One  `xmlrpc:"return_picking_type_id,omitempty" json:"return_picking_type_id,omitempty"`
+	Sequence               *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SequenceCode           *String    `xmlrpc:"sequence_code,omitempty" json:"sequence_code,omitempty"`
+	SequenceId             *Many2One  `xmlrpc:"sequence_id,omitempty" json:"sequence_id,omitempty"`
+	ShowEntirePacks        *Bool      `xmlrpc:"show_entire_packs,omitempty" json:"show_entire_packs,omitempty"`
+	ShowOperations         *Bool      `xmlrpc:"show_operations,omitempty" json:"show_operations,omitempty"`
+	ShowReserved           *Bool      `xmlrpc:"show_reserved,omitempty" json:"show_reserved,omitempty"`
+	UseCreateLots          *Bool      `xmlrpc:"use_create_lots,omitempty" json:"use_create_lots,omitempty"`
+	UseExistingLots        *Bool      `xmlrpc:"use_existing_lots,omitempty" json:"use_existing_lots,omitempty"`
+	WarehouseId            *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPickingTypes represents array of stock.picking.type model.

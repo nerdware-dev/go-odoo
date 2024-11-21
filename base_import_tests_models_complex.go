@@ -2,19 +2,19 @@ package odoo
 
 // BaseImportTestsModelsComplex represents base_import.tests.models.complex model.
 type BaseImportTestsModelsComplex struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	C           *String   `xmlrpc:"c,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	D           *Time     `xmlrpc:"d,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Dt          *Time     `xmlrpc:"dt,omitempty"`
-	F           *Float    `xmlrpc:"f,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	M           *Float    `xmlrpc:"m,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	C           *String   `xmlrpc:"c,omitempty" json:"c,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	D           *Time     `xmlrpc:"d,omitempty" json:"d,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Dt          *Time     `xmlrpc:"dt,omitempty" json:"dt,omitempty"`
+	F           *Float    `xmlrpc:"f,omitempty" json:"f,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	M           *Float    `xmlrpc:"m,omitempty" json:"m,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportTestsModelsComplexs represents array of base_import.tests.models.complex model.

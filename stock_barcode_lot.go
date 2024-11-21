@@ -2,20 +2,20 @@ package odoo
 
 // StockBarcodeLot represents stock_barcode.lot model.
 type StockBarcodeLot struct {
-	LastUpdate             *Time     `xmlrpc:"__last_update,omitempty"`
-	BarcodeScanned         *String   `xmlrpc:"_barcode_scanned,omitempty"`
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	DefaultMoveId          *Many2One `xmlrpc:"default_move_id,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	PickingId              *Many2One `xmlrpc:"picking_id,omitempty"`
-	ProductId              *Many2One `xmlrpc:"product_id,omitempty"`
-	QtyDone                *Float    `xmlrpc:"qty_done,omitempty"`
-	QtyReserved            *Float    `xmlrpc:"qty_reserved,omitempty"`
-	StockBarcodeLotLineIds *Relation `xmlrpc:"stock_barcode_lot_line_ids,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BarcodeScanned         *String   `xmlrpc:"_barcode_scanned,omitempty" json:"_barcode_scanned,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultMoveId          *Many2One `xmlrpc:"default_move_id,omitempty" json:"default_move_id,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PickingId              *Many2One `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	ProductId              *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	QtyDone                *Float    `xmlrpc:"qty_done,omitempty" json:"qty_done,omitempty"`
+	QtyReserved            *Float    `xmlrpc:"qty_reserved,omitempty" json:"qty_reserved,omitempty"`
+	StockBarcodeLotLineIds *Relation `xmlrpc:"stock_barcode_lot_line_ids,omitempty" json:"stock_barcode_lot_line_ids,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockBarcodeLots represents array of stock_barcode.lot model.

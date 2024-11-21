@@ -2,23 +2,23 @@ package odoo
 
 // SaleSubscriptionLine represents sale.subscription.line model.
 type SaleSubscriptionLine struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
-	AnalyticAccountId    *Many2One `xmlrpc:"analytic_account_id,omitempty"`
-	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	Discount             *Float    `xmlrpc:"discount,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	Name                 *String   `xmlrpc:"name,omitempty"`
-	PriceSubtotal        *Float    `xmlrpc:"price_subtotal,omitempty"`
-	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty"`
-	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
-	Quantity             *Float    `xmlrpc:"quantity,omitempty"`
-	UomId                *Many2One `xmlrpc:"uom_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AnalyticAccountId    *Many2One `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	CompanyId            *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Discount             *Float    `xmlrpc:"discount,omitempty" json:"discount,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PriceSubtotal        *Float    `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
+	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	UomId                *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleSubscriptionLines represents array of sale.subscription.line model.

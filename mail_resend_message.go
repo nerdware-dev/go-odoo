@@ -2,18 +2,18 @@ package odoo
 
 // MailResendMessage represents mail.resend.message model.
 type MailResendMessage struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	HasCancel       *Bool     `xmlrpc:"has_cancel,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	MailMessageId   *Many2One `xmlrpc:"mail_message_id,omitempty"`
-	NotificationIds *Relation `xmlrpc:"notification_ids,omitempty"`
-	PartnerIds      *Relation `xmlrpc:"partner_ids,omitempty"`
-	PartnerReadonly *Bool     `xmlrpc:"partner_readonly,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasCancel       *Bool     `xmlrpc:"has_cancel,omitempty" json:"has_cancel,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId   *Many2One `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	NotificationIds *Relation `xmlrpc:"notification_ids,omitempty" json:"notification_ids,omitempty"`
+	PartnerIds      *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	PartnerReadonly *Bool     `xmlrpc:"partner_readonly,omitempty" json:"partner_readonly,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailResendMessages represents array of mail.resend.message model.

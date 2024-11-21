@@ -2,35 +2,35 @@ package odoo
 
 // AccountAccount represents account.account model.
 type AccountAccount struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	AssetModel     *Many2One  `xmlrpc:"asset_model,omitempty"`
-	AssetType      *Selection `xmlrpc:"asset_type,omitempty"`
-	CanCreateAsset *Bool      `xmlrpc:"can_create_asset,omitempty"`
-	Code           *String    `xmlrpc:"code,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateAsset    *Selection `xmlrpc:"create_asset,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId     *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Deprecated     *Bool      `xmlrpc:"deprecated,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FormViewRef    *String    `xmlrpc:"form_view_ref,omitempty"`
-	GroupId        *Many2One  `xmlrpc:"group_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	InternalGroup  *Selection `xmlrpc:"internal_group,omitempty"`
-	InternalType   *Selection `xmlrpc:"internal_type,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	Note           *String    `xmlrpc:"note,omitempty"`
-	OpeningCredit  *Float     `xmlrpc:"opening_credit,omitempty"`
-	OpeningDebit   *Float     `xmlrpc:"opening_debit,omitempty"`
-	Reconcile      *Bool      `xmlrpc:"reconcile,omitempty"`
-	RootId         *Many2One  `xmlrpc:"root_id,omitempty"`
-	TagIds         *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaxIds         *Relation  `xmlrpc:"tax_ids,omitempty"`
-	Used           *Bool      `xmlrpc:"used,omitempty"`
-	UserTypeId     *Many2One  `xmlrpc:"user_type_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AssetModel     *Many2One  `xmlrpc:"asset_model,omitempty" json:"asset_model,omitempty"`
+	AssetType      *Selection `xmlrpc:"asset_type,omitempty" json:"asset_type,omitempty"`
+	CanCreateAsset *Bool      `xmlrpc:"can_create_asset,omitempty" json:"can_create_asset,omitempty"`
+	Code           *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateAsset    *Selection `xmlrpc:"create_asset,omitempty" json:"create_asset,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId     *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Deprecated     *Bool      `xmlrpc:"deprecated,omitempty" json:"deprecated,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FormViewRef    *String    `xmlrpc:"form_view_ref,omitempty" json:"form_view_ref,omitempty"`
+	GroupId        *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InternalGroup  *Selection `xmlrpc:"internal_group,omitempty" json:"internal_group,omitempty"`
+	InternalType   *Selection `xmlrpc:"internal_type,omitempty" json:"internal_type,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note           *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	OpeningCredit  *Float     `xmlrpc:"opening_credit,omitempty" json:"opening_credit,omitempty"`
+	OpeningDebit   *Float     `xmlrpc:"opening_debit,omitempty" json:"opening_debit,omitempty"`
+	Reconcile      *Bool      `xmlrpc:"reconcile,omitempty" json:"reconcile,omitempty"`
+	RootId         *Many2One  `xmlrpc:"root_id,omitempty" json:"root_id,omitempty"`
+	TagIds         *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaxIds         *Relation  `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	Used           *Bool      `xmlrpc:"used,omitempty" json:"used,omitempty"`
+	UserTypeId     *Many2One  `xmlrpc:"user_type_id,omitempty" json:"user_type_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccounts represents array of account.account model.

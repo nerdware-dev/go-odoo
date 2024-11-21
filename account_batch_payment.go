@@ -2,32 +2,32 @@ package odoo
 
 // AccountBatchPayment represents account.batch.payment model.
 type AccountBatchPayment struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	Amount                    *Float     `xmlrpc:"amount,omitempty"`
-	AvailablePaymentMethodIds *Relation  `xmlrpc:"available_payment_method_ids,omitempty"`
-	BatchType                 *Selection `xmlrpc:"batch_type,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                      *Time      `xmlrpc:"date,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	ExportFile                *String    `xmlrpc:"export_file,omitempty"`
-	ExportFileCreateDate      *Time      `xmlrpc:"export_file_create_date,omitempty"`
-	ExportFilename            *String    `xmlrpc:"export_filename,omitempty"`
-	FileGenerationEnabled     *Bool      `xmlrpc:"file_generation_enabled,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PaymentIds                *Relation  `xmlrpc:"payment_ids,omitempty"`
-	PaymentMethodCode         *String    `xmlrpc:"payment_method_code,omitempty"`
-	PaymentMethodId           *Many2One  `xmlrpc:"payment_method_id,omitempty"`
-	SctGeneric                *Bool      `xmlrpc:"sct_generic,omitempty"`
-	SctWarning                *String    `xmlrpc:"sct_warning,omitempty"`
-	SddBatchBooking           *Bool      `xmlrpc:"sdd_batch_booking,omitempty"`
-	SddRequiredCollectionDate *Time      `xmlrpc:"sdd_required_collection_date,omitempty"`
-	State                     *Selection `xmlrpc:"state,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Amount                    *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AvailablePaymentMethodIds *Relation  `xmlrpc:"available_payment_method_ids,omitempty" json:"available_payment_method_ids,omitempty"`
+	BatchType                 *Selection `xmlrpc:"batch_type,omitempty" json:"batch_type,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                      *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportFile                *String    `xmlrpc:"export_file,omitempty" json:"export_file,omitempty"`
+	ExportFileCreateDate      *Time      `xmlrpc:"export_file_create_date,omitempty" json:"export_file_create_date,omitempty"`
+	ExportFilename            *String    `xmlrpc:"export_filename,omitempty" json:"export_filename,omitempty"`
+	FileGenerationEnabled     *Bool      `xmlrpc:"file_generation_enabled,omitempty" json:"file_generation_enabled,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentIds                *Relation  `xmlrpc:"payment_ids,omitempty" json:"payment_ids,omitempty"`
+	PaymentMethodCode         *String    `xmlrpc:"payment_method_code,omitempty" json:"payment_method_code,omitempty"`
+	PaymentMethodId           *Many2One  `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	SctGeneric                *Bool      `xmlrpc:"sct_generic,omitempty" json:"sct_generic,omitempty"`
+	SctWarning                *String    `xmlrpc:"sct_warning,omitempty" json:"sct_warning,omitempty"`
+	SddBatchBooking           *Bool      `xmlrpc:"sdd_batch_booking,omitempty" json:"sdd_batch_booking,omitempty"`
+	SddRequiredCollectionDate *Time      `xmlrpc:"sdd_required_collection_date,omitempty" json:"sdd_required_collection_date,omitempty"`
+	State                     *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBatchPayments represents array of account.batch.payment model.

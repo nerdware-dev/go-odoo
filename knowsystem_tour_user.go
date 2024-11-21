@@ -2,18 +2,18 @@ package odoo
 
 // KnowsystemTourUser represents knowsystem.tour.user model.
 type KnowsystemTourUser struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrentArticleId *Many2One `xmlrpc:"current_article_id,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	LeftArticleIds   *Relation `xmlrpc:"left_article_ids,omitempty"`
-	Progress         *Float    `xmlrpc:"progress,omitempty"`
-	TourId           *Many2One `xmlrpc:"tour_id,omitempty"`
-	UserId           *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrentArticleId *Many2One `xmlrpc:"current_article_id,omitempty" json:"current_article_id,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeftArticleIds   *Relation `xmlrpc:"left_article_ids,omitempty" json:"left_article_ids,omitempty"`
+	Progress         *Float    `xmlrpc:"progress,omitempty" json:"progress,omitempty"`
+	TourId           *Many2One `xmlrpc:"tour_id,omitempty" json:"tour_id,omitempty"`
+	UserId           *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // KnowsystemTourUsers represents array of knowsystem.tour.user model.

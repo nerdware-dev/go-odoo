@@ -2,18 +2,18 @@ package odoo
 
 // IrServerObjectLines represents ir.server.object.lines model.
 type IrServerObjectLines struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Col1           *Many2One  `xmlrpc:"col1,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	EvaluationType *Selection `xmlrpc:"evaluation_type,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	ResourceRef    *String    `xmlrpc:"resource_ref,omitempty"`
-	ServerId       *Many2One  `xmlrpc:"server_id,omitempty"`
-	Value          *String    `xmlrpc:"value,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Col1           *Many2One  `xmlrpc:"col1,omitempty" json:"col1,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EvaluationType *Selection `xmlrpc:"evaluation_type,omitempty" json:"evaluation_type,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResourceRef    *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	ServerId       *Many2One  `xmlrpc:"server_id,omitempty" json:"server_id,omitempty"`
+	Value          *String    `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrServerObjectLiness represents array of ir.server.object.lines model.

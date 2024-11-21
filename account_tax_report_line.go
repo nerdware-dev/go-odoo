@@ -2,24 +2,24 @@ package odoo
 
 // AccountTaxReportLine represents account.tax.report.line model.
 type AccountTaxReportLine struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	ChildrenLineIds *Relation `xmlrpc:"children_line_ids,omitempty"`
-	Code            *String   `xmlrpc:"code,omitempty"`
-	CountryId       *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Formula         *String   `xmlrpc:"formula,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	ParentId        *Many2One `xmlrpc:"parent_id,omitempty"`
-	ParentPath      *String   `xmlrpc:"parent_path,omitempty"`
-	ReportActionId  *Many2One `xmlrpc:"report_action_id,omitempty"`
-	Sequence        *Int      `xmlrpc:"sequence,omitempty"`
-	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
-	TagName         *String   `xmlrpc:"tag_name,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChildrenLineIds *Relation `xmlrpc:"children_line_ids,omitempty" json:"children_line_ids,omitempty"`
+	Code            *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CountryId       *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Formula         *String   `xmlrpc:"formula,omitempty" json:"formula,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId        *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath      *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	ReportActionId  *Many2One `xmlrpc:"report_action_id,omitempty" json:"report_action_id,omitempty"`
+	Sequence        *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TagIds          *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TagName         *String   `xmlrpc:"tag_name,omitempty" json:"tag_name,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxReportLines represents array of account.tax.report.line model.

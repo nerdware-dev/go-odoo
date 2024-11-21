@@ -2,9 +2,9 @@ package odoo
 
 // ReportHrHolidaysReportHolidayssummary represents report.hr_holidays.report_holidayssummary model.
 type ReportHrHolidaysReportHolidayssummary struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // ReportHrHolidaysReportHolidayssummarys represents array of report.hr_holidays.report_holidayssummary model.

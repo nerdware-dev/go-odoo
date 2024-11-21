@@ -2,21 +2,21 @@ package odoo
 
 // ResourceResource represents resource.resource model.
 type ResourceResource struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Active         *Bool      `xmlrpc:"active,omitempty"`
-	CalendarId     *Many2One  `xmlrpc:"calendar_id,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	ResourceType   *Selection `xmlrpc:"resource_type,omitempty"`
-	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omitempty"`
-	Tz             *Selection `xmlrpc:"tz,omitempty"`
-	UserId         *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active         *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CalendarId     *Many2One  `xmlrpc:"calendar_id,omitempty" json:"calendar_id,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResourceType   *Selection `xmlrpc:"resource_type,omitempty" json:"resource_type,omitempty"`
+	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omitempty" json:"time_efficiency,omitempty"`
+	Tz             *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	UserId         *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceResources represents array of resource.resource model.

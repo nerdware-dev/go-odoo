@@ -2,34 +2,34 @@ package odoo
 
 // RatingRating represents rating.rating model.
 type RatingRating struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessToken       *String    `xmlrpc:"access_token,omitempty"`
-	Consumed          *Bool      `xmlrpc:"consumed,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Feedback          *String    `xmlrpc:"feedback,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	MessageId         *Many2One  `xmlrpc:"message_id,omitempty"`
-	ParentResId       *Int       `xmlrpc:"parent_res_id,omitempty"`
-	ParentResModel    *String    `xmlrpc:"parent_res_model,omitempty"`
-	ParentResModelId  *Many2One  `xmlrpc:"parent_res_model_id,omitempty"`
-	ParentResName     *String    `xmlrpc:"parent_res_name,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PublisherComment  *String    `xmlrpc:"publisher_comment,omitempty"`
-	PublisherDatetime *Time      `xmlrpc:"publisher_datetime,omitempty"`
-	PublisherId       *Many2One  `xmlrpc:"publisher_id,omitempty"`
-	RatedPartnerId    *Many2One  `xmlrpc:"rated_partner_id,omitempty"`
-	Rating            *Float     `xmlrpc:"rating,omitempty"`
-	RatingImage       *String    `xmlrpc:"rating_image,omitempty"`
-	RatingText        *Selection `xmlrpc:"rating_text,omitempty"`
-	ResId             *Int       `xmlrpc:"res_id,omitempty"`
-	ResModel          *String    `xmlrpc:"res_model,omitempty"`
-	ResModelId        *Many2One  `xmlrpc:"res_model_id,omitempty"`
-	ResName           *String    `xmlrpc:"res_name,omitempty"`
-	WebsitePublished  *Bool      `xmlrpc:"website_published,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken       *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	Consumed          *Bool      `xmlrpc:"consumed,omitempty" json:"consumed,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Feedback          *String    `xmlrpc:"feedback,omitempty" json:"feedback,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageId         *Many2One  `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	ParentResId       *Int       `xmlrpc:"parent_res_id,omitempty" json:"parent_res_id,omitempty"`
+	ParentResModel    *String    `xmlrpc:"parent_res_model,omitempty" json:"parent_res_model,omitempty"`
+	ParentResModelId  *Many2One  `xmlrpc:"parent_res_model_id,omitempty" json:"parent_res_model_id,omitempty"`
+	ParentResName     *String    `xmlrpc:"parent_res_name,omitempty" json:"parent_res_name,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PublisherComment  *String    `xmlrpc:"publisher_comment,omitempty" json:"publisher_comment,omitempty"`
+	PublisherDatetime *Time      `xmlrpc:"publisher_datetime,omitempty" json:"publisher_datetime,omitempty"`
+	PublisherId       *Many2One  `xmlrpc:"publisher_id,omitempty" json:"publisher_id,omitempty"`
+	RatedPartnerId    *Many2One  `xmlrpc:"rated_partner_id,omitempty" json:"rated_partner_id,omitempty"`
+	Rating            *Float     `xmlrpc:"rating,omitempty" json:"rating,omitempty"`
+	RatingImage       *String    `xmlrpc:"rating_image,omitempty" json:"rating_image,omitempty"`
+	RatingText        *Selection `xmlrpc:"rating_text,omitempty" json:"rating_text,omitempty"`
+	ResId             *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel          *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResModelId        *Many2One  `xmlrpc:"res_model_id,omitempty" json:"res_model_id,omitempty"`
+	ResName           *String    `xmlrpc:"res_name,omitempty" json:"res_name,omitempty"`
+	WebsitePublished  *Bool      `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // RatingRatings represents array of rating.rating model.

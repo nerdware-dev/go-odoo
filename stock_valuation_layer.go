@@ -2,30 +2,30 @@ package odoo
 
 // StockValuationLayer represents stock.valuation.layer model.
 type StockValuationLayer struct {
-	LastUpdate             *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountMoveId          *Many2One `xmlrpc:"account_move_id,omitempty"`
-	Active                 *Bool     `xmlrpc:"active,omitempty"`
-	CategId                *Many2One `xmlrpc:"categ_id,omitempty"`
-	CompanyId              *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId             *Many2One `xmlrpc:"currency_id,omitempty"`
-	Description            *String   `xmlrpc:"description,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	ProductId              *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductTmplId          *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	Quantity               *Float    `xmlrpc:"quantity,omitempty"`
-	RemainingQty           *Float    `xmlrpc:"remaining_qty,omitempty"`
-	RemainingValue         *Float    `xmlrpc:"remaining_value,omitempty"`
-	StockMoveId            *Many2One `xmlrpc:"stock_move_id,omitempty"`
-	StockValuationLayerId  *Many2One `xmlrpc:"stock_valuation_layer_id,omitempty"`
-	StockValuationLayerIds *Relation `xmlrpc:"stock_valuation_layer_ids,omitempty"`
-	UnitCost               *Float    `xmlrpc:"unit_cost,omitempty"`
-	UomId                  *Many2One `xmlrpc:"uom_id,omitempty"`
-	Value                  *Float    `xmlrpc:"value,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountMoveId          *Many2One `xmlrpc:"account_move_id,omitempty" json:"account_move_id,omitempty"`
+	Active                 *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategId                *Many2One `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CompanyId              *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId             *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Description            *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductId              *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId          *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	Quantity               *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	RemainingQty           *Float    `xmlrpc:"remaining_qty,omitempty" json:"remaining_qty,omitempty"`
+	RemainingValue         *Float    `xmlrpc:"remaining_value,omitempty" json:"remaining_value,omitempty"`
+	StockMoveId            *Many2One `xmlrpc:"stock_move_id,omitempty" json:"stock_move_id,omitempty"`
+	StockValuationLayerId  *Many2One `xmlrpc:"stock_valuation_layer_id,omitempty" json:"stock_valuation_layer_id,omitempty"`
+	StockValuationLayerIds *Relation `xmlrpc:"stock_valuation_layer_ids,omitempty" json:"stock_valuation_layer_ids,omitempty"`
+	UnitCost               *Float    `xmlrpc:"unit_cost,omitempty" json:"unit_cost,omitempty"`
+	UomId                  *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	Value                  *Float    `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockValuationLayers represents array of stock.valuation.layer model.

@@ -2,37 +2,37 @@ package odoo
 
 // RentalWizard represents rental.wizard model.
 type RentalWizard struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	Duration                 *Int       `xmlrpc:"duration,omitempty"`
-	DurationUnit             *Selection `xmlrpc:"duration_unit,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	IsProductStorable        *Bool      `xmlrpc:"is_product_storable,omitempty"`
-	LotIds                   *Relation  `xmlrpc:"lot_ids,omitempty"`
-	PickupDate               *Time      `xmlrpc:"pickup_date,omitempty"`
-	PricelistId              *Many2One  `xmlrpc:"pricelist_id,omitempty"`
-	PricingExplanation       *String    `xmlrpc:"pricing_explanation,omitempty"`
-	PricingId                *Many2One  `xmlrpc:"pricing_id,omitempty"`
-	ProductId                *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomId             *String    `xmlrpc:"product_uom_id,omitempty"`
-	QtyAvailableDuringPeriod *Float     `xmlrpc:"qty_available_during_period,omitempty"`
-	Quantity                 *Float     `xmlrpc:"quantity,omitempty"`
-	RentableLotIds           *Relation  `xmlrpc:"rentable_lot_ids,omitempty"`
-	RentableQty              *Float     `xmlrpc:"rentable_qty,omitempty"`
-	RentalOrderLineId        *Many2One  `xmlrpc:"rental_order_line_id,omitempty"`
-	RentedLotIds             *Relation  `xmlrpc:"rented_lot_ids,omitempty"`
-	RentedQtyDuringPeriod    *Float     `xmlrpc:"rented_qty_during_period,omitempty"`
-	ReturnDate               *Time      `xmlrpc:"return_date,omitempty"`
-	Tracking                 *Selection `xmlrpc:"tracking,omitempty"`
-	UnitPrice                *Float     `xmlrpc:"unit_price,omitempty"`
-	UomId                    *Many2One  `xmlrpc:"uom_id,omitempty"`
-	WarehouseId              *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration                 *Int       `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	DurationUnit             *Selection `xmlrpc:"duration_unit,omitempty" json:"duration_unit,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsProductStorable        *Bool      `xmlrpc:"is_product_storable,omitempty" json:"is_product_storable,omitempty"`
+	LotIds                   *Relation  `xmlrpc:"lot_ids,omitempty" json:"lot_ids,omitempty"`
+	PickupDate               *Time      `xmlrpc:"pickup_date,omitempty" json:"pickup_date,omitempty"`
+	PricelistId              *Many2One  `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
+	PricingExplanation       *String    `xmlrpc:"pricing_explanation,omitempty" json:"pricing_explanation,omitempty"`
+	PricingId                *Many2One  `xmlrpc:"pricing_id,omitempty" json:"pricing_id,omitempty"`
+	ProductId                *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId             *String    `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	QtyAvailableDuringPeriod *Float     `xmlrpc:"qty_available_during_period,omitempty" json:"qty_available_during_period,omitempty"`
+	Quantity                 *Float     `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	RentableLotIds           *Relation  `xmlrpc:"rentable_lot_ids,omitempty" json:"rentable_lot_ids,omitempty"`
+	RentableQty              *Float     `xmlrpc:"rentable_qty,omitempty" json:"rentable_qty,omitempty"`
+	RentalOrderLineId        *Many2One  `xmlrpc:"rental_order_line_id,omitempty" json:"rental_order_line_id,omitempty"`
+	RentedLotIds             *Relation  `xmlrpc:"rented_lot_ids,omitempty" json:"rented_lot_ids,omitempty"`
+	RentedQtyDuringPeriod    *Float     `xmlrpc:"rented_qty_during_period,omitempty" json:"rented_qty_during_period,omitempty"`
+	ReturnDate               *Time      `xmlrpc:"return_date,omitempty" json:"return_date,omitempty"`
+	Tracking                 *Selection `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	UnitPrice                *Float     `xmlrpc:"unit_price,omitempty" json:"unit_price,omitempty"`
+	UomId                    *Many2One  `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WarehouseId              *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // RentalWizards represents array of rental.wizard model.

@@ -2,22 +2,22 @@ package odoo
 
 // StockQuantPackage represents stock.quant.package model.
 type StockQuantPackage struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId      *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	LocationId     *Many2One `xmlrpc:"location_id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	OwnerId        *Many2One `xmlrpc:"owner_id,omitempty"`
-	PackagingId    *Many2One `xmlrpc:"packaging_id,omitempty"`
-	QuantIds       *Relation `xmlrpc:"quant_ids,omitempty"`
-	ShippingWeight *Float    `xmlrpc:"shipping_weight,omitempty"`
-	Weight         *Float    `xmlrpc:"weight,omitempty"`
-	WeightUomName  *String   `xmlrpc:"weight_uom_name,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationId     *Many2One `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OwnerId        *Many2One `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PackagingId    *Many2One `xmlrpc:"packaging_id,omitempty" json:"packaging_id,omitempty"`
+	QuantIds       *Relation `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	ShippingWeight *Float    `xmlrpc:"shipping_weight,omitempty" json:"shipping_weight,omitempty"`
+	Weight         *Float    `xmlrpc:"weight,omitempty" json:"weight,omitempty"`
+	WeightUomName  *String   `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockQuantPackages represents array of stock.quant.package model.

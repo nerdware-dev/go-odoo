@@ -2,10 +2,10 @@ package odoo
 
 // WebsiteMultiMixin represents website.multi.mixin model.
 type WebsiteMultiMixin struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WebsiteId   *Many2One `xmlrpc:"website_id,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WebsiteId   *Many2One `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
 }
 
 // WebsiteMultiMixins represents array of website.multi.mixin model.

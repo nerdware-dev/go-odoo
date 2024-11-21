@@ -2,19 +2,19 @@ package odoo
 
 // StockBarcodeLotLine represents stock_barcode.lot.line model.
 type StockBarcodeLotLine struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	LotName           *String   `xmlrpc:"lot_name,omitempty"`
-	MoveLineId        *Many2One `xmlrpc:"move_line_id,omitempty"`
-	ProductBarcode    *String   `xmlrpc:"product_barcode,omitempty"`
-	QtyDone           *Float    `xmlrpc:"qty_done,omitempty"`
-	QtyReserved       *Float    `xmlrpc:"qty_reserved,omitempty"`
-	StockBarcodeLotId *Many2One `xmlrpc:"stock_barcode_lot_id,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LotName           *String   `xmlrpc:"lot_name,omitempty" json:"lot_name,omitempty"`
+	MoveLineId        *Many2One `xmlrpc:"move_line_id,omitempty" json:"move_line_id,omitempty"`
+	ProductBarcode    *String   `xmlrpc:"product_barcode,omitempty" json:"product_barcode,omitempty"`
+	QtyDone           *Float    `xmlrpc:"qty_done,omitempty" json:"qty_done,omitempty"`
+	QtyReserved       *Float    `xmlrpc:"qty_reserved,omitempty" json:"qty_reserved,omitempty"`
+	StockBarcodeLotId *Many2One `xmlrpc:"stock_barcode_lot_id,omitempty" json:"stock_barcode_lot_id,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockBarcodeLotLines represents array of stock_barcode.lot.line model.

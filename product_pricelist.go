@@ -2,21 +2,21 @@ package odoo
 
 // ProductPricelist represents product.pricelist model.
 type ProductPricelist struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	Active          *Bool      `xmlrpc:"active,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryGroupIds *Relation  `xmlrpc:"country_group_ids,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DiscountPolicy  *Selection `xmlrpc:"discount_policy,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	ItemIds         *Relation  `xmlrpc:"item_ids,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active          *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryGroupIds *Relation  `xmlrpc:"country_group_ids,omitempty" json:"country_group_ids,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DiscountPolicy  *Selection `xmlrpc:"discount_policy,omitempty" json:"discount_policy,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ItemIds         *Relation  `xmlrpc:"item_ids,omitempty" json:"item_ids,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductPricelists represents array of product.pricelist model.

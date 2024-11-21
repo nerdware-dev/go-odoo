@@ -2,24 +2,24 @@ package odoo
 
 // ReportAllChannelsSales represents report.all.channels.sales model.
 type ReportAllChannelsSales struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	AnalyticAccountId *Many2One `xmlrpc:"analytic_account_id,omitempty"`
-	CategId           *Many2One `xmlrpc:"categ_id,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CountryId         *Many2One `xmlrpc:"country_id,omitempty"`
-	DateOrder         *Time     `xmlrpc:"date_order,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	Name              *String   `xmlrpc:"name,omitempty"`
-	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty"`
-	PriceSubtotal     *Float    `xmlrpc:"price_subtotal,omitempty"`
-	PriceTotal        *Float    `xmlrpc:"price_total,omitempty"`
-	PricelistId       *Many2One `xmlrpc:"pricelist_id,omitempty"`
-	ProductId         *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductQty        *Float    `xmlrpc:"product_qty,omitempty"`
-	ProductTmplId     *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	TeamId            *Many2One `xmlrpc:"team_id,omitempty"`
-	UserId            *Many2One `xmlrpc:"user_id,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AnalyticAccountId *Many2One `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	CategId           *Many2One `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId         *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	DateOrder         *Time     `xmlrpc:"date_order,omitempty" json:"date_order,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name              *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PriceSubtotal     *Float    `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
+	PriceTotal        *Float    `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
+	PricelistId       *Many2One `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
+	ProductId         *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductQty        *Float    `xmlrpc:"product_qty,omitempty" json:"product_qty,omitempty"`
+	ProductTmplId     *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	TeamId            *Many2One `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UserId            *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // ReportAllChannelsSaless represents array of report.all.channels.sales model.

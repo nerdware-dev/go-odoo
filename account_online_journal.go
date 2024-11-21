@@ -2,24 +2,24 @@ package odoo
 
 // AccountOnlineJournal represents account.online.journal model.
 type AccountOnlineJournal struct {
-	LastUpdate                         *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountNumber                      *String   `xmlrpc:"account_number,omitempty"`
-	AccountOnlineProviderId            *Many2One `xmlrpc:"account_online_provider_id,omitempty"`
-	Balance                            *Float    `xmlrpc:"balance,omitempty"`
-	CreateDate                         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                        *String   `xmlrpc:"display_name,omitempty"`
-	Id                                 *Int      `xmlrpc:"id,omitempty"`
-	JournalIds                         *Relation `xmlrpc:"journal_ids,omitempty"`
-	LastSync                           *Time     `xmlrpc:"last_sync,omitempty"`
-	Name                               *String   `xmlrpc:"name,omitempty"`
-	OnlineIdentifier                   *String   `xmlrpc:"online_identifier,omitempty"`
-	PontoLastSynchronizationIdentifier *String   `xmlrpc:"ponto_last_synchronization_identifier,omitempty"`
-	ProviderName                       *String   `xmlrpc:"provider_name,omitempty"`
-	WriteDate                          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                           *Many2One `xmlrpc:"write_uid,omitempty"`
-	YodleeAccountStatus                *String   `xmlrpc:"yodlee_account_status,omitempty"`
-	YodleeStatusCode                   *Int      `xmlrpc:"yodlee_status_code,omitempty"`
+	LastUpdate                         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountNumber                      *String   `xmlrpc:"account_number,omitempty" json:"account_number,omitempty"`
+	AccountOnlineProviderId            *Many2One `xmlrpc:"account_online_provider_id,omitempty" json:"account_online_provider_id,omitempty"`
+	Balance                            *Float    `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CreateDate                         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalIds                         *Relation `xmlrpc:"journal_ids,omitempty" json:"journal_ids,omitempty"`
+	LastSync                           *Time     `xmlrpc:"last_sync,omitempty" json:"last_sync,omitempty"`
+	Name                               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OnlineIdentifier                   *String   `xmlrpc:"online_identifier,omitempty" json:"online_identifier,omitempty"`
+	PontoLastSynchronizationIdentifier *String   `xmlrpc:"ponto_last_synchronization_identifier,omitempty" json:"ponto_last_synchronization_identifier,omitempty"`
+	ProviderName                       *String   `xmlrpc:"provider_name,omitempty" json:"provider_name,omitempty"`
+	WriteDate                          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	YodleeAccountStatus                *String   `xmlrpc:"yodlee_account_status,omitempty" json:"yodlee_account_status,omitempty"`
+	YodleeStatusCode                   *Int      `xmlrpc:"yodlee_status_code,omitempty" json:"yodlee_status_code,omitempty"`
 }
 
 // AccountOnlineJournals represents array of account.online.journal model.

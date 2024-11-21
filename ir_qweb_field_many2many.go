@@ -2,9 +2,9 @@ package odoo
 
 // IrQwebFieldMany2Many represents ir.qweb.field.many2many model.
 type IrQwebFieldMany2Many struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // IrQwebFieldMany2Manys represents array of ir.qweb.field.many2many model.

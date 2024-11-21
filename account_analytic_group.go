@@ -2,20 +2,20 @@ package odoo
 
 // AccountAnalyticGroup represents account.analytic.group model.
 type AccountAnalyticGroup struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	ChildrenIds  *Relation `xmlrpc:"children_ids,omitempty"`
-	CompanyId    *Many2One `xmlrpc:"company_id,omitempty"`
-	CompleteName *String   `xmlrpc:"complete_name,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description  *String   `xmlrpc:"description,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	ParentId     *Many2One `xmlrpc:"parent_id,omitempty"`
-	ParentPath   *String   `xmlrpc:"parent_path,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChildrenIds  *Relation `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
+	CompanyId    *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompleteName *String   `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description  *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId     *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath   *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticGroups represents array of account.analytic.group model.

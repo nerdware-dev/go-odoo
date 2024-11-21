@@ -2,9 +2,9 @@ package odoo
 
 // ReportAccountBatchPaymentPrintBatchPayment represents report.account_batch_payment.print_batch_payment model.
 type ReportAccountBatchPaymentPrintBatchPayment struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // ReportAccountBatchPaymentPrintBatchPayments represents array of report.account_batch_payment.print_batch_payment model.

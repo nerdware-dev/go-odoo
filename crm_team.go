@@ -2,63 +2,63 @@ package odoo
 
 // CrmTeam represents crm.team model.
 type CrmTeam struct {
-	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                     *Bool      `xmlrpc:"active,omitempty"`
-	AliasContact               *Selection `xmlrpc:"alias_contact,omitempty"`
-	AliasDefaults              *String    `xmlrpc:"alias_defaults,omitempty"`
-	AliasDomain                *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasForceThreadId         *Int       `xmlrpc:"alias_force_thread_id,omitempty"`
-	AliasId                    *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasModelId               *Many2One  `xmlrpc:"alias_model_id,omitempty"`
-	AliasName                  *String    `xmlrpc:"alias_name,omitempty"`
-	AliasParentModelId         *Many2One  `xmlrpc:"alias_parent_model_id,omitempty"`
-	AliasParentThreadId        *Int       `xmlrpc:"alias_parent_thread_id,omitempty"`
-	AliasUserId                *Many2One  `xmlrpc:"alias_user_id,omitempty"`
-	Color                      *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                 *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DashboardButtonName        *String    `xmlrpc:"dashboard_button_name,omitempty"`
-	DashboardGraphData         *String    `xmlrpc:"dashboard_graph_data,omitempty"`
-	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
-	FavoriteUserIds            *Relation  `xmlrpc:"favorite_user_ids,omitempty"`
-	Id                         *Int       `xmlrpc:"id,omitempty"`
-	Invoiced                   *Int       `xmlrpc:"invoiced,omitempty"`
-	InvoicedTarget             *Int       `xmlrpc:"invoiced_target,omitempty"`
-	IsFavorite                 *Bool      `xmlrpc:"is_favorite,omitempty"`
-	MemberIds                  *Relation  `xmlrpc:"member_ids,omitempty"`
-	MessageAttachmentCount     *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds          *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError            *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter     *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError         *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId    *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread              *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter       *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                       *String    `xmlrpc:"name,omitempty"`
-	OpportunitiesAmount        *Int       `xmlrpc:"opportunities_amount,omitempty"`
-	OpportunitiesCount         *Int       `xmlrpc:"opportunities_count,omitempty"`
-	OverdueOpportunitiesAmount *Int       `xmlrpc:"overdue_opportunities_amount,omitempty"`
-	OverdueOpportunitiesCount  *Int       `xmlrpc:"overdue_opportunities_count,omitempty"`
-	QuotationsAmount           *Int       `xmlrpc:"quotations_amount,omitempty"`
-	QuotationsCount            *Int       `xmlrpc:"quotations_count,omitempty"`
-	SalesToInvoiceCount        *Int       `xmlrpc:"sales_to_invoice_count,omitempty"`
-	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
-	UnassignedLeadsCount       *Int       `xmlrpc:"unassigned_leads_count,omitempty"`
-	UseLeads                   *Bool      `xmlrpc:"use_leads,omitempty"`
-	UseOpportunities           *Bool      `xmlrpc:"use_opportunities,omitempty"`
-	UseQuotations              *Bool      `xmlrpc:"use_quotations,omitempty"`
-	UserId                     *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                     *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AliasContact               *Selection `xmlrpc:"alias_contact,omitempty" json:"alias_contact,omitempty"`
+	AliasDefaults              *String    `xmlrpc:"alias_defaults,omitempty" json:"alias_defaults,omitempty"`
+	AliasDomain                *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasForceThreadId         *Int       `xmlrpc:"alias_force_thread_id,omitempty" json:"alias_force_thread_id,omitempty"`
+	AliasId                    *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasModelId               *Many2One  `xmlrpc:"alias_model_id,omitempty" json:"alias_model_id,omitempty"`
+	AliasName                  *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AliasParentModelId         *Many2One  `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
+	AliasParentThreadId        *Int       `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
+	AliasUserId                *Many2One  `xmlrpc:"alias_user_id,omitempty" json:"alias_user_id,omitempty"`
+	Color                      *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                 *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DashboardButtonName        *String    `xmlrpc:"dashboard_button_name,omitempty" json:"dashboard_button_name,omitempty"`
+	DashboardGraphData         *String    `xmlrpc:"dashboard_graph_data,omitempty" json:"dashboard_graph_data,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FavoriteUserIds            *Relation  `xmlrpc:"favorite_user_ids,omitempty" json:"favorite_user_ids,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Invoiced                   *Int       `xmlrpc:"invoiced,omitempty" json:"invoiced,omitempty"`
+	InvoicedTarget             *Int       `xmlrpc:"invoiced_target,omitempty" json:"invoiced_target,omitempty"`
+	IsFavorite                 *Bool      `xmlrpc:"is_favorite,omitempty" json:"is_favorite,omitempty"`
+	MemberIds                  *Relation  `xmlrpc:"member_ids,omitempty" json:"member_ids,omitempty"`
+	MessageAttachmentCount     *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds          *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError            *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter     *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError         *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId    *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread              *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter       *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                       *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OpportunitiesAmount        *Int       `xmlrpc:"opportunities_amount,omitempty" json:"opportunities_amount,omitempty"`
+	OpportunitiesCount         *Int       `xmlrpc:"opportunities_count,omitempty" json:"opportunities_count,omitempty"`
+	OverdueOpportunitiesAmount *Int       `xmlrpc:"overdue_opportunities_amount,omitempty" json:"overdue_opportunities_amount,omitempty"`
+	OverdueOpportunitiesCount  *Int       `xmlrpc:"overdue_opportunities_count,omitempty" json:"overdue_opportunities_count,omitempty"`
+	QuotationsAmount           *Int       `xmlrpc:"quotations_amount,omitempty" json:"quotations_amount,omitempty"`
+	QuotationsCount            *Int       `xmlrpc:"quotations_count,omitempty" json:"quotations_count,omitempty"`
+	SalesToInvoiceCount        *Int       `xmlrpc:"sales_to_invoice_count,omitempty" json:"sales_to_invoice_count,omitempty"`
+	Sequence                   *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	UnassignedLeadsCount       *Int       `xmlrpc:"unassigned_leads_count,omitempty" json:"unassigned_leads_count,omitempty"`
+	UseLeads                   *Bool      `xmlrpc:"use_leads,omitempty" json:"use_leads,omitempty"`
+	UseOpportunities           *Bool      `xmlrpc:"use_opportunities,omitempty" json:"use_opportunities,omitempty"`
+	UseQuotations              *Bool      `xmlrpc:"use_quotations,omitempty" json:"use_quotations,omitempty"`
+	UserId                     *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmTeams represents array of crm.team model.

@@ -2,19 +2,19 @@ package odoo
 
 // ProductPriceList represents product.price_list model.
 type ProductPriceList struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PriceList   *Many2One `xmlrpc:"price_list,omitempty"`
-	Qty1        *Int      `xmlrpc:"qty1,omitempty"`
-	Qty2        *Int      `xmlrpc:"qty2,omitempty"`
-	Qty3        *Int      `xmlrpc:"qty3,omitempty"`
-	Qty4        *Int      `xmlrpc:"qty4,omitempty"`
-	Qty5        *Int      `xmlrpc:"qty5,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PriceList   *Many2One `xmlrpc:"price_list,omitempty" json:"price_list,omitempty"`
+	Qty1        *Int      `xmlrpc:"qty1,omitempty" json:"qty1,omitempty"`
+	Qty2        *Int      `xmlrpc:"qty2,omitempty" json:"qty2,omitempty"`
+	Qty3        *Int      `xmlrpc:"qty3,omitempty" json:"qty3,omitempty"`
+	Qty4        *Int      `xmlrpc:"qty4,omitempty" json:"qty4,omitempty"`
+	Qty5        *Int      `xmlrpc:"qty5,omitempty" json:"qty5,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductPriceLists represents array of product.price_list model.

@@ -2,16 +2,16 @@ package odoo
 
 // HrExpenseRefuseWizard represents hr.expense.refuse.wizard model.
 type HrExpenseRefuseWizard struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	HrExpenseIds     *Relation `xmlrpc:"hr_expense_ids,omitempty"`
-	HrExpenseSheetId *Many2One `xmlrpc:"hr_expense_sheet_id,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Reason           *String   `xmlrpc:"reason,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HrExpenseIds     *Relation `xmlrpc:"hr_expense_ids,omitempty" json:"hr_expense_ids,omitempty"`
+	HrExpenseSheetId *Many2One `xmlrpc:"hr_expense_sheet_id,omitempty" json:"hr_expense_sheet_id,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Reason           *String   `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrExpenseRefuseWizards represents array of hr.expense.refuse.wizard model.

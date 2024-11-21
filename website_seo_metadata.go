@@ -2,14 +2,14 @@ package odoo
 
 // WebsiteSeoMetadata represents website.seo.metadata model.
 type WebsiteSeoMetadata struct {
-	LastUpdate             *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName            *String `xmlrpc:"display_name,omitempty"`
-	Id                     *Int    `xmlrpc:"id,omitempty"`
-	IsSeoOptimized         *Bool   `xmlrpc:"is_seo_optimized,omitempty"`
-	WebsiteMetaDescription *String `xmlrpc:"website_meta_description,omitempty"`
-	WebsiteMetaKeywords    *String `xmlrpc:"website_meta_keywords,omitempty"`
-	WebsiteMetaOgImg       *String `xmlrpc:"website_meta_og_img,omitempty"`
-	WebsiteMetaTitle       *String `xmlrpc:"website_meta_title,omitempty"`
+	LastUpdate             *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName            *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSeoOptimized         *Bool   `xmlrpc:"is_seo_optimized,omitempty" json:"is_seo_optimized,omitempty"`
+	WebsiteMetaDescription *String `xmlrpc:"website_meta_description,omitempty" json:"website_meta_description,omitempty"`
+	WebsiteMetaKeywords    *String `xmlrpc:"website_meta_keywords,omitempty" json:"website_meta_keywords,omitempty"`
+	WebsiteMetaOgImg       *String `xmlrpc:"website_meta_og_img,omitempty" json:"website_meta_og_img,omitempty"`
+	WebsiteMetaTitle       *String `xmlrpc:"website_meta_title,omitempty" json:"website_meta_title,omitempty"`
 }
 
 // WebsiteSeoMetadatas represents array of website.seo.metadata model.

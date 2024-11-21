@@ -2,20 +2,20 @@ package odoo
 
 // AccountAccountTag represents account.account.tag model.
 type AccountAccountTag struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	Active           *Bool      `xmlrpc:"active,omitempty"`
-	Applicability    *Selection `xmlrpc:"applicability,omitempty"`
-	Color            *Int       `xmlrpc:"color,omitempty"`
-	CountryId        *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	TaxNegate        *Bool      `xmlrpc:"tax_negate,omitempty"`
-	TaxReportLineIds *Relation  `xmlrpc:"tax_report_line_ids,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active           *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Applicability    *Selection `xmlrpc:"applicability,omitempty" json:"applicability,omitempty"`
+	Color            *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CountryId        *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	TaxNegate        *Bool      `xmlrpc:"tax_negate,omitempty" json:"tax_negate,omitempty"`
+	TaxReportLineIds *Relation  `xmlrpc:"tax_report_line_ids,omitempty" json:"tax_report_line_ids,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccountTags represents array of account.account.tag model.

@@ -2,31 +2,31 @@ package odoo
 
 // MarketingTrace represents marketing.trace model.
 type MarketingTrace struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityId      *Many2One  `xmlrpc:"activity_id,omitempty"`
-	ActivityType    *Selection `xmlrpc:"activity_type,omitempty"`
-	Bounced         *Time      `xmlrpc:"bounced,omitempty"`
-	ChildIds        *Relation  `xmlrpc:"child_ids,omitempty"`
-	Clicked         *Time      `xmlrpc:"clicked,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Exception       *Time      `xmlrpc:"exception,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	IsTest          *Bool      `xmlrpc:"is_test,omitempty"`
-	MailingTraceIds *Relation  `xmlrpc:"mailing_trace_ids,omitempty"`
-	Opened          *Time      `xmlrpc:"opened,omitempty"`
-	ParentId        *Many2One  `xmlrpc:"parent_id,omitempty"`
-	ParticipantId   *Many2One  `xmlrpc:"participant_id,omitempty"`
-	Replied         *Time      `xmlrpc:"replied,omitempty"`
-	ResId           *Int       `xmlrpc:"res_id,omitempty"`
-	ScheduleDate    *Time      `xmlrpc:"schedule_date,omitempty"`
-	Sent            *Time      `xmlrpc:"sent,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
-	StateMsg        *String    `xmlrpc:"state_msg,omitempty"`
-	TriggerType     *Selection `xmlrpc:"trigger_type,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActivityId      *Many2One  `xmlrpc:"activity_id,omitempty" json:"activity_id,omitempty"`
+	ActivityType    *Selection `xmlrpc:"activity_type,omitempty" json:"activity_type,omitempty"`
+	Bounced         *Time      `xmlrpc:"bounced,omitempty" json:"bounced,omitempty"`
+	ChildIds        *Relation  `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	Clicked         *Time      `xmlrpc:"clicked,omitempty" json:"clicked,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Exception       *Time      `xmlrpc:"exception,omitempty" json:"exception,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTest          *Bool      `xmlrpc:"is_test,omitempty" json:"is_test,omitempty"`
+	MailingTraceIds *Relation  `xmlrpc:"mailing_trace_ids,omitempty" json:"mailing_trace_ids,omitempty"`
+	Opened          *Time      `xmlrpc:"opened,omitempty" json:"opened,omitempty"`
+	ParentId        *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParticipantId   *Many2One  `xmlrpc:"participant_id,omitempty" json:"participant_id,omitempty"`
+	Replied         *Time      `xmlrpc:"replied,omitempty" json:"replied,omitempty"`
+	ResId           *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ScheduleDate    *Time      `xmlrpc:"schedule_date,omitempty" json:"schedule_date,omitempty"`
+	Sent            *Time      `xmlrpc:"sent,omitempty" json:"sent,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StateMsg        *String    `xmlrpc:"state_msg,omitempty" json:"state_msg,omitempty"`
+	TriggerType     *Selection `xmlrpc:"trigger_type,omitempty" json:"trigger_type,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MarketingTraces represents array of marketing.trace model.

@@ -2,79 +2,79 @@ package odoo
 
 // HelpdeskTeam represents helpdesk.team model.
 type HelpdeskTeam struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                       *Bool      `xmlrpc:"active,omitempty"`
-	AliasContact                 *Selection `xmlrpc:"alias_contact,omitempty"`
-	AliasDefaults                *String    `xmlrpc:"alias_defaults,omitempty"`
-	AliasDomain                  *String    `xmlrpc:"alias_domain,omitempty"`
-	AliasForceThreadId           *Int       `xmlrpc:"alias_force_thread_id,omitempty"`
-	AliasId                      *Many2One  `xmlrpc:"alias_id,omitempty"`
-	AliasModelId                 *Many2One  `xmlrpc:"alias_model_id,omitempty"`
-	AliasName                    *String    `xmlrpc:"alias_name,omitempty"`
-	AliasParentModelId           *Many2One  `xmlrpc:"alias_parent_model_id,omitempty"`
-	AliasParentThreadId          *Int       `xmlrpc:"alias_parent_thread_id,omitempty"`
-	AliasUserId                  *Many2One  `xmlrpc:"alias_user_id,omitempty"`
-	AllowPortalTicketClosing     *Bool      `xmlrpc:"allow_portal_ticket_closing,omitempty"`
-	AssignMethod                 *Selection `xmlrpc:"assign_method,omitempty"`
-	CanPublish                   *Bool      `xmlrpc:"can_publish,omitempty"`
-	Color                        *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description                  *String    `xmlrpc:"description,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	FeatureFormUrl               *String    `xmlrpc:"feature_form_url,omitempty"`
-	ForumId                      *Many2One  `xmlrpc:"forum_id,omitempty"`
-	ForumUrl                     *String    `xmlrpc:"forum_url,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	IsPublished                  *Bool      `xmlrpc:"is_published,omitempty"`
-	MemberIds                    *Relation  `xmlrpc:"member_ids,omitempty"`
-	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds            *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId      *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread                *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter         *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	PortalRatingUrl              *String    `xmlrpc:"portal_rating_url,omitempty"`
-	PortalShowRating             *Bool      `xmlrpc:"portal_show_rating,omitempty"`
-	ProjectId                    *Many2One  `xmlrpc:"project_id,omitempty"`
-	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty"`
-	RatingPercentageSatisfaction *Int       `xmlrpc:"rating_percentage_satisfaction,omitempty"`
-	ResourceCalendarId           *Many2One  `xmlrpc:"resource_calendar_id,omitempty"`
-	Sequence                     *Int       `xmlrpc:"sequence,omitempty"`
-	StageIds                     *Relation  `xmlrpc:"stage_ids,omitempty"`
-	TicketIds                    *Relation  `xmlrpc:"ticket_ids,omitempty"`
-	UnassignedTickets            *Int       `xmlrpc:"unassigned_tickets,omitempty"`
-	UpcomingSlaFailTickets       *Int       `xmlrpc:"upcoming_sla_fail_tickets,omitempty"`
-	UseAlias                     *Bool      `xmlrpc:"use_alias,omitempty"`
-	UseApi                       *Bool      `xmlrpc:"use_api,omitempty"`
-	UseCoupons                   *Bool      `xmlrpc:"use_coupons,omitempty"`
-	UseCreditNotes               *Bool      `xmlrpc:"use_credit_notes,omitempty"`
-	UseHelpdeskSaleTimesheet     *Bool      `xmlrpc:"use_helpdesk_sale_timesheet,omitempty"`
-	UseHelpdeskTimesheet         *Bool      `xmlrpc:"use_helpdesk_timesheet,omitempty"`
-	UseProductRepairs            *Bool      `xmlrpc:"use_product_repairs,omitempty"`
-	UseProductReturns            *Bool      `xmlrpc:"use_product_returns,omitempty"`
-	UseRating                    *Bool      `xmlrpc:"use_rating,omitempty"`
-	UseSla                       *Bool      `xmlrpc:"use_sla,omitempty"`
-	UseTwitter                   *Bool      `xmlrpc:"use_twitter,omitempty"`
-	UseWebsiteHelpdeskForm       *Bool      `xmlrpc:"use_website_helpdesk_form,omitempty"`
-	UseWebsiteHelpdeskForum      *Bool      `xmlrpc:"use_website_helpdesk_forum,omitempty"`
-	UseWebsiteHelpdeskLivechat   *Bool      `xmlrpc:"use_website_helpdesk_livechat,omitempty"`
-	UseWebsiteHelpdeskSlides     *Bool      `xmlrpc:"use_website_helpdesk_slides,omitempty"`
-	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WebsitePublished             *Bool      `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl                   *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                       *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AliasContact                 *Selection `xmlrpc:"alias_contact,omitempty" json:"alias_contact,omitempty"`
+	AliasDefaults                *String    `xmlrpc:"alias_defaults,omitempty" json:"alias_defaults,omitempty"`
+	AliasDomain                  *String    `xmlrpc:"alias_domain,omitempty" json:"alias_domain,omitempty"`
+	AliasForceThreadId           *Int       `xmlrpc:"alias_force_thread_id,omitempty" json:"alias_force_thread_id,omitempty"`
+	AliasId                      *Many2One  `xmlrpc:"alias_id,omitempty" json:"alias_id,omitempty"`
+	AliasModelId                 *Many2One  `xmlrpc:"alias_model_id,omitempty" json:"alias_model_id,omitempty"`
+	AliasName                    *String    `xmlrpc:"alias_name,omitempty" json:"alias_name,omitempty"`
+	AliasParentModelId           *Many2One  `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
+	AliasParentThreadId          *Int       `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
+	AliasUserId                  *Many2One  `xmlrpc:"alias_user_id,omitempty" json:"alias_user_id,omitempty"`
+	AllowPortalTicketClosing     *Bool      `xmlrpc:"allow_portal_ticket_closing,omitempty" json:"allow_portal_ticket_closing,omitempty"`
+	AssignMethod                 *Selection `xmlrpc:"assign_method,omitempty" json:"assign_method,omitempty"`
+	CanPublish                   *Bool      `xmlrpc:"can_publish,omitempty" json:"can_publish,omitempty"`
+	Color                        *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description                  *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FeatureFormUrl               *String    `xmlrpc:"feature_form_url,omitempty" json:"feature_form_url,omitempty"`
+	ForumId                      *Many2One  `xmlrpc:"forum_id,omitempty" json:"forum_id,omitempty"`
+	ForumUrl                     *String    `xmlrpc:"forum_url,omitempty" json:"forum_url,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPublished                  *Bool      `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	MemberIds                    *Relation  `xmlrpc:"member_ids,omitempty" json:"member_ids,omitempty"`
+	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds            *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId      *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread                *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter         *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PortalRatingUrl              *String    `xmlrpc:"portal_rating_url,omitempty" json:"portal_rating_url,omitempty"`
+	PortalShowRating             *Bool      `xmlrpc:"portal_show_rating,omitempty" json:"portal_show_rating,omitempty"`
+	ProjectId                    *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RatingPercentageSatisfaction *Int       `xmlrpc:"rating_percentage_satisfaction,omitempty" json:"rating_percentage_satisfaction,omitempty"`
+	ResourceCalendarId           *Many2One  `xmlrpc:"resource_calendar_id,omitempty" json:"resource_calendar_id,omitempty"`
+	Sequence                     *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StageIds                     *Relation  `xmlrpc:"stage_ids,omitempty" json:"stage_ids,omitempty"`
+	TicketIds                    *Relation  `xmlrpc:"ticket_ids,omitempty" json:"ticket_ids,omitempty"`
+	UnassignedTickets            *Int       `xmlrpc:"unassigned_tickets,omitempty" json:"unassigned_tickets,omitempty"`
+	UpcomingSlaFailTickets       *Int       `xmlrpc:"upcoming_sla_fail_tickets,omitempty" json:"upcoming_sla_fail_tickets,omitempty"`
+	UseAlias                     *Bool      `xmlrpc:"use_alias,omitempty" json:"use_alias,omitempty"`
+	UseApi                       *Bool      `xmlrpc:"use_api,omitempty" json:"use_api,omitempty"`
+	UseCoupons                   *Bool      `xmlrpc:"use_coupons,omitempty" json:"use_coupons,omitempty"`
+	UseCreditNotes               *Bool      `xmlrpc:"use_credit_notes,omitempty" json:"use_credit_notes,omitempty"`
+	UseHelpdeskSaleTimesheet     *Bool      `xmlrpc:"use_helpdesk_sale_timesheet,omitempty" json:"use_helpdesk_sale_timesheet,omitempty"`
+	UseHelpdeskTimesheet         *Bool      `xmlrpc:"use_helpdesk_timesheet,omitempty" json:"use_helpdesk_timesheet,omitempty"`
+	UseProductRepairs            *Bool      `xmlrpc:"use_product_repairs,omitempty" json:"use_product_repairs,omitempty"`
+	UseProductReturns            *Bool      `xmlrpc:"use_product_returns,omitempty" json:"use_product_returns,omitempty"`
+	UseRating                    *Bool      `xmlrpc:"use_rating,omitempty" json:"use_rating,omitempty"`
+	UseSla                       *Bool      `xmlrpc:"use_sla,omitempty" json:"use_sla,omitempty"`
+	UseTwitter                   *Bool      `xmlrpc:"use_twitter,omitempty" json:"use_twitter,omitempty"`
+	UseWebsiteHelpdeskForm       *Bool      `xmlrpc:"use_website_helpdesk_form,omitempty" json:"use_website_helpdesk_form,omitempty"`
+	UseWebsiteHelpdeskForum      *Bool      `xmlrpc:"use_website_helpdesk_forum,omitempty" json:"use_website_helpdesk_forum,omitempty"`
+	UseWebsiteHelpdeskLivechat   *Bool      `xmlrpc:"use_website_helpdesk_livechat,omitempty" json:"use_website_helpdesk_livechat,omitempty"`
+	UseWebsiteHelpdeskSlides     *Bool      `xmlrpc:"use_website_helpdesk_slides,omitempty" json:"use_website_helpdesk_slides,omitempty"`
+	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WebsitePublished             *Bool      `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	WebsiteUrl                   *String    `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HelpdeskTeams represents array of helpdesk.team model.

@@ -2,32 +2,32 @@ package odoo
 
 // AccountSetupBankManualConfig represents account.setup.bank.manual.config model.
 type AccountSetupBankManualConfig struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	AccHolderName             *String    `xmlrpc:"acc_holder_name,omitempty"`
-	AccNumber                 *String    `xmlrpc:"acc_number,omitempty"`
-	AccType                   *Selection `xmlrpc:"acc_type,omitempty"`
-	BankBic                   *String    `xmlrpc:"bank_bic,omitempty"`
-	BankId                    *Many2One  `xmlrpc:"bank_id,omitempty"`
-	BankName                  *String    `xmlrpc:"bank_name,omitempty"`
-	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	JournalId                 *Relation  `xmlrpc:"journal_id,omitempty"`
-	LinkedJournalId           *Many2One  `xmlrpc:"linked_journal_id,omitempty"`
-	NewJournalCode            *String    `xmlrpc:"new_journal_code,omitempty"`
-	NewJournalName            *String    `xmlrpc:"new_journal_name,omitempty"`
-	NumJournalsWithoutAccount *Int       `xmlrpc:"num_journals_without_account,omitempty"`
-	PartnerId                 *Many2One  `xmlrpc:"partner_id,omitempty"`
-	QrCodeValid               *Bool      `xmlrpc:"qr_code_valid,omitempty"`
-	RelatedAccType            *Selection `xmlrpc:"related_acc_type,omitempty"`
-	ResPartnerBankId          *Many2One  `xmlrpc:"res_partner_bank_id,omitempty"`
-	SanitizedAccNumber        *String    `xmlrpc:"sanitized_acc_number,omitempty"`
-	Sequence                  *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccHolderName             *String    `xmlrpc:"acc_holder_name,omitempty" json:"acc_holder_name,omitempty"`
+	AccNumber                 *String    `xmlrpc:"acc_number,omitempty" json:"acc_number,omitempty"`
+	AccType                   *Selection `xmlrpc:"acc_type,omitempty" json:"acc_type,omitempty"`
+	BankBic                   *String    `xmlrpc:"bank_bic,omitempty" json:"bank_bic,omitempty"`
+	BankId                    *Many2One  `xmlrpc:"bank_id,omitempty" json:"bank_id,omitempty"`
+	BankName                  *String    `xmlrpc:"bank_name,omitempty" json:"bank_name,omitempty"`
+	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                 *Relation  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LinkedJournalId           *Many2One  `xmlrpc:"linked_journal_id,omitempty" json:"linked_journal_id,omitempty"`
+	NewJournalCode            *String    `xmlrpc:"new_journal_code,omitempty" json:"new_journal_code,omitempty"`
+	NewJournalName            *String    `xmlrpc:"new_journal_name,omitempty" json:"new_journal_name,omitempty"`
+	NumJournalsWithoutAccount *Int       `xmlrpc:"num_journals_without_account,omitempty" json:"num_journals_without_account,omitempty"`
+	PartnerId                 *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	QrCodeValid               *Bool      `xmlrpc:"qr_code_valid,omitempty" json:"qr_code_valid,omitempty"`
+	RelatedAccType            *Selection `xmlrpc:"related_acc_type,omitempty" json:"related_acc_type,omitempty"`
+	ResPartnerBankId          *Many2One  `xmlrpc:"res_partner_bank_id,omitempty" json:"res_partner_bank_id,omitempty"`
+	SanitizedAccNumber        *String    `xmlrpc:"sanitized_acc_number,omitempty" json:"sanitized_acc_number,omitempty"`
+	Sequence                  *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountSetupBankManualConfigs represents array of account.setup.bank.manual.config model.

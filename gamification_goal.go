@@ -2,31 +2,32 @@ package odoo
 
 // GamificationGoal represents gamification.goal model.
 type GamificationGoal struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	ChallengeId           *Many2One  `xmlrpc:"challenge_id,omitempty"`
-	Closed                *Bool      `xmlrpc:"closed,omitempty"`
-	Completeness          *Float     `xmlrpc:"completeness,omitempty"`
-	ComputationMode       *Selection `xmlrpc:"computation_mode,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Current               *Float     `xmlrpc:"current,omitempty"`
-	DefinitionCondition   *Selection `xmlrpc:"definition_condition,omitempty"`
-	DefinitionDescription *String    `xmlrpc:"definition_description,omitempty"`
-	DefinitionDisplay     *Selection `xmlrpc:"definition_display,omitempty"`
-	DefinitionId          *Many2One  `xmlrpc:"definition_id,omitempty"`
-	DefinitionSuffix      *String    `xmlrpc:"definition_suffix,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	EndDate               *Time      `xmlrpc:"end_date,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	LineId                *Many2One  `xmlrpc:"line_id,omitempty"`
-	RemindUpdateDelay     *Int       `xmlrpc:"remind_update_delay,omitempty"`
-	StartDate             *Time      `xmlrpc:"start_date,omitempty"`
-	State                 *Selection `xmlrpc:"state,omitempty"`
-	TargetGoal            *Float     `xmlrpc:"target_goal,omitempty"`
-	ToUpdate              *Bool      `xmlrpc:"to_update,omitempty"`
-	UserId                *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ChallengeId           *Many2One  `xmlrpc:"challenge_id,omitempty" json:"challenge_id,omitempty"`
+	Closed                *Bool      `xmlrpc:"closed,omitempty" json:"closed,omitempty"`
+	Completeness          *Float     `xmlrpc:"completeness,omitempty" json:"completeness,omitempty"`
+	ComputationMode       *Selection `xmlrpc:"computation_mode,omitempty" json:"computation_mode,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Current               *Float     `xmlrpc:"current,omitempty" json:"current,omitempty"`
+	DefinitionCondition   *Selection `xmlrpc:"definition_condition,omitempty" json:"definition_condition,omitempty"`
+	DefinitionDescription *String    `xmlrpc:"definition_description,omitempty" json:"definition_description,omitempty"`
+	DefinitionDisplay     *Selection `xmlrpc:"definition_display,omitempty" json:"definition_display,omitempty"`
+	DefinitionId          *Many2One  `xmlrpc:"definition_id,omitempty" json:"definition_id,omitempty"`
+	DefinitionSuffix      *String    `xmlrpc:"definition_suffix,omitempty" json:"definition_suffix,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndDate               *Time      `xmlrpc:"end_date,omitempty" json:"end_date,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LastUpdate            *Time      `xmlrpc:"last_update,omitempty" json:"last_update,omitempty"`
+	LineId                *Many2One  `xmlrpc:"line_id,omitempty" json:"line_id,omitempty"`
+	RemindUpdateDelay     *Int       `xmlrpc:"remind_update_delay,omitempty" json:"remind_update_delay,omitempty"`
+	StartDate             *Time      `xmlrpc:"start_date,omitempty" json:"start_date,omitempty"`
+	State                 *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TargetGoal            *Float     `xmlrpc:"target_goal,omitempty" json:"target_goal,omitempty"`
+	ToUpdate              *Bool      `xmlrpc:"to_update,omitempty" json:"to_update,omitempty"`
+	UserId                *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationGoals represents array of gamification.goal model.

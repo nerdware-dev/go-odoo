@@ -2,28 +2,28 @@ package odoo
 
 // RentalOrderWizardLine represents rental.order.wizard.line model.
 type RentalOrderWizardLine struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	IsLate              *Bool      `xmlrpc:"is_late,omitempty"`
-	IsProductStorable   *Bool      `xmlrpc:"is_product_storable,omitempty"`
-	OrderLineId         *Many2One  `xmlrpc:"order_line_id,omitempty"`
-	PickeableLotIds     *Relation  `xmlrpc:"pickeable_lot_ids,omitempty"`
-	PickedupLotIds      *Relation  `xmlrpc:"pickedup_lot_ids,omitempty"`
-	ProductId           *Many2One  `xmlrpc:"product_id,omitempty"`
-	QtyAvailable        *Float     `xmlrpc:"qty_available,omitempty"`
-	QtyDelivered        *Float     `xmlrpc:"qty_delivered,omitempty"`
-	QtyReserved         *Float     `xmlrpc:"qty_reserved,omitempty"`
-	QtyReturned         *Float     `xmlrpc:"qty_returned,omitempty"`
-	RentalOrderWizardId *Many2One  `xmlrpc:"rental_order_wizard_id,omitempty"`
-	ReturnableLotIds    *Relation  `xmlrpc:"returnable_lot_ids,omitempty"`
-	ReturnedLotIds      *Relation  `xmlrpc:"returned_lot_ids,omitempty"`
-	Status              *Selection `xmlrpc:"status,omitempty"`
-	Tracking            *Selection `xmlrpc:"tracking,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsLate              *Bool      `xmlrpc:"is_late,omitempty" json:"is_late,omitempty"`
+	IsProductStorable   *Bool      `xmlrpc:"is_product_storable,omitempty" json:"is_product_storable,omitempty"`
+	OrderLineId         *Many2One  `xmlrpc:"order_line_id,omitempty" json:"order_line_id,omitempty"`
+	PickeableLotIds     *Relation  `xmlrpc:"pickeable_lot_ids,omitempty" json:"pickeable_lot_ids,omitempty"`
+	PickedupLotIds      *Relation  `xmlrpc:"pickedup_lot_ids,omitempty" json:"pickedup_lot_ids,omitempty"`
+	ProductId           *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	QtyAvailable        *Float     `xmlrpc:"qty_available,omitempty" json:"qty_available,omitempty"`
+	QtyDelivered        *Float     `xmlrpc:"qty_delivered,omitempty" json:"qty_delivered,omitempty"`
+	QtyReserved         *Float     `xmlrpc:"qty_reserved,omitempty" json:"qty_reserved,omitempty"`
+	QtyReturned         *Float     `xmlrpc:"qty_returned,omitempty" json:"qty_returned,omitempty"`
+	RentalOrderWizardId *Many2One  `xmlrpc:"rental_order_wizard_id,omitempty" json:"rental_order_wizard_id,omitempty"`
+	ReturnableLotIds    *Relation  `xmlrpc:"returnable_lot_ids,omitempty" json:"returnable_lot_ids,omitempty"`
+	ReturnedLotIds      *Relation  `xmlrpc:"returned_lot_ids,omitempty" json:"returned_lot_ids,omitempty"`
+	Status              *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
+	Tracking            *Selection `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // RentalOrderWizardLines represents array of rental.order.wizard.line model.

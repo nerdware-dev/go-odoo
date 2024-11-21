@@ -2,16 +2,16 @@ package odoo
 
 // TimesheetValidationLine represents timesheet.validation.line model.
 type TimesheetValidationLine struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId   *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Validate     *Bool     `xmlrpc:"validate,omitempty"`
-	ValidationId *Many2One `xmlrpc:"validation_id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId   *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Validate     *Bool     `xmlrpc:"validate,omitempty" json:"validate,omitempty"`
+	ValidationId *Many2One `xmlrpc:"validation_id,omitempty" json:"validation_id,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // TimesheetValidationLines represents array of timesheet.validation.line model.

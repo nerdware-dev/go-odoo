@@ -2,20 +2,20 @@ package odoo
 
 // PlanningPlanning represents planning.planning model.
 type PlanningPlanning struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	AccessToken       *String   `xmlrpc:"access_token,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	EndDatetime       *Time     `xmlrpc:"end_datetime,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	IncludeUnassigned *Bool     `xmlrpc:"include_unassigned,omitempty"`
-	LastSentDate      *Time     `xmlrpc:"last_sent_date,omitempty"`
-	SlotIds           *Relation `xmlrpc:"slot_ids,omitempty"`
-	StartDatetime     *Time     `xmlrpc:"start_datetime,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessToken       *String   `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndDatetime       *Time     `xmlrpc:"end_datetime,omitempty" json:"end_datetime,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncludeUnassigned *Bool     `xmlrpc:"include_unassigned,omitempty" json:"include_unassigned,omitempty"`
+	LastSentDate      *Time     `xmlrpc:"last_sent_date,omitempty" json:"last_sent_date,omitempty"`
+	SlotIds           *Relation `xmlrpc:"slot_ids,omitempty" json:"slot_ids,omitempty"`
+	StartDatetime     *Time     `xmlrpc:"start_datetime,omitempty" json:"start_datetime,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PlanningPlannings represents array of planning.planning model.

@@ -2,172 +2,172 @@ package odoo
 
 // ProductProduct represents product.product model.
 type ProductProduct struct {
-	LastUpdate                             *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                                 *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline                   *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration            *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon                  *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                            *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState                          *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary                        *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                         *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId                         *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AttributeLineIds                       *Relation  `xmlrpc:"attribute_line_ids,omitempty"`
-	Barcode                                *String    `xmlrpc:"barcode,omitempty"`
-	CanBeExpensed                          *Bool      `xmlrpc:"can_be_expensed,omitempty"`
-	CanImage1024BeZoomed                   *Bool      `xmlrpc:"can_image_1024_be_zoomed,omitempty"`
-	CanImageVariant1024BeZoomed            *Bool      `xmlrpc:"can_image_variant_1024_be_zoomed,omitempty"`
-	CanPublish                             *Bool      `xmlrpc:"can_publish,omitempty"`
-	CategId                                *Many2One  `xmlrpc:"categ_id,omitempty"`
-	Code                                   *String    `xmlrpc:"code,omitempty"`
-	Color                                  *Int       `xmlrpc:"color,omitempty"`
-	CombinationIndices                     *String    `xmlrpc:"combination_indices,omitempty"`
-	CompanyId                              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CostCurrencyId                         *Many2One  `xmlrpc:"cost_currency_id,omitempty"`
-	CostMethod                             *Selection `xmlrpc:"cost_method,omitempty"`
-	CreateDate                             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                             *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DefaultCode                            *String    `xmlrpc:"default_code,omitempty"`
-	Description                            *String    `xmlrpc:"description,omitempty"`
-	DescriptionPicking                     *String    `xmlrpc:"description_picking,omitempty"`
-	DescriptionPickingin                   *String    `xmlrpc:"description_pickingin,omitempty"`
-	DescriptionPickingout                  *String    `xmlrpc:"description_pickingout,omitempty"`
-	DescriptionPurchase                    *String    `xmlrpc:"description_purchase,omitempty"`
-	DescriptionSale                        *String    `xmlrpc:"description_sale,omitempty"`
-	DisplayName                            *String    `xmlrpc:"display_name,omitempty"`
-	DisplayPrice                           *String    `xmlrpc:"display_price,omitempty"`
-	ExpensePolicy                          *Selection `xmlrpc:"expense_policy,omitempty"`
-	ExtraDaily                             *Float     `xmlrpc:"extra_daily,omitempty"`
-	ExtraHourly                            *Float     `xmlrpc:"extra_hourly,omitempty"`
-	FreeQty                                *Float     `xmlrpc:"free_qty,omitempty"`
-	HasConfigurableAttributes              *Bool      `xmlrpc:"has_configurable_attributes,omitempty"`
-	HsCode                                 *String    `xmlrpc:"hs_code,omitempty"`
-	Id                                     *Int       `xmlrpc:"id,omitempty"`
-	Image1024                              *String    `xmlrpc:"image_1024,omitempty"`
-	Image128                               *String    `xmlrpc:"image_128,omitempty"`
-	Image1920                              *String    `xmlrpc:"image_1920,omitempty"`
-	Image256                               *String    `xmlrpc:"image_256,omitempty"`
-	Image512                               *String    `xmlrpc:"image_512,omitempty"`
-	ImageVariant1024                       *String    `xmlrpc:"image_variant_1024,omitempty"`
-	ImageVariant128                        *String    `xmlrpc:"image_variant_128,omitempty"`
-	ImageVariant1920                       *String    `xmlrpc:"image_variant_1920,omitempty"`
-	ImageVariant256                        *String    `xmlrpc:"image_variant_256,omitempty"`
-	ImageVariant512                        *String    `xmlrpc:"image_variant_512,omitempty"`
-	IncomingQty                            *Float     `xmlrpc:"incoming_qty,omitempty"`
-	IntrastatId                            *Many2One  `xmlrpc:"intrastat_id,omitempty"`
-	IntrastatOriginCountryId               *Many2One  `xmlrpc:"intrastat_origin_country_id,omitempty"`
-	InvoicePolicy                          *Selection `xmlrpc:"invoice_policy,omitempty"`
-	IsProductVariant                       *Bool      `xmlrpc:"is_product_variant,omitempty"`
-	IsPublished                            *Bool      `xmlrpc:"is_published,omitempty"`
-	IsSeoOptimized                         *Bool      `xmlrpc:"is_seo_optimized,omitempty"`
-	ListPrice                              *Float     `xmlrpc:"list_price,omitempty"`
-	LocationId                             *Many2One  `xmlrpc:"location_id,omitempty"`
-	LstPrice                               *Float     `xmlrpc:"lst_price,omitempty"`
-	MessageAttachmentCount                 *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds                      *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds                     *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError                        *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter                 *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError                     *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                             *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower                      *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId                *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction                      *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter               *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds                      *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread                          *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter                   *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                                   *String    `xmlrpc:"name,omitempty"`
-	NbrReorderingRules                     *Int       `xmlrpc:"nbr_reordering_rules,omitempty"`
-	OrderpointIds                          *Relation  `xmlrpc:"orderpoint_ids,omitempty"`
-	OutgoingQty                            *Float     `xmlrpc:"outgoing_qty,omitempty"`
-	PackagingIds                           *Relation  `xmlrpc:"packaging_ids,omitempty"`
-	PartnerRef                             *String    `xmlrpc:"partner_ref,omitempty"`
-	PreparationTime                        *Float     `xmlrpc:"preparation_time,omitempty"`
-	Price                                  *Float     `xmlrpc:"price,omitempty"`
-	PriceExtra                             *Float     `xmlrpc:"price_extra,omitempty"`
-	PricelistId                            *Many2One  `xmlrpc:"pricelist_id,omitempty"`
-	PricelistItemCount                     *Int       `xmlrpc:"pricelist_item_count,omitempty"`
-	ProductTemplateAttributeValueIds       *Relation  `xmlrpc:"product_template_attribute_value_ids,omitempty"`
-	ProductTmplId                          *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductVariantCount                    *Int       `xmlrpc:"product_variant_count,omitempty"`
-	ProductVariantId                       *Many2One  `xmlrpc:"product_variant_id,omitempty"`
-	ProductVariantIds                      *Relation  `xmlrpc:"product_variant_ids,omitempty"`
-	ProjectId                              *Many2One  `xmlrpc:"project_id,omitempty"`
-	ProjectTemplateId                      *Many2One  `xmlrpc:"project_template_id,omitempty"`
-	PropertyAccountCreditorPriceDifference *Many2One  `xmlrpc:"property_account_creditor_price_difference,omitempty"`
-	PropertyAccountExpenseId               *Many2One  `xmlrpc:"property_account_expense_id,omitempty"`
-	PropertyAccountIncomeId                *Many2One  `xmlrpc:"property_account_income_id,omitempty"`
-	PropertyStockInventory                 *Many2One  `xmlrpc:"property_stock_inventory,omitempty"`
-	PropertyStockProduction                *Many2One  `xmlrpc:"property_stock_production,omitempty"`
-	PurchaseLineWarn                       *Selection `xmlrpc:"purchase_line_warn,omitempty"`
-	PurchaseLineWarnMsg                    *String    `xmlrpc:"purchase_line_warn_msg,omitempty"`
-	PurchaseMethod                         *Selection `xmlrpc:"purchase_method,omitempty"`
-	PurchaseOk                             *Bool      `xmlrpc:"purchase_ok,omitempty"`
-	PurchasedProductQty                    *Float     `xmlrpc:"purchased_product_qty,omitempty"`
-	PutawayRuleIds                         *Relation  `xmlrpc:"putaway_rule_ids,omitempty"`
-	QtyAvailable                           *Float     `xmlrpc:"qty_available,omitempty"`
-	QtyInRent                              *Float     `xmlrpc:"qty_in_rent,omitempty"`
-	QuantitySvl                            *Float     `xmlrpc:"quantity_svl,omitempty"`
-	RatingAvg                              *Float     `xmlrpc:"rating_avg,omitempty"`
-	RatingCount                            *Int       `xmlrpc:"rating_count,omitempty"`
-	RatingIds                              *Relation  `xmlrpc:"rating_ids,omitempty"`
-	RatingLastFeedback                     *String    `xmlrpc:"rating_last_feedback,omitempty"`
-	RatingLastImage                        *String    `xmlrpc:"rating_last_image,omitempty"`
-	RatingLastValue                        *Float     `xmlrpc:"rating_last_value,omitempty"`
-	RecurringInvoice                       *Bool      `xmlrpc:"recurring_invoice,omitempty"`
-	RentOk                                 *Bool      `xmlrpc:"rent_ok,omitempty"`
-	Rental                                 *Bool      `xmlrpc:"rental,omitempty"`
-	RentalPricingIds                       *Relation  `xmlrpc:"rental_pricing_ids,omitempty"`
-	ReorderingMaxQty                       *Float     `xmlrpc:"reordering_max_qty,omitempty"`
-	ReorderingMinQty                       *Float     `xmlrpc:"reordering_min_qty,omitempty"`
-	ResponsibleId                          *Many2One  `xmlrpc:"responsible_id,omitempty"`
-	RouteFromCategIds                      *Relation  `xmlrpc:"route_from_categ_ids,omitempty"`
-	RouteIds                               *Relation  `xmlrpc:"route_ids,omitempty"`
-	SaleDelay                              *Float     `xmlrpc:"sale_delay,omitempty"`
-	SaleLineWarn                           *Selection `xmlrpc:"sale_line_warn,omitempty"`
-	SaleLineWarnMsg                        *String    `xmlrpc:"sale_line_warn_msg,omitempty"`
-	SaleOk                                 *Bool      `xmlrpc:"sale_ok,omitempty"`
-	SalesCount                             *Float     `xmlrpc:"sales_count,omitempty"`
-	SellerIds                              *Relation  `xmlrpc:"seller_ids,omitempty"`
-	Sequence                               *Int       `xmlrpc:"sequence,omitempty"`
-	ServicePolicy                          *Selection `xmlrpc:"service_policy,omitempty"`
-	ServiceToPurchase                      *Bool      `xmlrpc:"service_to_purchase,omitempty"`
-	ServiceTracking                        *Selection `xmlrpc:"service_tracking,omitempty"`
-	ServiceType                            *Selection `xmlrpc:"service_type,omitempty"`
-	StandardPrice                          *Float     `xmlrpc:"standard_price,omitempty"`
-	StockMoveIds                           *Relation  `xmlrpc:"stock_move_ids,omitempty"`
-	StockQuantIds                          *Relation  `xmlrpc:"stock_quant_ids,omitempty"`
-	StockValuationLayerIds                 *Relation  `xmlrpc:"stock_valuation_layer_ids,omitempty"`
-	SubscriptionTemplateId                 *Many2One  `xmlrpc:"subscription_template_id,omitempty"`
-	SupplierTaxesId                        *Relation  `xmlrpc:"supplier_taxes_id,omitempty"`
-	TaxesId                                *Relation  `xmlrpc:"taxes_id,omitempty"`
-	Tracking                               *Selection `xmlrpc:"tracking,omitempty"`
-	Type                                   *Selection `xmlrpc:"type,omitempty"`
-	UomId                                  *Many2One  `xmlrpc:"uom_id,omitempty"`
-	UomName                                *String    `xmlrpc:"uom_name,omitempty"`
-	UomPoId                                *Many2One  `xmlrpc:"uom_po_id,omitempty"`
-	ValidProductTemplateAttributeLineIds   *Relation  `xmlrpc:"valid_product_template_attribute_line_ids,omitempty"`
-	Valuation                              *Selection `xmlrpc:"valuation,omitempty"`
-	ValueSvl                               *Float     `xmlrpc:"value_svl,omitempty"`
-	VariantSellerIds                       *Relation  `xmlrpc:"variant_seller_ids,omitempty"`
-	VirtualAvailable                       *Float     `xmlrpc:"virtual_available,omitempty"`
-	VisibleExpensePolicy                   *Bool      `xmlrpc:"visible_expense_policy,omitempty"`
-	VisibleQtyConfigurator                 *Bool      `xmlrpc:"visible_qty_configurator,omitempty"`
-	Volume                                 *Float     `xmlrpc:"volume,omitempty"`
-	VolumeUomName                          *String    `xmlrpc:"volume_uom_name,omitempty"`
-	WarehouseId                            *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	WebsiteMessageIds                      *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WebsiteMetaDescription                 *String    `xmlrpc:"website_meta_description,omitempty"`
-	WebsiteMetaKeywords                    *String    `xmlrpc:"website_meta_keywords,omitempty"`
-	WebsiteMetaOgImg                       *String    `xmlrpc:"website_meta_og_img,omitempty"`
-	WebsiteMetaTitle                       *String    `xmlrpc:"website_meta_title,omitempty"`
-	WebsitePublished                       *Bool      `xmlrpc:"website_published,omitempty"`
-	Weight                                 *Float     `xmlrpc:"weight,omitempty"`
-	WeightUomName                          *String    `xmlrpc:"weight_uom_name,omitempty"`
-	WriteDate                              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline                   *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration            *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon                  *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                            *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState                          *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary                        *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                         *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId                         *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AttributeLineIds                       *Relation  `xmlrpc:"attribute_line_ids,omitempty" json:"attribute_line_ids,omitempty"`
+	Barcode                                *String    `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	CanBeExpensed                          *Bool      `xmlrpc:"can_be_expensed,omitempty" json:"can_be_expensed,omitempty"`
+	CanImage1024BeZoomed                   *Bool      `xmlrpc:"can_image_1024_be_zoomed,omitempty" json:"can_image_1024_be_zoomed,omitempty"`
+	CanImageVariant1024BeZoomed            *Bool      `xmlrpc:"can_image_variant_1024_be_zoomed,omitempty" json:"can_image_variant_1024_be_zoomed,omitempty"`
+	CanPublish                             *Bool      `xmlrpc:"can_publish,omitempty" json:"can_publish,omitempty"`
+	CategId                                *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	Code                                   *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	Color                                  *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CombinationIndices                     *String    `xmlrpc:"combination_indices,omitempty" json:"combination_indices,omitempty"`
+	CompanyId                              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CostCurrencyId                         *Many2One  `xmlrpc:"cost_currency_id,omitempty" json:"cost_currency_id,omitempty"`
+	CostMethod                             *Selection `xmlrpc:"cost_method,omitempty" json:"cost_method,omitempty"`
+	CreateDate                             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                             *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DefaultCode                            *String    `xmlrpc:"default_code,omitempty" json:"default_code,omitempty"`
+	Description                            *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DescriptionPicking                     *String    `xmlrpc:"description_picking,omitempty" json:"description_picking,omitempty"`
+	DescriptionPickingin                   *String    `xmlrpc:"description_pickingin,omitempty" json:"description_pickingin,omitempty"`
+	DescriptionPickingout                  *String    `xmlrpc:"description_pickingout,omitempty" json:"description_pickingout,omitempty"`
+	DescriptionPurchase                    *String    `xmlrpc:"description_purchase,omitempty" json:"description_purchase,omitempty"`
+	DescriptionSale                        *String    `xmlrpc:"description_sale,omitempty" json:"description_sale,omitempty"`
+	DisplayName                            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayPrice                           *String    `xmlrpc:"display_price,omitempty" json:"display_price,omitempty"`
+	ExpensePolicy                          *Selection `xmlrpc:"expense_policy,omitempty" json:"expense_policy,omitempty"`
+	ExtraDaily                             *Float     `xmlrpc:"extra_daily,omitempty" json:"extra_daily,omitempty"`
+	ExtraHourly                            *Float     `xmlrpc:"extra_hourly,omitempty" json:"extra_hourly,omitempty"`
+	FreeQty                                *Float     `xmlrpc:"free_qty,omitempty" json:"free_qty,omitempty"`
+	HasConfigurableAttributes              *Bool      `xmlrpc:"has_configurable_attributes,omitempty" json:"has_configurable_attributes,omitempty"`
+	HsCode                                 *String    `xmlrpc:"hs_code,omitempty" json:"hs_code,omitempty"`
+	Id                                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image1024                              *String    `xmlrpc:"image_1024,omitempty" json:"image_1024,omitempty"`
+	Image128                               *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	Image1920                              *String    `xmlrpc:"image_1920,omitempty" json:"image_1920,omitempty"`
+	Image256                               *String    `xmlrpc:"image_256,omitempty" json:"image_256,omitempty"`
+	Image512                               *String    `xmlrpc:"image_512,omitempty" json:"image_512,omitempty"`
+	ImageVariant1024                       *String    `xmlrpc:"image_variant_1024,omitempty" json:"image_variant_1024,omitempty"`
+	ImageVariant128                        *String    `xmlrpc:"image_variant_128,omitempty" json:"image_variant_128,omitempty"`
+	ImageVariant1920                       *String    `xmlrpc:"image_variant_1920,omitempty" json:"image_variant_1920,omitempty"`
+	ImageVariant256                        *String    `xmlrpc:"image_variant_256,omitempty" json:"image_variant_256,omitempty"`
+	ImageVariant512                        *String    `xmlrpc:"image_variant_512,omitempty" json:"image_variant_512,omitempty"`
+	IncomingQty                            *Float     `xmlrpc:"incoming_qty,omitempty" json:"incoming_qty,omitempty"`
+	IntrastatId                            *Many2One  `xmlrpc:"intrastat_id,omitempty" json:"intrastat_id,omitempty"`
+	IntrastatOriginCountryId               *Many2One  `xmlrpc:"intrastat_origin_country_id,omitempty" json:"intrastat_origin_country_id,omitempty"`
+	InvoicePolicy                          *Selection `xmlrpc:"invoice_policy,omitempty" json:"invoice_policy,omitempty"`
+	IsProductVariant                       *Bool      `xmlrpc:"is_product_variant,omitempty" json:"is_product_variant,omitempty"`
+	IsPublished                            *Bool      `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	IsSeoOptimized                         *Bool      `xmlrpc:"is_seo_optimized,omitempty" json:"is_seo_optimized,omitempty"`
+	ListPrice                              *Float     `xmlrpc:"list_price,omitempty" json:"list_price,omitempty"`
+	LocationId                             *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	LstPrice                               *Float     `xmlrpc:"lst_price,omitempty" json:"lst_price,omitempty"`
+	MessageAttachmentCount                 *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds                      *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds                     *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError                        *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter                 *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError                     *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                             *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower                      *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId                *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction                      *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter               *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds                      *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread                          *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter                   *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NbrReorderingRules                     *Int       `xmlrpc:"nbr_reordering_rules,omitempty" json:"nbr_reordering_rules,omitempty"`
+	OrderpointIds                          *Relation  `xmlrpc:"orderpoint_ids,omitempty" json:"orderpoint_ids,omitempty"`
+	OutgoingQty                            *Float     `xmlrpc:"outgoing_qty,omitempty" json:"outgoing_qty,omitempty"`
+	PackagingIds                           *Relation  `xmlrpc:"packaging_ids,omitempty" json:"packaging_ids,omitempty"`
+	PartnerRef                             *String    `xmlrpc:"partner_ref,omitempty" json:"partner_ref,omitempty"`
+	PreparationTime                        *Float     `xmlrpc:"preparation_time,omitempty" json:"preparation_time,omitempty"`
+	Price                                  *Float     `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	PriceExtra                             *Float     `xmlrpc:"price_extra,omitempty" json:"price_extra,omitempty"`
+	PricelistId                            *Many2One  `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
+	PricelistItemCount                     *Int       `xmlrpc:"pricelist_item_count,omitempty" json:"pricelist_item_count,omitempty"`
+	ProductTemplateAttributeValueIds       *Relation  `xmlrpc:"product_template_attribute_value_ids,omitempty" json:"product_template_attribute_value_ids,omitempty"`
+	ProductTmplId                          *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductVariantCount                    *Int       `xmlrpc:"product_variant_count,omitempty" json:"product_variant_count,omitempty"`
+	ProductVariantId                       *Many2One  `xmlrpc:"product_variant_id,omitempty" json:"product_variant_id,omitempty"`
+	ProductVariantIds                      *Relation  `xmlrpc:"product_variant_ids,omitempty" json:"product_variant_ids,omitempty"`
+	ProjectId                              *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	ProjectTemplateId                      *Many2One  `xmlrpc:"project_template_id,omitempty" json:"project_template_id,omitempty"`
+	PropertyAccountCreditorPriceDifference *Many2One  `xmlrpc:"property_account_creditor_price_difference,omitempty" json:"property_account_creditor_price_difference,omitempty"`
+	PropertyAccountExpenseId               *Many2One  `xmlrpc:"property_account_expense_id,omitempty" json:"property_account_expense_id,omitempty"`
+	PropertyAccountIncomeId                *Many2One  `xmlrpc:"property_account_income_id,omitempty" json:"property_account_income_id,omitempty"`
+	PropertyStockInventory                 *Many2One  `xmlrpc:"property_stock_inventory,omitempty" json:"property_stock_inventory,omitempty"`
+	PropertyStockProduction                *Many2One  `xmlrpc:"property_stock_production,omitempty" json:"property_stock_production,omitempty"`
+	PurchaseLineWarn                       *Selection `xmlrpc:"purchase_line_warn,omitempty" json:"purchase_line_warn,omitempty"`
+	PurchaseLineWarnMsg                    *String    `xmlrpc:"purchase_line_warn_msg,omitempty" json:"purchase_line_warn_msg,omitempty"`
+	PurchaseMethod                         *Selection `xmlrpc:"purchase_method,omitempty" json:"purchase_method,omitempty"`
+	PurchaseOk                             *Bool      `xmlrpc:"purchase_ok,omitempty" json:"purchase_ok,omitempty"`
+	PurchasedProductQty                    *Float     `xmlrpc:"purchased_product_qty,omitempty" json:"purchased_product_qty,omitempty"`
+	PutawayRuleIds                         *Relation  `xmlrpc:"putaway_rule_ids,omitempty" json:"putaway_rule_ids,omitempty"`
+	QtyAvailable                           *Float     `xmlrpc:"qty_available,omitempty" json:"qty_available,omitempty"`
+	QtyInRent                              *Float     `xmlrpc:"qty_in_rent,omitempty" json:"qty_in_rent,omitempty"`
+	QuantitySvl                            *Float     `xmlrpc:"quantity_svl,omitempty" json:"quantity_svl,omitempty"`
+	RatingAvg                              *Float     `xmlrpc:"rating_avg,omitempty" json:"rating_avg,omitempty"`
+	RatingCount                            *Int       `xmlrpc:"rating_count,omitempty" json:"rating_count,omitempty"`
+	RatingIds                              *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RatingLastFeedback                     *String    `xmlrpc:"rating_last_feedback,omitempty" json:"rating_last_feedback,omitempty"`
+	RatingLastImage                        *String    `xmlrpc:"rating_last_image,omitempty" json:"rating_last_image,omitempty"`
+	RatingLastValue                        *Float     `xmlrpc:"rating_last_value,omitempty" json:"rating_last_value,omitempty"`
+	RecurringInvoice                       *Bool      `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
+	RentOk                                 *Bool      `xmlrpc:"rent_ok,omitempty" json:"rent_ok,omitempty"`
+	Rental                                 *Bool      `xmlrpc:"rental,omitempty" json:"rental,omitempty"`
+	RentalPricingIds                       *Relation  `xmlrpc:"rental_pricing_ids,omitempty" json:"rental_pricing_ids,omitempty"`
+	ReorderingMaxQty                       *Float     `xmlrpc:"reordering_max_qty,omitempty" json:"reordering_max_qty,omitempty"`
+	ReorderingMinQty                       *Float     `xmlrpc:"reordering_min_qty,omitempty" json:"reordering_min_qty,omitempty"`
+	ResponsibleId                          *Many2One  `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	RouteFromCategIds                      *Relation  `xmlrpc:"route_from_categ_ids,omitempty" json:"route_from_categ_ids,omitempty"`
+	RouteIds                               *Relation  `xmlrpc:"route_ids,omitempty" json:"route_ids,omitempty"`
+	SaleDelay                              *Float     `xmlrpc:"sale_delay,omitempty" json:"sale_delay,omitempty"`
+	SaleLineWarn                           *Selection `xmlrpc:"sale_line_warn,omitempty" json:"sale_line_warn,omitempty"`
+	SaleLineWarnMsg                        *String    `xmlrpc:"sale_line_warn_msg,omitempty" json:"sale_line_warn_msg,omitempty"`
+	SaleOk                                 *Bool      `xmlrpc:"sale_ok,omitempty" json:"sale_ok,omitempty"`
+	SalesCount                             *Float     `xmlrpc:"sales_count,omitempty" json:"sales_count,omitempty"`
+	SellerIds                              *Relation  `xmlrpc:"seller_ids,omitempty" json:"seller_ids,omitempty"`
+	Sequence                               *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ServicePolicy                          *Selection `xmlrpc:"service_policy,omitempty" json:"service_policy,omitempty"`
+	ServiceToPurchase                      *Bool      `xmlrpc:"service_to_purchase,omitempty" json:"service_to_purchase,omitempty"`
+	ServiceTracking                        *Selection `xmlrpc:"service_tracking,omitempty" json:"service_tracking,omitempty"`
+	ServiceType                            *Selection `xmlrpc:"service_type,omitempty" json:"service_type,omitempty"`
+	StandardPrice                          *Float     `xmlrpc:"standard_price,omitempty" json:"standard_price,omitempty"`
+	StockMoveIds                           *Relation  `xmlrpc:"stock_move_ids,omitempty" json:"stock_move_ids,omitempty"`
+	StockQuantIds                          *Relation  `xmlrpc:"stock_quant_ids,omitempty" json:"stock_quant_ids,omitempty"`
+	StockValuationLayerIds                 *Relation  `xmlrpc:"stock_valuation_layer_ids,omitempty" json:"stock_valuation_layer_ids,omitempty"`
+	SubscriptionTemplateId                 *Many2One  `xmlrpc:"subscription_template_id,omitempty" json:"subscription_template_id,omitempty"`
+	SupplierTaxesId                        *Relation  `xmlrpc:"supplier_taxes_id,omitempty" json:"supplier_taxes_id,omitempty"`
+	TaxesId                                *Relation  `xmlrpc:"taxes_id,omitempty" json:"taxes_id,omitempty"`
+	Tracking                               *Selection `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	Type                                   *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	UomId                                  *Many2One  `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	UomName                                *String    `xmlrpc:"uom_name,omitempty" json:"uom_name,omitempty"`
+	UomPoId                                *Many2One  `xmlrpc:"uom_po_id,omitempty" json:"uom_po_id,omitempty"`
+	ValidProductTemplateAttributeLineIds   *Relation  `xmlrpc:"valid_product_template_attribute_line_ids,omitempty" json:"valid_product_template_attribute_line_ids,omitempty"`
+	Valuation                              *Selection `xmlrpc:"valuation,omitempty" json:"valuation,omitempty"`
+	ValueSvl                               *Float     `xmlrpc:"value_svl,omitempty" json:"value_svl,omitempty"`
+	VariantSellerIds                       *Relation  `xmlrpc:"variant_seller_ids,omitempty" json:"variant_seller_ids,omitempty"`
+	VirtualAvailable                       *Float     `xmlrpc:"virtual_available,omitempty" json:"virtual_available,omitempty"`
+	VisibleExpensePolicy                   *Bool      `xmlrpc:"visible_expense_policy,omitempty" json:"visible_expense_policy,omitempty"`
+	VisibleQtyConfigurator                 *Bool      `xmlrpc:"visible_qty_configurator,omitempty" json:"visible_qty_configurator,omitempty"`
+	Volume                                 *Float     `xmlrpc:"volume,omitempty" json:"volume,omitempty"`
+	VolumeUomName                          *String    `xmlrpc:"volume_uom_name,omitempty" json:"volume_uom_name,omitempty"`
+	WarehouseId                            *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WebsiteMessageIds                      *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WebsiteMetaDescription                 *String    `xmlrpc:"website_meta_description,omitempty" json:"website_meta_description,omitempty"`
+	WebsiteMetaKeywords                    *String    `xmlrpc:"website_meta_keywords,omitempty" json:"website_meta_keywords,omitempty"`
+	WebsiteMetaOgImg                       *String    `xmlrpc:"website_meta_og_img,omitempty" json:"website_meta_og_img,omitempty"`
+	WebsiteMetaTitle                       *String    `xmlrpc:"website_meta_title,omitempty" json:"website_meta_title,omitempty"`
+	WebsitePublished                       *Bool      `xmlrpc:"website_published,omitempty" json:"website_published,omitempty"`
+	Weight                                 *Float     `xmlrpc:"weight,omitempty" json:"weight,omitempty"`
+	WeightUomName                          *String    `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	WriteDate                              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductProducts represents array of product.product model.

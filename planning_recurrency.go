@@ -2,19 +2,19 @@ package odoo
 
 // PlanningRecurrency represents planning.recurrency model.
 type PlanningRecurrency struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	LastGeneratedEndDatetime *Time      `xmlrpc:"last_generated_end_datetime,omitempty"`
-	RepeatInterval           *Int       `xmlrpc:"repeat_interval,omitempty"`
-	RepeatType               *Selection `xmlrpc:"repeat_type,omitempty"`
-	RepeatUntil              *Time      `xmlrpc:"repeat_until,omitempty"`
-	SlotIds                  *Relation  `xmlrpc:"slot_ids,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LastGeneratedEndDatetime *Time      `xmlrpc:"last_generated_end_datetime,omitempty" json:"last_generated_end_datetime,omitempty"`
+	RepeatInterval           *Int       `xmlrpc:"repeat_interval,omitempty" json:"repeat_interval,omitempty"`
+	RepeatType               *Selection `xmlrpc:"repeat_type,omitempty" json:"repeat_type,omitempty"`
+	RepeatUntil              *Time      `xmlrpc:"repeat_until,omitempty" json:"repeat_until,omitempty"`
+	SlotIds                  *Relation  `xmlrpc:"slot_ids,omitempty" json:"slot_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PlanningRecurrencys represents array of planning.recurrency model.

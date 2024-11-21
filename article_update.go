@@ -2,18 +2,18 @@ package odoo
 
 // ArticleUpdate represents article.update model.
 type ArticleUpdate struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Activate       *Selection `xmlrpc:"activate,omitempty"`
-	Articles       *String    `xmlrpc:"articles,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	SectionId      *Many2One  `xmlrpc:"section_id,omitempty"`
-	ToAddTagIds    *Relation  `xmlrpc:"to_add_tag_ids,omitempty"`
-	ToRemoveTagIds *Relation  `xmlrpc:"to_remove_tag_ids,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Activate       *Selection `xmlrpc:"activate,omitempty" json:"activate,omitempty"`
+	Articles       *String    `xmlrpc:"articles,omitempty" json:"articles,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	SectionId      *Many2One  `xmlrpc:"section_id,omitempty" json:"section_id,omitempty"`
+	ToAddTagIds    *Relation  `xmlrpc:"to_add_tag_ids,omitempty" json:"to_add_tag_ids,omitempty"`
+	ToRemoveTagIds *Relation  `xmlrpc:"to_remove_tag_ids,omitempty" json:"to_remove_tag_ids,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ArticleUpdates represents array of article.update model.

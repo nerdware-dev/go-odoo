@@ -2,19 +2,19 @@ package odoo
 
 // PortalShare represents portal.share model.
 type PortalShare struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	AccessWarning *String   `xmlrpc:"access_warning,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Note          *String   `xmlrpc:"note,omitempty"`
-	PartnerIds    *Relation `xmlrpc:"partner_ids,omitempty"`
-	ResId         *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel      *String   `xmlrpc:"res_model,omitempty"`
-	ShareLink     *String   `xmlrpc:"share_link,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccessWarning *String   `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Note          *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PartnerIds    *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	ResId         *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel      *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ShareLink     *String   `xmlrpc:"share_link,omitempty" json:"share_link,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PortalShares represents array of portal.share model.

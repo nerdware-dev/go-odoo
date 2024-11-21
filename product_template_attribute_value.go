@@ -2,25 +2,25 @@ package odoo
 
 // ProductTemplateAttributeValue represents product.template.attribute.value model.
 type ProductTemplateAttributeValue struct {
-	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty"`
-	AttributeId             *Many2One  `xmlrpc:"attribute_id,omitempty"`
-	AttributeLineId         *Many2One  `xmlrpc:"attribute_line_id,omitempty"`
-	CreateDate              *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType             *Selection `xmlrpc:"display_type,omitempty"`
-	ExcludeFor              *Relation  `xmlrpc:"exclude_for,omitempty"`
-	HtmlColor               *String    `xmlrpc:"html_color,omitempty"`
-	Id                      *Int       `xmlrpc:"id,omitempty"`
-	IsCustom                *Bool      `xmlrpc:"is_custom,omitempty"`
-	Name                    *String    `xmlrpc:"name,omitempty"`
-	PriceExtra              *Float     `xmlrpc:"price_extra,omitempty"`
-	ProductAttributeValueId *Many2One  `xmlrpc:"product_attribute_value_id,omitempty"`
-	ProductTmplId           *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	PtavActive              *Bool      `xmlrpc:"ptav_active,omitempty"`
-	PtavProductVariantIds   *Relation  `xmlrpc:"ptav_product_variant_ids,omitempty"`
-	WriteDate               *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AttributeId             *Many2One  `xmlrpc:"attribute_id,omitempty" json:"attribute_id,omitempty"`
+	AttributeLineId         *Many2One  `xmlrpc:"attribute_line_id,omitempty" json:"attribute_line_id,omitempty"`
+	CreateDate              *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName             *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType             *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	ExcludeFor              *Relation  `xmlrpc:"exclude_for,omitempty" json:"exclude_for,omitempty"`
+	HtmlColor               *String    `xmlrpc:"html_color,omitempty" json:"html_color,omitempty"`
+	Id                      *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsCustom                *Bool      `xmlrpc:"is_custom,omitempty" json:"is_custom,omitempty"`
+	Name                    *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PriceExtra              *Float     `xmlrpc:"price_extra,omitempty" json:"price_extra,omitempty"`
+	ProductAttributeValueId *Many2One  `xmlrpc:"product_attribute_value_id,omitempty" json:"product_attribute_value_id,omitempty"`
+	ProductTmplId           *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	PtavActive              *Bool      `xmlrpc:"ptav_active,omitempty" json:"ptav_active,omitempty"`
+	PtavProductVariantIds   *Relation  `xmlrpc:"ptav_product_variant_ids,omitempty" json:"ptav_product_variant_ids,omitempty"`
+	WriteDate               *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductTemplateAttributeValues represents array of product.template.attribute.value model.

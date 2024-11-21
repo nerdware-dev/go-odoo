@@ -2,16 +2,16 @@ package odoo
 
 // SaleSubscriptionWizard represents sale.subscription.wizard model.
 type SaleSubscriptionWizard struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateFrom       *Time     `xmlrpc:"date_from,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	OptionLines    *Relation `xmlrpc:"option_lines,omitempty"`
-	SubscriptionId *Many2One `xmlrpc:"subscription_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom       *Time     `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OptionLines    *Relation `xmlrpc:"option_lines,omitempty" json:"option_lines,omitempty"`
+	SubscriptionId *Many2One `xmlrpc:"subscription_id,omitempty" json:"subscription_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleSubscriptionWizards represents array of sale.subscription.wizard model.

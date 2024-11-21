@@ -2,23 +2,23 @@ package odoo
 
 // TaxAdjustmentsWizard represents tax.adjustments.wizard model.
 type TaxAdjustmentsWizard struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	AdjustmentType    *Selection `xmlrpc:"adjustment_type,omitempty"`
-	Amount            *Float     `xmlrpc:"amount,omitempty"`
-	CompanyCurrencyId *Many2One  `xmlrpc:"company_currency_id,omitempty"`
-	CountryId         *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CreditAccountId   *Many2One  `xmlrpc:"credit_account_id,omitempty"`
-	Date              *Time      `xmlrpc:"date,omitempty"`
-	DebitAccountId    *Many2One  `xmlrpc:"debit_account_id,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	JournalId         *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Reason            *String    `xmlrpc:"reason,omitempty"`
-	TaxReportLineId   *Many2One  `xmlrpc:"tax_report_line_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AdjustmentType    *Selection `xmlrpc:"adjustment_type,omitempty" json:"adjustment_type,omitempty"`
+	Amount            *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CompanyCurrencyId *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CountryId         *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CreditAccountId   *Many2One  `xmlrpc:"credit_account_id,omitempty" json:"credit_account_id,omitempty"`
+	Date              *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DebitAccountId    *Many2One  `xmlrpc:"debit_account_id,omitempty" json:"debit_account_id,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId         *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Reason            *String    `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	TaxReportLineId   *Many2One  `xmlrpc:"tax_report_line_id,omitempty" json:"tax_report_line_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // TaxAdjustmentsWizards represents array of tax.adjustments.wizard model.

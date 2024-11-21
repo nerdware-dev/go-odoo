@@ -2,18 +2,18 @@ package odoo
 
 // IrModuleModuleDependency represents ir.module.module.dependency model.
 type IrModuleModuleDependency struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DependId            *Many2One  `xmlrpc:"depend_id,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty" json:"auto_install_required,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DependId            *Many2One  `xmlrpc:"depend_id,omitempty" json:"depend_id,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModuleModuleDependencys represents array of ir.module.module.dependency model.

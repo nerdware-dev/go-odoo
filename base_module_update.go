@@ -2,16 +2,16 @@ package odoo
 
 // BaseModuleUpdate represents base.module.update model.
 type BaseModuleUpdate struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Added       *Int       `xmlrpc:"added,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	Updated     *Int       `xmlrpc:"updated,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Added       *Int       `xmlrpc:"added,omitempty" json:"added,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Updated     *Int       `xmlrpc:"updated,omitempty" json:"updated,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleUpdates represents array of base.module.update model.

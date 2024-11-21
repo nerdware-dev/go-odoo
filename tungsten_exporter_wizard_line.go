@@ -2,18 +2,18 @@ package odoo
 
 // TungstenExporterWizardLine represents tungsten.exporter.wizard.line model.
 type TungstenExporterWizardLine struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	Data               *String   `xmlrpc:"data,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	ExceptionMsg       *String   `xmlrpc:"exception_msg,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	SourceDocumentName *String   `xmlrpc:"source_document_name,omitempty"`
-	TungstenExporterId *Many2One `xmlrpc:"tungsten_exporter_id,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Data               *String   `xmlrpc:"data,omitempty" json:"data,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExceptionMsg       *String   `xmlrpc:"exception_msg,omitempty" json:"exception_msg,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SourceDocumentName *String   `xmlrpc:"source_document_name,omitempty" json:"source_document_name,omitempty"`
+	TungstenExporterId *Many2One `xmlrpc:"tungsten_exporter_id,omitempty" json:"tungsten_exporter_id,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // TungstenExporterWizardLines represents array of tungsten.exporter.wizard.line model.

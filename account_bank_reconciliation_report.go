@@ -2,9 +2,9 @@ package odoo
 
 // AccountBankReconciliationReport represents account.bank.reconciliation.report model.
 type AccountBankReconciliationReport struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
 }
 
 // AccountBankReconciliationReports represents array of account.bank.reconciliation.report model.

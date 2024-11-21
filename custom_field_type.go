@@ -2,12 +2,12 @@ package odoo
 
 // CustomFieldType represents custom.field.type model.
 type CustomFieldType struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool   `xmlrpc:"active,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
-	InputOption *Bool   `xmlrpc:"input_option,omitempty"`
-	Name        *String `xmlrpc:"name,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active      *Bool   `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InputOption *Bool   `xmlrpc:"input_option,omitempty" json:"input_option,omitempty"`
+	Name        *String `xmlrpc:"name,omitempty" json:"name,omitempty"`
 }
 
 // CustomFieldTypes represents array of custom.field.type model.

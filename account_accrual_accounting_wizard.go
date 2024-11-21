@@ -2,23 +2,23 @@ package odoo
 
 // AccountAccrualAccountingWizard represents account.accrual.accounting.wizard model.
 type AccountAccrualAccountingWizard struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountType           *Selection `xmlrpc:"account_type,omitempty"`
-	ActiveMoveLineIds     *Relation  `xmlrpc:"active_move_line_ids,omitempty"`
-	CompanyCurrencyId     *Many2One  `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date                  *Time      `xmlrpc:"date,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	ExpenseAccrualAccount *Many2One  `xmlrpc:"expense_accrual_account,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	JournalId             *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Percentage            *Float     `xmlrpc:"percentage,omitempty"`
-	RevenueAccrualAccount *Many2One  `xmlrpc:"revenue_accrual_account,omitempty"`
-	TotalAmount           *Float     `xmlrpc:"total_amount,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountType           *Selection `xmlrpc:"account_type,omitempty" json:"account_type,omitempty"`
+	ActiveMoveLineIds     *Relation  `xmlrpc:"active_move_line_ids,omitempty" json:"active_move_line_ids,omitempty"`
+	CompanyCurrencyId     *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                  *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseAccrualAccount *Many2One  `xmlrpc:"expense_accrual_account,omitempty" json:"expense_accrual_account,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId             *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Percentage            *Float     `xmlrpc:"percentage,omitempty" json:"percentage,omitempty"`
+	RevenueAccrualAccount *Many2One  `xmlrpc:"revenue_accrual_account,omitempty" json:"revenue_accrual_account,omitempty"`
+	TotalAmount           *Float     `xmlrpc:"total_amount,omitempty" json:"total_amount,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccrualAccountingWizards represents array of account.accrual.accounting.wizard model.

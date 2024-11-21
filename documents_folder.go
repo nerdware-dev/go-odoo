@@ -2,27 +2,27 @@ package odoo
 
 // DocumentsFolder represents documents.folder model.
 type DocumentsFolder struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	ActionCount       *Int      `xmlrpc:"action_count,omitempty"`
-	ChildrenFolderIds *Relation `xmlrpc:"children_folder_ids,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description       *String   `xmlrpc:"description,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	DocumentCount     *Int      `xmlrpc:"document_count,omitempty"`
-	DocumentIds       *Relation `xmlrpc:"document_ids,omitempty"`
-	FacetIds          *Relation `xmlrpc:"facet_ids,omitempty"`
-	GroupIds          *Relation `xmlrpc:"group_ids,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	Name              *String   `xmlrpc:"name,omitempty"`
-	ParentFolderId    *Many2One `xmlrpc:"parent_folder_id,omitempty"`
-	ReadGroupIds      *Relation `xmlrpc:"read_group_ids,omitempty"`
-	Sequence          *Int      `xmlrpc:"sequence,omitempty"`
-	ShareLinkIds      *Relation `xmlrpc:"share_link_ids,omitempty"`
-	UserSpecific      *Bool     `xmlrpc:"user_specific,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	ActionCount       *Int      `xmlrpc:"action_count,omitempty" json:"action_count,omitempty"`
+	ChildrenFolderIds *Relation `xmlrpc:"children_folder_ids,omitempty" json:"children_folder_ids,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description       *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentCount     *Int      `xmlrpc:"document_count,omitempty" json:"document_count,omitempty"`
+	DocumentIds       *Relation `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
+	FacetIds          *Relation `xmlrpc:"facet_ids,omitempty" json:"facet_ids,omitempty"`
+	GroupIds          *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name              *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentFolderId    *Many2One `xmlrpc:"parent_folder_id,omitempty" json:"parent_folder_id,omitempty"`
+	ReadGroupIds      *Relation `xmlrpc:"read_group_ids,omitempty" json:"read_group_ids,omitempty"`
+	Sequence          *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShareLinkIds      *Relation `xmlrpc:"share_link_ids,omitempty" json:"share_link_ids,omitempty"`
+	UserSpecific      *Bool     `xmlrpc:"user_specific,omitempty" json:"user_specific,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsFolders represents array of documents.folder model.

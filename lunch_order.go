@@ -2,30 +2,30 @@ package odoo
 
 // LunchOrder represents lunch.order model.
 type LunchOrder struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	Active          *Bool      `xmlrpc:"active,omitempty"`
-	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date            *Time      `xmlrpc:"date,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	DisplayToppings *String    `xmlrpc:"display_toppings,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	Note            *String    `xmlrpc:"note,omitempty"`
-	Price           *Float     `xmlrpc:"price,omitempty"`
-	ProductId       *Many2One  `xmlrpc:"product_id,omitempty"`
-	Quantity        *Float     `xmlrpc:"quantity,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
-	SupplierId      *Many2One  `xmlrpc:"supplier_id,omitempty"`
-	ToppingIds1     *Relation  `xmlrpc:"topping_ids_1,omitempty"`
-	ToppingIds2     *Relation  `xmlrpc:"topping_ids_2,omitempty"`
-	ToppingIds3     *Relation  `xmlrpc:"topping_ids_3,omitempty"`
-	UserId          *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active          *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date            *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayToppings *String    `xmlrpc:"display_toppings,omitempty" json:"display_toppings,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note            *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Price           *Float     `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	ProductId       *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	Quantity        *Float     `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	SupplierId      *Many2One  `xmlrpc:"supplier_id,omitempty" json:"supplier_id,omitempty"`
+	ToppingIds1     *Relation  `xmlrpc:"topping_ids_1,omitempty" json:"topping_ids_1,omitempty"`
+	ToppingIds2     *Relation  `xmlrpc:"topping_ids_2,omitempty" json:"topping_ids_2,omitempty"`
+	ToppingIds3     *Relation  `xmlrpc:"topping_ids_3,omitempty" json:"topping_ids_3,omitempty"`
+	UserId          *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // LunchOrders represents array of lunch.order model.

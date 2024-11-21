@@ -2,17 +2,17 @@ package odoo
 
 // SmsResend represents sms.resend model.
 type SmsResend struct {
-	LastUpdate            *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate            *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName           *String   `xmlrpc:"display_name,omitempty"`
-	HasCancel             *Bool     `xmlrpc:"has_cancel,omitempty"`
-	HasInsufficientCredit *Bool     `xmlrpc:"has_insufficient_credit,omitempty"`
-	Id                    *Int      `xmlrpc:"id,omitempty"`
-	MailMessageId         *Many2One `xmlrpc:"mail_message_id,omitempty"`
-	RecipientIds          *Relation `xmlrpc:"recipient_ids,omitempty"`
-	WriteDate             *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate            *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate            *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName           *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasCancel             *Bool     `xmlrpc:"has_cancel,omitempty" json:"has_cancel,omitempty"`
+	HasInsufficientCredit *Bool     `xmlrpc:"has_insufficient_credit,omitempty" json:"has_insufficient_credit,omitempty"`
+	Id                    *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId         *Many2One `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	RecipientIds          *Relation `xmlrpc:"recipient_ids,omitempty" json:"recipient_ids,omitempty"`
+	WriteDate             *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsResends represents array of sms.resend model.

@@ -2,19 +2,19 @@ package odoo
 
 // LunchTopping represents lunch.topping model.
 type LunchTopping struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CategoryId      *Many2One `xmlrpc:"category_id,omitempty"`
-	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	Price           *Float    `xmlrpc:"price,omitempty"`
-	ToppingCategory *Int      `xmlrpc:"topping_category,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CategoryId      *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Price           *Float    `xmlrpc:"price,omitempty" json:"price,omitempty"`
+	ToppingCategory *Int      `xmlrpc:"topping_category,omitempty" json:"topping_category,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // LunchToppings represents array of lunch.topping model.

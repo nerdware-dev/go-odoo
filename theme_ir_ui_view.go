@@ -2,23 +2,23 @@ package odoo
 
 // ThemeIrUiView represents theme.ir.ui.view model.
 type ThemeIrUiView struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool      `xmlrpc:"active,omitempty"`
-	Arch        *String    `xmlrpc:"arch,omitempty"`
-	ArchFs      *String    `xmlrpc:"arch_fs,omitempty"`
-	CopyIds     *Relation  `xmlrpc:"copy_ids,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	InheritId   *String    `xmlrpc:"inherit_id,omitempty"`
-	Key         *String    `xmlrpc:"key,omitempty"`
-	Mode        *Selection `xmlrpc:"mode,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Priority    *Int       `xmlrpc:"priority,omitempty"`
-	Type        *String    `xmlrpc:"type,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Arch        *String    `xmlrpc:"arch,omitempty" json:"arch,omitempty"`
+	ArchFs      *String    `xmlrpc:"arch_fs,omitempty" json:"arch_fs,omitempty"`
+	CopyIds     *Relation  `xmlrpc:"copy_ids,omitempty" json:"copy_ids,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InheritId   *String    `xmlrpc:"inherit_id,omitempty" json:"inherit_id,omitempty"`
+	Key         *String    `xmlrpc:"key,omitempty" json:"key,omitempty"`
+	Mode        *Selection `xmlrpc:"mode,omitempty" json:"mode,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Priority    *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Type        *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ThemeIrUiViews represents array of theme.ir.ui.view model.

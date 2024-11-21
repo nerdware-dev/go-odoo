@@ -2,20 +2,20 @@ package odoo
 
 // ThemeWebsiteMenu represents theme.website.menu model.
 type ThemeWebsiteMenu struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CopyIds     *Relation `xmlrpc:"copy_ids,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	NewWindow   *Bool     `xmlrpc:"new_window,omitempty"`
-	PageId      *Many2One `xmlrpc:"page_id,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	Url         *String   `xmlrpc:"url,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CopyIds     *Relation `xmlrpc:"copy_ids,omitempty" json:"copy_ids,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NewWindow   *Bool     `xmlrpc:"new_window,omitempty" json:"new_window,omitempty"`
+	PageId      *Many2One `xmlrpc:"page_id,omitempty" json:"page_id,omitempty"`
+	ParentId    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Url         *String   `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ThemeWebsiteMenus represents array of theme.website.menu model.

@@ -2,17 +2,17 @@ package odoo
 
 // ProjectSaleLineEmployeeMap represents project.sale.line.employee.map model.
 type ProjectSaleLineEmployeeMap struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty"`
-	ProjectId   *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleLineId  *Many2One `xmlrpc:"sale_line_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	ProjectId   *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleLineId  *Many2One `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectSaleLineEmployeeMaps represents array of project.sale.line.employee.map model.

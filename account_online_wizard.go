@@ -2,21 +2,21 @@ package odoo
 
 // AccountOnlineWizard represents account.online.wizard model.
 type AccountOnlineWizard struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	HideTable    *Bool      `xmlrpc:"hide_table,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	Message      *String    `xmlrpc:"message,omitempty"`
-	Method       *Selection `xmlrpc:"method,omitempty"`
-	NumberAdded  *Int       `xmlrpc:"number_added,omitempty"`
-	Status       *Selection `xmlrpc:"status,omitempty"`
-	SyncDate     *Time      `xmlrpc:"sync_date,omitempty"`
-	Transactions *String    `xmlrpc:"transactions,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HideTable    *Bool      `xmlrpc:"hide_table,omitempty" json:"hide_table,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Message      *String    `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	Method       *Selection `xmlrpc:"method,omitempty" json:"method,omitempty"`
+	NumberAdded  *Int       `xmlrpc:"number_added,omitempty" json:"number_added,omitempty"`
+	Status       *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
+	SyncDate     *Time      `xmlrpc:"sync_date,omitempty" json:"sync_date,omitempty"`
+	Transactions *String    `xmlrpc:"transactions,omitempty" json:"transactions,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountOnlineWizards represents array of account.online.wizard model.

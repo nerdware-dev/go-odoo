@@ -2,17 +2,17 @@ package odoo
 
 // BaseModuleUninstall represents base.module.uninstall model.
 type BaseModuleUninstall struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModelIds    *Relation `xmlrpc:"model_ids,omitempty"`
-	ModuleId    *Many2One `xmlrpc:"module_id,omitempty"`
-	ModuleIds   *Relation `xmlrpc:"module_ids,omitempty"`
-	ShowAll     *Bool     `xmlrpc:"show_all,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelIds    *Relation `xmlrpc:"model_ids,omitempty" json:"model_ids,omitempty"`
+	ModuleId    *Many2One `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	ModuleIds   *Relation `xmlrpc:"module_ids,omitempty" json:"module_ids,omitempty"`
+	ShowAll     *Bool     `xmlrpc:"show_all,omitempty" json:"show_all,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleUninstalls represents array of base.module.uninstall model.

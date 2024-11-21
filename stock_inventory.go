@@ -2,25 +2,25 @@ package odoo
 
 // StockInventory represents stock.inventory model.
 type StockInventory struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountingDate         *Time      `xmlrpc:"accounting_date,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date                   *Time      `xmlrpc:"date,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	HasAccountMoves        *Bool      `xmlrpc:"has_account_moves,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	LineIds                *Relation  `xmlrpc:"line_ids,omitempty"`
-	LocationIds            *Relation  `xmlrpc:"location_ids,omitempty"`
-	MoveIds                *Relation  `xmlrpc:"move_ids,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PrefillCountedQuantity *Selection `xmlrpc:"prefill_counted_quantity,omitempty"`
-	ProductIds             *Relation  `xmlrpc:"product_ids,omitempty"`
-	StartEmpty             *Bool      `xmlrpc:"start_empty,omitempty"`
-	State                  *Selection `xmlrpc:"state,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountingDate         *Time      `xmlrpc:"accounting_date,omitempty" json:"accounting_date,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                   *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasAccountMoves        *Bool      `xmlrpc:"has_account_moves,omitempty" json:"has_account_moves,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineIds                *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	LocationIds            *Relation  `xmlrpc:"location_ids,omitempty" json:"location_ids,omitempty"`
+	MoveIds                *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PrefillCountedQuantity *Selection `xmlrpc:"prefill_counted_quantity,omitempty" json:"prefill_counted_quantity,omitempty"`
+	ProductIds             *Relation  `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`
+	StartEmpty             *Bool      `xmlrpc:"start_empty,omitempty" json:"start_empty,omitempty"`
+	State                  *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockInventorys represents array of stock.inventory model.

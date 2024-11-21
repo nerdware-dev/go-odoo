@@ -2,17 +2,17 @@ package odoo
 
 // ProductAttributeCustomValue represents product.attribute.custom.value model.
 type ProductAttributeCustomValue struct {
-	LastUpdate                            *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate                            *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                             *Many2One `xmlrpc:"create_uid,omitempty"`
-	CustomProductTemplateAttributeValueId *Many2One `xmlrpc:"custom_product_template_attribute_value_id,omitempty"`
-	CustomValue                           *String   `xmlrpc:"custom_value,omitempty"`
-	DisplayName                           *String   `xmlrpc:"display_name,omitempty"`
-	Id                                    *Int      `xmlrpc:"id,omitempty"`
-	Name                                  *String   `xmlrpc:"name,omitempty"`
-	SaleOrderLineId                       *Many2One `xmlrpc:"sale_order_line_id,omitempty"`
-	WriteDate                             *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                              *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                            *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate                            *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                             *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomProductTemplateAttributeValueId *Many2One `xmlrpc:"custom_product_template_attribute_value_id,omitempty" json:"custom_product_template_attribute_value_id,omitempty"`
+	CustomValue                           *String   `xmlrpc:"custom_value,omitempty" json:"custom_value,omitempty"`
+	DisplayName                           *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                                    *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                                  *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SaleOrderLineId                       *Many2One `xmlrpc:"sale_order_line_id,omitempty" json:"sale_order_line_id,omitempty"`
+	WriteDate                             *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                              *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductAttributeCustomValues represents array of product.attribute.custom.value model.

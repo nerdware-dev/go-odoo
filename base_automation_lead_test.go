@@ -2,24 +2,24 @@ package odoo
 
 // BaseAutomationLeadTest represents base.automation.lead.test model.
 type BaseAutomationLeadTest struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	Active            *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateActionLast    *Time      `xmlrpc:"date_action_last,omitempty"`
-	Deadline          *Bool      `xmlrpc:"deadline,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Employee          *Bool      `xmlrpc:"employee,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	IsAssignedToAdmin *Bool      `xmlrpc:"is_assigned_to_admin,omitempty"`
-	LineIds           *Relation  `xmlrpc:"line_ids,omitempty"`
-	Name              *String    `xmlrpc:"name,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Priority          *Bool      `xmlrpc:"priority,omitempty"`
-	State             *Selection `xmlrpc:"state,omitempty"`
-	UserId            *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active            *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateActionLast    *Time      `xmlrpc:"date_action_last,omitempty" json:"date_action_last,omitempty"`
+	Deadline          *Bool      `xmlrpc:"deadline,omitempty" json:"deadline,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Employee          *Bool      `xmlrpc:"employee,omitempty" json:"employee,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAssignedToAdmin *Bool      `xmlrpc:"is_assigned_to_admin,omitempty" json:"is_assigned_to_admin,omitempty"`
+	LineIds           *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	Name              *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Priority          *Bool      `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	State             *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UserId            *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseAutomationLeadTests represents array of base.automation.lead.test model.

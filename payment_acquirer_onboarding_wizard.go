@@ -2,24 +2,24 @@ package odoo
 
 // PaymentAcquirerOnboardingWizard represents payment.acquirer.onboarding.wizard model.
 type PaymentAcquirerOnboardingWizard struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	AccNumber            *String    `xmlrpc:"acc_number,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	JournalName          *String    `xmlrpc:"journal_name,omitempty"`
-	ManualName           *String    `xmlrpc:"manual_name,omitempty"`
-	ManualPostMsg        *String    `xmlrpc:"manual_post_msg,omitempty"`
-	PaymentMethod        *Selection `xmlrpc:"payment_method,omitempty"`
-	PaypalEmailAccount   *String    `xmlrpc:"paypal_email_account,omitempty"`
-	PaypalPdtToken       *String    `xmlrpc:"paypal_pdt_token,omitempty"`
-	PaypalSellerAccount  *String    `xmlrpc:"paypal_seller_account,omitempty"`
-	PaypalUserType       *Selection `xmlrpc:"paypal_user_type,omitempty"`
-	StripePublishableKey *String    `xmlrpc:"stripe_publishable_key,omitempty"`
-	StripeSecretKey      *String    `xmlrpc:"stripe_secret_key,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccNumber            *String    `xmlrpc:"acc_number,omitempty" json:"acc_number,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalName          *String    `xmlrpc:"journal_name,omitempty" json:"journal_name,omitempty"`
+	ManualName           *String    `xmlrpc:"manual_name,omitempty" json:"manual_name,omitempty"`
+	ManualPostMsg        *String    `xmlrpc:"manual_post_msg,omitempty" json:"manual_post_msg,omitempty"`
+	PaymentMethod        *Selection `xmlrpc:"payment_method,omitempty" json:"payment_method,omitempty"`
+	PaypalEmailAccount   *String    `xmlrpc:"paypal_email_account,omitempty" json:"paypal_email_account,omitempty"`
+	PaypalPdtToken       *String    `xmlrpc:"paypal_pdt_token,omitempty" json:"paypal_pdt_token,omitempty"`
+	PaypalSellerAccount  *String    `xmlrpc:"paypal_seller_account,omitempty" json:"paypal_seller_account,omitempty"`
+	PaypalUserType       *Selection `xmlrpc:"paypal_user_type,omitempty" json:"paypal_user_type,omitempty"`
+	StripePublishableKey *String    `xmlrpc:"stripe_publishable_key,omitempty" json:"stripe_publishable_key,omitempty"`
+	StripeSecretKey      *String    `xmlrpc:"stripe_secret_key,omitempty" json:"stripe_secret_key,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentAcquirerOnboardingWizards represents array of payment.acquirer.onboarding.wizard model.

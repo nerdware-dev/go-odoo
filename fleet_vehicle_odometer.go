@@ -2,19 +2,19 @@ package odoo
 
 // FleetVehicleOdometer represents fleet.vehicle.odometer model.
 type FleetVehicleOdometer struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date        *Time      `xmlrpc:"date,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	DriverId    *Many2One  `xmlrpc:"driver_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Unit        *Selection `xmlrpc:"unit,omitempty"`
-	Value       *Float     `xmlrpc:"value,omitempty"`
-	VehicleId   *Many2One  `xmlrpc:"vehicle_id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date        *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DriverId    *Many2One  `xmlrpc:"driver_id,omitempty" json:"driver_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Unit        *Selection `xmlrpc:"unit,omitempty" json:"unit,omitempty"`
+	Value       *Float     `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	VehicleId   *Many2One  `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleOdometers represents array of fleet.vehicle.odometer model.

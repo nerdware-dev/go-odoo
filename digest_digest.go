@@ -2,43 +2,43 @@ package odoo
 
 // DigestDigest represents digest.digest model.
 type DigestDigest struct {
-	LastUpdate                         *Time      `xmlrpc:"__last_update,omitempty"`
-	AvailableFields                    *String    `xmlrpc:"available_fields,omitempty"`
-	CompanyId                          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                         *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName                        *String    `xmlrpc:"display_name,omitempty"`
-	Id                                 *Int       `xmlrpc:"id,omitempty"`
-	IsSubscribed                       *Bool      `xmlrpc:"is_subscribed,omitempty"`
-	KpiAccountBankCash                 *Bool      `xmlrpc:"kpi_account_bank_cash,omitempty"`
-	KpiAccountBankCashValue            *Float     `xmlrpc:"kpi_account_bank_cash_value,omitempty"`
-	KpiAccountTotalRevenue             *Bool      `xmlrpc:"kpi_account_total_revenue,omitempty"`
-	KpiAccountTotalRevenueValue        *Float     `xmlrpc:"kpi_account_total_revenue_value,omitempty"`
-	KpiAllSaleTotal                    *Bool      `xmlrpc:"kpi_all_sale_total,omitempty"`
-	KpiAllSaleTotalValue               *Float     `xmlrpc:"kpi_all_sale_total_value,omitempty"`
-	KpiCrmLeadCreated                  *Bool      `xmlrpc:"kpi_crm_lead_created,omitempty"`
-	KpiCrmLeadCreatedValue             *Int       `xmlrpc:"kpi_crm_lead_created_value,omitempty"`
-	KpiCrmOpportunitiesWon             *Bool      `xmlrpc:"kpi_crm_opportunities_won,omitempty"`
-	KpiCrmOpportunitiesWonValue        *Int       `xmlrpc:"kpi_crm_opportunities_won_value,omitempty"`
-	KpiHelpdeskTicketsClosed           *Bool      `xmlrpc:"kpi_helpdesk_tickets_closed,omitempty"`
-	KpiHelpdeskTicketsClosedValue      *Int       `xmlrpc:"kpi_helpdesk_tickets_closed_value,omitempty"`
-	KpiHrRecruitmentNewColleagues      *Bool      `xmlrpc:"kpi_hr_recruitment_new_colleagues,omitempty"`
-	KpiHrRecruitmentNewColleaguesValue *Int       `xmlrpc:"kpi_hr_recruitment_new_colleagues_value,omitempty"`
-	KpiMailMessageTotal                *Bool      `xmlrpc:"kpi_mail_message_total,omitempty"`
-	KpiMailMessageTotalValue           *Int       `xmlrpc:"kpi_mail_message_total_value,omitempty"`
-	KpiProjectTaskOpened               *Bool      `xmlrpc:"kpi_project_task_opened,omitempty"`
-	KpiProjectTaskOpenedValue          *Int       `xmlrpc:"kpi_project_task_opened_value,omitempty"`
-	KpiResUsersConnected               *Bool      `xmlrpc:"kpi_res_users_connected,omitempty"`
-	KpiResUsersConnectedValue          *Int       `xmlrpc:"kpi_res_users_connected_value,omitempty"`
-	Name                               *String    `xmlrpc:"name,omitempty"`
-	NextRunDate                        *Time      `xmlrpc:"next_run_date,omitempty"`
-	Periodicity                        *Selection `xmlrpc:"periodicity,omitempty"`
-	State                              *Selection `xmlrpc:"state,omitempty"`
-	TemplateId                         *Many2One  `xmlrpc:"template_id,omitempty"`
-	UserIds                            *Relation  `xmlrpc:"user_ids,omitempty"`
-	WriteDate                          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AvailableFields                    *String    `xmlrpc:"available_fields,omitempty" json:"available_fields,omitempty"`
+	CompanyId                          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                         *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName                        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSubscribed                       *Bool      `xmlrpc:"is_subscribed,omitempty" json:"is_subscribed,omitempty"`
+	KpiAccountBankCash                 *Bool      `xmlrpc:"kpi_account_bank_cash,omitempty" json:"kpi_account_bank_cash,omitempty"`
+	KpiAccountBankCashValue            *Float     `xmlrpc:"kpi_account_bank_cash_value,omitempty" json:"kpi_account_bank_cash_value,omitempty"`
+	KpiAccountTotalRevenue             *Bool      `xmlrpc:"kpi_account_total_revenue,omitempty" json:"kpi_account_total_revenue,omitempty"`
+	KpiAccountTotalRevenueValue        *Float     `xmlrpc:"kpi_account_total_revenue_value,omitempty" json:"kpi_account_total_revenue_value,omitempty"`
+	KpiAllSaleTotal                    *Bool      `xmlrpc:"kpi_all_sale_total,omitempty" json:"kpi_all_sale_total,omitempty"`
+	KpiAllSaleTotalValue               *Float     `xmlrpc:"kpi_all_sale_total_value,omitempty" json:"kpi_all_sale_total_value,omitempty"`
+	KpiCrmLeadCreated                  *Bool      `xmlrpc:"kpi_crm_lead_created,omitempty" json:"kpi_crm_lead_created,omitempty"`
+	KpiCrmLeadCreatedValue             *Int       `xmlrpc:"kpi_crm_lead_created_value,omitempty" json:"kpi_crm_lead_created_value,omitempty"`
+	KpiCrmOpportunitiesWon             *Bool      `xmlrpc:"kpi_crm_opportunities_won,omitempty" json:"kpi_crm_opportunities_won,omitempty"`
+	KpiCrmOpportunitiesWonValue        *Int       `xmlrpc:"kpi_crm_opportunities_won_value,omitempty" json:"kpi_crm_opportunities_won_value,omitempty"`
+	KpiHelpdeskTicketsClosed           *Bool      `xmlrpc:"kpi_helpdesk_tickets_closed,omitempty" json:"kpi_helpdesk_tickets_closed,omitempty"`
+	KpiHelpdeskTicketsClosedValue      *Int       `xmlrpc:"kpi_helpdesk_tickets_closed_value,omitempty" json:"kpi_helpdesk_tickets_closed_value,omitempty"`
+	KpiHrRecruitmentNewColleagues      *Bool      `xmlrpc:"kpi_hr_recruitment_new_colleagues,omitempty" json:"kpi_hr_recruitment_new_colleagues,omitempty"`
+	KpiHrRecruitmentNewColleaguesValue *Int       `xmlrpc:"kpi_hr_recruitment_new_colleagues_value,omitempty" json:"kpi_hr_recruitment_new_colleagues_value,omitempty"`
+	KpiMailMessageTotal                *Bool      `xmlrpc:"kpi_mail_message_total,omitempty" json:"kpi_mail_message_total,omitempty"`
+	KpiMailMessageTotalValue           *Int       `xmlrpc:"kpi_mail_message_total_value,omitempty" json:"kpi_mail_message_total_value,omitempty"`
+	KpiProjectTaskOpened               *Bool      `xmlrpc:"kpi_project_task_opened,omitempty" json:"kpi_project_task_opened,omitempty"`
+	KpiProjectTaskOpenedValue          *Int       `xmlrpc:"kpi_project_task_opened_value,omitempty" json:"kpi_project_task_opened_value,omitempty"`
+	KpiResUsersConnected               *Bool      `xmlrpc:"kpi_res_users_connected,omitempty" json:"kpi_res_users_connected,omitempty"`
+	KpiResUsersConnectedValue          *Int       `xmlrpc:"kpi_res_users_connected_value,omitempty" json:"kpi_res_users_connected_value,omitempty"`
+	Name                               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NextRunDate                        *Time      `xmlrpc:"next_run_date,omitempty" json:"next_run_date,omitempty"`
+	Periodicity                        *Selection `xmlrpc:"periodicity,omitempty" json:"periodicity,omitempty"`
+	State                              *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TemplateId                         *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	UserIds                            *Relation  `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate                          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DigestDigests represents array of digest.digest model.

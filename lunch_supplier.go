@@ -2,65 +2,65 @@ package odoo
 
 // LunchSupplier represents lunch.supplier model.
 type LunchSupplier struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                      *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AutomaticEmailTime          *Float     `xmlrpc:"automatic_email_time,omitempty"`
-	AvailableLocationIds        *Relation  `xmlrpc:"available_location_ids,omitempty"`
-	AvailableToday              *Bool      `xmlrpc:"available_today,omitempty"`
-	City                        *String    `xmlrpc:"city,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId                   *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Delivery                    *Selection `xmlrpc:"delivery,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	Email                       *String    `xmlrpc:"email,omitempty"`
-	EmailFormatted              *String    `xmlrpc:"email_formatted,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Moment                      *Selection `xmlrpc:"moment,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Phone                       *String    `xmlrpc:"phone,omitempty"`
-	RecurrencyEndDate           *Time      `xmlrpc:"recurrency_end_date,omitempty"`
-	RecurrencyFriday            *Bool      `xmlrpc:"recurrency_friday,omitempty"`
-	RecurrencyMonday            *Bool      `xmlrpc:"recurrency_monday,omitempty"`
-	RecurrencySaturday          *Bool      `xmlrpc:"recurrency_saturday,omitempty"`
-	RecurrencySunday            *Bool      `xmlrpc:"recurrency_sunday,omitempty"`
-	RecurrencyThursday          *Bool      `xmlrpc:"recurrency_thursday,omitempty"`
-	RecurrencyTuesday           *Bool      `xmlrpc:"recurrency_tuesday,omitempty"`
-	RecurrencyWednesday         *Bool      `xmlrpc:"recurrency_wednesday,omitempty"`
-	ResponsibleId               *Many2One  `xmlrpc:"responsible_id,omitempty"`
-	SendBy                      *Selection `xmlrpc:"send_by,omitempty"`
-	StateId                     *Many2One  `xmlrpc:"state_id,omitempty"`
-	Street                      *String    `xmlrpc:"street,omitempty"`
-	Street2                     *String    `xmlrpc:"street2,omitempty"`
-	Tz                          *Selection `xmlrpc:"tz,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
-	ZipCode                     *String    `xmlrpc:"zip_code,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AutomaticEmailTime          *Float     `xmlrpc:"automatic_email_time,omitempty" json:"automatic_email_time,omitempty"`
+	AvailableLocationIds        *Relation  `xmlrpc:"available_location_ids,omitempty" json:"available_location_ids,omitempty"`
+	AvailableToday              *Bool      `xmlrpc:"available_today,omitempty" json:"available_today,omitempty"`
+	City                        *String    `xmlrpc:"city,omitempty" json:"city,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId                   *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Delivery                    *Selection `xmlrpc:"delivery,omitempty" json:"delivery,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email                       *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EmailFormatted              *String    `xmlrpc:"email_formatted,omitempty" json:"email_formatted,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Moment                      *Selection `xmlrpc:"moment,omitempty" json:"moment,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Phone                       *String    `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	RecurrencyEndDate           *Time      `xmlrpc:"recurrency_end_date,omitempty" json:"recurrency_end_date,omitempty"`
+	RecurrencyFriday            *Bool      `xmlrpc:"recurrency_friday,omitempty" json:"recurrency_friday,omitempty"`
+	RecurrencyMonday            *Bool      `xmlrpc:"recurrency_monday,omitempty" json:"recurrency_monday,omitempty"`
+	RecurrencySaturday          *Bool      `xmlrpc:"recurrency_saturday,omitempty" json:"recurrency_saturday,omitempty"`
+	RecurrencySunday            *Bool      `xmlrpc:"recurrency_sunday,omitempty" json:"recurrency_sunday,omitempty"`
+	RecurrencyThursday          *Bool      `xmlrpc:"recurrency_thursday,omitempty" json:"recurrency_thursday,omitempty"`
+	RecurrencyTuesday           *Bool      `xmlrpc:"recurrency_tuesday,omitempty" json:"recurrency_tuesday,omitempty"`
+	RecurrencyWednesday         *Bool      `xmlrpc:"recurrency_wednesday,omitempty" json:"recurrency_wednesday,omitempty"`
+	ResponsibleId               *Many2One  `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	SendBy                      *Selection `xmlrpc:"send_by,omitempty" json:"send_by,omitempty"`
+	StateId                     *Many2One  `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
+	Street                      *String    `xmlrpc:"street,omitempty" json:"street,omitempty"`
+	Street2                     *String    `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	Tz                          *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ZipCode                     *String    `xmlrpc:"zip_code,omitempty" json:"zip_code,omitempty"`
 }
 
 // LunchSuppliers represents array of lunch.supplier model.

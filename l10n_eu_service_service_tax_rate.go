@@ -2,15 +2,15 @@ package odoo
 
 // L10NEuServiceServiceTaxRate represents l10n_eu_service.service_tax_rate model.
 type L10NEuServiceServiceTaxRate struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CountryId   *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Rate        *Float    `xmlrpc:"rate,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CountryId   *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Rate        *Float    `xmlrpc:"rate,omitempty" json:"rate,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // L10NEuServiceServiceTaxRates represents array of l10n_eu_service.service_tax_rate model.

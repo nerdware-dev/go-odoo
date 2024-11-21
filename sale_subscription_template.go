@@ -2,50 +2,50 @@ package odoo
 
 // SaleSubscriptionTemplate represents sale.subscription.template model.
 type SaleSubscriptionTemplate struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                    *Bool      `xmlrpc:"active,omitempty"`
-	AutoCloseLimit            *Int       `xmlrpc:"auto_close_limit,omitempty"`
-	BadHealthDomain           *String    `xmlrpc:"bad_health_domain,omitempty"`
-	Code                      *String    `xmlrpc:"code,omitempty"`
-	Color                     *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description               *String    `xmlrpc:"description,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	GoodHealthDomain          *String    `xmlrpc:"good_health_domain,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	InvoiceMailTemplateId     *Many2One  `xmlrpc:"invoice_mail_template_id,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MessageAttachmentCount    *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds         *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds        *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError           *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter    *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError        *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower         *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId   *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction         *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter  *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds         *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread             *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter      *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PaymentMode               *Selection `xmlrpc:"payment_mode,omitempty"`
-	ProductCount              *Int       `xmlrpc:"product_count,omitempty"`
-	ProductIds                *Relation  `xmlrpc:"product_ids,omitempty"`
-	RecurringInterval         *Int       `xmlrpc:"recurring_interval,omitempty"`
-	RecurringRuleBoundary     *Selection `xmlrpc:"recurring_rule_boundary,omitempty"`
-	RecurringRuleCount        *Int       `xmlrpc:"recurring_rule_count,omitempty"`
-	RecurringRuleType         *Selection `xmlrpc:"recurring_rule_type,omitempty"`
-	RecurringRuleTypeReadonly *Selection `xmlrpc:"recurring_rule_type_readonly,omitempty"`
-	SubscriptionCount         *Int       `xmlrpc:"subscription_count,omitempty"`
-	TagIds                    *Relation  `xmlrpc:"tag_ids,omitempty"`
-	UserClosable              *Bool      `xmlrpc:"user_closable,omitempty"`
-	WebsiteMessageIds         *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                    *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AutoCloseLimit            *Int       `xmlrpc:"auto_close_limit,omitempty" json:"auto_close_limit,omitempty"`
+	BadHealthDomain           *String    `xmlrpc:"bad_health_domain,omitempty" json:"bad_health_domain,omitempty"`
+	Code                      *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	Color                     *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description               *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GoodHealthDomain          *String    `xmlrpc:"good_health_domain,omitempty" json:"good_health_domain,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceMailTemplateId     *Many2One  `xmlrpc:"invoice_mail_template_id,omitempty" json:"invoice_mail_template_id,omitempty"`
+	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MessageAttachmentCount    *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds         *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds        *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError           *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter    *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError        *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower         *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId   *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction         *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter  *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds         *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread             *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter      *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentMode               *Selection `xmlrpc:"payment_mode,omitempty" json:"payment_mode,omitempty"`
+	ProductCount              *Int       `xmlrpc:"product_count,omitempty" json:"product_count,omitempty"`
+	ProductIds                *Relation  `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`
+	RecurringInterval         *Int       `xmlrpc:"recurring_interval,omitempty" json:"recurring_interval,omitempty"`
+	RecurringRuleBoundary     *Selection `xmlrpc:"recurring_rule_boundary,omitempty" json:"recurring_rule_boundary,omitempty"`
+	RecurringRuleCount        *Int       `xmlrpc:"recurring_rule_count,omitempty" json:"recurring_rule_count,omitempty"`
+	RecurringRuleType         *Selection `xmlrpc:"recurring_rule_type,omitempty" json:"recurring_rule_type,omitempty"`
+	RecurringRuleTypeReadonly *Selection `xmlrpc:"recurring_rule_type_readonly,omitempty" json:"recurring_rule_type_readonly,omitempty"`
+	SubscriptionCount         *Int       `xmlrpc:"subscription_count,omitempty" json:"subscription_count,omitempty"`
+	TagIds                    *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	UserClosable              *Bool      `xmlrpc:"user_closable,omitempty" json:"user_closable,omitempty"`
+	WebsiteMessageIds         *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleSubscriptionTemplates represents array of sale.subscription.template model.

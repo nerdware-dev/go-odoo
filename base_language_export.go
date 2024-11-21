@@ -2,19 +2,19 @@ package odoo
 
 // BaseLanguageExport represents base.language.export model.
 type BaseLanguageExport struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Data        *String    `xmlrpc:"data,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Format      *Selection `xmlrpc:"format,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Lang        *Selection `xmlrpc:"lang,omitempty"`
-	Modules     *Relation  `xmlrpc:"modules,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Data        *String    `xmlrpc:"data,omitempty" json:"data,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Format      *Selection `xmlrpc:"format,omitempty" json:"format,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang        *Selection `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	Modules     *Relation  `xmlrpc:"modules,omitempty" json:"modules,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseLanguageExports represents array of base.language.export model.

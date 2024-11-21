@@ -2,26 +2,26 @@ package odoo
 
 // ProjectProfitabilityReport represents project.profitability.report model.
 type ProjectProfitabilityReport struct {
-	LastUpdate                    *Time     `xmlrpc:"__last_update,omitempty"`
-	AmountUntaxedInvoiced         *Float    `xmlrpc:"amount_untaxed_invoiced,omitempty"`
-	AmountUntaxedToInvoice        *Float    `xmlrpc:"amount_untaxed_to_invoice,omitempty"`
-	AnalyticAccountId             *Many2One `xmlrpc:"analytic_account_id,omitempty"`
-	CompanyId                     *Many2One `xmlrpc:"company_id,omitempty"`
-	CurrencyId                    *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName                   *String   `xmlrpc:"display_name,omitempty"`
-	ExpenseAmountUntaxedInvoiced  *Float    `xmlrpc:"expense_amount_untaxed_invoiced,omitempty"`
-	ExpenseAmountUntaxedToInvoice *Float    `xmlrpc:"expense_amount_untaxed_to_invoice,omitempty"`
-	ExpenseCost                   *Float    `xmlrpc:"expense_cost,omitempty"`
-	Id                            *Int      `xmlrpc:"id,omitempty"`
-	OrderConfirmationDate         *Time     `xmlrpc:"order_confirmation_date,omitempty"`
-	PartnerId                     *Many2One `xmlrpc:"partner_id,omitempty"`
-	ProductId                     *Many2One `xmlrpc:"product_id,omitempty"`
-	ProjectId                     *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleLineId                    *Many2One `xmlrpc:"sale_line_id,omitempty"`
-	SaleOrderId                   *Many2One `xmlrpc:"sale_order_id,omitempty"`
-	TimesheetCost                 *Float    `xmlrpc:"timesheet_cost,omitempty"`
-	TimesheetUnitAmount           *Float    `xmlrpc:"timesheet_unit_amount,omitempty"`
-	UserId                        *Many2One `xmlrpc:"user_id,omitempty"`
+	LastUpdate                    *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AmountUntaxedInvoiced         *Float    `xmlrpc:"amount_untaxed_invoiced,omitempty" json:"amount_untaxed_invoiced,omitempty"`
+	AmountUntaxedToInvoice        *Float    `xmlrpc:"amount_untaxed_to_invoice,omitempty" json:"amount_untaxed_to_invoice,omitempty"`
+	AnalyticAccountId             *Many2One `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	CompanyId                     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId                    *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName                   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseAmountUntaxedInvoiced  *Float    `xmlrpc:"expense_amount_untaxed_invoiced,omitempty" json:"expense_amount_untaxed_invoiced,omitempty"`
+	ExpenseAmountUntaxedToInvoice *Float    `xmlrpc:"expense_amount_untaxed_to_invoice,omitempty" json:"expense_amount_untaxed_to_invoice,omitempty"`
+	ExpenseCost                   *Float    `xmlrpc:"expense_cost,omitempty" json:"expense_cost,omitempty"`
+	Id                            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OrderConfirmationDate         *Time     `xmlrpc:"order_confirmation_date,omitempty" json:"order_confirmation_date,omitempty"`
+	PartnerId                     *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProductId                     *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProjectId                     *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleLineId                    *Many2One `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	SaleOrderId                   *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	TimesheetCost                 *Float    `xmlrpc:"timesheet_cost,omitempty" json:"timesheet_cost,omitempty"`
+	TimesheetUnitAmount           *Float    `xmlrpc:"timesheet_unit_amount,omitempty" json:"timesheet_unit_amount,omitempty"`
+	UserId                        *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // ProjectProfitabilityReports represents array of project.profitability.report model.

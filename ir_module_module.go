@@ -2,44 +2,44 @@ package odoo
 
 // IrModuleModule represents ir.module.module model.
 type IrModuleModule struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	Application                 *Bool      `xmlrpc:"application,omitempty"`
-	Author                      *String    `xmlrpc:"author,omitempty"`
-	AutoInstall                 *Bool      `xmlrpc:"auto_install,omitempty"`
-	CategoryId                  *Many2One  `xmlrpc:"category_id,omitempty"`
-	Contributors                *String    `xmlrpc:"contributors,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Demo                        *Bool      `xmlrpc:"demo,omitempty"`
-	DependenciesId              *Relation  `xmlrpc:"dependencies_id,omitempty"`
-	Description                 *String    `xmlrpc:"description,omitempty"`
-	DescriptionHtml             *String    `xmlrpc:"description_html,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	ExclusionIds                *Relation  `xmlrpc:"exclusion_ids,omitempty"`
-	Icon                        *String    `xmlrpc:"icon,omitempty"`
-	IconImage                   *String    `xmlrpc:"icon_image,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	ImageIds                    *Relation  `xmlrpc:"image_ids,omitempty"`
-	Imported                    *Bool      `xmlrpc:"imported,omitempty"`
-	InstalledVersion            *String    `xmlrpc:"installed_version,omitempty"`
-	IsInstalledOnCurrentWebsite *Bool      `xmlrpc:"is_installed_on_current_website,omitempty"`
-	LatestVersion               *String    `xmlrpc:"latest_version,omitempty"`
-	License                     *Selection `xmlrpc:"license,omitempty"`
-	Maintainer                  *String    `xmlrpc:"maintainer,omitempty"`
-	MenusByModule               *String    `xmlrpc:"menus_by_module,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	PublishedVersion            *String    `xmlrpc:"published_version,omitempty"`
-	ReportsByModule             *String    `xmlrpc:"reports_by_module,omitempty"`
-	Sequence                    *Int       `xmlrpc:"sequence,omitempty"`
-	Shortdesc                   *String    `xmlrpc:"shortdesc,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	Summary                     *String    `xmlrpc:"summary,omitempty"`
-	ToBuy                       *Bool      `xmlrpc:"to_buy,omitempty"`
-	Url                         *String    `xmlrpc:"url,omitempty"`
-	ViewsByModule               *String    `xmlrpc:"views_by_module,omitempty"`
-	Website                     *String    `xmlrpc:"website,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Application                 *Bool      `xmlrpc:"application,omitempty" json:"application,omitempty"`
+	Author                      *String    `xmlrpc:"author,omitempty" json:"author,omitempty"`
+	AutoInstall                 *Bool      `xmlrpc:"auto_install,omitempty" json:"auto_install,omitempty"`
+	CategoryId                  *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	Contributors                *String    `xmlrpc:"contributors,omitempty" json:"contributors,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Demo                        *Bool      `xmlrpc:"demo,omitempty" json:"demo,omitempty"`
+	DependenciesId              *Relation  `xmlrpc:"dependencies_id,omitempty" json:"dependencies_id,omitempty"`
+	Description                 *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DescriptionHtml             *String    `xmlrpc:"description_html,omitempty" json:"description_html,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExclusionIds                *Relation  `xmlrpc:"exclusion_ids,omitempty" json:"exclusion_ids,omitempty"`
+	Icon                        *String    `xmlrpc:"icon,omitempty" json:"icon,omitempty"`
+	IconImage                   *String    `xmlrpc:"icon_image,omitempty" json:"icon_image,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImageIds                    *Relation  `xmlrpc:"image_ids,omitempty" json:"image_ids,omitempty"`
+	Imported                    *Bool      `xmlrpc:"imported,omitempty" json:"imported,omitempty"`
+	InstalledVersion            *String    `xmlrpc:"installed_version,omitempty" json:"installed_version,omitempty"`
+	IsInstalledOnCurrentWebsite *Bool      `xmlrpc:"is_installed_on_current_website,omitempty" json:"is_installed_on_current_website,omitempty"`
+	LatestVersion               *String    `xmlrpc:"latest_version,omitempty" json:"latest_version,omitempty"`
+	License                     *Selection `xmlrpc:"license,omitempty" json:"license,omitempty"`
+	Maintainer                  *String    `xmlrpc:"maintainer,omitempty" json:"maintainer,omitempty"`
+	MenusByModule               *String    `xmlrpc:"menus_by_module,omitempty" json:"menus_by_module,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PublishedVersion            *String    `xmlrpc:"published_version,omitempty" json:"published_version,omitempty"`
+	ReportsByModule             *String    `xmlrpc:"reports_by_module,omitempty" json:"reports_by_module,omitempty"`
+	Sequence                    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Shortdesc                   *String    `xmlrpc:"shortdesc,omitempty" json:"shortdesc,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Summary                     *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	ToBuy                       *Bool      `xmlrpc:"to_buy,omitempty" json:"to_buy,omitempty"`
+	Url                         *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	ViewsByModule               *String    `xmlrpc:"views_by_module,omitempty" json:"views_by_module,omitempty"`
+	Website                     *String    `xmlrpc:"website,omitempty" json:"website,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModuleModules represents array of ir.module.module model.

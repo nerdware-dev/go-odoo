@@ -2,21 +2,21 @@ package odoo
 
 // IrLogging represents ir.logging model.
 type IrLogging struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Int       `xmlrpc:"create_uid,omitempty"`
-	Dbname      *String    `xmlrpc:"dbname,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Func        *String    `xmlrpc:"func,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Level       *String    `xmlrpc:"level,omitempty"`
-	Line        *String    `xmlrpc:"line,omitempty"`
-	Message     *String    `xmlrpc:"message,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Path        *String    `xmlrpc:"path,omitempty"`
-	Type        *Selection `xmlrpc:"type,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Int       `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Int       `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Dbname      *String    `xmlrpc:"dbname,omitempty" json:"dbname,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Func        *String    `xmlrpc:"func,omitempty" json:"func,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Level       *String    `xmlrpc:"level,omitempty" json:"level,omitempty"`
+	Line        *String    `xmlrpc:"line,omitempty" json:"line,omitempty"`
+	Message     *String    `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Path        *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
+	Type        *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Int       `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrLoggings represents array of ir.logging model.

@@ -2,84 +2,84 @@ package odoo
 
 // FleetVehicle represents fleet.vehicle model.
 type FleetVehicle struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	AcquisitionDate             *Time      `xmlrpc:"acquisition_date,omitempty"`
-	Active                      *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	BrandId                     *Many2One  `xmlrpc:"brand_id,omitempty"`
-	CarValue                    *Float     `xmlrpc:"car_value,omitempty"`
-	Co2                         *Float     `xmlrpc:"co2,omitempty"`
-	Color                       *String    `xmlrpc:"color,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	ContractCount               *Int       `xmlrpc:"contract_count,omitempty"`
-	ContractRenewalDueSoon      *Bool      `xmlrpc:"contract_renewal_due_soon,omitempty"`
-	ContractRenewalName         *String    `xmlrpc:"contract_renewal_name,omitempty"`
-	ContractRenewalOverdue      *Bool      `xmlrpc:"contract_renewal_overdue,omitempty"`
-	ContractRenewalTotal        *String    `xmlrpc:"contract_renewal_total,omitempty"`
-	CostCount                   *Int       `xmlrpc:"cost_count,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	Doors                       *Int       `xmlrpc:"doors,omitempty"`
-	DriverId                    *Many2One  `xmlrpc:"driver_id,omitempty"`
-	FirstContractDate           *Time      `xmlrpc:"first_contract_date,omitempty"`
-	FuelLogsCount               *Int       `xmlrpc:"fuel_logs_count,omitempty"`
-	FuelType                    *Selection `xmlrpc:"fuel_type,omitempty"`
-	FutureDriverId              *Many2One  `xmlrpc:"future_driver_id,omitempty"`
-	HistoryCount                *Int       `xmlrpc:"history_count,omitempty"`
-	Horsepower                  *Int       `xmlrpc:"horsepower,omitempty"`
-	HorsepowerTax               *Float     `xmlrpc:"horsepower_tax,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	Image128                    *String    `xmlrpc:"image_128,omitempty"`
-	LicensePlate                *String    `xmlrpc:"license_plate,omitempty"`
-	Location                    *String    `xmlrpc:"location,omitempty"`
-	LogContracts                *Relation  `xmlrpc:"log_contracts,omitempty"`
-	LogDrivers                  *Relation  `xmlrpc:"log_drivers,omitempty"`
-	LogFuel                     *Relation  `xmlrpc:"log_fuel,omitempty"`
-	LogServices                 *Relation  `xmlrpc:"log_services,omitempty"`
-	ManagerId                   *Many2One  `xmlrpc:"manager_id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	ModelId                     *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelYear                   *String    `xmlrpc:"model_year,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	NetCarValue                 *Float     `xmlrpc:"net_car_value,omitempty"`
-	NextAssignationDate         *Time      `xmlrpc:"next_assignation_date,omitempty"`
-	Odometer                    *Float     `xmlrpc:"odometer,omitempty"`
-	OdometerCount               *Int       `xmlrpc:"odometer_count,omitempty"`
-	OdometerUnit                *Selection `xmlrpc:"odometer_unit,omitempty"`
-	PlanToChangeCar             *Bool      `xmlrpc:"plan_to_change_car,omitempty"`
-	Power                       *Int       `xmlrpc:"power,omitempty"`
-	ResidualValue               *Float     `xmlrpc:"residual_value,omitempty"`
-	Seats                       *Int       `xmlrpc:"seats,omitempty"`
-	ServiceCount                *Int       `xmlrpc:"service_count,omitempty"`
-	StateId                     *Many2One  `xmlrpc:"state_id,omitempty"`
-	TagIds                      *Relation  `xmlrpc:"tag_ids,omitempty"`
-	Transmission                *Selection `xmlrpc:"transmission,omitempty"`
-	VinSn                       *String    `xmlrpc:"vin_sn,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AcquisitionDate             *Time      `xmlrpc:"acquisition_date,omitempty" json:"acquisition_date,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	BrandId                     *Many2One  `xmlrpc:"brand_id,omitempty" json:"brand_id,omitempty"`
+	CarValue                    *Float     `xmlrpc:"car_value,omitempty" json:"car_value,omitempty"`
+	Co2                         *Float     `xmlrpc:"co2,omitempty" json:"co2,omitempty"`
+	Color                       *String    `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	ContractCount               *Int       `xmlrpc:"contract_count,omitempty" json:"contract_count,omitempty"`
+	ContractRenewalDueSoon      *Bool      `xmlrpc:"contract_renewal_due_soon,omitempty" json:"contract_renewal_due_soon,omitempty"`
+	ContractRenewalName         *String    `xmlrpc:"contract_renewal_name,omitempty" json:"contract_renewal_name,omitempty"`
+	ContractRenewalOverdue      *Bool      `xmlrpc:"contract_renewal_overdue,omitempty" json:"contract_renewal_overdue,omitempty"`
+	ContractRenewalTotal        *String    `xmlrpc:"contract_renewal_total,omitempty" json:"contract_renewal_total,omitempty"`
+	CostCount                   *Int       `xmlrpc:"cost_count,omitempty" json:"cost_count,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Doors                       *Int       `xmlrpc:"doors,omitempty" json:"doors,omitempty"`
+	DriverId                    *Many2One  `xmlrpc:"driver_id,omitempty" json:"driver_id,omitempty"`
+	FirstContractDate           *Time      `xmlrpc:"first_contract_date,omitempty" json:"first_contract_date,omitempty"`
+	FuelLogsCount               *Int       `xmlrpc:"fuel_logs_count,omitempty" json:"fuel_logs_count,omitempty"`
+	FuelType                    *Selection `xmlrpc:"fuel_type,omitempty" json:"fuel_type,omitempty"`
+	FutureDriverId              *Many2One  `xmlrpc:"future_driver_id,omitempty" json:"future_driver_id,omitempty"`
+	HistoryCount                *Int       `xmlrpc:"history_count,omitempty" json:"history_count,omitempty"`
+	Horsepower                  *Int       `xmlrpc:"horsepower,omitempty" json:"horsepower,omitempty"`
+	HorsepowerTax               *Float     `xmlrpc:"horsepower_tax,omitempty" json:"horsepower_tax,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image128                    *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	LicensePlate                *String    `xmlrpc:"license_plate,omitempty" json:"license_plate,omitempty"`
+	Location                    *String    `xmlrpc:"location,omitempty" json:"location,omitempty"`
+	LogContracts                *Relation  `xmlrpc:"log_contracts,omitempty" json:"log_contracts,omitempty"`
+	LogDrivers                  *Relation  `xmlrpc:"log_drivers,omitempty" json:"log_drivers,omitempty"`
+	LogFuel                     *Relation  `xmlrpc:"log_fuel,omitempty" json:"log_fuel,omitempty"`
+	LogServices                 *Relation  `xmlrpc:"log_services,omitempty" json:"log_services,omitempty"`
+	ManagerId                   *Many2One  `xmlrpc:"manager_id,omitempty" json:"manager_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	ModelId                     *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelYear                   *String    `xmlrpc:"model_year,omitempty" json:"model_year,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NetCarValue                 *Float     `xmlrpc:"net_car_value,omitempty" json:"net_car_value,omitempty"`
+	NextAssignationDate         *Time      `xmlrpc:"next_assignation_date,omitempty" json:"next_assignation_date,omitempty"`
+	Odometer                    *Float     `xmlrpc:"odometer,omitempty" json:"odometer,omitempty"`
+	OdometerCount               *Int       `xmlrpc:"odometer_count,omitempty" json:"odometer_count,omitempty"`
+	OdometerUnit                *Selection `xmlrpc:"odometer_unit,omitempty" json:"odometer_unit,omitempty"`
+	PlanToChangeCar             *Bool      `xmlrpc:"plan_to_change_car,omitempty" json:"plan_to_change_car,omitempty"`
+	Power                       *Int       `xmlrpc:"power,omitempty" json:"power,omitempty"`
+	ResidualValue               *Float     `xmlrpc:"residual_value,omitempty" json:"residual_value,omitempty"`
+	Seats                       *Int       `xmlrpc:"seats,omitempty" json:"seats,omitempty"`
+	ServiceCount                *Int       `xmlrpc:"service_count,omitempty" json:"service_count,omitempty"`
+	StateId                     *Many2One  `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
+	TagIds                      *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	Transmission                *Selection `xmlrpc:"transmission,omitempty" json:"transmission,omitempty"`
+	VinSn                       *String    `xmlrpc:"vin_sn,omitempty" json:"vin_sn,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicles represents array of fleet.vehicle model.

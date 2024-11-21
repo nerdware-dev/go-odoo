@@ -2,24 +2,24 @@ package odoo
 
 // WebEditorConverterTest represents web_editor.converter.test model.
 type WebEditorConverterTest struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	Binary       *String    `xmlrpc:"binary,omitempty"`
-	Char         *String    `xmlrpc:"char,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date         *Time      `xmlrpc:"date,omitempty"`
-	Datetime     *Time      `xmlrpc:"datetime,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Float        *Float     `xmlrpc:"float,omitempty"`
-	Html         *String    `xmlrpc:"html,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	Integer      *Int       `xmlrpc:"integer,omitempty"`
-	Numeric      *Float     `xmlrpc:"numeric,omitempty"`
-	Selection    *Selection `xmlrpc:"selection,omitempty"`
-	SelectionStr *Selection `xmlrpc:"selection_str,omitempty"`
-	Text         *String    `xmlrpc:"text,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Binary       *String    `xmlrpc:"binary,omitempty" json:"binary,omitempty"`
+	Char         *String    `xmlrpc:"char,omitempty" json:"char,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date         *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	Datetime     *Time      `xmlrpc:"datetime,omitempty" json:"datetime,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Float        *Float     `xmlrpc:"float,omitempty" json:"float,omitempty"`
+	Html         *String    `xmlrpc:"html,omitempty" json:"html,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Integer      *Int       `xmlrpc:"integer,omitempty" json:"integer,omitempty"`
+	Many2One     *Many2One  `xmlrpc:"many2one,omitempty" json:"many2one,omitempty"`
+	Numeric      *Float     `xmlrpc:"numeric,omitempty" json:"numeric,omitempty"`
+	SelectionStr *Selection `xmlrpc:"selection_str,omitempty" json:"selection_str,omitempty"`
+	Text         *String    `xmlrpc:"text,omitempty" json:"text,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebEditorConverterTests represents array of web_editor.converter.test model.
@@ -45,7 +45,7 @@ func (c *Client) CreateWebEditorConverterTest(wct *WebEditorConverterTest) (int6
 	return ids[0], nil
 }
 
-// CreateWebEditorConverterTests creates a new web_editor.converter.test model and returns its id.
+// CreateWebEditorConverterTest creates a new web_editor.converter.test model and returns its id.
 func (c *Client) CreateWebEditorConverterTests(wcts []*WebEditorConverterTest) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range wcts {

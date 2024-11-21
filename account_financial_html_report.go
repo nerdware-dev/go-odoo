@@ -2,27 +2,27 @@ package odoo
 
 // AccountFinancialHtmlReport represents account.financial.html.report model.
 type AccountFinancialHtmlReport struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
-	Analytic             *Bool     `xmlrpc:"analytic,omitempty"`
-	ApplicableFiltersIds *Relation `xmlrpc:"applicable_filters_ids,omitempty"`
-	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
-	Comparison           *Bool     `xmlrpc:"comparison,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateRange            *Bool     `xmlrpc:"date_range,omitempty"`
-	DebitCredit          *Bool     `xmlrpc:"debit_credit,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	GeneratedMenuId      *Many2One `xmlrpc:"generated_menu_id,omitempty"`
-	HierarchyOption      *Bool     `xmlrpc:"hierarchy_option,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	LineIds              *Relation `xmlrpc:"line_ids,omitempty"`
-	Name                 *String   `xmlrpc:"name,omitempty"`
-	ParentId             *Many2One `xmlrpc:"parent_id,omitempty"`
-	ShowJournalFilter    *Bool     `xmlrpc:"show_journal_filter,omitempty"`
-	TaxReport            *Bool     `xmlrpc:"tax_report,omitempty"`
-	UnfoldAllFilter      *Bool     `xmlrpc:"unfold_all_filter,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Analytic             *Bool     `xmlrpc:"analytic,omitempty" json:"analytic,omitempty"`
+	ApplicableFiltersIds *Relation `xmlrpc:"applicable_filters_ids,omitempty" json:"applicable_filters_ids,omitempty"`
+	CompanyId            *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Comparison           *Bool     `xmlrpc:"comparison,omitempty" json:"comparison,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateRange            *Bool     `xmlrpc:"date_range,omitempty" json:"date_range,omitempty"`
+	DebitCredit          *Bool     `xmlrpc:"debit_credit,omitempty" json:"debit_credit,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GeneratedMenuId      *Many2One `xmlrpc:"generated_menu_id,omitempty" json:"generated_menu_id,omitempty"`
+	HierarchyOption      *Bool     `xmlrpc:"hierarchy_option,omitempty" json:"hierarchy_option,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineIds              *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	Name                 *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId             *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ShowJournalFilter    *Bool     `xmlrpc:"show_journal_filter,omitempty" json:"show_journal_filter,omitempty"`
+	TaxReport            *Bool     `xmlrpc:"tax_report,omitempty" json:"tax_report,omitempty"`
+	UnfoldAllFilter      *Bool     `xmlrpc:"unfold_all_filter,omitempty" json:"unfold_all_filter,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFinancialHtmlReports represents array of account.financial.html.report model.

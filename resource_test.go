@@ -2,18 +2,18 @@ package odoo
 
 // ResourceTest represents resource.test model.
 type ResourceTest struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omitempty"`
-	ResourceId         *Many2One  `xmlrpc:"resource_id,omitempty"`
-	Tz                 *Selection `xmlrpc:"tz,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResourceCalendarId *Many2One  `xmlrpc:"resource_calendar_id,omitempty" json:"resource_calendar_id,omitempty"`
+	ResourceId         *Many2One  `xmlrpc:"resource_id,omitempty" json:"resource_id,omitempty"`
+	Tz                 *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceTests represents array of resource.test model.

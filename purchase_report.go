@@ -2,38 +2,38 @@ package odoo
 
 // PurchaseReport represents purchase.report model.
 type PurchaseReport struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountAnalyticId   *Many2One  `xmlrpc:"account_analytic_id,omitempty"`
-	CategoryId          *Many2One  `xmlrpc:"category_id,omitempty"`
-	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId           *Many2One  `xmlrpc:"country_id,omitempty"`
-	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DateApprove         *Time      `xmlrpc:"date_approve,omitempty"`
-	DateOrder           *Time      `xmlrpc:"date_order,omitempty"`
-	Delay               *Float     `xmlrpc:"delay,omitempty"`
-	DelayPass           *Float     `xmlrpc:"delay_pass,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	NbrLines            *Int       `xmlrpc:"nbr_lines,omitempty"`
-	OrderId             *Many2One  `xmlrpc:"order_id,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PickingTypeId       *Many2One  `xmlrpc:"picking_type_id,omitempty"`
-	PriceAverage        *Float     `xmlrpc:"price_average,omitempty"`
-	PriceTotal          *Float     `xmlrpc:"price_total,omitempty"`
-	ProductId           *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductTmplId       *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUom          *Many2One  `xmlrpc:"product_uom,omitempty"`
-	QtyBilled           *Float     `xmlrpc:"qty_billed,omitempty"`
-	QtyOrdered          *Float     `xmlrpc:"qty_ordered,omitempty"`
-	QtyReceived         *Float     `xmlrpc:"qty_received,omitempty"`
-	QtyToBeBilled       *Float     `xmlrpc:"qty_to_be_billed,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	UntaxedTotal        *Float     `xmlrpc:"untaxed_total,omitempty"`
-	UserId              *Many2One  `xmlrpc:"user_id,omitempty"`
-	Volume              *Float     `xmlrpc:"volume,omitempty"`
-	Weight              *Float     `xmlrpc:"weight,omitempty"`
+	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountAnalyticId   *Many2One  `xmlrpc:"account_analytic_id,omitempty" json:"account_analytic_id,omitempty"`
+	CategoryId          *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId           *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DateApprove         *Time      `xmlrpc:"date_approve,omitempty" json:"date_approve,omitempty"`
+	DateOrder           *Time      `xmlrpc:"date_order,omitempty" json:"date_order,omitempty"`
+	Delay               *Float     `xmlrpc:"delay,omitempty" json:"delay,omitempty"`
+	DelayPass           *Float     `xmlrpc:"delay_pass,omitempty" json:"delay_pass,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty" json:"fiscal_position_id,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NbrLines            *Int       `xmlrpc:"nbr_lines,omitempty" json:"nbr_lines,omitempty"`
+	OrderId             *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PickingTypeId       *Many2One  `xmlrpc:"picking_type_id,omitempty" json:"picking_type_id,omitempty"`
+	PriceAverage        *Float     `xmlrpc:"price_average,omitempty" json:"price_average,omitempty"`
+	PriceTotal          *Float     `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
+	ProductId           *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId       *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUom          *Many2One  `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	QtyBilled           *Float     `xmlrpc:"qty_billed,omitempty" json:"qty_billed,omitempty"`
+	QtyOrdered          *Float     `xmlrpc:"qty_ordered,omitempty" json:"qty_ordered,omitempty"`
+	QtyReceived         *Float     `xmlrpc:"qty_received,omitempty" json:"qty_received,omitempty"`
+	QtyToBeBilled       *Float     `xmlrpc:"qty_to_be_billed,omitempty" json:"qty_to_be_billed,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UntaxedTotal        *Float     `xmlrpc:"untaxed_total,omitempty" json:"untaxed_total,omitempty"`
+	UserId              *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Volume              *Float     `xmlrpc:"volume,omitempty" json:"volume,omitempty"`
+	Weight              *Float     `xmlrpc:"weight,omitempty" json:"weight,omitempty"`
 }
 
 // PurchaseReports represents array of purchase.report model.

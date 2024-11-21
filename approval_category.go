@@ -2,32 +2,32 @@ package odoo
 
 // ApprovalCategory represents approval.category model.
 type ApprovalCategory struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	ApprovalMinimum        *Int       `xmlrpc:"approval_minimum,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description            *String    `xmlrpc:"description,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	HasAmount              *Selection `xmlrpc:"has_amount,omitempty"`
-	HasDate                *Selection `xmlrpc:"has_date,omitempty"`
-	HasItem                *Selection `xmlrpc:"has_item,omitempty"`
-	HasLocation            *Selection `xmlrpc:"has_location,omitempty"`
-	HasPartner             *Selection `xmlrpc:"has_partner,omitempty"`
-	HasPaymentMethod       *Selection `xmlrpc:"has_payment_method,omitempty"`
-	HasPeriod              *Selection `xmlrpc:"has_period,omitempty"`
-	HasQuantity            *Selection `xmlrpc:"has_quantity,omitempty"`
-	HasReference           *Selection `xmlrpc:"has_reference,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Image                  *String    `xmlrpc:"image,omitempty"`
-	IsManagerApprover      *Bool      `xmlrpc:"is_manager_approver,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	RequestToValidateCount *Int       `xmlrpc:"request_to_validate_count,omitempty"`
-	RequirerDocument       *Selection `xmlrpc:"requirer_document,omitempty"`
-	Sequence               *Int       `xmlrpc:"sequence,omitempty"`
-	UserIds                *Relation  `xmlrpc:"user_ids,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ApprovalMinimum        *Int       `xmlrpc:"approval_minimum,omitempty" json:"approval_minimum,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description            *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasAmount              *Selection `xmlrpc:"has_amount,omitempty" json:"has_amount,omitempty"`
+	HasDate                *Selection `xmlrpc:"has_date,omitempty" json:"has_date,omitempty"`
+	HasItem                *Selection `xmlrpc:"has_item,omitempty" json:"has_item,omitempty"`
+	HasLocation            *Selection `xmlrpc:"has_location,omitempty" json:"has_location,omitempty"`
+	HasPartner             *Selection `xmlrpc:"has_partner,omitempty" json:"has_partner,omitempty"`
+	HasPaymentMethod       *Selection `xmlrpc:"has_payment_method,omitempty" json:"has_payment_method,omitempty"`
+	HasPeriod              *Selection `xmlrpc:"has_period,omitempty" json:"has_period,omitempty"`
+	HasQuantity            *Selection `xmlrpc:"has_quantity,omitempty" json:"has_quantity,omitempty"`
+	HasReference           *Selection `xmlrpc:"has_reference,omitempty" json:"has_reference,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image                  *String    `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	IsManagerApprover      *Bool      `xmlrpc:"is_manager_approver,omitempty" json:"is_manager_approver,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RequestToValidateCount *Int       `xmlrpc:"request_to_validate_count,omitempty" json:"request_to_validate_count,omitempty"`
+	RequirerDocument       *Selection `xmlrpc:"requirer_document,omitempty" json:"requirer_document,omitempty"`
+	Sequence               *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	UserIds                *Relation  `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ApprovalCategorys represents array of approval.category model.

@@ -2,53 +2,53 @@ package odoo
 
 // GamificationChallenge represents gamification.challenge model.
 type GamificationChallenge struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	Category                 *Selection `xmlrpc:"category,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description              *String    `xmlrpc:"description,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	EndDate                  *Time      `xmlrpc:"end_date,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	InvitedUserIds           *Relation  `xmlrpc:"invited_user_ids,omitempty"`
-	LastReportDate           *Time      `xmlrpc:"last_report_date,omitempty"`
-	LineIds                  *Relation  `xmlrpc:"line_ids,omitempty"`
-	ManagerId                *Many2One  `xmlrpc:"manager_id,omitempty"`
-	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	NextReportDate           *Time      `xmlrpc:"next_report_date,omitempty"`
-	Period                   *Selection `xmlrpc:"period,omitempty"`
-	RemindUpdateDelay        *Int       `xmlrpc:"remind_update_delay,omitempty"`
-	ReportMessageFrequency   *Selection `xmlrpc:"report_message_frequency,omitempty"`
-	ReportMessageGroupId     *Many2One  `xmlrpc:"report_message_group_id,omitempty"`
-	ReportTemplateId         *Many2One  `xmlrpc:"report_template_id,omitempty"`
-	RewardFailure            *Bool      `xmlrpc:"reward_failure,omitempty"`
-	RewardFirstId            *Many2One  `xmlrpc:"reward_first_id,omitempty"`
-	RewardId                 *Many2One  `xmlrpc:"reward_id,omitempty"`
-	RewardRealtime           *Bool      `xmlrpc:"reward_realtime,omitempty"`
-	RewardSecondId           *Many2One  `xmlrpc:"reward_second_id,omitempty"`
-	RewardThirdId            *Many2One  `xmlrpc:"reward_third_id,omitempty"`
-	StartDate                *Time      `xmlrpc:"start_date,omitempty"`
-	State                    *Selection `xmlrpc:"state,omitempty"`
-	UserDomain               *String    `xmlrpc:"user_domain,omitempty"`
-	UserIds                  *Relation  `xmlrpc:"user_ids,omitempty"`
-	VisibilityMode           *Selection `xmlrpc:"visibility_mode,omitempty"`
-	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Category                 *Selection `xmlrpc:"category,omitempty" json:"category,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description              *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndDate                  *Time      `xmlrpc:"end_date,omitempty" json:"end_date,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvitedUserIds           *Relation  `xmlrpc:"invited_user_ids,omitempty" json:"invited_user_ids,omitempty"`
+	LastReportDate           *Time      `xmlrpc:"last_report_date,omitempty" json:"last_report_date,omitempty"`
+	LineIds                  *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	ManagerId                *Many2One  `xmlrpc:"manager_id,omitempty" json:"manager_id,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread            *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter     *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NextReportDate           *Time      `xmlrpc:"next_report_date,omitempty" json:"next_report_date,omitempty"`
+	Period                   *Selection `xmlrpc:"period,omitempty" json:"period,omitempty"`
+	RemindUpdateDelay        *Int       `xmlrpc:"remind_update_delay,omitempty" json:"remind_update_delay,omitempty"`
+	ReportMessageFrequency   *Selection `xmlrpc:"report_message_frequency,omitempty" json:"report_message_frequency,omitempty"`
+	ReportMessageGroupId     *Many2One  `xmlrpc:"report_message_group_id,omitempty" json:"report_message_group_id,omitempty"`
+	ReportTemplateId         *Many2One  `xmlrpc:"report_template_id,omitempty" json:"report_template_id,omitempty"`
+	RewardFailure            *Bool      `xmlrpc:"reward_failure,omitempty" json:"reward_failure,omitempty"`
+	RewardFirstId            *Many2One  `xmlrpc:"reward_first_id,omitempty" json:"reward_first_id,omitempty"`
+	RewardId                 *Many2One  `xmlrpc:"reward_id,omitempty" json:"reward_id,omitempty"`
+	RewardRealtime           *Bool      `xmlrpc:"reward_realtime,omitempty" json:"reward_realtime,omitempty"`
+	RewardSecondId           *Many2One  `xmlrpc:"reward_second_id,omitempty" json:"reward_second_id,omitempty"`
+	RewardThirdId            *Many2One  `xmlrpc:"reward_third_id,omitempty" json:"reward_third_id,omitempty"`
+	StartDate                *Time      `xmlrpc:"start_date,omitempty" json:"start_date,omitempty"`
+	State                    *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UserDomain               *String    `xmlrpc:"user_domain,omitempty" json:"user_domain,omitempty"`
+	UserIds                  *Relation  `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	VisibilityMode           *Selection `xmlrpc:"visibility_mode,omitempty" json:"visibility_mode,omitempty"`
+	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // GamificationChallenges represents array of gamification.challenge model.

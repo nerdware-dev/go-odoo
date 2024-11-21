@@ -2,18 +2,18 @@ package odoo
 
 // AccountBankStatementCashbox represents account.bank.statement.cashbox model.
 type AccountBankStatementCashbox struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CashboxLinesIds  *Relation `xmlrpc:"cashbox_lines_ids,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId       *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	EndBankStmtIds   *Relation `xmlrpc:"end_bank_stmt_ids,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	StartBankStmtIds *Relation `xmlrpc:"start_bank_stmt_ids,omitempty"`
-	Total            *Float    `xmlrpc:"total,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CashboxLinesIds  *Relation `xmlrpc:"cashbox_lines_ids,omitempty" json:"cashbox_lines_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId       *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndBankStmtIds   *Relation `xmlrpc:"end_bank_stmt_ids,omitempty" json:"end_bank_stmt_ids,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	StartBankStmtIds *Relation `xmlrpc:"start_bank_stmt_ids,omitempty" json:"start_bank_stmt_ids,omitempty"`
+	Total            *Float    `xmlrpc:"total,omitempty" json:"total,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankStatementCashboxs represents array of account.bank.statement.cashbox model.

@@ -2,29 +2,29 @@ package odoo
 
 // StockQuant represents stock.quant model.
 type StockQuant struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	InDate            *Time      `xmlrpc:"in_date,omitempty"`
-	InventoryQuantity *Float     `xmlrpc:"inventory_quantity,omitempty"`
-	LocationId        *Many2One  `xmlrpc:"location_id,omitempty"`
-	LotId             *Many2One  `xmlrpc:"lot_id,omitempty"`
-	OnHand            *Bool      `xmlrpc:"on_hand,omitempty"`
-	OwnerId           *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PackageId         *Many2One  `xmlrpc:"package_id,omitempty"`
-	ProductId         *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductTmplId     *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUomId      *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	Quantity          *Float     `xmlrpc:"quantity,omitempty"`
-	ReservedQuantity  *Float     `xmlrpc:"reserved_quantity,omitempty"`
-	Tracking          *Selection `xmlrpc:"tracking,omitempty"`
-	Value             *Float     `xmlrpc:"value,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId        *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InDate            *Time      `xmlrpc:"in_date,omitempty" json:"in_date,omitempty"`
+	InventoryQuantity *Float     `xmlrpc:"inventory_quantity,omitempty" json:"inventory_quantity,omitempty"`
+	LocationId        *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	LotId             *Many2One  `xmlrpc:"lot_id,omitempty" json:"lot_id,omitempty"`
+	OnHand            *Bool      `xmlrpc:"on_hand,omitempty" json:"on_hand,omitempty"`
+	OwnerId           *Many2One  `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PackageId         *Many2One  `xmlrpc:"package_id,omitempty" json:"package_id,omitempty"`
+	ProductId         *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId     *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUomId      *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Quantity          *Float     `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	ReservedQuantity  *Float     `xmlrpc:"reserved_quantity,omitempty" json:"reserved_quantity,omitempty"`
+	Tracking          *Selection `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	Value             *Float     `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockQuants represents array of stock.quant model.

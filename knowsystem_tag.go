@@ -2,27 +2,27 @@ package odoo
 
 // KnowsystemTag represents knowsystem.tag model.
 type KnowsystemTag struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	ApplyToAll  *Bool     `xmlrpc:"apply_to_all,omitempty"`
-	ArticleIds  *Relation `xmlrpc:"article_ids,omitempty"`
-	CanPublish  *Bool     `xmlrpc:"can_publish,omitempty"`
-	ChildIds    *Relation `xmlrpc:"child_ids,omitempty"`
-	Color       *Int      `xmlrpc:"color,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description *String   `xmlrpc:"description,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FilterIds   *Relation `xmlrpc:"filter_ids,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	IsPublished *Bool     `xmlrpc:"is_published,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	WebsiteId   *Many2One `xmlrpc:"website_id,omitempty"`
-	WebsiteUrl  *String   `xmlrpc:"website_url,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ApplyToAll  *Bool     `xmlrpc:"apply_to_all,omitempty" json:"apply_to_all,omitempty"`
+	ArticleIds  *Relation `xmlrpc:"article_ids,omitempty" json:"article_ids,omitempty"`
+	CanPublish  *Bool     `xmlrpc:"can_publish,omitempty" json:"can_publish,omitempty"`
+	ChildIds    *Relation `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	Color       *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FilterIds   *Relation `xmlrpc:"filter_ids,omitempty" json:"filter_ids,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPublished *Bool     `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WebsiteId   *Many2One `xmlrpc:"website_id,omitempty" json:"website_id,omitempty"`
+	WebsiteUrl  *String   `xmlrpc:"website_url,omitempty" json:"website_url,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // KnowsystemTags represents array of knowsystem.tag model.

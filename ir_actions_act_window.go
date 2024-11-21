@@ -2,35 +2,35 @@ package odoo
 
 // IrActionsActWindow represents ir.actions.act_window model.
 type IrActionsActWindow struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`
-	Context          *String    `xmlrpc:"context,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Domain           *String    `xmlrpc:"domain,omitempty"`
-	Filter           *Bool      `xmlrpc:"filter,omitempty"`
-	GroupsId         *Relation  `xmlrpc:"groups_id,omitempty"`
-	Help             *String    `xmlrpc:"help,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Limit            *Int       `xmlrpc:"limit,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	ResId            *Int       `xmlrpc:"res_id,omitempty"`
-	ResModel         *String    `xmlrpc:"res_model,omitempty"`
-	SearchView       *String    `xmlrpc:"search_view,omitempty"`
-	SearchViewId     *Many2One  `xmlrpc:"search_view_id,omitempty"`
-	Target           *Selection `xmlrpc:"target,omitempty"`
-	Type             *String    `xmlrpc:"type,omitempty"`
-	Usage            *String    `xmlrpc:"usage,omitempty"`
-	ViewId           *Many2One  `xmlrpc:"view_id,omitempty"`
-	ViewIds          *Relation  `xmlrpc:"view_ids,omitempty"`
-	ViewMode         *String    `xmlrpc:"view_mode,omitempty"`
-	Views            *String    `xmlrpc:"views,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId            *String    `xmlrpc:"xml_id,omitempty"`
+	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
+	BindingType      *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
+	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
+	Context          *String    `xmlrpc:"context,omitempty" json:"context,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain           *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	Filter           *Bool      `xmlrpc:"filter,omitempty" json:"filter,omitempty"`
+	GroupsId         *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Limit            *Int       `xmlrpc:"limit,omitempty" json:"limit,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResId            *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel         *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	SearchView       *String    `xmlrpc:"search_view,omitempty" json:"search_view,omitempty"`
+	SearchViewId     *Many2One  `xmlrpc:"search_view_id,omitempty" json:"search_view_id,omitempty"`
+	Target           *Selection `xmlrpc:"target,omitempty" json:"target,omitempty"`
+	Type             *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Usage            *String    `xmlrpc:"usage,omitempty" json:"usage,omitempty"`
+	ViewId           *Many2One  `xmlrpc:"view_id,omitempty" json:"view_id,omitempty"`
+	ViewIds          *Relation  `xmlrpc:"view_ids,omitempty" json:"view_ids,omitempty"`
+	ViewMode         *String    `xmlrpc:"view_mode,omitempty" json:"view_mode,omitempty"`
+	Views            *String    `xmlrpc:"views,omitempty" json:"views,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId            *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrActionsActWindows represents array of ir.actions.act_window model.

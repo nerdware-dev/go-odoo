@@ -2,18 +2,18 @@ package odoo
 
 // ForumPostVote represents forum.post.vote model.
 type ForumPostVote struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	ForumId     *Many2One  `xmlrpc:"forum_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	PostId      *Many2One  `xmlrpc:"post_id,omitempty"`
-	RecipientId *Many2One  `xmlrpc:"recipient_id,omitempty"`
-	UserId      *Many2One  `xmlrpc:"user_id,omitempty"`
-	Vote        *Selection `xmlrpc:"vote,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForumId     *Many2One  `xmlrpc:"forum_id,omitempty" json:"forum_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PostId      *Many2One  `xmlrpc:"post_id,omitempty" json:"post_id,omitempty"`
+	RecipientId *Many2One  `xmlrpc:"recipient_id,omitempty" json:"recipient_id,omitempty"`
+	UserId      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Vote        *Selection `xmlrpc:"vote,omitempty" json:"vote,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ForumPostVotes represents array of forum.post.vote model.

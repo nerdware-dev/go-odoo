@@ -2,14 +2,14 @@ package odoo
 
 // ImageMixin represents image.mixin model.
 type ImageMixin struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
-	Image1024   *String `xmlrpc:"image_1024,omitempty"`
-	Image128    *String `xmlrpc:"image_128,omitempty"`
-	Image1920   *String `xmlrpc:"image_1920,omitempty"`
-	Image256    *String `xmlrpc:"image_256,omitempty"`
-	Image512    *String `xmlrpc:"image_512,omitempty"`
+	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	DisplayName *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image1024   *String `xmlrpc:"image_1024,omitempty" json:"image_1024,omitempty"`
+	Image128    *String `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	Image1920   *String `xmlrpc:"image_1920,omitempty" json:"image_1920,omitempty"`
+	Image256    *String `xmlrpc:"image_256,omitempty" json:"image_256,omitempty"`
+	Image512    *String `xmlrpc:"image_512,omitempty" json:"image_512,omitempty"`
 }
 
 // ImageMixins represents array of image.mixin model.

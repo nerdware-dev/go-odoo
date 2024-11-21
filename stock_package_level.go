@@ -2,26 +2,26 @@ package odoo
 
 // StockPackageLevel represents stock.package_level model.
 type StockPackageLevel struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	IsDone          *Bool      `xmlrpc:"is_done,omitempty"`
-	IsFreshPackage  *Bool      `xmlrpc:"is_fresh_package,omitempty"`
-	LocationDestId  *Many2One  `xmlrpc:"location_dest_id,omitempty"`
-	LocationId      *Many2One  `xmlrpc:"location_id,omitempty"`
-	MoveIds         *Relation  `xmlrpc:"move_ids,omitempty"`
-	MoveLineIds     *Relation  `xmlrpc:"move_line_ids,omitempty"`
-	PackageId       *Many2One  `xmlrpc:"package_id,omitempty"`
-	PickingId       *Many2One  `xmlrpc:"picking_id,omitempty"`
-	PickingTypeCode *Selection `xmlrpc:"picking_type_code,omitempty"`
-	ShowLotsM2O     *Bool      `xmlrpc:"show_lots_m2o,omitempty"`
-	ShowLotsText    *Bool      `xmlrpc:"show_lots_text,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsDone          *Bool      `xmlrpc:"is_done,omitempty" json:"is_done,omitempty"`
+	IsFreshPackage  *Bool      `xmlrpc:"is_fresh_package,omitempty" json:"is_fresh_package,omitempty"`
+	LocationDestId  *Many2One  `xmlrpc:"location_dest_id,omitempty" json:"location_dest_id,omitempty"`
+	LocationId      *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	MoveIds         *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	MoveLineIds     *Relation  `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	PackageId       *Many2One  `xmlrpc:"package_id,omitempty" json:"package_id,omitempty"`
+	PickingId       *Many2One  `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	PickingTypeCode *Selection `xmlrpc:"picking_type_code,omitempty" json:"picking_type_code,omitempty"`
+	ShowLotsM2O     *Bool      `xmlrpc:"show_lots_m2o,omitempty" json:"show_lots_m2o,omitempty"`
+	ShowLotsText    *Bool      `xmlrpc:"show_lots_text,omitempty" json:"show_lots_text,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPackageLevels represents array of stock.package_level model.

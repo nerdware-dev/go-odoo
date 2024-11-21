@@ -2,74 +2,74 @@ package odoo
 
 // AccountAsset represents account.asset model.
 type AccountAsset struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountAnalyticId             *Many2One  `xmlrpc:"account_analytic_id,omitempty"`
-	AccountAssetId                *Many2One  `xmlrpc:"account_asset_id,omitempty"`
-	AccountDepreciationExpenseId  *Many2One  `xmlrpc:"account_depreciation_expense_id,omitempty"`
-	AccountDepreciationId         *Many2One  `xmlrpc:"account_depreciation_id,omitempty"`
-	AcquisitionDate               *Time      `xmlrpc:"acquisition_date,omitempty"`
-	Active                        *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadline          *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration   *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon         *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                   *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState                 *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AnalyticTagIds                *Relation  `xmlrpc:"analytic_tag_ids,omitempty"`
-	AssetType                     *Selection `xmlrpc:"asset_type,omitempty"`
-	BookValue                     *Float     `xmlrpc:"book_value,omitempty"`
-	ChildrenIds                   *Relation  `xmlrpc:"children_ids,omitempty"`
-	CompanyId                     *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                    *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DepreciationEntriesCount      *Int       `xmlrpc:"depreciation_entries_count,omitempty"`
-	DepreciationMoveIds           *Relation  `xmlrpc:"depreciation_move_ids,omitempty"`
-	DisplayAccountAssetId         *Bool      `xmlrpc:"display_account_asset_id,omitempty"`
-	DisplayModelChoice            *Bool      `xmlrpc:"display_model_choice,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	DisposalDate                  *Time      `xmlrpc:"disposal_date,omitempty"`
-	DoNotShowInAssetReport        *Bool      `xmlrpc:"do_not_show_in_asset_report,omitempty"`
-	FirstDepreciationDate         *Time      `xmlrpc:"first_depreciation_date,omitempty"`
-	GrossIncreaseCount            *Int       `xmlrpc:"gross_increase_count,omitempty"`
-	GrossIncreaseValue            *Float     `xmlrpc:"gross_increase_value,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	JournalId                     *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MessageAttachmentCount        *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds             *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds            *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError               *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter        *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError            *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                    *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower             *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId       *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction             *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter      *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds             *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread                 *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter          *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Method                        *Selection `xmlrpc:"method,omitempty"`
-	MethodNumber                  *Int       `xmlrpc:"method_number,omitempty"`
-	MethodPeriod                  *Selection `xmlrpc:"method_period,omitempty"`
-	MethodProgressFactor          *Float     `xmlrpc:"method_progress_factor,omitempty"`
-	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	OriginalMoveLineIds           *Relation  `xmlrpc:"original_move_line_ids,omitempty"`
-	OriginalValue                 *Float     `xmlrpc:"original_value,omitempty"`
-	ParentId                      *Many2One  `xmlrpc:"parent_id,omitempty"`
-	Prorata                       *Bool      `xmlrpc:"prorata,omitempty"`
-	ProrataDate                   *Time      `xmlrpc:"prorata_date,omitempty"`
-	SalvageValue                  *Float     `xmlrpc:"salvage_value,omitempty"`
-	State                         *Selection `xmlrpc:"state,omitempty"`
-	TotalDepreciationEntriesCount *Int       `xmlrpc:"total_depreciation_entries_count,omitempty"`
-	UserTypeId                    *Many2One  `xmlrpc:"user_type_id,omitempty"`
-	ValueResidual                 *Float     `xmlrpc:"value_residual,omitempty"`
-	WebsiteMessageIds             *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AccountAnalyticId             *Many2One  `xmlrpc:"account_analytic_id,omitempty" json:"account_analytic_id,omitempty"`
+	AccountAssetId                *Many2One  `xmlrpc:"account_asset_id,omitempty" json:"account_asset_id,omitempty"`
+	AccountDepreciationExpenseId  *Many2One  `xmlrpc:"account_depreciation_expense_id,omitempty" json:"account_depreciation_expense_id,omitempty"`
+	AccountDepreciationId         *Many2One  `xmlrpc:"account_depreciation_id,omitempty" json:"account_depreciation_id,omitempty"`
+	AcquisitionDate               *Time      `xmlrpc:"acquisition_date,omitempty" json:"acquisition_date,omitempty"`
+	Active                        *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityDateDeadline          *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration   *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon         *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                   *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState                 *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AnalyticTagIds                *Relation  `xmlrpc:"analytic_tag_ids,omitempty" json:"analytic_tag_ids,omitempty"`
+	AssetType                     *Selection `xmlrpc:"asset_type,omitempty" json:"asset_type,omitempty"`
+	BookValue                     *Float     `xmlrpc:"book_value,omitempty" json:"book_value,omitempty"`
+	ChildrenIds                   *Relation  `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
+	CompanyId                     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                    *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DepreciationEntriesCount      *Int       `xmlrpc:"depreciation_entries_count,omitempty" json:"depreciation_entries_count,omitempty"`
+	DepreciationMoveIds           *Relation  `xmlrpc:"depreciation_move_ids,omitempty" json:"depreciation_move_ids,omitempty"`
+	DisplayAccountAssetId         *Bool      `xmlrpc:"display_account_asset_id,omitempty" json:"display_account_asset_id,omitempty"`
+	DisplayModelChoice            *Bool      `xmlrpc:"display_model_choice,omitempty" json:"display_model_choice,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisposalDate                  *Time      `xmlrpc:"disposal_date,omitempty" json:"disposal_date,omitempty"`
+	DoNotShowInAssetReport        *Bool      `xmlrpc:"do_not_show_in_asset_report,omitempty" json:"do_not_show_in_asset_report,omitempty"`
+	FirstDepreciationDate         *Time      `xmlrpc:"first_depreciation_date,omitempty" json:"first_depreciation_date,omitempty"`
+	GrossIncreaseCount            *Int       `xmlrpc:"gross_increase_count,omitempty" json:"gross_increase_count,omitempty"`
+	GrossIncreaseValue            *Float     `xmlrpc:"gross_increase_value,omitempty" json:"gross_increase_value,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                     *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MessageAttachmentCount        *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageChannelIds             *Relation  `xmlrpc:"message_channel_ids,omitempty" json:"message_channel_ids,omitempty"`
+	MessageFollowerIds            *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError               *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter        *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError            *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                    *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower             *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId       *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction             *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter      *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds             *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MessageUnread                 *Bool      `xmlrpc:"message_unread,omitempty" json:"message_unread,omitempty"`
+	MessageUnreadCounter          *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	Method                        *Selection `xmlrpc:"method,omitempty" json:"method,omitempty"`
+	MethodNumber                  *Int       `xmlrpc:"method_number,omitempty" json:"method_number,omitempty"`
+	MethodPeriod                  *Selection `xmlrpc:"method_period,omitempty" json:"method_period,omitempty"`
+	MethodProgressFactor          *Float     `xmlrpc:"method_progress_factor,omitempty" json:"method_progress_factor,omitempty"`
+	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OriginalMoveLineIds           *Relation  `xmlrpc:"original_move_line_ids,omitempty" json:"original_move_line_ids,omitempty"`
+	OriginalValue                 *Float     `xmlrpc:"original_value,omitempty" json:"original_value,omitempty"`
+	ParentId                      *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	Prorata                       *Bool      `xmlrpc:"prorata,omitempty" json:"prorata,omitempty"`
+	ProrataDate                   *Time      `xmlrpc:"prorata_date,omitempty" json:"prorata_date,omitempty"`
+	SalvageValue                  *Float     `xmlrpc:"salvage_value,omitempty" json:"salvage_value,omitempty"`
+	State                         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TotalDepreciationEntriesCount *Int       `xmlrpc:"total_depreciation_entries_count,omitempty" json:"total_depreciation_entries_count,omitempty"`
+	UserTypeId                    *Many2One  `xmlrpc:"user_type_id,omitempty" json:"user_type_id,omitempty"`
+	ValueResidual                 *Float     `xmlrpc:"value_residual,omitempty" json:"value_residual,omitempty"`
+	WebsiteMessageIds             *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAssets represents array of account.asset model.

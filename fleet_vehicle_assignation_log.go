@@ -2,18 +2,18 @@ package odoo
 
 // FleetVehicleAssignationLog represents fleet.vehicle.assignation.log model.
 type FleetVehicleAssignationLog struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	AttachmentNumber *Int      `xmlrpc:"attachment_number,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateEnd          *Time     `xmlrpc:"date_end,omitempty"`
-	DateStart        *Time     `xmlrpc:"date_start,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	DriverId         *Many2One `xmlrpc:"driver_id,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	VehicleId        *Many2One `xmlrpc:"vehicle_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
+	AttachmentNumber *Int      `xmlrpc:"attachment_number,omitempty" json:"attachment_number,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateEnd          *Time     `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateStart        *Time     `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DriverId         *Many2One `xmlrpc:"driver_id,omitempty" json:"driver_id,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	VehicleId        *Many2One `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleAssignationLogs represents array of fleet.vehicle.assignation.log model.
