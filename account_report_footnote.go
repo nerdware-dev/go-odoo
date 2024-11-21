@@ -2,13 +2,12 @@ package odoo
 
 // AccountReportFootnote represents account.report.footnote model.
 type AccountReportFootnote struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
-	Line        *String   `xmlrpc:"line,omitempty"`
-	ManagerId   *Many2One `xmlrpc:"manager_id,omitempty"`
+	LineId      *String   `xmlrpc:"line_id,omitempty"`
+	ReportId    *Many2One `xmlrpc:"report_id,omitempty"`
 	Text        *String   `xmlrpc:"text,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`

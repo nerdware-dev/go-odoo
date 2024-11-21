@@ -2,9 +2,8 @@ package odoo
 
 // CrossoveredBudgetLines represents crossovered.budget.lines model.
 type CrossoveredBudgetLines struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
 	AnalyticAccountId      *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	AnalyticGroupId        *Many2One  `xmlrpc:"analytic_group_id,omitempty"`
+	AnalyticPlanId         *Many2One  `xmlrpc:"analytic_plan_id,omitempty"`
 	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`

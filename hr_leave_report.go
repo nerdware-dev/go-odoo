@@ -2,8 +2,8 @@ package odoo
 
 // HrLeaveReport represents hr.leave.report model.
 type HrLeaveReport struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
 	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
 	DateFrom        *Time      `xmlrpc:"date_from,omitempty"`
 	DateTo          *Time      `xmlrpc:"date_to,omitempty"`
 	DepartmentId    *Many2One  `xmlrpc:"department_id,omitempty"`
@@ -12,10 +12,10 @@ type HrLeaveReport struct {
 	HolidayStatusId *Many2One  `xmlrpc:"holiday_status_id,omitempty"`
 	HolidayType     *Selection `xmlrpc:"holiday_type,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty"`
+	LeaveId         *Many2One  `xmlrpc:"leave_id,omitempty"`
 	LeaveType       *Selection `xmlrpc:"leave_type,omitempty"`
 	Name            *String    `xmlrpc:"name,omitempty"`
 	NumberOfDays    *Float     `xmlrpc:"number_of_days,omitempty"`
-	PayslipStatus   *Bool      `xmlrpc:"payslip_status,omitempty"`
 	State           *Selection `xmlrpc:"state,omitempty"`
 }
 

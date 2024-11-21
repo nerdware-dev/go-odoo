@@ -2,7 +2,6 @@ package odoo
 
 // ReportLayout represents report.layout model.
 type ReportLayout struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -10,6 +9,7 @@ type ReportLayout struct {
 	Image       *String   `xmlrpc:"image,omitempty"`
 	Name        *String   `xmlrpc:"name,omitempty"`
 	Pdf         *String   `xmlrpc:"pdf,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
 	ViewId      *Many2One `xmlrpc:"view_id,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`

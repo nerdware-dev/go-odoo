@@ -2,27 +2,18 @@ package odoo
 
 // SmsTemplatePreview represents sms.template.preview model.
 type SmsTemplatePreview struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	Body                *String    `xmlrpc:"body,omitempty"`
-	Copyvalue           *String    `xmlrpc:"copyvalue,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Lang                *Selection `xmlrpc:"lang,omitempty"`
-	Model               *String    `xmlrpc:"model,omitempty"`
-	ModelId             *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelObjectField    *Many2One  `xmlrpc:"model_object_field,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	NullValue           *String    `xmlrpc:"null_value,omitempty"`
-	ResId               *Int       `xmlrpc:"res_id,omitempty"`
-	ResourceRef         *String    `xmlrpc:"resource_ref,omitempty"`
-	SidebarActionId     *Many2One  `xmlrpc:"sidebar_action_id,omitempty"`
-	SmsTemplateId       *Many2One  `xmlrpc:"sms_template_id,omitempty"`
-	SubModelObjectField *Many2One  `xmlrpc:"sub_model_object_field,omitempty"`
-	SubObject           *Many2One  `xmlrpc:"sub_object,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Body          *String    `xmlrpc:"body,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty"`
+	Lang          *Selection `xmlrpc:"lang,omitempty"`
+	ModelId       *Many2One  `xmlrpc:"model_id,omitempty"`
+	NoRecord      *Bool      `xmlrpc:"no_record,omitempty"`
+	ResourceRef   *String    `xmlrpc:"resource_ref,omitempty"`
+	SmsTemplateId *Many2One  `xmlrpc:"sms_template_id,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // SmsTemplatePreviews represents array of sms.template.preview model.

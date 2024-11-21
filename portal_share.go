@@ -2,7 +2,6 @@ package odoo
 
 // PortalShare represents portal.share model.
 type PortalShare struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
 	AccessWarning *String   `xmlrpc:"access_warning,omitempty"`
 	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
@@ -12,6 +11,7 @@ type PortalShare struct {
 	PartnerIds    *Relation `xmlrpc:"partner_ids,omitempty"`
 	ResId         *Int      `xmlrpc:"res_id,omitempty"`
 	ResModel      *String   `xmlrpc:"res_model,omitempty"`
+	ResourceRef   *String   `xmlrpc:"resource_ref,omitempty"`
 	ShareLink     *String   `xmlrpc:"share_link,omitempty"`
 	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`

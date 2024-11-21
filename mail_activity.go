@@ -2,18 +2,20 @@ package odoo
 
 // MailActivity represents mail.activity model.
 type MailActivity struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
+	Active                    *Bool      `xmlrpc:"active,omitempty"`
 	ActivityCategory          *Selection `xmlrpc:"activity_category,omitempty"`
 	ActivityDecoration        *Selection `xmlrpc:"activity_decoration,omitempty"`
 	ActivityTypeId            *Many2One  `xmlrpc:"activity_type_id,omitempty"`
+	AttachmentIds             *Relation  `xmlrpc:"attachment_ids,omitempty"`
 	Automated                 *Bool      `xmlrpc:"automated,omitempty"`
 	CalendarEventId           *Many2One  `xmlrpc:"calendar_event_id,omitempty"`
 	CanWrite                  *Bool      `xmlrpc:"can_write,omitempty"`
+	ChainingType              *Selection `xmlrpc:"chaining_type,omitempty"`
 	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DateDeadline              *Time      `xmlrpc:"date_deadline,omitempty"`
+	DateDone                  *Time      `xmlrpc:"date_done,omitempty"`
 	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	ForceNext                 *Bool      `xmlrpc:"force_next,omitempty"`
 	HasRecommendedActivities  *Bool      `xmlrpc:"has_recommended_activities,omitempty"`
 	Icon                      *String    `xmlrpc:"icon,omitempty"`
 	Id                        *Int       `xmlrpc:"id,omitempty"`
@@ -21,6 +23,7 @@ type MailActivity struct {
 	Note                      *String    `xmlrpc:"note,omitempty"`
 	PreviousActivityTypeId    *Many2One  `xmlrpc:"previous_activity_type_id,omitempty"`
 	RecommendedActivityTypeId *Many2One  `xmlrpc:"recommended_activity_type_id,omitempty"`
+	RequestPartnerId          *Many2One  `xmlrpc:"request_partner_id,omitempty"`
 	ResId                     *Many2One  `xmlrpc:"res_id,omitempty"`
 	ResModel                  *String    `xmlrpc:"res_model,omitempty"`
 	ResModelId                *Many2One  `xmlrpc:"res_model_id,omitempty"`

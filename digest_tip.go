@@ -2,12 +2,12 @@ package odoo
 
 // DigestTip represents digest.tip model.
 type DigestTip struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
 	GroupId        *Many2One `xmlrpc:"group_id,omitempty"`
 	Id             *Int      `xmlrpc:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty"`
 	Sequence       *Int      `xmlrpc:"sequence,omitempty"`
 	TipDescription *String   `xmlrpc:"tip_description,omitempty"`
 	UserIds        *Relation `xmlrpc:"user_ids,omitempty"`

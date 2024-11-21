@@ -2,7 +2,6 @@ package odoo
 
 // ProjectCreateSaleOrderLine represents project.create.sale.order.line model.
 type ProjectCreateSaleOrderLine struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`

@@ -2,13 +2,12 @@ package odoo
 
 // MailShortcode represents mail.shortcode model.
 type MailShortcode struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
 	Description  *String   `xmlrpc:"description,omitempty"`
 	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
 	Id           *Int      `xmlrpc:"id,omitempty"`
-	MessageIds   *Many2One `xmlrpc:"message_ids,omitempty"`
+	LastUsed     *Time     `xmlrpc:"last_used,omitempty"`
 	Source       *String   `xmlrpc:"source,omitempty"`
 	Substitution *String   `xmlrpc:"substitution,omitempty"`
 	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`

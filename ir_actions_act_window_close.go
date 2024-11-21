@@ -2,7 +2,6 @@ package odoo
 
 // IrActionsActWindowClose represents ir.actions.act_window_close model.
 type IrActionsActWindowClose struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
 	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
 	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
 	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`

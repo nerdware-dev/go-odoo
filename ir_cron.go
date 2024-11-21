@@ -2,7 +2,6 @@ package odoo
 
 // IrCron represents ir.cron model.
 type IrCron struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
 	Active                        *Bool      `xmlrpc:"active,omitempty"`
 	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
 	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
@@ -12,10 +11,10 @@ type IrCron struct {
 	ActivityUserFieldName         *String    `xmlrpc:"activity_user_field_name,omitempty"`
 	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
 	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty"`
+	AvailableModelIds             *Relation  `xmlrpc:"available_model_ids,omitempty"`
 	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty"`
 	BindingType                   *Selection `xmlrpc:"binding_type,omitempty"`
 	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty"`
-	ChannelIds                    *Relation  `xmlrpc:"channel_ids,omitempty"`
 	ChildIds                      *Relation  `xmlrpc:"child_ids,omitempty"`
 	Code                          *String    `xmlrpc:"code,omitempty"`
 	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
@@ -25,7 +24,7 @@ type IrCron struct {
 	CrudModelName                 *String    `xmlrpc:"crud_model_name,omitempty"`
 	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
 	Doall                         *Bool      `xmlrpc:"doall,omitempty"`
-	FieldsLines                   *Relation  `xmlrpc:"fields_lines,omitempty"`
+	EvaluationType                *Selection `xmlrpc:"evaluation_type,omitempty"`
 	GroupsId                      *Relation  `xmlrpc:"groups_id,omitempty"`
 	Help                          *String    `xmlrpc:"help,omitempty"`
 	Id                            *Int       `xmlrpc:"id,omitempty"`
@@ -34,6 +33,8 @@ type IrCron struct {
 	IrActionsServerId             *Many2One  `xmlrpc:"ir_actions_server_id,omitempty"`
 	Lastcall                      *Time      `xmlrpc:"lastcall,omitempty"`
 	LinkFieldId                   *Many2One  `xmlrpc:"link_field_id,omitempty"`
+	MailPostAutofollow            *Bool      `xmlrpc:"mail_post_autofollow,omitempty"`
+	MailPostMethod                *Selection `xmlrpc:"mail_post_method,omitempty"`
 	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty"`
 	ModelName                     *String    `xmlrpc:"model_name,omitempty"`
 	Name                          *String    `xmlrpc:"name,omitempty"`
@@ -41,17 +42,27 @@ type IrCron struct {
 	Numbercall                    *Int       `xmlrpc:"numbercall,omitempty"`
 	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty"`
 	Priority                      *Int       `xmlrpc:"priority,omitempty"`
+	ResourceRef                   *String    `xmlrpc:"resource_ref,omitempty"`
+	SelectionValue                *Many2One  `xmlrpc:"selection_value,omitempty"`
 	Sequence                      *Int       `xmlrpc:"sequence,omitempty"`
-	SmsMassKeepLog                *Bool      `xmlrpc:"sms_mass_keep_log,omitempty"`
+	SmsMethod                     *Selection `xmlrpc:"sms_method,omitempty"`
 	SmsTemplateId                 *Many2One  `xmlrpc:"sms_template_id,omitempty"`
 	State                         *Selection `xmlrpc:"state,omitempty"`
 	TemplateId                    *Many2One  `xmlrpc:"template_id,omitempty"`
 	Type                          *String    `xmlrpc:"type,omitempty"`
+	UpdateBooleanValue            *Selection `xmlrpc:"update_boolean_value,omitempty"`
+	UpdateFieldId                 *Many2One  `xmlrpc:"update_field_id,omitempty"`
+	UpdateFieldType               *Selection `xmlrpc:"update_field_type,omitempty"`
+	UpdateM2MOperation            *Selection `xmlrpc:"update_m2m_operation,omitempty"`
+	UpdatePath                    *String    `xmlrpc:"update_path,omitempty"`
+	UpdateRelatedModelId          *Many2One  `xmlrpc:"update_related_model_id,omitempty"`
 	Usage                         *Selection `xmlrpc:"usage,omitempty"`
 	UserId                        *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsitePath                   *String    `xmlrpc:"website_path,omitempty"`
-	WebsitePublished              *Bool      `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl                    *String    `xmlrpc:"website_url,omitempty"`
+	Value                         *String    `xmlrpc:"value,omitempty"`
+	ValueFieldToShow              *Selection `xmlrpc:"value_field_to_show,omitempty"`
+	WebhookFieldIds               *Relation  `xmlrpc:"webhook_field_ids,omitempty"`
+	WebhookSamplePayload          *String    `xmlrpc:"webhook_sample_payload,omitempty"`
+	WebhookUrl                    *String    `xmlrpc:"webhook_url,omitempty"`
 	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
 	XmlId                         *String    `xmlrpc:"xml_id,omitempty"`

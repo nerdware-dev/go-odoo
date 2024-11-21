@@ -2,26 +2,17 @@ package odoo
 
 // AccountReconcileModel represents account.reconcile.model model.
 type AccountReconcileModel struct {
-	LastUpdate                 *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId                  *Many2One  `xmlrpc:"account_id,omitempty"`
-	ActivityTypeId             *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	Amount                     *Float     `xmlrpc:"amount,omitempty"`
-	AmountFromLabelRegex       *String    `xmlrpc:"amount_from_label_regex,omitempty"`
-	AmountType                 *Selection `xmlrpc:"amount_type,omitempty"`
-	AnalyticAccountId          *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	AnalyticTagIds             *Relation  `xmlrpc:"analytic_tag_ids,omitempty"`
+	Active                     *Bool      `xmlrpc:"active,omitempty"`
+	AllowPaymentTolerance      *Bool      `xmlrpc:"allow_payment_tolerance,omitempty"`
 	AutoReconcile              *Bool      `xmlrpc:"auto_reconcile,omitempty"`
 	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DecimalSeparator           *String    `xmlrpc:"decimal_separator,omitempty"`
 	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
-	ForceSecondTaxIncluded     *Bool      `xmlrpc:"force_second_tax_included,omitempty"`
-	ForceTaxIncluded           *Bool      `xmlrpc:"force_tax_included,omitempty"`
-	HasSecondLine              *Bool      `xmlrpc:"has_second_line,omitempty"`
+	HasMessage                 *Bool      `xmlrpc:"has_message,omitempty"`
 	Id                         *Int       `xmlrpc:"id,omitempty"`
-	JournalId                  *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Label                      *String    `xmlrpc:"label,omitempty"`
+	LineIds                    *Relation  `xmlrpc:"line_ids,omitempty"`
 	MatchAmount                *Selection `xmlrpc:"match_amount,omitempty"`
 	MatchAmountMax             *Float     `xmlrpc:"match_amount_max,omitempty"`
 	MatchAmountMin             *Float     `xmlrpc:"match_amount_min,omitempty"`
@@ -35,27 +26,34 @@ type AccountReconcileModel struct {
 	MatchPartnerCategoryIds    *Relation  `xmlrpc:"match_partner_category_ids,omitempty"`
 	MatchPartnerIds            *Relation  `xmlrpc:"match_partner_ids,omitempty"`
 	MatchSameCurrency          *Bool      `xmlrpc:"match_same_currency,omitempty"`
-	MatchTotalAmount           *Bool      `xmlrpc:"match_total_amount,omitempty"`
-	MatchTotalAmountParam      *Float     `xmlrpc:"match_total_amount_param,omitempty"`
+	MatchTextLocationLabel     *Bool      `xmlrpc:"match_text_location_label,omitempty"`
+	MatchTextLocationNote      *Bool      `xmlrpc:"match_text_location_note,omitempty"`
+	MatchTextLocationReference *Bool      `xmlrpc:"match_text_location_reference,omitempty"`
 	MatchTransactionType       *Selection `xmlrpc:"match_transaction_type,omitempty"`
 	MatchTransactionTypeParam  *String    `xmlrpc:"match_transaction_type_param,omitempty"`
+	MatchingOrder              *Selection `xmlrpc:"matching_order,omitempty"`
+	MessageAttachmentCount     *Int       `xmlrpc:"message_attachment_count,omitempty"`
+	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError            *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter     *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError         *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
+	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty"`
+	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty"`
+	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty"`
+	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty"`
+	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty"`
 	Name                       *String    `xmlrpc:"name,omitempty"`
 	NumberEntries              *Int       `xmlrpc:"number_entries,omitempty"`
+	PartnerMappingLineIds      *Relation  `xmlrpc:"partner_mapping_line_ids,omitempty"`
+	PastMonthsLimit            *Int       `xmlrpc:"past_months_limit,omitempty"`
+	PaymentToleranceParam      *Float     `xmlrpc:"payment_tolerance_param,omitempty"`
+	PaymentToleranceType       *Selection `xmlrpc:"payment_tolerance_type,omitempty"`
+	RatingIds                  *Relation  `xmlrpc:"rating_ids,omitempty"`
 	RuleType                   *Selection `xmlrpc:"rule_type,omitempty"`
-	SecondAccountId            *Many2One  `xmlrpc:"second_account_id,omitempty"`
-	SecondAmount               *Float     `xmlrpc:"second_amount,omitempty"`
-	SecondAmountFromLabelRegex *String    `xmlrpc:"second_amount_from_label_regex,omitempty"`
-	SecondAmountType           *Selection `xmlrpc:"second_amount_type,omitempty"`
-	SecondAnalyticAccountId    *Many2One  `xmlrpc:"second_analytic_account_id,omitempty"`
-	SecondAnalyticTagIds       *Relation  `xmlrpc:"second_analytic_tag_ids,omitempty"`
-	SecondJournalId            *Many2One  `xmlrpc:"second_journal_id,omitempty"`
-	SecondLabel                *String    `xmlrpc:"second_label,omitempty"`
-	SecondTaxIds               *Relation  `xmlrpc:"second_tax_ids,omitempty"`
 	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
-	ShowForceTaxIncluded       *Bool      `xmlrpc:"show_force_tax_included,omitempty"`
-	ShowSecondForceTaxIncluded *Bool      `xmlrpc:"show_second_force_tax_included,omitempty"`
-	TaxIds                     *Relation  `xmlrpc:"tax_ids,omitempty"`
+	ShowDecimalSeparator       *Bool      `xmlrpc:"show_decimal_separator,omitempty"`
 	ToCheck                    *Bool      `xmlrpc:"to_check,omitempty"`
+	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty"`
 	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
 }

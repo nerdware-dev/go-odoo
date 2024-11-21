@@ -2,7 +2,6 @@ package odoo
 
 // ProductAttributeCustomValue represents product.attribute.custom.value model.
 type ProductAttributeCustomValue struct {
-	LastUpdate                            *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate                            *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid                             *Many2One `xmlrpc:"create_uid,omitempty"`
 	CustomProductTemplateAttributeValueId *Many2One `xmlrpc:"custom_product_template_attribute_value_id,omitempty"`

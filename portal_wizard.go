@@ -2,11 +2,11 @@ package odoo
 
 // PortalWizard represents portal.wizard model.
 type PortalWizard struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
 	Id             *Int      `xmlrpc:"id,omitempty"`
+	PartnerIds     *Relation `xmlrpc:"partner_ids,omitempty"`
 	UserIds        *Relation `xmlrpc:"user_ids,omitempty"`
 	WelcomeMessage *String   `xmlrpc:"welcome_message,omitempty"`
 	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`

@@ -2,7 +2,6 @@ package odoo
 
 // IrFilters represents ir.filters model.
 type IrFilters struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
 	ActionId    *Many2One  `xmlrpc:"action_id,omitempty"`
 	Active      *Bool      `xmlrpc:"active,omitempty"`
 	Context     *String    `xmlrpc:"context,omitempty"`

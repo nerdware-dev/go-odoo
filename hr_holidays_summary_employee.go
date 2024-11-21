@@ -2,7 +2,6 @@ package odoo
 
 // HrHolidaysSummaryEmployee represents hr.holidays.summary.employee model.
 type HrHolidaysSummaryEmployee struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DateFrom    *Time      `xmlrpc:"date_from,omitempty"`

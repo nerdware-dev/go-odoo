@@ -2,7 +2,6 @@ package odoo
 
 // CrmQuotationPartner represents crm.quotation.partner model.
 type CrmQuotationPartner struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
 	Action      *Selection `xmlrpc:"action,omitempty"`
 	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`

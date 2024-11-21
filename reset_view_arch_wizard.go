@@ -2,17 +2,19 @@ package odoo
 
 // ResetViewArchWizard represents reset.view.arch.wizard model.
 type ResetViewArchWizard struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ArchDiff    *String    `xmlrpc:"arch_diff,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	ResetMode   *Selection `xmlrpc:"reset_mode,omitempty"`
-	ViewId      *Many2One  `xmlrpc:"view_id,omitempty"`
-	ViewName    *String    `xmlrpc:"view_name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ArchDiff      *String    `xmlrpc:"arch_diff,omitempty"`
+	ArchToCompare *String    `xmlrpc:"arch_to_compare,omitempty"`
+	CompareViewId *Many2One  `xmlrpc:"compare_view_id,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
+	HasDiff       *Bool      `xmlrpc:"has_diff,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty"`
+	ResetMode     *Selection `xmlrpc:"reset_mode,omitempty"`
+	ViewId        *Many2One  `xmlrpc:"view_id,omitempty"`
+	ViewName      *String    `xmlrpc:"view_name,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // ResetViewArchWizards represents array of reset.view.arch.wizard model.

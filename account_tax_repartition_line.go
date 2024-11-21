@@ -2,22 +2,21 @@ package odoo
 
 // AccountTaxRepartitionLine represents account.tax.repartition.line model.
 type AccountTaxRepartitionLine struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
 	AccountId       *Many2One  `xmlrpc:"account_id,omitempty"`
 	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId       *Many2One  `xmlrpc:"country_id,omitempty"`
 	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
+	DocumentType    *Selection `xmlrpc:"document_type,omitempty"`
 	Factor          *Float     `xmlrpc:"factor,omitempty"`
 	FactorPercent   *Float     `xmlrpc:"factor_percent,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty"`
-	InvoiceTaxId    *Many2One  `xmlrpc:"invoice_tax_id,omitempty"`
-	RefundTaxId     *Many2One  `xmlrpc:"refund_tax_id,omitempty"`
 	RepartitionType *Selection `xmlrpc:"repartition_type,omitempty"`
 	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
 	TagIds          *Relation  `xmlrpc:"tag_ids,omitempty"`
+	TagIdsDomain    *String    `xmlrpc:"tag_ids_domain,omitempty"`
 	TaxId           *Many2One  `xmlrpc:"tax_id,omitempty"`
+	UseInTaxClosing *Bool      `xmlrpc:"use_in_tax_closing,omitempty"`
 	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
 }

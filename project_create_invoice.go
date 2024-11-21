@@ -2,7 +2,7 @@ package odoo
 
 // ProjectCreateInvoice represents project.create.invoice model.
 type ProjectCreateInvoice struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
+	CandidateOrders *Relation `xmlrpc:"_candidate_orders,omitempty"`
 	AmountToInvoice *Float    `xmlrpc:"amount_to_invoice,omitempty"`
 	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`

@@ -2,7 +2,6 @@ package odoo
 
 // WebTourTour represents web_tour.tour model.
 type WebTourTour struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	Name        *String   `xmlrpc:"name,omitempty"`

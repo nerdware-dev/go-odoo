@@ -2,17 +2,18 @@ package odoo
 
 // BaseImportModule represents base.import.module model.
 type BaseImportModule struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Force         *Bool      `xmlrpc:"force,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	ImportMessage *String    `xmlrpc:"import_message,omitempty"`
-	ModuleFile    *String    `xmlrpc:"module_file,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
+	Force               *Bool      `xmlrpc:"force,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty"`
+	ImportMessage       *String    `xmlrpc:"import_message,omitempty"`
+	ModuleFile          *String    `xmlrpc:"module_file,omitempty"`
+	ModulesDependencies *String    `xmlrpc:"modules_dependencies,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty"`
+	WithDemo            *Bool      `xmlrpc:"with_demo,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // BaseImportModules represents array of base.import.module model.

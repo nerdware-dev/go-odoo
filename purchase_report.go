@@ -2,8 +2,6 @@ package odoo
 
 // PurchaseReport represents purchase.report model.
 type PurchaseReport struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountAnalyticId   *Many2One  `xmlrpc:"account_analytic_id,omitempty"`
 	CategoryId          *Many2One  `xmlrpc:"category_id,omitempty"`
 	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
 	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
@@ -14,6 +12,7 @@ type PurchaseReport struct {
 	Delay               *Float     `xmlrpc:"delay,omitempty"`
 	DelayPass           *Float     `xmlrpc:"delay_pass,omitempty"`
 	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
+	EffectiveDate       *Time      `xmlrpc:"effective_date,omitempty"`
 	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
 	Id                  *Int       `xmlrpc:"id,omitempty"`
 	NbrLines            *Int       `xmlrpc:"nbr_lines,omitempty"`

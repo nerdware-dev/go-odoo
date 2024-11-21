@@ -2,7 +2,6 @@ package odoo
 
 // DocumentsRequestWizard represents documents.request_wizard model.
 type DocumentsRequestWizard struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
 	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
 	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
 	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
@@ -13,8 +12,8 @@ type DocumentsRequestWizard struct {
 	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty"`
 	Id                            *Int       `xmlrpc:"id,omitempty"`
 	Name                          *String    `xmlrpc:"name,omitempty"`
-	OwnerId                       *Many2One  `xmlrpc:"owner_id,omitempty"`
 	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty"`
+	RequesteeId                   *Many2One  `xmlrpc:"requestee_id,omitempty"`
 	ResId                         *Int       `xmlrpc:"res_id,omitempty"`
 	ResModel                      *String    `xmlrpc:"res_model,omitempty"`
 	TagIds                        *Relation  `xmlrpc:"tag_ids,omitempty"`

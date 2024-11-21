@@ -2,9 +2,8 @@ package odoo
 
 // StockValuationLayer represents stock.valuation.layer model.
 type StockValuationLayer struct {
-	LastUpdate             *Time     `xmlrpc:"__last_update,omitempty"`
 	AccountMoveId          *Many2One `xmlrpc:"account_move_id,omitempty"`
-	Active                 *Bool     `xmlrpc:"active,omitempty"`
+	AccountMoveLineId      *Many2One `xmlrpc:"account_move_line_id,omitempty"`
 	CategId                *Many2One `xmlrpc:"categ_id,omitempty"`
 	CompanyId              *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
@@ -13,9 +12,11 @@ type StockValuationLayer struct {
 	Description            *String   `xmlrpc:"description,omitempty"`
 	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
 	Id                     *Int      `xmlrpc:"id,omitempty"`
+	PriceDiffValue         *Float    `xmlrpc:"price_diff_value,omitempty"`
 	ProductId              *Many2One `xmlrpc:"product_id,omitempty"`
 	ProductTmplId          *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
 	Quantity               *Float    `xmlrpc:"quantity,omitempty"`
+	Reference              *String   `xmlrpc:"reference,omitempty"`
 	RemainingQty           *Float    `xmlrpc:"remaining_qty,omitempty"`
 	RemainingValue         *Float    `xmlrpc:"remaining_value,omitempty"`
 	StockMoveId            *Many2One `xmlrpc:"stock_move_id,omitempty"`
@@ -24,6 +25,7 @@ type StockValuationLayer struct {
 	UnitCost               *Float    `xmlrpc:"unit_cost,omitempty"`
 	UomId                  *Many2One `xmlrpc:"uom_id,omitempty"`
 	Value                  *Float    `xmlrpc:"value,omitempty"`
+	WarehouseId            *Many2One `xmlrpc:"warehouse_id,omitempty"`
 	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
 }

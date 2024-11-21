@@ -2,17 +2,25 @@ package odoo
 
 // ProjectSaleLineEmployeeMap represents project.sale.line.employee.map model.
 type ProjectSaleLineEmployeeMap struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty"`
-	ProjectId   *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleLineId  *Many2One `xmlrpc:"sale_line_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
+	Cost                *Float    `xmlrpc:"cost,omitempty"`
+	CostCurrencyId      *Many2One `xmlrpc:"cost_currency_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
+	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty"`
+	DisplayCost         *Float    `xmlrpc:"display_cost,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
+	EmployeeId          *Many2One `xmlrpc:"employee_id,omitempty"`
+	ExistingEmployeeIds *Relation `xmlrpc:"existing_employee_ids,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty"`
+	IsCostChanged       *Bool     `xmlrpc:"is_cost_changed,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty"`
+	PriceUnit           *Float    `xmlrpc:"price_unit,omitempty"`
+	ProjectId           *Many2One `xmlrpc:"project_id,omitempty"`
+	SaleLineId          *Many2One `xmlrpc:"sale_line_id,omitempty"`
+	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // ProjectSaleLineEmployeeMaps represents array of project.sale.line.employee.map model.

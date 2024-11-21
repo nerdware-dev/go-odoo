@@ -2,28 +2,26 @@ package odoo
 
 // AccountFollowupFollowupLine represents account_followup.followup.line model.
 type AccountFollowupFollowupLine struct {
-	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty"`
-	AutoExecute               *Bool     `xmlrpc:"auto_execute,omitempty"`
-	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	Delay                     *Int      `xmlrpc:"delay,omitempty"`
-	Description               *String   `xmlrpc:"description,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	JoinInvoices              *Bool     `xmlrpc:"join_invoices,omitempty"`
-	ManualAction              *Bool     `xmlrpc:"manual_action,omitempty"`
-	ManualActionNote          *String   `xmlrpc:"manual_action_note,omitempty"`
-	ManualActionResponsibleId *Many2One `xmlrpc:"manual_action_responsible_id,omitempty"`
-	ManualActionTypeId        *Many2One `xmlrpc:"manual_action_type_id,omitempty"`
-	Name                      *String   `xmlrpc:"name,omitempty"`
-	PrintLetter               *Bool     `xmlrpc:"print_letter,omitempty"`
-	SendEmail                 *Bool     `xmlrpc:"send_email,omitempty"`
-	SendLetter                *Bool     `xmlrpc:"send_letter,omitempty"`
-	SendSms                   *Bool     `xmlrpc:"send_sms,omitempty"`
-	SmsDescription            *String   `xmlrpc:"sms_description,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	ActivityDefaultResponsibleType *Selection `xmlrpc:"activity_default_responsible_type,omitempty"`
+	ActivityNote                   *String    `xmlrpc:"activity_note,omitempty"`
+	ActivitySummary                *String    `xmlrpc:"activity_summary,omitempty"`
+	ActivityTypeId                 *Many2One  `xmlrpc:"activity_type_id,omitempty"`
+	AutoExecute                    *Bool      `xmlrpc:"auto_execute,omitempty"`
+	CompanyId                      *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateActivity                 *Bool      `xmlrpc:"create_activity,omitempty"`
+	CreateDate                     *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                      *Many2One  `xmlrpc:"create_uid,omitempty"`
+	Delay                          *Int       `xmlrpc:"delay,omitempty"`
+	DisplayName                    *String    `xmlrpc:"display_name,omitempty"`
+	Id                             *Int       `xmlrpc:"id,omitempty"`
+	JoinInvoices                   *Bool      `xmlrpc:"join_invoices,omitempty"`
+	MailTemplateId                 *Many2One  `xmlrpc:"mail_template_id,omitempty"`
+	Name                           *String    `xmlrpc:"name,omitempty"`
+	SendEmail                      *Bool      `xmlrpc:"send_email,omitempty"`
+	SendSms                        *Bool      `xmlrpc:"send_sms,omitempty"`
+	SmsTemplateId                  *Many2One  `xmlrpc:"sms_template_id,omitempty"`
+	WriteDate                      *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                       *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountFollowupFollowupLines represents array of account_followup.followup.line model.

@@ -2,13 +2,11 @@ package odoo
 
 // ConfirmStockSms represents confirm.stock.sms model.
 type ConfirmStockSms struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
-	PickingId   *Many2One `xmlrpc:"picking_id,omitempty"`
+	PickIds     *Relation `xmlrpc:"pick_ids,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
 }

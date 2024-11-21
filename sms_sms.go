@@ -2,17 +2,19 @@ package odoo
 
 // SmsSms represents sms.sms model.
 type SmsSms struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
 	Body          *String    `xmlrpc:"body,omitempty"`
 	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	ErrorCode     *Selection `xmlrpc:"error_code,omitempty"`
+	FailureType   *Selection `xmlrpc:"failure_type,omitempty"`
 	Id            *Int       `xmlrpc:"id,omitempty"`
 	MailMessageId *Many2One  `xmlrpc:"mail_message_id,omitempty"`
 	Number        *String    `xmlrpc:"number,omitempty"`
 	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty"`
+	SmsTrackerId  *Many2One  `xmlrpc:"sms_tracker_id,omitempty"`
 	State         *Selection `xmlrpc:"state,omitempty"`
+	ToDelete      *Bool      `xmlrpc:"to_delete,omitempty"`
+	Uuid          *String    `xmlrpc:"uuid,omitempty"`
 	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
 }

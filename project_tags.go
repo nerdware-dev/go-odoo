@@ -2,13 +2,14 @@ package odoo
 
 // ProjectTags represents project.tags model.
 type ProjectTags struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	Color       *Int      `xmlrpc:"color,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	Name        *String   `xmlrpc:"name,omitempty"`
+	ProjectIds  *Relation `xmlrpc:"project_ids,omitempty"`
+	TaskIds     *Relation `xmlrpc:"task_ids,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
 }

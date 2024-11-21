@@ -2,7 +2,6 @@ package odoo
 
 // StockReport represents stock.report model.
 type StockReport struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
 	CategId         *Many2One  `xmlrpc:"categ_id,omitempty"`
 	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreationDate    *Time      `xmlrpc:"creation_date,omitempty"`
@@ -11,10 +10,10 @@ type StockReport struct {
 	Delay           *Float     `xmlrpc:"delay,omitempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty"`
-	InventoryId     *Many2One  `xmlrpc:"inventory_id,omitempty"`
 	IsBackorder     *Bool      `xmlrpc:"is_backorder,omitempty"`
 	IsLate          *Bool      `xmlrpc:"is_late,omitempty"`
 	OperationType   *String    `xmlrpc:"operation_type,omitempty"`
+	OperationTypeId *Many2One  `xmlrpc:"operation_type_id,omitempty"`
 	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty"`
 	PickingId       *Many2One  `xmlrpc:"picking_id,omitempty"`
 	PickingName     *String    `xmlrpc:"picking_name,omitempty"`

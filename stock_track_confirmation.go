@@ -2,12 +2,12 @@ package odoo
 
 // StockTrackConfirmation represents stock.track.confirmation model.
 type StockTrackConfirmation struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
 	Id              *Int      `xmlrpc:"id,omitempty"`
-	InventoryId     *Many2One `xmlrpc:"inventory_id,omitempty"`
+	ProductIds      *Relation `xmlrpc:"product_ids,omitempty"`
+	QuantIds        *Relation `xmlrpc:"quant_ids,omitempty"`
 	TrackingLineIds *Relation `xmlrpc:"tracking_line_ids,omitempty"`
 	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`

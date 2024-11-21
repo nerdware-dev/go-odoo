@@ -2,7 +2,6 @@ package odoo
 
 // AccountReportsExportWizard represents account_reports.export.wizard model.
 type AccountReportsExportWizard struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
@@ -10,8 +9,7 @@ type AccountReportsExportWizard struct {
 	ExportFormatIds *Relation `xmlrpc:"export_format_ids,omitempty"`
 	FolderId        *Many2One `xmlrpc:"folder_id,omitempty"`
 	Id              *Int      `xmlrpc:"id,omitempty"`
-	ReportId        *Int      `xmlrpc:"report_id,omitempty"`
-	ReportModel     *String   `xmlrpc:"report_model,omitempty"`
+	ReportId        *Many2One `xmlrpc:"report_id,omitempty"`
 	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
 	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`

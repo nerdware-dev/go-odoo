@@ -2,24 +2,31 @@ package odoo
 
 // AssetModify represents asset.modify model.
 type AssetModify struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
 	AccountAssetCounterpartId    *Many2One  `xmlrpc:"account_asset_counterpart_id,omitempty"`
 	AccountAssetId               *Many2One  `xmlrpc:"account_asset_id,omitempty"`
 	AccountDepreciationExpenseId *Many2One  `xmlrpc:"account_depreciation_expense_id,omitempty"`
 	AccountDepreciationId        *Many2One  `xmlrpc:"account_depreciation_id,omitempty"`
 	AssetId                      *Many2One  `xmlrpc:"asset_id,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
 	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty"`
 	Date                         *Time      `xmlrpc:"date,omitempty"`
 	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
+	GainAccountId                *Many2One  `xmlrpc:"gain_account_id,omitempty"`
+	GainOrLoss                   *Selection `xmlrpc:"gain_or_loss,omitempty"`
 	GainValue                    *Bool      `xmlrpc:"gain_value,omitempty"`
 	Id                           *Int       `xmlrpc:"id,omitempty"`
+	InformationalText            *String    `xmlrpc:"informational_text,omitempty"`
+	InvoiceIds                   *Relation  `xmlrpc:"invoice_ids,omitempty"`
+	InvoiceLineIds               *Relation  `xmlrpc:"invoice_line_ids,omitempty"`
+	LossAccountId                *Many2One  `xmlrpc:"loss_account_id,omitempty"`
 	MethodNumber                 *Int       `xmlrpc:"method_number,omitempty"`
 	MethodPeriod                 *Selection `xmlrpc:"method_period,omitempty"`
+	ModifyAction                 *Selection `xmlrpc:"modify_action,omitempty"`
 	Name                         *String    `xmlrpc:"name,omitempty"`
-	NeedDate                     *Bool      `xmlrpc:"need_date,omitempty"`
 	SalvageValue                 *Float     `xmlrpc:"salvage_value,omitempty"`
+	SelectInvoiceLineId          *Bool      `xmlrpc:"select_invoice_line_id,omitempty"`
 	ValueResidual                *Float     `xmlrpc:"value_residual,omitempty"`
 	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`

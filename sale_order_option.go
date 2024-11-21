@@ -2,7 +2,6 @@ package odoo
 
 // SaleOrderOption represents sale.order.option model.
 type SaleOrderOption struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
 	Discount             *Float    `xmlrpc:"discount,omitempty"`

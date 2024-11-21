@@ -2,7 +2,6 @@ package odoo
 
 // DocumentsWorkflowAction represents documents.workflow.action model.
 type DocumentsWorkflowAction struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
 	Action         *Selection `xmlrpc:"action,omitempty"`
 	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`

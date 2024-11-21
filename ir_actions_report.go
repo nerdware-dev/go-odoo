@@ -2,7 +2,6 @@ package odoo
 
 // IrActionsReport represents ir.actions.report model.
 type IrActionsReport struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
 	Attachment       *String    `xmlrpc:"attachment,omitempty"`
 	AttachmentUse    *Bool      `xmlrpc:"attachment_use,omitempty"`
 	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`

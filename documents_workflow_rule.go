@@ -2,7 +2,6 @@ package odoo
 
 // DocumentsWorkflowRule represents documents.workflow.rule model.
 type DocumentsWorkflowRule struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
 	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
 	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
 	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
@@ -16,20 +15,25 @@ type DocumentsWorkflowRule struct {
 	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
 	CriteriaOwnerId               *Many2One  `xmlrpc:"criteria_owner_id,omitempty"`
 	CriteriaPartnerId             *Many2One  `xmlrpc:"criteria_partner_id,omitempty"`
+	DisplayJournalId              *Bool      `xmlrpc:"display_journal_id,omitempty"`
 	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
 	Domain                        *String    `xmlrpc:"domain,omitempty"`
 	DomainFolderId                *Many2One  `xmlrpc:"domain_folder_id,omitempty"`
 	ExcludedTagIds                *Relation  `xmlrpc:"excluded_tag_ids,omitempty"`
 	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty"`
-	HasBusinessOption             *Bool      `xmlrpc:"has_business_option,omitempty"`
+	HasOwnerActivity              *Bool      `xmlrpc:"has_owner_activity,omitempty"`
 	Id                            *Int       `xmlrpc:"id,omitempty"`
+	JournalId                     *Many2One  `xmlrpc:"journal_id,omitempty"`
 	LimitedToSingleRecord         *Bool      `xmlrpc:"limited_to_single_record,omitempty"`
+	LinkModel                     *Many2One  `xmlrpc:"link_model,omitempty"`
+	MoveType                      *String    `xmlrpc:"move_type,omitempty"`
 	Name                          *String    `xmlrpc:"name,omitempty"`
 	Note                          *String    `xmlrpc:"note,omitempty"`
 	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty"`
 	RemoveActivities              *Bool      `xmlrpc:"remove_activities,omitempty"`
 	RequiredTagIds                *Relation  `xmlrpc:"required_tag_ids,omitempty"`
 	Sequence                      *Int       `xmlrpc:"sequence,omitempty"`
+	SuitableJournalIds            *Relation  `xmlrpc:"suitable_journal_ids,omitempty"`
 	TagActionIds                  *Relation  `xmlrpc:"tag_action_ids,omitempty"`
 	UserId                        *Many2One  `xmlrpc:"user_id,omitempty"`
 	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`

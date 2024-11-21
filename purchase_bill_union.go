@@ -2,7 +2,6 @@ package odoo
 
 // PurchaseBillUnion represents purchase.bill.union model.
 type PurchaseBillUnion struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
 	Amount          *Float    `xmlrpc:"amount,omitempty"`
 	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
 	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`

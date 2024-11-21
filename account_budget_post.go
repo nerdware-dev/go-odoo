@@ -2,7 +2,6 @@ package odoo
 
 // AccountBudgetPost represents account.budget.post model.
 type AccountBudgetPost struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	AccountIds  *Relation `xmlrpc:"account_ids,omitempty"`
 	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`

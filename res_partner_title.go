@@ -2,13 +2,11 @@ package odoo
 
 // ResPartnerTitle represents res.partner.title model.
 type ResPartnerTitle struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	Name        *String   `xmlrpc:"name,omitempty"`
-	Salutation  *String   `xmlrpc:"salutation,omitempty"`
 	Shortcut    *String   `xmlrpc:"shortcut,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`

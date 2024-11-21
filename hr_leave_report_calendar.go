@@ -2,14 +2,19 @@ package odoo
 
 // HrLeaveReportCalendar represents hr.leave.report.calendar model.
 type HrLeaveReportCalendar struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
 	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
+	DepartmentId  *Many2One  `xmlrpc:"department_id,omitempty"`
 	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
 	Duration      *Float     `xmlrpc:"duration,omitempty"`
 	EmployeeId    *Many2One  `xmlrpc:"employee_id,omitempty"`
 	Id            *Int       `xmlrpc:"id,omitempty"`
+	IsAbsent      *Bool      `xmlrpc:"is_absent,omitempty"`
+	IsHatched     *Bool      `xmlrpc:"is_hatched,omitempty"`
+	IsStriked     *Bool      `xmlrpc:"is_striked,omitempty"`
+	JobId         *Many2One  `xmlrpc:"job_id,omitempty"`
 	Name          *String    `xmlrpc:"name,omitempty"`
 	StartDatetime *Time      `xmlrpc:"start_datetime,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty"`
 	StopDatetime  *Time      `xmlrpc:"stop_datetime,omitempty"`
 	Tz            *Selection `xmlrpc:"tz,omitempty"`
 }

@@ -2,10 +2,10 @@ package odoo
 
 // ValidateAccountMove represents validate.account.move model.
 type ValidateAccountMove struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
+	ForcePost   *Bool     `xmlrpc:"force_post,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`

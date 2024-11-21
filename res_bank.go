@@ -2,7 +2,6 @@ package odoo
 
 // ResBank represents res.bank model.
 type ResBank struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	Active      *Bool     `xmlrpc:"active,omitempty"`
 	Bic         *String   `xmlrpc:"bic,omitempty"`
 	City        *String   `xmlrpc:"city,omitempty"`

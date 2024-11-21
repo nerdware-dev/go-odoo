@@ -2,15 +2,12 @@ package odoo
 
 // SaleOrderTemplateOption represents sale.order.template.option model.
 type SaleOrderTemplateOption struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
 	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	Discount             *Float    `xmlrpc:"discount,omitempty"`
 	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
 	Id                   *Int      `xmlrpc:"id,omitempty"`
 	Name                 *String   `xmlrpc:"name,omitempty"`
-	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty"`
 	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
 	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
 	Quantity             *Float    `xmlrpc:"quantity,omitempty"`

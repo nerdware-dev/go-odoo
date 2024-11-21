@@ -2,7 +2,6 @@ package odoo
 
 // DocumentsAccountFolderSetting represents documents.account.folder.setting model.
 type DocumentsAccountFolderSetting struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`

@@ -2,7 +2,6 @@ package odoo
 
 // IrActionsActWindow represents ir.actions.act_window model.
 type IrActionsActWindow struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
 	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
 	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
 	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`
@@ -16,10 +15,10 @@ type IrActionsActWindow struct {
 	Help             *String    `xmlrpc:"help,omitempty"`
 	Id               *Int       `xmlrpc:"id,omitempty"`
 	Limit            *Int       `xmlrpc:"limit,omitempty"`
+	MobileViewMode   *String    `xmlrpc:"mobile_view_mode,omitempty"`
 	Name             *String    `xmlrpc:"name,omitempty"`
 	ResId            *Int       `xmlrpc:"res_id,omitempty"`
 	ResModel         *String    `xmlrpc:"res_model,omitempty"`
-	SearchView       *String    `xmlrpc:"search_view,omitempty"`
 	SearchViewId     *Many2One  `xmlrpc:"search_view_id,omitempty"`
 	Target           *Selection `xmlrpc:"target,omitempty"`
 	Type             *String    `xmlrpc:"type,omitempty"`

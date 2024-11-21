@@ -2,18 +2,47 @@ package odoo
 
 // HrAttendance represents hr.attendance model.
 type HrAttendance struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CheckIn      *Time     `xmlrpc:"check_in,omitempty"`
-	CheckOut     *Time     `xmlrpc:"check_out,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DepartmentId *Many2One `xmlrpc:"department_id,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId   *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	WorkedHours  *Float    `xmlrpc:"worked_hours,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CheckIn                  *Time      `xmlrpc:"check_in,omitempty"`
+	CheckOut                 *Time      `xmlrpc:"check_out,omitempty"`
+	Color                    *Int       `xmlrpc:"color,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DepartmentId             *Many2One  `xmlrpc:"department_id,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
+	EmployeeId               *Many2One  `xmlrpc:"employee_id,omitempty"`
+	HasMessage               *Bool      `xmlrpc:"has_message,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty"`
+	InBrowser                *String    `xmlrpc:"in_browser,omitempty"`
+	InCity                   *String    `xmlrpc:"in_city,omitempty"`
+	InCountryName            *String    `xmlrpc:"in_country_name,omitempty"`
+	InIpAddress              *String    `xmlrpc:"in_ip_address,omitempty"`
+	InLatitude               *Float     `xmlrpc:"in_latitude,omitempty"`
+	InLongitude              *Float     `xmlrpc:"in_longitude,omitempty"`
+	InMode                   *Selection `xmlrpc:"in_mode,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
+	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
+	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
+	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
+	OutBrowser               *String    `xmlrpc:"out_browser,omitempty"`
+	OutCity                  *String    `xmlrpc:"out_city,omitempty"`
+	OutCountryName           *String    `xmlrpc:"out_country_name,omitempty"`
+	OutIpAddress             *String    `xmlrpc:"out_ip_address,omitempty"`
+	OutLatitude              *Float     `xmlrpc:"out_latitude,omitempty"`
+	OutLongitude             *Float     `xmlrpc:"out_longitude,omitempty"`
+	OutMode                  *Selection `xmlrpc:"out_mode,omitempty"`
+	OvertimeHours            *Float     `xmlrpc:"overtime_hours,omitempty"`
+	OvertimeProgress         *Float     `xmlrpc:"overtime_progress,omitempty"`
+	RatingIds                *Relation  `xmlrpc:"rating_ids,omitempty"`
+	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty"`
+	WorkedHours              *Float     `xmlrpc:"worked_hours,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // HrAttendances represents array of hr.attendance model.

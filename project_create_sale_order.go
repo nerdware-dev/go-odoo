@@ -2,21 +2,19 @@ package odoo
 
 // ProjectCreateSaleOrder represents project.create.sale.order model.
 type ProjectCreateSaleOrder struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	BillableType *Selection `xmlrpc:"billable_type,omitempty"`
-	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId   *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	LineIds      *Relation  `xmlrpc:"line_ids,omitempty"`
-	PartnerId    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PriceUnit    *Float     `xmlrpc:"price_unit,omitempty"`
-	ProductId    *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProjectId    *Many2One  `xmlrpc:"project_id,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CommercialPartnerId *Many2One `xmlrpc:"commercial_partner_id,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty"`
+	InfoInvoice         *String   `xmlrpc:"info_invoice,omitempty"`
+	LineIds             *Relation `xmlrpc:"line_ids,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty"`
+	ProjectId           *Many2One `xmlrpc:"project_id,omitempty"`
+	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // ProjectCreateSaleOrders represents array of project.create.sale.order model.

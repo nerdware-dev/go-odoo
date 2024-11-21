@@ -2,19 +2,19 @@ package odoo
 
 // AccountCashRounding represents account.cash.rounding model.
 type AccountCashRounding struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId      *Many2One  `xmlrpc:"account_id,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	Rounding       *Float     `xmlrpc:"rounding,omitempty"`
-	RoundingMethod *Selection `xmlrpc:"rounding_method,omitempty"`
-	Strategy       *Selection `xmlrpc:"strategy,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty"`
+	LossAccountId   *Many2One  `xmlrpc:"loss_account_id,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty"`
+	ProfitAccountId *Many2One  `xmlrpc:"profit_account_id,omitempty"`
+	Rounding        *Float     `xmlrpc:"rounding,omitempty"`
+	RoundingMethod  *Selection `xmlrpc:"rounding_method,omitempty"`
+	Strategy        *Selection `xmlrpc:"strategy,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountCashRoundings represents array of account.cash.rounding model.

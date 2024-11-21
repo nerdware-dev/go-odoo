@@ -2,24 +2,24 @@ package odoo
 
 // PaymentLinkWizard represents payment.link.wizard model.
 type PaymentLinkWizard struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	AccessToken  *String   `xmlrpc:"access_token,omitempty"`
-	Amount       *Float    `xmlrpc:"amount,omitempty"`
-	AmountMax    *Float    `xmlrpc:"amount_max,omitempty"`
-	CompanyId    *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId   *Many2One `xmlrpc:"currency_id,omitempty"`
-	Description  *String   `xmlrpc:"description,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Link         *String   `xmlrpc:"link,omitempty"`
-	PartnerEmail *String   `xmlrpc:"partner_email,omitempty"`
-	PartnerId    *Many2One `xmlrpc:"partner_id,omitempty"`
-	ResId        *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel     *String   `xmlrpc:"res_model,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	Amount              *Float    `xmlrpc:"amount,omitempty"`
+	AmountMax           *Float    `xmlrpc:"amount_max,omitempty"`
+	AmountPaid          *Float    `xmlrpc:"amount_paid,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
+	ConfirmationMessage *String   `xmlrpc:"confirmation_message,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
+	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty"`
+	Link                *String   `xmlrpc:"link,omitempty"`
+	PartnerEmail        *String   `xmlrpc:"partner_email,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty"`
+	ResId               *Int      `xmlrpc:"res_id,omitempty"`
+	ResModel            *String   `xmlrpc:"res_model,omitempty"`
+	WarningMessage      *String   `xmlrpc:"warning_message,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // PaymentLinkWizards represents array of payment.link.wizard model.

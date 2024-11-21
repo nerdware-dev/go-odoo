@@ -2,7 +2,6 @@ package odoo
 
 // StockAssignSerial represents stock.assign.serial model.
 type StockAssignSerial struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName      *String   `xmlrpc:"display_name,omitempty"`

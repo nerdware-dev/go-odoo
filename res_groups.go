@@ -2,7 +2,6 @@ package odoo
 
 // ResGroups represents res.groups model.
 type ResGroups struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
 	CategoryId      *Many2One `xmlrpc:"category_id,omitempty"`
 	Color           *Int      `xmlrpc:"color,omitempty"`
 	Comment         *String   `xmlrpc:"comment,omitempty"`

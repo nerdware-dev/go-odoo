@@ -2,9 +2,51 @@ package odoo
 
 // AccountReport represents account.report model.
 type AccountReport struct {
-	LastUpdate  *Time   `xmlrpc:"__last_update,omitempty"`
-	DisplayName *String `xmlrpc:"display_name,omitempty"`
-	Id          *Int    `xmlrpc:"id,omitempty"`
+	Active                           *Bool      `xmlrpc:"active,omitempty"`
+	AvailabilityCondition            *Selection `xmlrpc:"availability_condition,omitempty"`
+	ChartTemplate                    *Selection `xmlrpc:"chart_template,omitempty"`
+	ColumnIds                        *Relation  `xmlrpc:"column_ids,omitempty"`
+	CountryId                        *Many2One  `xmlrpc:"country_id,omitempty"`
+	CreateDate                       *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid                        *Many2One  `xmlrpc:"create_uid,omitempty"`
+	CustomHandlerModelId             *Many2One  `xmlrpc:"custom_handler_model_id,omitempty"`
+	CustomHandlerModelName           *String    `xmlrpc:"custom_handler_model_name,omitempty"`
+	DefaultOpeningDateFilter         *Selection `xmlrpc:"default_opening_date_filter,omitempty"`
+	DisplayName                      *String    `xmlrpc:"display_name,omitempty"`
+	FilterAccountType                *Selection `xmlrpc:"filter_account_type,omitempty"`
+	FilterAmlIrFilters               *Bool      `xmlrpc:"filter_aml_ir_filters,omitempty"`
+	FilterAnalytic                   *Bool      `xmlrpc:"filter_analytic,omitempty"`
+	FilterAnalyticGroupby            *Bool      `xmlrpc:"filter_analytic_groupby,omitempty"`
+	FilterDateRange                  *Bool      `xmlrpc:"filter_date_range,omitempty"`
+	FilterFiscalPosition             *Bool      `xmlrpc:"filter_fiscal_position,omitempty"`
+	FilterGrowthComparison           *Bool      `xmlrpc:"filter_growth_comparison,omitempty"`
+	FilterHide0Lines                 *Selection `xmlrpc:"filter_hide_0_lines,omitempty"`
+	FilterHierarchy                  *Selection `xmlrpc:"filter_hierarchy,omitempty"`
+	FilterJournals                   *Bool      `xmlrpc:"filter_journals,omitempty"`
+	FilterMultiCompany               *Selection `xmlrpc:"filter_multi_company,omitempty"`
+	FilterPartner                    *Bool      `xmlrpc:"filter_partner,omitempty"`
+	FilterPeriodComparison           *Bool      `xmlrpc:"filter_period_comparison,omitempty"`
+	FilterShowDraft                  *Bool      `xmlrpc:"filter_show_draft,omitempty"`
+	FilterUnfoldAll                  *Bool      `xmlrpc:"filter_unfold_all,omitempty"`
+	FilterUnreconciled               *Bool      `xmlrpc:"filter_unreconciled,omitempty"`
+	FootnotesIds                     *Relation  `xmlrpc:"footnotes_ids,omitempty"`
+	HorizontalGroupIds               *Relation  `xmlrpc:"horizontal_group_ids,omitempty"`
+	Id                               *Int       `xmlrpc:"id,omitempty"`
+	IsAccountCoverageReportAvailable *Bool      `xmlrpc:"is_account_coverage_report_available,omitempty"`
+	LineIds                          *Relation  `xmlrpc:"line_ids,omitempty"`
+	LoadMoreLimit                    *Int       `xmlrpc:"load_more_limit,omitempty"`
+	Name                             *String    `xmlrpc:"name,omitempty"`
+	OnlyTaxExigible                  *Bool      `xmlrpc:"only_tax_exigible,omitempty"`
+	PrefixGroupsThreshold            *Int       `xmlrpc:"prefix_groups_threshold,omitempty"`
+	RootReportId                     *Many2One  `xmlrpc:"root_report_id,omitempty"`
+	SearchBar                        *Bool      `xmlrpc:"search_bar,omitempty"`
+	SectionMainReportIds             *Relation  `xmlrpc:"section_main_report_ids,omitempty"`
+	SectionReportIds                 *Relation  `xmlrpc:"section_report_ids,omitempty"`
+	Sequence                         *Int       `xmlrpc:"sequence,omitempty"`
+	UseSections                      *Bool      `xmlrpc:"use_sections,omitempty"`
+	VariantReportIds                 *Relation  `xmlrpc:"variant_report_ids,omitempty"`
+	WriteDate                        *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid                         *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountReports represents array of account.report model.

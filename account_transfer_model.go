@@ -2,7 +2,6 @@ package odoo
 
 // AccountTransferModel represents account.transfer.model model.
 type AccountTransferModel struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
 	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty"`
 	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`

@@ -2,7 +2,6 @@ package odoo
 
 // ResLang represents res.lang model.
 type ResLang struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
 	Active       *Bool      `xmlrpc:"active,omitempty"`
 	Code         *String    `xmlrpc:"code,omitempty"`
 	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
@@ -11,6 +10,8 @@ type ResLang struct {
 	DecimalPoint *String    `xmlrpc:"decimal_point,omitempty"`
 	Direction    *Selection `xmlrpc:"direction,omitempty"`
 	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
+	FlagImage    *String    `xmlrpc:"flag_image,omitempty"`
+	FlagImageUrl *String    `xmlrpc:"flag_image_url,omitempty"`
 	Grouping     *String    `xmlrpc:"grouping,omitempty"`
 	Id           *Int       `xmlrpc:"id,omitempty"`
 	IsoCode      *String    `xmlrpc:"iso_code,omitempty"`

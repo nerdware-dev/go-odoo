@@ -2,15 +2,16 @@ package odoo
 
 // AccountTransferModelLine represents account.transfer.model.line model.
 type AccountTransferModelLine struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
 	AccountId          *Many2One `xmlrpc:"account_id,omitempty"`
 	AnalyticAccountIds *Relation `xmlrpc:"analytic_account_ids,omitempty"`
 	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
 	Id                 *Int      `xmlrpc:"id,omitempty"`
+	PartnerIds         *Relation `xmlrpc:"partner_ids,omitempty"`
 	Percent            *Float    `xmlrpc:"percent,omitempty"`
 	PercentIsReadonly  *Bool     `xmlrpc:"percent_is_readonly,omitempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omitempty"`
 	TransferModelId    *Many2One `xmlrpc:"transfer_model_id,omitempty"`
 	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`

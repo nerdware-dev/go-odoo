@@ -2,27 +2,34 @@ package odoo
 
 // DocumentsFolder represents documents.folder model.
 type DocumentsFolder struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	ActionCount       *Int      `xmlrpc:"action_count,omitempty"`
-	ChildrenFolderIds *Relation `xmlrpc:"children_folder_ids,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description       *String   `xmlrpc:"description,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	DocumentCount     *Int      `xmlrpc:"document_count,omitempty"`
-	DocumentIds       *Relation `xmlrpc:"document_ids,omitempty"`
-	FacetIds          *Relation `xmlrpc:"facet_ids,omitempty"`
-	GroupIds          *Relation `xmlrpc:"group_ids,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	Name              *String   `xmlrpc:"name,omitempty"`
-	ParentFolderId    *Many2One `xmlrpc:"parent_folder_id,omitempty"`
-	ReadGroupIds      *Relation `xmlrpc:"read_group_ids,omitempty"`
-	Sequence          *Int      `xmlrpc:"sequence,omitempty"`
-	ShareLinkIds      *Relation `xmlrpc:"share_link_ids,omitempty"`
-	UserSpecific      *Bool     `xmlrpc:"user_specific,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	ActionCount        *Int      `xmlrpc:"action_count,omitempty"`
+	Active             *Bool     `xmlrpc:"active,omitempty"`
+	ChildrenFolderIds  *Relation `xmlrpc:"children_folder_ids,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
+	DeletionDelay      *Int      `xmlrpc:"deletion_delay,omitempty"`
+	Description        *String   `xmlrpc:"description,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
+	DocumentCount      *Int      `xmlrpc:"document_count,omitempty"`
+	DocumentIds        *Relation `xmlrpc:"document_ids,omitempty"`
+	FacetIds           *Relation `xmlrpc:"facet_ids,omitempty"`
+	GroupIds           *Relation `xmlrpc:"group_ids,omitempty"`
+	HasWriteAccess     *Bool     `xmlrpc:"has_write_access,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty"`
+	IsShared           *Bool     `xmlrpc:"is_shared,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty"`
+	ParentFolderId     *Many2One `xmlrpc:"parent_folder_id,omitempty"`
+	ParentPath         *String   `xmlrpc:"parent_path,omitempty"`
+	ProductTemplateIds *Relation `xmlrpc:"product_template_ids,omitempty"`
+	ProjectIds         *Relation `xmlrpc:"project_ids,omitempty"`
+	ReadGroupIds       *Relation `xmlrpc:"read_group_ids,omitempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omitempty"`
+	ShareLinkIds       *Relation `xmlrpc:"share_link_ids,omitempty"`
+	UserSpecific       *Bool     `xmlrpc:"user_specific,omitempty"`
+	UserSpecificWrite  *Bool     `xmlrpc:"user_specific_write,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // DocumentsFolders represents array of documents.folder model.

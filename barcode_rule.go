@@ -2,14 +2,17 @@ package odoo
 
 // BarcodeRule represents barcode.rule model.
 type BarcodeRule struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
 	Alias                 *String    `xmlrpc:"alias,omitempty"`
+	AssociatedUomId       *Many2One  `xmlrpc:"associated_uom_id,omitempty"`
 	BarcodeNomenclatureId *Many2One  `xmlrpc:"barcode_nomenclature_id,omitempty"`
 	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
 	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
 	Encoding              *Selection `xmlrpc:"encoding,omitempty"`
+	Gs1ContentType        *Selection `xmlrpc:"gs1_content_type,omitempty"`
+	Gs1DecimalUsage       *Bool      `xmlrpc:"gs1_decimal_usage,omitempty"`
 	Id                    *Int       `xmlrpc:"id,omitempty"`
+	IsGs1Nomenclature     *Bool      `xmlrpc:"is_gs1_nomenclature,omitempty"`
 	Name                  *String    `xmlrpc:"name,omitempty"`
 	Pattern               *String    `xmlrpc:"pattern,omitempty"`
 	Sequence              *Int       `xmlrpc:"sequence,omitempty"`

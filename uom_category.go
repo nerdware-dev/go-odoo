@@ -2,15 +2,15 @@ package odoo
 
 // UomCategory represents uom.category model.
 type UomCategory struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	MeasureType *Selection `xmlrpc:"measure_type,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty"`
+	ReferenceUomId *Many2One `xmlrpc:"reference_uom_id,omitempty"`
+	UomIds         *Relation `xmlrpc:"uom_ids,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // UomCategorys represents array of uom.category model.

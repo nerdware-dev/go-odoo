@@ -2,7 +2,6 @@ package odoo
 
 // CrmActivityReport represents crm.activity.report model.
 type CrmActivityReport struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
 	Active             *Bool      `xmlrpc:"active,omitempty"`
 	AuthorId           *Many2One  `xmlrpc:"author_id,omitempty"`
 	Body               *String    `xmlrpc:"body,omitempty"`
@@ -21,6 +20,7 @@ type CrmActivityReport struct {
 	PartnerId          *Many2One  `xmlrpc:"partner_id,omitempty"`
 	StageId            *Many2One  `xmlrpc:"stage_id,omitempty"`
 	SubtypeId          *Many2One  `xmlrpc:"subtype_id,omitempty"`
+	TagIds             *Relation  `xmlrpc:"tag_ids,omitempty"`
 	TeamId             *Many2One  `xmlrpc:"team_id,omitempty"`
 	UserId             *Many2One  `xmlrpc:"user_id,omitempty"`
 	WonStatus          *Selection `xmlrpc:"won_status,omitempty"`

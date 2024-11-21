@@ -2,7 +2,6 @@ package odoo
 
 // RatingRating represents rating.rating model.
 type RatingRating struct {
-	LastUpdate        *Time      `xmlrpc:"__last_update,omitempty"`
 	AccessToken       *String    `xmlrpc:"access_token,omitempty"`
 	Consumed          *Bool      `xmlrpc:"consumed,omitempty"`
 	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
@@ -10,7 +9,9 @@ type RatingRating struct {
 	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
 	Feedback          *String    `xmlrpc:"feedback,omitempty"`
 	Id                *Int       `xmlrpc:"id,omitempty"`
+	IsInternal        *Bool      `xmlrpc:"is_internal,omitempty"`
 	MessageId         *Many2One  `xmlrpc:"message_id,omitempty"`
+	ParentRef         *String    `xmlrpc:"parent_ref,omitempty"`
 	ParentResId       *Int       `xmlrpc:"parent_res_id,omitempty"`
 	ParentResModel    *String    `xmlrpc:"parent_res_model,omitempty"`
 	ParentResModelId  *Many2One  `xmlrpc:"parent_res_model_id,omitempty"`
@@ -20,14 +21,16 @@ type RatingRating struct {
 	PublisherDatetime *Time      `xmlrpc:"publisher_datetime,omitempty"`
 	PublisherId       *Many2One  `xmlrpc:"publisher_id,omitempty"`
 	RatedPartnerId    *Many2One  `xmlrpc:"rated_partner_id,omitempty"`
+	RatedPartnerName  *String    `xmlrpc:"rated_partner_name,omitempty"`
 	Rating            *Float     `xmlrpc:"rating,omitempty"`
 	RatingImage       *String    `xmlrpc:"rating_image,omitempty"`
+	RatingImageUrl    *String    `xmlrpc:"rating_image_url,omitempty"`
 	RatingText        *Selection `xmlrpc:"rating_text,omitempty"`
-	ResId             *Int       `xmlrpc:"res_id,omitempty"`
+	ResId             *Many2One  `xmlrpc:"res_id,omitempty"`
 	ResModel          *String    `xmlrpc:"res_model,omitempty"`
 	ResModelId        *Many2One  `xmlrpc:"res_model_id,omitempty"`
 	ResName           *String    `xmlrpc:"res_name,omitempty"`
-	WebsitePublished  *Bool      `xmlrpc:"website_published,omitempty"`
+	ResourceRef       *String    `xmlrpc:"resource_ref,omitempty"`
 	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
 }

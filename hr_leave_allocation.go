@@ -2,19 +2,23 @@ package odoo
 
 // HrLeaveAllocation represents hr.leave.allocation model.
 type HrLeaveAllocation struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	AccrualLimit                *Int       `xmlrpc:"accrual_limit,omitempty"`
+	AccrualPlanId               *Many2One  `xmlrpc:"accrual_plan_id,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty"`
+	ActiveEmployee              *Bool      `xmlrpc:"active_employee,omitempty"`
+	ActivityCalendarEventId     *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
 	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
 	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
 	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
+	ActivityTypeIcon            *String    `xmlrpc:"activity_type_icon,omitempty"`
 	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
 	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
 	AllocationType              *Selection `xmlrpc:"allocation_type,omitempty"`
+	AlreadyAccrued              *Bool      `xmlrpc:"already_accrued,omitempty"`
+	ApproverId                  *Many2One  `xmlrpc:"approver_id,omitempty"`
 	CanApprove                  *Bool      `xmlrpc:"can_approve,omitempty"`
-	CanReset                    *Bool      `xmlrpc:"can_reset,omitempty"`
 	CategoryId                  *Many2One  `xmlrpc:"category_id,omitempty"`
 	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
@@ -23,44 +27,49 @@ type HrLeaveAllocation struct {
 	DepartmentId                *Many2One  `xmlrpc:"department_id,omitempty"`
 	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
 	DurationDisplay             *String    `xmlrpc:"duration_display,omitempty"`
+	EmployeeCompanyId           *Many2One  `xmlrpc:"employee_company_id,omitempty"`
 	EmployeeId                  *Many2One  `xmlrpc:"employee_id,omitempty"`
-	FirstApproverId             *Many2One  `xmlrpc:"first_approver_id,omitempty"`
+	EmployeeIds                 *Relation  `xmlrpc:"employee_ids,omitempty"`
+	EmployeeOvertime            *Float     `xmlrpc:"employee_overtime,omitempty"`
+	HasAccrualPlan              *Bool      `xmlrpc:"has_accrual_plan,omitempty"`
+	HasMessage                  *Bool      `xmlrpc:"has_message,omitempty"`
 	HolidayStatusId             *Many2One  `xmlrpc:"holiday_status_id,omitempty"`
 	HolidayType                 *Selection `xmlrpc:"holiday_type,omitempty"`
+	HrAttendanceOvertime        *Bool      `xmlrpc:"hr_attendance_overtime,omitempty"`
 	Id                          *Int       `xmlrpc:"id,omitempty"`
-	IntervalNumber              *Int       `xmlrpc:"interval_number,omitempty"`
-	IntervalUnit                *Selection `xmlrpc:"interval_unit,omitempty"`
+	IsOfficer                   *Bool      `xmlrpc:"is_officer,omitempty"`
+	Lastcall                    *Time      `xmlrpc:"lastcall,omitempty"`
 	LeavesTaken                 *Float     `xmlrpc:"leaves_taken,omitempty"`
 	LinkedRequestIds            *Relation  `xmlrpc:"linked_request_ids,omitempty"`
 	ManagerId                   *Many2One  `xmlrpc:"manager_id,omitempty"`
 	MaxLeaves                   *Float     `xmlrpc:"max_leaves,omitempty"`
 	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
 	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
 	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
 	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
 	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
 	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
 	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
 	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
 	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
 	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
 	ModeCompanyId               *Many2One  `xmlrpc:"mode_company_id,omitempty"`
+	MultiEmployee               *Bool      `xmlrpc:"multi_employee,omitempty"`
+	MyActivityDateDeadline      *Time      `xmlrpc:"my_activity_date_deadline,omitempty"`
 	Name                        *String    `xmlrpc:"name,omitempty"`
+	NameValidity                *String    `xmlrpc:"name_validity,omitempty"`
 	Nextcall                    *Time      `xmlrpc:"nextcall,omitempty"`
 	Notes                       *String    `xmlrpc:"notes,omitempty"`
 	NumberOfDays                *Float     `xmlrpc:"number_of_days,omitempty"`
 	NumberOfDaysDisplay         *Float     `xmlrpc:"number_of_days_display,omitempty"`
 	NumberOfHoursDisplay        *Float     `xmlrpc:"number_of_hours_display,omitempty"`
-	NumberPerInterval           *Float     `xmlrpc:"number_per_interval,omitempty"`
+	OvertimeDeductible          *Bool      `xmlrpc:"overtime_deductible,omitempty"`
+	OvertimeId                  *Many2One  `xmlrpc:"overtime_id,omitempty"`
 	ParentId                    *Many2One  `xmlrpc:"parent_id,omitempty"`
-	SecondApproverId            *Many2One  `xmlrpc:"second_approver_id,omitempty"`
+	PrivateName                 *String    `xmlrpc:"private_name,omitempty"`
+	RatingIds                   *Relation  `xmlrpc:"rating_ids,omitempty"`
 	State                       *Selection `xmlrpc:"state,omitempty"`
 	TypeRequestUnit             *Selection `xmlrpc:"type_request_unit,omitempty"`
-	UnitPerInterval             *Selection `xmlrpc:"unit_per_interval,omitempty"`
 	ValidationType              *Selection `xmlrpc:"validation_type,omitempty"`
 	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
 	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`

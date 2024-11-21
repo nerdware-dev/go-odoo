@@ -2,14 +2,16 @@ package odoo
 
 // ProductAttributeValue represents product.attribute.value model.
 type ProductAttributeValue struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
 	AttributeId         *Many2One  `xmlrpc:"attribute_id,omitempty"`
+	Color               *Int       `xmlrpc:"color,omitempty"`
 	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DefaultExtraPrice   *Float     `xmlrpc:"default_extra_price,omitempty"`
 	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
 	DisplayType         *Selection `xmlrpc:"display_type,omitempty"`
 	HtmlColor           *String    `xmlrpc:"html_color,omitempty"`
 	Id                  *Int       `xmlrpc:"id,omitempty"`
+	Image               *String    `xmlrpc:"image,omitempty"`
 	IsCustom            *Bool      `xmlrpc:"is_custom,omitempty"`
 	IsUsedOnProducts    *Bool      `xmlrpc:"is_used_on_products,omitempty"`
 	Name                *String    `xmlrpc:"name,omitempty"`

@@ -2,11 +2,11 @@ package odoo
 
 // MailResendMessage represents mail.resend.message model.
 type MailResendMessage struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
+	CanCancel       *Bool     `xmlrpc:"can_cancel,omitempty"`
+	CanResend       *Bool     `xmlrpc:"can_resend,omitempty"`
 	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	HasCancel       *Bool     `xmlrpc:"has_cancel,omitempty"`
 	Id              *Int      `xmlrpc:"id,omitempty"`
 	MailMessageId   *Many2One `xmlrpc:"mail_message_id,omitempty"`
 	NotificationIds *Relation `xmlrpc:"notification_ids,omitempty"`
