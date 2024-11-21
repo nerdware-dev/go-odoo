@@ -2,25 +2,25 @@ package odoo
 
 // IrSequence represents ir.sequence model.
 type IrSequence struct {
-	Active           *Bool      `xmlrpc:"active,omitempty"`
-	Code             *String    `xmlrpc:"code,omitempty"`
-	CompanyId        *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateRangeIds     *Relation  `xmlrpc:"date_range_ids,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Implementation   *Selection `xmlrpc:"implementation,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	NumberIncrement  *Int       `xmlrpc:"number_increment,omitempty"`
-	NumberNext       *Int       `xmlrpc:"number_next,omitempty"`
-	NumberNextActual *Int       `xmlrpc:"number_next_actual,omitempty"`
-	Padding          *Int       `xmlrpc:"padding,omitempty"`
-	Prefix           *String    `xmlrpc:"prefix,omitempty"`
-	Suffix           *String    `xmlrpc:"suffix,omitempty"`
-	UseDateRange     *Bool      `xmlrpc:"use_date_range,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active           *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Code             *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyId        *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateRangeIds     *Relation  `xmlrpc:"date_range_ids,omitempty" json:"date_range_ids,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Implementation   *Selection `xmlrpc:"implementation,omitempty" json:"implementation,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NumberIncrement  *Int       `xmlrpc:"number_increment,omitempty" json:"number_increment,omitempty"`
+	NumberNext       *Int       `xmlrpc:"number_next,omitempty" json:"number_next,omitempty"`
+	NumberNextActual *Int       `xmlrpc:"number_next_actual,omitempty" json:"number_next_actual,omitempty"`
+	Padding          *Int       `xmlrpc:"padding,omitempty" json:"padding,omitempty"`
+	Prefix           *String    `xmlrpc:"prefix,omitempty" json:"prefix,omitempty"`
+	Suffix           *String    `xmlrpc:"suffix,omitempty" json:"suffix,omitempty"`
+	UseDateRange     *Bool      `xmlrpc:"use_date_range,omitempty" json:"use_date_range,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrSequences represents array of ir.sequence model.

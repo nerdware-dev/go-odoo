@@ -2,17 +2,17 @@ package odoo
 
 // ProjectTaskRecurrence represents project.task.recurrence model.
 type ProjectTaskRecurrence struct {
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	RepeatInterval *Int       `xmlrpc:"repeat_interval,omitempty"`
-	RepeatType     *Selection `xmlrpc:"repeat_type,omitempty"`
-	RepeatUnit     *Selection `xmlrpc:"repeat_unit,omitempty"`
-	RepeatUntil    *Time      `xmlrpc:"repeat_until,omitempty"`
-	TaskIds        *Relation  `xmlrpc:"task_ids,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RepeatInterval *Int       `xmlrpc:"repeat_interval,omitempty" json:"repeat_interval,omitempty"`
+	RepeatType     *Selection `xmlrpc:"repeat_type,omitempty" json:"repeat_type,omitempty"`
+	RepeatUnit     *Selection `xmlrpc:"repeat_unit,omitempty" json:"repeat_unit,omitempty"`
+	RepeatUntil    *Time      `xmlrpc:"repeat_until,omitempty" json:"repeat_until,omitempty"`
+	TaskIds        *Relation  `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTaskRecurrences represents array of project.task.recurrence model.

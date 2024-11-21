@@ -2,14 +2,14 @@ package odoo
 
 // SnailmailLetterFormatError represents snailmail.letter.format.error model.
 type SnailmailLetterFormatError struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	MessageId      *Many2One `xmlrpc:"message_id,omitempty"`
-	SnailmailCover *Bool     `xmlrpc:"snailmail_cover,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageId      *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	SnailmailCover *Bool     `xmlrpc:"snailmail_cover,omitempty" json:"snailmail_cover,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SnailmailLetterFormatErrors represents array of snailmail.letter.format.error model.

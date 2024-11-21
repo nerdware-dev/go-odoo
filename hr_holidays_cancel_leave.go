@@ -2,14 +2,14 @@ package odoo
 
 // HrHolidaysCancelLeave represents hr.holidays.cancel.leave model.
 type HrHolidaysCancelLeave struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LeaveId     *Many2One `xmlrpc:"leave_id,omitempty"`
-	Reason      *String   `xmlrpc:"reason,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveId     *Many2One `xmlrpc:"leave_id,omitempty" json:"leave_id,omitempty"`
+	Reason      *String   `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrHolidaysCancelLeaves represents array of hr.holidays.cancel.leave model.

@@ -2,19 +2,19 @@ package odoo
 
 // ProductTemplateAttributeLine represents product.template.attribute.line model.
 type ProductTemplateAttributeLine struct {
-	Active                  *Bool     `xmlrpc:"active,omitempty"`
-	AttributeId             *Many2One `xmlrpc:"attribute_id,omitempty"`
-	CreateDate              *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String   `xmlrpc:"display_name,omitempty"`
-	Id                      *Int      `xmlrpc:"id,omitempty"`
-	ProductTemplateValueIds *Relation `xmlrpc:"product_template_value_ids,omitempty"`
-	ProductTmplId           *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	Sequence                *Int      `xmlrpc:"sequence,omitempty"`
-	ValueCount              *Int      `xmlrpc:"value_count,omitempty"`
-	ValueIds                *Relation `xmlrpc:"value_ids,omitempty"`
-	WriteDate               *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active                  *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AttributeId             *Many2One `xmlrpc:"attribute_id,omitempty" json:"attribute_id,omitempty"`
+	CreateDate              *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName             *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                      *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductTemplateValueIds *Relation `xmlrpc:"product_template_value_ids,omitempty" json:"product_template_value_ids,omitempty"`
+	ProductTmplId           *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	Sequence                *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ValueCount              *Int      `xmlrpc:"value_count,omitempty" json:"value_count,omitempty"`
+	ValueIds                *Relation `xmlrpc:"value_ids,omitempty" json:"value_ids,omitempty"`
+	WriteDate               *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductTemplateAttributeLines represents array of product.template.attribute.line model.

@@ -2,15 +2,15 @@ package odoo
 
 // LotLabelLayout represents lot.label.layout model.
 type LotLabelLayout struct {
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	LabelQuantity *Selection `xmlrpc:"label_quantity,omitempty"`
-	MoveLineIds   *Relation  `xmlrpc:"move_line_ids,omitempty"`
-	PrintFormat   *Selection `xmlrpc:"print_format,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LabelQuantity *Selection `xmlrpc:"label_quantity,omitempty" json:"label_quantity,omitempty"`
+	MoveLineIds   *Relation  `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	PrintFormat   *Selection `xmlrpc:"print_format,omitempty" json:"print_format,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // LotLabelLayouts represents array of lot.label.layout model.

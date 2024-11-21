@@ -2,23 +2,23 @@ package odoo
 
 // AccountPaymentMethodLine represents account.payment.method.line model.
 type AccountPaymentMethodLine struct {
-	AvailablePaymentMethodIds *Relation  `xmlrpc:"available_payment_method_ids,omitempty"`
-	Code                      *String    `xmlrpc:"code,omitempty"`
-	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PaymentAccountId          *Many2One  `xmlrpc:"payment_account_id,omitempty"`
-	PaymentMethodId           *Many2One  `xmlrpc:"payment_method_id,omitempty"`
-	PaymentProviderId         *Many2One  `xmlrpc:"payment_provider_id,omitempty"`
-	PaymentProviderState      *Selection `xmlrpc:"payment_provider_state,omitempty"`
-	PaymentType               *Selection `xmlrpc:"payment_type,omitempty"`
-	Sequence                  *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AvailablePaymentMethodIds *Relation  `xmlrpc:"available_payment_method_ids,omitempty" json:"available_payment_method_ids,omitempty"`
+	Code                      *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentAccountId          *Many2One  `xmlrpc:"payment_account_id,omitempty" json:"payment_account_id,omitempty"`
+	PaymentMethodId           *Many2One  `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	PaymentProviderId         *Many2One  `xmlrpc:"payment_provider_id,omitempty" json:"payment_provider_id,omitempty"`
+	PaymentProviderState      *Selection `xmlrpc:"payment_provider_state,omitempty" json:"payment_provider_state,omitempty"`
+	PaymentType               *Selection `xmlrpc:"payment_type,omitempty" json:"payment_type,omitempty"`
+	Sequence                  *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentMethodLines represents array of account.payment.method.line model.

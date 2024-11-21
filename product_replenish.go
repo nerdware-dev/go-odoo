@@ -2,27 +2,27 @@ package odoo
 
 // ProductReplenish represents product.replenish model.
 type ProductReplenish struct {
-	AllowedRouteIds      *Relation `xmlrpc:"allowed_route_ids,omitempty"`
-	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	DatePlanned          *Time     `xmlrpc:"date_planned,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	ForecastUomId        *Many2One `xmlrpc:"forecast_uom_id,omitempty"`
-	ForecastedQuantity   *Float    `xmlrpc:"forecasted_quantity,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	ProductHasVariants   *Bool     `xmlrpc:"product_has_variants,omitempty"`
-	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductTmplId        *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomId         *Many2One `xmlrpc:"product_uom_id,omitempty"`
-	Quantity             *Float    `xmlrpc:"quantity,omitempty"`
-	RouteId              *Many2One `xmlrpc:"route_id,omitempty"`
-	ShowVendor           *Bool     `xmlrpc:"show_vendor,omitempty"`
-	SupplierId           *Many2One `xmlrpc:"supplier_id,omitempty"`
-	WarehouseId          *Many2One `xmlrpc:"warehouse_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	AllowedRouteIds      *Relation `xmlrpc:"allowed_route_ids,omitempty" json:"allowed_route_ids,omitempty"`
+	CompanyId            *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DatePlanned          *Time     `xmlrpc:"date_planned,omitempty" json:"date_planned,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForecastUomId        *Many2One `xmlrpc:"forecast_uom_id,omitempty" json:"forecast_uom_id,omitempty"`
+	ForecastedQuantity   *Float    `xmlrpc:"forecasted_quantity,omitempty" json:"forecasted_quantity,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductHasVariants   *Bool     `xmlrpc:"product_has_variants,omitempty" json:"product_has_variants,omitempty"`
+	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId        *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomId         *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	RouteId              *Many2One `xmlrpc:"route_id,omitempty" json:"route_id,omitempty"`
+	ShowVendor           *Bool     `xmlrpc:"show_vendor,omitempty" json:"show_vendor,omitempty"`
+	SupplierId           *Many2One `xmlrpc:"supplier_id,omitempty" json:"supplier_id,omitempty"`
+	WarehouseId          *Many2One `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductReplenishs represents array of product.replenish model.

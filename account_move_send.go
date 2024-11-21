@@ -2,33 +2,33 @@ package odoo
 
 // AccountMoveSend represents account.move.send model.
 type AccountMoveSend struct {
-	CheckboxDownload       *Bool       `xmlrpc:"checkbox_download,omitempty"`
-	CheckboxSendMail       *Bool       `xmlrpc:"checkbox_send_mail,omitempty"`
-	CheckboxUblCiiLabel    *String     `xmlrpc:"checkbox_ubl_cii_label,omitempty"`
-	CheckboxUblCiiXml      *Bool       `xmlrpc:"checkbox_ubl_cii_xml,omitempty"`
-	CompanyId              *Many2One   `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time       `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One   `xmlrpc:"create_uid,omitempty"`
-	DisplayMailComposer    *Bool       `xmlrpc:"display_mail_composer,omitempty"`
-	DisplayName            *String     `xmlrpc:"display_name,omitempty"`
-	EnableDownload         *Bool       `xmlrpc:"enable_download,omitempty"`
-	EnableSendMail         *Bool       `xmlrpc:"enable_send_mail,omitempty"`
-	EnableUblCiiXml        *Bool       `xmlrpc:"enable_ubl_cii_xml,omitempty"`
-	Id                     *Int        `xmlrpc:"id,omitempty"`
-	MailAttachmentsWidget  interface{} `xmlrpc:"mail_attachments_widget,omitempty"`
-	MailBody               *String     `xmlrpc:"mail_body,omitempty"`
-	MailLang               *String     `xmlrpc:"mail_lang,omitempty"`
-	MailPartnerIds         *Relation   `xmlrpc:"mail_partner_ids,omitempty"`
-	MailSubject            *String     `xmlrpc:"mail_subject,omitempty"`
-	MailTemplateId         *Many2One   `xmlrpc:"mail_template_id,omitempty"`
-	Mode                   *Selection  `xmlrpc:"mode,omitempty"`
-	MoveIds                *Relation   `xmlrpc:"move_ids,omitempty"`
-	SendMailReadonly       *Bool       `xmlrpc:"send_mail_readonly,omitempty"`
-	SendMailWarningMessage interface{} `xmlrpc:"send_mail_warning_message,omitempty"`
-	ShowUblCompanyWarning  *Bool       `xmlrpc:"show_ubl_company_warning,omitempty"`
-	UblPartnerWarning      *String     `xmlrpc:"ubl_partner_warning,omitempty"`
-	WriteDate              *Time       `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One   `xmlrpc:"write_uid,omitempty"`
+	CheckboxDownload       *Bool       `xmlrpc:"checkbox_download,omitempty" json:"checkbox_download,omitempty"`
+	CheckboxSendMail       *Bool       `xmlrpc:"checkbox_send_mail,omitempty" json:"checkbox_send_mail,omitempty"`
+	CheckboxUblCiiLabel    *String     `xmlrpc:"checkbox_ubl_cii_label,omitempty" json:"checkbox_ubl_cii_label,omitempty"`
+	CheckboxUblCiiXml      *Bool       `xmlrpc:"checkbox_ubl_cii_xml,omitempty" json:"checkbox_ubl_cii_xml,omitempty"`
+	CompanyId              *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayMailComposer    *Bool       `xmlrpc:"display_mail_composer,omitempty" json:"display_mail_composer,omitempty"`
+	DisplayName            *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EnableDownload         *Bool       `xmlrpc:"enable_download,omitempty" json:"enable_download,omitempty"`
+	EnableSendMail         *Bool       `xmlrpc:"enable_send_mail,omitempty" json:"enable_send_mail,omitempty"`
+	EnableUblCiiXml        *Bool       `xmlrpc:"enable_ubl_cii_xml,omitempty" json:"enable_ubl_cii_xml,omitempty"`
+	Id                     *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailAttachmentsWidget  interface{} `xmlrpc:"mail_attachments_widget,omitempty" json:"mail_attachments_widget,omitempty"`
+	MailBody               *String     `xmlrpc:"mail_body,omitempty" json:"mail_body,omitempty"`
+	MailLang               *String     `xmlrpc:"mail_lang,omitempty" json:"mail_lang,omitempty"`
+	MailPartnerIds         *Relation   `xmlrpc:"mail_partner_ids,omitempty" json:"mail_partner_ids,omitempty"`
+	MailSubject            *String     `xmlrpc:"mail_subject,omitempty" json:"mail_subject,omitempty"`
+	MailTemplateId         *Many2One   `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Mode                   *Selection  `xmlrpc:"mode,omitempty" json:"mode,omitempty"`
+	MoveIds                *Relation   `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	SendMailReadonly       *Bool       `xmlrpc:"send_mail_readonly,omitempty" json:"send_mail_readonly,omitempty"`
+	SendMailWarningMessage interface{} `xmlrpc:"send_mail_warning_message,omitempty" json:"send_mail_warning_message,omitempty"`
+	ShowUblCompanyWarning  *Bool       `xmlrpc:"show_ubl_company_warning,omitempty" json:"show_ubl_company_warning,omitempty"`
+	UblPartnerWarning      *String     `xmlrpc:"ubl_partner_warning,omitempty" json:"ubl_partner_warning,omitempty"`
+	WriteDate              *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountMoveSends represents array of account.move.send model.

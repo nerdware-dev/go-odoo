@@ -2,16 +2,16 @@ package odoo
 
 // DocumentsWorkflowAction represents documents.workflow.action model.
 type DocumentsWorkflowAction struct {
-	Action         *Selection `xmlrpc:"action,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FacetId        *Many2One  `xmlrpc:"facet_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	TagId          *Many2One  `xmlrpc:"tag_id,omitempty"`
-	WorkflowRuleId *Many2One  `xmlrpc:"workflow_rule_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Action         *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FacetId        *Many2One  `xmlrpc:"facet_id,omitempty" json:"facet_id,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TagId          *Many2One  `xmlrpc:"tag_id,omitempty" json:"tag_id,omitempty"`
+	WorkflowRuleId *Many2One  `xmlrpc:"workflow_rule_id,omitempty" json:"workflow_rule_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsWorkflowActions represents array of documents.workflow.action model.

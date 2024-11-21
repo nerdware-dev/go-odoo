@@ -2,19 +2,19 @@ package odoo
 
 // PrivacyLookupWizard represents privacy.lookup.wizard model.
 type PrivacyLookupWizard struct {
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Email              *String   `xmlrpc:"email,omitempty"`
-	ExecutionDetails   *String   `xmlrpc:"execution_details,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	LineCount          *Int      `xmlrpc:"line_count,omitempty"`
-	LineIds            *Relation `xmlrpc:"line_ids,omitempty"`
-	LogId              *Many2One `xmlrpc:"log_id,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	RecordsDescription *String   `xmlrpc:"records_description,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email              *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	ExecutionDetails   *String   `xmlrpc:"execution_details,omitempty" json:"execution_details,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineCount          *Int      `xmlrpc:"line_count,omitempty" json:"line_count,omitempty"`
+	LineIds            *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	LogId              *Many2One `xmlrpc:"log_id,omitempty" json:"log_id,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RecordsDescription *String   `xmlrpc:"records_description,omitempty" json:"records_description,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PrivacyLookupWizards represents array of privacy.lookup.wizard model.

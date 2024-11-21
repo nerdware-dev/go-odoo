@@ -2,16 +2,16 @@ package odoo
 
 // AccountReportHorizontalGroupRule represents account.report.horizontal.group.rule model.
 type AccountReportHorizontalGroupRule struct {
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Domain            *String    `xmlrpc:"domain,omitempty"`
-	FieldName         *Selection `xmlrpc:"field_name,omitempty"`
-	HorizontalGroupId *Many2One  `xmlrpc:"horizontal_group_id,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	ResModelName      *String    `xmlrpc:"res_model_name,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain            *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	FieldName         *Selection `xmlrpc:"field_name,omitempty" json:"field_name,omitempty"`
+	HorizontalGroupId *Many2One  `xmlrpc:"horizontal_group_id,omitempty" json:"horizontal_group_id,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResModelName      *String    `xmlrpc:"res_model_name,omitempty" json:"res_model_name,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportHorizontalGroupRules represents array of account.report.horizontal.group.rule model.

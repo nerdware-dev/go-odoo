@@ -2,34 +2,34 @@ package odoo
 
 // AccountInvoiceReport represents account.invoice.report model.
 type AccountInvoiceReport struct {
-	AccountId           *Many2One  `xmlrpc:"account_id,omitempty"`
-	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyCurrencyId   *Many2One  `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId           *Many2One  `xmlrpc:"country_id,omitempty"`
-	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	InventoryValue      *Float     `xmlrpc:"inventory_value,omitempty"`
-	InvoiceDate         *Time      `xmlrpc:"invoice_date,omitempty"`
-	InvoiceDateDue      *Time      `xmlrpc:"invoice_date_due,omitempty"`
-	InvoiceUserId       *Many2One  `xmlrpc:"invoice_user_id,omitempty"`
-	JournalId           *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MoveId              *Many2One  `xmlrpc:"move_id,omitempty"`
-	MoveType            *Selection `xmlrpc:"move_type,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PaymentState        *Selection `xmlrpc:"payment_state,omitempty"`
-	PriceAverage        *Float     `xmlrpc:"price_average,omitempty"`
-	PriceMargin         *Float     `xmlrpc:"price_margin,omitempty"`
-	PriceSubtotal       *Float     `xmlrpc:"price_subtotal,omitempty"`
-	PriceTotal          *Float     `xmlrpc:"price_total,omitempty"`
-	ProductCategId      *Many2One  `xmlrpc:"product_categ_id,omitempty"`
-	ProductId           *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomId        *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	Quantity            *Float     `xmlrpc:"quantity,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	TeamId              *Many2One  `xmlrpc:"team_id,omitempty"`
+	AccountId           *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	CommercialPartnerId *Many2One  `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyCurrencyId   *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId           *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CurrencyId          *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty" json:"fiscal_position_id,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InventoryValue      *Float     `xmlrpc:"inventory_value,omitempty" json:"inventory_value,omitempty"`
+	InvoiceDate         *Time      `xmlrpc:"invoice_date,omitempty" json:"invoice_date,omitempty"`
+	InvoiceDateDue      *Time      `xmlrpc:"invoice_date_due,omitempty" json:"invoice_date_due,omitempty"`
+	InvoiceUserId       *Many2One  `xmlrpc:"invoice_user_id,omitempty" json:"invoice_user_id,omitempty"`
+	JournalId           *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MoveId              *Many2One  `xmlrpc:"move_id,omitempty" json:"move_id,omitempty"`
+	MoveType            *Selection `xmlrpc:"move_type,omitempty" json:"move_type,omitempty"`
+	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PaymentState        *Selection `xmlrpc:"payment_state,omitempty" json:"payment_state,omitempty"`
+	PriceAverage        *Float     `xmlrpc:"price_average,omitempty" json:"price_average,omitempty"`
+	PriceMargin         *Float     `xmlrpc:"price_margin,omitempty" json:"price_margin,omitempty"`
+	PriceSubtotal       *Float     `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
+	PriceTotal          *Float     `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
+	ProductCategId      *Many2One  `xmlrpc:"product_categ_id,omitempty" json:"product_categ_id,omitempty"`
+	ProductId           *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId        *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Quantity            *Float     `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TeamId              *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
 }
 
 // AccountInvoiceReports represents array of account.invoice.report model.

@@ -2,19 +2,19 @@ package odoo
 
 // CalendarProviderConfig represents calendar.provider.config model.
 type CalendarProviderConfig struct {
-	CalClientId                      *String    `xmlrpc:"cal_client_id,omitempty"`
-	CalClientSecret                  *String    `xmlrpc:"cal_client_secret,omitempty"`
-	CalSyncPaused                    *Bool      `xmlrpc:"cal_sync_paused,omitempty"`
-	CreateDate                       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName                      *String    `xmlrpc:"display_name,omitempty"`
-	ExternalCalendarProvider         *Selection `xmlrpc:"external_calendar_provider,omitempty"`
-	Id                               *Int       `xmlrpc:"id,omitempty"`
-	MicrosoftOutlookClientIdentifier *String    `xmlrpc:"microsoft_outlook_client_identifier,omitempty"`
-	MicrosoftOutlookClientSecret     *String    `xmlrpc:"microsoft_outlook_client_secret,omitempty"`
-	MicrosoftOutlookSyncPaused       *Bool      `xmlrpc:"microsoft_outlook_sync_paused,omitempty"`
-	WriteDate                        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CalClientId                      *String    `xmlrpc:"cal_client_id,omitempty" json:"cal_client_id,omitempty"`
+	CalClientSecret                  *String    `xmlrpc:"cal_client_secret,omitempty" json:"cal_client_secret,omitempty"`
+	CalSyncPaused                    *Bool      `xmlrpc:"cal_sync_paused,omitempty" json:"cal_sync_paused,omitempty"`
+	CreateDate                       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExternalCalendarProvider         *Selection `xmlrpc:"external_calendar_provider,omitempty" json:"external_calendar_provider,omitempty"`
+	Id                               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MicrosoftOutlookClientIdentifier *String    `xmlrpc:"microsoft_outlook_client_identifier,omitempty" json:"microsoft_outlook_client_identifier,omitempty"`
+	MicrosoftOutlookClientSecret     *String    `xmlrpc:"microsoft_outlook_client_secret,omitempty" json:"microsoft_outlook_client_secret,omitempty"`
+	MicrosoftOutlookSyncPaused       *Bool      `xmlrpc:"microsoft_outlook_sync_paused,omitempty" json:"microsoft_outlook_sync_paused,omitempty"`
+	WriteDate                        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarProviderConfigs represents array of calendar.provider.config model.

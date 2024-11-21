@@ -2,34 +2,34 @@ package odoo
 
 // SignTemplate represents sign.template model.
 type SignTemplate struct {
-	Active           *Bool     `xmlrpc:"active,omitempty"`
-	AttachmentId     *Many2One `xmlrpc:"attachment_id,omitempty"`
-	AuthorizedIds    *Relation `xmlrpc:"authorized_ids,omitempty"`
-	Color            *Int      `xmlrpc:"color,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	Datas            *String   `xmlrpc:"datas,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	DocumentsTagIds  *Relation `xmlrpc:"documents_tag_ids,omitempty"`
-	FavoritedIds     *Relation `xmlrpc:"favorited_ids,omitempty"`
-	FolderId         *Many2One `xmlrpc:"folder_id,omitempty"`
-	GroupIds         *Relation `xmlrpc:"group_ids,omitempty"`
-	HasSignRequests  *Bool     `xmlrpc:"has_sign_requests,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	InProgressCount  *Int      `xmlrpc:"in_progress_count,omitempty"`
-	IsSharing        *Bool     `xmlrpc:"is_sharing,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	NumPages         *Int      `xmlrpc:"num_pages,omitempty"`
-	RedirectUrl      *String   `xmlrpc:"redirect_url,omitempty"`
-	RedirectUrlText  *String   `xmlrpc:"redirect_url_text,omitempty"`
-	ResponsibleCount *Int      `xmlrpc:"responsible_count,omitempty"`
-	SignItemIds      *Relation `xmlrpc:"sign_item_ids,omitempty"`
-	SignRequestIds   *Relation `xmlrpc:"sign_request_ids,omitempty"`
-	SignedCount      *Int      `xmlrpc:"signed_count,omitempty"`
-	TagIds           *Relation `xmlrpc:"tag_ids,omitempty"`
-	UserId           *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active           *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AttachmentId     *Many2One `xmlrpc:"attachment_id,omitempty" json:"attachment_id,omitempty"`
+	AuthorizedIds    *Relation `xmlrpc:"authorized_ids,omitempty" json:"authorized_ids,omitempty"`
+	Color            *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Datas            *String   `xmlrpc:"datas,omitempty" json:"datas,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentsTagIds  *Relation `xmlrpc:"documents_tag_ids,omitempty" json:"documents_tag_ids,omitempty"`
+	FavoritedIds     *Relation `xmlrpc:"favorited_ids,omitempty" json:"favorited_ids,omitempty"`
+	FolderId         *Many2One `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	GroupIds         *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	HasSignRequests  *Bool     `xmlrpc:"has_sign_requests,omitempty" json:"has_sign_requests,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InProgressCount  *Int      `xmlrpc:"in_progress_count,omitempty" json:"in_progress_count,omitempty"`
+	IsSharing        *Bool     `xmlrpc:"is_sharing,omitempty" json:"is_sharing,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NumPages         *Int      `xmlrpc:"num_pages,omitempty" json:"num_pages,omitempty"`
+	RedirectUrl      *String   `xmlrpc:"redirect_url,omitempty" json:"redirect_url,omitempty"`
+	RedirectUrlText  *String   `xmlrpc:"redirect_url_text,omitempty" json:"redirect_url_text,omitempty"`
+	ResponsibleCount *Int      `xmlrpc:"responsible_count,omitempty" json:"responsible_count,omitempty"`
+	SignItemIds      *Relation `xmlrpc:"sign_item_ids,omitempty" json:"sign_item_ids,omitempty"`
+	SignRequestIds   *Relation `xmlrpc:"sign_request_ids,omitempty" json:"sign_request_ids,omitempty"`
+	SignedCount      *Int      `xmlrpc:"signed_count,omitempty" json:"signed_count,omitempty"`
+	TagIds           *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	UserId           *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignTemplates represents array of sign.template model.

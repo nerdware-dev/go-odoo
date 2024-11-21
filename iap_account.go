@@ -2,24 +2,24 @@ package odoo
 
 // IapAccount represents iap.account model.
 type IapAccount struct {
-	AccountInfoId    *Many2One `xmlrpc:"account_info_id,omitempty"`
-	AccountInfoIds   *Relation `xmlrpc:"account_info_ids,omitempty"`
-	AccountToken     *String   `xmlrpc:"account_token,omitempty"`
-	Balance          *String   `xmlrpc:"balance,omitempty"`
-	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description      *String   `xmlrpc:"description,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	ServiceName      *String   `xmlrpc:"service_name,omitempty"`
-	ShowToken        *Bool     `xmlrpc:"show_token,omitempty"`
-	WarnMe           *Bool     `xmlrpc:"warn_me,omitempty"`
-	WarningEmail     *String   `xmlrpc:"warning_email,omitempty"`
-	WarningThreshold *Float    `xmlrpc:"warning_threshold,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountInfoId    *Many2One `xmlrpc:"account_info_id,omitempty" json:"account_info_id,omitempty"`
+	AccountInfoIds   *Relation `xmlrpc:"account_info_ids,omitempty" json:"account_info_ids,omitempty"`
+	AccountToken     *String   `xmlrpc:"account_token,omitempty" json:"account_token,omitempty"`
+	Balance          *String   `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description      *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ServiceName      *String   `xmlrpc:"service_name,omitempty" json:"service_name,omitempty"`
+	ShowToken        *Bool     `xmlrpc:"show_token,omitempty" json:"show_token,omitempty"`
+	WarnMe           *Bool     `xmlrpc:"warn_me,omitempty" json:"warn_me,omitempty"`
+	WarningEmail     *String   `xmlrpc:"warning_email,omitempty" json:"warning_email,omitempty"`
+	WarningThreshold *Float    `xmlrpc:"warning_threshold,omitempty" json:"warning_threshold,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IapAccounts represents array of iap.account model.

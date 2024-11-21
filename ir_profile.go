@@ -2,21 +2,21 @@ package odoo
 
 // IrProfile represents ir.profile model.
 type IrProfile struct {
-	CreateDate     *Time   `xmlrpc:"create_date,omitempty"`
-	DisplayName    *String `xmlrpc:"display_name,omitempty"`
-	Duration       *Float  `xmlrpc:"duration,omitempty"`
-	EntryCount     *Int    `xmlrpc:"entry_count,omitempty"`
-	Id             *Int    `xmlrpc:"id,omitempty"`
-	InitStackTrace *String `xmlrpc:"init_stack_trace,omitempty"`
-	Name           *String `xmlrpc:"name,omitempty"`
-	Qweb           *String `xmlrpc:"qweb,omitempty"`
-	Session        *String `xmlrpc:"session,omitempty"`
-	Speedscope     *String `xmlrpc:"speedscope,omitempty"`
-	SpeedscopeUrl  *String `xmlrpc:"speedscope_url,omitempty"`
-	Sql            *String `xmlrpc:"sql,omitempty"`
-	SqlCount       *Int    `xmlrpc:"sql_count,omitempty"`
-	TracesAsync    *String `xmlrpc:"traces_async,omitempty"`
-	TracesSync     *String `xmlrpc:"traces_sync,omitempty"`
+	CreateDate     *Time   `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	DisplayName    *String `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration       *Float  `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	EntryCount     *Int    `xmlrpc:"entry_count,omitempty" json:"entry_count,omitempty"`
+	Id             *Int    `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InitStackTrace *String `xmlrpc:"init_stack_trace,omitempty" json:"init_stack_trace,omitempty"`
+	Name           *String `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Qweb           *String `xmlrpc:"qweb,omitempty" json:"qweb,omitempty"`
+	Session        *String `xmlrpc:"session,omitempty" json:"session,omitempty"`
+	Speedscope     *String `xmlrpc:"speedscope,omitempty" json:"speedscope,omitempty"`
+	SpeedscopeUrl  *String `xmlrpc:"speedscope_url,omitempty" json:"speedscope_url,omitempty"`
+	Sql            *String `xmlrpc:"sql,omitempty" json:"sql,omitempty"`
+	SqlCount       *Int    `xmlrpc:"sql_count,omitempty" json:"sql_count,omitempty"`
+	TracesAsync    *String `xmlrpc:"traces_async,omitempty" json:"traces_async,omitempty"`
+	TracesSync     *String `xmlrpc:"traces_sync,omitempty" json:"traces_sync,omitempty"`
 }
 
 // IrProfiles represents array of ir.profile model.

@@ -2,16 +2,16 @@ package odoo
 
 // AccountDisallowedExpensesRate represents account.disallowed.expenses.rate model.
 type AccountDisallowedExpensesRate struct {
-	CategoryId  *Many2One `xmlrpc:"category_id,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateFrom    *Time     `xmlrpc:"date_from,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Rate        *Float    `xmlrpc:"rate,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CategoryId  *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom    *Time     `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Rate        *Float    `xmlrpc:"rate,omitempty" json:"rate,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountDisallowedExpensesRates represents array of account.disallowed.expenses.rate model.

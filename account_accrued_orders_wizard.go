@@ -2,21 +2,21 @@ package odoo
 
 // AccountAccruedOrdersWizard represents account.accrued.orders.wizard model.
 type AccountAccruedOrdersWizard struct {
-	AccountId     *Many2One `xmlrpc:"account_id,omitempty"`
-	Amount        *Float    `xmlrpc:"amount,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId    *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date          *Time     `xmlrpc:"date,omitempty"`
-	DisplayAmount *Bool     `xmlrpc:"display_amount,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	JournalId     *Many2One `xmlrpc:"journal_id,omitempty"`
-	PreviewData   *String   `xmlrpc:"preview_data,omitempty"`
-	ReversalDate  *Time     `xmlrpc:"reversal_date,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountId     *Many2One `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	Amount        *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId    *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date          *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayAmount *Bool     `xmlrpc:"display_amount,omitempty" json:"display_amount,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId     *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	PreviewData   *String   `xmlrpc:"preview_data,omitempty" json:"preview_data,omitempty"`
+	ReversalDate  *Time     `xmlrpc:"reversal_date,omitempty" json:"reversal_date,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccruedOrdersWizards represents array of account.accrued.orders.wizard model.

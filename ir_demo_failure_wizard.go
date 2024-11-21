@@ -2,14 +2,14 @@ package odoo
 
 // IrDemoFailureWizard represents ir.demo_failure.wizard model.
 type IrDemoFailureWizard struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	FailureIds    *Relation `xmlrpc:"failure_ids,omitempty"`
-	FailuresCount *Int      `xmlrpc:"failures_count,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureIds    *Relation `xmlrpc:"failure_ids,omitempty" json:"failure_ids,omitempty"`
+	FailuresCount *Int      `xmlrpc:"failures_count,omitempty" json:"failures_count,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrDemoFailureWizards represents array of ir.demo_failure.wizard model.

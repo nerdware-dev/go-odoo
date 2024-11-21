@@ -2,20 +2,20 @@ package odoo
 
 // HrEmployeeCvWizard represents hr.employee.cv.wizard model.
 type HrEmployeeCvWizard struct {
-	CanShowOthers  *Bool     `xmlrpc:"can_show_others,omitempty"`
-	CanShowSkills  *Bool     `xmlrpc:"can_show_skills,omitempty"`
-	ColorPrimary   *String   `xmlrpc:"color_primary,omitempty"`
-	ColorSecondary *String   `xmlrpc:"color_secondary,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeIds    *Relation `xmlrpc:"employee_ids,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	ShowContact    *Bool     `xmlrpc:"show_contact,omitempty"`
-	ShowOthers     *Bool     `xmlrpc:"show_others,omitempty"`
-	ShowSkills     *Bool     `xmlrpc:"show_skills,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CanShowOthers  *Bool     `xmlrpc:"can_show_others,omitempty" json:"can_show_others,omitempty"`
+	CanShowSkills  *Bool     `xmlrpc:"can_show_skills,omitempty" json:"can_show_skills,omitempty"`
+	ColorPrimary   *String   `xmlrpc:"color_primary,omitempty" json:"color_primary,omitempty"`
+	ColorSecondary *String   `xmlrpc:"color_secondary,omitempty" json:"color_secondary,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeIds    *Relation `xmlrpc:"employee_ids,omitempty" json:"employee_ids,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ShowContact    *Bool     `xmlrpc:"show_contact,omitempty" json:"show_contact,omitempty"`
+	ShowOthers     *Bool     `xmlrpc:"show_others,omitempty" json:"show_others,omitempty"`
+	ShowSkills     *Bool     `xmlrpc:"show_skills,omitempty" json:"show_skills,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrEmployeeCvWizards represents array of hr.employee.cv.wizard model.

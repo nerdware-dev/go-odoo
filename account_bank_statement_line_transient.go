@@ -2,24 +2,24 @@ package odoo
 
 // AccountBankStatementLineTransient represents account.bank.statement.line.transient model.
 type AccountBankStatementLineTransient struct {
-	AccountNumber               *String    `xmlrpc:"account_number,omitempty"`
-	Amount                      *Float     `xmlrpc:"amount,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                        *Time      `xmlrpc:"date,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty"`
-	OnlineAccountId             *Many2One  `xmlrpc:"online_account_id,omitempty"`
-	OnlineTransactionIdentifier *String    `xmlrpc:"online_transaction_identifier,omitempty"`
-	PartnerName                 *String    `xmlrpc:"partner_name,omitempty"`
-	PaymentRef                  *String    `xmlrpc:"payment_ref,omitempty"`
-	Sequence                    *Int       `xmlrpc:"sequence,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	TransactionDetails          *String    `xmlrpc:"transaction_details,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountNumber               *String    `xmlrpc:"account_number,omitempty" json:"account_number,omitempty"`
+	Amount                      *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                        *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	OnlineAccountId             *Many2One  `xmlrpc:"online_account_id,omitempty" json:"online_account_id,omitempty"`
+	OnlineTransactionIdentifier *String    `xmlrpc:"online_transaction_identifier,omitempty" json:"online_transaction_identifier,omitempty"`
+	PartnerName                 *String    `xmlrpc:"partner_name,omitempty" json:"partner_name,omitempty"`
+	PaymentRef                  *String    `xmlrpc:"payment_ref,omitempty" json:"payment_ref,omitempty"`
+	Sequence                    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TransactionDetails          *String    `xmlrpc:"transaction_details,omitempty" json:"transaction_details,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankStatementLineTransients represents array of account.bank.statement.line.transient model.

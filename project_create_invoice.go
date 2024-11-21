@@ -2,17 +2,17 @@ package odoo
 
 // ProjectCreateInvoice represents project.create.invoice model.
 type ProjectCreateInvoice struct {
-	CandidateOrders *Relation `xmlrpc:"_candidate_orders,omitempty"`
-	AmountToInvoice *Float    `xmlrpc:"amount_to_invoice,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	ProjectId       *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleOrderId     *Many2One `xmlrpc:"sale_order_id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CandidateOrders *Relation `xmlrpc:"_candidate_orders,omitempty" json:"_candidate_orders,omitempty"`
+	AmountToInvoice *Float    `xmlrpc:"amount_to_invoice,omitempty" json:"amount_to_invoice,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProjectId       *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleOrderId     *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCreateInvoices represents array of project.create.invoice model.

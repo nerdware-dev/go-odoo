@@ -2,21 +2,21 @@ package odoo
 
 // MailAliasDomain represents mail.alias.domain model.
 type MailAliasDomain struct {
-	BounceAlias      *String   `xmlrpc:"bounce_alias,omitempty"`
-	BounceEmail      *String   `xmlrpc:"bounce_email,omitempty"`
-	CatchallAlias    *String   `xmlrpc:"catchall_alias,omitempty"`
-	CatchallEmail    *String   `xmlrpc:"catchall_email,omitempty"`
-	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DefaultFrom      *String   `xmlrpc:"default_from,omitempty"`
-	DefaultFromEmail *String   `xmlrpc:"default_from_email,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	Sequence         *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	BounceAlias      *String   `xmlrpc:"bounce_alias,omitempty" json:"bounce_alias,omitempty"`
+	BounceEmail      *String   `xmlrpc:"bounce_email,omitempty" json:"bounce_email,omitempty"`
+	CatchallAlias    *String   `xmlrpc:"catchall_alias,omitempty" json:"catchall_alias,omitempty"`
+	CatchallEmail    *String   `xmlrpc:"catchall_email,omitempty" json:"catchall_email,omitempty"`
+	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultFrom      *String   `xmlrpc:"default_from,omitempty" json:"default_from,omitempty"`
+	DefaultFromEmail *String   `xmlrpc:"default_from_email,omitempty" json:"default_from_email,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence         *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailAliasDomains represents array of mail.alias.domain model.

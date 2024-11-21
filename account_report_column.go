@@ -2,20 +2,20 @@ package odoo
 
 // AccountReportColumn represents account.report.column model.
 type AccountReportColumn struct {
-	BlankIfZero         *Bool      `xmlrpc:"blank_if_zero,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomAuditActionId *Many2One  `xmlrpc:"custom_audit_action_id,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	ExpressionLabel     *String    `xmlrpc:"expression_label,omitempty"`
-	FigureType          *Selection `xmlrpc:"figure_type,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	ReportId            *Many2One  `xmlrpc:"report_id,omitempty"`
-	Sequence            *Int       `xmlrpc:"sequence,omitempty"`
-	Sortable            *Bool      `xmlrpc:"sortable,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	BlankIfZero         *Bool      `xmlrpc:"blank_if_zero,omitempty" json:"blank_if_zero,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomAuditActionId *Many2One  `xmlrpc:"custom_audit_action_id,omitempty" json:"custom_audit_action_id,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpressionLabel     *String    `xmlrpc:"expression_label,omitempty" json:"expression_label,omitempty"`
+	FigureType          *Selection `xmlrpc:"figure_type,omitempty" json:"figure_type,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ReportId            *Many2One  `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	Sequence            *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Sortable            *Bool      `xmlrpc:"sortable,omitempty" json:"sortable,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportColumns represents array of account.report.column model.

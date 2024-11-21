@@ -2,17 +2,17 @@ package odoo
 
 // DocumentsLinkToRecordWizard represents documents.link_to_record_wizard model.
 type DocumentsLinkToRecordWizard struct {
-	AccessibleModelIds *Relation `xmlrpc:"accessible_model_ids,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	DocumentIds        *Relation `xmlrpc:"document_ids,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	IsReadonlyModel    *Bool     `xmlrpc:"is_readonly_model,omitempty"`
-	ModelId            *Many2One `xmlrpc:"model_id,omitempty"`
-	ResourceRef        *String   `xmlrpc:"resource_ref,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccessibleModelIds *Relation `xmlrpc:"accessible_model_ids,omitempty" json:"accessible_model_ids,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentIds        *Relation `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsReadonlyModel    *Bool     `xmlrpc:"is_readonly_model,omitempty" json:"is_readonly_model,omitempty"`
+	ModelId            *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ResourceRef        *String   `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsLinkToRecordWizards represents array of documents.link_to_record_wizard model.

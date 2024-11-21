@@ -2,18 +2,18 @@ package odoo
 
 // SmsTemplatePreview represents sms.template.preview model.
 type SmsTemplatePreview struct {
-	Body          *String    `xmlrpc:"body,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	Lang          *Selection `xmlrpc:"lang,omitempty"`
-	ModelId       *Many2One  `xmlrpc:"model_id,omitempty"`
-	NoRecord      *Bool      `xmlrpc:"no_record,omitempty"`
-	ResourceRef   *String    `xmlrpc:"resource_ref,omitempty"`
-	SmsTemplateId *Many2One  `xmlrpc:"sms_template_id,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Body          *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang          *Selection `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	ModelId       *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	NoRecord      *Bool      `xmlrpc:"no_record,omitempty" json:"no_record,omitempty"`
+	ResourceRef   *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	SmsTemplateId *Many2One  `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsTemplatePreviews represents array of sms.template.preview model.

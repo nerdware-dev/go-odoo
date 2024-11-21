@@ -2,15 +2,15 @@ package odoo
 
 // VendorDelayReport represents vendor.delay.report model.
 type VendorDelayReport struct {
-	CategoryId  *Many2One `xmlrpc:"category_id,omitempty"`
-	Date        *Time     `xmlrpc:"date,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	OnTimeRate  *Float    `xmlrpc:"on_time_rate,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	ProductId   *Many2One `xmlrpc:"product_id,omitempty"`
-	QtyOnTime   *Float    `xmlrpc:"qty_on_time,omitempty"`
-	QtyTotal    *Float    `xmlrpc:"qty_total,omitempty"`
+	CategoryId  *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	Date        *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OnTimeRate  *Float    `xmlrpc:"on_time_rate,omitempty" json:"on_time_rate,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProductId   *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	QtyOnTime   *Float    `xmlrpc:"qty_on_time,omitempty" json:"qty_on_time,omitempty"`
+	QtyTotal    *Float    `xmlrpc:"qty_total,omitempty" json:"qty_total,omitempty"`
 }
 
 // VendorDelayReports represents array of vendor.delay.report model.

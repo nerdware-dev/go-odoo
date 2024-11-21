@@ -2,27 +2,27 @@ package odoo
 
 // OnboardingOnboardingStep represents onboarding.onboarding.step model.
 type OnboardingOnboardingStep struct {
-	ButtonText              *String    `xmlrpc:"button_text,omitempty"`
-	CreateDate              *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrentProgressStepId   *Many2One  `xmlrpc:"current_progress_step_id,omitempty"`
-	CurrentStepState        *Selection `xmlrpc:"current_step_state,omitempty"`
-	Description             *String    `xmlrpc:"description,omitempty"`
-	DisplayName             *String    `xmlrpc:"display_name,omitempty"`
-	DoneIcon                *String    `xmlrpc:"done_icon,omitempty"`
-	DoneText                *String    `xmlrpc:"done_text,omitempty"`
-	Id                      *Int       `xmlrpc:"id,omitempty"`
-	IsPerCompany            *Bool      `xmlrpc:"is_per_company,omitempty"`
-	OnboardingIds           *Relation  `xmlrpc:"onboarding_ids,omitempty"`
-	PanelStepOpenActionName *String    `xmlrpc:"panel_step_open_action_name,omitempty"`
-	ProgressIds             *Relation  `xmlrpc:"progress_ids,omitempty"`
-	Sequence                *Int       `xmlrpc:"sequence,omitempty"`
-	StepImage               *String    `xmlrpc:"step_image,omitempty"`
-	StepImageAlt            *String    `xmlrpc:"step_image_alt,omitempty"`
-	StepImageFilename       *String    `xmlrpc:"step_image_filename,omitempty"`
-	Title                   *String    `xmlrpc:"title,omitempty"`
-	WriteDate               *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ButtonText              *String    `xmlrpc:"button_text,omitempty" json:"button_text,omitempty"`
+	CreateDate              *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrentProgressStepId   *Many2One  `xmlrpc:"current_progress_step_id,omitempty" json:"current_progress_step_id,omitempty"`
+	CurrentStepState        *Selection `xmlrpc:"current_step_state,omitempty" json:"current_step_state,omitempty"`
+	Description             *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName             *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DoneIcon                *String    `xmlrpc:"done_icon,omitempty" json:"done_icon,omitempty"`
+	DoneText                *String    `xmlrpc:"done_text,omitempty" json:"done_text,omitempty"`
+	Id                      *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPerCompany            *Bool      `xmlrpc:"is_per_company,omitempty" json:"is_per_company,omitempty"`
+	OnboardingIds           *Relation  `xmlrpc:"onboarding_ids,omitempty" json:"onboarding_ids,omitempty"`
+	PanelStepOpenActionName *String    `xmlrpc:"panel_step_open_action_name,omitempty" json:"panel_step_open_action_name,omitempty"`
+	ProgressIds             *Relation  `xmlrpc:"progress_ids,omitempty" json:"progress_ids,omitempty"`
+	Sequence                *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StepImage               *String    `xmlrpc:"step_image,omitempty" json:"step_image,omitempty"`
+	StepImageAlt            *String    `xmlrpc:"step_image_alt,omitempty" json:"step_image_alt,omitempty"`
+	StepImageFilename       *String    `xmlrpc:"step_image_filename,omitempty" json:"step_image_filename,omitempty"`
+	Title                   *String    `xmlrpc:"title,omitempty" json:"title,omitempty"`
+	WriteDate               *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // OnboardingOnboardingSteps represents array of onboarding.onboarding.step model.

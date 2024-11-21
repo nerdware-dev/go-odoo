@@ -2,21 +2,21 @@ package odoo
 
 // SmsSms represents sms.sms model.
 type SmsSms struct {
-	Body          *String    `xmlrpc:"body,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	FailureType   *Selection `xmlrpc:"failure_type,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	MailMessageId *Many2One  `xmlrpc:"mail_message_id,omitempty"`
-	Number        *String    `xmlrpc:"number,omitempty"`
-	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	SmsTrackerId  *Many2One  `xmlrpc:"sms_tracker_id,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	ToDelete      *Bool      `xmlrpc:"to_delete,omitempty"`
-	Uuid          *String    `xmlrpc:"uuid,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Body          *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureType   *Selection `xmlrpc:"failure_type,omitempty" json:"failure_type,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId *Many2One  `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	Number        *String    `xmlrpc:"number,omitempty" json:"number,omitempty"`
+	PartnerId     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	SmsTrackerId  *Many2One  `xmlrpc:"sms_tracker_id,omitempty" json:"sms_tracker_id,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	ToDelete      *Bool      `xmlrpc:"to_delete,omitempty" json:"to_delete,omitempty"`
+	Uuid          *String    `xmlrpc:"uuid,omitempty" json:"uuid,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsSmss represents array of sms.sms model.

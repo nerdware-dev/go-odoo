@@ -2,15 +2,15 @@ package odoo
 
 // ProductTemplateAttributeExclusion represents product.template.attribute.exclusion model.
 type ProductTemplateAttributeExclusion struct {
-	CreateDate                      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                     *String   `xmlrpc:"display_name,omitempty"`
-	Id                              *Int      `xmlrpc:"id,omitempty"`
-	ProductTemplateAttributeValueId *Many2One `xmlrpc:"product_template_attribute_value_id,omitempty"`
-	ProductTmplId                   *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	ValueIds                        *Relation `xmlrpc:"value_ids,omitempty"`
-	WriteDate                       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate                      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductTemplateAttributeValueId *Many2One `xmlrpc:"product_template_attribute_value_id,omitempty" json:"product_template_attribute_value_id,omitempty"`
+	ProductTmplId                   *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ValueIds                        *Relation `xmlrpc:"value_ids,omitempty" json:"value_ids,omitempty"`
+	WriteDate                       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductTemplateAttributeExclusions represents array of product.template.attribute.exclusion model.

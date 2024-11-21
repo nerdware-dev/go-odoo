@@ -2,57 +2,57 @@ package odoo
 
 // BankRecWidgetLine represents bank.rec.widget.line model.
 type BankRecWidgetLine struct {
-	AccountId                    *Many2One   `xmlrpc:"account_id,omitempty"`
-	AmountCurrency               *Float      `xmlrpc:"amount_currency,omitempty"`
-	AmountTransactionCurrency    *Float      `xmlrpc:"amount_transaction_currency,omitempty"`
-	AnalyticDistribution         interface{} `xmlrpc:"analytic_distribution,omitempty"`
-	AnalyticDistributionSearch   interface{} `xmlrpc:"analytic_distribution_search,omitempty"`
-	AnalyticPrecision            *Int        `xmlrpc:"analytic_precision,omitempty"`
-	Balance                      *Float      `xmlrpc:"balance,omitempty"`
-	BankAccount                  *String     `xmlrpc:"bank_account,omitempty"`
-	CompanyCurrencyId            *Many2One   `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId                    *Many2One   `xmlrpc:"company_id,omitempty"`
-	Credit                       *Float      `xmlrpc:"credit,omitempty"`
-	CurrencyId                   *Many2One   `xmlrpc:"currency_id,omitempty"`
-	Date                         *Time       `xmlrpc:"date,omitempty"`
-	Debit                        *Float      `xmlrpc:"debit,omitempty"`
-	DisplayName                  *String     `xmlrpc:"display_name,omitempty"`
-	DisplayStrokedAmountCurrency *Bool       `xmlrpc:"display_stroked_amount_currency,omitempty"`
-	DisplayStrokedBalance        *Bool       `xmlrpc:"display_stroked_balance,omitempty"`
-	Flag                         *Selection  `xmlrpc:"flag,omitempty"`
-	ForcePriceIncludedTaxes      *Bool       `xmlrpc:"force_price_included_taxes,omitempty"`
-	GroupTaxId                   *Many2One   `xmlrpc:"group_tax_id,omitempty"`
-	Id                           *Int        `xmlrpc:"id,omitempty"`
-	Index                        *String     `xmlrpc:"index,omitempty"`
-	JournalDefaultAccountId      *Many2One   `xmlrpc:"journal_default_account_id,omitempty"`
-	ManuallyModified             *Bool       `xmlrpc:"manually_modified,omitempty"`
-	Name                         *String     `xmlrpc:"name,omitempty"`
-	Narration                    *String     `xmlrpc:"narration,omitempty"`
-	PartnerCurrencyId            *Many2One   `xmlrpc:"partner_currency_id,omitempty"`
-	PartnerId                    *Many2One   `xmlrpc:"partner_id,omitempty"`
-	PartnerPayableAccountId      *Many2One   `xmlrpc:"partner_payable_account_id,omitempty"`
-	PartnerPayableAmount         *Float      `xmlrpc:"partner_payable_amount,omitempty"`
-	PartnerReceivableAccountId   *Many2One   `xmlrpc:"partner_receivable_account_id,omitempty"`
-	PartnerReceivableAmount      *Float      `xmlrpc:"partner_receivable_amount,omitempty"`
-	ReconcileModelId             *Many2One   `xmlrpc:"reconcile_model_id,omitempty"`
-	Ref                          *String     `xmlrpc:"ref,omitempty"`
-	SourceAmlId                  *Many2One   `xmlrpc:"source_aml_id,omitempty"`
-	SourceAmlMoveId              *Many2One   `xmlrpc:"source_aml_move_id,omitempty"`
-	SourceAmlMoveName            *String     `xmlrpc:"source_aml_move_name,omitempty"`
-	SourceAmountCurrency         *Float      `xmlrpc:"source_amount_currency,omitempty"`
-	SourceBalance                *Float      `xmlrpc:"source_balance,omitempty"`
-	SourceBatchPaymentId         *Many2One   `xmlrpc:"source_batch_payment_id,omitempty"`
-	SourceCredit                 *Float      `xmlrpc:"source_credit,omitempty"`
-	SourceDebit                  *Float      `xmlrpc:"source_debit,omitempty"`
-	SuggestionAmountCurrency     *Float      `xmlrpc:"suggestion_amount_currency,omitempty"`
-	SuggestionBalance            *Float      `xmlrpc:"suggestion_balance,omitempty"`
-	SuggestionHtml               *String     `xmlrpc:"suggestion_html,omitempty"`
-	TaxBaseAmountCurrency        *Float      `xmlrpc:"tax_base_amount_currency,omitempty"`
-	TaxIds                       *Relation   `xmlrpc:"tax_ids,omitempty"`
-	TaxRepartitionLineId         *Many2One   `xmlrpc:"tax_repartition_line_id,omitempty"`
-	TaxTagIds                    *Relation   `xmlrpc:"tax_tag_ids,omitempty"`
-	TransactionCurrencyId        *Many2One   `xmlrpc:"transaction_currency_id,omitempty"`
-	WizardId                     *Many2One   `xmlrpc:"wizard_id,omitempty"`
+	AccountId                    *Many2One   `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	AmountCurrency               *Float      `xmlrpc:"amount_currency,omitempty" json:"amount_currency,omitempty"`
+	AmountTransactionCurrency    *Float      `xmlrpc:"amount_transaction_currency,omitempty" json:"amount_transaction_currency,omitempty"`
+	AnalyticDistribution         interface{} `xmlrpc:"analytic_distribution,omitempty" json:"analytic_distribution,omitempty"`
+	AnalyticDistributionSearch   interface{} `xmlrpc:"analytic_distribution_search,omitempty" json:"analytic_distribution_search,omitempty"`
+	AnalyticPrecision            *Int        `xmlrpc:"analytic_precision,omitempty" json:"analytic_precision,omitempty"`
+	Balance                      *Float      `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	BankAccount                  *String     `xmlrpc:"bank_account,omitempty" json:"bank_account,omitempty"`
+	CompanyCurrencyId            *Many2One   `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId                    *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Credit                       *Float      `xmlrpc:"credit,omitempty" json:"credit,omitempty"`
+	CurrencyId                   *Many2One   `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                         *Time       `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	Debit                        *Float      `xmlrpc:"debit,omitempty" json:"debit,omitempty"`
+	DisplayName                  *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayStrokedAmountCurrency *Bool       `xmlrpc:"display_stroked_amount_currency,omitempty" json:"display_stroked_amount_currency,omitempty"`
+	DisplayStrokedBalance        *Bool       `xmlrpc:"display_stroked_balance,omitempty" json:"display_stroked_balance,omitempty"`
+	Flag                         *Selection  `xmlrpc:"flag,omitempty" json:"flag,omitempty"`
+	ForcePriceIncludedTaxes      *Bool       `xmlrpc:"force_price_included_taxes,omitempty" json:"force_price_included_taxes,omitempty"`
+	GroupTaxId                   *Many2One   `xmlrpc:"group_tax_id,omitempty" json:"group_tax_id,omitempty"`
+	Id                           *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Index                        *String     `xmlrpc:"index,omitempty" json:"index,omitempty"`
+	JournalDefaultAccountId      *Many2One   `xmlrpc:"journal_default_account_id,omitempty" json:"journal_default_account_id,omitempty"`
+	ManuallyModified             *Bool       `xmlrpc:"manually_modified,omitempty" json:"manually_modified,omitempty"`
+	Name                         *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Narration                    *String     `xmlrpc:"narration,omitempty" json:"narration,omitempty"`
+	PartnerCurrencyId            *Many2One   `xmlrpc:"partner_currency_id,omitempty" json:"partner_currency_id,omitempty"`
+	PartnerId                    *Many2One   `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerPayableAccountId      *Many2One   `xmlrpc:"partner_payable_account_id,omitempty" json:"partner_payable_account_id,omitempty"`
+	PartnerPayableAmount         *Float      `xmlrpc:"partner_payable_amount,omitempty" json:"partner_payable_amount,omitempty"`
+	PartnerReceivableAccountId   *Many2One   `xmlrpc:"partner_receivable_account_id,omitempty" json:"partner_receivable_account_id,omitempty"`
+	PartnerReceivableAmount      *Float      `xmlrpc:"partner_receivable_amount,omitempty" json:"partner_receivable_amount,omitempty"`
+	ReconcileModelId             *Many2One   `xmlrpc:"reconcile_model_id,omitempty" json:"reconcile_model_id,omitempty"`
+	Ref                          *String     `xmlrpc:"ref,omitempty" json:"ref,omitempty"`
+	SourceAmlId                  *Many2One   `xmlrpc:"source_aml_id,omitempty" json:"source_aml_id,omitempty"`
+	SourceAmlMoveId              *Many2One   `xmlrpc:"source_aml_move_id,omitempty" json:"source_aml_move_id,omitempty"`
+	SourceAmlMoveName            *String     `xmlrpc:"source_aml_move_name,omitempty" json:"source_aml_move_name,omitempty"`
+	SourceAmountCurrency         *Float      `xmlrpc:"source_amount_currency,omitempty" json:"source_amount_currency,omitempty"`
+	SourceBalance                *Float      `xmlrpc:"source_balance,omitempty" json:"source_balance,omitempty"`
+	SourceBatchPaymentId         *Many2One   `xmlrpc:"source_batch_payment_id,omitempty" json:"source_batch_payment_id,omitempty"`
+	SourceCredit                 *Float      `xmlrpc:"source_credit,omitempty" json:"source_credit,omitempty"`
+	SourceDebit                  *Float      `xmlrpc:"source_debit,omitempty" json:"source_debit,omitempty"`
+	SuggestionAmountCurrency     *Float      `xmlrpc:"suggestion_amount_currency,omitempty" json:"suggestion_amount_currency,omitempty"`
+	SuggestionBalance            *Float      `xmlrpc:"suggestion_balance,omitempty" json:"suggestion_balance,omitempty"`
+	SuggestionHtml               *String     `xmlrpc:"suggestion_html,omitempty" json:"suggestion_html,omitempty"`
+	TaxBaseAmountCurrency        *Float      `xmlrpc:"tax_base_amount_currency,omitempty" json:"tax_base_amount_currency,omitempty"`
+	TaxIds                       *Relation   `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	TaxRepartitionLineId         *Many2One   `xmlrpc:"tax_repartition_line_id,omitempty" json:"tax_repartition_line_id,omitempty"`
+	TaxTagIds                    *Relation   `xmlrpc:"tax_tag_ids,omitempty" json:"tax_tag_ids,omitempty"`
+	TransactionCurrencyId        *Many2One   `xmlrpc:"transaction_currency_id,omitempty" json:"transaction_currency_id,omitempty"`
+	WizardId                     *Many2One   `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
 }
 
 // BankRecWidgetLines represents array of bank.rec.widget.line model.

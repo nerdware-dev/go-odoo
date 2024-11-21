@@ -2,20 +2,20 @@ package odoo
 
 // AccountMulticurrencyRevaluationWizard represents account.multicurrency.revaluation.wizard model.
 type AccountMulticurrencyRevaluationWizard struct {
-	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date                      *Time     `xmlrpc:"date,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	ExpenseProvisionAccountId *Many2One `xmlrpc:"expense_provision_account_id,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	IncomeProvisionAccountId  *Many2One `xmlrpc:"income_provision_account_id,omitempty"`
-	JournalId                 *Many2One `xmlrpc:"journal_id,omitempty"`
-	PreviewData               *String   `xmlrpc:"preview_data,omitempty"`
-	ReversalDate              *Time     `xmlrpc:"reversal_date,omitempty"`
-	ShowWarningMoveId         *Many2One `xmlrpc:"show_warning_move_id,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                      *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName               *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseProvisionAccountId *Many2One `xmlrpc:"expense_provision_account_id,omitempty" json:"expense_provision_account_id,omitempty"`
+	Id                        *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncomeProvisionAccountId  *Many2One `xmlrpc:"income_provision_account_id,omitempty" json:"income_provision_account_id,omitempty"`
+	JournalId                 *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	PreviewData               *String   `xmlrpc:"preview_data,omitempty" json:"preview_data,omitempty"`
+	ReversalDate              *Time     `xmlrpc:"reversal_date,omitempty" json:"reversal_date,omitempty"`
+	ShowWarningMoveId         *Many2One `xmlrpc:"show_warning_move_id,omitempty" json:"show_warning_move_id,omitempty"`
+	WriteDate                 *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountMulticurrencyRevaluationWizards represents array of account.multicurrency.revaluation.wizard model.

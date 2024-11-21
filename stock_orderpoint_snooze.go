@@ -2,15 +2,15 @@ package odoo
 
 // StockOrderpointSnooze represents stock.orderpoint.snooze model.
 type StockOrderpointSnooze struct {
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	OrderpointIds  *Relation  `xmlrpc:"orderpoint_ids,omitempty"`
-	PredefinedDate *Selection `xmlrpc:"predefined_date,omitempty"`
-	SnoozedUntil   *Time      `xmlrpc:"snoozed_until,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OrderpointIds  *Relation  `xmlrpc:"orderpoint_ids,omitempty" json:"orderpoint_ids,omitempty"`
+	PredefinedDate *Selection `xmlrpc:"predefined_date,omitempty" json:"predefined_date,omitempty"`
+	SnoozedUntil   *Time      `xmlrpc:"snoozed_until,omitempty" json:"snoozed_until,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockOrderpointSnoozes represents array of stock.orderpoint.snooze model.

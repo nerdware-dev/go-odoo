@@ -2,13 +2,13 @@ package odoo
 
 // BusPresence represents bus.presence model.
 type BusPresence struct {
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	GuestId      *Many2One  `xmlrpc:"guest_id,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	LastPoll     *Time      `xmlrpc:"last_poll,omitempty"`
-	LastPresence *Time      `xmlrpc:"last_presence,omitempty"`
-	Status       *Selection `xmlrpc:"status,omitempty"`
-	UserId       *Many2One  `xmlrpc:"user_id,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GuestId      *Many2One  `xmlrpc:"guest_id,omitempty" json:"guest_id,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LastPoll     *Time      `xmlrpc:"last_poll,omitempty" json:"last_poll,omitempty"`
+	LastPresence *Time      `xmlrpc:"last_presence,omitempty" json:"last_presence,omitempty"`
+	Status       *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
+	UserId       *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 }
 
 // BusPresences represents array of bus.presence model.

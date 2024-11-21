@@ -2,19 +2,19 @@ package odoo
 
 // HrEmployeeSkillLog represents hr.employee.skill.log model.
 type HrEmployeeSkillLog struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date          *Time     `xmlrpc:"date,omitempty"`
-	DepartmentId  *Many2One `xmlrpc:"department_id,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId    *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	LevelProgress *Int      `xmlrpc:"level_progress,omitempty"`
-	SkillId       *Many2One `xmlrpc:"skill_id,omitempty"`
-	SkillLevelId  *Many2One `xmlrpc:"skill_level_id,omitempty"`
-	SkillTypeId   *Many2One `xmlrpc:"skill_type_id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date          *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DepartmentId  *Many2One `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId    *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LevelProgress *Int      `xmlrpc:"level_progress,omitempty" json:"level_progress,omitempty"`
+	SkillId       *Many2One `xmlrpc:"skill_id,omitempty" json:"skill_id,omitempty"`
+	SkillLevelId  *Many2One `xmlrpc:"skill_level_id,omitempty" json:"skill_level_id,omitempty"`
+	SkillTypeId   *Many2One `xmlrpc:"skill_type_id,omitempty" json:"skill_type_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrEmployeeSkillLogs represents array of hr.employee.skill.log model.

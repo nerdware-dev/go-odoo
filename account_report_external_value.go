@@ -2,24 +2,24 @@ package odoo
 
 // AccountReportExternalValue represents account.report.external.value model.
 type AccountReportExternalValue struct {
-	CarryoverOriginExpressionLabel *String   `xmlrpc:"carryover_origin_expression_label,omitempty"`
-	CarryoverOriginReportLineId    *Many2One `xmlrpc:"carryover_origin_report_line_id,omitempty"`
-	CompanyId                      *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                      *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date                           *Time     `xmlrpc:"date,omitempty"`
-	DisplayName                    *String   `xmlrpc:"display_name,omitempty"`
-	ForeignVatFiscalPositionId     *Many2One `xmlrpc:"foreign_vat_fiscal_position_id,omitempty"`
-	Id                             *Int      `xmlrpc:"id,omitempty"`
-	Name                           *String   `xmlrpc:"name,omitempty"`
-	ReportCountryId                *Many2One `xmlrpc:"report_country_id,omitempty"`
-	TargetReportExpressionId       *Many2One `xmlrpc:"target_report_expression_id,omitempty"`
-	TargetReportExpressionLabel    *String   `xmlrpc:"target_report_expression_label,omitempty"`
-	TargetReportLineId             *Many2One `xmlrpc:"target_report_line_id,omitempty"`
-	TextValue                      *String   `xmlrpc:"text_value,omitempty"`
-	Value                          *Float    `xmlrpc:"value,omitempty"`
-	WriteDate                      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CarryoverOriginExpressionLabel *String   `xmlrpc:"carryover_origin_expression_label,omitempty" json:"carryover_origin_expression_label,omitempty"`
+	CarryoverOriginReportLineId    *Many2One `xmlrpc:"carryover_origin_report_line_id,omitempty" json:"carryover_origin_report_line_id,omitempty"`
+	CompanyId                      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                           *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForeignVatFiscalPositionId     *Many2One `xmlrpc:"foreign_vat_fiscal_position_id,omitempty" json:"foreign_vat_fiscal_position_id,omitempty"`
+	Id                             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ReportCountryId                *Many2One `xmlrpc:"report_country_id,omitempty" json:"report_country_id,omitempty"`
+	TargetReportExpressionId       *Many2One `xmlrpc:"target_report_expression_id,omitempty" json:"target_report_expression_id,omitempty"`
+	TargetReportExpressionLabel    *String   `xmlrpc:"target_report_expression_label,omitempty" json:"target_report_expression_label,omitempty"`
+	TargetReportLineId             *Many2One `xmlrpc:"target_report_line_id,omitempty" json:"target_report_line_id,omitempty"`
+	TextValue                      *String   `xmlrpc:"text_value,omitempty" json:"text_value,omitempty"`
+	Value                          *Float    `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate                      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportExternalValues represents array of account.report.external.value model.

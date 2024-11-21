@@ -2,16 +2,16 @@ package odoo
 
 // AccountFiscalPositionAccount represents account.fiscal.position.account model.
 type AccountFiscalPositionAccount struct {
-	AccountDestId *Many2One `xmlrpc:"account_dest_id,omitempty"`
-	AccountSrcId  *Many2One `xmlrpc:"account_src_id,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	PositionId    *Many2One `xmlrpc:"position_id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountDestId *Many2One `xmlrpc:"account_dest_id,omitempty" json:"account_dest_id,omitempty"`
+	AccountSrcId  *Many2One `xmlrpc:"account_src_id,omitempty" json:"account_src_id,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PositionId    *Many2One `xmlrpc:"position_id,omitempty" json:"position_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFiscalPositionAccounts represents array of account.fiscal.position.account model.

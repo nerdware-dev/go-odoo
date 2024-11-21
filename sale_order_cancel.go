@@ -2,26 +2,26 @@ package odoo
 
 // SaleOrderCancel represents sale.order.cancel model.
 type SaleOrderCancel struct {
-	AuthorId                   *Many2One `xmlrpc:"author_id,omitempty"`
-	Body                       *String   `xmlrpc:"body,omitempty"`
-	BodyHasTemplateValue       *Bool     `xmlrpc:"body_has_template_value,omitempty"`
-	CanEditBody                *Bool     `xmlrpc:"can_edit_body,omitempty"`
-	CreateDate                 *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayDeliveryAlert       *Bool     `xmlrpc:"display_delivery_alert,omitempty"`
-	DisplayInvoiceAlert        *Bool     `xmlrpc:"display_invoice_alert,omitempty"`
-	DisplayName                *String   `xmlrpc:"display_name,omitempty"`
-	DisplayPurchaseOrdersAlert *Bool     `xmlrpc:"display_purchase_orders_alert,omitempty"`
-	Id                         *Int      `xmlrpc:"id,omitempty"`
-	IsMailTemplateEditor       *Bool     `xmlrpc:"is_mail_template_editor,omitempty"`
-	Lang                       *String   `xmlrpc:"lang,omitempty"`
-	OrderId                    *Many2One `xmlrpc:"order_id,omitempty"`
-	RecipientIds               *Relation `xmlrpc:"recipient_ids,omitempty"`
-	RenderModel                *String   `xmlrpc:"render_model,omitempty"`
-	Subject                    *String   `xmlrpc:"subject,omitempty"`
-	TemplateId                 *Many2One `xmlrpc:"template_id,omitempty"`
-	WriteDate                  *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty"`
+	AuthorId                   *Many2One `xmlrpc:"author_id,omitempty" json:"author_id,omitempty"`
+	Body                       *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	BodyHasTemplateValue       *Bool     `xmlrpc:"body_has_template_value,omitempty" json:"body_has_template_value,omitempty"`
+	CanEditBody                *Bool     `xmlrpc:"can_edit_body,omitempty" json:"can_edit_body,omitempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayDeliveryAlert       *Bool     `xmlrpc:"display_delivery_alert,omitempty" json:"display_delivery_alert,omitempty"`
+	DisplayInvoiceAlert        *Bool     `xmlrpc:"display_invoice_alert,omitempty" json:"display_invoice_alert,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayPurchaseOrdersAlert *Bool     `xmlrpc:"display_purchase_orders_alert,omitempty" json:"display_purchase_orders_alert,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMailTemplateEditor       *Bool     `xmlrpc:"is_mail_template_editor,omitempty" json:"is_mail_template_editor,omitempty"`
+	Lang                       *String   `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	OrderId                    *Many2One `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	RecipientIds               *Relation `xmlrpc:"recipient_ids,omitempty" json:"recipient_ids,omitempty"`
+	RenderModel                *String   `xmlrpc:"render_model,omitempty" json:"render_model,omitempty"`
+	Subject                    *String   `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	TemplateId                 *Many2One `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderCancels represents array of sale.order.cancel model.

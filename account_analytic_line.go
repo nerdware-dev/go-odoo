@@ -2,67 +2,67 @@ package odoo
 
 // AccountAnalyticLine represents account.analytic.line model.
 type AccountAnalyticLine struct {
-	AccountId                *Many2One  `xmlrpc:"account_id,omitempty"`
-	AllowBillable            *Bool      `xmlrpc:"allow_billable,omitempty"`
-	AllowedSoLineIds         *Relation  `xmlrpc:"allowed_so_line_ids,omitempty"`
-	Amount                   *Float     `xmlrpc:"amount,omitempty"`
-	AutoAccountId            *Many2One  `xmlrpc:"auto_account_id,omitempty"`
-	Category                 *Selection `xmlrpc:"category,omitempty"`
-	Code                     *String    `xmlrpc:"code,omitempty"`
-	CommercialPartnerId      *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                     *Time      `xmlrpc:"date,omitempty"`
-	DepartmentId             *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	DisplayTimer             *Bool      `xmlrpc:"display_timer,omitempty"`
-	DisplayTimerPause        *Bool      `xmlrpc:"display_timer_pause,omitempty"`
-	DisplayTimerResume       *Bool      `xmlrpc:"display_timer_resume,omitempty"`
-	DisplayTimerStartPrimary *Bool      `xmlrpc:"display_timer_start_primary,omitempty"`
-	DisplayTimerStop         *Bool      `xmlrpc:"display_timer_stop,omitempty"`
-	DurationUnitAmount       *Float     `xmlrpc:"duration_unit_amount,omitempty"`
-	EmployeeId               *Many2One  `xmlrpc:"employee_id,omitempty"`
-	EncodingUomId            *Many2One  `xmlrpc:"encoding_uom_id,omitempty"`
-	GeneralAccountId         *Many2One  `xmlrpc:"general_account_id,omitempty"`
-	GlobalLeaveId            *Many2One  `xmlrpc:"global_leave_id,omitempty"`
-	HolidayId                *Many2One  `xmlrpc:"holiday_id,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	IsSoLineEdited           *Bool      `xmlrpc:"is_so_line_edited,omitempty"`
-	IsTimerRunning           *Bool      `xmlrpc:"is_timer_running,omitempty"`
-	IsTimesheet              *Bool      `xmlrpc:"is_timesheet,omitempty"`
-	JobTitle                 *String    `xmlrpc:"job_title,omitempty"`
-	JournalId                *Many2One  `xmlrpc:"journal_id,omitempty"`
-	L10NDin5008DocumentTitle *String    `xmlrpc:"l10n_din5008_document_title,omitempty"`
-	L10NDin5008TemplateData  *String    `xmlrpc:"l10n_din5008_template_data,omitempty"`
-	ManagerId                *Many2One  `xmlrpc:"manager_id,omitempty"`
-	MoveLineId               *Many2One  `xmlrpc:"move_line_id,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	OrderId                  *Many2One  `xmlrpc:"order_id,omitempty"`
-	ParentTaskId             *Many2One  `xmlrpc:"parent_task_id,omitempty"`
-	PartnerId                *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ProductId                *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId     *Many2One  `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomId             *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	ProjectId                *Many2One  `xmlrpc:"project_id,omitempty"`
-	ReadonlyTimesheet        *Bool      `xmlrpc:"readonly_timesheet,omitempty"`
-	Ref                      *String    `xmlrpc:"ref,omitempty"`
-	SoLine                   *Many2One  `xmlrpc:"so_line,omitempty"`
-	TaskId                   *Many2One  `xmlrpc:"task_id,omitempty"`
-	TimerPause               *Time      `xmlrpc:"timer_pause,omitempty"`
-	TimerStart               *Time      `xmlrpc:"timer_start,omitempty"`
-	TimesheetInvoiceId       *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty"`
-	TimesheetInvoiceType     *Selection `xmlrpc:"timesheet_invoice_type,omitempty"`
-	UnitAmount               *Float     `xmlrpc:"unit_amount,omitempty"`
-	UnitAmountValidate       *Float     `xmlrpc:"unit_amount_validate,omitempty"`
-	UserCanValidate          *Bool      `xmlrpc:"user_can_validate,omitempty"`
-	UserId                   *Many2One  `xmlrpc:"user_id,omitempty"`
-	UserTimerId              *Relation  `xmlrpc:"user_timer_id,omitempty"`
-	Validated                *Bool      `xmlrpc:"validated,omitempty"`
-	ValidatedStatus          *Selection `xmlrpc:"validated_status,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountId                *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	AllowBillable            *Bool      `xmlrpc:"allow_billable,omitempty" json:"allow_billable,omitempty"`
+	AllowedSoLineIds         *Relation  `xmlrpc:"allowed_so_line_ids,omitempty" json:"allowed_so_line_ids,omitempty"`
+	Amount                   *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AutoAccountId            *Many2One  `xmlrpc:"auto_account_id,omitempty" json:"auto_account_id,omitempty"`
+	Category                 *Selection `xmlrpc:"category,omitempty" json:"category,omitempty"`
+	Code                     *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CommercialPartnerId      *Many2One  `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                     *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DepartmentId             *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayTimer             *Bool      `xmlrpc:"display_timer,omitempty" json:"display_timer,omitempty"`
+	DisplayTimerPause        *Bool      `xmlrpc:"display_timer_pause,omitempty" json:"display_timer_pause,omitempty"`
+	DisplayTimerResume       *Bool      `xmlrpc:"display_timer_resume,omitempty" json:"display_timer_resume,omitempty"`
+	DisplayTimerStartPrimary *Bool      `xmlrpc:"display_timer_start_primary,omitempty" json:"display_timer_start_primary,omitempty"`
+	DisplayTimerStop         *Bool      `xmlrpc:"display_timer_stop,omitempty" json:"display_timer_stop,omitempty"`
+	DurationUnitAmount       *Float     `xmlrpc:"duration_unit_amount,omitempty" json:"duration_unit_amount,omitempty"`
+	EmployeeId               *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EncodingUomId            *Many2One  `xmlrpc:"encoding_uom_id,omitempty" json:"encoding_uom_id,omitempty"`
+	GeneralAccountId         *Many2One  `xmlrpc:"general_account_id,omitempty" json:"general_account_id,omitempty"`
+	GlobalLeaveId            *Many2One  `xmlrpc:"global_leave_id,omitempty" json:"global_leave_id,omitempty"`
+	HolidayId                *Many2One  `xmlrpc:"holiday_id,omitempty" json:"holiday_id,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSoLineEdited           *Bool      `xmlrpc:"is_so_line_edited,omitempty" json:"is_so_line_edited,omitempty"`
+	IsTimerRunning           *Bool      `xmlrpc:"is_timer_running,omitempty" json:"is_timer_running,omitempty"`
+	IsTimesheet              *Bool      `xmlrpc:"is_timesheet,omitempty" json:"is_timesheet,omitempty"`
+	JobTitle                 *String    `xmlrpc:"job_title,omitempty" json:"job_title,omitempty"`
+	JournalId                *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	L10NDin5008DocumentTitle *String    `xmlrpc:"l10n_din5008_document_title,omitempty" json:"l10n_din5008_document_title,omitempty"`
+	L10NDin5008TemplateData  *String    `xmlrpc:"l10n_din5008_template_data,omitempty" json:"l10n_din5008_template_data,omitempty"`
+	ManagerId                *Many2One  `xmlrpc:"manager_id,omitempty" json:"manager_id,omitempty"`
+	MoveLineId               *Many2One  `xmlrpc:"move_line_id,omitempty" json:"move_line_id,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OrderId                  *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	ParentTaskId             *Many2One  `xmlrpc:"parent_task_id,omitempty" json:"parent_task_id,omitempty"`
+	PartnerId                *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProductId                *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId     *Many2One  `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomId             *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	ProjectId                *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	ReadonlyTimesheet        *Bool      `xmlrpc:"readonly_timesheet,omitempty" json:"readonly_timesheet,omitempty"`
+	Ref                      *String    `xmlrpc:"ref,omitempty" json:"ref,omitempty"`
+	SoLine                   *Many2One  `xmlrpc:"so_line,omitempty" json:"so_line,omitempty"`
+	TaskId                   *Many2One  `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimerPause               *Time      `xmlrpc:"timer_pause,omitempty" json:"timer_pause,omitempty"`
+	TimerStart               *Time      `xmlrpc:"timer_start,omitempty" json:"timer_start,omitempty"`
+	TimesheetInvoiceId       *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty" json:"timesheet_invoice_id,omitempty"`
+	TimesheetInvoiceType     *Selection `xmlrpc:"timesheet_invoice_type,omitempty" json:"timesheet_invoice_type,omitempty"`
+	UnitAmount               *Float     `xmlrpc:"unit_amount,omitempty" json:"unit_amount,omitempty"`
+	UnitAmountValidate       *Float     `xmlrpc:"unit_amount_validate,omitempty" json:"unit_amount_validate,omitempty"`
+	UserCanValidate          *Bool      `xmlrpc:"user_can_validate,omitempty" json:"user_can_validate,omitempty"`
+	UserId                   *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	UserTimerId              *Relation  `xmlrpc:"user_timer_id,omitempty" json:"user_timer_id,omitempty"`
+	Validated                *Bool      `xmlrpc:"validated,omitempty" json:"validated,omitempty"`
+	ValidatedStatus          *Selection `xmlrpc:"validated_status,omitempty" json:"validated_status,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticLines represents array of account.analytic.line model.

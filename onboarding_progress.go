@@ -2,17 +2,17 @@ package odoo
 
 // OnboardingProgress represents onboarding.progress model.
 type OnboardingProgress struct {
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	IsOnboardingClosed *Bool      `xmlrpc:"is_onboarding_closed,omitempty"`
-	OnboardingId       *Many2One  `xmlrpc:"onboarding_id,omitempty"`
-	OnboardingState    *Selection `xmlrpc:"onboarding_state,omitempty"`
-	ProgressStepIds    *Relation  `xmlrpc:"progress_step_ids,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsOnboardingClosed *Bool      `xmlrpc:"is_onboarding_closed,omitempty" json:"is_onboarding_closed,omitempty"`
+	OnboardingId       *Many2One  `xmlrpc:"onboarding_id,omitempty" json:"onboarding_id,omitempty"`
+	OnboardingState    *Selection `xmlrpc:"onboarding_state,omitempty" json:"onboarding_state,omitempty"`
+	ProgressStepIds    *Relation  `xmlrpc:"progress_step_ids,omitempty" json:"progress_step_ids,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // OnboardingProgresss represents array of onboarding.progress model.

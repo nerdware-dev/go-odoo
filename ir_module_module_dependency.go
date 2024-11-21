@@ -2,13 +2,13 @@ package odoo
 
 // IrModuleModuleDependency represents ir.module.module.dependency model.
 type IrModuleModuleDependency struct {
-	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty"`
-	DependId            *Many2One  `xmlrpc:"depend_id,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
+	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty" json:"auto_install_required,omitempty"`
+	DependId            *Many2One  `xmlrpc:"depend_id,omitempty" json:"depend_id,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 }
 
 // IrModuleModuleDependencys represents array of ir.module.module.dependency model.

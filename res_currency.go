@@ -2,29 +2,29 @@ package odoo
 
 // ResCurrency represents res.currency model.
 type ResCurrency struct {
-	Active                   *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencySubunitLabel     *String    `xmlrpc:"currency_subunit_label,omitempty"`
-	CurrencyUnitLabel        *String    `xmlrpc:"currency_unit_label,omitempty"`
-	Date                     *Time      `xmlrpc:"date,omitempty"`
-	DecimalPlaces            *Int       `xmlrpc:"decimal_places,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	DisplayRoundingWarning   *Bool      `xmlrpc:"display_rounding_warning,omitempty"`
-	FiscalCountryCodes       *String    `xmlrpc:"fiscal_country_codes,omitempty"`
-	FullName                 *String    `xmlrpc:"full_name,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	InverseRate              *Float     `xmlrpc:"inverse_rate,omitempty"`
-	IsCurrentCompanyCurrency *Bool      `xmlrpc:"is_current_company_currency,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	Position                 *Selection `xmlrpc:"position,omitempty"`
-	Rate                     *Float     `xmlrpc:"rate,omitempty"`
-	RateIds                  *Relation  `xmlrpc:"rate_ids,omitempty"`
-	RateString               *String    `xmlrpc:"rate_string,omitempty"`
-	Rounding                 *Float     `xmlrpc:"rounding,omitempty"`
-	Symbol                   *String    `xmlrpc:"symbol,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                   *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencySubunitLabel     *String    `xmlrpc:"currency_subunit_label,omitempty" json:"currency_subunit_label,omitempty"`
+	CurrencyUnitLabel        *String    `xmlrpc:"currency_unit_label,omitempty" json:"currency_unit_label,omitempty"`
+	Date                     *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DecimalPlaces            *Int       `xmlrpc:"decimal_places,omitempty" json:"decimal_places,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayRoundingWarning   *Bool      `xmlrpc:"display_rounding_warning,omitempty" json:"display_rounding_warning,omitempty"`
+	FiscalCountryCodes       *String    `xmlrpc:"fiscal_country_codes,omitempty" json:"fiscal_country_codes,omitempty"`
+	FullName                 *String    `xmlrpc:"full_name,omitempty" json:"full_name,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InverseRate              *Float     `xmlrpc:"inverse_rate,omitempty" json:"inverse_rate,omitempty"`
+	IsCurrentCompanyCurrency *Bool      `xmlrpc:"is_current_company_currency,omitempty" json:"is_current_company_currency,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Position                 *Selection `xmlrpc:"position,omitempty" json:"position,omitempty"`
+	Rate                     *Float     `xmlrpc:"rate,omitempty" json:"rate,omitempty"`
+	RateIds                  *Relation  `xmlrpc:"rate_ids,omitempty" json:"rate_ids,omitempty"`
+	RateString               *String    `xmlrpc:"rate_string,omitempty" json:"rate_string,omitempty"`
+	Rounding                 *Float     `xmlrpc:"rounding,omitempty" json:"rounding,omitempty"`
+	Symbol                   *String    `xmlrpc:"symbol,omitempty" json:"symbol,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResCurrencys represents array of res.currency model.

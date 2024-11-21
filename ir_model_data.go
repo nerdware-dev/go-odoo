@@ -2,19 +2,19 @@ package odoo
 
 // IrModelData represents ir.model.data model.
 type IrModelData struct {
-	CompleteName *String   `xmlrpc:"complete_name,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Model        *String   `xmlrpc:"model,omitempty"`
-	Module       *String   `xmlrpc:"module,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	Noupdate     *Bool     `xmlrpc:"noupdate,omitempty"`
-	Reference    *String   `xmlrpc:"reference,omitempty"`
-	ResId        *Many2One `xmlrpc:"res_id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompleteName *String   `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Model        *String   `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	Module       *String   `xmlrpc:"module,omitempty" json:"module,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Noupdate     *Bool     `xmlrpc:"noupdate,omitempty" json:"noupdate,omitempty"`
+	Reference    *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	ResId        *Many2One `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModelDatas represents array of ir.model.data model.

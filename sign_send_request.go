@@ -2,28 +2,28 @@ package odoo
 
 // SignSendRequest represents sign.send.request model.
 type SignSendRequest struct {
-	ActivityId         *Many2One `xmlrpc:"activity_id,omitempty"`
-	AttachmentIds      *Relation `xmlrpc:"attachment_ids,omitempty"`
-	CcPartnerIds       *Relation `xmlrpc:"cc_partner_ids,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Filename           *String   `xmlrpc:"filename,omitempty"`
-	HasDefaultTemplate *Bool     `xmlrpc:"has_default_template,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	IsUserSigner       *Bool     `xmlrpc:"is_user_signer,omitempty"`
-	Message            *String   `xmlrpc:"message,omitempty"`
-	MessageCc          *String   `xmlrpc:"message_cc,omitempty"`
-	Reminder           *Int      `xmlrpc:"reminder,omitempty"`
-	SetSignOrder       *Bool     `xmlrpc:"set_sign_order,omitempty"`
-	SignerId           *Many2One `xmlrpc:"signer_id,omitempty"`
-	SignerIds          *Relation `xmlrpc:"signer_ids,omitempty"`
-	SignersCount       *Int      `xmlrpc:"signers_count,omitempty"`
-	Subject            *String   `xmlrpc:"subject,omitempty"`
-	TemplateId         *Many2One `xmlrpc:"template_id,omitempty"`
-	Validity           *Time     `xmlrpc:"validity,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	ActivityId         *Many2One `xmlrpc:"activity_id,omitempty" json:"activity_id,omitempty"`
+	AttachmentIds      *Relation `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	CcPartnerIds       *Relation `xmlrpc:"cc_partner_ids,omitempty" json:"cc_partner_ids,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Filename           *String   `xmlrpc:"filename,omitempty" json:"filename,omitempty"`
+	HasDefaultTemplate *Bool     `xmlrpc:"has_default_template,omitempty" json:"has_default_template,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsUserSigner       *Bool     `xmlrpc:"is_user_signer,omitempty" json:"is_user_signer,omitempty"`
+	Message            *String   `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	MessageCc          *String   `xmlrpc:"message_cc,omitempty" json:"message_cc,omitempty"`
+	Reminder           *Int      `xmlrpc:"reminder,omitempty" json:"reminder,omitempty"`
+	SetSignOrder       *Bool     `xmlrpc:"set_sign_order,omitempty" json:"set_sign_order,omitempty"`
+	SignerId           *Many2One `xmlrpc:"signer_id,omitempty" json:"signer_id,omitempty"`
+	SignerIds          *Relation `xmlrpc:"signer_ids,omitempty" json:"signer_ids,omitempty"`
+	SignersCount       *Int      `xmlrpc:"signers_count,omitempty" json:"signers_count,omitempty"`
+	Subject            *String   `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	TemplateId         *Many2One `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	Validity           *Time     `xmlrpc:"validity,omitempty" json:"validity,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignSendRequests represents array of sign.send.request model.

@@ -2,48 +2,48 @@ package odoo
 
 // SaleReport represents sale.report model.
 type SaleReport struct {
-	AnalyticAccountId      *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	CampaignId             *Many2One  `xmlrpc:"campaign_id,omitempty"`
-	CategId                *Many2One  `xmlrpc:"categ_id,omitempty"`
-	CommercialPartnerId    *Many2One  `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId              *Many2One  `xmlrpc:"country_id,omitempty"`
-	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                   *Time      `xmlrpc:"date,omitempty"`
-	Discount               *Float     `xmlrpc:"discount,omitempty"`
-	DiscountAmount         *Float     `xmlrpc:"discount_amount,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	IndustryId             *Many2One  `xmlrpc:"industry_id,omitempty"`
-	InvoiceStatus          *Selection `xmlrpc:"invoice_status,omitempty"`
-	Margin                 *Float     `xmlrpc:"margin,omitempty"`
-	MediumId               *Many2One  `xmlrpc:"medium_id,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	Nbr                    *Int       `xmlrpc:"nbr,omitempty"`
-	OrderReference         *String    `xmlrpc:"order_reference,omitempty"`
-	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerZip             *String    `xmlrpc:"partner_zip,omitempty"`
-	PriceSubtotal          *Float     `xmlrpc:"price_subtotal,omitempty"`
-	PriceTotal             *Float     `xmlrpc:"price_total,omitempty"`
-	PricelistId            *Many2One  `xmlrpc:"pricelist_id,omitempty"`
-	ProductId              *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductTmplId          *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductUom             *Many2One  `xmlrpc:"product_uom,omitempty"`
-	ProductUomQty          *Float     `xmlrpc:"product_uom_qty,omitempty"`
-	QtyDelivered           *Float     `xmlrpc:"qty_delivered,omitempty"`
-	QtyInvoiced            *Float     `xmlrpc:"qty_invoiced,omitempty"`
-	QtyToDeliver           *Float     `xmlrpc:"qty_to_deliver,omitempty"`
-	QtyToInvoice           *Float     `xmlrpc:"qty_to_invoice,omitempty"`
-	SourceId               *Many2One  `xmlrpc:"source_id,omitempty"`
-	State                  *Selection `xmlrpc:"state,omitempty"`
-	StateId                *Many2One  `xmlrpc:"state_id,omitempty"`
-	TeamId                 *Many2One  `xmlrpc:"team_id,omitempty"`
-	UntaxedAmountInvoiced  *Float     `xmlrpc:"untaxed_amount_invoiced,omitempty"`
-	UntaxedAmountToInvoice *Float     `xmlrpc:"untaxed_amount_to_invoice,omitempty"`
-	UserId                 *Many2One  `xmlrpc:"user_id,omitempty"`
-	Volume                 *Float     `xmlrpc:"volume,omitempty"`
-	WarehouseId            *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	Weight                 *Float     `xmlrpc:"weight,omitempty"`
+	AnalyticAccountId      *Many2One  `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	CampaignId             *Many2One  `xmlrpc:"campaign_id,omitempty" json:"campaign_id,omitempty"`
+	CategId                *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CommercialPartnerId    *Many2One  `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId              *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                   *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	Discount               *Float     `xmlrpc:"discount,omitempty" json:"discount,omitempty"`
+	DiscountAmount         *Float     `xmlrpc:"discount_amount,omitempty" json:"discount_amount,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IndustryId             *Many2One  `xmlrpc:"industry_id,omitempty" json:"industry_id,omitempty"`
+	InvoiceStatus          *Selection `xmlrpc:"invoice_status,omitempty" json:"invoice_status,omitempty"`
+	Margin                 *Float     `xmlrpc:"margin,omitempty" json:"margin,omitempty"`
+	MediumId               *Many2One  `xmlrpc:"medium_id,omitempty" json:"medium_id,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Nbr                    *Int       `xmlrpc:"nbr,omitempty" json:"nbr,omitempty"`
+	OrderReference         *String    `xmlrpc:"order_reference,omitempty" json:"order_reference,omitempty"`
+	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerZip             *String    `xmlrpc:"partner_zip,omitempty" json:"partner_zip,omitempty"`
+	PriceSubtotal          *Float     `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
+	PriceTotal             *Float     `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
+	PricelistId            *Many2One  `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
+	ProductId              *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId          *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUom             *Many2One  `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductUomQty          *Float     `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	QtyDelivered           *Float     `xmlrpc:"qty_delivered,omitempty" json:"qty_delivered,omitempty"`
+	QtyInvoiced            *Float     `xmlrpc:"qty_invoiced,omitempty" json:"qty_invoiced,omitempty"`
+	QtyToDeliver           *Float     `xmlrpc:"qty_to_deliver,omitempty" json:"qty_to_deliver,omitempty"`
+	QtyToInvoice           *Float     `xmlrpc:"qty_to_invoice,omitempty" json:"qty_to_invoice,omitempty"`
+	SourceId               *Many2One  `xmlrpc:"source_id,omitempty" json:"source_id,omitempty"`
+	State                  *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StateId                *Many2One  `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
+	TeamId                 *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UntaxedAmountInvoiced  *Float     `xmlrpc:"untaxed_amount_invoiced,omitempty" json:"untaxed_amount_invoiced,omitempty"`
+	UntaxedAmountToInvoice *Float     `xmlrpc:"untaxed_amount_to_invoice,omitempty" json:"untaxed_amount_to_invoice,omitempty"`
+	UserId                 *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Volume                 *Float     `xmlrpc:"volume,omitempty" json:"volume,omitempty"`
+	WarehouseId            *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	Weight                 *Float     `xmlrpc:"weight,omitempty" json:"weight,omitempty"`
 }
 
 // SaleReports represents array of sale.report model.

@@ -2,26 +2,26 @@ package odoo
 
 // UtmCampaign represents utm.campaign model.
 type UtmCampaign struct {
-	Active         *Bool     `xmlrpc:"active,omitempty"`
-	Color          *Int      `xmlrpc:"color,omitempty"`
-	CompanyId      *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	CrmLeadCount   *Int      `xmlrpc:"crm_lead_count,omitempty"`
-	CurrencyId     *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	InvoicedAmount *Int      `xmlrpc:"invoiced_amount,omitempty"`
-	IsAutoCampaign *Bool     `xmlrpc:"is_auto_campaign,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	QuotationCount *Int      `xmlrpc:"quotation_count,omitempty"`
-	StageId        *Many2One `xmlrpc:"stage_id,omitempty"`
-	TagIds         *Relation `xmlrpc:"tag_ids,omitempty"`
-	Title          *String   `xmlrpc:"title,omitempty"`
-	UseLeads       *Bool     `xmlrpc:"use_leads,omitempty"`
-	UserId         *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active         *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Color          *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrmLeadCount   *Int      `xmlrpc:"crm_lead_count,omitempty" json:"crm_lead_count,omitempty"`
+	CurrencyId     *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoicedAmount *Int      `xmlrpc:"invoiced_amount,omitempty" json:"invoiced_amount,omitempty"`
+	IsAutoCampaign *Bool     `xmlrpc:"is_auto_campaign,omitempty" json:"is_auto_campaign,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	QuotationCount *Int      `xmlrpc:"quotation_count,omitempty" json:"quotation_count,omitempty"`
+	StageId        *Many2One `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	TagIds         *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	Title          *String   `xmlrpc:"title,omitempty" json:"title,omitempty"`
+	UseLeads       *Bool     `xmlrpc:"use_leads,omitempty" json:"use_leads,omitempty"`
+	UserId         *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UtmCampaigns represents array of utm.campaign model.

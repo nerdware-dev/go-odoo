@@ -2,24 +2,24 @@ package odoo
 
 // PaymentCaptureWizard represents payment.capture.wizard model.
 type PaymentCaptureWizard struct {
-	AmountToCapture        *Float    `xmlrpc:"amount_to_capture,omitempty"`
-	AuthorizedAmount       *Float    `xmlrpc:"authorized_amount,omitempty"`
-	AvailableAmount        *Float    `xmlrpc:"available_amount,omitempty"`
-	CapturedAmount         *Float    `xmlrpc:"captured_amount,omitempty"`
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId             *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	HasDraftChildren       *Bool     `xmlrpc:"has_draft_children,omitempty"`
-	HasRemainingAmount     *Bool     `xmlrpc:"has_remaining_amount,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	IsAmountToCaptureValid *Bool     `xmlrpc:"is_amount_to_capture_valid,omitempty"`
-	SupportPartialCapture  *Bool     `xmlrpc:"support_partial_capture,omitempty"`
-	TransactionIds         *Relation `xmlrpc:"transaction_ids,omitempty"`
-	VoidRemainingAmount    *Bool     `xmlrpc:"void_remaining_amount,omitempty"`
-	VoidedAmount           *Float    `xmlrpc:"voided_amount,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	AmountToCapture        *Float    `xmlrpc:"amount_to_capture,omitempty" json:"amount_to_capture,omitempty"`
+	AuthorizedAmount       *Float    `xmlrpc:"authorized_amount,omitempty" json:"authorized_amount,omitempty"`
+	AvailableAmount        *Float    `xmlrpc:"available_amount,omitempty" json:"available_amount,omitempty"`
+	CapturedAmount         *Float    `xmlrpc:"captured_amount,omitempty" json:"captured_amount,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId             *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasDraftChildren       *Bool     `xmlrpc:"has_draft_children,omitempty" json:"has_draft_children,omitempty"`
+	HasRemainingAmount     *Bool     `xmlrpc:"has_remaining_amount,omitempty" json:"has_remaining_amount,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAmountToCaptureValid *Bool     `xmlrpc:"is_amount_to_capture_valid,omitempty" json:"is_amount_to_capture_valid,omitempty"`
+	SupportPartialCapture  *Bool     `xmlrpc:"support_partial_capture,omitempty" json:"support_partial_capture,omitempty"`
+	TransactionIds         *Relation `xmlrpc:"transaction_ids,omitempty" json:"transaction_ids,omitempty"`
+	VoidRemainingAmount    *Bool     `xmlrpc:"void_remaining_amount,omitempty" json:"void_remaining_amount,omitempty"`
+	VoidedAmount           *Float    `xmlrpc:"voided_amount,omitempty" json:"voided_amount,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentCaptureWizards represents array of payment.capture.wizard model.

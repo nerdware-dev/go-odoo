@@ -2,16 +2,16 @@ package odoo
 
 // MailPartnerDevice represents mail.partner.device model.
 type MailPartnerDevice struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Endpoint       *String   `xmlrpc:"endpoint,omitempty"`
-	ExpirationTime *Time     `xmlrpc:"expiration_time,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	Keys           *String   `xmlrpc:"keys,omitempty"`
-	PartnerId      *Many2One `xmlrpc:"partner_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Endpoint       *String   `xmlrpc:"endpoint,omitempty" json:"endpoint,omitempty"`
+	ExpirationTime *Time     `xmlrpc:"expiration_time,omitempty" json:"expiration_time,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Keys           *String   `xmlrpc:"keys,omitempty" json:"keys,omitempty"`
+	PartnerId      *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailPartnerDevices represents array of mail.partner.device model.

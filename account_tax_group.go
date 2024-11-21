@@ -2,21 +2,21 @@ package odoo
 
 // AccountTaxGroup represents account.tax.group model.
 type AccountTaxGroup struct {
-	AdvanceTaxPaymentAccountId *Many2One `xmlrpc:"advance_tax_payment_account_id,omitempty"`
-	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty"`
-	CountryCode                *String   `xmlrpc:"country_code,omitempty"`
-	CountryId                  *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate                 *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                *String   `xmlrpc:"display_name,omitempty"`
-	Id                         *Int      `xmlrpc:"id,omitempty"`
-	Name                       *String   `xmlrpc:"name,omitempty"`
-	PrecedingSubtotal          *String   `xmlrpc:"preceding_subtotal,omitempty"`
-	Sequence                   *Int      `xmlrpc:"sequence,omitempty"`
-	TaxPayableAccountId        *Many2One `xmlrpc:"tax_payable_account_id,omitempty"`
-	TaxReceivableAccountId     *Many2One `xmlrpc:"tax_receivable_account_id,omitempty"`
-	WriteDate                  *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty"`
+	AdvanceTaxPaymentAccountId *Many2One `xmlrpc:"advance_tax_payment_account_id,omitempty" json:"advance_tax_payment_account_id,omitempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode                *String   `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
+	CountryId                  *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                       *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PrecedingSubtotal          *String   `xmlrpc:"preceding_subtotal,omitempty" json:"preceding_subtotal,omitempty"`
+	Sequence                   *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TaxPayableAccountId        *Many2One `xmlrpc:"tax_payable_account_id,omitempty" json:"tax_payable_account_id,omitempty"`
+	TaxReceivableAccountId     *Many2One `xmlrpc:"tax_receivable_account_id,omitempty" json:"tax_receivable_account_id,omitempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxGroups represents array of account.tax.group model.

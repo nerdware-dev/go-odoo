@@ -2,19 +2,19 @@ package odoo
 
 // CrmStage represents crm.stage model.
 type CrmStage struct {
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Fold         *Bool     `xmlrpc:"fold,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	IsWon        *Bool     `xmlrpc:"is_won,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	Requirements *String   `xmlrpc:"requirements,omitempty"`
-	Sequence     *Int      `xmlrpc:"sequence,omitempty"`
-	TeamCount    *Int      `xmlrpc:"team_count,omitempty"`
-	TeamId       *Many2One `xmlrpc:"team_id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Fold         *Bool     `xmlrpc:"fold,omitempty" json:"fold,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsWon        *Bool     `xmlrpc:"is_won,omitempty" json:"is_won,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Requirements *String   `xmlrpc:"requirements,omitempty" json:"requirements,omitempty"`
+	Sequence     *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TeamCount    *Int      `xmlrpc:"team_count,omitempty" json:"team_count,omitempty"`
+	TeamId       *Many2One `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmStages represents array of crm.stage model.

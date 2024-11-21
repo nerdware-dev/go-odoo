@@ -2,18 +2,18 @@ package odoo
 
 // HrAttendanceOvertime represents hr.attendance.overtime model.
 type HrAttendanceOvertime struct {
-	Adjustment   *Bool     `xmlrpc:"adjustment,omitempty"`
-	CompanyId    *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date         *Time     `xmlrpc:"date,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Duration     *Float    `xmlrpc:"duration,omitempty"`
-	DurationReal *Float    `xmlrpc:"duration_real,omitempty"`
-	EmployeeId   *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	Adjustment   *Bool     `xmlrpc:"adjustment,omitempty" json:"adjustment,omitempty"`
+	CompanyId    *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date         *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration     *Float    `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	DurationReal *Float    `xmlrpc:"duration_real,omitempty" json:"duration_real,omitempty"`
+	EmployeeId   *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrAttendanceOvertimes represents array of hr.attendance.overtime model.

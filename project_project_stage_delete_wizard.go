@@ -2,15 +2,15 @@ package odoo
 
 // ProjectProjectStageDeleteWizard represents project.project.stage.delete.wizard model.
 type ProjectProjectStageDeleteWizard struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	ProjectsCount *Int      `xmlrpc:"projects_count,omitempty"`
-	StageIds      *Relation `xmlrpc:"stage_ids,omitempty"`
-	StagesActive  *Bool     `xmlrpc:"stages_active,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProjectsCount *Int      `xmlrpc:"projects_count,omitempty" json:"projects_count,omitempty"`
+	StageIds      *Relation `xmlrpc:"stage_ids,omitempty" json:"stage_ids,omitempty"`
+	StagesActive  *Bool     `xmlrpc:"stages_active,omitempty" json:"stages_active,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectProjectStageDeleteWizards represents array of project.project.stage.delete.wizard model.

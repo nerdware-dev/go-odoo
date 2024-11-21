@@ -2,17 +2,17 @@ package odoo
 
 // AccountReconcileModelPartnerMapping represents account.reconcile.model.partner.mapping model.
 type AccountReconcileModelPartnerMapping struct {
-	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	ModelId         *Many2One `xmlrpc:"model_id,omitempty"`
-	NarrationRegex  *String   `xmlrpc:"narration_regex,omitempty"`
-	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty"`
-	PaymentRefRegex *String   `xmlrpc:"payment_ref_regex,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelId         *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	NarrationRegex  *String   `xmlrpc:"narration_regex,omitempty" json:"narration_regex,omitempty"`
+	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PaymentRefRegex *String   `xmlrpc:"payment_ref_regex,omitempty" json:"payment_ref_regex,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReconcileModelPartnerMappings represents array of account.reconcile.model.partner.mapping model.

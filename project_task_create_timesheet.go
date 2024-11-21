@@ -2,15 +2,15 @@ package odoo
 
 // ProjectTaskCreateTimesheet represents project.task.create.timesheet model.
 type ProjectTaskCreateTimesheet struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description *String   `xmlrpc:"description,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	TaskId      *Many2One `xmlrpc:"task_id,omitempty"`
-	TimeSpent   *Float    `xmlrpc:"time_spent,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TaskId      *Many2One `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimeSpent   *Float    `xmlrpc:"time_spent,omitempty" json:"time_spent,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTaskCreateTimesheets represents array of project.task.create.timesheet model.

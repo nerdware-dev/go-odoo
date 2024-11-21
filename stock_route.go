@@ -2,29 +2,29 @@ package odoo
 
 // StockRoute represents stock.route model.
 type StockRoute struct {
-	Active                 *Bool     `xmlrpc:"active,omitempty"`
-	CategIds               *Relation `xmlrpc:"categ_ids,omitempty"`
-	CompanyId              *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	Name                   *String   `xmlrpc:"name,omitempty"`
-	PackagingIds           *Relation `xmlrpc:"packaging_ids,omitempty"`
-	PackagingSelectable    *Bool     `xmlrpc:"packaging_selectable,omitempty"`
-	ProductCategSelectable *Bool     `xmlrpc:"product_categ_selectable,omitempty"`
-	ProductIds             *Relation `xmlrpc:"product_ids,omitempty"`
-	ProductSelectable      *Bool     `xmlrpc:"product_selectable,omitempty"`
-	RuleIds                *Relation `xmlrpc:"rule_ids,omitempty"`
-	SaleSelectable         *Bool     `xmlrpc:"sale_selectable,omitempty"`
-	Sequence               *Int      `xmlrpc:"sequence,omitempty"`
-	SuppliedWhId           *Many2One `xmlrpc:"supplied_wh_id,omitempty"`
-	SupplierWhId           *Many2One `xmlrpc:"supplier_wh_id,omitempty"`
-	WarehouseDomainIds     *Relation `xmlrpc:"warehouse_domain_ids,omitempty"`
-	WarehouseIds           *Relation `xmlrpc:"warehouse_ids,omitempty"`
-	WarehouseSelectable    *Bool     `xmlrpc:"warehouse_selectable,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active                 *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategIds               *Relation `xmlrpc:"categ_ids,omitempty" json:"categ_ids,omitempty"`
+	CompanyId              *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                   *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PackagingIds           *Relation `xmlrpc:"packaging_ids,omitempty" json:"packaging_ids,omitempty"`
+	PackagingSelectable    *Bool     `xmlrpc:"packaging_selectable,omitempty" json:"packaging_selectable,omitempty"`
+	ProductCategSelectable *Bool     `xmlrpc:"product_categ_selectable,omitempty" json:"product_categ_selectable,omitempty"`
+	ProductIds             *Relation `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`
+	ProductSelectable      *Bool     `xmlrpc:"product_selectable,omitempty" json:"product_selectable,omitempty"`
+	RuleIds                *Relation `xmlrpc:"rule_ids,omitempty" json:"rule_ids,omitempty"`
+	SaleSelectable         *Bool     `xmlrpc:"sale_selectable,omitempty" json:"sale_selectable,omitempty"`
+	Sequence               *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SuppliedWhId           *Many2One `xmlrpc:"supplied_wh_id,omitempty" json:"supplied_wh_id,omitempty"`
+	SupplierWhId           *Many2One `xmlrpc:"supplier_wh_id,omitempty" json:"supplier_wh_id,omitempty"`
+	WarehouseDomainIds     *Relation `xmlrpc:"warehouse_domain_ids,omitempty" json:"warehouse_domain_ids,omitempty"`
+	WarehouseIds           *Relation `xmlrpc:"warehouse_ids,omitempty" json:"warehouse_ids,omitempty"`
+	WarehouseSelectable    *Bool     `xmlrpc:"warehouse_selectable,omitempty" json:"warehouse_selectable,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockRoutes represents array of stock.route model.

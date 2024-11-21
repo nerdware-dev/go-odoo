@@ -2,35 +2,35 @@ package odoo
 
 // CalendarRecurrence represents calendar.recurrence model.
 type CalendarRecurrence struct {
-	BaseEventId      *Many2One  `xmlrpc:"base_event_id,omitempty"`
-	Byday            *Selection `xmlrpc:"byday,omitempty"`
-	CalendarEventIds *Relation  `xmlrpc:"calendar_event_ids,omitempty"`
-	Count            *Int       `xmlrpc:"count,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Day              *Int       `xmlrpc:"day,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Dtstart          *Time      `xmlrpc:"dtstart,omitempty"`
-	EndType          *Selection `xmlrpc:"end_type,omitempty"`
-	EventTz          *Selection `xmlrpc:"event_tz,omitempty"`
-	Fri              *Bool      `xmlrpc:"fri,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Interval         *Int       `xmlrpc:"interval,omitempty"`
-	Mon              *Bool      `xmlrpc:"mon,omitempty"`
-	MonthBy          *Selection `xmlrpc:"month_by,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	Rrule            *String    `xmlrpc:"rrule,omitempty"`
-	RruleType        *Selection `xmlrpc:"rrule_type,omitempty"`
-	Sat              *Bool      `xmlrpc:"sat,omitempty"`
-	Sun              *Bool      `xmlrpc:"sun,omitempty"`
-	Thu              *Bool      `xmlrpc:"thu,omitempty"`
-	TriggerId        *Many2One  `xmlrpc:"trigger_id,omitempty"`
-	Tue              *Bool      `xmlrpc:"tue,omitempty"`
-	Until            *Time      `xmlrpc:"until,omitempty"`
-	Wed              *Bool      `xmlrpc:"wed,omitempty"`
-	Weekday          *Selection `xmlrpc:"weekday,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	BaseEventId      *Many2One  `xmlrpc:"base_event_id,omitempty" json:"base_event_id,omitempty"`
+	Byday            *Selection `xmlrpc:"byday,omitempty" json:"byday,omitempty"`
+	CalendarEventIds *Relation  `xmlrpc:"calendar_event_ids,omitempty" json:"calendar_event_ids,omitempty"`
+	Count            *Int       `xmlrpc:"count,omitempty" json:"count,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Day              *Int       `xmlrpc:"day,omitempty" json:"day,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Dtstart          *Time      `xmlrpc:"dtstart,omitempty" json:"dtstart,omitempty"`
+	EndType          *Selection `xmlrpc:"end_type,omitempty" json:"end_type,omitempty"`
+	EventTz          *Selection `xmlrpc:"event_tz,omitempty" json:"event_tz,omitempty"`
+	Fri              *Bool      `xmlrpc:"fri,omitempty" json:"fri,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Interval         *Int       `xmlrpc:"interval,omitempty" json:"interval,omitempty"`
+	Mon              *Bool      `xmlrpc:"mon,omitempty" json:"mon,omitempty"`
+	MonthBy          *Selection `xmlrpc:"month_by,omitempty" json:"month_by,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Rrule            *String    `xmlrpc:"rrule,omitempty" json:"rrule,omitempty"`
+	RruleType        *Selection `xmlrpc:"rrule_type,omitempty" json:"rrule_type,omitempty"`
+	Sat              *Bool      `xmlrpc:"sat,omitempty" json:"sat,omitempty"`
+	Sun              *Bool      `xmlrpc:"sun,omitempty" json:"sun,omitempty"`
+	Thu              *Bool      `xmlrpc:"thu,omitempty" json:"thu,omitempty"`
+	TriggerId        *Many2One  `xmlrpc:"trigger_id,omitempty" json:"trigger_id,omitempty"`
+	Tue              *Bool      `xmlrpc:"tue,omitempty" json:"tue,omitempty"`
+	Until            *Time      `xmlrpc:"until,omitempty" json:"until,omitempty"`
+	Wed              *Bool      `xmlrpc:"wed,omitempty" json:"wed,omitempty"`
+	Weekday          *Selection `xmlrpc:"weekday,omitempty" json:"weekday,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarRecurrences represents array of calendar.recurrence model.

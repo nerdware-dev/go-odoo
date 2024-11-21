@@ -2,17 +2,17 @@ package odoo
 
 // HrTimesheetAttendanceReport represents hr.timesheet.attendance.report model.
 type HrTimesheetAttendanceReport struct {
-	AttendanceCost  *Float    `xmlrpc:"attendance_cost,omitempty"`
-	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
-	CostDifference  *Float    `xmlrpc:"cost_difference,omitempty"`
-	Date            *Time     `xmlrpc:"date,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId      *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	TimesheetsCost  *Float    `xmlrpc:"timesheets_cost,omitempty"`
-	TotalAttendance *Float    `xmlrpc:"total_attendance,omitempty"`
-	TotalDifference *Float    `xmlrpc:"total_difference,omitempty"`
-	TotalTimesheet  *Float    `xmlrpc:"total_timesheet,omitempty"`
+	AttendanceCost  *Float    `xmlrpc:"attendance_cost,omitempty" json:"attendance_cost,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CostDifference  *Float    `xmlrpc:"cost_difference,omitempty" json:"cost_difference,omitempty"`
+	Date            *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId      *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TimesheetsCost  *Float    `xmlrpc:"timesheets_cost,omitempty" json:"timesheets_cost,omitempty"`
+	TotalAttendance *Float    `xmlrpc:"total_attendance,omitempty" json:"total_attendance,omitempty"`
+	TotalDifference *Float    `xmlrpc:"total_difference,omitempty" json:"total_difference,omitempty"`
+	TotalTimesheet  *Float    `xmlrpc:"total_timesheet,omitempty" json:"total_timesheet,omitempty"`
 }
 
 // HrTimesheetAttendanceReports represents array of hr.timesheet.attendance.report model.

@@ -2,19 +2,19 @@ package odoo
 
 // PrivacyLog represents privacy.log model.
 type PrivacyLog struct {
-	AdditionalNote     *String   `xmlrpc:"additional_note,omitempty"`
-	AnonymizedEmail    *String   `xmlrpc:"anonymized_email,omitempty"`
-	AnonymizedName     *String   `xmlrpc:"anonymized_name,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date               *Time     `xmlrpc:"date,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	ExecutionDetails   *String   `xmlrpc:"execution_details,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	RecordsDescription *String   `xmlrpc:"records_description,omitempty"`
-	UserId             *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	AdditionalNote     *String   `xmlrpc:"additional_note,omitempty" json:"additional_note,omitempty"`
+	AnonymizedEmail    *String   `xmlrpc:"anonymized_email,omitempty" json:"anonymized_email,omitempty"`
+	AnonymizedName     *String   `xmlrpc:"anonymized_name,omitempty" json:"anonymized_name,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date               *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExecutionDetails   *String   `xmlrpc:"execution_details,omitempty" json:"execution_details,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RecordsDescription *String   `xmlrpc:"records_description,omitempty" json:"records_description,omitempty"`
+	UserId             *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PrivacyLogs represents array of privacy.log model.

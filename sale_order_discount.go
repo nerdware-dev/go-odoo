@@ -2,18 +2,18 @@ package odoo
 
 // SaleOrderDiscount represents sale.order.discount model.
 type SaleOrderDiscount struct {
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId         *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DiscountAmount     *Float     `xmlrpc:"discount_amount,omitempty"`
-	DiscountPercentage *Float     `xmlrpc:"discount_percentage,omitempty"`
-	DiscountType       *Selection `xmlrpc:"discount_type,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	SaleOrderId        *Many2One  `xmlrpc:"sale_order_id,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId         *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DiscountAmount     *Float     `xmlrpc:"discount_amount,omitempty" json:"discount_amount,omitempty"`
+	DiscountPercentage *Float     `xmlrpc:"discount_percentage,omitempty" json:"discount_percentage,omitempty"`
+	DiscountType       *Selection `xmlrpc:"discount_type,omitempty" json:"discount_type,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	SaleOrderId        *Many2One  `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderDiscounts represents array of sale.order.discount model.

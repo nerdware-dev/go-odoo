@@ -2,25 +2,25 @@ package odoo
 
 // IrActionsClient represents ir.actions.client model.
 type IrActionsClient struct {
-	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`
-	Context          *String    `xmlrpc:"context,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Help             *String    `xmlrpc:"help,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	Params           *String    `xmlrpc:"params,omitempty"`
-	ParamsStore      *String    `xmlrpc:"params_store,omitempty"`
-	ResModel         *String    `xmlrpc:"res_model,omitempty"`
-	Tag              *String    `xmlrpc:"tag,omitempty"`
-	Target           *Selection `xmlrpc:"target,omitempty"`
-	Type             *String    `xmlrpc:"type,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId            *String    `xmlrpc:"xml_id,omitempty"`
+	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
+	BindingType      *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
+	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
+	Context          *String    `xmlrpc:"context,omitempty" json:"context,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Params           *String    `xmlrpc:"params,omitempty" json:"params,omitempty"`
+	ParamsStore      *String    `xmlrpc:"params_store,omitempty" json:"params_store,omitempty"`
+	ResModel         *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	Tag              *String    `xmlrpc:"tag,omitempty" json:"tag,omitempty"`
+	Target           *Selection `xmlrpc:"target,omitempty" json:"target,omitempty"`
+	Type             *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId            *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrActionsClients represents array of ir.actions.client model.

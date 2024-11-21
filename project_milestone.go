@@ -2,43 +2,43 @@ package odoo
 
 // ProjectMilestone represents project.milestone model.
 type ProjectMilestone struct {
-	AllowBillable            *Bool     `xmlrpc:"allow_billable,omitempty"`
-	CanBeMarkedAsDone        *Bool     `xmlrpc:"can_be_marked_as_done,omitempty"`
-	CreateDate               *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty"`
-	Deadline                 *Time     `xmlrpc:"deadline,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	DoneTaskCount            *Int      `xmlrpc:"done_task_count,omitempty"`
-	HasMessage               *Bool     `xmlrpc:"has_message,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	IsDeadlineExceeded       *Bool     `xmlrpc:"is_deadline_exceeded,omitempty"`
-	IsDeadlineFuture         *Bool     `xmlrpc:"is_deadline_future,omitempty"`
-	IsReached                *Bool     `xmlrpc:"is_reached,omitempty"`
-	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty"`
-	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty"`
-	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty"`
-	Name                     *String   `xmlrpc:"name,omitempty"`
-	ProductUom               *Many2One `xmlrpc:"product_uom,omitempty"`
-	ProductUomQty            *Float    `xmlrpc:"product_uom_qty,omitempty"`
-	ProjectId                *Many2One `xmlrpc:"project_id,omitempty"`
-	ProjectPartnerId         *Many2One `xmlrpc:"project_partner_id,omitempty"`
-	QuantityPercentage       *Float    `xmlrpc:"quantity_percentage,omitempty"`
-	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty"`
-	ReachedDate              *Time     `xmlrpc:"reached_date,omitempty"`
-	SaleLineDisplayName      *String   `xmlrpc:"sale_line_display_name,omitempty"`
-	SaleLineId               *Many2One `xmlrpc:"sale_line_id,omitempty"`
-	TaskCount                *Int      `xmlrpc:"task_count,omitempty"`
-	TaskIds                  *Relation `xmlrpc:"task_ids,omitempty"`
-	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty"`
+	AllowBillable            *Bool     `xmlrpc:"allow_billable,omitempty" json:"allow_billable,omitempty"`
+	CanBeMarkedAsDone        *Bool     `xmlrpc:"can_be_marked_as_done,omitempty" json:"can_be_marked_as_done,omitempty"`
+	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Deadline                 *Time     `xmlrpc:"deadline,omitempty" json:"deadline,omitempty"`
+	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DoneTaskCount            *Int      `xmlrpc:"done_task_count,omitempty" json:"done_task_count,omitempty"`
+	HasMessage               *Bool     `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                       *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsDeadlineExceeded       *Bool     `xmlrpc:"is_deadline_exceeded,omitempty" json:"is_deadline_exceeded,omitempty"`
+	IsDeadlineFuture         *Bool     `xmlrpc:"is_deadline_future,omitempty" json:"is_deadline_future,omitempty"`
+	IsReached                *Bool     `xmlrpc:"is_reached,omitempty" json:"is_reached,omitempty"`
+	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int      `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool     `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool     `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction        *Bool     `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int      `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	Name                     *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductUom               *Many2One `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductUomQty            *Float    `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	ProjectId                *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	ProjectPartnerId         *Many2One `xmlrpc:"project_partner_id,omitempty" json:"project_partner_id,omitempty"`
+	QuantityPercentage       *Float    `xmlrpc:"quantity_percentage,omitempty" json:"quantity_percentage,omitempty"`
+	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	ReachedDate              *Time     `xmlrpc:"reached_date,omitempty" json:"reached_date,omitempty"`
+	SaleLineDisplayName      *String   `xmlrpc:"sale_line_display_name,omitempty" json:"sale_line_display_name,omitempty"`
+	SaleLineId               *Many2One `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	TaskCount                *Int      `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
+	TaskIds                  *Relation `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
+	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectMilestones represents array of project.milestone model.

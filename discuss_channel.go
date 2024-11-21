@@ -2,48 +2,48 @@ package odoo
 
 // DiscussChannel represents discuss.channel model.
 type DiscussChannel struct {
-	Active                    *Bool      `xmlrpc:"active,omitempty"`
-	AllowPublicUpload         *Bool      `xmlrpc:"allow_public_upload,omitempty"`
-	Avatar128                 *String    `xmlrpc:"avatar_128,omitempty"`
-	ChannelMemberIds          *Relation  `xmlrpc:"channel_member_ids,omitempty"`
-	ChannelPartnerIds         *Relation  `xmlrpc:"channel_partner_ids,omitempty"`
-	ChannelType               *Selection `xmlrpc:"channel_type,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefaultDisplayMode        *Selection `xmlrpc:"default_display_mode,omitempty"`
-	Description               *String    `xmlrpc:"description,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	GroupIds                  *Relation  `xmlrpc:"group_ids,omitempty"`
-	GroupPublicId             *Many2One  `xmlrpc:"group_public_id,omitempty"`
-	HasMessage                *Bool      `xmlrpc:"has_message,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	Image128                  *String    `xmlrpc:"image_128,omitempty"`
-	InvitationUrl             *String    `xmlrpc:"invitation_url,omitempty"`
-	IsChat                    *Bool      `xmlrpc:"is_chat,omitempty"`
-	IsEditable                *Bool      `xmlrpc:"is_editable,omitempty"`
-	IsMember                  *Bool      `xmlrpc:"is_member,omitempty"`
-	MemberCount               *Int       `xmlrpc:"member_count,omitempty"`
-	MessageAttachmentCount    *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageFollowerIds        *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError           *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter    *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError        *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower         *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageNeedaction         *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter  *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds         *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PinnedMessageIds          *Relation  `xmlrpc:"pinned_message_ids,omitempty"`
-	RatingIds                 *Relation  `xmlrpc:"rating_ids,omitempty"`
-	RtcSessionIds             *Relation  `xmlrpc:"rtc_session_ids,omitempty"`
-	SfuChannelUuid            *String    `xmlrpc:"sfu_channel_uuid,omitempty"`
-	SfuServerUrl              *String    `xmlrpc:"sfu_server_url,omitempty"`
-	SubscriptionDepartmentIds *Relation  `xmlrpc:"subscription_department_ids,omitempty"`
-	Uuid                      *String    `xmlrpc:"uuid,omitempty"`
-	WebsiteMessageIds         *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                    *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AllowPublicUpload         *Bool      `xmlrpc:"allow_public_upload,omitempty" json:"allow_public_upload,omitempty"`
+	Avatar128                 *String    `xmlrpc:"avatar_128,omitempty" json:"avatar_128,omitempty"`
+	ChannelMemberIds          *Relation  `xmlrpc:"channel_member_ids,omitempty" json:"channel_member_ids,omitempty"`
+	ChannelPartnerIds         *Relation  `xmlrpc:"channel_partner_ids,omitempty" json:"channel_partner_ids,omitempty"`
+	ChannelType               *Selection `xmlrpc:"channel_type,omitempty" json:"channel_type,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultDisplayMode        *Selection `xmlrpc:"default_display_mode,omitempty" json:"default_display_mode,omitempty"`
+	Description               *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupIds                  *Relation  `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	GroupPublicId             *Many2One  `xmlrpc:"group_public_id,omitempty" json:"group_public_id,omitempty"`
+	HasMessage                *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image128                  *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	InvitationUrl             *String    `xmlrpc:"invitation_url,omitempty" json:"invitation_url,omitempty"`
+	IsChat                    *Bool      `xmlrpc:"is_chat,omitempty" json:"is_chat,omitempty"`
+	IsEditable                *Bool      `xmlrpc:"is_editable,omitempty" json:"is_editable,omitempty"`
+	IsMember                  *Bool      `xmlrpc:"is_member,omitempty" json:"is_member,omitempty"`
+	MemberCount               *Int       `xmlrpc:"member_count,omitempty" json:"member_count,omitempty"`
+	MessageAttachmentCount    *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds        *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError           *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter    *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError        *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower         *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction         *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter  *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds         *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PinnedMessageIds          *Relation  `xmlrpc:"pinned_message_ids,omitempty" json:"pinned_message_ids,omitempty"`
+	RatingIds                 *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RtcSessionIds             *Relation  `xmlrpc:"rtc_session_ids,omitempty" json:"rtc_session_ids,omitempty"`
+	SfuChannelUuid            *String    `xmlrpc:"sfu_channel_uuid,omitempty" json:"sfu_channel_uuid,omitempty"`
+	SfuServerUrl              *String    `xmlrpc:"sfu_server_url,omitempty" json:"sfu_server_url,omitempty"`
+	SubscriptionDepartmentIds *Relation  `xmlrpc:"subscription_department_ids,omitempty" json:"subscription_department_ids,omitempty"`
+	Uuid                      *String    `xmlrpc:"uuid,omitempty" json:"uuid,omitempty"`
+	WebsiteMessageIds         *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DiscussChannels represents array of discuss.channel model.

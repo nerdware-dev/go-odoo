@@ -2,15 +2,15 @@ package odoo
 
 // StockBackorderConfirmationLine represents stock.backorder.confirmation.line model.
 type StockBackorderConfirmationLine struct {
-	BackorderConfirmationId *Many2One `xmlrpc:"backorder_confirmation_id,omitempty"`
-	CreateDate              *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String   `xmlrpc:"display_name,omitempty"`
-	Id                      *Int      `xmlrpc:"id,omitempty"`
-	PickingId               *Many2One `xmlrpc:"picking_id,omitempty"`
-	ToBackorder             *Bool     `xmlrpc:"to_backorder,omitempty"`
-	WriteDate               *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty"`
+	BackorderConfirmationId *Many2One `xmlrpc:"backorder_confirmation_id,omitempty" json:"backorder_confirmation_id,omitempty"`
+	CreateDate              *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName             *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                      *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PickingId               *Many2One `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	ToBackorder             *Bool     `xmlrpc:"to_backorder,omitempty" json:"to_backorder,omitempty"`
+	WriteDate               *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockBackorderConfirmationLines represents array of stock.backorder.confirmation.line model.

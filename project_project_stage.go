@@ -2,19 +2,19 @@ package odoo
 
 // ProjectProjectStage represents project.project.stage model.
 type ProjectProjectStage struct {
-	Active         *Bool     `xmlrpc:"active,omitempty"`
-	CompanyId      *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Fold           *Bool     `xmlrpc:"fold,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	MailTemplateId *Many2One `xmlrpc:"mail_template_id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	Sequence       *Int      `xmlrpc:"sequence,omitempty"`
-	SmsTemplateId  *Many2One `xmlrpc:"sms_template_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active         *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Fold           *Bool     `xmlrpc:"fold,omitempty" json:"fold,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailTemplateId *Many2One `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence       *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SmsTemplateId  *Many2One `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectProjectStages represents array of project.project.stage model.

@@ -2,18 +2,18 @@ package odoo
 
 // StockStorageCategoryCapacity represents stock.storage.category.capacity model.
 type StockStorageCategoryCapacity struct {
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	PackageTypeId     *Many2One `xmlrpc:"package_type_id,omitempty"`
-	ProductId         *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomId      *Many2One `xmlrpc:"product_uom_id,omitempty"`
-	Quantity          *Float    `xmlrpc:"quantity,omitempty"`
-	StorageCategoryId *Many2One `xmlrpc:"storage_category_id,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PackageTypeId     *Many2One `xmlrpc:"package_type_id,omitempty" json:"package_type_id,omitempty"`
+	ProductId         *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId      *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Quantity          *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	StorageCategoryId *Many2One `xmlrpc:"storage_category_id,omitempty" json:"storage_category_id,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockStorageCategoryCapacitys represents array of stock.storage.category.capacity model.

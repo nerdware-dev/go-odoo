@@ -2,24 +2,24 @@ package odoo
 
 // AccountReportExpression represents account.report.expression model.
 type AccountReportExpression struct {
-	Auditable       *Bool      `xmlrpc:"auditable,omitempty"`
-	BlankIfZero     *Bool      `xmlrpc:"blank_if_zero,omitempty"`
-	CarryoverTarget *String    `xmlrpc:"carryover_target,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateScope       *Selection `xmlrpc:"date_scope,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Engine          *Selection `xmlrpc:"engine,omitempty"`
-	FigureType      *Selection `xmlrpc:"figure_type,omitempty"`
-	Formula         *String    `xmlrpc:"formula,omitempty"`
-	GreenOnPositive *Bool      `xmlrpc:"green_on_positive,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Label           *String    `xmlrpc:"label,omitempty"`
-	ReportLineId    *Many2One  `xmlrpc:"report_line_id,omitempty"`
-	ReportLineName  *String    `xmlrpc:"report_line_name,omitempty"`
-	Subformula      *String    `xmlrpc:"subformula,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Auditable       *Bool      `xmlrpc:"auditable,omitempty" json:"auditable,omitempty"`
+	BlankIfZero     *Bool      `xmlrpc:"blank_if_zero,omitempty" json:"blank_if_zero,omitempty"`
+	CarryoverTarget *String    `xmlrpc:"carryover_target,omitempty" json:"carryover_target,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateScope       *Selection `xmlrpc:"date_scope,omitempty" json:"date_scope,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Engine          *Selection `xmlrpc:"engine,omitempty" json:"engine,omitempty"`
+	FigureType      *Selection `xmlrpc:"figure_type,omitempty" json:"figure_type,omitempty"`
+	Formula         *String    `xmlrpc:"formula,omitempty" json:"formula,omitempty"`
+	GreenOnPositive *Bool      `xmlrpc:"green_on_positive,omitempty" json:"green_on_positive,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Label           *String    `xmlrpc:"label,omitempty" json:"label,omitempty"`
+	ReportLineId    *Many2One  `xmlrpc:"report_line_id,omitempty" json:"report_line_id,omitempty"`
+	ReportLineName  *String    `xmlrpc:"report_line_name,omitempty" json:"report_line_name,omitempty"`
+	Subformula      *String    `xmlrpc:"subformula,omitempty" json:"subformula,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportExpressions represents array of account.report.expression model.

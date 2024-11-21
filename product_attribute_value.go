@@ -2,23 +2,23 @@ package odoo
 
 // ProductAttributeValue represents product.attribute.value model.
 type ProductAttributeValue struct {
-	AttributeId         *Many2One  `xmlrpc:"attribute_id,omitempty"`
-	Color               *Int       `xmlrpc:"color,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefaultExtraPrice   *Float     `xmlrpc:"default_extra_price,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType         *Selection `xmlrpc:"display_type,omitempty"`
-	HtmlColor           *String    `xmlrpc:"html_color,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Image               *String    `xmlrpc:"image,omitempty"`
-	IsCustom            *Bool      `xmlrpc:"is_custom,omitempty"`
-	IsUsedOnProducts    *Bool      `xmlrpc:"is_used_on_products,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	PavAttributeLineIds *Relation  `xmlrpc:"pav_attribute_line_ids,omitempty"`
-	Sequence            *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttributeId         *Many2One  `xmlrpc:"attribute_id,omitempty" json:"attribute_id,omitempty"`
+	Color               *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultExtraPrice   *Float     `xmlrpc:"default_extra_price,omitempty" json:"default_extra_price,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType         *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	HtmlColor           *String    `xmlrpc:"html_color,omitempty" json:"html_color,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image               *String    `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	IsCustom            *Bool      `xmlrpc:"is_custom,omitempty" json:"is_custom,omitempty"`
+	IsUsedOnProducts    *Bool      `xmlrpc:"is_used_on_products,omitempty" json:"is_used_on_products,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PavAttributeLineIds *Relation  `xmlrpc:"pav_attribute_line_ids,omitempty" json:"pav_attribute_line_ids,omitempty"`
+	Sequence            *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductAttributeValues represents array of product.attribute.value model.

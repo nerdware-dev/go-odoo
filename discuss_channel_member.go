@@ -2,29 +2,29 @@ package odoo
 
 // DiscussChannelMember represents discuss.channel.member model.
 type DiscussChannelMember struct {
-	ChannelId            *Many2One  `xmlrpc:"channel_id,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomChannelName    *String    `xmlrpc:"custom_channel_name,omitempty"`
-	CustomNotifications  *Selection `xmlrpc:"custom_notifications,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	FetchedMessageId     *Many2One  `xmlrpc:"fetched_message_id,omitempty"`
-	FoldState            *Selection `xmlrpc:"fold_state,omitempty"`
-	GuestId              *Many2One  `xmlrpc:"guest_id,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	IsMinimized          *Bool      `xmlrpc:"is_minimized,omitempty"`
-	IsPinned             *Bool      `xmlrpc:"is_pinned,omitempty"`
-	IsSelf               *Bool      `xmlrpc:"is_self,omitempty"`
-	LastInterestDt       *Time      `xmlrpc:"last_interest_dt,omitempty"`
-	LastSeenDt           *Time      `xmlrpc:"last_seen_dt,omitempty"`
-	MessageUnreadCounter *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	MuteUntilDt          *Time      `xmlrpc:"mute_until_dt,omitempty"`
-	PartnerId            *Many2One  `xmlrpc:"partner_id,omitempty"`
-	RtcInvitingSessionId *Many2One  `xmlrpc:"rtc_inviting_session_id,omitempty"`
-	RtcSessionIds        *Relation  `xmlrpc:"rtc_session_ids,omitempty"`
-	SeenMessageId        *Many2One  `xmlrpc:"seen_message_id,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ChannelId            *Many2One  `xmlrpc:"channel_id,omitempty" json:"channel_id,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomChannelName    *String    `xmlrpc:"custom_channel_name,omitempty" json:"custom_channel_name,omitempty"`
+	CustomNotifications  *Selection `xmlrpc:"custom_notifications,omitempty" json:"custom_notifications,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FetchedMessageId     *Many2One  `xmlrpc:"fetched_message_id,omitempty" json:"fetched_message_id,omitempty"`
+	FoldState            *Selection `xmlrpc:"fold_state,omitempty" json:"fold_state,omitempty"`
+	GuestId              *Many2One  `xmlrpc:"guest_id,omitempty" json:"guest_id,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMinimized          *Bool      `xmlrpc:"is_minimized,omitempty" json:"is_minimized,omitempty"`
+	IsPinned             *Bool      `xmlrpc:"is_pinned,omitempty" json:"is_pinned,omitempty"`
+	IsSelf               *Bool      `xmlrpc:"is_self,omitempty" json:"is_self,omitempty"`
+	LastInterestDt       *Time      `xmlrpc:"last_interest_dt,omitempty" json:"last_interest_dt,omitempty"`
+	LastSeenDt           *Time      `xmlrpc:"last_seen_dt,omitempty" json:"last_seen_dt,omitempty"`
+	MessageUnreadCounter *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
+	MuteUntilDt          *Time      `xmlrpc:"mute_until_dt,omitempty" json:"mute_until_dt,omitempty"`
+	PartnerId            *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	RtcInvitingSessionId *Many2One  `xmlrpc:"rtc_inviting_session_id,omitempty" json:"rtc_inviting_session_id,omitempty"`
+	RtcSessionIds        *Relation  `xmlrpc:"rtc_session_ids,omitempty" json:"rtc_session_ids,omitempty"`
+	SeenMessageId        *Many2One  `xmlrpc:"seen_message_id,omitempty" json:"seen_message_id,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DiscussChannelMembers represents array of discuss.channel.member model.

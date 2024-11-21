@@ -2,23 +2,23 @@ package odoo
 
 // AccountInvoiceExtractWords represents account.invoice_extract.words model.
 type AccountInvoiceExtractWords struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Field         *String   `xmlrpc:"field,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	InvoiceId     *Many2One `xmlrpc:"invoice_id,omitempty"`
-	OcrSelected   *Bool     `xmlrpc:"ocr_selected,omitempty"`
-	UserSelected  *Bool     `xmlrpc:"user_selected,omitempty"`
-	WordBoxAngle  *Float    `xmlrpc:"word_box_angle,omitempty"`
-	WordBoxHeight *Float    `xmlrpc:"word_box_height,omitempty"`
-	WordBoxMidX   *Float    `xmlrpc:"word_box_midX,omitempty"`
-	WordBoxMidY   *Float    `xmlrpc:"word_box_midY,omitempty"`
-	WordBoxWidth  *Float    `xmlrpc:"word_box_width,omitempty"`
-	WordPage      *Int      `xmlrpc:"word_page,omitempty"`
-	WordText      *String   `xmlrpc:"word_text,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Field         *String   `xmlrpc:"field,omitempty" json:"field,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceId     *Many2One `xmlrpc:"invoice_id,omitempty" json:"invoice_id,omitempty"`
+	OcrSelected   *Bool     `xmlrpc:"ocr_selected,omitempty" json:"ocr_selected,omitempty"`
+	UserSelected  *Bool     `xmlrpc:"user_selected,omitempty" json:"user_selected,omitempty"`
+	WordBoxAngle  *Float    `xmlrpc:"word_box_angle,omitempty" json:"word_box_angle,omitempty"`
+	WordBoxHeight *Float    `xmlrpc:"word_box_height,omitempty" json:"word_box_height,omitempty"`
+	WordBoxMidX   *Float    `xmlrpc:"word_box_midX,omitempty" json:"word_box_midX,omitempty"`
+	WordBoxMidY   *Float    `xmlrpc:"word_box_midY,omitempty" json:"word_box_midY,omitempty"`
+	WordBoxWidth  *Float    `xmlrpc:"word_box_width,omitempty" json:"word_box_width,omitempty"`
+	WordPage      *Int      `xmlrpc:"word_page,omitempty" json:"word_page,omitempty"`
+	WordText      *String   `xmlrpc:"word_text,omitempty" json:"word_text,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountInvoiceExtractWordss represents array of account.invoice_extract.words model.

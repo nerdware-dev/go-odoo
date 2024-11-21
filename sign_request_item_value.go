@@ -2,18 +2,18 @@ package odoo
 
 // SignRequestItemValue represents sign.request.item.value model.
 type SignRequestItemValue struct {
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	FrameHasHash      *Bool     `xmlrpc:"frame_has_hash,omitempty"`
-	FrameValue        *String   `xmlrpc:"frame_value,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	SignItemId        *Many2One `xmlrpc:"sign_item_id,omitempty"`
-	SignRequestId     *Many2One `xmlrpc:"sign_request_id,omitempty"`
-	SignRequestItemId *Many2One `xmlrpc:"sign_request_item_id,omitempty"`
-	Value             *String   `xmlrpc:"value,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FrameHasHash      *Bool     `xmlrpc:"frame_has_hash,omitempty" json:"frame_has_hash,omitempty"`
+	FrameValue        *String   `xmlrpc:"frame_value,omitempty" json:"frame_value,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	SignItemId        *Many2One `xmlrpc:"sign_item_id,omitempty" json:"sign_item_id,omitempty"`
+	SignRequestId     *Many2One `xmlrpc:"sign_request_id,omitempty" json:"sign_request_id,omitempty"`
+	SignRequestItemId *Many2One `xmlrpc:"sign_request_item_id,omitempty" json:"sign_request_item_id,omitempty"`
+	Value             *String   `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignRequestItemValues represents array of sign.request.item.value model.

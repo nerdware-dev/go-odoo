@@ -2,17 +2,17 @@ package odoo
 
 // AuthTotpWizard represents auth_totp.wizard model.
 type AuthTotpWizard struct {
-	Code        *String   `xmlrpc:"code,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Qrcode      *String   `xmlrpc:"qrcode,omitempty"`
-	Secret      *String   `xmlrpc:"secret,omitempty"`
-	Url         *String   `xmlrpc:"url,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Qrcode      *String   `xmlrpc:"qrcode,omitempty" json:"qrcode,omitempty"`
+	Secret      *String   `xmlrpc:"secret,omitempty" json:"secret,omitempty"`
+	Url         *String   `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AuthTotpWizards represents array of auth_totp.wizard model.

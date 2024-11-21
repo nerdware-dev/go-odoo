@@ -2,40 +2,40 @@ package odoo
 
 // HrLeaveAccrualLevel represents hr.leave.accrual.level model.
 type HrLeaveAccrualLevel struct {
-	AccrualPlanId            *Many2One  `xmlrpc:"accrual_plan_id,omitempty"`
-	AccruedGainTime          *Selection `xmlrpc:"accrued_gain_time,omitempty"`
-	ActionWithUnusedAccruals *Selection `xmlrpc:"action_with_unused_accruals,omitempty"`
-	AddedValue               *Float     `xmlrpc:"added_value,omitempty"`
-	AddedValueType           *Selection `xmlrpc:"added_value_type,omitempty"`
-	CanModifyValueType       *Bool      `xmlrpc:"can_modify_value_type,omitempty"`
-	CapAccruedTime           *Bool      `xmlrpc:"cap_accrued_time,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	FirstDay                 *Int       `xmlrpc:"first_day,omitempty"`
-	FirstDayDisplay          *Selection `xmlrpc:"first_day_display,omitempty"`
-	FirstMonth               *Selection `xmlrpc:"first_month,omitempty"`
-	FirstMonthDay            *Int       `xmlrpc:"first_month_day,omitempty"`
-	FirstMonthDayDisplay     *Selection `xmlrpc:"first_month_day_display,omitempty"`
-	Frequency                *Selection `xmlrpc:"frequency,omitempty"`
-	FrequencyHourlySource    *Selection `xmlrpc:"frequency_hourly_source,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	MaximumLeave             *Float     `xmlrpc:"maximum_leave,omitempty"`
-	PostponeMaxDays          *Int       `xmlrpc:"postpone_max_days,omitempty"`
-	SecondDay                *Int       `xmlrpc:"second_day,omitempty"`
-	SecondDayDisplay         *Selection `xmlrpc:"second_day_display,omitempty"`
-	SecondMonth              *Selection `xmlrpc:"second_month,omitempty"`
-	SecondMonthDay           *Int       `xmlrpc:"second_month_day,omitempty"`
-	SecondMonthDayDisplay    *Selection `xmlrpc:"second_month_day_display,omitempty"`
-	Sequence                 *Int       `xmlrpc:"sequence,omitempty"`
-	StartCount               *Int       `xmlrpc:"start_count,omitempty"`
-	StartType                *Selection `xmlrpc:"start_type,omitempty"`
-	WeekDay                  *Selection `xmlrpc:"week_day,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
-	YearlyDay                *Int       `xmlrpc:"yearly_day,omitempty"`
-	YearlyDayDisplay         *Selection `xmlrpc:"yearly_day_display,omitempty"`
-	YearlyMonth              *Selection `xmlrpc:"yearly_month,omitempty"`
+	AccrualPlanId            *Many2One  `xmlrpc:"accrual_plan_id,omitempty" json:"accrual_plan_id,omitempty"`
+	AccruedGainTime          *Selection `xmlrpc:"accrued_gain_time,omitempty" json:"accrued_gain_time,omitempty"`
+	ActionWithUnusedAccruals *Selection `xmlrpc:"action_with_unused_accruals,omitempty" json:"action_with_unused_accruals,omitempty"`
+	AddedValue               *Float     `xmlrpc:"added_value,omitempty" json:"added_value,omitempty"`
+	AddedValueType           *Selection `xmlrpc:"added_value_type,omitempty" json:"added_value_type,omitempty"`
+	CanModifyValueType       *Bool      `xmlrpc:"can_modify_value_type,omitempty" json:"can_modify_value_type,omitempty"`
+	CapAccruedTime           *Bool      `xmlrpc:"cap_accrued_time,omitempty" json:"cap_accrued_time,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FirstDay                 *Int       `xmlrpc:"first_day,omitempty" json:"first_day,omitempty"`
+	FirstDayDisplay          *Selection `xmlrpc:"first_day_display,omitempty" json:"first_day_display,omitempty"`
+	FirstMonth               *Selection `xmlrpc:"first_month,omitempty" json:"first_month,omitempty"`
+	FirstMonthDay            *Int       `xmlrpc:"first_month_day,omitempty" json:"first_month_day,omitempty"`
+	FirstMonthDayDisplay     *Selection `xmlrpc:"first_month_day_display,omitempty" json:"first_month_day_display,omitempty"`
+	Frequency                *Selection `xmlrpc:"frequency,omitempty" json:"frequency,omitempty"`
+	FrequencyHourlySource    *Selection `xmlrpc:"frequency_hourly_source,omitempty" json:"frequency_hourly_source,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MaximumLeave             *Float     `xmlrpc:"maximum_leave,omitempty" json:"maximum_leave,omitempty"`
+	PostponeMaxDays          *Int       `xmlrpc:"postpone_max_days,omitempty" json:"postpone_max_days,omitempty"`
+	SecondDay                *Int       `xmlrpc:"second_day,omitempty" json:"second_day,omitempty"`
+	SecondDayDisplay         *Selection `xmlrpc:"second_day_display,omitempty" json:"second_day_display,omitempty"`
+	SecondMonth              *Selection `xmlrpc:"second_month,omitempty" json:"second_month,omitempty"`
+	SecondMonthDay           *Int       `xmlrpc:"second_month_day,omitempty" json:"second_month_day,omitempty"`
+	SecondMonthDayDisplay    *Selection `xmlrpc:"second_month_day_display,omitempty" json:"second_month_day_display,omitempty"`
+	Sequence                 *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StartCount               *Int       `xmlrpc:"start_count,omitempty" json:"start_count,omitempty"`
+	StartType                *Selection `xmlrpc:"start_type,omitempty" json:"start_type,omitempty"`
+	WeekDay                  *Selection `xmlrpc:"week_day,omitempty" json:"week_day,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	YearlyDay                *Int       `xmlrpc:"yearly_day,omitempty" json:"yearly_day,omitempty"`
+	YearlyDayDisplay         *Selection `xmlrpc:"yearly_day_display,omitempty" json:"yearly_day_display,omitempty"`
+	YearlyMonth              *Selection `xmlrpc:"yearly_month,omitempty" json:"yearly_month,omitempty"`
 }
 
 // HrLeaveAccrualLevels represents array of hr.leave.accrual.level model.

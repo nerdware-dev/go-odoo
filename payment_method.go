@@ -2,27 +2,27 @@ package odoo
 
 // PaymentMethod represents payment.method model.
 type PaymentMethod struct {
-	Active                 *Bool      `xmlrpc:"active,omitempty"`
-	BrandIds               *Relation  `xmlrpc:"brand_ids,omitempty"`
-	Code                   *String    `xmlrpc:"code,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Image                  *String    `xmlrpc:"image,omitempty"`
-	ImagePaymentForm       *String    `xmlrpc:"image_payment_form,omitempty"`
-	IsPrimary              *Bool      `xmlrpc:"is_primary,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PrimaryPaymentMethodId *Many2One  `xmlrpc:"primary_payment_method_id,omitempty"`
-	ProviderIds            *Relation  `xmlrpc:"provider_ids,omitempty"`
-	Sequence               *Int       `xmlrpc:"sequence,omitempty"`
-	SupportExpressCheckout *Bool      `xmlrpc:"support_express_checkout,omitempty"`
-	SupportRefund          *Selection `xmlrpc:"support_refund,omitempty"`
-	SupportTokenization    *Bool      `xmlrpc:"support_tokenization,omitempty"`
-	SupportedCountryIds    *Relation  `xmlrpc:"supported_country_ids,omitempty"`
-	SupportedCurrencyIds   *Relation  `xmlrpc:"supported_currency_ids,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	BrandIds               *Relation  `xmlrpc:"brand_ids,omitempty" json:"brand_ids,omitempty"`
+	Code                   *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image                  *String    `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	ImagePaymentForm       *String    `xmlrpc:"image_payment_form,omitempty" json:"image_payment_form,omitempty"`
+	IsPrimary              *Bool      `xmlrpc:"is_primary,omitempty" json:"is_primary,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PrimaryPaymentMethodId *Many2One  `xmlrpc:"primary_payment_method_id,omitempty" json:"primary_payment_method_id,omitempty"`
+	ProviderIds            *Relation  `xmlrpc:"provider_ids,omitempty" json:"provider_ids,omitempty"`
+	Sequence               *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SupportExpressCheckout *Bool      `xmlrpc:"support_express_checkout,omitempty" json:"support_express_checkout,omitempty"`
+	SupportRefund          *Selection `xmlrpc:"support_refund,omitempty" json:"support_refund,omitempty"`
+	SupportTokenization    *Bool      `xmlrpc:"support_tokenization,omitempty" json:"support_tokenization,omitempty"`
+	SupportedCountryIds    *Relation  `xmlrpc:"supported_country_ids,omitempty" json:"supported_country_ids,omitempty"`
+	SupportedCurrencyIds   *Relation  `xmlrpc:"supported_currency_ids,omitempty" json:"supported_currency_ids,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentMethods represents array of payment.method model.

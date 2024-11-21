@@ -2,33 +2,33 @@ package odoo
 
 // MailActivitySchedule represents mail.activity.schedule model.
 type MailActivitySchedule struct {
-	ActivityCategory       *Selection `xmlrpc:"activity_category,omitempty"`
-	ActivityTypeId         *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId         *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	ChainingType           *Selection `xmlrpc:"chaining_type,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateDeadline           *Time      `xmlrpc:"date_deadline,omitempty"`
-	DepartmentId           *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Error                  *String    `xmlrpc:"error,omitempty"`
-	HasError               *Bool      `xmlrpc:"has_error,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	IsBatchMode            *Bool      `xmlrpc:"is_batch_mode,omitempty"`
-	Note                   *String    `xmlrpc:"note,omitempty"`
-	PlanAssignationSummary *String    `xmlrpc:"plan_assignation_summary,omitempty"`
-	PlanAvailableIds       *Relation  `xmlrpc:"plan_available_ids,omitempty"`
-	PlanDateDeadline       *Time      `xmlrpc:"plan_date_deadline,omitempty"`
-	PlanHasUserOnDemand    *Bool      `xmlrpc:"plan_has_user_on_demand,omitempty"`
-	PlanId                 *Many2One  `xmlrpc:"plan_id,omitempty"`
-	PlanOnDemandUserId     *Many2One  `xmlrpc:"plan_on_demand_user_id,omitempty"`
-	ResIds                 *String    `xmlrpc:"res_ids,omitempty"`
-	ResModel               *String    `xmlrpc:"res_model,omitempty"`
-	ResModelId             *Many2One  `xmlrpc:"res_model_id,omitempty"`
-	Summary                *String    `xmlrpc:"summary,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActivityCategory       *Selection `xmlrpc:"activity_category,omitempty" json:"activity_category,omitempty"`
+	ActivityTypeId         *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId         *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	ChainingType           *Selection `xmlrpc:"chaining_type,omitempty" json:"chaining_type,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateDeadline           *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DepartmentId           *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Error                  *String    `xmlrpc:"error,omitempty" json:"error,omitempty"`
+	HasError               *Bool      `xmlrpc:"has_error,omitempty" json:"has_error,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsBatchMode            *Bool      `xmlrpc:"is_batch_mode,omitempty" json:"is_batch_mode,omitempty"`
+	Note                   *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PlanAssignationSummary *String    `xmlrpc:"plan_assignation_summary,omitempty" json:"plan_assignation_summary,omitempty"`
+	PlanAvailableIds       *Relation  `xmlrpc:"plan_available_ids,omitempty" json:"plan_available_ids,omitempty"`
+	PlanDateDeadline       *Time      `xmlrpc:"plan_date_deadline,omitempty" json:"plan_date_deadline,omitempty"`
+	PlanHasUserOnDemand    *Bool      `xmlrpc:"plan_has_user_on_demand,omitempty" json:"plan_has_user_on_demand,omitempty"`
+	PlanId                 *Many2One  `xmlrpc:"plan_id,omitempty" json:"plan_id,omitempty"`
+	PlanOnDemandUserId     *Many2One  `xmlrpc:"plan_on_demand_user_id,omitempty" json:"plan_on_demand_user_id,omitempty"`
+	ResIds                 *String    `xmlrpc:"res_ids,omitempty" json:"res_ids,omitempty"`
+	ResModel               *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResModelId             *Many2One  `xmlrpc:"res_model_id,omitempty" json:"res_model_id,omitempty"`
+	Summary                *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailActivitySchedules represents array of mail.activity.schedule model.

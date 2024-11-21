@@ -2,17 +2,17 @@ package odoo
 
 // PurchaseBillUnion represents purchase.bill.union model.
 type PurchaseBillUnion struct {
-	Amount          *Float    `xmlrpc:"amount,omitempty"`
-	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date            *Time     `xmlrpc:"date,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty"`
-	PurchaseOrderId *Many2One `xmlrpc:"purchase_order_id,omitempty"`
-	Reference       *String   `xmlrpc:"reference,omitempty"`
-	VendorBillId    *Many2One `xmlrpc:"vendor_bill_id,omitempty"`
+	Amount          *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date            *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PurchaseOrderId *Many2One `xmlrpc:"purchase_order_id,omitempty" json:"purchase_order_id,omitempty"`
+	Reference       *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	VendorBillId    *Many2One `xmlrpc:"vendor_bill_id,omitempty" json:"vendor_bill_id,omitempty"`
 }
 
 // PurchaseBillUnions represents array of purchase.bill.union model.

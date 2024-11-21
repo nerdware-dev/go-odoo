@@ -2,11 +2,11 @@ package odoo
 
 // IrModelInherit represents ir.model.inherit model.
 type IrModelInherit struct {
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	ModelId       *Many2One `xmlrpc:"model_id,omitempty"`
-	ParentFieldId *Many2One `xmlrpc:"parent_field_id,omitempty"`
-	ParentId      *Many2One `xmlrpc:"parent_id,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelId       *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ParentFieldId *Many2One `xmlrpc:"parent_field_id,omitempty" json:"parent_field_id,omitempty"`
+	ParentId      *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
 }
 
 // IrModelInherits represents array of ir.model.inherit model.

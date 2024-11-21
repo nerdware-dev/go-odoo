@@ -2,16 +2,16 @@ package odoo
 
 // MailMessageTranslation represents mail.message.translation model.
 type MailMessageTranslation struct {
-	Body        *String   `xmlrpc:"body,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	MessageId   *Many2One `xmlrpc:"message_id,omitempty"`
-	SourceLang  *String   `xmlrpc:"source_lang,omitempty"`
-	TargetLang  *String   `xmlrpc:"target_lang,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Body        *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageId   *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	SourceLang  *String   `xmlrpc:"source_lang,omitempty" json:"source_lang,omitempty"`
+	TargetLang  *String   `xmlrpc:"target_lang,omitempty" json:"target_lang,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailMessageTranslations represents array of mail.message.translation model.

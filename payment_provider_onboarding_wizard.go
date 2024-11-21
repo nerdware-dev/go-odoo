@@ -2,20 +2,20 @@ package odoo
 
 // PaymentProviderOnboardingWizard represents payment.provider.onboarding.wizard model.
 type PaymentProviderOnboardingWizard struct {
-	DataFetched        *Bool      `xmlrpc:"_data_fetched,omitempty"`
-	AccNumber          *String    `xmlrpc:"acc_number,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	JournalName        *String    `xmlrpc:"journal_name,omitempty"`
-	ManualName         *String    `xmlrpc:"manual_name,omitempty"`
-	ManualPostMsg      *String    `xmlrpc:"manual_post_msg,omitempty"`
-	PaymentMethod      *Selection `xmlrpc:"payment_method,omitempty"`
-	PaypalEmailAccount *String    `xmlrpc:"paypal_email_account,omitempty"`
-	PaypalPdtToken     *String    `xmlrpc:"paypal_pdt_token,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	DataFetched        *Bool      `xmlrpc:"_data_fetched,omitempty" json:"_data_fetched,omitempty"`
+	AccNumber          *String    `xmlrpc:"acc_number,omitempty" json:"acc_number,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalName        *String    `xmlrpc:"journal_name,omitempty" json:"journal_name,omitempty"`
+	ManualName         *String    `xmlrpc:"manual_name,omitempty" json:"manual_name,omitempty"`
+	ManualPostMsg      *String    `xmlrpc:"manual_post_msg,omitempty" json:"manual_post_msg,omitempty"`
+	PaymentMethod      *Selection `xmlrpc:"payment_method,omitempty" json:"payment_method,omitempty"`
+	PaypalEmailAccount *String    `xmlrpc:"paypal_email_account,omitempty" json:"paypal_email_account,omitempty"`
+	PaypalPdtToken     *String    `xmlrpc:"paypal_pdt_token,omitempty" json:"paypal_pdt_token,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentProviderOnboardingWizards represents array of payment.provider.onboarding.wizard model.

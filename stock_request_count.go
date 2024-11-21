@@ -2,17 +2,17 @@ package odoo
 
 // StockRequestCount represents stock.request.count model.
 type StockRequestCount struct {
-	AccountingDate *Time      `xmlrpc:"accounting_date,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	InventoryDate  *Time      `xmlrpc:"inventory_date,omitempty"`
-	QuantIds       *Relation  `xmlrpc:"quant_ids,omitempty"`
-	SetCount       *Selection `xmlrpc:"set_count,omitempty"`
-	UserId         *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountingDate *Time      `xmlrpc:"accounting_date,omitempty" json:"accounting_date,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InventoryDate  *Time      `xmlrpc:"inventory_date,omitempty" json:"inventory_date,omitempty"`
+	QuantIds       *Relation  `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	SetCount       *Selection `xmlrpc:"set_count,omitempty" json:"set_count,omitempty"`
+	UserId         *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockRequestCounts represents array of stock.request.count model.

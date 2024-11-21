@@ -2,21 +2,21 @@ package odoo
 
 // PaymentRefundWizard represents payment.refund.wizard model.
 type PaymentRefundWizard struct {
-	AmountAvailableForRefund *Float     `xmlrpc:"amount_available_for_refund,omitempty"`
-	AmountToRefund           *Float     `xmlrpc:"amount_to_refund,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	HasPendingRefund         *Bool      `xmlrpc:"has_pending_refund,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	PaymentAmount            *Float     `xmlrpc:"payment_amount,omitempty"`
-	PaymentId                *Many2One  `xmlrpc:"payment_id,omitempty"`
-	RefundedAmount           *Float     `xmlrpc:"refunded_amount,omitempty"`
-	SupportRefund            *Selection `xmlrpc:"support_refund,omitempty"`
-	TransactionId            *Many2One  `xmlrpc:"transaction_id,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AmountAvailableForRefund *Float     `xmlrpc:"amount_available_for_refund,omitempty" json:"amount_available_for_refund,omitempty"`
+	AmountToRefund           *Float     `xmlrpc:"amount_to_refund,omitempty" json:"amount_to_refund,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasPendingRefund         *Bool      `xmlrpc:"has_pending_refund,omitempty" json:"has_pending_refund,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PaymentAmount            *Float     `xmlrpc:"payment_amount,omitempty" json:"payment_amount,omitempty"`
+	PaymentId                *Many2One  `xmlrpc:"payment_id,omitempty" json:"payment_id,omitempty"`
+	RefundedAmount           *Float     `xmlrpc:"refunded_amount,omitempty" json:"refunded_amount,omitempty"`
+	SupportRefund            *Selection `xmlrpc:"support_refund,omitempty" json:"support_refund,omitempty"`
+	TransactionId            *Many2One  `xmlrpc:"transaction_id,omitempty" json:"transaction_id,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentRefundWizards represents array of payment.refund.wizard model.

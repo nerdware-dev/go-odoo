@@ -2,20 +2,20 @@ package odoo
 
 // HrTimesheetMergeWizard represents hr_timesheet.merge.wizard model.
 type HrTimesheetMergeWizard struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date          *Time     `xmlrpc:"date,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId    *Many2One `xmlrpc:"employee_id,omitempty"`
-	EncodingUomId *Many2One `xmlrpc:"encoding_uom_id,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	ProjectId     *Many2One `xmlrpc:"project_id,omitempty"`
-	TaskId        *Many2One `xmlrpc:"task_id,omitempty"`
-	TimesheetIds  *Relation `xmlrpc:"timesheet_ids,omitempty"`
-	UnitAmount    *Float    `xmlrpc:"unit_amount,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date          *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId    *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EncodingUomId *Many2One `xmlrpc:"encoding_uom_id,omitempty" json:"encoding_uom_id,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProjectId     *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	TaskId        *Many2One `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimesheetIds  *Relation `xmlrpc:"timesheet_ids,omitempty" json:"timesheet_ids,omitempty"`
+	UnitAmount    *Float    `xmlrpc:"unit_amount,omitempty" json:"unit_amount,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrTimesheetMergeWizards represents array of hr_timesheet.merge.wizard model.

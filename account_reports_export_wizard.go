@@ -2,17 +2,17 @@ package odoo
 
 // AccountReportsExportWizard represents account_reports.export.wizard model.
 type AccountReportsExportWizard struct {
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	DocName         *String   `xmlrpc:"doc_name,omitempty"`
-	ExportFormatIds *Relation `xmlrpc:"export_format_ids,omitempty"`
-	FolderId        *Many2One `xmlrpc:"folder_id,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	ReportId        *Many2One `xmlrpc:"report_id,omitempty"`
-	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocName         *String   `xmlrpc:"doc_name,omitempty" json:"doc_name,omitempty"`
+	ExportFormatIds *Relation `xmlrpc:"export_format_ids,omitempty" json:"export_format_ids,omitempty"`
+	FolderId        *Many2One `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ReportId        *Many2One `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	TagIds          *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportsExportWizards represents array of account_reports.export.wizard model.

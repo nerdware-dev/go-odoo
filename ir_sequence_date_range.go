@@ -2,17 +2,17 @@ package odoo
 
 // IrSequenceDateRange represents ir.sequence.date_range model.
 type IrSequenceDateRange struct {
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateFrom         *Time     `xmlrpc:"date_from,omitempty"`
-	DateTo           *Time     `xmlrpc:"date_to,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	NumberNext       *Int      `xmlrpc:"number_next,omitempty"`
-	NumberNextActual *Int      `xmlrpc:"number_next_actual,omitempty"`
-	SequenceId       *Many2One `xmlrpc:"sequence_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom         *Time     `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo           *Time     `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NumberNext       *Int      `xmlrpc:"number_next,omitempty" json:"number_next,omitempty"`
+	NumberNextActual *Int      `xmlrpc:"number_next_actual,omitempty" json:"number_next_actual,omitempty"`
+	SequenceId       *Many2One `xmlrpc:"sequence_id,omitempty" json:"sequence_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrSequenceDateRanges represents array of ir.sequence.date_range model.

@@ -2,23 +2,23 @@ package odoo
 
 // WebEditorConverterTest represents web_editor.converter.test model.
 type WebEditorConverterTest struct {
-	Binary       *String    `xmlrpc:"binary,omitempty"`
-	Char         *String    `xmlrpc:"char,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date         *Time      `xmlrpc:"date,omitempty"`
-	Datetime     *Time      `xmlrpc:"datetime,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Float        *Float     `xmlrpc:"float,omitempty"`
-	Html         *String    `xmlrpc:"html,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	Integer      *Int       `xmlrpc:"integer,omitempty"`
-	Many2One     *Many2One  `xmlrpc:"many2one,omitempty"`
-	Numeric      *Float     `xmlrpc:"numeric,omitempty"`
-	SelectionStr *Selection `xmlrpc:"selection_str,omitempty"`
-	Text         *String    `xmlrpc:"text,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Binary       *String    `xmlrpc:"binary,omitempty" json:"binary,omitempty"`
+	Char         *String    `xmlrpc:"char,omitempty" json:"char,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date         *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	Datetime     *Time      `xmlrpc:"datetime,omitempty" json:"datetime,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Float        *Float     `xmlrpc:"float,omitempty" json:"float,omitempty"`
+	Html         *String    `xmlrpc:"html,omitempty" json:"html,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Integer      *Int       `xmlrpc:"integer,omitempty" json:"integer,omitempty"`
+	Many2One     *Many2One  `xmlrpc:"many2one,omitempty" json:"many2one,omitempty"`
+	Numeric      *Float     `xmlrpc:"numeric,omitempty" json:"numeric,omitempty"`
+	SelectionStr *Selection `xmlrpc:"selection_str,omitempty" json:"selection_str,omitempty"`
+	Text         *String    `xmlrpc:"text,omitempty" json:"text,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebEditorConverterTests represents array of web_editor.converter.test model.

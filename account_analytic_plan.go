@@ -2,27 +2,27 @@ package odoo
 
 // AccountAnalyticPlan represents account.analytic.plan model.
 type AccountAnalyticPlan struct {
-	AccountCount         *Int       `xmlrpc:"account_count,omitempty"`
-	AccountIds           *Relation  `xmlrpc:"account_ids,omitempty"`
-	AllAccountCount      *Int       `xmlrpc:"all_account_count,omitempty"`
-	ApplicabilityIds     *Relation  `xmlrpc:"applicability_ids,omitempty"`
-	ChildrenCount        *Int       `xmlrpc:"children_count,omitempty"`
-	ChildrenIds          *Relation  `xmlrpc:"children_ids,omitempty"`
-	Color                *Int       `xmlrpc:"color,omitempty"`
-	CompleteName         *String    `xmlrpc:"complete_name,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefaultApplicability *Selection `xmlrpc:"default_applicability,omitempty"`
-	Description          *String    `xmlrpc:"description,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	ParentId             *Many2One  `xmlrpc:"parent_id,omitempty"`
-	ParentPath           *String    `xmlrpc:"parent_path,omitempty"`
-	RootId               *Many2One  `xmlrpc:"root_id,omitempty"`
-	Sequence             *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountCount         *Int       `xmlrpc:"account_count,omitempty" json:"account_count,omitempty"`
+	AccountIds           *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	AllAccountCount      *Int       `xmlrpc:"all_account_count,omitempty" json:"all_account_count,omitempty"`
+	ApplicabilityIds     *Relation  `xmlrpc:"applicability_ids,omitempty" json:"applicability_ids,omitempty"`
+	ChildrenCount        *Int       `xmlrpc:"children_count,omitempty" json:"children_count,omitempty"`
+	ChildrenIds          *Relation  `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
+	Color                *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompleteName         *String    `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultApplicability *Selection `xmlrpc:"default_applicability,omitempty" json:"default_applicability,omitempty"`
+	Description          *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId             *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath           *String    `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	RootId               *Many2One  `xmlrpc:"root_id,omitempty" json:"root_id,omitempty"`
+	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticPlans represents array of account.analytic.plan model.

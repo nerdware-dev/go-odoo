@@ -2,19 +2,19 @@ package odoo
 
 // HrExpenseSplitWizard represents hr.expense.split.wizard model.
 type HrExpenseSplitWizard struct {
-	CreateDate                  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                  *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName                 *String   `xmlrpc:"display_name,omitempty"`
-	ExpenseId                   *Many2One `xmlrpc:"expense_id,omitempty"`
-	ExpenseSplitLineIds         *Relation `xmlrpc:"expense_split_line_ids,omitempty"`
-	Id                          *Int      `xmlrpc:"id,omitempty"`
-	SplitPossible               *Bool     `xmlrpc:"split_possible,omitempty"`
-	TaxAmountCurrency           *Float    `xmlrpc:"tax_amount_currency,omitempty"`
-	TotalAmountCurrency         *Float    `xmlrpc:"total_amount_currency,omitempty"`
-	TotalAmountCurrencyOriginal *Float    `xmlrpc:"total_amount_currency_original,omitempty"`
-	WriteDate                   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate                  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName                 *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseId                   *Many2One `xmlrpc:"expense_id,omitempty" json:"expense_id,omitempty"`
+	ExpenseSplitLineIds         *Relation `xmlrpc:"expense_split_line_ids,omitempty" json:"expense_split_line_ids,omitempty"`
+	Id                          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	SplitPossible               *Bool     `xmlrpc:"split_possible,omitempty" json:"split_possible,omitempty"`
+	TaxAmountCurrency           *Float    `xmlrpc:"tax_amount_currency,omitempty" json:"tax_amount_currency,omitempty"`
+	TotalAmountCurrency         *Float    `xmlrpc:"total_amount_currency,omitempty" json:"total_amount_currency,omitempty"`
+	TotalAmountCurrencyOriginal *Float    `xmlrpc:"total_amount_currency_original,omitempty" json:"total_amount_currency_original,omitempty"`
+	WriteDate                   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrExpenseSplitWizards represents array of hr.expense.split.wizard model.

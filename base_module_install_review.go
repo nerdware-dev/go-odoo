@@ -2,15 +2,15 @@ package odoo
 
 // BaseModuleInstallReview represents base.module.install.review model.
 type BaseModuleInstallReview struct {
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	ModuleId           *Many2One `xmlrpc:"module_id,omitempty"`
-	ModuleIds          *Relation `xmlrpc:"module_ids,omitempty"`
-	ModulesDescription *String   `xmlrpc:"modules_description,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId           *Many2One `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	ModuleIds          *Relation `xmlrpc:"module_ids,omitempty" json:"module_ids,omitempty"`
+	ModulesDescription *String   `xmlrpc:"modules_description,omitempty" json:"modules_description,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleInstallReviews represents array of base.module.install.review model.

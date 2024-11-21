@@ -2,20 +2,20 @@ package odoo
 
 // AccountFinancialYearOp represents account.financial.year.op model.
 type AccountFinancialYearOp struct {
-	AccountTaxPeriodicity            *Selection `xmlrpc:"account_tax_periodicity,omitempty"`
-	AccountTaxPeriodicityJournalId   *Many2One  `xmlrpc:"account_tax_periodicity_journal_id,omitempty"`
-	AccountTaxPeriodicityReminderDay *Int       `xmlrpc:"account_tax_periodicity_reminder_day,omitempty"`
-	CompanyId                        *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName                      *String    `xmlrpc:"display_name,omitempty"`
-	FiscalyearLastDay                *Int       `xmlrpc:"fiscalyear_last_day,omitempty"`
-	FiscalyearLastMonth              *Selection `xmlrpc:"fiscalyear_last_month,omitempty"`
-	Id                               *Int       `xmlrpc:"id,omitempty"`
-	OpeningDate                      *Time      `xmlrpc:"opening_date,omitempty"`
-	OpeningMovePosted                *Bool      `xmlrpc:"opening_move_posted,omitempty"`
-	WriteDate                        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountTaxPeriodicity            *Selection `xmlrpc:"account_tax_periodicity,omitempty" json:"account_tax_periodicity,omitempty"`
+	AccountTaxPeriodicityJournalId   *Many2One  `xmlrpc:"account_tax_periodicity_journal_id,omitempty" json:"account_tax_periodicity_journal_id,omitempty"`
+	AccountTaxPeriodicityReminderDay *Int       `xmlrpc:"account_tax_periodicity_reminder_day,omitempty" json:"account_tax_periodicity_reminder_day,omitempty"`
+	CompanyId                        *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalyearLastDay                *Int       `xmlrpc:"fiscalyear_last_day,omitempty" json:"fiscalyear_last_day,omitempty"`
+	FiscalyearLastMonth              *Selection `xmlrpc:"fiscalyear_last_month,omitempty" json:"fiscalyear_last_month,omitempty"`
+	Id                               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	OpeningDate                      *Time      `xmlrpc:"opening_date,omitempty" json:"opening_date,omitempty"`
+	OpeningMovePosted                *Bool      `xmlrpc:"opening_move_posted,omitempty" json:"opening_move_posted,omitempty"`
+	WriteDate                        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFinancialYearOps represents array of account.financial.year.op model.

@@ -2,27 +2,27 @@ package odoo
 
 // AccountBankStatement represents account.bank.statement model.
 type AccountBankStatement struct {
-	AttachmentIds      *Relation `xmlrpc:"attachment_ids,omitempty"`
-	BalanceEnd         *Float    `xmlrpc:"balance_end,omitempty"`
-	BalanceEndReal     *Float    `xmlrpc:"balance_end_real,omitempty"`
-	BalanceStart       *Float    `xmlrpc:"balance_start,omitempty"`
-	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date               *Time     `xmlrpc:"date,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	FirstLineIndex     *String   `xmlrpc:"first_line_index,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	IsComplete         *Bool     `xmlrpc:"is_complete,omitempty"`
-	IsValid            *Bool     `xmlrpc:"is_valid,omitempty"`
-	JournalId          *Many2One `xmlrpc:"journal_id,omitempty"`
-	LineIds            *Relation `xmlrpc:"line_ids,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	ProblemDescription *String   `xmlrpc:"problem_description,omitempty"`
-	Reference          *String   `xmlrpc:"reference,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	AttachmentIds      *Relation `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	BalanceEnd         *Float    `xmlrpc:"balance_end,omitempty" json:"balance_end,omitempty"`
+	BalanceEndReal     *Float    `xmlrpc:"balance_end_real,omitempty" json:"balance_end_real,omitempty"`
+	BalanceStart       *Float    `xmlrpc:"balance_start,omitempty" json:"balance_start,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date               *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FirstLineIndex     *String   `xmlrpc:"first_line_index,omitempty" json:"first_line_index,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsComplete         *Bool     `xmlrpc:"is_complete,omitempty" json:"is_complete,omitempty"`
+	IsValid            *Bool     `xmlrpc:"is_valid,omitempty" json:"is_valid,omitempty"`
+	JournalId          *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LineIds            *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProblemDescription *String   `xmlrpc:"problem_description,omitempty" json:"problem_description,omitempty"`
+	Reference          *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankStatements represents array of account.bank.statement model.

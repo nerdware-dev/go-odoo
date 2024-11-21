@@ -2,22 +2,22 @@ package odoo
 
 // PrivacyLookupWizardLine represents privacy.lookup.wizard.line model.
 type PrivacyLookupWizardLine struct {
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	ExecutionDetails *String   `xmlrpc:"execution_details,omitempty"`
-	HasActive        *Bool     `xmlrpc:"has_active,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	IsActive         *Bool     `xmlrpc:"is_active,omitempty"`
-	IsUnlinked       *Bool     `xmlrpc:"is_unlinked,omitempty"`
-	ResId            *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel         *String   `xmlrpc:"res_model,omitempty"`
-	ResModelId       *Many2One `xmlrpc:"res_model_id,omitempty"`
-	ResName          *String   `xmlrpc:"res_name,omitempty"`
-	ResourceRef      *String   `xmlrpc:"resource_ref,omitempty"`
-	WizardId         *Many2One `xmlrpc:"wizard_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExecutionDetails *String   `xmlrpc:"execution_details,omitempty" json:"execution_details,omitempty"`
+	HasActive        *Bool     `xmlrpc:"has_active,omitempty" json:"has_active,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsActive         *Bool     `xmlrpc:"is_active,omitempty" json:"is_active,omitempty"`
+	IsUnlinked       *Bool     `xmlrpc:"is_unlinked,omitempty" json:"is_unlinked,omitempty"`
+	ResId            *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel         *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResModelId       *Many2One `xmlrpc:"res_model_id,omitempty" json:"res_model_id,omitempty"`
+	ResName          *String   `xmlrpc:"res_name,omitempty" json:"res_name,omitempty"`
+	ResourceRef      *String   `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	WizardId         *Many2One `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PrivacyLookupWizardLines represents array of privacy.lookup.wizard.line model.

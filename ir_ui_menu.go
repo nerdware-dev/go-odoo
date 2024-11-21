@@ -2,23 +2,23 @@ package odoo
 
 // IrUiMenu represents ir.ui.menu model.
 type IrUiMenu struct {
-	Action       *String   `xmlrpc:"action,omitempty"`
-	Active       *Bool     `xmlrpc:"active,omitempty"`
-	ChildId      *Relation `xmlrpc:"child_id,omitempty"`
-	CompleteName *String   `xmlrpc:"complete_name,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	GroupsId     *Relation `xmlrpc:"groups_id,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	ParentId     *Many2One `xmlrpc:"parent_id,omitempty"`
-	ParentPath   *String   `xmlrpc:"parent_path,omitempty"`
-	Sequence     *Int      `xmlrpc:"sequence,omitempty"`
-	WebIcon      *String   `xmlrpc:"web_icon,omitempty"`
-	WebIconData  *String   `xmlrpc:"web_icon_data,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	Action       *String   `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	Active       *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ChildId      *Relation `xmlrpc:"child_id,omitempty" json:"child_id,omitempty"`
+	CompleteName *String   `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupsId     *Relation `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId     *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath   *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	Sequence     *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WebIcon      *String   `xmlrpc:"web_icon,omitempty" json:"web_icon,omitempty"`
+	WebIconData  *String   `xmlrpc:"web_icon_data,omitempty" json:"web_icon_data,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrUiMenus represents array of ir.ui.menu model.

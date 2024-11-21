@@ -2,21 +2,21 @@ package odoo
 
 // MailLinkPreview represents mail.link.preview model.
 type MailLinkPreview struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	ImageMimetype *String   `xmlrpc:"image_mimetype,omitempty"`
-	MessageId     *Many2One `xmlrpc:"message_id,omitempty"`
-	OgDescription *String   `xmlrpc:"og_description,omitempty"`
-	OgImage       *String   `xmlrpc:"og_image,omitempty"`
-	OgMimetype    *String   `xmlrpc:"og_mimetype,omitempty"`
-	OgSiteName    *String   `xmlrpc:"og_site_name,omitempty"`
-	OgTitle       *String   `xmlrpc:"og_title,omitempty"`
-	OgType        *String   `xmlrpc:"og_type,omitempty"`
-	SourceUrl     *String   `xmlrpc:"source_url,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImageMimetype *String   `xmlrpc:"image_mimetype,omitempty" json:"image_mimetype,omitempty"`
+	MessageId     *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	OgDescription *String   `xmlrpc:"og_description,omitempty" json:"og_description,omitempty"`
+	OgImage       *String   `xmlrpc:"og_image,omitempty" json:"og_image,omitempty"`
+	OgMimetype    *String   `xmlrpc:"og_mimetype,omitempty" json:"og_mimetype,omitempty"`
+	OgSiteName    *String   `xmlrpc:"og_site_name,omitempty" json:"og_site_name,omitempty"`
+	OgTitle       *String   `xmlrpc:"og_title,omitempty" json:"og_title,omitempty"`
+	OgType        *String   `xmlrpc:"og_type,omitempty" json:"og_type,omitempty"`
+	SourceUrl     *String   `xmlrpc:"source_url,omitempty" json:"source_url,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailLinkPreviews represents array of mail.link.preview model.

@@ -2,19 +2,19 @@ package odoo
 
 // AccountAutoReconcileWizard represents account.auto.reconcile.wizard model.
 type AccountAutoReconcileWizard struct {
-	AccountIds  *Relation  `xmlrpc:"account_ids,omitempty"`
-	CompanyId   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	FromDate    *Time      `xmlrpc:"from_date,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	LineIds     *Relation  `xmlrpc:"line_ids,omitempty"`
-	PartnerIds  *Relation  `xmlrpc:"partner_ids,omitempty"`
-	SearchMode  *Selection `xmlrpc:"search_mode,omitempty"`
-	ToDate      *Time      `xmlrpc:"to_date,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountIds  *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	CompanyId   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FromDate    *Time      `xmlrpc:"from_date,omitempty" json:"from_date,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineIds     *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	PartnerIds  *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	SearchMode  *Selection `xmlrpc:"search_mode,omitempty" json:"search_mode,omitempty"`
+	ToDate      *Time      `xmlrpc:"to_date,omitempty" json:"to_date,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAutoReconcileWizards represents array of account.auto.reconcile.wizard model.

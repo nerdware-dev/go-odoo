@@ -2,23 +2,23 @@ package odoo
 
 // OnboardingOnboarding represents onboarding.onboarding model.
 type OnboardingOnboarding struct {
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrentOnboardingState *Selection `xmlrpc:"current_onboarding_state,omitempty"`
-	CurrentProgressId      *Many2One  `xmlrpc:"current_progress_id,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	IsOnboardingClosed     *Bool      `xmlrpc:"is_onboarding_closed,omitempty"`
-	IsPerCompany           *Bool      `xmlrpc:"is_per_company,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PanelCloseActionName   *String    `xmlrpc:"panel_close_action_name,omitempty"`
-	ProgressIds            *Relation  `xmlrpc:"progress_ids,omitempty"`
-	RouteName              *String    `xmlrpc:"route_name,omitempty"`
-	Sequence               *Int       `xmlrpc:"sequence,omitempty"`
-	StepIds                *Relation  `xmlrpc:"step_ids,omitempty"`
-	TextCompleted          *String    `xmlrpc:"text_completed,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrentOnboardingState *Selection `xmlrpc:"current_onboarding_state,omitempty" json:"current_onboarding_state,omitempty"`
+	CurrentProgressId      *Many2One  `xmlrpc:"current_progress_id,omitempty" json:"current_progress_id,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsOnboardingClosed     *Bool      `xmlrpc:"is_onboarding_closed,omitempty" json:"is_onboarding_closed,omitempty"`
+	IsPerCompany           *Bool      `xmlrpc:"is_per_company,omitempty" json:"is_per_company,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PanelCloseActionName   *String    `xmlrpc:"panel_close_action_name,omitempty" json:"panel_close_action_name,omitempty"`
+	ProgressIds            *Relation  `xmlrpc:"progress_ids,omitempty" json:"progress_ids,omitempty"`
+	RouteName              *String    `xmlrpc:"route_name,omitempty" json:"route_name,omitempty"`
+	Sequence               *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StepIds                *Relation  `xmlrpc:"step_ids,omitempty" json:"step_ids,omitempty"`
+	TextCompleted          *String    `xmlrpc:"text_completed,omitempty" json:"text_completed,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // OnboardingOnboardings represents array of onboarding.onboarding model.

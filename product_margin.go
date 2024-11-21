@@ -2,15 +2,15 @@ package odoo
 
 // ProductMargin represents product.margin model.
 type ProductMargin struct {
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	FromDate     *Time      `xmlrpc:"from_date,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	InvoiceState *Selection `xmlrpc:"invoice_state,omitempty"`
-	ToDate       *Time      `xmlrpc:"to_date,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FromDate     *Time      `xmlrpc:"from_date,omitempty" json:"from_date,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceState *Selection `xmlrpc:"invoice_state,omitempty" json:"invoice_state,omitempty"`
+	ToDate       *Time      `xmlrpc:"to_date,omitempty" json:"to_date,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductMargins represents array of product.margin model.

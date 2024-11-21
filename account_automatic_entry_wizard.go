@@ -2,28 +2,28 @@ package odoo
 
 // AccountAutomaticEntryWizard represents account.automatic.entry.wizard model.
 type AccountAutomaticEntryWizard struct {
-	AccountType           *Selection `xmlrpc:"account_type,omitempty"`
-	Action                *Selection `xmlrpc:"action,omitempty"`
-	CompanyCurrencyId     *Many2One  `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date                  *Time      `xmlrpc:"date,omitempty"`
-	DestinationAccountId  *Many2One  `xmlrpc:"destination_account_id,omitempty"`
-	DisplayCurrencyHelper *Bool      `xmlrpc:"display_currency_helper,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	ExpenseAccrualAccount *Many2One  `xmlrpc:"expense_accrual_account,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	JournalId             *Many2One  `xmlrpc:"journal_id,omitempty"`
-	LockDateMessage       *String    `xmlrpc:"lock_date_message,omitempty"`
-	MoveData              *String    `xmlrpc:"move_data,omitempty"`
-	MoveLineIds           *Relation  `xmlrpc:"move_line_ids,omitempty"`
-	Percentage            *Float     `xmlrpc:"percentage,omitempty"`
-	PreviewMoveData       *String    `xmlrpc:"preview_move_data,omitempty"`
-	RevenueAccrualAccount *Many2One  `xmlrpc:"revenue_accrual_account,omitempty"`
-	TotalAmount           *Float     `xmlrpc:"total_amount,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountType           *Selection `xmlrpc:"account_type,omitempty" json:"account_type,omitempty"`
+	Action                *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CompanyCurrencyId     *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                  *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DestinationAccountId  *Many2One  `xmlrpc:"destination_account_id,omitempty" json:"destination_account_id,omitempty"`
+	DisplayCurrencyHelper *Bool      `xmlrpc:"display_currency_helper,omitempty" json:"display_currency_helper,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExpenseAccrualAccount *Many2One  `xmlrpc:"expense_accrual_account,omitempty" json:"expense_accrual_account,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId             *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LockDateMessage       *String    `xmlrpc:"lock_date_message,omitempty" json:"lock_date_message,omitempty"`
+	MoveData              *String    `xmlrpc:"move_data,omitempty" json:"move_data,omitempty"`
+	MoveLineIds           *Relation  `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	Percentage            *Float     `xmlrpc:"percentage,omitempty" json:"percentage,omitempty"`
+	PreviewMoveData       *String    `xmlrpc:"preview_move_data,omitempty" json:"preview_move_data,omitempty"`
+	RevenueAccrualAccount *Many2One  `xmlrpc:"revenue_accrual_account,omitempty" json:"revenue_accrual_account,omitempty"`
+	TotalAmount           *Float     `xmlrpc:"total_amount,omitempty" json:"total_amount,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAutomaticEntryWizards represents array of account.automatic.entry.wizard model.

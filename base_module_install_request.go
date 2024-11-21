@@ -2,16 +2,16 @@ package odoo
 
 // BaseModuleInstallRequest represents base.module.install.request model.
 type BaseModuleInstallRequest struct {
-	BodyHtml    *String   `xmlrpc:"body_html,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModuleId    *Many2One `xmlrpc:"module_id,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	UserIds     *Relation `xmlrpc:"user_ids,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	BodyHtml    *String   `xmlrpc:"body_html,omitempty" json:"body_html,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId    *Many2One `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	UserIds     *Relation `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleInstallRequests represents array of base.module.install.request model.

@@ -2,60 +2,60 @@ package odoo
 
 // AccountReconcileModel represents account.reconcile.model model.
 type AccountReconcileModel struct {
-	Active                     *Bool      `xmlrpc:"active,omitempty"`
-	AllowPaymentTolerance      *Bool      `xmlrpc:"allow_payment_tolerance,omitempty"`
-	AutoReconcile              *Bool      `xmlrpc:"auto_reconcile,omitempty"`
-	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                 *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DecimalSeparator           *String    `xmlrpc:"decimal_separator,omitempty"`
-	DisplayName                *String    `xmlrpc:"display_name,omitempty"`
-	HasMessage                 *Bool      `xmlrpc:"has_message,omitempty"`
-	Id                         *Int       `xmlrpc:"id,omitempty"`
-	LineIds                    *Relation  `xmlrpc:"line_ids,omitempty"`
-	MatchAmount                *Selection `xmlrpc:"match_amount,omitempty"`
-	MatchAmountMax             *Float     `xmlrpc:"match_amount_max,omitempty"`
-	MatchAmountMin             *Float     `xmlrpc:"match_amount_min,omitempty"`
-	MatchJournalIds            *Relation  `xmlrpc:"match_journal_ids,omitempty"`
-	MatchLabel                 *Selection `xmlrpc:"match_label,omitempty"`
-	MatchLabelParam            *String    `xmlrpc:"match_label_param,omitempty"`
-	MatchNature                *Selection `xmlrpc:"match_nature,omitempty"`
-	MatchNote                  *Selection `xmlrpc:"match_note,omitempty"`
-	MatchNoteParam             *String    `xmlrpc:"match_note_param,omitempty"`
-	MatchPartner               *Bool      `xmlrpc:"match_partner,omitempty"`
-	MatchPartnerCategoryIds    *Relation  `xmlrpc:"match_partner_category_ids,omitempty"`
-	MatchPartnerIds            *Relation  `xmlrpc:"match_partner_ids,omitempty"`
-	MatchSameCurrency          *Bool      `xmlrpc:"match_same_currency,omitempty"`
-	MatchTextLocationLabel     *Bool      `xmlrpc:"match_text_location_label,omitempty"`
-	MatchTextLocationNote      *Bool      `xmlrpc:"match_text_location_note,omitempty"`
-	MatchTextLocationReference *Bool      `xmlrpc:"match_text_location_reference,omitempty"`
-	MatchTransactionType       *Selection `xmlrpc:"match_transaction_type,omitempty"`
-	MatchTransactionTypeParam  *String    `xmlrpc:"match_transaction_type_param,omitempty"`
-	MatchingOrder              *Selection `xmlrpc:"matching_order,omitempty"`
-	MessageAttachmentCount     *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError            *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter     *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError         *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	Name                       *String    `xmlrpc:"name,omitempty"`
-	NumberEntries              *Int       `xmlrpc:"number_entries,omitempty"`
-	PartnerMappingLineIds      *Relation  `xmlrpc:"partner_mapping_line_ids,omitempty"`
-	PastMonthsLimit            *Int       `xmlrpc:"past_months_limit,omitempty"`
-	PaymentToleranceParam      *Float     `xmlrpc:"payment_tolerance_param,omitempty"`
-	PaymentToleranceType       *Selection `xmlrpc:"payment_tolerance_type,omitempty"`
-	RatingIds                  *Relation  `xmlrpc:"rating_ids,omitempty"`
-	RuleType                   *Selection `xmlrpc:"rule_type,omitempty"`
-	Sequence                   *Int       `xmlrpc:"sequence,omitempty"`
-	ShowDecimalSeparator       *Bool      `xmlrpc:"show_decimal_separator,omitempty"`
-	ToCheck                    *Bool      `xmlrpc:"to_check,omitempty"`
-	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                  *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                     *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AllowPaymentTolerance      *Bool      `xmlrpc:"allow_payment_tolerance,omitempty" json:"allow_payment_tolerance,omitempty"`
+	AutoReconcile              *Bool      `xmlrpc:"auto_reconcile,omitempty" json:"auto_reconcile,omitempty"`
+	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DecimalSeparator           *String    `xmlrpc:"decimal_separator,omitempty" json:"decimal_separator,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasMessage                 *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineIds                    *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	MatchAmount                *Selection `xmlrpc:"match_amount,omitempty" json:"match_amount,omitempty"`
+	MatchAmountMax             *Float     `xmlrpc:"match_amount_max,omitempty" json:"match_amount_max,omitempty"`
+	MatchAmountMin             *Float     `xmlrpc:"match_amount_min,omitempty" json:"match_amount_min,omitempty"`
+	MatchJournalIds            *Relation  `xmlrpc:"match_journal_ids,omitempty" json:"match_journal_ids,omitempty"`
+	MatchLabel                 *Selection `xmlrpc:"match_label,omitempty" json:"match_label,omitempty"`
+	MatchLabelParam            *String    `xmlrpc:"match_label_param,omitempty" json:"match_label_param,omitempty"`
+	MatchNature                *Selection `xmlrpc:"match_nature,omitempty" json:"match_nature,omitempty"`
+	MatchNote                  *Selection `xmlrpc:"match_note,omitempty" json:"match_note,omitempty"`
+	MatchNoteParam             *String    `xmlrpc:"match_note_param,omitempty" json:"match_note_param,omitempty"`
+	MatchPartner               *Bool      `xmlrpc:"match_partner,omitempty" json:"match_partner,omitempty"`
+	MatchPartnerCategoryIds    *Relation  `xmlrpc:"match_partner_category_ids,omitempty" json:"match_partner_category_ids,omitempty"`
+	MatchPartnerIds            *Relation  `xmlrpc:"match_partner_ids,omitempty" json:"match_partner_ids,omitempty"`
+	MatchSameCurrency          *Bool      `xmlrpc:"match_same_currency,omitempty" json:"match_same_currency,omitempty"`
+	MatchTextLocationLabel     *Bool      `xmlrpc:"match_text_location_label,omitempty" json:"match_text_location_label,omitempty"`
+	MatchTextLocationNote      *Bool      `xmlrpc:"match_text_location_note,omitempty" json:"match_text_location_note,omitempty"`
+	MatchTextLocationReference *Bool      `xmlrpc:"match_text_location_reference,omitempty" json:"match_text_location_reference,omitempty"`
+	MatchTransactionType       *Selection `xmlrpc:"match_transaction_type,omitempty" json:"match_transaction_type,omitempty"`
+	MatchTransactionTypeParam  *String    `xmlrpc:"match_transaction_type_param,omitempty" json:"match_transaction_type_param,omitempty"`
+	MatchingOrder              *Selection `xmlrpc:"matching_order,omitempty" json:"matching_order,omitempty"`
+	MessageAttachmentCount     *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds         *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError            *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter     *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError         *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                 *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower          *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction          *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter   *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds          *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	Name                       *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NumberEntries              *Int       `xmlrpc:"number_entries,omitempty" json:"number_entries,omitempty"`
+	PartnerMappingLineIds      *Relation  `xmlrpc:"partner_mapping_line_ids,omitempty" json:"partner_mapping_line_ids,omitempty"`
+	PastMonthsLimit            *Int       `xmlrpc:"past_months_limit,omitempty" json:"past_months_limit,omitempty"`
+	PaymentToleranceParam      *Float     `xmlrpc:"payment_tolerance_param,omitempty" json:"payment_tolerance_param,omitempty"`
+	PaymentToleranceType       *Selection `xmlrpc:"payment_tolerance_type,omitempty" json:"payment_tolerance_type,omitempty"`
+	RatingIds                  *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RuleType                   *Selection `xmlrpc:"rule_type,omitempty" json:"rule_type,omitempty"`
+	Sequence                   *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShowDecimalSeparator       *Bool      `xmlrpc:"show_decimal_separator,omitempty" json:"show_decimal_separator,omitempty"`
+	ToCheck                    *Bool      `xmlrpc:"to_check,omitempty" json:"to_check,omitempty"`
+	WebsiteMessageIds          *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReconcileModels represents array of account.reconcile.model model.

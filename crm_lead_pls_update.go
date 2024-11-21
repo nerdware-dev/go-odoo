@@ -2,14 +2,14 @@ package odoo
 
 // CrmLeadPlsUpdate represents crm.lead.pls.update model.
 type CrmLeadPlsUpdate struct {
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	PlsFields    *Relation `xmlrpc:"pls_fields,omitempty"`
-	PlsStartDate *Time     `xmlrpc:"pls_start_date,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PlsFields    *Relation `xmlrpc:"pls_fields,omitempty" json:"pls_fields,omitempty"`
+	PlsStartDate *Time     `xmlrpc:"pls_start_date,omitempty" json:"pls_start_date,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLeadPlsUpdates represents array of crm.lead.pls.update model.

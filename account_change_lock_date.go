@@ -2,15 +2,15 @@ package odoo
 
 // AccountChangeLockDate represents account.change.lock.date model.
 type AccountChangeLockDate struct {
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	FiscalyearLockDate *Time     `xmlrpc:"fiscalyear_lock_date,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	PeriodLockDate     *Time     `xmlrpc:"period_lock_date,omitempty"`
-	TaxLockDate        *Time     `xmlrpc:"tax_lock_date,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalyearLockDate *Time     `xmlrpc:"fiscalyear_lock_date,omitempty" json:"fiscalyear_lock_date,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PeriodLockDate     *Time     `xmlrpc:"period_lock_date,omitempty" json:"period_lock_date,omitempty"`
+	TaxLockDate        *Time     `xmlrpc:"tax_lock_date,omitempty" json:"tax_lock_date,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountChangeLockDates represents array of account.change.lock.date model.

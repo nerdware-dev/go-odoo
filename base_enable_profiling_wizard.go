@@ -2,14 +2,14 @@ package odoo
 
 // BaseEnableProfilingWizard represents base.enable.profiling.wizard model.
 type BaseEnableProfilingWizard struct {
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Duration    *Selection `xmlrpc:"duration,omitempty"`
-	Expiration  *Time      `xmlrpc:"expiration,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration    *Selection `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	Expiration  *Time      `xmlrpc:"expiration,omitempty" json:"expiration,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseEnableProfilingWizards represents array of base.enable.profiling.wizard model.

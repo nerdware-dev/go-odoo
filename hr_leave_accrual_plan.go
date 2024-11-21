@@ -2,29 +2,29 @@ package odoo
 
 // HrLeaveAccrualPlan represents hr.leave.accrual.plan model.
 type HrLeaveAccrualPlan struct {
-	AccruedGainTime     *Selection `xmlrpc:"accrued_gain_time,omitempty"`
-	Active              *Bool      `xmlrpc:"active,omitempty"`
-	AddedValueType      *Selection `xmlrpc:"added_value_type,omitempty"`
-	AllocationIds       *Relation  `xmlrpc:"allocation_ids,omitempty"`
-	CarryoverDate       *Selection `xmlrpc:"carryover_date,omitempty"`
-	CarryoverDay        *Int       `xmlrpc:"carryover_day,omitempty"`
-	CarryoverDayDisplay *Selection `xmlrpc:"carryover_day_display,omitempty"`
-	CarryoverMonth      *Selection `xmlrpc:"carryover_month,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	EmployeesCount      *Int       `xmlrpc:"employees_count,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	IsBasedOnWorkedTime *Bool      `xmlrpc:"is_based_on_worked_time,omitempty"`
-	LevelCount          *Int       `xmlrpc:"level_count,omitempty"`
-	LevelIds            *Relation  `xmlrpc:"level_ids,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	ShowTransitionMode  *Bool      `xmlrpc:"show_transition_mode,omitempty"`
-	TimeOffTypeId       *Many2One  `xmlrpc:"time_off_type_id,omitempty"`
-	TransitionMode      *Selection `xmlrpc:"transition_mode,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccruedGainTime     *Selection `xmlrpc:"accrued_gain_time,omitempty" json:"accrued_gain_time,omitempty"`
+	Active              *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AddedValueType      *Selection `xmlrpc:"added_value_type,omitempty" json:"added_value_type,omitempty"`
+	AllocationIds       *Relation  `xmlrpc:"allocation_ids,omitempty" json:"allocation_ids,omitempty"`
+	CarryoverDate       *Selection `xmlrpc:"carryover_date,omitempty" json:"carryover_date,omitempty"`
+	CarryoverDay        *Int       `xmlrpc:"carryover_day,omitempty" json:"carryover_day,omitempty"`
+	CarryoverDayDisplay *Selection `xmlrpc:"carryover_day_display,omitempty" json:"carryover_day_display,omitempty"`
+	CarryoverMonth      *Selection `xmlrpc:"carryover_month,omitempty" json:"carryover_month,omitempty"`
+	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeesCount      *Int       `xmlrpc:"employees_count,omitempty" json:"employees_count,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsBasedOnWorkedTime *Bool      `xmlrpc:"is_based_on_worked_time,omitempty" json:"is_based_on_worked_time,omitempty"`
+	LevelCount          *Int       `xmlrpc:"level_count,omitempty" json:"level_count,omitempty"`
+	LevelIds            *Relation  `xmlrpc:"level_ids,omitempty" json:"level_ids,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ShowTransitionMode  *Bool      `xmlrpc:"show_transition_mode,omitempty" json:"show_transition_mode,omitempty"`
+	TimeOffTypeId       *Many2One  `xmlrpc:"time_off_type_id,omitempty" json:"time_off_type_id,omitempty"`
+	TransitionMode      *Selection `xmlrpc:"transition_mode,omitempty" json:"transition_mode,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrLeaveAccrualPlans represents array of hr.leave.accrual.plan model.

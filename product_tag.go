@@ -2,17 +2,17 @@ package odoo
 
 // ProductTag represents product.tag model.
 type ProductTag struct {
-	Color              *String   `xmlrpc:"color,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	ProductIds         *Relation `xmlrpc:"product_ids,omitempty"`
-	ProductProductIds  *Relation `xmlrpc:"product_product_ids,omitempty"`
-	ProductTemplateIds *Relation `xmlrpc:"product_template_ids,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	Color              *String   `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductIds         *Relation `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`
+	ProductProductIds  *Relation `xmlrpc:"product_product_ids,omitempty" json:"product_product_ids,omitempty"`
+	ProductTemplateIds *Relation `xmlrpc:"product_template_ids,omitempty" json:"product_template_ids,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductTags represents array of product.tag model.

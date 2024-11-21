@@ -2,28 +2,28 @@ package odoo
 
 // CrossoveredBudgetLines represents crossovered.budget.lines model.
 type CrossoveredBudgetLines struct {
-	AnalyticAccountId      *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
-	AnalyticPlanId         *Many2One  `xmlrpc:"analytic_plan_id,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CrossoveredBudgetId    *Many2One  `xmlrpc:"crossovered_budget_id,omitempty"`
-	CrossoveredBudgetState *Selection `xmlrpc:"crossovered_budget_state,omitempty"`
-	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DateFrom               *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo                 *Time      `xmlrpc:"date_to,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	GeneralBudgetId        *Many2One  `xmlrpc:"general_budget_id,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	IsAboveBudget          *Bool      `xmlrpc:"is_above_budget,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	PaidDate               *Time      `xmlrpc:"paid_date,omitempty"`
-	Percentage             *Float     `xmlrpc:"percentage,omitempty"`
-	PlannedAmount          *Float     `xmlrpc:"planned_amount,omitempty"`
-	PracticalAmount        *Float     `xmlrpc:"practical_amount,omitempty"`
-	TheoriticalAmount      *Float     `xmlrpc:"theoritical_amount,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AnalyticAccountId      *Many2One  `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
+	AnalyticPlanId         *Many2One  `xmlrpc:"analytic_plan_id,omitempty" json:"analytic_plan_id,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrossoveredBudgetId    *Many2One  `xmlrpc:"crossovered_budget_id,omitempty" json:"crossovered_budget_id,omitempty"`
+	CrossoveredBudgetState *Selection `xmlrpc:"crossovered_budget_state,omitempty" json:"crossovered_budget_state,omitempty"`
+	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DateFrom               *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo                 *Time      `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GeneralBudgetId        *Many2One  `xmlrpc:"general_budget_id,omitempty" json:"general_budget_id,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAboveBudget          *Bool      `xmlrpc:"is_above_budget,omitempty" json:"is_above_budget,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaidDate               *Time      `xmlrpc:"paid_date,omitempty" json:"paid_date,omitempty"`
+	Percentage             *Float     `xmlrpc:"percentage,omitempty" json:"percentage,omitempty"`
+	PlannedAmount          *Float     `xmlrpc:"planned_amount,omitempty" json:"planned_amount,omitempty"`
+	PracticalAmount        *Float     `xmlrpc:"practical_amount,omitempty" json:"practical_amount,omitempty"`
+	TheoriticalAmount      *Float     `xmlrpc:"theoritical_amount,omitempty" json:"theoritical_amount,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrossoveredBudgetLiness represents array of crossovered.budget.lines model.

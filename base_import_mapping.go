@@ -2,15 +2,15 @@ package odoo
 
 // BaseImportMapping represents base_import.mapping model.
 type BaseImportMapping struct {
-	ColumnName  *String   `xmlrpc:"column_name,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldName   *String   `xmlrpc:"field_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	ColumnName  *String   `xmlrpc:"column_name,omitempty" json:"column_name,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldName   *String   `xmlrpc:"field_name,omitempty" json:"field_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportMappings represents array of base_import.mapping model.

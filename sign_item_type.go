@@ -2,19 +2,19 @@ package odoo
 
 // SignItemType represents sign.item.type model.
 type SignItemType struct {
-	AutoField     *String    `xmlrpc:"auto_field,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DefaultHeight *Float     `xmlrpc:"default_height,omitempty"`
-	DefaultWidth  *Float     `xmlrpc:"default_width,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	ItemType      *Selection `xmlrpc:"item_type,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	Placeholder   *String    `xmlrpc:"placeholder,omitempty"`
-	Tip           *String    `xmlrpc:"tip,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AutoField     *String    `xmlrpc:"auto_field,omitempty" json:"auto_field,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultHeight *Float     `xmlrpc:"default_height,omitempty" json:"default_height,omitempty"`
+	DefaultWidth  *Float     `xmlrpc:"default_width,omitempty" json:"default_width,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ItemType      *Selection `xmlrpc:"item_type,omitempty" json:"item_type,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Placeholder   *String    `xmlrpc:"placeholder,omitempty" json:"placeholder,omitempty"`
+	Tip           *String    `xmlrpc:"tip,omitempty" json:"tip,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignItemTypes represents array of sign.item.type model.

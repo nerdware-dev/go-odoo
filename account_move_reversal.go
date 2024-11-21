@@ -2,23 +2,23 @@ package odoo
 
 // AccountMoveReversal represents account.move.reversal model.
 type AccountMoveReversal struct {
-	AvailableJournalIds *Relation `xmlrpc:"available_journal_ids,omitempty"`
-	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
-	CountryCode         *String   `xmlrpc:"country_code,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date                *Time     `xmlrpc:"date,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	JournalId           *Many2One `xmlrpc:"journal_id,omitempty"`
-	MoveIds             *Relation `xmlrpc:"move_ids,omitempty"`
-	MoveType            *String   `xmlrpc:"move_type,omitempty"`
-	NewMoveIds          *Relation `xmlrpc:"new_move_ids,omitempty"`
-	Reason              *String   `xmlrpc:"reason,omitempty"`
-	Residual            *Float    `xmlrpc:"residual,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	AvailableJournalIds *Relation `xmlrpc:"available_journal_ids,omitempty" json:"available_journal_ids,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode         *String   `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId           *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MoveIds             *Relation `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	MoveType            *String   `xmlrpc:"move_type,omitempty" json:"move_type,omitempty"`
+	NewMoveIds          *Relation `xmlrpc:"new_move_ids,omitempty" json:"new_move_ids,omitempty"`
+	Reason              *String   `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	Residual            *Float    `xmlrpc:"residual,omitempty" json:"residual,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountMoveReversals represents array of account.move.reversal model.

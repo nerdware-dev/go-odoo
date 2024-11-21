@@ -2,20 +2,20 @@ package odoo
 
 // DiscussChannelRtcSession represents discuss.channel.rtc.session model.
 type DiscussChannelRtcSession struct {
-	ChannelId         *Many2One `xmlrpc:"channel_id,omitempty"`
-	ChannelMemberId   *Many2One `xmlrpc:"channel_member_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	GuestId           *Many2One `xmlrpc:"guest_id,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	IsCameraOn        *Bool     `xmlrpc:"is_camera_on,omitempty"`
-	IsDeaf            *Bool     `xmlrpc:"is_deaf,omitempty"`
-	IsMuted           *Bool     `xmlrpc:"is_muted,omitempty"`
-	IsScreenSharingOn *Bool     `xmlrpc:"is_screen_sharing_on,omitempty"`
-	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	ChannelId         *Many2One `xmlrpc:"channel_id,omitempty" json:"channel_id,omitempty"`
+	ChannelMemberId   *Many2One `xmlrpc:"channel_member_id,omitempty" json:"channel_member_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GuestId           *Many2One `xmlrpc:"guest_id,omitempty" json:"guest_id,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsCameraOn        *Bool     `xmlrpc:"is_camera_on,omitempty" json:"is_camera_on,omitempty"`
+	IsDeaf            *Bool     `xmlrpc:"is_deaf,omitempty" json:"is_deaf,omitempty"`
+	IsMuted           *Bool     `xmlrpc:"is_muted,omitempty" json:"is_muted,omitempty"`
+	IsScreenSharingOn *Bool     `xmlrpc:"is_screen_sharing_on,omitempty" json:"is_screen_sharing_on,omitempty"`
+	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DiscussChannelRtcSessions represents array of discuss.channel.rtc.session model.

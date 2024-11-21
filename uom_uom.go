@@ -2,23 +2,23 @@ package odoo
 
 // UomUom represents uom.uom model.
 type UomUom struct {
-	Active             *Bool      `xmlrpc:"active,omitempty"`
-	CategoryId         *Many2One  `xmlrpc:"category_id,omitempty"`
-	Color              *Int       `xmlrpc:"color,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Factor             *Float     `xmlrpc:"factor,omitempty"`
-	FactorInv          *Float     `xmlrpc:"factor_inv,omitempty"`
-	FiscalCountryCodes *String    `xmlrpc:"fiscal_country_codes,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	Ratio              *Float     `xmlrpc:"ratio,omitempty"`
-	Rounding           *Float     `xmlrpc:"rounding,omitempty"`
-	TimesheetWidget    *String    `xmlrpc:"timesheet_widget,omitempty"`
-	UomType            *Selection `xmlrpc:"uom_type,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategoryId         *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	Color              *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Factor             *Float     `xmlrpc:"factor,omitempty" json:"factor,omitempty"`
+	FactorInv          *Float     `xmlrpc:"factor_inv,omitempty" json:"factor_inv,omitempty"`
+	FiscalCountryCodes *String    `xmlrpc:"fiscal_country_codes,omitempty" json:"fiscal_country_codes,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Ratio              *Float     `xmlrpc:"ratio,omitempty" json:"ratio,omitempty"`
+	Rounding           *Float     `xmlrpc:"rounding,omitempty" json:"rounding,omitempty"`
+	TimesheetWidget    *String    `xmlrpc:"timesheet_widget,omitempty" json:"timesheet_widget,omitempty"`
+	UomType            *Selection `xmlrpc:"uom_type,omitempty" json:"uom_type,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UomUoms represents array of uom.uom model.

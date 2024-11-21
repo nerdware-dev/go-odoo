@@ -2,55 +2,55 @@ package odoo
 
 // PaymentProvider represents payment.provider model.
 type PaymentProvider struct {
-	AllowExpressCheckout      *Bool      `xmlrpc:"allow_express_checkout,omitempty"`
-	AllowTokenization         *Bool      `xmlrpc:"allow_tokenization,omitempty"`
-	AuthMsg                   *String    `xmlrpc:"auth_msg,omitempty"`
-	AvailableCountryIds       *Relation  `xmlrpc:"available_country_ids,omitempty"`
-	AvailableCurrencyIds      *Relation  `xmlrpc:"available_currency_ids,omitempty"`
-	CancelMsg                 *String    `xmlrpc:"cancel_msg,omitempty"`
-	CaptureManually           *Bool      `xmlrpc:"capture_manually,omitempty"`
-	Code                      *Selection `xmlrpc:"code,omitempty"`
-	Color                     *Int       `xmlrpc:"color,omitempty"`
-	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	DoneMsg                   *String    `xmlrpc:"done_msg,omitempty"`
-	ExpressCheckoutFormViewId *Many2One  `xmlrpc:"express_checkout_form_view_id,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	Image128                  *String    `xmlrpc:"image_128,omitempty"`
-	InlineFormViewId          *Many2One  `xmlrpc:"inline_form_view_id,omitempty"`
-	IsPublished               *Bool      `xmlrpc:"is_published,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	MainCurrencyId            *Many2One  `xmlrpc:"main_currency_id,omitempty"`
-	MaximumAmount             *Float     `xmlrpc:"maximum_amount,omitempty"`
-	ModuleId                  *Many2One  `xmlrpc:"module_id,omitempty"`
-	ModuleState               *Selection `xmlrpc:"module_state,omitempty"`
-	ModuleToBuy               *Bool      `xmlrpc:"module_to_buy,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PaymentMethodIds          *Relation  `xmlrpc:"payment_method_ids,omitempty"`
-	PendingMsg                *String    `xmlrpc:"pending_msg,omitempty"`
-	PreMsg                    *String    `xmlrpc:"pre_msg,omitempty"`
-	RedirectFormViewId        *Many2One  `xmlrpc:"redirect_form_view_id,omitempty"`
-	RequireCurrency           *Bool      `xmlrpc:"require_currency,omitempty"`
-	Sequence                  *Int       `xmlrpc:"sequence,omitempty"`
-	ShowAllowExpressCheckout  *Bool      `xmlrpc:"show_allow_express_checkout,omitempty"`
-	ShowAllowTokenization     *Bool      `xmlrpc:"show_allow_tokenization,omitempty"`
-	ShowAuthMsg               *Bool      `xmlrpc:"show_auth_msg,omitempty"`
-	ShowCancelMsg             *Bool      `xmlrpc:"show_cancel_msg,omitempty"`
-	ShowCredentialsPage       *Bool      `xmlrpc:"show_credentials_page,omitempty"`
-	ShowDoneMsg               *Bool      `xmlrpc:"show_done_msg,omitempty"`
-	ShowPendingMsg            *Bool      `xmlrpc:"show_pending_msg,omitempty"`
-	ShowPreMsg                *Bool      `xmlrpc:"show_pre_msg,omitempty"`
-	SoReferenceType           *Selection `xmlrpc:"so_reference_type,omitempty"`
-	State                     *Selection `xmlrpc:"state,omitempty"`
-	SupportExpressCheckout    *Bool      `xmlrpc:"support_express_checkout,omitempty"`
-	SupportManualCapture      *Selection `xmlrpc:"support_manual_capture,omitempty"`
-	SupportRefund             *Selection `xmlrpc:"support_refund,omitempty"`
-	SupportTokenization       *Bool      `xmlrpc:"support_tokenization,omitempty"`
-	TokenInlineFormViewId     *Many2One  `xmlrpc:"token_inline_form_view_id,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AllowExpressCheckout      *Bool      `xmlrpc:"allow_express_checkout,omitempty" json:"allow_express_checkout,omitempty"`
+	AllowTokenization         *Bool      `xmlrpc:"allow_tokenization,omitempty" json:"allow_tokenization,omitempty"`
+	AuthMsg                   *String    `xmlrpc:"auth_msg,omitempty" json:"auth_msg,omitempty"`
+	AvailableCountryIds       *Relation  `xmlrpc:"available_country_ids,omitempty" json:"available_country_ids,omitempty"`
+	AvailableCurrencyIds      *Relation  `xmlrpc:"available_currency_ids,omitempty" json:"available_currency_ids,omitempty"`
+	CancelMsg                 *String    `xmlrpc:"cancel_msg,omitempty" json:"cancel_msg,omitempty"`
+	CaptureManually           *Bool      `xmlrpc:"capture_manually,omitempty" json:"capture_manually,omitempty"`
+	Code                      *Selection `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	Color                     *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DoneMsg                   *String    `xmlrpc:"done_msg,omitempty" json:"done_msg,omitempty"`
+	ExpressCheckoutFormViewId *Many2One  `xmlrpc:"express_checkout_form_view_id,omitempty" json:"express_checkout_form_view_id,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image128                  *String    `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
+	InlineFormViewId          *Many2One  `xmlrpc:"inline_form_view_id,omitempty" json:"inline_form_view_id,omitempty"`
+	IsPublished               *Bool      `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MainCurrencyId            *Many2One  `xmlrpc:"main_currency_id,omitempty" json:"main_currency_id,omitempty"`
+	MaximumAmount             *Float     `xmlrpc:"maximum_amount,omitempty" json:"maximum_amount,omitempty"`
+	ModuleId                  *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	ModuleState               *Selection `xmlrpc:"module_state,omitempty" json:"module_state,omitempty"`
+	ModuleToBuy               *Bool      `xmlrpc:"module_to_buy,omitempty" json:"module_to_buy,omitempty"`
+	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentMethodIds          *Relation  `xmlrpc:"payment_method_ids,omitempty" json:"payment_method_ids,omitempty"`
+	PendingMsg                *String    `xmlrpc:"pending_msg,omitempty" json:"pending_msg,omitempty"`
+	PreMsg                    *String    `xmlrpc:"pre_msg,omitempty" json:"pre_msg,omitempty"`
+	RedirectFormViewId        *Many2One  `xmlrpc:"redirect_form_view_id,omitempty" json:"redirect_form_view_id,omitempty"`
+	RequireCurrency           *Bool      `xmlrpc:"require_currency,omitempty" json:"require_currency,omitempty"`
+	Sequence                  *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShowAllowExpressCheckout  *Bool      `xmlrpc:"show_allow_express_checkout,omitempty" json:"show_allow_express_checkout,omitempty"`
+	ShowAllowTokenization     *Bool      `xmlrpc:"show_allow_tokenization,omitempty" json:"show_allow_tokenization,omitempty"`
+	ShowAuthMsg               *Bool      `xmlrpc:"show_auth_msg,omitempty" json:"show_auth_msg,omitempty"`
+	ShowCancelMsg             *Bool      `xmlrpc:"show_cancel_msg,omitempty" json:"show_cancel_msg,omitempty"`
+	ShowCredentialsPage       *Bool      `xmlrpc:"show_credentials_page,omitempty" json:"show_credentials_page,omitempty"`
+	ShowDoneMsg               *Bool      `xmlrpc:"show_done_msg,omitempty" json:"show_done_msg,omitempty"`
+	ShowPendingMsg            *Bool      `xmlrpc:"show_pending_msg,omitempty" json:"show_pending_msg,omitempty"`
+	ShowPreMsg                *Bool      `xmlrpc:"show_pre_msg,omitempty" json:"show_pre_msg,omitempty"`
+	SoReferenceType           *Selection `xmlrpc:"so_reference_type,omitempty" json:"so_reference_type,omitempty"`
+	State                     *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	SupportExpressCheckout    *Bool      `xmlrpc:"support_express_checkout,omitempty" json:"support_express_checkout,omitempty"`
+	SupportManualCapture      *Selection `xmlrpc:"support_manual_capture,omitempty" json:"support_manual_capture,omitempty"`
+	SupportRefund             *Selection `xmlrpc:"support_refund,omitempty" json:"support_refund,omitempty"`
+	SupportTokenization       *Bool      `xmlrpc:"support_tokenization,omitempty" json:"support_tokenization,omitempty"`
+	TokenInlineFormViewId     *Many2One  `xmlrpc:"token_inline_form_view_id,omitempty" json:"token_inline_form_view_id,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PaymentProviders represents array of payment.provider model.

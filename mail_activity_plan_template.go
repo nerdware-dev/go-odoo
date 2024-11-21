@@ -2,21 +2,21 @@ package odoo
 
 // MailActivityPlanTemplate represents mail.activity.plan.template model.
 type MailActivityPlanTemplate struct {
-	ActivityTypeId  *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Note            *String    `xmlrpc:"note,omitempty"`
-	PlanId          *Many2One  `xmlrpc:"plan_id,omitempty"`
-	ResModel        *Selection `xmlrpc:"res_model,omitempty"`
-	ResponsibleId   *Many2One  `xmlrpc:"responsible_id,omitempty"`
-	ResponsibleType *Selection `xmlrpc:"responsible_type,omitempty"`
-	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
-	Summary         *String    `xmlrpc:"summary,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActivityTypeId  *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Note            *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PlanId          *Many2One  `xmlrpc:"plan_id,omitempty" json:"plan_id,omitempty"`
+	ResModel        *Selection `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResponsibleId   *Many2One  `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	ResponsibleType *Selection `xmlrpc:"responsible_type,omitempty" json:"responsible_type,omitempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Summary         *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailActivityPlanTemplates represents array of mail.activity.plan.template model.

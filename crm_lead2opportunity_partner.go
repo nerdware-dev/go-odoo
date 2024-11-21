@@ -2,20 +2,20 @@ package odoo
 
 // CrmLead2OpportunityPartner represents crm.lead2opportunity.partner model.
 type CrmLead2OpportunityPartner struct {
-	Action            *Selection `xmlrpc:"action,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	DuplicatedLeadIds *Relation  `xmlrpc:"duplicated_lead_ids,omitempty"`
-	ForceAssignment   *Bool      `xmlrpc:"force_assignment,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	LeadId            *Many2One  `xmlrpc:"lead_id,omitempty"`
-	Name              *Selection `xmlrpc:"name,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	TeamId            *Many2One  `xmlrpc:"team_id,omitempty"`
-	UserId            *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Action            *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DuplicatedLeadIds *Relation  `xmlrpc:"duplicated_lead_ids,omitempty" json:"duplicated_lead_ids,omitempty"`
+	ForceAssignment   *Bool      `xmlrpc:"force_assignment,omitempty" json:"force_assignment,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeadId            *Many2One  `xmlrpc:"lead_id,omitempty" json:"lead_id,omitempty"`
+	Name              *Selection `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	TeamId            *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UserId            *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLead2OpportunityPartners represents array of crm.lead2opportunity.partner model.

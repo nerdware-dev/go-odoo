@@ -2,14 +2,14 @@ package odoo
 
 // MailBlacklistRemove represents mail.blacklist.remove model.
 type MailBlacklistRemove struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Email       *String   `xmlrpc:"email,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Reason      *String   `xmlrpc:"reason,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email       *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Reason      *String   `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailBlacklistRemoves represents array of mail.blacklist.remove model.

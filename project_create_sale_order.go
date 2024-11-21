@@ -2,19 +2,19 @@ package odoo
 
 // ProjectCreateSaleOrder represents project.create.sale.order model.
 type ProjectCreateSaleOrder struct {
-	CommercialPartnerId *Many2One `xmlrpc:"commercial_partner_id,omitempty"`
-	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	InfoInvoice         *String   `xmlrpc:"info_invoice,omitempty"`
-	LineIds             *Relation `xmlrpc:"line_ids,omitempty"`
-	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty"`
-	ProjectId           *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	CommercialPartnerId *Many2One `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InfoInvoice         *String   `xmlrpc:"info_invoice,omitempty" json:"info_invoice,omitempty"`
+	LineIds             *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProjectId           *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCreateSaleOrders represents array of project.create.sale.order model.

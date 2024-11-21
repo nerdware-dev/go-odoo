@@ -2,88 +2,88 @@ package odoo
 
 // PurchaseOrder represents purchase.order model.
 type PurchaseOrder struct {
-	AccessToken                  *String    `xmlrpc:"access_token,omitempty"`
-	AccessUrl                    *String    `xmlrpc:"access_url,omitempty"`
-	AccessWarning                *String    `xmlrpc:"access_warning,omitempty"`
-	ActivityCalendarEventId      *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty"`
-	ActivityDateDeadline         *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration  *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon        *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                  *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState                *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary              *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeIcon             *String    `xmlrpc:"activity_type_icon,omitempty"`
-	ActivityTypeId               *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId               *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	AmountTax                    *Float     `xmlrpc:"amount_tax,omitempty"`
-	AmountTotal                  *Float     `xmlrpc:"amount_total,omitempty"`
-	AmountUntaxed                *Float     `xmlrpc:"amount_untaxed,omitempty"`
-	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryCode                  *String    `xmlrpc:"country_code,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty"`
-	CurrencyRate                 *Float     `xmlrpc:"currency_rate,omitempty"`
-	DateApprove                  *Time      `xmlrpc:"date_approve,omitempty"`
-	DateCalendarStart            *Time      `xmlrpc:"date_calendar_start,omitempty"`
-	DateOrder                    *Time      `xmlrpc:"date_order,omitempty"`
-	DatePlanned                  *Time      `xmlrpc:"date_planned,omitempty"`
-	DefaultLocationDestIdUsage   *Selection `xmlrpc:"default_location_dest_id_usage,omitempty"`
-	DestAddressId                *Many2One  `xmlrpc:"dest_address_id,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	EffectiveDate                *Time      `xmlrpc:"effective_date,omitempty"`
-	FiscalPositionId             *Many2One  `xmlrpc:"fiscal_position_id,omitempty"`
-	GroupId                      *Many2One  `xmlrpc:"group_id,omitempty"`
-	HasMessage                   *Bool      `xmlrpc:"has_message,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	IncomingPickingCount         *Int       `xmlrpc:"incoming_picking_count,omitempty"`
-	IncotermId                   *Many2One  `xmlrpc:"incoterm_id,omitempty"`
-	IncotermLocation             *String    `xmlrpc:"incoterm_location,omitempty"`
-	InvoiceCount                 *Int       `xmlrpc:"invoice_count,omitempty"`
-	InvoiceIds                   *Relation  `xmlrpc:"invoice_ids,omitempty"`
-	InvoiceStatus                *Selection `xmlrpc:"invoice_status,omitempty"`
-	IsShipped                    *Bool      `xmlrpc:"is_shipped,omitempty"`
-	L10NDin5008Addresses         *String    `xmlrpc:"l10n_din5008_addresses,omitempty"`
-	L10NDin5008DocumentTitle     *String    `xmlrpc:"l10n_din5008_document_title,omitempty"`
-	L10NDin5008TemplateData      *String    `xmlrpc:"l10n_din5008_template_data,omitempty"`
-	MailReceptionConfirmed       *Bool      `xmlrpc:"mail_reception_confirmed,omitempty"`
-	MailReminderConfirmed        *Bool      `xmlrpc:"mail_reminder_confirmed,omitempty"`
-	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MyActivityDateDeadline       *Time      `xmlrpc:"my_activity_date_deadline,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	Notes                        *String    `xmlrpc:"notes,omitempty"`
-	OnTimeRate                   *Float     `xmlrpc:"on_time_rate,omitempty"`
-	OrderLine                    *Relation  `xmlrpc:"order_line,omitempty"`
-	Origin                       *String    `xmlrpc:"origin,omitempty"`
-	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerRef                   *String    `xmlrpc:"partner_ref,omitempty"`
-	PaymentTermId                *Many2One  `xmlrpc:"payment_term_id,omitempty"`
-	PickingIds                   *Relation  `xmlrpc:"picking_ids,omitempty"`
-	PickingTypeId                *Many2One  `xmlrpc:"picking_type_id,omitempty"`
-	Priority                     *Selection `xmlrpc:"priority,omitempty"`
-	ProductId                    *Many2One  `xmlrpc:"product_id,omitempty"`
-	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty"`
-	ReceiptReminderEmail         *Bool      `xmlrpc:"receipt_reminder_email,omitempty"`
-	ReceiptStatus                *Selection `xmlrpc:"receipt_status,omitempty"`
-	ReminderDateBeforeReceipt    *Int       `xmlrpc:"reminder_date_before_receipt,omitempty"`
-	SaleOrderCount               *Int       `xmlrpc:"sale_order_count,omitempty"`
-	State                        *Selection `xmlrpc:"state,omitempty"`
-	TaxCalculationRoundingMethod *Selection `xmlrpc:"tax_calculation_rounding_method,omitempty"`
-	TaxCountryId                 *Many2One  `xmlrpc:"tax_country_id,omitempty"`
-	TaxTotals                    *String    `xmlrpc:"tax_totals,omitempty"`
-	UserId                       *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccessToken                  *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	AccessUrl                    *String    `xmlrpc:"access_url,omitempty" json:"access_url,omitempty"`
+	AccessWarning                *String    `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	ActivityCalendarEventId      *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
+	ActivityDateDeadline         *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration  *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon        *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                  *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState                *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary              *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeIcon             *String    `xmlrpc:"activity_type_icon,omitempty" json:"activity_type_icon,omitempty"`
+	ActivityTypeId               *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId               *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	AmountTax                    *Float     `xmlrpc:"amount_tax,omitempty" json:"amount_tax,omitempty"`
+	AmountTotal                  *Float     `xmlrpc:"amount_total,omitempty" json:"amount_total,omitempty"`
+	AmountUntaxed                *Float     `xmlrpc:"amount_untaxed,omitempty" json:"amount_untaxed,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode                  *String    `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	CurrencyRate                 *Float     `xmlrpc:"currency_rate,omitempty" json:"currency_rate,omitempty"`
+	DateApprove                  *Time      `xmlrpc:"date_approve,omitempty" json:"date_approve,omitempty"`
+	DateCalendarStart            *Time      `xmlrpc:"date_calendar_start,omitempty" json:"date_calendar_start,omitempty"`
+	DateOrder                    *Time      `xmlrpc:"date_order,omitempty" json:"date_order,omitempty"`
+	DatePlanned                  *Time      `xmlrpc:"date_planned,omitempty" json:"date_planned,omitempty"`
+	DefaultLocationDestIdUsage   *Selection `xmlrpc:"default_location_dest_id_usage,omitempty" json:"default_location_dest_id_usage,omitempty"`
+	DestAddressId                *Many2One  `xmlrpc:"dest_address_id,omitempty" json:"dest_address_id,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EffectiveDate                *Time      `xmlrpc:"effective_date,omitempty" json:"effective_date,omitempty"`
+	FiscalPositionId             *Many2One  `xmlrpc:"fiscal_position_id,omitempty" json:"fiscal_position_id,omitempty"`
+	GroupId                      *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	HasMessage                   *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncomingPickingCount         *Int       `xmlrpc:"incoming_picking_count,omitempty" json:"incoming_picking_count,omitempty"`
+	IncotermId                   *Many2One  `xmlrpc:"incoterm_id,omitempty" json:"incoterm_id,omitempty"`
+	IncotermLocation             *String    `xmlrpc:"incoterm_location,omitempty" json:"incoterm_location,omitempty"`
+	InvoiceCount                 *Int       `xmlrpc:"invoice_count,omitempty" json:"invoice_count,omitempty"`
+	InvoiceIds                   *Relation  `xmlrpc:"invoice_ids,omitempty" json:"invoice_ids,omitempty"`
+	InvoiceStatus                *Selection `xmlrpc:"invoice_status,omitempty" json:"invoice_status,omitempty"`
+	IsShipped                    *Bool      `xmlrpc:"is_shipped,omitempty" json:"is_shipped,omitempty"`
+	L10NDin5008Addresses         *String    `xmlrpc:"l10n_din5008_addresses,omitempty" json:"l10n_din5008_addresses,omitempty"`
+	L10NDin5008DocumentTitle     *String    `xmlrpc:"l10n_din5008_document_title,omitempty" json:"l10n_din5008_document_title,omitempty"`
+	L10NDin5008TemplateData      *String    `xmlrpc:"l10n_din5008_template_data,omitempty" json:"l10n_din5008_template_data,omitempty"`
+	MailReceptionConfirmed       *Bool      `xmlrpc:"mail_reception_confirmed,omitempty" json:"mail_reception_confirmed,omitempty"`
+	MailReminderConfirmed        *Bool      `xmlrpc:"mail_reminder_confirmed,omitempty" json:"mail_reminder_confirmed,omitempty"`
+	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MyActivityDateDeadline       *Time      `xmlrpc:"my_activity_date_deadline,omitempty" json:"my_activity_date_deadline,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Notes                        *String    `xmlrpc:"notes,omitempty" json:"notes,omitempty"`
+	OnTimeRate                   *Float     `xmlrpc:"on_time_rate,omitempty" json:"on_time_rate,omitempty"`
+	OrderLine                    *Relation  `xmlrpc:"order_line,omitempty" json:"order_line,omitempty"`
+	Origin                       *String    `xmlrpc:"origin,omitempty" json:"origin,omitempty"`
+	PartnerId                    *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerRef                   *String    `xmlrpc:"partner_ref,omitempty" json:"partner_ref,omitempty"`
+	PaymentTermId                *Many2One  `xmlrpc:"payment_term_id,omitempty" json:"payment_term_id,omitempty"`
+	PickingIds                   *Relation  `xmlrpc:"picking_ids,omitempty" json:"picking_ids,omitempty"`
+	PickingTypeId                *Many2One  `xmlrpc:"picking_type_id,omitempty" json:"picking_type_id,omitempty"`
+	Priority                     *Selection `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	ProductId                    *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	ReceiptReminderEmail         *Bool      `xmlrpc:"receipt_reminder_email,omitempty" json:"receipt_reminder_email,omitempty"`
+	ReceiptStatus                *Selection `xmlrpc:"receipt_status,omitempty" json:"receipt_status,omitempty"`
+	ReminderDateBeforeReceipt    *Int       `xmlrpc:"reminder_date_before_receipt,omitempty" json:"reminder_date_before_receipt,omitempty"`
+	SaleOrderCount               *Int       `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
+	State                        *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TaxCalculationRoundingMethod *Selection `xmlrpc:"tax_calculation_rounding_method,omitempty" json:"tax_calculation_rounding_method,omitempty"`
+	TaxCountryId                 *Many2One  `xmlrpc:"tax_country_id,omitempty" json:"tax_country_id,omitempty"`
+	TaxTotals                    *String    `xmlrpc:"tax_totals,omitempty" json:"tax_totals,omitempty"`
+	UserId                       *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PurchaseOrders represents array of purchase.order model.

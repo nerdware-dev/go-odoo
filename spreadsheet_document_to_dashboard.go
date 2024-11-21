@@ -2,16 +2,16 @@ package odoo
 
 // SpreadsheetDocumentToDashboard represents spreadsheet.document.to.dashboard model.
 type SpreadsheetDocumentToDashboard struct {
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DashboardGroupId *Many2One `xmlrpc:"dashboard_group_id,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	DocumentId       *Many2One `xmlrpc:"document_id,omitempty"`
-	GroupIds         *Relation `xmlrpc:"group_ids,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DashboardGroupId *Many2One `xmlrpc:"dashboard_group_id,omitempty" json:"dashboard_group_id,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentId       *Many2One `xmlrpc:"document_id,omitempty" json:"document_id,omitempty"`
+	GroupIds         *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SpreadsheetDocumentToDashboards represents array of spreadsheet.document.to.dashboard model.

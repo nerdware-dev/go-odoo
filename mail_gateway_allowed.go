@@ -2,14 +2,14 @@ package odoo
 
 // MailGatewayAllowed represents mail.gateway.allowed model.
 type MailGatewayAllowed struct {
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Email           *String   `xmlrpc:"email,omitempty"`
-	EmailNormalized *String   `xmlrpc:"email_normalized,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email           *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EmailNormalized *String   `xmlrpc:"email_normalized,omitempty" json:"email_normalized,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailGatewayAlloweds represents array of mail.gateway.allowed model.

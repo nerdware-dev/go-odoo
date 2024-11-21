@@ -2,18 +2,18 @@ package odoo
 
 // HrLeaveEmployeeTypeReport represents hr.leave.employee.type.report model.
 type HrLeaveEmployeeTypeReport struct {
-	ActiveEmployee *Bool      `xmlrpc:"active_employee,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	DateFrom       *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo         *Time      `xmlrpc:"date_to,omitempty"`
-	DepartmentId   *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId     *Many2One  `xmlrpc:"employee_id,omitempty"`
-	HolidayStatus  *Selection `xmlrpc:"holiday_status,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	LeaveType      *Many2One  `xmlrpc:"leave_type,omitempty"`
-	NumberOfDays   *Float     `xmlrpc:"number_of_days,omitempty"`
-	State          *Selection `xmlrpc:"state,omitempty"`
+	ActiveEmployee *Bool      `xmlrpc:"active_employee,omitempty" json:"active_employee,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DateFrom       *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo         *Time      `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DepartmentId   *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId     *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	HolidayStatus  *Selection `xmlrpc:"holiday_status,omitempty" json:"holiday_status,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveType      *Many2One  `xmlrpc:"leave_type,omitempty" json:"leave_type,omitempty"`
+	NumberOfDays   *Float     `xmlrpc:"number_of_days,omitempty" json:"number_of_days,omitempty"`
+	State          *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 }
 
 // HrLeaveEmployeeTypeReports represents array of hr.leave.employee.type.report model.

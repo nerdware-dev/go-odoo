@@ -2,21 +2,21 @@ package odoo
 
 // StockReplenishmentInfo represents stock.replenishment.info model.
 type StockReplenishmentInfo struct {
-	CreateDate               *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName              *String   `xmlrpc:"display_name,omitempty"`
-	Id                       *Int      `xmlrpc:"id,omitempty"`
-	JsonLeadDays             *String   `xmlrpc:"json_lead_days,omitempty"`
-	JsonReplenishmentHistory *String   `xmlrpc:"json_replenishment_history,omitempty"`
-	OrderpointId             *Many2One `xmlrpc:"orderpoint_id,omitempty"`
-	ProductId                *Many2One `xmlrpc:"product_id,omitempty"`
-	QtyToOrder               *Float    `xmlrpc:"qty_to_order,omitempty"`
-	SupplierinfoId           *Many2One `xmlrpc:"supplierinfo_id,omitempty"`
-	SupplierinfoIds          *Relation `xmlrpc:"supplierinfo_ids,omitempty"`
-	WarehouseinfoIds         *Relation `xmlrpc:"warehouseinfo_ids,omitempty"`
-	WhReplenishmentOptionIds *Relation `xmlrpc:"wh_replenishment_option_ids,omitempty"`
-	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                       *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JsonLeadDays             *String   `xmlrpc:"json_lead_days,omitempty" json:"json_lead_days,omitempty"`
+	JsonReplenishmentHistory *String   `xmlrpc:"json_replenishment_history,omitempty" json:"json_replenishment_history,omitempty"`
+	OrderpointId             *Many2One `xmlrpc:"orderpoint_id,omitempty" json:"orderpoint_id,omitempty"`
+	ProductId                *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	QtyToOrder               *Float    `xmlrpc:"qty_to_order,omitempty" json:"qty_to_order,omitempty"`
+	SupplierinfoId           *Many2One `xmlrpc:"supplierinfo_id,omitempty" json:"supplierinfo_id,omitempty"`
+	SupplierinfoIds          *Relation `xmlrpc:"supplierinfo_ids,omitempty" json:"supplierinfo_ids,omitempty"`
+	WarehouseinfoIds         *Relation `xmlrpc:"warehouseinfo_ids,omitempty" json:"warehouseinfo_ids,omitempty"`
+	WhReplenishmentOptionIds *Relation `xmlrpc:"wh_replenishment_option_ids,omitempty" json:"wh_replenishment_option_ids,omitempty"`
+	WriteDate                *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockReplenishmentInfos represents array of stock.replenishment.info model.

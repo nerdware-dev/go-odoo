@@ -2,19 +2,19 @@ package odoo
 
 // AccountPaymentTermLine represents account.payment.term.line model.
 type AccountPaymentTermLine struct {
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DaysNextMonth        *String    `xmlrpc:"days_next_month,omitempty"`
-	DelayType            *Selection `xmlrpc:"delay_type,omitempty"`
-	DisplayDaysNextMonth *Bool      `xmlrpc:"display_days_next_month,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	NbDays               *Int       `xmlrpc:"nb_days,omitempty"`
-	PaymentId            *Many2One  `xmlrpc:"payment_id,omitempty"`
-	Value                *Selection `xmlrpc:"value,omitempty"`
-	ValueAmount          *Float     `xmlrpc:"value_amount,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DaysNextMonth        *String    `xmlrpc:"days_next_month,omitempty" json:"days_next_month,omitempty"`
+	DelayType            *Selection `xmlrpc:"delay_type,omitempty" json:"delay_type,omitempty"`
+	DisplayDaysNextMonth *Bool      `xmlrpc:"display_days_next_month,omitempty" json:"display_days_next_month,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NbDays               *Int       `xmlrpc:"nb_days,omitempty" json:"nb_days,omitempty"`
+	PaymentId            *Many2One  `xmlrpc:"payment_id,omitempty" json:"payment_id,omitempty"`
+	Value                *Selection `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	ValueAmount          *Float     `xmlrpc:"value_amount,omitempty" json:"value_amount,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentTermLines represents array of account.payment.term.line model.

@@ -2,24 +2,24 @@ package odoo
 
 // AccountTransferModel represents account.transfer.model model.
 type AccountTransferModel struct {
-	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty"`
-	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateStart    *Time      `xmlrpc:"date_start,omitempty"`
-	DateStop     *Time      `xmlrpc:"date_stop,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Frequency    *Selection `xmlrpc:"frequency,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	JournalId    *Many2One  `xmlrpc:"journal_id,omitempty"`
-	LineIds      *Relation  `xmlrpc:"line_ids,omitempty"`
-	MoveIds      *Relation  `xmlrpc:"move_ids,omitempty"`
-	MoveIdsCount *Int       `xmlrpc:"move_ids_count,omitempty"`
-	Name         *String    `xmlrpc:"name,omitempty"`
-	State        *Selection `xmlrpc:"state,omitempty"`
-	TotalPercent *Float     `xmlrpc:"total_percent,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateStart    *Time      `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	DateStop     *Time      `xmlrpc:"date_stop,omitempty" json:"date_stop,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Frequency    *Selection `xmlrpc:"frequency,omitempty" json:"frequency,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId    *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LineIds      *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	MoveIds      *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	MoveIdsCount *Int       `xmlrpc:"move_ids_count,omitempty" json:"move_ids_count,omitempty"`
+	Name         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State        *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TotalPercent *Float     `xmlrpc:"total_percent,omitempty" json:"total_percent,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTransferModels represents array of account.transfer.model model.

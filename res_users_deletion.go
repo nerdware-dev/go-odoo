@@ -2,15 +2,15 @@ package odoo
 
 // ResUsersDeletion represents res.users.deletion model.
 type ResUsersDeletion struct {
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	UserId      *Many2One  `xmlrpc:"user_id,omitempty"`
-	UserIdInt   *Int       `xmlrpc:"user_id_int,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	UserId      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	UserIdInt   *Int       `xmlrpc:"user_id_int,omitempty" json:"user_id_int,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResUsersDeletions represents array of res.users.deletion model.

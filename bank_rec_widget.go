@@ -2,33 +2,33 @@ package odoo
 
 // BankRecWidget represents bank.rec.widget model.
 type BankRecWidget struct {
-	AvailableRecoModelIds           *Relation   `xmlrpc:"available_reco_model_ids,omitempty"`
-	CompanyCurrencyId               *Many2One   `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId                       *Many2One   `xmlrpc:"company_id,omitempty"`
-	DisplayName                     *String     `xmlrpc:"display_name,omitempty"`
-	FormIndex                       *String     `xmlrpc:"form_index,omitempty"`
-	Id                              *Int        `xmlrpc:"id,omitempty"`
-	IsMultiCurrency                 *Bool       `xmlrpc:"is_multi_currency,omitempty"`
-	JournalCurrencyId               *Many2One   `xmlrpc:"journal_currency_id,omitempty"`
-	LineIds                         *Relation   `xmlrpc:"line_ids,omitempty"`
-	MatchedSaleOrderIds             *Relation   `xmlrpc:"matched_sale_order_ids,omitempty"`
-	MatchingRulesAllowAutoReconcile *Bool       `xmlrpc:"matching_rules_allow_auto_reconcile,omitempty"`
-	MoveId                          *Many2One   `xmlrpc:"move_id,omitempty"`
-	PartnerId                       *Many2One   `xmlrpc:"partner_id,omitempty"`
-	PartnerName                     *String     `xmlrpc:"partner_name,omitempty"`
-	ReturnTodoCommand               interface{} `xmlrpc:"return_todo_command,omitempty"`
-	SelectedAmlIds                  *Relation   `xmlrpc:"selected_aml_ids,omitempty"`
-	SelectedBatchPaymentIds         *Relation   `xmlrpc:"selected_batch_payment_ids,omitempty"`
-	SelectedRecoModelId             *Many2One   `xmlrpc:"selected_reco_model_id,omitempty"`
-	StLineId                        *Many2One   `xmlrpc:"st_line_id,omitempty"`
-	StLineIsReconciled              *Bool       `xmlrpc:"st_line_is_reconciled,omitempty"`
-	StLineJournalId                 *Many2One   `xmlrpc:"st_line_journal_id,omitempty"`
-	StLineNarration                 *String     `xmlrpc:"st_line_narration,omitempty"`
-	StLineToCheck                   *Bool       `xmlrpc:"st_line_to_check,omitempty"`
-	StLineTransactionDetails        *String     `xmlrpc:"st_line_transaction_details,omitempty"`
-	State                           *Selection  `xmlrpc:"state,omitempty"`
-	TodoCommand                     interface{} `xmlrpc:"todo_command,omitempty"`
-	TransactionCurrencyId           *Many2One   `xmlrpc:"transaction_currency_id,omitempty"`
+	AvailableRecoModelIds           *Relation   `xmlrpc:"available_reco_model_ids,omitempty" json:"available_reco_model_ids,omitempty"`
+	CompanyCurrencyId               *Many2One   `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId                       *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DisplayName                     *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FormIndex                       *String     `xmlrpc:"form_index,omitempty" json:"form_index,omitempty"`
+	Id                              *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMultiCurrency                 *Bool       `xmlrpc:"is_multi_currency,omitempty" json:"is_multi_currency,omitempty"`
+	JournalCurrencyId               *Many2One   `xmlrpc:"journal_currency_id,omitempty" json:"journal_currency_id,omitempty"`
+	LineIds                         *Relation   `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	MatchedSaleOrderIds             *Relation   `xmlrpc:"matched_sale_order_ids,omitempty" json:"matched_sale_order_ids,omitempty"`
+	MatchingRulesAllowAutoReconcile *Bool       `xmlrpc:"matching_rules_allow_auto_reconcile,omitempty" json:"matching_rules_allow_auto_reconcile,omitempty"`
+	MoveId                          *Many2One   `xmlrpc:"move_id,omitempty" json:"move_id,omitempty"`
+	PartnerId                       *Many2One   `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerName                     *String     `xmlrpc:"partner_name,omitempty" json:"partner_name,omitempty"`
+	ReturnTodoCommand               interface{} `xmlrpc:"return_todo_command,omitempty" json:"return_todo_command,omitempty"`
+	SelectedAmlIds                  *Relation   `xmlrpc:"selected_aml_ids,omitempty" json:"selected_aml_ids,omitempty"`
+	SelectedBatchPaymentIds         *Relation   `xmlrpc:"selected_batch_payment_ids,omitempty" json:"selected_batch_payment_ids,omitempty"`
+	SelectedRecoModelId             *Many2One   `xmlrpc:"selected_reco_model_id,omitempty" json:"selected_reco_model_id,omitempty"`
+	StLineId                        *Many2One   `xmlrpc:"st_line_id,omitempty" json:"st_line_id,omitempty"`
+	StLineIsReconciled              *Bool       `xmlrpc:"st_line_is_reconciled,omitempty" json:"st_line_is_reconciled,omitempty"`
+	StLineJournalId                 *Many2One   `xmlrpc:"st_line_journal_id,omitempty" json:"st_line_journal_id,omitempty"`
+	StLineNarration                 *String     `xmlrpc:"st_line_narration,omitempty" json:"st_line_narration,omitempty"`
+	StLineToCheck                   *Bool       `xmlrpc:"st_line_to_check,omitempty" json:"st_line_to_check,omitempty"`
+	StLineTransactionDetails        *String     `xmlrpc:"st_line_transaction_details,omitempty" json:"st_line_transaction_details,omitempty"`
+	State                           *Selection  `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TodoCommand                     interface{} `xmlrpc:"todo_command,omitempty" json:"todo_command,omitempty"`
+	TransactionCurrencyId           *Many2One   `xmlrpc:"transaction_currency_id,omitempty" json:"transaction_currency_id,omitempty"`
 }
 
 // BankRecWidgets represents array of bank.rec.widget model.

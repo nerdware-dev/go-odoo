@@ -2,12 +2,12 @@ package odoo
 
 // MailMessageReaction represents mail.message.reaction model.
 type MailMessageReaction struct {
-	Content     *String   `xmlrpc:"content,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	GuestId     *Many2One `xmlrpc:"guest_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	MessageId   *Many2One `xmlrpc:"message_id,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
+	Content     *String   `xmlrpc:"content,omitempty" json:"content,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GuestId     *Many2One `xmlrpc:"guest_id,omitempty" json:"guest_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageId   *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
 }
 
 // MailMessageReactions represents array of mail.message.reaction model.

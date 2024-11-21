@@ -2,32 +2,32 @@ package odoo
 
 // IrUiView represents ir.ui.view model.
 type IrUiView struct {
-	Active             *Bool      `xmlrpc:"active,omitempty"`
-	Arch               *String    `xmlrpc:"arch,omitempty"`
-	ArchBase           *String    `xmlrpc:"arch_base,omitempty"`
-	ArchDb             *String    `xmlrpc:"arch_db,omitempty"`
-	ArchFs             *String    `xmlrpc:"arch_fs,omitempty"`
-	ArchPrev           *String    `xmlrpc:"arch_prev,omitempty"`
-	ArchUpdated        *Bool      `xmlrpc:"arch_updated,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomizeShow      *Bool      `xmlrpc:"customize_show,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	GroupsId           *Relation  `xmlrpc:"groups_id,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	InheritChildrenIds *Relation  `xmlrpc:"inherit_children_ids,omitempty"`
-	InheritId          *Many2One  `xmlrpc:"inherit_id,omitempty"`
-	Key                *String    `xmlrpc:"key,omitempty"`
-	Mode               *Selection `xmlrpc:"mode,omitempty"`
-	Model              *String    `xmlrpc:"model,omitempty"`
-	ModelDataId        *Many2One  `xmlrpc:"model_data_id,omitempty"`
-	ModelId            *Many2One  `xmlrpc:"model_id,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	Priority           *Int       `xmlrpc:"priority,omitempty"`
-	Type               *Selection `xmlrpc:"type,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId              *String    `xmlrpc:"xml_id,omitempty"`
+	Active             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Arch               *String    `xmlrpc:"arch,omitempty" json:"arch,omitempty"`
+	ArchBase           *String    `xmlrpc:"arch_base,omitempty" json:"arch_base,omitempty"`
+	ArchDb             *String    `xmlrpc:"arch_db,omitempty" json:"arch_db,omitempty"`
+	ArchFs             *String    `xmlrpc:"arch_fs,omitempty" json:"arch_fs,omitempty"`
+	ArchPrev           *String    `xmlrpc:"arch_prev,omitempty" json:"arch_prev,omitempty"`
+	ArchUpdated        *Bool      `xmlrpc:"arch_updated,omitempty" json:"arch_updated,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomizeShow      *Bool      `xmlrpc:"customize_show,omitempty" json:"customize_show,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupsId           *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InheritChildrenIds *Relation  `xmlrpc:"inherit_children_ids,omitempty" json:"inherit_children_ids,omitempty"`
+	InheritId          *Many2One  `xmlrpc:"inherit_id,omitempty" json:"inherit_id,omitempty"`
+	Key                *String    `xmlrpc:"key,omitempty" json:"key,omitempty"`
+	Mode               *Selection `xmlrpc:"mode,omitempty" json:"mode,omitempty"`
+	Model              *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelDataId        *Many2One  `xmlrpc:"model_data_id,omitempty" json:"model_data_id,omitempty"`
+	ModelId            *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Priority           *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Type               *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId              *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrUiViews represents array of ir.ui.view model.

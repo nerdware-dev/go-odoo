@@ -2,18 +2,18 @@ package odoo
 
 // TimerTimer represents timer.timer model.
 type TimerTimer struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	IsTimerRunning *Bool     `xmlrpc:"is_timer_running,omitempty"`
-	ResId          *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel       *String   `xmlrpc:"res_model,omitempty"`
-	TimerPause     *Time     `xmlrpc:"timer_pause,omitempty"`
-	TimerStart     *Time     `xmlrpc:"timer_start,omitempty"`
-	UserId         *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTimerRunning *Bool     `xmlrpc:"is_timer_running,omitempty" json:"is_timer_running,omitempty"`
+	ResId          *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel       *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	TimerPause     *Time     `xmlrpc:"timer_pause,omitempty" json:"timer_pause,omitempty"`
+	TimerStart     *Time     `xmlrpc:"timer_start,omitempty" json:"timer_start,omitempty"`
+	UserId         *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // TimerTimers represents array of timer.timer model.

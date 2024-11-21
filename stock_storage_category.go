@@ -2,21 +2,21 @@ package odoo
 
 // StockStorageCategory represents stock.storage.category model.
 type StockStorageCategory struct {
-	AllowNewProduct    *Selection `xmlrpc:"allow_new_product,omitempty"`
-	CapacityIds        *Relation  `xmlrpc:"capacity_ids,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	LocationIds        *Relation  `xmlrpc:"location_ids,omitempty"`
-	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	PackageCapacityIds *Relation  `xmlrpc:"package_capacity_ids,omitempty"`
-	ProductCapacityIds *Relation  `xmlrpc:"product_capacity_ids,omitempty"`
-	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AllowNewProduct    *Selection `xmlrpc:"allow_new_product,omitempty" json:"allow_new_product,omitempty"`
+	CapacityIds        *Relation  `xmlrpc:"capacity_ids,omitempty" json:"capacity_ids,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationIds        *Relation  `xmlrpc:"location_ids,omitempty" json:"location_ids,omitempty"`
+	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty" json:"max_weight,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PackageCapacityIds *Relation  `xmlrpc:"package_capacity_ids,omitempty" json:"package_capacity_ids,omitempty"`
+	ProductCapacityIds *Relation  `xmlrpc:"product_capacity_ids,omitempty" json:"product_capacity_ids,omitempty"`
+	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty" json:"weight_uom_name,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockStorageCategorys represents array of stock.storage.category model.

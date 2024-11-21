@@ -2,16 +2,16 @@ package odoo
 
 // BaseImportImport represents base_import.import model.
 type BaseImportImport struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	File        *String   `xmlrpc:"file,omitempty"`
-	FileName    *String   `xmlrpc:"file_name,omitempty"`
-	FileType    *String   `xmlrpc:"file_type,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	File        *String   `xmlrpc:"file,omitempty" json:"file,omitempty"`
+	FileName    *String   `xmlrpc:"file_name,omitempty" json:"file_name,omitempty"`
+	FileType    *String   `xmlrpc:"file_type,omitempty" json:"file_type,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportImports represents array of base_import.import model.

@@ -2,19 +2,19 @@ package odoo
 
 // SpreadsheetRevision represents spreadsheet.revision model.
 type SpreadsheetRevision struct {
-	Active           *Bool     `xmlrpc:"active,omitempty"`
-	Commands         *String   `xmlrpc:"commands,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty"`
-	ParentRevisionId *String   `xmlrpc:"parent_revision_id,omitempty"`
-	ResId            *Many2One `xmlrpc:"res_id,omitempty"`
-	ResModel         *String   `xmlrpc:"res_model,omitempty"`
-	RevisionId       *String   `xmlrpc:"revision_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active           *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Commands         *String   `xmlrpc:"commands,omitempty" json:"commands,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentRevisionId *String   `xmlrpc:"parent_revision_id,omitempty" json:"parent_revision_id,omitempty"`
+	ResId            *Many2One `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel         *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	RevisionId       *String   `xmlrpc:"revision_id,omitempty" json:"revision_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SpreadsheetRevisions represents array of spreadsheet.revision model.

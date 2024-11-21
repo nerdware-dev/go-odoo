@@ -2,18 +2,18 @@ package odoo
 
 // AccountTaxUnit represents account.tax.unit model.
 type AccountTaxUnit struct {
-	CompanyIds    *Relation `xmlrpc:"company_ids,omitempty"`
-	CountryId     *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	FposSynced    *Bool     `xmlrpc:"fpos_synced,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	MainCompanyId *Many2One `xmlrpc:"main_company_id,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	Vat           *String   `xmlrpc:"vat,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyIds    *Relation `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
+	CountryId     *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FposSynced    *Bool     `xmlrpc:"fpos_synced,omitempty" json:"fpos_synced,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MainCompanyId *Many2One `xmlrpc:"main_company_id,omitempty" json:"main_company_id,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Vat           *String   `xmlrpc:"vat,omitempty" json:"vat,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxUnits represents array of account.tax.unit model.

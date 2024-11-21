@@ -2,24 +2,24 @@ package odoo
 
 // SignLog represents sign.log model.
 type SignLog struct {
-	Action            *Selection `xmlrpc:"action,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty"`
-	Ip                *String    `xmlrpc:"ip,omitempty"`
-	Latitude          *Float     `xmlrpc:"latitude,omitempty"`
-	LogDate           *Time      `xmlrpc:"log_date,omitempty"`
-	LogHash           *String    `xmlrpc:"log_hash,omitempty"`
-	Longitude         *Float     `xmlrpc:"longitude,omitempty"`
-	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty"`
-	RequestState      *Selection `xmlrpc:"request_state,omitempty"`
-	SignRequestId     *Many2One  `xmlrpc:"sign_request_id,omitempty"`
-	SignRequestItemId *Many2One  `xmlrpc:"sign_request_item_id,omitempty"`
-	Token             *String    `xmlrpc:"token,omitempty"`
-	UserId            *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Action            *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Ip                *String    `xmlrpc:"ip,omitempty" json:"ip,omitempty"`
+	Latitude          *Float     `xmlrpc:"latitude,omitempty" json:"latitude,omitempty"`
+	LogDate           *Time      `xmlrpc:"log_date,omitempty" json:"log_date,omitempty"`
+	LogHash           *String    `xmlrpc:"log_hash,omitempty" json:"log_hash,omitempty"`
+	Longitude         *Float     `xmlrpc:"longitude,omitempty" json:"longitude,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	RequestState      *Selection `xmlrpc:"request_state,omitempty" json:"request_state,omitempty"`
+	SignRequestId     *Many2One  `xmlrpc:"sign_request_id,omitempty" json:"sign_request_id,omitempty"`
+	SignRequestItemId *Many2One  `xmlrpc:"sign_request_item_id,omitempty" json:"sign_request_item_id,omitempty"`
+	Token             *String    `xmlrpc:"token,omitempty" json:"token,omitempty"`
+	UserId            *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignLogs represents array of sign.log model.

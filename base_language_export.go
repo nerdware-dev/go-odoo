@@ -2,22 +2,22 @@ package odoo
 
 // BaseLanguageExport represents base.language.export model.
 type BaseLanguageExport struct {
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Data        *String    `xmlrpc:"data,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Domain      *String    `xmlrpc:"domain,omitempty"`
-	ExportType  *Selection `xmlrpc:"export_type,omitempty"`
-	Format      *Selection `xmlrpc:"format,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Lang        *Selection `xmlrpc:"lang,omitempty"`
-	ModelId     *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelName   *String    `xmlrpc:"model_name,omitempty"`
-	Modules     *Relation  `xmlrpc:"modules,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Data        *String    `xmlrpc:"data,omitempty" json:"data,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain      *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	ExportType  *Selection `xmlrpc:"export_type,omitempty" json:"export_type,omitempty"`
+	Format      *Selection `xmlrpc:"format,omitempty" json:"format,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang        *Selection `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	ModelId     *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelName   *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
+	Modules     *Relation  `xmlrpc:"modules,omitempty" json:"modules,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseLanguageExports represents array of base.language.export model.

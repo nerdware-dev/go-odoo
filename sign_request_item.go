@@ -2,37 +2,37 @@ package odoo
 
 // SignRequestItem represents sign.request.item model.
 type SignRequestItem struct {
-	AccessToken            *String    `xmlrpc:"access_token,omitempty"`
-	AccessUrl              *String    `xmlrpc:"access_url,omitempty"`
-	AccessViaLink          *Bool      `xmlrpc:"access_via_link,omitempty"`
-	AccessWarning          *String    `xmlrpc:"access_warning,omitempty"`
-	ChangeAuthorized       *Bool      `xmlrpc:"change_authorized,omitempty"`
-	Color                  *Int       `xmlrpc:"color,omitempty"`
-	CommunicationCompanyId *Many2One  `xmlrpc:"communication_company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	FrameHash              *String    `xmlrpc:"frame_hash,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Ignored                *Bool      `xmlrpc:"ignored,omitempty"`
-	IsMailSent             *Bool      `xmlrpc:"is_mail_sent,omitempty"`
-	Latitude               *Float     `xmlrpc:"latitude,omitempty"`
-	Longitude              *Float     `xmlrpc:"longitude,omitempty"`
-	MailSentOrder          *Int       `xmlrpc:"mail_sent_order,omitempty"`
-	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Reference              *String    `xmlrpc:"reference,omitempty"`
-	RoleId                 *Many2One  `xmlrpc:"role_id,omitempty"`
-	SignItemValueIds       *Relation  `xmlrpc:"sign_item_value_ids,omitempty"`
-	SignRequestId          *Many2One  `xmlrpc:"sign_request_id,omitempty"`
-	Signature              *String    `xmlrpc:"signature,omitempty"`
-	SignedWithoutExtraAuth *Bool      `xmlrpc:"signed_without_extra_auth,omitempty"`
-	SignerEmail            *String    `xmlrpc:"signer_email,omitempty"`
-	SigningDate            *Time      `xmlrpc:"signing_date,omitempty"`
-	SmsNumber              *String    `xmlrpc:"sms_number,omitempty"`
-	SmsToken               *String    `xmlrpc:"sms_token,omitempty"`
-	State                  *Selection `xmlrpc:"state,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccessToken            *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	AccessUrl              *String    `xmlrpc:"access_url,omitempty" json:"access_url,omitempty"`
+	AccessViaLink          *Bool      `xmlrpc:"access_via_link,omitempty" json:"access_via_link,omitempty"`
+	AccessWarning          *String    `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	ChangeAuthorized       *Bool      `xmlrpc:"change_authorized,omitempty" json:"change_authorized,omitempty"`
+	Color                  *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CommunicationCompanyId *Many2One  `xmlrpc:"communication_company_id,omitempty" json:"communication_company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FrameHash              *String    `xmlrpc:"frame_hash,omitempty" json:"frame_hash,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Ignored                *Bool      `xmlrpc:"ignored,omitempty" json:"ignored,omitempty"`
+	IsMailSent             *Bool      `xmlrpc:"is_mail_sent,omitempty" json:"is_mail_sent,omitempty"`
+	Latitude               *Float     `xmlrpc:"latitude,omitempty" json:"latitude,omitempty"`
+	Longitude              *Float     `xmlrpc:"longitude,omitempty" json:"longitude,omitempty"`
+	MailSentOrder          *Int       `xmlrpc:"mail_sent_order,omitempty" json:"mail_sent_order,omitempty"`
+	PartnerId              *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Reference              *String    `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	RoleId                 *Many2One  `xmlrpc:"role_id,omitempty" json:"role_id,omitempty"`
+	SignItemValueIds       *Relation  `xmlrpc:"sign_item_value_ids,omitempty" json:"sign_item_value_ids,omitempty"`
+	SignRequestId          *Many2One  `xmlrpc:"sign_request_id,omitempty" json:"sign_request_id,omitempty"`
+	Signature              *String    `xmlrpc:"signature,omitempty" json:"signature,omitempty"`
+	SignedWithoutExtraAuth *Bool      `xmlrpc:"signed_without_extra_auth,omitempty" json:"signed_without_extra_auth,omitempty"`
+	SignerEmail            *String    `xmlrpc:"signer_email,omitempty" json:"signer_email,omitempty"`
+	SigningDate            *Time      `xmlrpc:"signing_date,omitempty" json:"signing_date,omitempty"`
+	SmsNumber              *String    `xmlrpc:"sms_number,omitempty" json:"sms_number,omitempty"`
+	SmsToken               *String    `xmlrpc:"sms_token,omitempty" json:"sms_token,omitempty"`
+	State                  *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignRequestItems represents array of sign.request.item model.

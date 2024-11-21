@@ -2,14 +2,14 @@ package odoo
 
 // MailNotificationWebPush represents mail.notification.web.push model.
 type MailNotificationWebPush struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Payload     *String   `xmlrpc:"payload,omitempty"`
-	UserDevice  *Many2One `xmlrpc:"user_device,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Payload     *String   `xmlrpc:"payload,omitempty" json:"payload,omitempty"`
+	UserDevice  *Many2One `xmlrpc:"user_device,omitempty" json:"user_device,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailNotificationWebPushs represents array of mail.notification.web.push model.

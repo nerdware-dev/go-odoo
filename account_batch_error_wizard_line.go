@@ -2,18 +2,18 @@ package odoo
 
 // AccountBatchErrorWizardLine represents account.batch.error.wizard.line model.
 type AccountBatchErrorWizardLine struct {
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description      *String   `xmlrpc:"description,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	ErrorWizardId    *Many2One `xmlrpc:"error_wizard_id,omitempty"`
-	HelpMessage      *String   `xmlrpc:"help_message,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	PaymentIds       *Relation `xmlrpc:"payment_ids,omitempty"`
-	ShowRemoveButton *Bool     `xmlrpc:"show_remove_button,omitempty"`
-	WarningWizardId  *Many2One `xmlrpc:"warning_wizard_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description      *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ErrorWizardId    *Many2One `xmlrpc:"error_wizard_id,omitempty" json:"error_wizard_id,omitempty"`
+	HelpMessage      *String   `xmlrpc:"help_message,omitempty" json:"help_message,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PaymentIds       *Relation `xmlrpc:"payment_ids,omitempty" json:"payment_ids,omitempty"`
+	ShowRemoveButton *Bool     `xmlrpc:"show_remove_button,omitempty" json:"show_remove_button,omitempty"`
+	WarningWizardId  *Many2One `xmlrpc:"warning_wizard_id,omitempty" json:"warning_wizard_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBatchErrorWizardLines represents array of account.batch.error.wizard.line model.

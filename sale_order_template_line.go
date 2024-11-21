@@ -2,21 +2,21 @@ package odoo
 
 // SaleOrderTemplateLine represents sale.order.template.line model.
 type SaleOrderTemplateLine struct {
-	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType          *Selection `xmlrpc:"display_type,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	ProductId            *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One  `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomId         *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	ProductUomQty        *Float     `xmlrpc:"product_uom_qty,omitempty"`
-	SaleOrderTemplateId  *Many2One  `xmlrpc:"sale_order_template_id,omitempty"`
-	Sequence             *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType          *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductId            *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One  `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomId         *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	ProductUomQty        *Float     `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	SaleOrderTemplateId  *Many2One  `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
+	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderTemplateLines represents array of sale.order.template.line model.

@@ -2,15 +2,15 @@ package odoo
 
 // MailFollowers represents mail.followers model.
 type MailFollowers struct {
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Email       *String   `xmlrpc:"email,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	IsActive    *Bool     `xmlrpc:"is_active,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	ResId       *Many2One `xmlrpc:"res_id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email       *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsActive    *Bool     `xmlrpc:"is_active,omitempty" json:"is_active,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ResId       *Many2One `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omitempty" json:"subtype_ids,omitempty"`
 }
 
 // MailFollowerss represents array of mail.followers model.

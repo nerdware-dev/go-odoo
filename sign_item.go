@@ -2,25 +2,25 @@ package odoo
 
 // SignItem represents sign.item model.
 type SignItem struct {
-	Alignment     *String   `xmlrpc:"alignment,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Height        *Float    `xmlrpc:"height,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	OptionIds     *Relation `xmlrpc:"option_ids,omitempty"`
-	Page          *Int      `xmlrpc:"page,omitempty"`
-	PosX          *Float    `xmlrpc:"posX,omitempty"`
-	PosY          *Float    `xmlrpc:"posY,omitempty"`
-	Required      *Bool     `xmlrpc:"required,omitempty"`
-	ResponsibleId *Many2One `xmlrpc:"responsible_id,omitempty"`
-	TemplateId    *Many2One `xmlrpc:"template_id,omitempty"`
-	TransactionId *Int      `xmlrpc:"transaction_id,omitempty"`
-	TypeId        *Many2One `xmlrpc:"type_id,omitempty"`
-	Width         *Float    `xmlrpc:"width,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	Alignment     *String   `xmlrpc:"alignment,omitempty" json:"alignment,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Height        *Float    `xmlrpc:"height,omitempty" json:"height,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OptionIds     *Relation `xmlrpc:"option_ids,omitempty" json:"option_ids,omitempty"`
+	Page          *Int      `xmlrpc:"page,omitempty" json:"page,omitempty"`
+	PosX          *Float    `xmlrpc:"posX,omitempty" json:"posX,omitempty"`
+	PosY          *Float    `xmlrpc:"posY,omitempty" json:"posY,omitempty"`
+	Required      *Bool     `xmlrpc:"required,omitempty" json:"required,omitempty"`
+	ResponsibleId *Many2One `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
+	TemplateId    *Many2One `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	TransactionId *Int      `xmlrpc:"transaction_id,omitempty" json:"transaction_id,omitempty"`
+	TypeId        *Many2One `xmlrpc:"type_id,omitempty" json:"type_id,omitempty"`
+	Width         *Float    `xmlrpc:"width,omitempty" json:"width,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignItems represents array of sign.item model.

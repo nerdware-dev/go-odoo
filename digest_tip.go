@@ -2,17 +2,17 @@ package odoo
 
 // DigestTip represents digest.tip model.
 type DigestTip struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	GroupId        *Many2One `xmlrpc:"group_id,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	Sequence       *Int      `xmlrpc:"sequence,omitempty"`
-	TipDescription *String   `xmlrpc:"tip_description,omitempty"`
-	UserIds        *Relation `xmlrpc:"user_ids,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId        *Many2One `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence       *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TipDescription *String   `xmlrpc:"tip_description,omitempty" json:"tip_description,omitempty"`
+	UserIds        *Relation `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DigestTips represents array of digest.tip model.

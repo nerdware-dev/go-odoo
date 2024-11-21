@@ -2,29 +2,29 @@ package odoo
 
 // AccountFollowupManualReminder represents account_followup.manual_reminder model.
 type AccountFollowupManualReminder struct {
-	AttachmentIds        *Relation `xmlrpc:"attachment_ids,omitempty"`
-	Body                 *String   `xmlrpc:"body,omitempty"`
-	BodyHasTemplateValue *Bool     `xmlrpc:"body_has_template_value,omitempty"`
-	CanEditBody          *Bool     `xmlrpc:"can_edit_body,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	Email                *Bool     `xmlrpc:"email,omitempty"`
-	EmailRecipientIds    *Relation `xmlrpc:"email_recipient_ids,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	IsMailTemplateEditor *Bool     `xmlrpc:"is_mail_template_editor,omitempty"`
-	JoinInvoices         *Bool     `xmlrpc:"join_invoices,omitempty"`
-	Lang                 *String   `xmlrpc:"lang,omitempty"`
-	PartnerId            *Many2One `xmlrpc:"partner_id,omitempty"`
-	Print                *Bool     `xmlrpc:"print,omitempty"`
-	RenderModel          *String   `xmlrpc:"render_model,omitempty"`
-	Sms                  *Bool     `xmlrpc:"sms,omitempty"`
-	SmsBody              *String   `xmlrpc:"sms_body,omitempty"`
-	SmsTemplateId        *Many2One `xmlrpc:"sms_template_id,omitempty"`
-	Subject              *String   `xmlrpc:"subject,omitempty"`
-	TemplateId           *Many2One `xmlrpc:"template_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	AttachmentIds        *Relation `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	Body                 *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	BodyHasTemplateValue *Bool     `xmlrpc:"body_has_template_value,omitempty" json:"body_has_template_value,omitempty"`
+	CanEditBody          *Bool     `xmlrpc:"can_edit_body,omitempty" json:"can_edit_body,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email                *Bool     `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EmailRecipientIds    *Relation `xmlrpc:"email_recipient_ids,omitempty" json:"email_recipient_ids,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMailTemplateEditor *Bool     `xmlrpc:"is_mail_template_editor,omitempty" json:"is_mail_template_editor,omitempty"`
+	JoinInvoices         *Bool     `xmlrpc:"join_invoices,omitempty" json:"join_invoices,omitempty"`
+	Lang                 *String   `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	PartnerId            *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Print                *Bool     `xmlrpc:"print,omitempty" json:"print,omitempty"`
+	RenderModel          *String   `xmlrpc:"render_model,omitempty" json:"render_model,omitempty"`
+	Sms                  *Bool     `xmlrpc:"sms,omitempty" json:"sms,omitempty"`
+	SmsBody              *String   `xmlrpc:"sms_body,omitempty" json:"sms_body,omitempty"`
+	SmsTemplateId        *Many2One `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	Subject              *String   `xmlrpc:"subject,omitempty" json:"subject,omitempty"`
+	TemplateId           *Many2One `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFollowupManualReminders represents array of account_followup.manual_reminder model.

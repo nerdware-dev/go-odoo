@@ -2,16 +2,16 @@ package odoo
 
 // ProjectTaskTypeDeleteWizard represents project.task.type.delete.wizard model.
 type ProjectTaskTypeDeleteWizard struct {
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	ProjectIds   *Relation `xmlrpc:"project_ids,omitempty"`
-	StageIds     *Relation `xmlrpc:"stage_ids,omitempty"`
-	StagesActive *Bool     `xmlrpc:"stages_active,omitempty"`
-	TasksCount   *Int      `xmlrpc:"tasks_count,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProjectIds   *Relation `xmlrpc:"project_ids,omitempty" json:"project_ids,omitempty"`
+	StageIds     *Relation `xmlrpc:"stage_ids,omitempty" json:"stage_ids,omitempty"`
+	StagesActive *Bool     `xmlrpc:"stages_active,omitempty" json:"stages_active,omitempty"`
+	TasksCount   *Int      `xmlrpc:"tasks_count,omitempty" json:"tasks_count,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTaskTypeDeleteWizards represents array of project.task.type.delete.wizard model.

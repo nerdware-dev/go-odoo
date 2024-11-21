@@ -2,21 +2,21 @@ package odoo
 
 // StockQuantRelocate represents stock.quant.relocate model.
 type StockQuantRelocate struct {
-	CompanyId           *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DestLocationId      *Many2One `xmlrpc:"dest_location_id,omitempty"`
-	DestPackageId       *Many2One `xmlrpc:"dest_package_id,omitempty"`
-	DestPackageIdDomain *String   `xmlrpc:"dest_package_id_domain,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	IsMultiLocation     *Bool     `xmlrpc:"is_multi_location,omitempty"`
-	IsPartialPackage    *Bool     `xmlrpc:"is_partial_package,omitempty"`
-	Message             *String   `xmlrpc:"message,omitempty"`
-	PartialPackageNames *String   `xmlrpc:"partial_package_names,omitempty"`
-	QuantIds            *Relation `xmlrpc:"quant_ids,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DestLocationId      *Many2One `xmlrpc:"dest_location_id,omitempty" json:"dest_location_id,omitempty"`
+	DestPackageId       *Many2One `xmlrpc:"dest_package_id,omitempty" json:"dest_package_id,omitempty"`
+	DestPackageIdDomain *String   `xmlrpc:"dest_package_id_domain,omitempty" json:"dest_package_id_domain,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMultiLocation     *Bool     `xmlrpc:"is_multi_location,omitempty" json:"is_multi_location,omitempty"`
+	IsPartialPackage    *Bool     `xmlrpc:"is_partial_package,omitempty" json:"is_partial_package,omitempty"`
+	Message             *String   `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	PartialPackageNames *String   `xmlrpc:"partial_package_names,omitempty" json:"partial_package_names,omitempty"`
+	QuantIds            *Relation `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockQuantRelocates represents array of stock.quant.relocate model.

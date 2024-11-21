@@ -2,22 +2,22 @@ package odoo
 
 // CalendarAttendee represents calendar.attendee model.
 type CalendarAttendee struct {
-	AccessToken  *String    `xmlrpc:"access_token,omitempty"`
-	Availability *Selection `xmlrpc:"availability,omitempty"`
-	CommonName   *String    `xmlrpc:"common_name,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Email        *String    `xmlrpc:"email,omitempty"`
-	EventId      *Many2One  `xmlrpc:"event_id,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	MailTz       *Selection `xmlrpc:"mail_tz,omitempty"`
-	PartnerId    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Phone        *String    `xmlrpc:"phone,omitempty"`
-	RecurrenceId *Many2One  `xmlrpc:"recurrence_id,omitempty"`
-	State        *Selection `xmlrpc:"state,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccessToken  *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
+	Availability *Selection `xmlrpc:"availability,omitempty" json:"availability,omitempty"`
+	CommonName   *String    `xmlrpc:"common_name,omitempty" json:"common_name,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email        *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EventId      *Many2One  `xmlrpc:"event_id,omitempty" json:"event_id,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailTz       *Selection `xmlrpc:"mail_tz,omitempty" json:"mail_tz,omitempty"`
+	PartnerId    *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Phone        *String    `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	RecurrenceId *Many2One  `xmlrpc:"recurrence_id,omitempty" json:"recurrence_id,omitempty"`
+	State        *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarAttendees represents array of calendar.attendee model.

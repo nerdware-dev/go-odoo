@@ -2,25 +2,25 @@ package odoo
 
 // AccountOnlineAccount represents account.online.account model.
 type AccountOnlineAccount struct {
-	AccountData            *String    `xmlrpc:"account_data,omitempty"`
-	AccountNumber          *String    `xmlrpc:"account_number,omitempty"`
-	AccountOnlineLinkId    *Many2One  `xmlrpc:"account_online_link_id,omitempty"`
-	Balance                *Float     `xmlrpc:"balance,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	FetchingStatus         *Selection `xmlrpc:"fetching_status,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	InverseBalanceSign     *Bool      `xmlrpc:"inverse_balance_sign,omitempty"`
-	InverseTransactionSign *Bool      `xmlrpc:"inverse_transaction_sign,omitempty"`
-	JournalIds             *Relation  `xmlrpc:"journal_ids,omitempty"`
-	LastSync               *Time      `xmlrpc:"last_sync,omitempty"`
-	Name                   *String    `xmlrpc:"name,omitempty"`
-	OnlineIdentifier       *String    `xmlrpc:"online_identifier,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountData            *String    `xmlrpc:"account_data,omitempty" json:"account_data,omitempty"`
+	AccountNumber          *String    `xmlrpc:"account_number,omitempty" json:"account_number,omitempty"`
+	AccountOnlineLinkId    *Many2One  `xmlrpc:"account_online_link_id,omitempty" json:"account_online_link_id,omitempty"`
+	Balance                *Float     `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId             *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FetchingStatus         *Selection `xmlrpc:"fetching_status,omitempty" json:"fetching_status,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InverseBalanceSign     *Bool      `xmlrpc:"inverse_balance_sign,omitempty" json:"inverse_balance_sign,omitempty"`
+	InverseTransactionSign *Bool      `xmlrpc:"inverse_transaction_sign,omitempty" json:"inverse_transaction_sign,omitempty"`
+	JournalIds             *Relation  `xmlrpc:"journal_ids,omitempty" json:"journal_ids,omitempty"`
+	LastSync               *Time      `xmlrpc:"last_sync,omitempty" json:"last_sync,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OnlineIdentifier       *String    `xmlrpc:"online_identifier,omitempty" json:"online_identifier,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountOnlineAccounts represents array of account.online.account model.

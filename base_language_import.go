@@ -2,17 +2,17 @@ package odoo
 
 // BaseLanguageImport represents base.language.import model.
 type BaseLanguageImport struct {
-	Code        *String   `xmlrpc:"code,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Data        *String   `xmlrpc:"data,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Filename    *String   `xmlrpc:"filename,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Overwrite   *Bool     `xmlrpc:"overwrite,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Data        *String   `xmlrpc:"data,omitempty" json:"data,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Filename    *String   `xmlrpc:"filename,omitempty" json:"filename,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Overwrite   *Bool     `xmlrpc:"overwrite,omitempty" json:"overwrite,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseLanguageImports represents array of base.language.import model.

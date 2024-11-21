@@ -2,16 +2,16 @@ package odoo
 
 // AccountBankSelection represents account.bank.selection model.
 type AccountBankSelection struct {
-	AccountOnlineAccountIds *Relation `xmlrpc:"account_online_account_ids,omitempty"`
-	AccountOnlineLinkId     *Many2One `xmlrpc:"account_online_link_id,omitempty"`
-	CreateDate              *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String   `xmlrpc:"display_name,omitempty"`
-	Id                      *Int      `xmlrpc:"id,omitempty"`
-	InstitutionName         *String   `xmlrpc:"institution_name,omitempty"`
-	SelectedAccount         *Many2One `xmlrpc:"selected_account,omitempty"`
-	WriteDate               *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountOnlineAccountIds *Relation `xmlrpc:"account_online_account_ids,omitempty" json:"account_online_account_ids,omitempty"`
+	AccountOnlineLinkId     *Many2One `xmlrpc:"account_online_link_id,omitempty" json:"account_online_link_id,omitempty"`
+	CreateDate              *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName             *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                      *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InstitutionName         *String   `xmlrpc:"institution_name,omitempty" json:"institution_name,omitempty"`
+	SelectedAccount         *Many2One `xmlrpc:"selected_account,omitempty" json:"selected_account,omitempty"`
+	WriteDate               *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankSelections represents array of account.bank.selection model.

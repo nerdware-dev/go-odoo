@@ -2,18 +2,18 @@ package odoo
 
 // SignItemRole represents sign.item.role model.
 type SignItemRole struct {
-	AuthMethod       *Selection `xmlrpc:"auth_method,omitempty"`
-	ChangeAuthorized *Bool      `xmlrpc:"change_authorized,omitempty"`
-	Color            *Int       `xmlrpc:"color,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Default          *Bool      `xmlrpc:"default,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AuthMethod       *Selection `xmlrpc:"auth_method,omitempty" json:"auth_method,omitempty"`
+	ChangeAuthorized *Bool      `xmlrpc:"change_authorized,omitempty" json:"change_authorized,omitempty"`
+	Color            *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Default          *Bool      `xmlrpc:"default,omitempty" json:"default,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence         *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignItemRoles represents array of sign.item.role model.

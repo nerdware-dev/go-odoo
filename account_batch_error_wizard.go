@@ -2,16 +2,16 @@ package odoo
 
 // AccountBatchErrorWizard represents account.batch.error.wizard model.
 type AccountBatchErrorWizard struct {
-	BatchPaymentId    *Many2One `xmlrpc:"batch_payment_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	ErrorLineIds      *Relation `xmlrpc:"error_line_ids,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	ShowRemoveOptions *Bool     `xmlrpc:"show_remove_options,omitempty"`
-	WarningLineIds    *Relation `xmlrpc:"warning_line_ids,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	BatchPaymentId    *Many2One `xmlrpc:"batch_payment_id,omitempty" json:"batch_payment_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ErrorLineIds      *Relation `xmlrpc:"error_line_ids,omitempty" json:"error_line_ids,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ShowRemoveOptions *Bool     `xmlrpc:"show_remove_options,omitempty" json:"show_remove_options,omitempty"`
+	WarningLineIds    *Relation `xmlrpc:"warning_line_ids,omitempty" json:"warning_line_ids,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBatchErrorWizards represents array of account.batch.error.wizard model.

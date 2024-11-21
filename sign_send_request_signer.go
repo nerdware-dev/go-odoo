@@ -2,16 +2,16 @@ package odoo
 
 // SignSendRequestSigner represents sign.send.request.signer model.
 type SignSendRequestSigner struct {
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	MailSentOrder     *Int      `xmlrpc:"mail_sent_order,omitempty"`
-	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty"`
-	RoleId            *Many2One `xmlrpc:"role_id,omitempty"`
-	SignSendRequestId *Many2One `xmlrpc:"sign_send_request_id,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailSentOrder     *Int      `xmlrpc:"mail_sent_order,omitempty" json:"mail_sent_order,omitempty"`
+	PartnerId         *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	RoleId            *Many2One `xmlrpc:"role_id,omitempty" json:"role_id,omitempty"`
+	SignSendRequestId *Many2One `xmlrpc:"sign_send_request_id,omitempty" json:"sign_send_request_id,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SignSendRequestSigners represents array of sign.send.request.signer model.

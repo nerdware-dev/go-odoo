@@ -2,19 +2,19 @@ package odoo
 
 // SaveSpreadsheetTemplate represents save.spreadsheet.template model.
 type SaveSpreadsheetTemplate struct {
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	ServerRevisionId       *String   `xmlrpc:"server_revision_id,omitempty"`
-	SpreadsheetBinaryData  *String   `xmlrpc:"spreadsheet_binary_data,omitempty"`
-	SpreadsheetData        *String   `xmlrpc:"spreadsheet_data,omitempty"`
-	SpreadsheetRevisionIds *Relation `xmlrpc:"spreadsheet_revision_ids,omitempty"`
-	SpreadsheetSnapshot    *String   `xmlrpc:"spreadsheet_snapshot,omitempty"`
-	TemplateName           *String   `xmlrpc:"template_name,omitempty"`
-	Thumbnail              *String   `xmlrpc:"thumbnail,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ServerRevisionId       *String   `xmlrpc:"server_revision_id,omitempty" json:"server_revision_id,omitempty"`
+	SpreadsheetBinaryData  *String   `xmlrpc:"spreadsheet_binary_data,omitempty" json:"spreadsheet_binary_data,omitempty"`
+	SpreadsheetData        *String   `xmlrpc:"spreadsheet_data,omitempty" json:"spreadsheet_data,omitempty"`
+	SpreadsheetRevisionIds *Relation `xmlrpc:"spreadsheet_revision_ids,omitempty" json:"spreadsheet_revision_ids,omitempty"`
+	SpreadsheetSnapshot    *String   `xmlrpc:"spreadsheet_snapshot,omitempty" json:"spreadsheet_snapshot,omitempty"`
+	TemplateName           *String   `xmlrpc:"template_name,omitempty" json:"template_name,omitempty"`
+	Thumbnail              *String   `xmlrpc:"thumbnail,omitempty" json:"thumbnail,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaveSpreadsheetTemplates represents array of save.spreadsheet.template model.

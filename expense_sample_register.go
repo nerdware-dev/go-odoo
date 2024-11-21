@@ -2,24 +2,24 @@ package odoo
 
 // ExpenseSampleRegister represents expense.sample.register model.
 type ExpenseSampleRegister struct {
-	Amount                        *Float     `xmlrpc:"amount,omitempty"`
-	AvailablePaymentMethodLineIds *Relation  `xmlrpc:"available_payment_method_line_ids,omitempty"`
-	CompanyId                     *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                    *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	HidePartial                   *Bool      `xmlrpc:"hide_partial,omitempty"`
-	HidePaymentMethodLine         *Bool      `xmlrpc:"hide_payment_method_line,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	JournalId                     *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Memo                          *String    `xmlrpc:"memo,omitempty"`
-	PartialMode                   *Selection `xmlrpc:"partial_mode,omitempty"`
-	PaymentMethodLineId           *Many2One  `xmlrpc:"payment_method_line_id,omitempty"`
-	SheetId                       *Many2One  `xmlrpc:"sheet_id,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Amount                        *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AvailablePaymentMethodLineIds *Relation  `xmlrpc:"available_payment_method_line_ids,omitempty" json:"available_payment_method_line_ids,omitempty"`
+	CompanyId                     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                    *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                          *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HidePartial                   *Bool      `xmlrpc:"hide_partial,omitempty" json:"hide_partial,omitempty"`
+	HidePaymentMethodLine         *Bool      `xmlrpc:"hide_payment_method_line,omitempty" json:"hide_payment_method_line,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                     *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Memo                          *String    `xmlrpc:"memo,omitempty" json:"memo,omitempty"`
+	PartialMode                   *Selection `xmlrpc:"partial_mode,omitempty" json:"partial_mode,omitempty"`
+	PaymentMethodLineId           *Many2One  `xmlrpc:"payment_method_line_id,omitempty" json:"payment_method_line_id,omitempty"`
+	SheetId                       *Many2One  `xmlrpc:"sheet_id,omitempty" json:"sheet_id,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ExpenseSampleRegisters represents array of expense.sample.register model.

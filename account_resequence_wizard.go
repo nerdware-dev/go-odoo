@@ -2,20 +2,20 @@ package odoo
 
 // AccountResequenceWizard represents account.resequence.wizard model.
 type AccountResequenceWizard struct {
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	EndDate             *Time      `xmlrpc:"end_date,omitempty"`
-	FirstDate           *Time      `xmlrpc:"first_date,omitempty"`
-	FirstName           *String    `xmlrpc:"first_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	MoveIds             *Relation  `xmlrpc:"move_ids,omitempty"`
-	NewValues           *String    `xmlrpc:"new_values,omitempty"`
-	Ordering            *Selection `xmlrpc:"ordering,omitempty"`
-	PreviewMoves        *String    `xmlrpc:"preview_moves,omitempty"`
-	SequenceNumberReset *String    `xmlrpc:"sequence_number_reset,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndDate             *Time      `xmlrpc:"end_date,omitempty" json:"end_date,omitempty"`
+	FirstDate           *Time      `xmlrpc:"first_date,omitempty" json:"first_date,omitempty"`
+	FirstName           *String    `xmlrpc:"first_name,omitempty" json:"first_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MoveIds             *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	NewValues           *String    `xmlrpc:"new_values,omitempty" json:"new_values,omitempty"`
+	Ordering            *Selection `xmlrpc:"ordering,omitempty" json:"ordering,omitempty"`
+	PreviewMoves        *String    `xmlrpc:"preview_moves,omitempty" json:"preview_moves,omitempty"`
+	SequenceNumberReset *String    `xmlrpc:"sequence_number_reset,omitempty" json:"sequence_number_reset,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountResequenceWizards represents array of account.resequence.wizard model.

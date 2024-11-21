@@ -2,21 +2,21 @@ package odoo
 
 // StockQuantPackage represents stock.quant.package model.
 type StockQuantPackage struct {
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	LocationId    *Many2One  `xmlrpc:"location_id,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	OwnerId       *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PackDate      *Time      `xmlrpc:"pack_date,omitempty"`
-	PackageTypeId *Many2One  `xmlrpc:"package_type_id,omitempty"`
-	PackageUse    *Selection `xmlrpc:"package_use,omitempty"`
-	QuantIds      *Relation  `xmlrpc:"quant_ids,omitempty"`
-	ValidSscc     *Bool      `xmlrpc:"valid_sscc,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationId    *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OwnerId       *Many2One  `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PackDate      *Time      `xmlrpc:"pack_date,omitempty" json:"pack_date,omitempty"`
+	PackageTypeId *Many2One  `xmlrpc:"package_type_id,omitempty" json:"package_type_id,omitempty"`
+	PackageUse    *Selection `xmlrpc:"package_use,omitempty" json:"package_use,omitempty"`
+	QuantIds      *Relation  `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	ValidSscc     *Bool      `xmlrpc:"valid_sscc,omitempty" json:"valid_sscc,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockQuantPackages represents array of stock.quant.package model.

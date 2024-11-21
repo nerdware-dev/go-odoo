@@ -2,55 +2,55 @@ package odoo
 
 // IrModelFields represents ir.model.fields model.
 type IrModelFields struct {
-	Column1             *String    `xmlrpc:"column1,omitempty"`
-	Column2             *String    `xmlrpc:"column2,omitempty"`
-	CompleteName        *String    `xmlrpc:"complete_name,omitempty"`
-	Compute             *String    `xmlrpc:"compute,omitempty"`
-	Copied              *Bool      `xmlrpc:"copied,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyField       *String    `xmlrpc:"currency_field,omitempty"`
-	Depends             *String    `xmlrpc:"depends,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Domain              *String    `xmlrpc:"domain,omitempty"`
-	FieldDescription    *String    `xmlrpc:"field_description,omitempty"`
-	GroupExpand         *Bool      `xmlrpc:"group_expand,omitempty"`
-	Groups              *Relation  `xmlrpc:"groups,omitempty"`
-	Help                *String    `xmlrpc:"help,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Index               *Bool      `xmlrpc:"index,omitempty"`
-	Model               *String    `xmlrpc:"model,omitempty"`
-	ModelId             *Many2One  `xmlrpc:"model_id,omitempty"`
-	Modules             *String    `xmlrpc:"modules,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	OnDelete            *Selection `xmlrpc:"on_delete,omitempty"`
-	Readonly            *Bool      `xmlrpc:"readonly,omitempty"`
-	Related             *String    `xmlrpc:"related,omitempty"`
-	RelatedFieldId      *Many2One  `xmlrpc:"related_field_id,omitempty"`
-	Relation            *String    `xmlrpc:"relation,omitempty"`
-	RelationField       *String    `xmlrpc:"relation_field,omitempty"`
-	RelationFieldId     *Many2One  `xmlrpc:"relation_field_id,omitempty"`
-	RelationTable       *String    `xmlrpc:"relation_table,omitempty"`
-	Required            *Bool      `xmlrpc:"required,omitempty"`
-	Sanitize            *Bool      `xmlrpc:"sanitize,omitempty"`
-	SanitizeAttributes  *Bool      `xmlrpc:"sanitize_attributes,omitempty"`
-	SanitizeForm        *Bool      `xmlrpc:"sanitize_form,omitempty"`
-	SanitizeOverridable *Bool      `xmlrpc:"sanitize_overridable,omitempty"`
-	SanitizeStyle       *Bool      `xmlrpc:"sanitize_style,omitempty"`
-	SanitizeTags        *Bool      `xmlrpc:"sanitize_tags,omitempty"`
-	Selectable          *Bool      `xmlrpc:"selectable,omitempty"`
-	Selection           *String    `xmlrpc:"selection,omitempty"`
-	SelectionIds        *Relation  `xmlrpc:"selection_ids,omitempty"`
-	Size                *Int       `xmlrpc:"size,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	Store               *Bool      `xmlrpc:"store,omitempty"`
-	StripClasses        *Bool      `xmlrpc:"strip_classes,omitempty"`
-	StripStyle          *Bool      `xmlrpc:"strip_style,omitempty"`
-	Tracking            *Int       `xmlrpc:"tracking,omitempty"`
-	Translate           *Bool      `xmlrpc:"translate,omitempty"`
-	Ttype               *Selection `xmlrpc:"ttype,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Column1             *String    `xmlrpc:"column1,omitempty" json:"column1,omitempty"`
+	Column2             *String    `xmlrpc:"column2,omitempty" json:"column2,omitempty"`
+	CompleteName        *String    `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	Compute             *String    `xmlrpc:"compute,omitempty" json:"compute,omitempty"`
+	Copied              *Bool      `xmlrpc:"copied,omitempty" json:"copied,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyField       *String    `xmlrpc:"currency_field,omitempty" json:"currency_field,omitempty"`
+	Depends             *String    `xmlrpc:"depends,omitempty" json:"depends,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain              *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	FieldDescription    *String    `xmlrpc:"field_description,omitempty" json:"field_description,omitempty"`
+	GroupExpand         *Bool      `xmlrpc:"group_expand,omitempty" json:"group_expand,omitempty"`
+	Groups              *Relation  `xmlrpc:"groups,omitempty" json:"groups,omitempty"`
+	Help                *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Index               *Bool      `xmlrpc:"index,omitempty" json:"index,omitempty"`
+	Model               *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelId             *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Modules             *String    `xmlrpc:"modules,omitempty" json:"modules,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OnDelete            *Selection `xmlrpc:"on_delete,omitempty" json:"on_delete,omitempty"`
+	Readonly            *Bool      `xmlrpc:"readonly,omitempty" json:"readonly,omitempty"`
+	Related             *String    `xmlrpc:"related,omitempty" json:"related,omitempty"`
+	RelatedFieldId      *Many2One  `xmlrpc:"related_field_id,omitempty" json:"related_field_id,omitempty"`
+	Relation            *String    `xmlrpc:"relation,omitempty" json:"relation,omitempty"`
+	RelationField       *String    `xmlrpc:"relation_field,omitempty" json:"relation_field,omitempty"`
+	RelationFieldId     *Many2One  `xmlrpc:"relation_field_id,omitempty" json:"relation_field_id,omitempty"`
+	RelationTable       *String    `xmlrpc:"relation_table,omitempty" json:"relation_table,omitempty"`
+	Required            *Bool      `xmlrpc:"required,omitempty" json:"required,omitempty"`
+	Sanitize            *Bool      `xmlrpc:"sanitize,omitempty" json:"sanitize,omitempty"`
+	SanitizeAttributes  *Bool      `xmlrpc:"sanitize_attributes,omitempty" json:"sanitize_attributes,omitempty"`
+	SanitizeForm        *Bool      `xmlrpc:"sanitize_form,omitempty" json:"sanitize_form,omitempty"`
+	SanitizeOverridable *Bool      `xmlrpc:"sanitize_overridable,omitempty" json:"sanitize_overridable,omitempty"`
+	SanitizeStyle       *Bool      `xmlrpc:"sanitize_style,omitempty" json:"sanitize_style,omitempty"`
+	SanitizeTags        *Bool      `xmlrpc:"sanitize_tags,omitempty" json:"sanitize_tags,omitempty"`
+	Selectable          *Bool      `xmlrpc:"selectable,omitempty" json:"selectable,omitempty"`
+	Selection           *String    `xmlrpc:"selection,omitempty" json:"selection,omitempty"`
+	SelectionIds        *Relation  `xmlrpc:"selection_ids,omitempty" json:"selection_ids,omitempty"`
+	Size                *Int       `xmlrpc:"size,omitempty" json:"size,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Store               *Bool      `xmlrpc:"store,omitempty" json:"store,omitempty"`
+	StripClasses        *Bool      `xmlrpc:"strip_classes,omitempty" json:"strip_classes,omitempty"`
+	StripStyle          *Bool      `xmlrpc:"strip_style,omitempty" json:"strip_style,omitempty"`
+	Tracking            *Int       `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	Translate           *Bool      `xmlrpc:"translate,omitempty" json:"translate,omitempty"`
+	Ttype               *Selection `xmlrpc:"ttype,omitempty" json:"ttype,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModelFieldss represents array of ir.model.fields model.

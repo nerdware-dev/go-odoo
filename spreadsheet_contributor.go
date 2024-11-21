@@ -2,15 +2,15 @@ package odoo
 
 // SpreadsheetContributor represents spreadsheet.contributor model.
 type SpreadsheetContributor struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	DocumentId     *Many2One `xmlrpc:"document_id,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	LastUpdateDate *Time     `xmlrpc:"last_update_date,omitempty"`
-	UserId         *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentId     *Many2One `xmlrpc:"document_id,omitempty" json:"document_id,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LastUpdateDate *Time     `xmlrpc:"last_update_date,omitempty" json:"last_update_date,omitempty"`
+	UserId         *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SpreadsheetContributors represents array of spreadsheet.contributor model.

@@ -2,19 +2,19 @@ package odoo
 
 // AccountDisallowedExpensesCategory represents account.disallowed.expenses.category model.
 type AccountDisallowedExpensesCategory struct {
-	AccountIds  *Relation `xmlrpc:"account_ids,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	Code        *String   `xmlrpc:"code,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrentRate *String   `xmlrpc:"current_rate,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	RateIds     *Relation `xmlrpc:"rate_ids,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountIds  *Relation `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrentRate *String   `xmlrpc:"current_rate,omitempty" json:"current_rate,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RateIds     *Relation `xmlrpc:"rate_ids,omitempty" json:"rate_ids,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountDisallowedExpensesCategorys represents array of account.disallowed.expenses.category model.

@@ -2,36 +2,36 @@ package odoo
 
 // AccountReconcileWizard represents account.reconcile.wizard model.
 type AccountReconcileWizard struct {
-	AccountId                      *Many2One `xmlrpc:"account_id,omitempty"`
-	AllowPartials                  *Bool     `xmlrpc:"allow_partials,omitempty"`
-	Amount                         *Float    `xmlrpc:"amount,omitempty"`
-	AmountCurrency                 *Float    `xmlrpc:"amount_currency,omitempty"`
-	CompanyCurrencyId              *Many2One `xmlrpc:"company_currency_id,omitempty"`
-	CompanyId                      *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                      *Many2One `xmlrpc:"create_uid,omitempty"`
-	Date                           *Time     `xmlrpc:"date,omitempty"`
-	DisplayAllowPartials           *Bool     `xmlrpc:"display_allow_partials,omitempty"`
-	DisplayName                    *String   `xmlrpc:"display_name,omitempty"`
-	ForcePartials                  *Bool     `xmlrpc:"force_partials,omitempty"`
-	Id                             *Int      `xmlrpc:"id,omitempty"`
-	IsTransferRequired             *Bool     `xmlrpc:"is_transfer_required,omitempty"`
-	IsWriteOffRequired             *Bool     `xmlrpc:"is_write_off_required,omitempty"`
-	JournalId                      *Many2One `xmlrpc:"journal_id,omitempty"`
-	Label                          *String   `xmlrpc:"label,omitempty"`
-	LockDateViolatedWarningMessage *String   `xmlrpc:"lock_date_violated_warning_message,omitempty"`
-	MoveLineIds                    *Relation `xmlrpc:"move_line_ids,omitempty"`
-	RecoAccountId                  *Many2One `xmlrpc:"reco_account_id,omitempty"`
-	RecoCurrencyId                 *Many2One `xmlrpc:"reco_currency_id,omitempty"`
-	RecoModelAutocompleteIds       *Relation `xmlrpc:"reco_model_autocomplete_ids,omitempty"`
-	RecoModelId                    *Many2One `xmlrpc:"reco_model_id,omitempty"`
-	SingleCurrencyMode             *Bool     `xmlrpc:"single_currency_mode,omitempty"`
-	TaxId                          *Many2One `xmlrpc:"tax_id,omitempty"`
-	ToCheck                        *Bool     `xmlrpc:"to_check,omitempty"`
-	TransferFromAccountId          *Many2One `xmlrpc:"transfer_from_account_id,omitempty"`
-	TransferWarningMessage         *String   `xmlrpc:"transfer_warning_message,omitempty"`
-	WriteDate                      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                       *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountId                      *Many2One `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	AllowPartials                  *Bool     `xmlrpc:"allow_partials,omitempty" json:"allow_partials,omitempty"`
+	Amount                         *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AmountCurrency                 *Float    `xmlrpc:"amount_currency,omitempty" json:"amount_currency,omitempty"`
+	CompanyCurrencyId              *Many2One `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId                      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                           *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayAllowPartials           *Bool     `xmlrpc:"display_allow_partials,omitempty" json:"display_allow_partials,omitempty"`
+	DisplayName                    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForcePartials                  *Bool     `xmlrpc:"force_partials,omitempty" json:"force_partials,omitempty"`
+	Id                             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTransferRequired             *Bool     `xmlrpc:"is_transfer_required,omitempty" json:"is_transfer_required,omitempty"`
+	IsWriteOffRequired             *Bool     `xmlrpc:"is_write_off_required,omitempty" json:"is_write_off_required,omitempty"`
+	JournalId                      *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	Label                          *String   `xmlrpc:"label,omitempty" json:"label,omitempty"`
+	LockDateViolatedWarningMessage *String   `xmlrpc:"lock_date_violated_warning_message,omitempty" json:"lock_date_violated_warning_message,omitempty"`
+	MoveLineIds                    *Relation `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	RecoAccountId                  *Many2One `xmlrpc:"reco_account_id,omitempty" json:"reco_account_id,omitempty"`
+	RecoCurrencyId                 *Many2One `xmlrpc:"reco_currency_id,omitempty" json:"reco_currency_id,omitempty"`
+	RecoModelAutocompleteIds       *Relation `xmlrpc:"reco_model_autocomplete_ids,omitempty" json:"reco_model_autocomplete_ids,omitempty"`
+	RecoModelId                    *Many2One `xmlrpc:"reco_model_id,omitempty" json:"reco_model_id,omitempty"`
+	SingleCurrencyMode             *Bool     `xmlrpc:"single_currency_mode,omitempty" json:"single_currency_mode,omitempty"`
+	TaxId                          *Many2One `xmlrpc:"tax_id,omitempty" json:"tax_id,omitempty"`
+	ToCheck                        *Bool     `xmlrpc:"to_check,omitempty" json:"to_check,omitempty"`
+	TransferFromAccountId          *Many2One `xmlrpc:"transfer_from_account_id,omitempty" json:"transfer_from_account_id,omitempty"`
+	TransferWarningMessage         *String   `xmlrpc:"transfer_warning_message,omitempty" json:"transfer_warning_message,omitempty"`
+	WriteDate                      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReconcileWizards represents array of account.reconcile.wizard model.

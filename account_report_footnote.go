@@ -2,15 +2,15 @@ package odoo
 
 // AccountReportFootnote represents account.report.footnote model.
 type AccountReportFootnote struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LineId      *String   `xmlrpc:"line_id,omitempty"`
-	ReportId    *Many2One `xmlrpc:"report_id,omitempty"`
-	Text        *String   `xmlrpc:"text,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineId      *String   `xmlrpc:"line_id,omitempty" json:"line_id,omitempty"`
+	ReportId    *Many2One `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	Text        *String   `xmlrpc:"text,omitempty" json:"text,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportFootnotes represents array of account.report.footnote model.

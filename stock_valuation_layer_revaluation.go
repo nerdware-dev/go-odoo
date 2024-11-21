@@ -2,26 +2,26 @@ package odoo
 
 // StockValuationLayerRevaluation represents stock.valuation.layer.revaluation model.
 type StockValuationLayerRevaluation struct {
-	AccountId          *Many2One  `xmlrpc:"account_id,omitempty"`
-	AccountJournalId   *Many2One  `xmlrpc:"account_journal_id,omitempty"`
-	AddedValue         *Float     `xmlrpc:"added_value,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId         *Many2One  `xmlrpc:"currency_id,omitempty"`
-	CurrentQuantitySvl *Float     `xmlrpc:"current_quantity_svl,omitempty"`
-	CurrentValueSvl    *Float     `xmlrpc:"current_value_svl,omitempty"`
-	Date               *Time      `xmlrpc:"date,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	NewValue           *Float     `xmlrpc:"new_value,omitempty"`
-	NewValueByQty      *Float     `xmlrpc:"new_value_by_qty,omitempty"`
-	ProductId          *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomName     *String    `xmlrpc:"product_uom_name,omitempty"`
-	PropertyValuation  *Selection `xmlrpc:"property_valuation,omitempty"`
-	Reason             *String    `xmlrpc:"reason,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountId          *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	AccountJournalId   *Many2One  `xmlrpc:"account_journal_id,omitempty" json:"account_journal_id,omitempty"`
+	AddedValue         *Float     `xmlrpc:"added_value,omitempty" json:"added_value,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId         *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	CurrentQuantitySvl *Float     `xmlrpc:"current_quantity_svl,omitempty" json:"current_quantity_svl,omitempty"`
+	CurrentValueSvl    *Float     `xmlrpc:"current_value_svl,omitempty" json:"current_value_svl,omitempty"`
+	Date               *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NewValue           *Float     `xmlrpc:"new_value,omitempty" json:"new_value,omitempty"`
+	NewValueByQty      *Float     `xmlrpc:"new_value_by_qty,omitempty" json:"new_value_by_qty,omitempty"`
+	ProductId          *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomName     *String    `xmlrpc:"product_uom_name,omitempty" json:"product_uom_name,omitempty"`
+	PropertyValuation  *Selection `xmlrpc:"property_valuation,omitempty" json:"property_valuation,omitempty"`
+	Reason             *String    `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockValuationLayerRevaluations represents array of stock.valuation.layer.revaluation model.

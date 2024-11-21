@@ -2,32 +2,32 @@ package odoo
 
 // TimesheetsAnalysisReport represents timesheets.analysis.report model.
 type TimesheetsAnalysisReport struct {
-	Amount               *Float     `xmlrpc:"amount,omitempty"`
-	BillableTime         *Float     `xmlrpc:"billable_time,omitempty"`
-	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty"`
-	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                 *Time      `xmlrpc:"date,omitempty"`
-	DepartmentId         *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	IsTimerRunning       *Bool      `xmlrpc:"is_timer_running,omitempty"`
-	IsTimesheet          *Bool      `xmlrpc:"is_timesheet,omitempty"`
-	ManagerId            *Many2One  `xmlrpc:"manager_id,omitempty"`
-	Margin               *Float     `xmlrpc:"margin,omitempty"`
-	Name                 *String    `xmlrpc:"name,omitempty"`
-	NonBillableTime      *Float     `xmlrpc:"non_billable_time,omitempty"`
-	OrderId              *Many2One  `xmlrpc:"order_id,omitempty"`
-	ParentTaskId         *Many2One  `xmlrpc:"parent_task_id,omitempty"`
-	ProjectId            *Many2One  `xmlrpc:"project_id,omitempty"`
-	SoLine               *Many2One  `xmlrpc:"so_line,omitempty"`
-	TaskId               *Many2One  `xmlrpc:"task_id,omitempty"`
-	TimesheetInvoiceId   *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty"`
-	TimesheetInvoiceType *Selection `xmlrpc:"timesheet_invoice_type,omitempty"`
-	TimesheetRevenues    *Float     `xmlrpc:"timesheet_revenues,omitempty"`
-	UnitAmount           *Float     `xmlrpc:"unit_amount,omitempty"`
-	UserId               *Many2One  `xmlrpc:"user_id,omitempty"`
-	Validated            *Bool      `xmlrpc:"validated,omitempty"`
+	Amount               *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	BillableTime         *Float     `xmlrpc:"billable_time,omitempty" json:"billable_time,omitempty"`
+	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId           *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                 *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DepartmentId         *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsTimerRunning       *Bool      `xmlrpc:"is_timer_running,omitempty" json:"is_timer_running,omitempty"`
+	IsTimesheet          *Bool      `xmlrpc:"is_timesheet,omitempty" json:"is_timesheet,omitempty"`
+	ManagerId            *Many2One  `xmlrpc:"manager_id,omitempty" json:"manager_id,omitempty"`
+	Margin               *Float     `xmlrpc:"margin,omitempty" json:"margin,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NonBillableTime      *Float     `xmlrpc:"non_billable_time,omitempty" json:"non_billable_time,omitempty"`
+	OrderId              *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	ParentTaskId         *Many2One  `xmlrpc:"parent_task_id,omitempty" json:"parent_task_id,omitempty"`
+	ProjectId            *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SoLine               *Many2One  `xmlrpc:"so_line,omitempty" json:"so_line,omitempty"`
+	TaskId               *Many2One  `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimesheetInvoiceId   *Many2One  `xmlrpc:"timesheet_invoice_id,omitempty" json:"timesheet_invoice_id,omitempty"`
+	TimesheetInvoiceType *Selection `xmlrpc:"timesheet_invoice_type,omitempty" json:"timesheet_invoice_type,omitempty"`
+	TimesheetRevenues    *Float     `xmlrpc:"timesheet_revenues,omitempty" json:"timesheet_revenues,omitempty"`
+	UnitAmount           *Float     `xmlrpc:"unit_amount,omitempty" json:"unit_amount,omitempty"`
+	UserId               *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	Validated            *Bool      `xmlrpc:"validated,omitempty" json:"validated,omitempty"`
 }
 
 // TimesheetsAnalysisReports represents array of timesheets.analysis.report model.

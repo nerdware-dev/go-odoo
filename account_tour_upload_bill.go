@@ -2,15 +2,15 @@ package odoo
 
 // AccountTourUploadBill represents account.tour.upload.bill model.
 type AccountTourUploadBill struct {
-	AttachmentIds  *Relation  `xmlrpc:"attachment_ids,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	PreviewInvoice *String    `xmlrpc:"preview_invoice,omitempty"`
-	Selection      *Selection `xmlrpc:"selection,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttachmentIds  *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PreviewInvoice *String    `xmlrpc:"preview_invoice,omitempty" json:"preview_invoice,omitempty"`
+	Selection      *Selection `xmlrpc:"selection,omitempty" json:"selection,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTourUploadBills represents array of account.tour.upload.bill model.

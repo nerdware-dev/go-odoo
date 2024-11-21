@@ -2,15 +2,15 @@ package odoo
 
 // HrSkillType represents hr.skill.type model.
 type HrSkillType struct {
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	SkillIds      *Relation `xmlrpc:"skill_ids,omitempty"`
-	SkillLevelIds *Relation `xmlrpc:"skill_level_ids,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SkillIds      *Relation `xmlrpc:"skill_ids,omitempty" json:"skill_ids,omitempty"`
+	SkillLevelIds *Relation `xmlrpc:"skill_level_ids,omitempty" json:"skill_level_ids,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrSkillTypes represents array of hr.skill.type model.

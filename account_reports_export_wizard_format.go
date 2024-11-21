@@ -2,16 +2,16 @@ package odoo
 
 // AccountReportsExportWizardFormat represents account_reports.export.wizard.format model.
 type AccountReportsExportWizardFormat struct {
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	ExportWizardId *Many2One `xmlrpc:"export_wizard_id,omitempty"`
-	FunParam       *String   `xmlrpc:"fun_param,omitempty"`
-	FunToCall      *String   `xmlrpc:"fun_to_call,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportWizardId *Many2One `xmlrpc:"export_wizard_id,omitempty" json:"export_wizard_id,omitempty"`
+	FunParam       *String   `xmlrpc:"fun_param,omitempty" json:"fun_param,omitempty"`
+	FunToCall      *String   `xmlrpc:"fun_to_call,omitempty" json:"fun_to_call,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportsExportWizardFormats represents array of account_reports.export.wizard.format model.

@@ -2,20 +2,20 @@ package odoo
 
 // SmsTemplate represents sms.template model.
 type SmsTemplate struct {
-	Body            *String   `xmlrpc:"body,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Lang            *String   `xmlrpc:"lang,omitempty"`
-	Model           *String   `xmlrpc:"model,omitempty"`
-	ModelId         *Many2One `xmlrpc:"model_id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	RenderModel     *String   `xmlrpc:"render_model,omitempty"`
-	SidebarActionId *Many2One `xmlrpc:"sidebar_action_id,omitempty"`
-	TemplateFs      *String   `xmlrpc:"template_fs,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	Body            *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang            *String   `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	Model           *String   `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	ModelId         *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RenderModel     *String   `xmlrpc:"render_model,omitempty" json:"render_model,omitempty"`
+	SidebarActionId *Many2One `xmlrpc:"sidebar_action_id,omitempty" json:"sidebar_action_id,omitempty"`
+	TemplateFs      *String   `xmlrpc:"template_fs,omitempty" json:"template_fs,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsTemplates represents array of sms.template model.

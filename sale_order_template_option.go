@@ -2,19 +2,19 @@ package odoo
 
 // SaleOrderTemplateOption represents sale.order.template.option model.
 type SaleOrderTemplateOption struct {
-	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	Name                 *String   `xmlrpc:"name,omitempty"`
-	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
-	Quantity             *Float    `xmlrpc:"quantity,omitempty"`
-	SaleOrderTemplateId  *Many2One `xmlrpc:"sale_order_template_id,omitempty"`
-	UomId                *Many2One `xmlrpc:"uom_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId            *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	SaleOrderTemplateId  *Many2One `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
+	UomId                *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderTemplateOptions represents array of sale.order.template.option model.

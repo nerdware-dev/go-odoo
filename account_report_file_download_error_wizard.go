@@ -2,15 +2,15 @@ package odoo
 
 // AccountReportFileDownloadErrorWizard represents account.report.file.download.error.wizard model.
 type AccountReportFileDownloadErrorWizard struct {
-	CreateDate           *Time       `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One   `xmlrpc:"create_uid,omitempty"`
-	DisplayName          *String     `xmlrpc:"display_name,omitempty"`
-	FileContent          *String     `xmlrpc:"file_content,omitempty"`
-	FileGenerationErrors interface{} `xmlrpc:"file_generation_errors,omitempty"`
-	FileName             *String     `xmlrpc:"file_name,omitempty"`
-	Id                   *Int        `xmlrpc:"id,omitempty"`
-	WriteDate            *Time       `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One   `xmlrpc:"write_uid,omitempty"`
+	CreateDate           *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FileContent          *String     `xmlrpc:"file_content,omitempty" json:"file_content,omitempty"`
+	FileGenerationErrors interface{} `xmlrpc:"file_generation_errors,omitempty" json:"file_generation_errors,omitempty"`
+	FileName             *String     `xmlrpc:"file_name,omitempty" json:"file_name,omitempty"`
+	Id                   *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate            *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportFileDownloadErrorWizards represents array of account.report.file.download.error.wizard model.

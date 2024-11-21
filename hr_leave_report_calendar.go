@@ -2,21 +2,21 @@ package odoo
 
 // HrLeaveReportCalendar represents hr.leave.report.calendar model.
 type HrLeaveReportCalendar struct {
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	DepartmentId  *Many2One  `xmlrpc:"department_id,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Duration      *Float     `xmlrpc:"duration,omitempty"`
-	EmployeeId    *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	IsAbsent      *Bool      `xmlrpc:"is_absent,omitempty"`
-	IsHatched     *Bool      `xmlrpc:"is_hatched,omitempty"`
-	IsStriked     *Bool      `xmlrpc:"is_striked,omitempty"`
-	JobId         *Many2One  `xmlrpc:"job_id,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	StartDatetime *Time      `xmlrpc:"start_datetime,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	StopDatetime  *Time      `xmlrpc:"stop_datetime,omitempty"`
-	Tz            *Selection `xmlrpc:"tz,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DepartmentId  *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration      *Float     `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	EmployeeId    *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAbsent      *Bool      `xmlrpc:"is_absent,omitempty" json:"is_absent,omitempty"`
+	IsHatched     *Bool      `xmlrpc:"is_hatched,omitempty" json:"is_hatched,omitempty"`
+	IsStriked     *Bool      `xmlrpc:"is_striked,omitempty" json:"is_striked,omitempty"`
+	JobId         *Many2One  `xmlrpc:"job_id,omitempty" json:"job_id,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	StartDatetime *Time      `xmlrpc:"start_datetime,omitempty" json:"start_datetime,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StopDatetime  *Time      `xmlrpc:"stop_datetime,omitempty" json:"stop_datetime,omitempty"`
+	Tz            *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
 }
 
 // HrLeaveReportCalendars represents array of hr.leave.report.calendar model.

@@ -2,18 +2,18 @@ package odoo
 
 // StockReturnPickingLine represents stock.return.picking.line model.
 type StockReturnPickingLine struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	MoveId      *Many2One `xmlrpc:"move_id,omitempty"`
-	ProductId   *Many2One `xmlrpc:"product_id,omitempty"`
-	Quantity    *Float    `xmlrpc:"quantity,omitempty"`
-	ToRefund    *Bool     `xmlrpc:"to_refund,omitempty"`
-	UomId       *Many2One `xmlrpc:"uom_id,omitempty"`
-	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MoveId      *Many2One `xmlrpc:"move_id,omitempty" json:"move_id,omitempty"`
+	ProductId   *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	Quantity    *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	ToRefund    *Bool     `xmlrpc:"to_refund,omitempty" json:"to_refund,omitempty"`
+	UomId       *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockReturnPickingLines represents array of stock.return.picking.line model.

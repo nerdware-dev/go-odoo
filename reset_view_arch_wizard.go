@@ -2,19 +2,19 @@ package odoo
 
 // ResetViewArchWizard represents reset.view.arch.wizard model.
 type ResetViewArchWizard struct {
-	ArchDiff      *String    `xmlrpc:"arch_diff,omitempty"`
-	ArchToCompare *String    `xmlrpc:"arch_to_compare,omitempty"`
-	CompareViewId *Many2One  `xmlrpc:"compare_view_id,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	HasDiff       *Bool      `xmlrpc:"has_diff,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	ResetMode     *Selection `xmlrpc:"reset_mode,omitempty"`
-	ViewId        *Many2One  `xmlrpc:"view_id,omitempty"`
-	ViewName      *String    `xmlrpc:"view_name,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ArchDiff      *String    `xmlrpc:"arch_diff,omitempty" json:"arch_diff,omitempty"`
+	ArchToCompare *String    `xmlrpc:"arch_to_compare,omitempty" json:"arch_to_compare,omitempty"`
+	CompareViewId *Many2One  `xmlrpc:"compare_view_id,omitempty" json:"compare_view_id,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasDiff       *Bool      `xmlrpc:"has_diff,omitempty" json:"has_diff,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResetMode     *Selection `xmlrpc:"reset_mode,omitempty" json:"reset_mode,omitempty"`
+	ViewId        *Many2One  `xmlrpc:"view_id,omitempty" json:"view_id,omitempty"`
+	ViewName      *String    `xmlrpc:"view_name,omitempty" json:"view_name,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResetViewArchWizards represents array of reset.view.arch.wizard model.

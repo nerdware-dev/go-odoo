@@ -2,15 +2,15 @@ package odoo
 
 // MailMessageSchedule represents mail.message.schedule model.
 type MailMessageSchedule struct {
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty"`
-	MailMessageId          *Many2One `xmlrpc:"mail_message_id,omitempty"`
-	NotificationParameters *String   `xmlrpc:"notification_parameters,omitempty"`
-	ScheduledDatetime      *Time     `xmlrpc:"scheduled_datetime,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId          *Many2One `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	NotificationParameters *String   `xmlrpc:"notification_parameters,omitempty" json:"notification_parameters,omitempty"`
+	ScheduledDatetime      *Time     `xmlrpc:"scheduled_datetime,omitempty" json:"scheduled_datetime,omitempty"`
+	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailMessageSchedules represents array of mail.message.schedule model.

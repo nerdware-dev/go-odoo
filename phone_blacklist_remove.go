@@ -2,14 +2,14 @@ package odoo
 
 // PhoneBlacklistRemove represents phone.blacklist.remove model.
 type PhoneBlacklistRemove struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Phone       *String   `xmlrpc:"phone,omitempty"`
-	Reason      *String   `xmlrpc:"reason,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Phone       *String   `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	Reason      *String   `xmlrpc:"reason,omitempty" json:"reason,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PhoneBlacklistRemoves represents array of phone.blacklist.remove model.
