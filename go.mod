@@ -1,4 +1,4 @@
-module github.com/skilld-labs/go-odoo/v17
+module github.com/nerdware-dev/go-odoo/v17
 
 go 1.18
 
