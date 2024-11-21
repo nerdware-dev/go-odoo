@@ -6,7 +6,7 @@ import (
 	"strings"
 	"text/template"
 
-	odoo "github.com/skilld-labs/go-odoo/v13"
+	odoo "github.com/nerdware-dev/go-odoo/v13"
 
 	"github.com/spf13/cobra"
 )
