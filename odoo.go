@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"net/http"
 
 	"github.com/kolo/xmlrpc"
 )
@@ -21,10 +22,11 @@ var (
 
 // ClientConfig is the configuration to create a new *Client by givin connection infomations.
 type ClientConfig struct {
-	Database string
-	Admin    string
-	Password string
-	URL      string
+	Database   string
+	Admin      string
+	Password   string
+	URL        string
+	AuthHeader string
 }
 
 func (c *ClientConfig) valid() bool {
@@ -415,7 +417,7 @@ func (c *Client) loadObjectClient() error {
 
 func (c *Client) loadXmlrpcClient(x *xmlrpc.Client, path string) error {
 	if x.Client == nil {
-		newClient, err := xmlrpc.NewClient(c.cfg.URL+path, nil)
+		newClient, err := xmlrpc.NewClient(c.cfg.URL+path, &odooTransport{RoundTripper: http.DefaultTransport, AuthHeader: c.cfg.AuthHeader})
 		if err != nil {
 			return err
 		}
@@ -448,4 +450,17 @@ func argsFromCriteria(c *Criteria) []interface{} {
 		return []interface{}{*c}
 	}
 	return []interface{}{}
+}
+
+type odooTransport struct {
+	http.RoundTripper
+	AuthHeader string
+}
+
+func (o *odooTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	if o.AuthHeader != "" {
+		req.Header.Add("Authorization", o.AuthHeader)
+	}
+
+	return o.RoundTripper.RoundTrip(req)
 }
