@@ -28,11 +28,6 @@ type WebEditorConverterTests []WebEditorConverterTest
 // WebEditorConverterTestModel is the odoo model name.
 const WebEditorConverterTestModel = "web_editor.converter.test"
 
-// Many2One convert WebEditorConverterTest to *Many2One.
-func (wct *WebEditorConverterTest) Many2One() *Many2One {
-	return NewMany2One(wct.Id.Get(), "")
-}
-
 // CreateWebEditorConverterTest creates a new web_editor.converter.test model and returns its id.
 func (c *Client) CreateWebEditorConverterTest(wct *WebEditorConverterTest) (int64, error) {
 	ids, err := c.CreateWebEditorConverterTests([]*WebEditorConverterTest{wct})

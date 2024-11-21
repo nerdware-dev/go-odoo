@@ -2,7 +2,6 @@ package odoo
 
 // GamificationGoal represents gamification.goal model.
 type GamificationGoal struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty" json:"__last_update,omitempty"`
 	ChallengeId           *Many2One  `xmlrpc:"challenge_id,omitempty" json:"challenge_id,omitempty"`
 	Closed                *Bool      `xmlrpc:"closed,omitempty" json:"closed,omitempty"`
 	Completeness          *Float     `xmlrpc:"completeness,omitempty" json:"completeness,omitempty"`
