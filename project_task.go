@@ -92,6 +92,7 @@ type ProjectTask struct {
 	PersonalStageTypeIds            *Relation   `xmlrpc:"personal_stage_type_ids,omitempty" json:"personal_stage_type_ids,omitempty"`
 	PlannedDateBegin                *Time       `xmlrpc:"planned_date_begin,omitempty" json:"planned_date_begin,omitempty"`
 	PlannedDateStart                *Time       `xmlrpc:"planned_date_start,omitempty" json:"planned_date_start,omitempty"`
+	PlannedHours                    *Float      `xmlrpc:"x_studio_planned_hours,omitempty" json:"x_studio_planned_hours,omitempty"`
 	PlanningOverlap                 *String     `xmlrpc:"planning_overlap,omitempty" json:"planning_overlap,omitempty"`
 	PortalEffectiveHours            *Float      `xmlrpc:"portal_effective_hours,omitempty" json:"portal_effective_hours,omitempty"`
 	PortalProgress                  *Float      `xmlrpc:"portal_progress,omitempty" json:"portal_progress,omitempty"`
