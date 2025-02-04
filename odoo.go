@@ -285,10 +285,6 @@ func (c *Client) SearchRead(model string, criteria *Criteria, options *Options, 
 	if err != nil {
 		return err
 	}
-	respLen := len(resp.([]interface{}))
-	if respLen == 0 {
-		return fmt.Errorf("%s model was %w with criteria %v and options %v", model, ErrNotFound, criteria, options)
-	}
 	if err := convertFromDynamicToStatic(resp, elem); err != nil {
 		return err
 	}
@@ -331,10 +327,6 @@ func (c *Client) Search(model string, criteria *Criteria, options *Options) ([]i
 	resp, err := c.ExecuteKw("search", model, argsFromCriteria(criteria), options)
 	if err != nil {
 		return []int64{}, err
-	}
-	respLen := len(resp.([]interface{}))
-	if respLen == 0 {
-		return []int64{}, fmt.Errorf("%s model was %w with criteria %v and options %v", model, ErrNotFound, criteria, options)
 	}
 	return sliceInterfaceToInt64Slice(resp.([]interface{})), nil
 }
