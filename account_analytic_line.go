@@ -131,7 +131,7 @@ func (c *Client) GetAccountAnalyticLine(id int64) (*AccountAnalyticLine, error) 
 func (c *Client) GetAccountAnalyticLines(ids []int64) (*AccountAnalyticLines, error) {
 	aals := &AccountAnalyticLines{}
 	if err := c.Read(AccountAnalyticLineModel, ids, nil, aals); err != nil {
-		return nil, err
+		return aals, err
 	}
 	return aals, nil
 }
