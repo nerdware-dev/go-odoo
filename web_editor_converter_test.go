@@ -13,7 +13,6 @@ type WebEditorConverterTest struct {
 	Html         *String    `xmlrpc:"html,omitempty" json:"html,omitempty"`
 	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Integer      *Int       `xmlrpc:"integer,omitempty" json:"integer,omitempty"`
-	Many2One     *Many2One  `xmlrpc:"many2one,omitempty" json:"many2one,omitempty"`
 	Numeric      *Float     `xmlrpc:"numeric,omitempty" json:"numeric,omitempty"`
 	SelectionStr *Selection `xmlrpc:"selection_str,omitempty" json:"selection_str,omitempty"`
 	Text         *String    `xmlrpc:"text,omitempty" json:"text,omitempty"`

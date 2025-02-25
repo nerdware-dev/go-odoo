@@ -225,7 +225,7 @@ func (c *Client) GetProjectTask(id int64) (*ProjectTask, error) {
 func (c *Client) GetProjectTasks(ids []int64) (*ProjectTasks, error) {
 	pts := &ProjectTasks{}
 	if err := c.Read(ProjectTaskModel, ids, nil, pts); err != nil {
-		return nil, err
+		return pts, err
 	}
 	return pts, nil
 }

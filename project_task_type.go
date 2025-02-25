@@ -88,7 +88,7 @@ func (c *Client) GetProjectTaskType(id int64) (*ProjectTaskType, error) {
 func (c *Client) GetProjectTaskTypes(ids []int64) (*ProjectTaskTypes, error) {
 	ptts := &ProjectTaskTypes{}
 	if err := c.Read(ProjectTaskTypeModel, ids, nil, ptts); err != nil {
-		return nil, err
+		return ptts, err
 	}
 	return ptts, nil
 }

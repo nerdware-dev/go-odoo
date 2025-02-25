@@ -207,7 +207,7 @@ func (c *Client) GetProjectProject(id int64) (*ProjectProject, error) {
 func (c *Client) GetProjectProjects(ids []int64) (*ProjectProjects, error) {
 	pps := &ProjectProjects{}
 	if err := c.Read(ProjectProjectModel, ids, nil, pps); err != nil {
-		return nil, err
+		return pps, err
 	}
 	return pps, nil
 }

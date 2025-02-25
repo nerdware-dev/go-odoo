@@ -234,7 +234,7 @@ func (c *Client) GetHrEmployee(id int64) (*HrEmployee, error) {
 func (c *Client) GetHrEmployees(ids []int64) (*HrEmployees, error) {
 	hes := &HrEmployees{}
 	if err := c.Read(HrEmployeeModel, ids, nil, hes); err != nil {
-		return nil, err
+		return hes, err
 	}
 	return hes, nil
 }

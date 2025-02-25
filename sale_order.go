@@ -199,7 +199,7 @@ func (c *Client) GetSaleOrder(id int64) (*SaleOrder, error) {
 func (c *Client) GetSaleOrders(ids []int64) (*SaleOrders, error) {
 	sos := &SaleOrders{}
 	if err := c.Read(SaleOrderModel, ids, nil, sos); err != nil {
-		return nil, err
+		return sos, err
 	}
 	return sos, nil
 }

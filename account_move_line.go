@@ -172,7 +172,7 @@ func (c *Client) GetAccountMoveLine(id int64) (*AccountMoveLine, error) {
 func (c *Client) GetAccountMoveLines(ids []int64) (*AccountMoveLines, error) {
 	amls := &AccountMoveLines{}
 	if err := c.Read(AccountMoveLineModel, ids, nil, amls); err != nil {
-		return nil, err
+		return amls, err
 	}
 	return amls, nil
 }

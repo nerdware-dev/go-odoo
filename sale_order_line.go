@@ -151,7 +151,7 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 func (c *Client) GetSaleOrderLines(ids []int64) (*SaleOrderLines, error) {
 	sols := &SaleOrderLines{}
 	if err := c.Read(SaleOrderLineModel, ids, nil, sols); err != nil {
-		return nil, err
+		return sols, err
 	}
 	return sols, nil
 }

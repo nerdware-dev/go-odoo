@@ -270,7 +270,7 @@ func (c *Client) GetAccountMove(id int64) (*AccountMove, error) {
 func (c *Client) GetAccountMoves(ids []int64) (*AccountMoves, error) {
 	ams := &AccountMoves{}
 	if err := c.Read(AccountMoveModel, ids, nil, ams); err != nil {
-		return nil, err
+		return ams, err
 	}
 	return ams, nil
 }
