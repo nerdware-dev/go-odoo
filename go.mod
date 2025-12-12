@@ -1,4 +1,4 @@
-module github.com/nerdware-dev/go-odoo/v17
+module github.com/nerdware-dev/go-odoo/v18
 
 go 1.18
 
