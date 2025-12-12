@@ -3,7 +3,6 @@ package odoo
 // ProductPricelist represents product.pricelist model.
 type ProductPricelist struct {
 	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	ActivityCalendarEventId     *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
@@ -18,7 +17,6 @@ type ProductPricelist struct {
 	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
-	DiscountPolicy              *Selection `xmlrpc:"discount_policy,omitempty" json:"discount_policy,omitempty"`
 	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	HasMessage                  *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
 	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`

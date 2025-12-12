@@ -6,7 +6,6 @@ type AccountSetupBankManualConfig struct {
 	AccNumber                       *String    `xmlrpc:"acc_number,omitempty" json:"acc_number,omitempty"`
 	AccType                         *Selection `xmlrpc:"acc_type,omitempty" json:"acc_type,omitempty"`
 	Active                          *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	ActivityCalendarEventId         *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline            *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration     *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon           *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
@@ -21,10 +20,12 @@ type AccountSetupBankManualConfig struct {
 	BankId                          *Many2One  `xmlrpc:"bank_id,omitempty" json:"bank_id,omitempty"`
 	BankName                        *String    `xmlrpc:"bank_name,omitempty" json:"bank_name,omitempty"`
 	CompanyId                       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode                     *String    `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
 	CreateDate                      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	CurrencyId                      *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
 	DisplayName                     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DuplicateBankPartnerIds         *Relation  `xmlrpc:"duplicate_bank_partner_ids,omitempty" json:"duplicate_bank_partner_ids,omitempty"`
 	HasIbanWarning                  *Bool      `xmlrpc:"has_iban_warning,omitempty" json:"has_iban_warning,omitempty"`
 	HasMessage                      *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
 	HasMoneyTransferWarning         *Bool      `xmlrpc:"has_money_transfer_warning,omitempty" json:"has_money_transfer_warning,omitempty"`

@@ -2,24 +2,37 @@ package odoo
 
 // IapAccount represents iap.account model.
 type IapAccount struct {
-	AccountInfoId    *Many2One `xmlrpc:"account_info_id,omitempty" json:"account_info_id,omitempty"`
-	AccountInfoIds   *Relation `xmlrpc:"account_info_ids,omitempty" json:"account_info_ids,omitempty"`
-	AccountToken     *String   `xmlrpc:"account_token,omitempty" json:"account_token,omitempty"`
-	Balance          *String   `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
-	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	Description      *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	ServiceName      *String   `xmlrpc:"service_name,omitempty" json:"service_name,omitempty"`
-	ShowToken        *Bool     `xmlrpc:"show_token,omitempty" json:"show_token,omitempty"`
-	WarnMe           *Bool     `xmlrpc:"warn_me,omitempty" json:"warn_me,omitempty"`
-	WarningEmail     *String   `xmlrpc:"warning_email,omitempty" json:"warning_email,omitempty"`
-	WarningThreshold *Float    `xmlrpc:"warning_threshold,omitempty" json:"warning_threshold,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AccountToken             *String    `xmlrpc:"account_token,omitempty" json:"account_token,omitempty"`
+	Balance                  *String    `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CompanyIds               *Relation  `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description              *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasMessage               *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RatingIds                *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	SenderName               *String    `xmlrpc:"sender_name,omitempty" json:"sender_name,omitempty"`
+	ServiceId                *Many2One  `xmlrpc:"service_id,omitempty" json:"service_id,omitempty"`
+	ServiceLocked            *Bool      `xmlrpc:"service_locked,omitempty" json:"service_locked,omitempty"`
+	ServiceName              *String    `xmlrpc:"service_name,omitempty" json:"service_name,omitempty"`
+	State                    *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WarningThreshold         *Float     `xmlrpc:"warning_threshold,omitempty" json:"warning_threshold,omitempty"`
+	WarningUserIds           *Relation  `xmlrpc:"warning_user_ids,omitempty" json:"warning_user_ids,omitempty"`
+	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IapAccounts represents array of iap.account model.

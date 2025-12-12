@@ -14,14 +14,12 @@ type SaleOrderTemplate struct {
 	Note                       *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
 	NumberOfDays               *Int      `xmlrpc:"number_of_days,omitempty" json:"number_of_days,omitempty"`
 	PrepaymentPercent          *Float    `xmlrpc:"prepayment_percent,omitempty" json:"prepayment_percent,omitempty"`
+	QuotationDocumentIds       *Relation `xmlrpc:"quotation_document_ids,omitempty" json:"quotation_document_ids,omitempty"`
 	RequirePayment             *Bool     `xmlrpc:"require_payment,omitempty" json:"require_payment,omitempty"`
 	RequireSignature           *Bool     `xmlrpc:"require_signature,omitempty" json:"require_signature,omitempty"`
-	SaleFooter                 *String   `xmlrpc:"sale_footer,omitempty" json:"sale_footer,omitempty"`
-	SaleFooterName             *String   `xmlrpc:"sale_footer_name,omitempty" json:"sale_footer_name,omitempty"`
-	SaleHeader                 *String   `xmlrpc:"sale_header,omitempty" json:"sale_header,omitempty"`
-	SaleHeaderName             *String   `xmlrpc:"sale_header_name,omitempty" json:"sale_header_name,omitempty"`
 	SaleOrderTemplateLineIds   *Relation `xmlrpc:"sale_order_template_line_ids,omitempty" json:"sale_order_template_line_ids,omitempty"`
 	SaleOrderTemplateOptionIds *Relation `xmlrpc:"sale_order_template_option_ids,omitempty" json:"sale_order_template_option_ids,omitempty"`
+	Sequence                   *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	WriteDate                  *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

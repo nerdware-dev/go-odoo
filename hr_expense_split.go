@@ -2,29 +2,29 @@ package odoo
 
 // HrExpenseSplit represents hr.expense.split model.
 type HrExpenseSplit struct {
-	AnalyticDistribution       interface{} `xmlrpc:"analytic_distribution,omitempty" json:"analytic_distribution,omitempty"`
-	AnalyticDistributionSearch interface{} `xmlrpc:"analytic_distribution_search,omitempty" json:"analytic_distribution_search,omitempty"`
-	AnalyticPrecision          *Int        `xmlrpc:"analytic_precision,omitempty" json:"analytic_precision,omitempty"`
-	CanBeReinvoiced            *Bool       `xmlrpc:"can_be_reinvoiced,omitempty" json:"can_be_reinvoiced,omitempty"`
-	CompanyId                  *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
-	CreateDate                 *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid                  *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	CurrencyId                 *Many2One   `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
-	DisplayName                *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	EmployeeId                 *Many2One   `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
-	ExpenseId                  *Many2One   `xmlrpc:"expense_id,omitempty" json:"expense_id,omitempty"`
-	Id                         *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name                       *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	ProductHasCost             *Bool       `xmlrpc:"product_has_cost,omitempty" json:"product_has_cost,omitempty"`
-	ProductHasTax              *Bool       `xmlrpc:"product_has_tax,omitempty" json:"product_has_tax,omitempty"`
-	ProductId                  *Many2One   `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
-	SaleOrderId                *Many2One   `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
-	TaxAmountCurrency          *Float      `xmlrpc:"tax_amount_currency,omitempty" json:"tax_amount_currency,omitempty"`
-	TaxIds                     *Relation   `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
-	TotalAmountCurrency        *Float      `xmlrpc:"total_amount_currency,omitempty" json:"total_amount_currency,omitempty"`
-	WizardId                   *Many2One   `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
-	WriteDate                  *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid                   *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AnalyticDistribution           interface{} `xmlrpc:"analytic_distribution,omitempty" json:"analytic_distribution,omitempty"`
+	AnalyticPrecision              *Int        `xmlrpc:"analytic_precision,omitempty" json:"analytic_precision,omitempty"`
+	CanBeReinvoiced                *Bool       `xmlrpc:"can_be_reinvoiced,omitempty" json:"can_be_reinvoiced,omitempty"`
+	CompanyId                      *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                     *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                      *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                     *Many2One   `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName                    *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DistributionAnalyticAccountIds *Relation   `xmlrpc:"distribution_analytic_account_ids,omitempty" json:"distribution_analytic_account_ids,omitempty"`
+	EmployeeId                     *Many2One   `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	ExpenseId                      *Many2One   `xmlrpc:"expense_id,omitempty" json:"expense_id,omitempty"`
+	Id                             *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                           *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductHasCost                 *Bool       `xmlrpc:"product_has_cost,omitempty" json:"product_has_cost,omitempty"`
+	ProductHasTax                  *Bool       `xmlrpc:"product_has_tax,omitempty" json:"product_has_tax,omitempty"`
+	ProductId                      *Many2One   `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	SaleOrderId                    *Many2One   `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	TaxAmountCurrency              *Float      `xmlrpc:"tax_amount_currency,omitempty" json:"tax_amount_currency,omitempty"`
+	TaxIds                         *Relation   `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	TotalAmountCurrency            *Float      `xmlrpc:"total_amount_currency,omitempty" json:"total_amount_currency,omitempty"`
+	WizardId                       *Many2One   `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate                      *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                       *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrExpenseSplits represents array of hr.expense.split model.

@@ -2,23 +2,24 @@ package odoo
 
 // SpreadsheetDashboard represents spreadsheet.dashboard model.
 type SpreadsheetDashboard struct {
-	CreateDate             *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid              *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DashboardGroupId       *Many2One `xmlrpc:"dashboard_group_id,omitempty" json:"dashboard_group_id,omitempty"`
-	DisplayName            *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	FileName               *String   `xmlrpc:"file_name,omitempty" json:"file_name,omitempty"`
-	GroupIds               *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
-	Id                     *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name                   *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	Sequence               *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	ServerRevisionId       *String   `xmlrpc:"server_revision_id,omitempty" json:"server_revision_id,omitempty"`
-	SpreadsheetBinaryData  *String   `xmlrpc:"spreadsheet_binary_data,omitempty" json:"spreadsheet_binary_data,omitempty"`
-	SpreadsheetData        *String   `xmlrpc:"spreadsheet_data,omitempty" json:"spreadsheet_data,omitempty"`
-	SpreadsheetRevisionIds *Relation `xmlrpc:"spreadsheet_revision_ids,omitempty" json:"spreadsheet_revision_ids,omitempty"`
-	SpreadsheetSnapshot    *String   `xmlrpc:"spreadsheet_snapshot,omitempty" json:"spreadsheet_snapshot,omitempty"`
-	Thumbnail              *String   `xmlrpc:"thumbnail,omitempty" json:"thumbnail,omitempty"`
-	WriteDate              *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid               *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	CompanyId               *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate              *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DashboardGroupId        *Many2One `xmlrpc:"dashboard_group_id,omitempty" json:"dashboard_group_id,omitempty"`
+	DisplayName             *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupIds                *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	Id                      *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPublished             *Bool     `xmlrpc:"is_published,omitempty" json:"is_published,omitempty"`
+	MainDataModelIds        *Relation `xmlrpc:"main_data_model_ids,omitempty" json:"main_data_model_ids,omitempty"`
+	Name                    *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SampleDashboardFilePath *String   `xmlrpc:"sample_dashboard_file_path,omitempty" json:"sample_dashboard_file_path,omitempty"`
+	Sequence                *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SpreadsheetBinaryData   *String   `xmlrpc:"spreadsheet_binary_data,omitempty" json:"spreadsheet_binary_data,omitempty"`
+	SpreadsheetData         *String   `xmlrpc:"spreadsheet_data,omitempty" json:"spreadsheet_data,omitempty"`
+	SpreadsheetFileName     *String   `xmlrpc:"spreadsheet_file_name,omitempty" json:"spreadsheet_file_name,omitempty"`
+	Thumbnail               *String   `xmlrpc:"thumbnail,omitempty" json:"thumbnail,omitempty"`
+	WriteDate               *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SpreadsheetDashboards represents array of spreadsheet.dashboard model.

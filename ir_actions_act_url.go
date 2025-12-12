@@ -11,6 +11,7 @@ type IrActionsActUrl struct {
 	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
 	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Path             *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
 	Target           *Selection `xmlrpc:"target,omitempty" json:"target,omitempty"`
 	Type             *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
 	Url              *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`

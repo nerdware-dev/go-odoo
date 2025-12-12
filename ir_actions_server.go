@@ -32,6 +32,7 @@ type IrActionsServer struct {
 	ModelName                     *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
 	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	Path                          *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
 	ResourceRef                   *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
 	SelectionValue                *Many2One  `xmlrpc:"selection_value,omitempty" json:"selection_value,omitempty"`
 	Sequence                      *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`

@@ -8,6 +8,7 @@ type IrModuleModule struct {
 	AutoInstall      *Bool      `xmlrpc:"auto_install,omitempty" json:"auto_install,omitempty"`
 	CategoryId       *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
 	Contributors     *String    `xmlrpc:"contributors,omitempty" json:"contributors,omitempty"`
+	CountryIds       *Relation  `xmlrpc:"country_ids,omitempty" json:"country_ids,omitempty"`
 	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	Demo             *Bool      `xmlrpc:"demo,omitempty" json:"demo,omitempty"`

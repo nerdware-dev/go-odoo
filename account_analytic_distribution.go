@@ -18,8 +18,8 @@ type AccountAnalyticDistribution struct {
 // AccountAnalyticDistributions represents array of account.analytic.distribution model.
 type AccountAnalyticDistributions []AccountAnalyticDistribution
 
-// AccountAnalyticDistributionModel is the odoo model name.
-const AccountAnalyticDistributionModel = "account.analytic.distribution"
+// AccountAnalyticDistributionModelString is the odoo model name.
+const AccountAnalyticDistributionModelString = "account.analytic.distribution"
 
 // Many2One convert AccountAnalyticDistribution to *Many2One.
 func (aad *AccountAnalyticDistribution) Many2One() *Many2One {
@@ -44,7 +44,7 @@ func (c *Client) CreateAccountAnalyticDistributions(aads []*AccountAnalyticDistr
 	for _, v := range aads {
 		vv = append(vv, v)
 	}
-	return c.Create(AccountAnalyticDistributionModel, vv, nil)
+	return c.Create(AccountAnalyticDistributionModelString, vv, nil)
 }
 
 // UpdateAccountAnalyticDistribution updates an existing account.analytic.distribution record.
@@ -55,7 +55,7 @@ func (c *Client) UpdateAccountAnalyticDistribution(aad *AccountAnalyticDistribut
 // UpdateAccountAnalyticDistributions updates existing account.analytic.distribution records.
 // All records (represented by ids) will be updated by aad values.
 func (c *Client) UpdateAccountAnalyticDistributions(ids []int64, aad *AccountAnalyticDistribution) error {
-	return c.Update(AccountAnalyticDistributionModel, ids, aad, nil)
+	return c.Update(AccountAnalyticDistributionModelString, ids, aad, nil)
 }
 
 // DeleteAccountAnalyticDistribution deletes an existing account.analytic.distribution record.
@@ -65,7 +65,7 @@ func (c *Client) DeleteAccountAnalyticDistribution(id int64) error {
 
 // DeleteAccountAnalyticDistributions deletes existing account.analytic.distribution records.
 func (c *Client) DeleteAccountAnalyticDistributions(ids []int64) error {
-	return c.Delete(AccountAnalyticDistributionModel, ids)
+	return c.Delete(AccountAnalyticDistributionModelString, ids)
 }
 
 // GetAccountAnalyticDistribution gets account.analytic.distribution existing record.
@@ -80,7 +80,7 @@ func (c *Client) GetAccountAnalyticDistribution(id int64) (*AccountAnalyticDistr
 // GetAccountAnalyticDistributions gets account.analytic.distribution existing records.
 func (c *Client) GetAccountAnalyticDistributions(ids []int64) (*AccountAnalyticDistributions, error) {
 	aads := &AccountAnalyticDistributions{}
-	if err := c.Read(AccountAnalyticDistributionModel, ids, nil, aads); err != nil {
+	if err := c.Read(AccountAnalyticDistributionModelString, ids, nil, aads); err != nil {
 		return nil, err
 	}
 	return aads, nil
@@ -89,7 +89,7 @@ func (c *Client) GetAccountAnalyticDistributions(ids []int64) (*AccountAnalyticD
 // FindAccountAnalyticDistribution finds account.analytic.distribution record by querying it with criteria.
 func (c *Client) FindAccountAnalyticDistribution(criteria *Criteria) (*AccountAnalyticDistribution, error) {
 	aads := &AccountAnalyticDistributions{}
-	if err := c.SearchRead(AccountAnalyticDistributionModel, criteria, NewOptions().Limit(1), aads); err != nil {
+	if err := c.SearchRead(AccountAnalyticDistributionModelString, criteria, NewOptions().Limit(1), aads); err != nil {
 		return nil, err
 	}
 	return &((*aads)[0]), nil
@@ -99,7 +99,7 @@ func (c *Client) FindAccountAnalyticDistribution(criteria *Criteria) (*AccountAn
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAnalyticDistributions(criteria *Criteria, options *Options) (*AccountAnalyticDistributions, error) {
 	aads := &AccountAnalyticDistributions{}
-	if err := c.SearchRead(AccountAnalyticDistributionModel, criteria, options, aads); err != nil {
+	if err := c.SearchRead(AccountAnalyticDistributionModelString, criteria, options, aads); err != nil {
 		return nil, err
 	}
 	return aads, nil
@@ -108,12 +108,12 @@ func (c *Client) FindAccountAnalyticDistributions(criteria *Criteria, options *O
 // FindAccountAnalyticDistributionIds finds records ids by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAnalyticDistributionIds(criteria *Criteria, options *Options) ([]int64, error) {
-	return c.Search(AccountAnalyticDistributionModel, criteria, options)
+	return c.Search(AccountAnalyticDistributionModelString, criteria, options)
 }
 
 // FindAccountAnalyticDistributionId finds record id by querying it with criteria.
 func (c *Client) FindAccountAnalyticDistributionId(criteria *Criteria, options *Options) (int64, error) {
-	ids, err := c.Search(AccountAnalyticDistributionModel, criteria, options)
+	ids, err := c.Search(AccountAnalyticDistributionModelString, criteria, options)
 	if err != nil {
 		return -1, err
 	}

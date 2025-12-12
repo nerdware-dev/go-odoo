@@ -6,6 +6,7 @@ type AccountReconcileModel struct {
 	AllowPaymentTolerance      *Bool      `xmlrpc:"allow_payment_tolerance,omitempty" json:"allow_payment_tolerance,omitempty"`
 	AutoReconcile              *Bool      `xmlrpc:"auto_reconcile,omitempty" json:"auto_reconcile,omitempty"`
 	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CounterpartType            *Selection `xmlrpc:"counterpart_type,omitempty" json:"counterpart_type,omitempty"`
 	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DecimalSeparator           *String    `xmlrpc:"decimal_separator,omitempty" json:"decimal_separator,omitempty"`

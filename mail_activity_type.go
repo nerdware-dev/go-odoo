@@ -15,7 +15,6 @@ type MailActivityType struct {
 	DelayLabel           *String    `xmlrpc:"delay_label,omitempty" json:"delay_label,omitempty"`
 	DelayUnit            *Selection `xmlrpc:"delay_unit,omitempty" json:"delay_unit,omitempty"`
 	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	FolderId             *Many2One  `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
 	Icon                 *String    `xmlrpc:"icon,omitempty" json:"icon,omitempty"`
 	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	InitialResModel      *Selection `xmlrpc:"initial_res_model,omitempty" json:"initial_res_model,omitempty"`
@@ -28,7 +27,6 @@ type MailActivityType struct {
 	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	SuggestedNextTypeIds *Relation  `xmlrpc:"suggested_next_type_ids,omitempty" json:"suggested_next_type_ids,omitempty"`
 	Summary              *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
-	TagIds               *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
 	TriggeredNextTypeId  *Many2One  `xmlrpc:"triggered_next_type_id,omitempty" json:"triggered_next_type_id,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

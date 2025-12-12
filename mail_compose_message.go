@@ -43,6 +43,7 @@ type MailComposeMessage struct {
 	SubtypeId            *Many2One  `xmlrpc:"subtype_id,omitempty" json:"subtype_id,omitempty"`
 	SubtypeIsLog         *Bool      `xmlrpc:"subtype_is_log,omitempty" json:"subtype_is_log,omitempty"`
 	TemplateId           *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	TemplateName         *String    `xmlrpc:"template_name,omitempty" json:"template_name,omitempty"`
 	UseExclusionList     *Bool      `xmlrpc:"use_exclusion_list,omitempty" json:"use_exclusion_list,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

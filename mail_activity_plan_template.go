@@ -6,7 +6,11 @@ type MailActivityPlanTemplate struct {
 	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DelayCount      *Int       `xmlrpc:"delay_count,omitempty" json:"delay_count,omitempty"`
+	DelayFrom       *Selection `xmlrpc:"delay_from,omitempty" json:"delay_from,omitempty"`
+	DelayUnit       *Selection `xmlrpc:"delay_unit,omitempty" json:"delay_unit,omitempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Icon            *String    `xmlrpc:"icon,omitempty" json:"icon,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Note            *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
 	PlanId          *Many2One  `xmlrpc:"plan_id,omitempty" json:"plan_id,omitempty"`

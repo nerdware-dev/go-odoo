@@ -11,7 +11,6 @@ type AccountGroup struct {
 	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	ParentId        *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
-	ParentPath      *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
 	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

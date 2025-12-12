@@ -4,6 +4,7 @@ package odoo
 type IrModelFields struct {
 	Column1             *String    `xmlrpc:"column1,omitempty" json:"column1,omitempty"`
 	Column2             *String    `xmlrpc:"column2,omitempty" json:"column2,omitempty"`
+	CompanyDependent    *Bool      `xmlrpc:"company_dependent,omitempty" json:"company_dependent,omitempty"`
 	CompleteName        *String    `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
 	Compute             *String    `xmlrpc:"compute,omitempty" json:"compute,omitempty"`
 	Copied              *Bool      `xmlrpc:"copied,omitempty" json:"copied,omitempty"`

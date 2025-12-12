@@ -4,6 +4,7 @@ package odoo
 type ReportPaperformat struct {
 	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CssMargins       *Bool      `xmlrpc:"css_margins,omitempty" json:"css_margins,omitempty"`
 	Default          *Bool      `xmlrpc:"default,omitempty" json:"default,omitempty"`
 	DisableShrinking *Bool      `xmlrpc:"disable_shrinking,omitempty" json:"disable_shrinking,omitempty"`
 	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`

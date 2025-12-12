@@ -6,8 +6,8 @@ type ProjectProject struct {
 	AccessToken                  *String     `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
 	AccessUrl                    *String     `xmlrpc:"access_url,omitempty" json:"access_url,omitempty"`
 	AccessWarning                *String     `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	AccountId                    *Many2One   `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
 	Active                       *Bool       `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	ActivityCalendarEventId      *Many2One   `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline         *Time       `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration  *Selection  `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon        *String     `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
@@ -32,18 +32,12 @@ type ProjectProject struct {
 	AliasParentModelId           *Many2One   `xmlrpc:"alias_parent_model_id,omitempty" json:"alias_parent_model_id,omitempty"`
 	AliasParentThreadId          *Int        `xmlrpc:"alias_parent_thread_id,omitempty" json:"alias_parent_thread_id,omitempty"`
 	AliasStatus                  *Selection  `xmlrpc:"alias_status,omitempty" json:"alias_status,omitempty"`
-	AllocatedHours               *Float      `xmlrpc:"allocated_hours,omitempty" json:"allocated_hours,omitempty"`
 	AllowBillable                *Bool       `xmlrpc:"allow_billable,omitempty" json:"allow_billable,omitempty"`
 	AllowMilestones              *Bool       `xmlrpc:"allow_milestones,omitempty" json:"allow_milestones,omitempty"`
-	AllowRating                  *Bool       `xmlrpc:"allow_rating,omitempty" json:"allow_rating,omitempty"`
 	AllowTaskDependencies        *Bool       `xmlrpc:"allow_task_dependencies,omitempty" json:"allow_task_dependencies,omitempty"`
-	AllowTimesheets              *Bool       `xmlrpc:"allow_timesheets,omitempty" json:"allow_timesheets,omitempty"`
 	AnalyticAccountBalance       *Float      `xmlrpc:"analytic_account_balance,omitempty" json:"analytic_account_balance,omitempty"`
-	AnalyticAccountId            *Many2One   `xmlrpc:"analytic_account_id,omitempty" json:"analytic_account_id,omitempty"`
-	AssetsCount                  *Int        `xmlrpc:"assets_count,omitempty" json:"assets_count,omitempty"`
-	BillablePercentage           *Int        `xmlrpc:"billable_percentage,omitempty" json:"billable_percentage,omitempty"`
-	BillingType                  *Selection  `xmlrpc:"billing_type,omitempty" json:"billing_type,omitempty"`
-	Budget                       *Int        `xmlrpc:"budget,omitempty" json:"budget,omitempty"`
+	AutoAccountId                *Many2One   `xmlrpc:"auto_account_id,omitempty" json:"auto_account_id,omitempty"`
+	CanMarkMilestoneAsDone       *Bool       `xmlrpc:"can_mark_milestone_as_done,omitempty" json:"can_mark_milestone_as_done,omitempty"`
 	ClosedTaskCount              *Int        `xmlrpc:"closed_task_count,omitempty" json:"closed_task_count,omitempty"`
 	CollaboratorCount            *Int        `xmlrpc:"collaborator_count,omitempty" json:"collaborator_count,omitempty"`
 	CollaboratorIds              *Relation   `xmlrpc:"collaborator_ids,omitempty" json:"collaborator_ids,omitempty"`
@@ -57,12 +51,7 @@ type ProjectProject struct {
 	Description                  *String     `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName                  *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	DisplaySalesStatButtons      *Bool       `xmlrpc:"display_sales_stat_buttons,omitempty" json:"display_sales_stat_buttons,omitempty"`
-	DocCount                     *Int        `xmlrpc:"doc_count,omitempty" json:"doc_count,omitempty"`
-	DocumentCount                *Int        `xmlrpc:"document_count,omitempty" json:"document_count,omitempty"`
-	DocumentsFolderId            *Many2One   `xmlrpc:"documents_folder_id,omitempty" json:"documents_folder_id,omitempty"`
-	DocumentsTagIds              *Relation   `xmlrpc:"documents_tag_ids,omitempty" json:"documents_tag_ids,omitempty"`
-	EncodeUomInDays              *Bool       `xmlrpc:"encode_uom_in_days,omitempty" json:"encode_uom_in_days,omitempty"`
-	ExpensesCount                *Int        `xmlrpc:"expenses_count,omitempty" json:"expenses_count,omitempty"`
+	DurationTracking             interface{} `xmlrpc:"duration_tracking,omitempty" json:"duration_tracking,omitempty"`
 	FavoriteUserIds              *Relation   `xmlrpc:"favorite_user_ids,omitempty" json:"favorite_user_ids,omitempty"`
 	HasAnySoToInvoice            *Bool       `xmlrpc:"has_any_so_to_invoice,omitempty" json:"has_any_so_to_invoice,omitempty"`
 	HasAnySoWithNothingToInvoice *Bool       `xmlrpc:"has_any_so_with_nothing_to_invoice,omitempty" json:"has_any_so_with_nothing_to_invoice,omitempty"`
@@ -70,9 +59,8 @@ type ProjectProject struct {
 	Id                           *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	InvoiceCount                 *Int        `xmlrpc:"invoice_count,omitempty" json:"invoice_count,omitempty"`
 	IsFavorite                   *Bool       `xmlrpc:"is_favorite,omitempty" json:"is_favorite,omitempty"`
-	IsInternalProject            *Bool       `xmlrpc:"is_internal_project,omitempty" json:"is_internal_project,omitempty"`
+	IsMilestoneDeadlineExceeded  *Bool       `xmlrpc:"is_milestone_deadline_exceeded,omitempty" json:"is_milestone_deadline_exceeded,omitempty"`
 	IsMilestoneExceeded          *Bool       `xmlrpc:"is_milestone_exceeded,omitempty" json:"is_milestone_exceeded,omitempty"`
-	IsProjectOvertime            *Bool       `xmlrpc:"is_project_overtime,omitempty" json:"is_project_overtime,omitempty"`
 	LabelTasks                   *String     `xmlrpc:"label_tasks,omitempty" json:"label_tasks,omitempty"`
 	LastUpdateColor              *Int        `xmlrpc:"last_update_color,omitempty" json:"last_update_color,omitempty"`
 	LastUpdateId                 *Many2One   `xmlrpc:"last_update_id,omitempty" json:"last_update_id,omitempty"`
@@ -90,11 +78,12 @@ type ProjectProject struct {
 	MilestoneCount               *Int        `xmlrpc:"milestone_count,omitempty" json:"milestone_count,omitempty"`
 	MilestoneCountReached        *Int        `xmlrpc:"milestone_count_reached,omitempty" json:"milestone_count_reached,omitempty"`
 	MilestoneIds                 *Relation   `xmlrpc:"milestone_ids,omitempty" json:"milestone_ids,omitempty"`
+	MilestoneProgress            *Int        `xmlrpc:"milestone_progress,omitempty" json:"milestone_progress,omitempty"`
 	MyActivityDateDeadline       *Time       `xmlrpc:"my_activity_date_deadline,omitempty" json:"my_activity_date_deadline,omitempty"`
 	Name                         *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NextMilestoneId              *Many2One   `xmlrpc:"next_milestone_id,omitempty" json:"next_milestone_id,omitempty"`
 	OpenTaskCount                *Int        `xmlrpc:"open_task_count,omitempty" json:"open_task_count,omitempty"`
 	PartnerId                    *Many2One   `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
-	PricingType                  *Selection  `xmlrpc:"pricing_type,omitempty" json:"pricing_type,omitempty"`
 	PrivacyVisibility            *Selection  `xmlrpc:"privacy_visibility,omitempty" json:"privacy_visibility,omitempty"`
 	PrivacyVisibilityWarning     *String     `xmlrpc:"privacy_visibility_warning,omitempty" json:"privacy_visibility_warning,omitempty"`
 	PurchaseOrdersCount          *Int        `xmlrpc:"purchase_orders_count,omitempty" json:"purchase_orders_count,omitempty"`
@@ -107,38 +96,31 @@ type ProjectProject struct {
 	RatingRequestDeadline        *Time       `xmlrpc:"rating_request_deadline,omitempty" json:"rating_request_deadline,omitempty"`
 	RatingStatus                 *Selection  `xmlrpc:"rating_status,omitempty" json:"rating_status,omitempty"`
 	RatingStatusPeriod           *Selection  `xmlrpc:"rating_status_period,omitempty" json:"rating_status_period,omitempty"`
-	RemainingHours               *Float      `xmlrpc:"remaining_hours,omitempty" json:"remaining_hours,omitempty"`
+	ReinvoicedSaleOrderId        *Many2One   `xmlrpc:"reinvoiced_sale_order_id,omitempty" json:"reinvoiced_sale_order_id,omitempty"`
 	ResourceCalendarId           *Many2One   `xmlrpc:"resource_calendar_id,omitempty" json:"resource_calendar_id,omitempty"`
-	SaleLineEmployeeIds          *Relation   `xmlrpc:"sale_line_employee_ids,omitempty" json:"sale_line_employee_ids,omitempty"`
 	SaleLineId                   *Many2One   `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
 	SaleOrderCount               *Int        `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
 	SaleOrderId                  *Many2One   `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
 	SaleOrderLineCount           *Int        `xmlrpc:"sale_order_line_count,omitempty" json:"sale_order_line_count,omitempty"`
+	SaleOrderState               *Selection  `xmlrpc:"sale_order_state,omitempty" json:"sale_order_state,omitempty"`
 	Sequence                     *Int        `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	SharedDocumentCount          *Int        `xmlrpc:"shared_document_count,omitempty" json:"shared_document_count,omitempty"`
-	SharedDocumentIds            *Relation   `xmlrpc:"shared_document_ids,omitempty" json:"shared_document_ids,omitempty"`
 	StageId                      *Many2One   `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
 	TagIds                       *Relation   `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaskCompletionPercentage     *Float      `xmlrpc:"task_completion_percentage,omitempty" json:"task_completion_percentage,omitempty"`
 	TaskCount                    *Int        `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
 	TaskIds                      *Relation   `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
 	TaskPropertiesDefinition     interface{} `xmlrpc:"task_properties_definition,omitempty" json:"task_properties_definition,omitempty"`
 	Tasks                        *Relation   `xmlrpc:"tasks,omitempty" json:"tasks,omitempty"`
-	TimesheetEncodeUomId         *Many2One   `xmlrpc:"timesheet_encode_uom_id,omitempty" json:"timesheet_encode_uom_id,omitempty"`
-	TimesheetIds                 *Relation   `xmlrpc:"timesheet_ids,omitempty" json:"timesheet_ids,omitempty"`
-	TimesheetProductId           *Many2One   `xmlrpc:"timesheet_product_id,omitempty" json:"timesheet_product_id,omitempty"`
-	TotalBudgetProgress          *Float      `xmlrpc:"total_budget_progress,omitempty" json:"total_budget_progress,omitempty"`
-	TotalPlannedAmount           *Float      `xmlrpc:"total_planned_amount,omitempty" json:"total_planned_amount,omitempty"`
-	TotalPracticalAmount         *Float      `xmlrpc:"total_practical_amount,omitempty" json:"total_practical_amount,omitempty"`
-	TotalTimesheetTime           *Int        `xmlrpc:"total_timesheet_time,omitempty" json:"total_timesheet_time,omitempty"`
 	TypeIds                      *Relation   `xmlrpc:"type_ids,omitempty" json:"type_ids,omitempty"`
+	UpdateCount                  *Int        `xmlrpc:"update_count,omitempty" json:"update_count,omitempty"`
 	UpdateIds                    *Relation   `xmlrpc:"update_ids,omitempty" json:"update_ids,omitempty"`
-	UseDocuments                 *Bool       `xmlrpc:"use_documents,omitempty" json:"use_documents,omitempty"`
 	UserId                       *Many2One   `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 	VendorBillCount              *Int        `xmlrpc:"vendor_bill_count,omitempty" json:"vendor_bill_count,omitempty"`
-	WarningEmployeeRate          *Bool       `xmlrpc:"warning_employee_rate,omitempty" json:"warning_employee_rate,omitempty"`
 	WebsiteMessageIds            *Relation   `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 	WriteDate                    *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                     *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XPlan2Id                     *Many2One   `xmlrpc:"x_plan2_id,omitempty" json:"x_plan2_id,omitempty"`
+	XPlan3Id                     *Many2One   `xmlrpc:"x_plan3_id,omitempty" json:"x_plan3_id,omitempty"`
 }
 
 // ProjectProjects represents array of project.project model.
@@ -207,7 +189,7 @@ func (c *Client) GetProjectProject(id int64) (*ProjectProject, error) {
 func (c *Client) GetProjectProjects(ids []int64) (*ProjectProjects, error) {
 	pps := &ProjectProjects{}
 	if err := c.Read(ProjectProjectModel, ids, nil, pps); err != nil {
-		return pps, err
+		return nil, err
 	}
 	return pps, nil
 }

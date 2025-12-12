@@ -8,7 +8,6 @@ type SaleOrderCancel struct {
 	CanEditBody                *Bool     `xmlrpc:"can_edit_body,omitempty" json:"can_edit_body,omitempty"`
 	CreateDate                 *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayDeliveryAlert       *Bool     `xmlrpc:"display_delivery_alert,omitempty" json:"display_delivery_alert,omitempty"`
 	DisplayInvoiceAlert        *Bool     `xmlrpc:"display_invoice_alert,omitempty" json:"display_invoice_alert,omitempty"`
 	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	DisplayPurchaseOrdersAlert *Bool     `xmlrpc:"display_purchase_orders_alert,omitempty" json:"display_purchase_orders_alert,omitempty"`

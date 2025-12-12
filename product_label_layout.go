@@ -9,8 +9,6 @@ type ProductLabelLayout struct {
 	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	ExtraHtml      *String    `xmlrpc:"extra_html,omitempty" json:"extra_html,omitempty"`
 	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	MoveIds        *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
-	MoveQuantity   *Selection `xmlrpc:"move_quantity,omitempty" json:"move_quantity,omitempty"`
 	PricelistId    *Many2One  `xmlrpc:"pricelist_id,omitempty" json:"pricelist_id,omitempty"`
 	PrintFormat    *Selection `xmlrpc:"print_format,omitempty" json:"print_format,omitempty"`
 	ProductIds     *Relation  `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`

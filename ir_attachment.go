@@ -11,7 +11,6 @@ type IrAttachment struct {
 	DbDatas      *String    `xmlrpc:"db_datas,omitempty" json:"db_datas,omitempty"`
 	Description  *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	DocumentIds  *Relation  `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
 	FileSize     *Int       `xmlrpc:"file_size,omitempty" json:"file_size,omitempty"`
 	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	ImageHeight  *Int       `xmlrpc:"image_height,omitempty" json:"image_height,omitempty"`

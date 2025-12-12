@@ -3,8 +3,8 @@ package odoo
 // MailMail represents mail.mail model.
 type MailMail struct {
 	AccountAuditLogAccountId   *Many2One  `xmlrpc:"account_audit_log_account_id,omitempty" json:"account_audit_log_account_id,omitempty"`
+	AccountAuditLogActivated   *Bool      `xmlrpc:"account_audit_log_activated,omitempty" json:"account_audit_log_activated,omitempty"`
 	AccountAuditLogCompanyId   *Many2One  `xmlrpc:"account_audit_log_company_id,omitempty" json:"account_audit_log_company_id,omitempty"`
-	AccountAuditLogDisplayName *String    `xmlrpc:"account_audit_log_display_name,omitempty" json:"account_audit_log_display_name,omitempty"`
 	AccountAuditLogMoveId      *Many2One  `xmlrpc:"account_audit_log_move_id,omitempty" json:"account_audit_log_move_id,omitempty"`
 	AccountAuditLogPartnerId   *Many2One  `xmlrpc:"account_audit_log_partner_id,omitempty" json:"account_audit_log_partner_id,omitempty"`
 	AccountAuditLogPreview     *String    `xmlrpc:"account_audit_log_preview,omitempty" json:"account_audit_log_preview,omitempty"`
@@ -21,7 +21,6 @@ type MailMail struct {
 	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	Date                       *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
-	Description                *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	EmailAddSignature          *Bool      `xmlrpc:"email_add_signature,omitempty" json:"email_add_signature,omitempty"`
 	EmailCc                    *String    `xmlrpc:"email_cc,omitempty" json:"email_cc,omitempty"`
@@ -55,6 +54,7 @@ type MailMail struct {
 	PartnerIds                 *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
 	PinnedAt                   *Time      `xmlrpc:"pinned_at,omitempty" json:"pinned_at,omitempty"`
 	Preview                    *String    `xmlrpc:"preview,omitempty" json:"preview,omitempty"`
+	RatingId                   *Many2One  `xmlrpc:"rating_id,omitempty" json:"rating_id,omitempty"`
 	RatingIds                  *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	RatingValue                *Float     `xmlrpc:"rating_value,omitempty" json:"rating_value,omitempty"`
 	ReactionIds                *Relation  `xmlrpc:"reaction_ids,omitempty" json:"reaction_ids,omitempty"`
@@ -68,7 +68,6 @@ type MailMail struct {
 	ResId                      *Many2One  `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
 	RestrictedAttachmentCount  *Int       `xmlrpc:"restricted_attachment_count,omitempty" json:"restricted_attachment_count,omitempty"`
 	ScheduledDate              *Time      `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
-	ShowAuditLog               *Bool      `xmlrpc:"show_audit_log,omitempty" json:"show_audit_log,omitempty"`
 	SnailmailError             *Bool      `xmlrpc:"snailmail_error,omitempty" json:"snailmail_error,omitempty"`
 	Starred                    *Bool      `xmlrpc:"starred,omitempty" json:"starred,omitempty"`
 	StarredPartnerIds          *Relation  `xmlrpc:"starred_partner_ids,omitempty" json:"starred_partner_ids,omitempty"`

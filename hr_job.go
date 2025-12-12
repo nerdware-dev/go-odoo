@@ -26,7 +26,6 @@ type HrJob struct {
 	MessagePartnerIds        *Relation `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
 	Name                     *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	NoOfEmployee             *Int      `xmlrpc:"no_of_employee,omitempty" json:"no_of_employee,omitempty"`
-	NoOfHiredEmployee        *Int      `xmlrpc:"no_of_hired_employee,omitempty" json:"no_of_hired_employee,omitempty"`
 	NoOfRecruitment          *Int      `xmlrpc:"no_of_recruitment,omitempty" json:"no_of_recruitment,omitempty"`
 	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	Requirements             *String   `xmlrpc:"requirements,omitempty" json:"requirements,omitempty"`

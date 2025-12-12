@@ -12,6 +12,7 @@ type SaleOrderDiscount struct {
 	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	SaleOrderId        *Many2One  `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	TaxIds             *Relation  `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
 	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

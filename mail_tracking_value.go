@@ -6,7 +6,6 @@ type MailTrackingValue struct {
 	CreateUid        *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	CurrencyId       *Many2One   `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
 	DisplayName      *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	FieldGroups      *String     `xmlrpc:"field_groups,omitempty" json:"field_groups,omitempty"`
 	FieldId          *Many2One   `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
 	FieldInfo        interface{} `xmlrpc:"field_info,omitempty" json:"field_info,omitempty"`
 	Id               *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`

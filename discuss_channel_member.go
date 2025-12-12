@@ -12,17 +12,18 @@ type DiscussChannelMember struct {
 	FoldState            *Selection `xmlrpc:"fold_state,omitempty" json:"fold_state,omitempty"`
 	GuestId              *Many2One  `xmlrpc:"guest_id,omitempty" json:"guest_id,omitempty"`
 	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	IsMinimized          *Bool      `xmlrpc:"is_minimized,omitempty" json:"is_minimized,omitempty"`
 	IsPinned             *Bool      `xmlrpc:"is_pinned,omitempty" json:"is_pinned,omitempty"`
 	IsSelf               *Bool      `xmlrpc:"is_self,omitempty" json:"is_self,omitempty"`
 	LastInterestDt       *Time      `xmlrpc:"last_interest_dt,omitempty" json:"last_interest_dt,omitempty"`
 	LastSeenDt           *Time      `xmlrpc:"last_seen_dt,omitempty" json:"last_seen_dt,omitempty"`
 	MessageUnreadCounter *Int       `xmlrpc:"message_unread_counter,omitempty" json:"message_unread_counter,omitempty"`
 	MuteUntilDt          *Time      `xmlrpc:"mute_until_dt,omitempty" json:"mute_until_dt,omitempty"`
+	NewMessageSeparator  *Int       `xmlrpc:"new_message_separator,omitempty" json:"new_message_separator,omitempty"`
 	PartnerId            *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
 	RtcInvitingSessionId *Many2One  `xmlrpc:"rtc_inviting_session_id,omitempty" json:"rtc_inviting_session_id,omitempty"`
 	RtcSessionIds        *Relation  `xmlrpc:"rtc_session_ids,omitempty" json:"rtc_session_ids,omitempty"`
 	SeenMessageId        *Many2One  `xmlrpc:"seen_message_id,omitempty" json:"seen_message_id,omitempty"`
+	UnpinDt              *Time      `xmlrpc:"unpin_dt,omitempty" json:"unpin_dt,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

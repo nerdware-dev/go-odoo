@@ -14,6 +14,7 @@ type IrActionsClient struct {
 	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Params           *String    `xmlrpc:"params,omitempty" json:"params,omitempty"`
 	ParamsStore      *String    `xmlrpc:"params_store,omitempty" json:"params_store,omitempty"`
+	Path             *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
 	ResModel         *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
 	Tag              *String    `xmlrpc:"tag,omitempty" json:"tag,omitempty"`
 	Target           *Selection `xmlrpc:"target,omitempty" json:"target,omitempty"`

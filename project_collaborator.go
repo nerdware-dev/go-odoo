@@ -2,15 +2,16 @@ package odoo
 
 // ProjectCollaborator represents project.collaborator model.
 type ProjectCollaborator struct {
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	PartnerEmail *String   `xmlrpc:"partner_email,omitempty" json:"partner_email,omitempty"`
-	PartnerId    *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
-	ProjectId    *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LimitedAccess *Bool     `xmlrpc:"limited_access,omitempty" json:"limited_access,omitempty"`
+	PartnerEmail  *String   `xmlrpc:"partner_email,omitempty" json:"partner_email,omitempty"`
+	PartnerId     *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProjectId     *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCollaborators represents array of project.collaborator model.

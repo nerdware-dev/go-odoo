@@ -3,12 +3,13 @@ package odoo
 // ResourceCalendar represents resource.calendar model.
 type ResourceCalendar struct {
 	Active                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	AssociatedLeavesCount *Int       `xmlrpc:"associated_leaves_count,omitempty" json:"associated_leaves_count,omitempty"`
 	AttendanceIds         *Relation  `xmlrpc:"attendance_ids,omitempty" json:"attendance_ids,omitempty"`
 	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FlexibleHours         *Bool      `xmlrpc:"flexible_hours,omitempty" json:"flexible_hours,omitempty"`
+	FullTimeRequiredHours *Float     `xmlrpc:"full_time_required_hours,omitempty" json:"full_time_required_hours,omitempty"`
 	GlobalLeaveIds        *Relation  `xmlrpc:"global_leave_ids,omitempty" json:"global_leave_ids,omitempty"`
 	HoursPerDay           *Float     `xmlrpc:"hours_per_day,omitempty" json:"hours_per_day,omitempty"`
 	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`

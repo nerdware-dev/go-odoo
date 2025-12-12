@@ -6,7 +6,6 @@ type ProjectTaskType struct {
 	AutoValidationState   *Bool     `xmlrpc:"auto_validation_state,omitempty" json:"auto_validation_state,omitempty"`
 	CreateDate            *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid             *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	Description           *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisabledRatingWarning *String   `xmlrpc:"disabled_rating_warning,omitempty" json:"disabled_rating_warning,omitempty"`
 	DisplayName           *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Fold                  *Bool     `xmlrpc:"fold,omitempty" json:"fold,omitempty"`
@@ -88,7 +87,7 @@ func (c *Client) GetProjectTaskType(id int64) (*ProjectTaskType, error) {
 func (c *Client) GetProjectTaskTypes(ids []int64) (*ProjectTaskTypes, error) {
 	ptts := &ProjectTaskTypes{}
 	if err := c.Read(ProjectTaskTypeModel, ids, nil, ptts); err != nil {
-		return ptts, err
+		return nil, err
 	}
 	return ptts, nil
 }

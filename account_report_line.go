@@ -2,32 +2,32 @@ package odoo
 
 // AccountReportLine represents account.report.line model.
 type AccountReportLine struct {
-	AccountCodesFormula         *String   `xmlrpc:"account_codes_formula,omitempty" json:"account_codes_formula,omitempty"`
-	ActionId                    *Many2One `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
-	AggregationFormula          *String   `xmlrpc:"aggregation_formula,omitempty" json:"aggregation_formula,omitempty"`
-	ChildrenIds                 *Relation `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
-	Code                        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
-	CreateDate                  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid                   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayCustomGroupbyWarning *Bool     `xmlrpc:"display_custom_groupby_warning,omitempty" json:"display_custom_groupby_warning,omitempty"`
-	DisplayName                 *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	DomainFormula               *String   `xmlrpc:"domain_formula,omitempty" json:"domain_formula,omitempty"`
-	ExpressionIds               *Relation `xmlrpc:"expression_ids,omitempty" json:"expression_ids,omitempty"`
-	ExternalFormula             *String   `xmlrpc:"external_formula,omitempty" json:"external_formula,omitempty"`
-	Foldable                    *Bool     `xmlrpc:"foldable,omitempty" json:"foldable,omitempty"`
-	Groupby                     *String   `xmlrpc:"groupby,omitempty" json:"groupby,omitempty"`
-	HideIfZero                  *Bool     `xmlrpc:"hide_if_zero,omitempty" json:"hide_if_zero,omitempty"`
-	HierarchyLevel              *Int      `xmlrpc:"hierarchy_level,omitempty" json:"hierarchy_level,omitempty"`
-	Id                          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name                        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	ParentId                    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
-	PrintOnNewPage              *Bool     `xmlrpc:"print_on_new_page,omitempty" json:"print_on_new_page,omitempty"`
-	ReportId                    *Many2One `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
-	Sequence                    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	TaxTagsFormula              *String   `xmlrpc:"tax_tags_formula,omitempty" json:"tax_tags_formula,omitempty"`
-	UserGroupby                 *String   `xmlrpc:"user_groupby,omitempty" json:"user_groupby,omitempty"`
-	WriteDate                   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid                    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AccountCodesFormula *String    `xmlrpc:"account_codes_formula,omitempty" json:"account_codes_formula,omitempty"`
+	ActionId            *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	AggregationFormula  *String    `xmlrpc:"aggregation_formula,omitempty" json:"aggregation_formula,omitempty"`
+	ChildrenIds         *Relation  `xmlrpc:"children_ids,omitempty" json:"children_ids,omitempty"`
+	Code                *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DomainFormula       *String    `xmlrpc:"domain_formula,omitempty" json:"domain_formula,omitempty"`
+	ExpressionIds       *Relation  `xmlrpc:"expression_ids,omitempty" json:"expression_ids,omitempty"`
+	ExternalFormula     *String    `xmlrpc:"external_formula,omitempty" json:"external_formula,omitempty"`
+	Foldable            *Bool      `xmlrpc:"foldable,omitempty" json:"foldable,omitempty"`
+	Groupby             *String    `xmlrpc:"groupby,omitempty" json:"groupby,omitempty"`
+	HideIfZero          *Bool      `xmlrpc:"hide_if_zero,omitempty" json:"hide_if_zero,omitempty"`
+	HierarchyLevel      *Int       `xmlrpc:"hierarchy_level,omitempty" json:"hierarchy_level,omitempty"`
+	HorizontalSplitSide *Selection `xmlrpc:"horizontal_split_side,omitempty" json:"horizontal_split_side,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId            *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	PrintOnNewPage      *Bool      `xmlrpc:"print_on_new_page,omitempty" json:"print_on_new_page,omitempty"`
+	ReportId            *Many2One  `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	Sequence            *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TaxTagsFormula      *String    `xmlrpc:"tax_tags_formula,omitempty" json:"tax_tags_formula,omitempty"`
+	UserGroupby         *String    `xmlrpc:"user_groupby,omitempty" json:"user_groupby,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportLines represents array of account.report.line model.

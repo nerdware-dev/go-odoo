@@ -2,7 +2,6 @@ package odoo
 
 // AccountCashRounding represents account.cash.rounding model.
 type AccountCashRounding struct {
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`

@@ -2,19 +2,20 @@ package odoo
 
 // AccountAnalyticApplicability represents account.analytic.applicability model.
 type AccountAnalyticApplicability struct {
-	AccountPrefix        *String    `xmlrpc:"account_prefix,omitempty" json:"account_prefix,omitempty"`
-	AnalyticPlanId       *Many2One  `xmlrpc:"analytic_plan_id,omitempty" json:"analytic_plan_id,omitempty"`
-	Applicability        *Selection `xmlrpc:"applicability,omitempty" json:"applicability,omitempty"`
-	BusinessDomain       *Selection `xmlrpc:"business_domain,omitempty" json:"business_domain,omitempty"`
-	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayAccountPrefix *Bool      `xmlrpc:"display_account_prefix,omitempty" json:"display_account_prefix,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	ProductCategId       *Many2One  `xmlrpc:"product_categ_id,omitempty" json:"product_categ_id,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AccountPrefix            *String    `xmlrpc:"account_prefix,omitempty" json:"account_prefix,omitempty"`
+	AccountPrefixPlaceholder *String    `xmlrpc:"account_prefix_placeholder,omitempty" json:"account_prefix_placeholder,omitempty"`
+	AnalyticPlanId           *Many2One  `xmlrpc:"analytic_plan_id,omitempty" json:"analytic_plan_id,omitempty"`
+	Applicability            *Selection `xmlrpc:"applicability,omitempty" json:"applicability,omitempty"`
+	BusinessDomain           *Selection `xmlrpc:"business_domain,omitempty" json:"business_domain,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayAccountPrefix     *Bool      `xmlrpc:"display_account_prefix,omitempty" json:"display_account_prefix,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductCategId           *Many2One  `xmlrpc:"product_categ_id,omitempty" json:"product_categ_id,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAnalyticApplicabilitys represents array of account.analytic.applicability model.

@@ -3,6 +3,7 @@ package odoo
 // AccountFiscalPosition represents account.fiscal.position model.
 type AccountFiscalPosition struct {
 	AccountIds           *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	AccountMap           *String    `xmlrpc:"account_map,omitempty" json:"account_map,omitempty"`
 	Active               *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
 	AutoApply            *Bool      `xmlrpc:"auto_apply,omitempty" json:"auto_apply,omitempty"`
 	CompanyCountryId     *Many2One  `xmlrpc:"company_country_id,omitempty" json:"company_country_id,omitempty"`
@@ -22,6 +23,7 @@ type AccountFiscalPosition struct {
 	StateIds             *Relation  `xmlrpc:"state_ids,omitempty" json:"state_ids,omitempty"`
 	StatesCount          *Int       `xmlrpc:"states_count,omitempty" json:"states_count,omitempty"`
 	TaxIds               *Relation  `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	TaxMap               *String    `xmlrpc:"tax_map,omitempty" json:"tax_map,omitempty"`
 	VatRequired          *Bool      `xmlrpc:"vat_required,omitempty" json:"vat_required,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

@@ -11,6 +11,7 @@ type AccountTaxGroup struct {
 	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Name                       *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PosReceiptLabel            *String   `xmlrpc:"pos_receipt_label,omitempty" json:"pos_receipt_label,omitempty"`
 	PrecedingSubtotal          *String   `xmlrpc:"preceding_subtotal,omitempty" json:"preceding_subtotal,omitempty"`
 	Sequence                   *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	TaxPayableAccountId        *Many2One `xmlrpc:"tax_payable_account_id,omitempty" json:"tax_payable_account_id,omitempty"`

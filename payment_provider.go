@@ -32,16 +32,7 @@ type PaymentProvider struct {
 	PendingMsg                *String    `xmlrpc:"pending_msg,omitempty" json:"pending_msg,omitempty"`
 	PreMsg                    *String    `xmlrpc:"pre_msg,omitempty" json:"pre_msg,omitempty"`
 	RedirectFormViewId        *Many2One  `xmlrpc:"redirect_form_view_id,omitempty" json:"redirect_form_view_id,omitempty"`
-	RequireCurrency           *Bool      `xmlrpc:"require_currency,omitempty" json:"require_currency,omitempty"`
 	Sequence                  *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	ShowAllowExpressCheckout  *Bool      `xmlrpc:"show_allow_express_checkout,omitempty" json:"show_allow_express_checkout,omitempty"`
-	ShowAllowTokenization     *Bool      `xmlrpc:"show_allow_tokenization,omitempty" json:"show_allow_tokenization,omitempty"`
-	ShowAuthMsg               *Bool      `xmlrpc:"show_auth_msg,omitempty" json:"show_auth_msg,omitempty"`
-	ShowCancelMsg             *Bool      `xmlrpc:"show_cancel_msg,omitempty" json:"show_cancel_msg,omitempty"`
-	ShowCredentialsPage       *Bool      `xmlrpc:"show_credentials_page,omitempty" json:"show_credentials_page,omitempty"`
-	ShowDoneMsg               *Bool      `xmlrpc:"show_done_msg,omitempty" json:"show_done_msg,omitempty"`
-	ShowPendingMsg            *Bool      `xmlrpc:"show_pending_msg,omitempty" json:"show_pending_msg,omitempty"`
-	ShowPreMsg                *Bool      `xmlrpc:"show_pre_msg,omitempty" json:"show_pre_msg,omitempty"`
 	SoReferenceType           *Selection `xmlrpc:"so_reference_type,omitempty" json:"so_reference_type,omitempty"`
 	State                     *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 	SupportExpressCheckout    *Bool      `xmlrpc:"support_express_checkout,omitempty" json:"support_express_checkout,omitempty"`

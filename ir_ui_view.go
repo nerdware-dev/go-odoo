@@ -25,6 +25,7 @@ type IrUiView struct {
 	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Priority           *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
 	Type               *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WarningInfo        *String    `xmlrpc:"warning_info,omitempty" json:"warning_info,omitempty"`
 	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 	XmlId              *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`

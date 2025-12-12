@@ -8,7 +8,6 @@ type MailActivity struct {
 	ActivityTypeId            *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
 	AttachmentIds             *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
 	Automated                 *Bool      `xmlrpc:"automated,omitempty" json:"automated,omitempty"`
-	CalendarEventId           *Many2One  `xmlrpc:"calendar_event_id,omitempty" json:"calendar_event_id,omitempty"`
 	CanWrite                  *Bool      `xmlrpc:"can_write,omitempty" json:"can_write,omitempty"`
 	ChainingType              *Selection `xmlrpc:"chaining_type,omitempty" json:"chaining_type,omitempty"`
 	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
@@ -31,6 +30,7 @@ type MailActivity struct {
 	State                     *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 	Summary                   *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
 	UserId                    *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	UserTz                    *Selection `xmlrpc:"user_tz,omitempty" json:"user_tz,omitempty"`
 	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

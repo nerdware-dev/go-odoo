@@ -7,7 +7,6 @@ type UtmCampaign struct {
 	CompanyId      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	CrmLeadCount   *Int      `xmlrpc:"crm_lead_count,omitempty" json:"crm_lead_count,omitempty"`
 	CurrencyId     *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
 	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
@@ -18,7 +17,6 @@ type UtmCampaign struct {
 	StageId        *Many2One `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
 	TagIds         *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
 	Title          *String   `xmlrpc:"title,omitempty" json:"title,omitempty"`
-	UseLeads       *Bool     `xmlrpc:"use_leads,omitempty" json:"use_leads,omitempty"`
 	UserId         *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

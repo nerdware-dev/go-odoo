@@ -15,7 +15,6 @@ type UomUom struct {
 	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Ratio              *Float     `xmlrpc:"ratio,omitempty" json:"ratio,omitempty"`
 	Rounding           *Float     `xmlrpc:"rounding,omitempty" json:"rounding,omitempty"`
-	TimesheetWidget    *String    `xmlrpc:"timesheet_widget,omitempty" json:"timesheet_widget,omitempty"`
 	UomType            *Selection `xmlrpc:"uom_type,omitempty" json:"uom_type,omitempty"`
 	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

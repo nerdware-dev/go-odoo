@@ -2,13 +2,15 @@ package odoo
 
 // ResUsersApikeysDescription represents res.users.apikeys.description model.
 type ResUsersApikeysDescription struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration       *Selection `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	ExpirationDate *Time      `xmlrpc:"expiration_date,omitempty" json:"expiration_date,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResUsersApikeysDescriptions represents array of res.users.apikeys.description model.

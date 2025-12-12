@@ -2,10 +2,20 @@ package odoo
 
 // WebTourTour represents web_tour.tour model.
 type WebTourTour struct {
-	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Custom            *Bool     `xmlrpc:"custom,omitempty" json:"custom,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name              *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RainbowManMessage *String   `xmlrpc:"rainbow_man_message,omitempty" json:"rainbow_man_message,omitempty"`
+	Sequence          *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SharingUrl        *String   `xmlrpc:"sharing_url,omitempty" json:"sharing_url,omitempty"`
+	StepIds           *Relation `xmlrpc:"step_ids,omitempty" json:"step_ids,omitempty"`
+	Url               *String   `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	UserConsumedIds   *Relation `xmlrpc:"user_consumed_ids,omitempty" json:"user_consumed_ids,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // WebTourTours represents array of web_tour.tour model.

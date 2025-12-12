@@ -2,6 +2,7 @@ package odoo
 
 // HrEmployeeSkill represents hr.employee.skill model.
 type HrEmployeeSkill struct {
+	Color         *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
 	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`

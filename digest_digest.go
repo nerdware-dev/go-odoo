@@ -10,16 +10,10 @@ type DigestDigest struct {
 	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	IsSubscribed                *Bool      `xmlrpc:"is_subscribed,omitempty" json:"is_subscribed,omitempty"`
-	KpiAccountBankCash          *Bool      `xmlrpc:"kpi_account_bank_cash,omitempty" json:"kpi_account_bank_cash,omitempty"`
-	KpiAccountBankCashValue     *Float     `xmlrpc:"kpi_account_bank_cash_value,omitempty" json:"kpi_account_bank_cash_value,omitempty"`
 	KpiAccountTotalRevenue      *Bool      `xmlrpc:"kpi_account_total_revenue,omitempty" json:"kpi_account_total_revenue,omitempty"`
 	KpiAccountTotalRevenueValue *Float     `xmlrpc:"kpi_account_total_revenue_value,omitempty" json:"kpi_account_total_revenue_value,omitempty"`
 	KpiAllSaleTotal             *Bool      `xmlrpc:"kpi_all_sale_total,omitempty" json:"kpi_all_sale_total,omitempty"`
 	KpiAllSaleTotalValue        *Float     `xmlrpc:"kpi_all_sale_total_value,omitempty" json:"kpi_all_sale_total_value,omitempty"`
-	KpiCrmLeadCreated           *Bool      `xmlrpc:"kpi_crm_lead_created,omitempty" json:"kpi_crm_lead_created,omitempty"`
-	KpiCrmLeadCreatedValue      *Int       `xmlrpc:"kpi_crm_lead_created_value,omitempty" json:"kpi_crm_lead_created_value,omitempty"`
-	KpiCrmOpportunitiesWon      *Bool      `xmlrpc:"kpi_crm_opportunities_won,omitempty" json:"kpi_crm_opportunities_won,omitempty"`
-	KpiCrmOpportunitiesWonValue *Int       `xmlrpc:"kpi_crm_opportunities_won_value,omitempty" json:"kpi_crm_opportunities_won_value,omitempty"`
 	KpiMailMessageTotal         *Bool      `xmlrpc:"kpi_mail_message_total,omitempty" json:"kpi_mail_message_total,omitempty"`
 	KpiMailMessageTotalValue    *Int       `xmlrpc:"kpi_mail_message_total_value,omitempty" json:"kpi_mail_message_total_value,omitempty"`
 	KpiProjectTaskOpened        *Bool      `xmlrpc:"kpi_project_task_opened,omitempty" json:"kpi_project_task_opened,omitempty"`

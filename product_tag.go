@@ -11,6 +11,7 @@ type ProductTag struct {
 	ProductIds         *Relation `xmlrpc:"product_ids,omitempty" json:"product_ids,omitempty"`
 	ProductProductIds  *Relation `xmlrpc:"product_product_ids,omitempty" json:"product_product_ids,omitempty"`
 	ProductTemplateIds *Relation `xmlrpc:"product_template_ids,omitempty" json:"product_template_ids,omitempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

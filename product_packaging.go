@@ -2,23 +2,21 @@ package odoo
 
 // ProductPackaging represents product.packaging model.
 type ProductPackaging struct {
-	Barcode       *String   `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	PackageTypeId *Many2One `xmlrpc:"package_type_id,omitempty" json:"package_type_id,omitempty"`
-	ProductId     *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
-	ProductUomId  *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
-	Purchase      *Bool     `xmlrpc:"purchase,omitempty" json:"purchase,omitempty"`
-	Qty           *Float    `xmlrpc:"qty,omitempty" json:"qty,omitempty"`
-	RouteIds      *Relation `xmlrpc:"route_ids,omitempty" json:"route_ids,omitempty"`
-	Sales         *Bool     `xmlrpc:"sales,omitempty" json:"sales,omitempty"`
-	Sequence      *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Barcode      *String   `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	CompanyId    *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductId    *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Purchase     *Bool     `xmlrpc:"purchase,omitempty" json:"purchase,omitempty"`
+	Qty          *Float    `xmlrpc:"qty,omitempty" json:"qty,omitempty"`
+	Sales        *Bool     `xmlrpc:"sales,omitempty" json:"sales,omitempty"`
+	Sequence     *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductPackagings represents array of product.packaging model.

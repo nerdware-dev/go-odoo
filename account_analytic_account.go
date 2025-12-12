@@ -10,7 +10,6 @@ type AccountAnalyticAccount struct {
 	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	Credit                   *Float    `xmlrpc:"credit,omitempty" json:"credit,omitempty"`
-	CrossoveredBudgetLine    *Relation `xmlrpc:"crossovered_budget_line,omitempty" json:"crossovered_budget_line,omitempty"`
 	CurrencyId               *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
 	Debit                    *Float    `xmlrpc:"debit,omitempty" json:"debit,omitempty"`
 	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
@@ -36,8 +35,6 @@ type AccountAnalyticAccount struct {
 	PurchaseOrderCount       *Int      `xmlrpc:"purchase_order_count,omitempty" json:"purchase_order_count,omitempty"`
 	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	RootPlanId               *Many2One `xmlrpc:"root_plan_id,omitempty" json:"root_plan_id,omitempty"`
-	TotalPlannedAmount       *Float    `xmlrpc:"total_planned_amount,omitempty" json:"total_planned_amount,omitempty"`
-	TotalPracticalAmount     *Float    `xmlrpc:"total_practical_amount,omitempty" json:"total_practical_amount,omitempty"`
 	VendorBillCount          *Int      `xmlrpc:"vendor_bill_count,omitempty" json:"vendor_bill_count,omitempty"`
 	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 	WriteDate                *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`

@@ -12,13 +12,11 @@ type PurchaseReport struct {
 	Delay               *Float     `xmlrpc:"delay,omitempty" json:"delay,omitempty"`
 	DelayPass           *Float     `xmlrpc:"delay_pass,omitempty" json:"delay_pass,omitempty"`
 	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	EffectiveDate       *Time      `xmlrpc:"effective_date,omitempty" json:"effective_date,omitempty"`
 	FiscalPositionId    *Many2One  `xmlrpc:"fiscal_position_id,omitempty" json:"fiscal_position_id,omitempty"`
 	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	NbrLines            *Int       `xmlrpc:"nbr_lines,omitempty" json:"nbr_lines,omitempty"`
 	OrderId             *Many2One  `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
 	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
-	PickingTypeId       *Many2One  `xmlrpc:"picking_type_id,omitempty" json:"picking_type_id,omitempty"`
 	PriceAverage        *Float     `xmlrpc:"price_average,omitempty" json:"price_average,omitempty"`
 	PriceTotal          *Float     `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
 	ProductId           *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`

@@ -10,14 +10,17 @@ type IrActionsReport struct {
 	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain           *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
 	GroupsId         *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
 	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
 	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsInvoiceReport  *Bool      `xmlrpc:"is_invoice_report,omitempty" json:"is_invoice_report,omitempty"`
 	Model            *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
 	ModelId          *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
 	Multi            *Bool      `xmlrpc:"multi,omitempty" json:"multi,omitempty"`
 	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	PaperformatId    *Many2One  `xmlrpc:"paperformat_id,omitempty" json:"paperformat_id,omitempty"`
+	Path             *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
 	PrintReportName  *String    `xmlrpc:"print_report_name,omitempty" json:"print_report_name,omitempty"`
 	ReportFile       *String    `xmlrpc:"report_file,omitempty" json:"report_file,omitempty"`
 	ReportName       *String    `xmlrpc:"report_name,omitempty" json:"report_name,omitempty"`

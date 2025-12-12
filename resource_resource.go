@@ -2,21 +2,33 @@ package odoo
 
 // ResourceResource represents resource.resource model.
 type ResourceResource struct {
-	Active         *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	CalendarId     *Many2One  `xmlrpc:"calendar_id,omitempty" json:"calendar_id,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	EmployeeId     *Relation  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	ResourceType   *Selection `xmlrpc:"resource_type,omitempty" json:"resource_type,omitempty"`
-	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omitempty" json:"time_efficiency,omitempty"`
-	Tz             *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
-	UserId         *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Active            *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Avatar128         *String    `xmlrpc:"avatar_128,omitempty" json:"avatar_128,omitempty"`
+	CalendarId        *Many2One  `xmlrpc:"calendar_id,omitempty" json:"calendar_id,omitempty"`
+	CompanyId         *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DepartmentId      *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email             *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EmployeeId        *Relation  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	EmployeeSkillIds  *Relation  `xmlrpc:"employee_skill_ids,omitempty" json:"employee_skill_ids,omitempty"`
+	HrIconDisplay     *Selection `xmlrpc:"hr_icon_display,omitempty" json:"hr_icon_display,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImStatus          *String    `xmlrpc:"im_status,omitempty" json:"im_status,omitempty"`
+	JobTitle          *String    `xmlrpc:"job_title,omitempty" json:"job_title,omitempty"`
+	Name              *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Phone             *String    `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	ResourceType      *Selection `xmlrpc:"resource_type,omitempty" json:"resource_type,omitempty"`
+	Share             *Bool      `xmlrpc:"share,omitempty" json:"share,omitempty"`
+	ShowHrIconDisplay *Bool      `xmlrpc:"show_hr_icon_display,omitempty" json:"show_hr_icon_display,omitempty"`
+	TimeEfficiency    *Float     `xmlrpc:"time_efficiency,omitempty" json:"time_efficiency,omitempty"`
+	Tz                *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	UserId            *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WorkEmail         *String    `xmlrpc:"work_email,omitempty" json:"work_email,omitempty"`
+	WorkPhone         *String    `xmlrpc:"work_phone,omitempty" json:"work_phone,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceResources represents array of resource.resource model.

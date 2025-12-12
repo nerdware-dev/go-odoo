@@ -2,13 +2,20 @@ package odoo
 
 // ValidateAccountMove represents validate.account.move model.
 type ValidateAccountMove struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	ForcePost   *Bool     `xmlrpc:"force_post,omitempty" json:"force_post,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AbnormalAmountPartnerIds *Relation `xmlrpc:"abnormal_amount_partner_ids,omitempty" json:"abnormal_amount_partner_ids,omitempty"`
+	AbnormalDatePartnerIds   *Relation `xmlrpc:"abnormal_date_partner_ids,omitempty" json:"abnormal_date_partner_ids,omitempty"`
+	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayForcePost         *Bool     `xmlrpc:"display_force_post,omitempty" json:"display_force_post,omitempty"`
+	DisplayName              *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForcePost                *Bool     `xmlrpc:"force_post,omitempty" json:"force_post,omitempty"`
+	Id                       *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IgnoreAbnormalAmount     *Bool     `xmlrpc:"ignore_abnormal_amount,omitempty" json:"ignore_abnormal_amount,omitempty"`
+	IgnoreAbnormalDate       *Bool     `xmlrpc:"ignore_abnormal_date,omitempty" json:"ignore_abnormal_date,omitempty"`
+	IsEntries                *Bool     `xmlrpc:"is_entries,omitempty" json:"is_entries,omitempty"`
+	MoveIds                  *Relation `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	WriteDate                *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ValidateAccountMoves represents array of validate.account.move model.

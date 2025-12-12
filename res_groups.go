@@ -2,6 +2,7 @@ package odoo
 
 // ResGroups represents res.groups model.
 type ResGroups struct {
+	ApiKeyDuration  *Float    `xmlrpc:"api_key_duration,omitempty" json:"api_key_duration,omitempty"`
 	CategoryId      *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
 	Color           *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
 	Comment         *String   `xmlrpc:"comment,omitempty" json:"comment,omitempty"`

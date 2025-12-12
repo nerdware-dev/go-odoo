@@ -3,11 +3,6 @@ package odoo
 // PaymentTransaction represents payment.transaction model.
 type PaymentTransaction struct {
 	Amount              *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
-	CallbackHash        *String    `xmlrpc:"callback_hash,omitempty" json:"callback_hash,omitempty"`
-	CallbackIsDone      *Bool      `xmlrpc:"callback_is_done,omitempty" json:"callback_is_done,omitempty"`
-	CallbackMethod      *String    `xmlrpc:"callback_method,omitempty" json:"callback_method,omitempty"`
-	CallbackModelId     *Many2One  `xmlrpc:"callback_model_id,omitempty" json:"callback_model_id,omitempty"`
-	CallbackResId       *Int       `xmlrpc:"callback_res_id,omitempty" json:"callback_res_id,omitempty"`
 	ChildTransactionIds *Relation  `xmlrpc:"child_transaction_ids,omitempty" json:"child_transaction_ids,omitempty"`
 	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`

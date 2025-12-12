@@ -83,7 +83,7 @@ func (c *Client) GetProjectProjectStage(id int64) (*ProjectProjectStage, error) 
 func (c *Client) GetProjectProjectStages(ids []int64) (*ProjectProjectStages, error) {
 	ppss := &ProjectProjectStages{}
 	if err := c.Read(ProjectProjectStageModel, ids, nil, ppss); err != nil {
-		return ppss, err
+		return nil, err
 	}
 	return ppss, nil
 }

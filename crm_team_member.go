@@ -3,10 +3,6 @@ package odoo
 // CrmTeamMember represents crm.team.member model.
 type CrmTeamMember struct {
 	Active                   *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	AssignmentDomain         *String   `xmlrpc:"assignment_domain,omitempty" json:"assignment_domain,omitempty"`
-	AssignmentEnabled        *Bool     `xmlrpc:"assignment_enabled,omitempty" json:"assignment_enabled,omitempty"`
-	AssignmentMax            *Int      `xmlrpc:"assignment_max,omitempty" json:"assignment_max,omitempty"`
-	AssignmentOptout         *Bool     `xmlrpc:"assignment_optout,omitempty" json:"assignment_optout,omitempty"`
 	CompanyId                *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate               *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
@@ -18,7 +14,6 @@ type CrmTeamMember struct {
 	Image128                 *String   `xmlrpc:"image_128,omitempty" json:"image_128,omitempty"`
 	Image1920                *String   `xmlrpc:"image_1920,omitempty" json:"image_1920,omitempty"`
 	IsMembershipMulti        *Bool     `xmlrpc:"is_membership_multi,omitempty" json:"is_membership_multi,omitempty"`
-	LeadMonthCount           *Int      `xmlrpc:"lead_month_count,omitempty" json:"lead_month_count,omitempty"`
 	MemberWarning            *String   `xmlrpc:"member_warning,omitempty" json:"member_warning,omitempty"`
 	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
 	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`

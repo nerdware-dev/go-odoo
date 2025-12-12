@@ -16,6 +16,7 @@ type ResCurrency struct {
 	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	InverseRate              *Float     `xmlrpc:"inverse_rate,omitempty" json:"inverse_rate,omitempty"`
 	IsCurrentCompanyCurrency *Bool      `xmlrpc:"is_current_company_currency,omitempty" json:"is_current_company_currency,omitempty"`
+	IsoNumeric               *Int       `xmlrpc:"iso_numeric,omitempty" json:"iso_numeric,omitempty"`
 	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Position                 *Selection `xmlrpc:"position,omitempty" json:"position,omitempty"`
 	Rate                     *Float     `xmlrpc:"rate,omitempty" json:"rate,omitempty"`

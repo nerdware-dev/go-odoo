@@ -6,6 +6,7 @@ type ResBank struct {
 	Bic         *String   `xmlrpc:"bic,omitempty" json:"bic,omitempty"`
 	City        *String   `xmlrpc:"city,omitempty" json:"city,omitempty"`
 	Country     *Many2One `xmlrpc:"country,omitempty" json:"country,omitempty"`
+	CountryCode *String   `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`

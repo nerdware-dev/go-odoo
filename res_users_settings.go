@@ -2,20 +2,21 @@ package odoo
 
 // ResUsersSettings represents res.users.settings model.
 type ResUsersSettings struct {
-	CreateDate                          *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid                           *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName                         *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	HomemenuConfig                      interface{} `xmlrpc:"homemenu_config,omitempty" json:"homemenu_config,omitempty"`
-	Id                                  *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	IsDiscussSidebarCategoryChannelOpen *Bool       `xmlrpc:"is_discuss_sidebar_category_channel_open,omitempty" json:"is_discuss_sidebar_category_channel_open,omitempty"`
-	IsDiscussSidebarCategoryChatOpen    *Bool       `xmlrpc:"is_discuss_sidebar_category_chat_open,omitempty" json:"is_discuss_sidebar_category_chat_open,omitempty"`
-	PushToTalkKey                       *String     `xmlrpc:"push_to_talk_key,omitempty" json:"push_to_talk_key,omitempty"`
-	UsePushToTalk                       *Bool       `xmlrpc:"use_push_to_talk,omitempty" json:"use_push_to_talk,omitempty"`
-	UserId                              *Many2One   `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
-	VoiceActiveDuration                 *Int        `xmlrpc:"voice_active_duration,omitempty" json:"voice_active_duration,omitempty"`
-	VolumeSettingsIds                   *Relation   `xmlrpc:"volume_settings_ids,omitempty" json:"volume_settings_ids,omitempty"`
-	WriteDate                           *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid                            *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ChannelNotifications                *Selection `xmlrpc:"channel_notifications,omitempty" json:"channel_notifications,omitempty"`
+	CreateDate                          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsDiscussSidebarCategoryChannelOpen *Bool      `xmlrpc:"is_discuss_sidebar_category_channel_open,omitempty" json:"is_discuss_sidebar_category_channel_open,omitempty"`
+	IsDiscussSidebarCategoryChatOpen    *Bool      `xmlrpc:"is_discuss_sidebar_category_chat_open,omitempty" json:"is_discuss_sidebar_category_chat_open,omitempty"`
+	MuteUntilDt                         *Time      `xmlrpc:"mute_until_dt,omitempty" json:"mute_until_dt,omitempty"`
+	PushToTalkKey                       *String    `xmlrpc:"push_to_talk_key,omitempty" json:"push_to_talk_key,omitempty"`
+	UsePushToTalk                       *Bool      `xmlrpc:"use_push_to_talk,omitempty" json:"use_push_to_talk,omitempty"`
+	UserId                              *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	VoiceActiveDuration                 *Int       `xmlrpc:"voice_active_duration,omitempty" json:"voice_active_duration,omitempty"`
+	VolumeSettingsIds                   *Relation  `xmlrpc:"volume_settings_ids,omitempty" json:"volume_settings_ids,omitempty"`
+	WriteDate                           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResUsersSettingss represents array of res.users.settings model.

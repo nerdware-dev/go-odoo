@@ -14,6 +14,7 @@ type IrMailServer struct {
 	GoogleGmailUri                   *String    `xmlrpc:"google_gmail_uri,omitempty" json:"google_gmail_uri,omitempty"`
 	Id                               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	MailTemplateIds                  *Relation  `xmlrpc:"mail_template_ids,omitempty" json:"mail_template_ids,omitempty"`
+	MaxEmailSize                     *Float     `xmlrpc:"max_email_size,omitempty" json:"max_email_size,omitempty"`
 	Name                             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Sequence                         *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	SmtpAuthentication               *Selection `xmlrpc:"smtp_authentication,omitempty" json:"smtp_authentication,omitempty"`

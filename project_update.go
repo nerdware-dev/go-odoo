@@ -2,7 +2,6 @@ package odoo
 
 // ProjectUpdate represents project.update model.
 type ProjectUpdate struct {
-	ActivityCalendarEventId     *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
@@ -12,7 +11,6 @@ type ProjectUpdate struct {
 	ActivityTypeIcon            *String    `xmlrpc:"activity_type_icon,omitempty" json:"activity_type_icon,omitempty"`
 	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
 	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
-	AllocatedTime               *Int       `xmlrpc:"allocated_time,omitempty" json:"allocated_time,omitempty"`
 	ClosedTaskCount             *Int       `xmlrpc:"closed_task_count,omitempty" json:"closed_task_count,omitempty"`
 	ClosedTaskPercentage        *Int       `xmlrpc:"closed_task_percentage,omitempty" json:"closed_task_percentage,omitempty"`
 	Color                       *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
@@ -21,7 +19,6 @@ type ProjectUpdate struct {
 	Date                        *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
 	Description                 *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	DisplayTimesheetStats       *Bool      `xmlrpc:"display_timesheet_stats,omitempty" json:"display_timesheet_stats,omitempty"`
 	EmailCc                     *String    `xmlrpc:"email_cc,omitempty" json:"email_cc,omitempty"`
 	HasMessage                  *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
 	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
@@ -44,9 +41,6 @@ type ProjectUpdate struct {
 	RatingIds                   *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	Status                      *Selection `xmlrpc:"status,omitempty" json:"status,omitempty"`
 	TaskCount                   *Int       `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
-	TimesheetPercentage         *Int       `xmlrpc:"timesheet_percentage,omitempty" json:"timesheet_percentage,omitempty"`
-	TimesheetTime               *Int       `xmlrpc:"timesheet_time,omitempty" json:"timesheet_time,omitempty"`
-	UomId                       *Many2One  `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
 	UserId                      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
 	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`

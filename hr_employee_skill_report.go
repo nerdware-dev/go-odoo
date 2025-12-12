@@ -2,15 +2,17 @@ package odoo
 
 // HrEmployeeSkillReport represents hr.employee.skill.report model.
 type HrEmployeeSkillReport struct {
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
-	DepartmentId  *Many2One `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	EmployeeId    *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	LevelProgress *Float    `xmlrpc:"level_progress,omitempty" json:"level_progress,omitempty"`
-	SkillId       *Many2One `xmlrpc:"skill_id,omitempty" json:"skill_id,omitempty"`
-	SkillLevel    *String   `xmlrpc:"skill_level,omitempty" json:"skill_level,omitempty"`
-	SkillTypeId   *Many2One `xmlrpc:"skill_type_id,omitempty" json:"skill_type_id,omitempty"`
+	Active                     *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DepartmentId               *Many2One `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId                 *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	HasDepartmentManagerAccess *Bool     `xmlrpc:"has_department_manager_access,omitempty" json:"has_department_manager_access,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LevelProgress              *Float    `xmlrpc:"level_progress,omitempty" json:"level_progress,omitempty"`
+	SkillId                    *Many2One `xmlrpc:"skill_id,omitempty" json:"skill_id,omitempty"`
+	SkillLevel                 *String   `xmlrpc:"skill_level,omitempty" json:"skill_level,omitempty"`
+	SkillTypeId                *Many2One `xmlrpc:"skill_type_id,omitempty" json:"skill_type_id,omitempty"`
 }
 
 // HrEmployeeSkillReports represents array of hr.employee.skill.report model.

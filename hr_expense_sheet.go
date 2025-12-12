@@ -4,7 +4,6 @@ package odoo
 type HrExpenseSheet struct {
 	AccountMoveIds                 *Relation  `xmlrpc:"account_move_ids,omitempty" json:"account_move_ids,omitempty"`
 	AccountingDate                 *Time      `xmlrpc:"accounting_date,omitempty" json:"accounting_date,omitempty"`
-	ActivityCalendarEventId        *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
 	ActivityDateDeadline           *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
 	ActivityExceptionDecoration    *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
 	ActivityExceptionIcon          *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`

@@ -80,7 +80,7 @@ func (c *Client) GetProjectTags(id int64) (*ProjectTags, error) {
 func (c *Client) GetProjectTagss(ids []int64) (*ProjectTagss, error) {
 	pts := &ProjectTagss{}
 	if err := c.Read(ProjectTagsModel, ids, nil, pts); err != nil {
-		return pts, err
+		return nil, err
 	}
 	return pts, nil
 }

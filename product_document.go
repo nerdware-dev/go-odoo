@@ -4,7 +4,7 @@ package odoo
 type ProductDocument struct {
 	AccessToken    *String    `xmlrpc:"access_token,omitempty" json:"access_token,omitempty"`
 	Active         *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	AttachedOn     *Selection `xmlrpc:"attached_on,omitempty" json:"attached_on,omitempty"`
+	AttachedOnSale *Selection `xmlrpc:"attached_on_sale,omitempty" json:"attached_on_sale,omitempty"`
 	Checksum       *String    `xmlrpc:"checksum,omitempty" json:"checksum,omitempty"`
 	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
@@ -13,8 +13,8 @@ type ProductDocument struct {
 	DbDatas        *String    `xmlrpc:"db_datas,omitempty" json:"db_datas,omitempty"`
 	Description    *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	DocumentIds    *Relation  `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
 	FileSize       *Int       `xmlrpc:"file_size,omitempty" json:"file_size,omitempty"`
+	FormFieldIds   *Relation  `xmlrpc:"form_field_ids,omitempty" json:"form_field_ids,omitempty"`
 	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	ImageHeight    *Int       `xmlrpc:"image_height,omitempty" json:"image_height,omitempty"`
 	ImageSrc       *String    `xmlrpc:"image_src,omitempty" json:"image_src,omitempty"`
@@ -31,6 +31,7 @@ type ProductDocument struct {
 	ResId          *Many2One  `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
 	ResModel       *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
 	ResName        *String    `xmlrpc:"res_name,omitempty" json:"res_name,omitempty"`
+	Sequence       *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	StoreFname     *String    `xmlrpc:"store_fname,omitempty" json:"store_fname,omitempty"`
 	Type           *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
 	Url            *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`

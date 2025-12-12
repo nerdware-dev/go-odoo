@@ -7,6 +7,7 @@ type AccountPaymentMethodLine struct {
 	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultAccountId          *Many2One  `xmlrpc:"default_account_id,omitempty" json:"default_account_id,omitempty"`
 	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`

@@ -23,8 +23,9 @@ type IrCron struct {
 	CrudModelId                   *Many2One  `xmlrpc:"crud_model_id,omitempty" json:"crud_model_id,omitempty"`
 	CrudModelName                 *String    `xmlrpc:"crud_model_name,omitempty" json:"crud_model_name,omitempty"`
 	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Doall                         *Bool      `xmlrpc:"doall,omitempty" json:"doall,omitempty"`
 	EvaluationType                *Selection `xmlrpc:"evaluation_type,omitempty" json:"evaluation_type,omitempty"`
+	FailureCount                  *Int       `xmlrpc:"failure_count,omitempty" json:"failure_count,omitempty"`
+	FirstFailureDate              *Time      `xmlrpc:"first_failure_date,omitempty" json:"first_failure_date,omitempty"`
 	GroupsId                      *Relation  `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
 	Help                          *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
 	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
@@ -39,8 +40,8 @@ type IrCron struct {
 	ModelName                     *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
 	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	Nextcall                      *Time      `xmlrpc:"nextcall,omitempty" json:"nextcall,omitempty"`
-	Numbercall                    *Int       `xmlrpc:"numbercall,omitempty" json:"numbercall,omitempty"`
 	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	Path                          *String    `xmlrpc:"path,omitempty" json:"path,omitempty"`
 	Priority                      *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
 	ResourceRef                   *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
 	SelectionValue                *Many2One  `xmlrpc:"selection_value,omitempty" json:"selection_value,omitempty"`

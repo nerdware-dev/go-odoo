@@ -2,21 +2,21 @@ package odoo
 
 // ProjectShareWizard represents project.share.wizard model.
 type ProjectShareWizard struct {
-	AccessMode        *Selection `xmlrpc:"access_mode,omitempty" json:"access_mode,omitempty"`
-	AccessWarning     *String    `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
-	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayAccessMode *Bool      `xmlrpc:"display_access_mode,omitempty" json:"display_access_mode,omitempty"`
-	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Note              *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
-	PartnerIds        *Relation  `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
-	ResId             *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
-	ResModel          *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
-	ResourceRef       *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
-	ShareLink         *String    `xmlrpc:"share_link,omitempty" json:"share_link,omitempty"`
-	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	AccessWarning      *String   `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	CollaboratorIds    *Relation `xmlrpc:"collaborator_ids,omitempty" json:"collaborator_ids,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExistingPartnerIds *Relation `xmlrpc:"existing_partner_ids,omitempty" json:"existing_partner_ids,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Note               *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PartnerIds         *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	ResId              *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel           *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResourceRef        *String   `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	ShareLink          *String   `xmlrpc:"share_link,omitempty" json:"share_link,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectShareWizards represents array of project.share.wizard model.

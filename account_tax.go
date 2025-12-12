@@ -9,6 +9,7 @@ type AccountTax struct {
 	CashBasisTransitionAccountId *Many2One  `xmlrpc:"cash_basis_transition_account_id,omitempty" json:"cash_basis_transition_account_id,omitempty"`
 	ChildrenTaxIds               *Relation  `xmlrpc:"children_tax_ids,omitempty" json:"children_tax_ids,omitempty"`
 	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompanyPriceInclude          *Selection `xmlrpc:"company_price_include,omitempty" json:"company_price_include,omitempty"`
 	CountryCode                  *String    `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
 	CountryId                    *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
 	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
@@ -16,10 +17,12 @@ type AccountTax struct {
 	Description                  *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
 	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	HasMessage                   *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	HasNegativeFactor            *Bool      `xmlrpc:"has_negative_factor,omitempty" json:"has_negative_factor,omitempty"`
 	HideTaxExigibility           *Bool      `xmlrpc:"hide_tax_exigibility,omitempty" json:"hide_tax_exigibility,omitempty"`
 	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	IncludeBaseAmount            *Bool      `xmlrpc:"include_base_amount,omitempty" json:"include_base_amount,omitempty"`
 	InvoiceLabel                 *String    `xmlrpc:"invoice_label,omitempty" json:"invoice_label,omitempty"`
+	InvoiceLegalNotes            *String    `xmlrpc:"invoice_legal_notes,omitempty" json:"invoice_legal_notes,omitempty"`
 	InvoiceRepartitionLineIds    *Relation  `xmlrpc:"invoice_repartition_line_ids,omitempty" json:"invoice_repartition_line_ids,omitempty"`
 	IsBaseAffected               *Bool      `xmlrpc:"is_base_affected,omitempty" json:"is_base_affected,omitempty"`
 	IsUsed                       *Bool      `xmlrpc:"is_used,omitempty" json:"is_used,omitempty"`
@@ -37,6 +40,7 @@ type AccountTax struct {
 	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	NameSearchable               *String    `xmlrpc:"name_searchable,omitempty" json:"name_searchable,omitempty"`
 	PriceInclude                 *Bool      `xmlrpc:"price_include,omitempty" json:"price_include,omitempty"`
+	PriceIncludeOverride         *Selection `xmlrpc:"price_include_override,omitempty" json:"price_include_override,omitempty"`
 	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	RefundRepartitionLineIds     *Relation  `xmlrpc:"refund_repartition_line_ids,omitempty" json:"refund_repartition_line_ids,omitempty"`
 	RepartitionLineIds           *Relation  `xmlrpc:"repartition_line_ids,omitempty" json:"repartition_line_ids,omitempty"`

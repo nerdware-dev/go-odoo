@@ -13,7 +13,6 @@ type PaymentProviderOnboardingWizard struct {
 	ManualPostMsg      *String    `xmlrpc:"manual_post_msg,omitempty" json:"manual_post_msg,omitempty"`
 	PaymentMethod      *Selection `xmlrpc:"payment_method,omitempty" json:"payment_method,omitempty"`
 	PaypalEmailAccount *String    `xmlrpc:"paypal_email_account,omitempty" json:"paypal_email_account,omitempty"`
-	PaypalPdtToken     *String    `xmlrpc:"paypal_pdt_token,omitempty" json:"paypal_pdt_token,omitempty"`
 	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }

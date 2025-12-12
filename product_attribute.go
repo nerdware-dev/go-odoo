@@ -2,6 +2,7 @@ package odoo
 
 // ProductAttribute represents product.attribute model.
 type ProductAttribute struct {
+	Active                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
 	AttributeLineIds      *Relation  `xmlrpc:"attribute_line_ids,omitempty" json:"attribute_line_ids,omitempty"`
 	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
@@ -13,6 +14,7 @@ type ProductAttribute struct {
 	NumberRelatedProducts *Int       `xmlrpc:"number_related_products,omitempty" json:"number_related_products,omitempty"`
 	ProductTmplIds        *Relation  `xmlrpc:"product_tmpl_ids,omitempty" json:"product_tmpl_ids,omitempty"`
 	Sequence              *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TemplateValueIds      *Relation  `xmlrpc:"template_value_ids,omitempty" json:"template_value_ids,omitempty"`
 	ValueIds              *Relation  `xmlrpc:"value_ids,omitempty" json:"value_ids,omitempty"`
 	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`

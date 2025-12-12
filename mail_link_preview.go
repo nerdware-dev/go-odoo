@@ -7,6 +7,7 @@ type MailLinkPreview struct {
 	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	ImageMimetype *String   `xmlrpc:"image_mimetype,omitempty" json:"image_mimetype,omitempty"`
+	IsHidden      *Bool     `xmlrpc:"is_hidden,omitempty" json:"is_hidden,omitempty"`
 	MessageId     *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
 	OgDescription *String   `xmlrpc:"og_description,omitempty" json:"og_description,omitempty"`
 	OgImage       *String   `xmlrpc:"og_image,omitempty" json:"og_image,omitempty"`
