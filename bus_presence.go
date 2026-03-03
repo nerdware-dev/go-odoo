@@ -70,6 +70,9 @@ func (c *Client) GetBusPresence(id int64) (*BusPresence, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bps) == 0 {
+		return nil, nil
+	}
 	return &((*bps)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindBusPresence(criteria *Criteria) (*BusPresence, error) {
 	bps := &BusPresences{}
 	if err := c.SearchRead(BusPresenceModel, criteria, NewOptions().Limit(1), bps); err != nil {
 		return nil, err
+	}
+	if len(*bps) == 0 {
+		return nil, nil
 	}
 	return &((*bps)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindBusPresenceId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(BusPresenceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

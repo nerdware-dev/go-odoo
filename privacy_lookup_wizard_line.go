@@ -79,6 +79,9 @@ func (c *Client) GetPrivacyLookupWizardLine(id int64) (*PrivacyLookupWizardLine,
 	if err != nil {
 		return nil, err
 	}
+	if len(*plwls) == 0 {
+		return nil, nil
+	}
 	return &((*plwls)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindPrivacyLookupWizardLine(criteria *Criteria) (*PrivacyLookup
 	plwls := &PrivacyLookupWizardLines{}
 	if err := c.SearchRead(PrivacyLookupWizardLineModel, criteria, NewOptions().Limit(1), plwls); err != nil {
 		return nil, err
+	}
+	if len(*plwls) == 0 {
+		return nil, nil
 	}
 	return &((*plwls)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindPrivacyLookupWizardLineId(criteria *Criteria, options *Opti
 	ids, err := c.Search(PrivacyLookupWizardLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -72,6 +72,9 @@ func (c *Client) GetCrmLeadLost(id int64) (*CrmLeadLost, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*clls) == 0 {
+		return nil, nil
+	}
 	return &((*clls)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindCrmLeadLost(criteria *Criteria) (*CrmLeadLost, error) {
 	clls := &CrmLeadLosts{}
 	if err := c.SearchRead(CrmLeadLostModel, criteria, NewOptions().Limit(1), clls); err != nil {
 		return nil, err
+	}
+	if len(*clls) == 0 {
+		return nil, nil
 	}
 	return &((*clls)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindCrmLeadLostId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(CrmLeadLostModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

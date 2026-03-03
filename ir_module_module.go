@@ -102,6 +102,9 @@ func (c *Client) GetIrModuleModule(id int64) (*IrModuleModule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imms) == 0 {
+		return nil, nil
+	}
 	return &((*imms)[0]), nil
 }
 
@@ -119,6 +122,9 @@ func (c *Client) FindIrModuleModule(criteria *Criteria) (*IrModuleModule, error)
 	imms := &IrModuleModules{}
 	if err := c.SearchRead(IrModuleModuleModel, criteria, NewOptions().Limit(1), imms); err != nil {
 		return nil, err
+	}
+	if len(*imms) == 0 {
+		return nil, nil
 	}
 	return &((*imms)[0]), nil
 }
@@ -144,6 +150,9 @@ func (c *Client) FindIrModuleModuleId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(IrModuleModuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

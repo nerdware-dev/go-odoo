@@ -86,6 +86,9 @@ func (c *Client) GetHrExpenseSplit(id int64) (*HrExpenseSplit, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hess) == 0 {
+		return nil, nil
+	}
 	return &((*hess)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindHrExpenseSplit(criteria *Criteria) (*HrExpenseSplit, error)
 	hess := &HrExpenseSplits{}
 	if err := c.SearchRead(HrExpenseSplitModel, criteria, NewOptions().Limit(1), hess); err != nil {
 		return nil, err
+	}
+	if len(*hess) == 0 {
+		return nil, nil
 	}
 	return &((*hess)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindHrExpenseSplitId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(HrExpenseSplitModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

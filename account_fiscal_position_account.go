@@ -73,6 +73,9 @@ func (c *Client) GetAccountFiscalPositionAccount(id int64) (*AccountFiscalPositi
 	if err != nil {
 		return nil, err
 	}
+	if len(*afpas) == 0 {
+		return nil, nil
+	}
 	return &((*afpas)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountFiscalPositionAccount(criteria *Criteria) (*AccountF
 	afpas := &AccountFiscalPositionAccounts{}
 	if err := c.SearchRead(AccountFiscalPositionAccountModel, criteria, NewOptions().Limit(1), afpas); err != nil {
 		return nil, err
+	}
+	if len(*afpas) == 0 {
+		return nil, nil
 	}
 	return &((*afpas)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountFiscalPositionAccountId(criteria *Criteria, options 
 	ids, err := c.Search(AccountFiscalPositionAccountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

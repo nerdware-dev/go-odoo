@@ -109,6 +109,9 @@ func (c *Client) GetAccountPaymentRegister(id int64) (*AccountPaymentRegister, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*aprs) == 0 {
+		return nil, nil
+	}
 	return &((*aprs)[0]), nil
 }
 
@@ -126,6 +129,9 @@ func (c *Client) FindAccountPaymentRegister(criteria *Criteria) (*AccountPayment
 	aprs := &AccountPaymentRegisters{}
 	if err := c.SearchRead(AccountPaymentRegisterModel, criteria, NewOptions().Limit(1), aprs); err != nil {
 		return nil, err
+	}
+	if len(*aprs) == 0 {
+		return nil, nil
 	}
 	return &((*aprs)[0]), nil
 }
@@ -151,6 +157,9 @@ func (c *Client) FindAccountPaymentRegisterId(criteria *Criteria, options *Optio
 	ids, err := c.Search(AccountPaymentRegisterModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

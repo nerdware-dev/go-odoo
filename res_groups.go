@@ -82,6 +82,9 @@ func (c *Client) GetResGroups(id int64) (*ResGroups, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rgs) == 0 {
+		return nil, nil
+	}
 	return &((*rgs)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindResGroups(criteria *Criteria) (*ResGroups, error) {
 	rgs := &ResGroupss{}
 	if err := c.SearchRead(ResGroupsModel, criteria, NewOptions().Limit(1), rgs); err != nil {
 		return nil, err
+	}
+	if len(*rgs) == 0 {
+		return nil, nil
 	}
 	return &((*rgs)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindResGroupsId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(ResGroupsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -72,6 +72,9 @@ func (c *Client) GetAccountTourUploadBill(id int64) (*AccountTourUploadBill, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*atubs) == 0 {
+		return nil, nil
+	}
 	return &((*atubs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountTourUploadBill(criteria *Criteria) (*AccountTourUplo
 	atubs := &AccountTourUploadBills{}
 	if err := c.SearchRead(AccountTourUploadBillModel, criteria, NewOptions().Limit(1), atubs); err != nil {
 		return nil, err
+	}
+	if len(*atubs) == 0 {
+		return nil, nil
 	}
 	return &((*atubs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountTourUploadBillId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountTourUploadBillModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

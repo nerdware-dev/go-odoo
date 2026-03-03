@@ -2,52 +2,53 @@ package odoo
 
 // SddMandate represents sdd.mandate model.
 type SddMandate struct {
-	LastUpdate                  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty"`
-	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty"`
-	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty"`
-	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty"`
-	ActivityState               *Selection `xmlrpc:"activity_state,omitempty"`
-	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DebtorIdCode                *String    `xmlrpc:"debtor_id_code,omitempty"`
-	DisplayName                 *String    `xmlrpc:"display_name,omitempty"`
-	EndDate                     *Time      `xmlrpc:"end_date,omitempty"`
-	Id                          *Int       `xmlrpc:"id,omitempty"`
-	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds           *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread               *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter        *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	Name                        *String    `xmlrpc:"name,omitempty"`
-	OneOff                      *Bool      `xmlrpc:"one_off,omitempty"`
-	OriginalDoc                 *String    `xmlrpc:"original_doc,omitempty"`
-	OriginalDocFilename         *String    `xmlrpc:"original_doc_filename,omitempty"`
-	PaidInvoiceIds              *Relation  `xmlrpc:"paid_invoice_ids,omitempty"`
-	PaidInvoicesNber            *Int       `xmlrpc:"paid_invoices_nber,omitempty"`
-	PartnerBankId               *Many2One  `xmlrpc:"partner_bank_id,omitempty"`
-	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PaymentIds                  *Relation  `xmlrpc:"payment_ids,omitempty"`
-	PaymentJournalId            *Many2One  `xmlrpc:"payment_journal_id,omitempty"`
-	PaymentsToCollectNber       *Int       `xmlrpc:"payments_to_collect_nber,omitempty"`
-	StartDate                   *Time      `xmlrpc:"start_date,omitempty"`
-	State                       *Selection `xmlrpc:"state,omitempty"`
-	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActivityCalendarEventId     *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeIcon            *String    `xmlrpc:"activity_type_icon,omitempty" json:"activity_type_icon,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DebtorIdCode                *String    `xmlrpc:"debtor_id_code,omitempty" json:"debtor_id_code,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EndDate                     *Time      `xmlrpc:"end_date,omitempty" json:"end_date,omitempty"`
+	HasMessage                  *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageMainAttachmentId     *Many2One  `xmlrpc:"message_main_attachment_id,omitempty" json:"message_main_attachment_id,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MyActivityDateDeadline      *Time      `xmlrpc:"my_activity_date_deadline,omitempty" json:"my_activity_date_deadline,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OneOff                      *Bool      `xmlrpc:"one_off,omitempty" json:"one_off,omitempty"`
+	PaidInvoiceIds              *Relation  `xmlrpc:"paid_invoice_ids,omitempty" json:"paid_invoice_ids,omitempty"`
+	PaidInvoicesNber            *Int       `xmlrpc:"paid_invoices_nber,omitempty" json:"paid_invoices_nber,omitempty"`
+	PartnerBankId               *Many2One  `xmlrpc:"partner_bank_id,omitempty" json:"partner_bank_id,omitempty"`
+	PartnerId                   *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PaymentIds                  *Relation  `xmlrpc:"payment_ids,omitempty" json:"payment_ids,omitempty"`
+	PaymentJournalId            *Many2One  `xmlrpc:"payment_journal_id,omitempty" json:"payment_journal_id,omitempty"`
+	PaymentsToCollectNber       *Int       `xmlrpc:"payments_to_collect_nber,omitempty" json:"payments_to_collect_nber,omitempty"`
+	RatingIds                   *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	SddScheme                   *Selection `xmlrpc:"sdd_scheme,omitempty" json:"sdd_scheme,omitempty"`
+	StartDate                   *Time      `xmlrpc:"start_date,omitempty" json:"start_date,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	SuitableJournalIds          *Relation  `xmlrpc:"suitable_journal_ids,omitempty" json:"suitable_journal_ids,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SddMandates represents array of sdd.mandate model.
@@ -109,6 +110,9 @@ func (c *Client) GetSddMandate(id int64) (*SddMandate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sms) == 0 {
+		return nil, nil
+	}
 	return &((*sms)[0]), nil
 }
 
@@ -126,6 +130,9 @@ func (c *Client) FindSddMandate(criteria *Criteria) (*SddMandate, error) {
 	sms := &SddMandates{}
 	if err := c.SearchRead(SddMandateModel, criteria, NewOptions().Limit(1), sms); err != nil {
 		return nil, err
+	}
+	if len(*sms) == 0 {
+		return nil, nil
 	}
 	return &((*sms)[0]), nil
 }
@@ -151,6 +158,9 @@ func (c *Client) FindSddMandateId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(SddMandateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

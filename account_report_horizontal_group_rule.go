@@ -73,6 +73,9 @@ func (c *Client) GetAccountReportHorizontalGroupRule(id int64) (*AccountReportHo
 	if err != nil {
 		return nil, err
 	}
+	if len(*arhgrs) == 0 {
+		return nil, nil
+	}
 	return &((*arhgrs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountReportHorizontalGroupRule(criteria *Criteria) (*Acco
 	arhgrs := &AccountReportHorizontalGroupRules{}
 	if err := c.SearchRead(AccountReportHorizontalGroupRuleModel, criteria, NewOptions().Limit(1), arhgrs); err != nil {
 		return nil, err
+	}
+	if len(*arhgrs) == 0 {
+		return nil, nil
 	}
 	return &((*arhgrs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountReportHorizontalGroupRuleId(criteria *Criteria, opti
 	ids, err := c.Search(AccountReportHorizontalGroupRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

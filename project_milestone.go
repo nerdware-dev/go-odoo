@@ -100,6 +100,9 @@ func (c *Client) GetProjectMilestone(id int64) (*ProjectMilestone, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pms) == 0 {
+		return nil, nil
+	}
 	return &((*pms)[0]), nil
 }
 
@@ -117,6 +120,9 @@ func (c *Client) FindProjectMilestone(criteria *Criteria) (*ProjectMilestone, er
 	pms := &ProjectMilestones{}
 	if err := c.SearchRead(ProjectMilestoneModel, criteria, NewOptions().Limit(1), pms); err != nil {
 		return nil, err
+	}
+	if len(*pms) == 0 {
+		return nil, nil
 	}
 	return &((*pms)[0]), nil
 }
@@ -142,6 +148,9 @@ func (c *Client) FindProjectMilestoneId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProjectMilestoneModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

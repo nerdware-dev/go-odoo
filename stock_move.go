@@ -147,6 +147,9 @@ func (c *Client) GetStockMove(id int64) (*StockMove, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sms) == 0 {
+		return nil, nil
+	}
 	return &((*sms)[0]), nil
 }
 
@@ -164,6 +167,9 @@ func (c *Client) FindStockMove(criteria *Criteria) (*StockMove, error) {
 	sms := &StockMoves{}
 	if err := c.SearchRead(StockMoveModel, criteria, NewOptions().Limit(1), sms); err != nil {
 		return nil, err
+	}
+	if len(*sms) == 0 {
+		return nil, nil
 	}
 	return &((*sms)[0]), nil
 }
@@ -189,6 +195,9 @@ func (c *Client) FindStockMoveId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(StockMoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

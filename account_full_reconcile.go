@@ -72,6 +72,9 @@ func (c *Client) GetAccountFullReconcile(id int64) (*AccountFullReconcile, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*afrs) == 0 {
+		return nil, nil
+	}
 	return &((*afrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountFullReconcile(criteria *Criteria) (*AccountFullRecon
 	afrs := &AccountFullReconciles{}
 	if err := c.SearchRead(AccountFullReconcileModel, criteria, NewOptions().Limit(1), afrs); err != nil {
 		return nil, err
+	}
+	if len(*afrs) == 0 {
+		return nil, nil
 	}
 	return &((*afrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountFullReconcileId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountFullReconcileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

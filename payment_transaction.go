@@ -20,6 +20,7 @@ type PaymentTransaction struct {
 	IsPostProcessed     *Bool      `xmlrpc:"is_post_processed,omitempty" json:"is_post_processed,omitempty"`
 	LandingRoute        *String    `xmlrpc:"landing_route,omitempty" json:"landing_route,omitempty"`
 	LastStateChange     *Time      `xmlrpc:"last_state_change,omitempty" json:"last_state_change,omitempty"`
+	MandateId           *Many2One  `xmlrpc:"mandate_id,omitempty" json:"mandate_id,omitempty"`
 	Operation           *Selection `xmlrpc:"operation,omitempty" json:"operation,omitempty"`
 	PartnerAddress      *String    `xmlrpc:"partner_address,omitempty" json:"partner_address,omitempty"`
 	PartnerCity         *String    `xmlrpc:"partner_city,omitempty" json:"partner_city,omitempty"`
@@ -34,16 +35,19 @@ type PaymentTransaction struct {
 	PaymentId           *Many2One  `xmlrpc:"payment_id,omitempty" json:"payment_id,omitempty"`
 	PaymentMethodCode   *String    `xmlrpc:"payment_method_code,omitempty" json:"payment_method_code,omitempty"`
 	PaymentMethodId     *Many2One  `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	PaypalType          *String    `xmlrpc:"paypal_type,omitempty" json:"paypal_type,omitempty"`
 	ProviderCode        *Selection `xmlrpc:"provider_code,omitempty" json:"provider_code,omitempty"`
 	ProviderId          *Many2One  `xmlrpc:"provider_id,omitempty" json:"provider_id,omitempty"`
 	ProviderReference   *String    `xmlrpc:"provider_reference,omitempty" json:"provider_reference,omitempty"`
 	Reference           *String    `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
 	RefundsCount        *Int       `xmlrpc:"refunds_count,omitempty" json:"refunds_count,omitempty"`
+	RenewalState        *Selection `xmlrpc:"renewal_state,omitempty" json:"renewal_state,omitempty"`
 	SaleOrderIds        *Relation  `xmlrpc:"sale_order_ids,omitempty" json:"sale_order_ids,omitempty"`
 	SaleOrderIdsNbr     *Int       `xmlrpc:"sale_order_ids_nbr,omitempty" json:"sale_order_ids_nbr,omitempty"`
 	SourceTransactionId *Many2One  `xmlrpc:"source_transaction_id,omitempty" json:"source_transaction_id,omitempty"`
 	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 	StateMessage        *String    `xmlrpc:"state_message,omitempty" json:"state_message,omitempty"`
+	SubscriptionAction  *Selection `xmlrpc:"subscription_action,omitempty" json:"subscription_action,omitempty"`
 	TokenId             *Many2One  `xmlrpc:"token_id,omitempty" json:"token_id,omitempty"`
 	Tokenize            *Bool      `xmlrpc:"tokenize,omitempty" json:"tokenize,omitempty"`
 	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
@@ -109,6 +113,9 @@ func (c *Client) GetPaymentTransaction(id int64) (*PaymentTransaction, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -126,6 +133,9 @@ func (c *Client) FindPaymentTransaction(criteria *Criteria) (*PaymentTransaction
 	pts := &PaymentTransactions{}
 	if err := c.SearchRead(PaymentTransactionModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -151,6 +161,9 @@ func (c *Client) FindPaymentTransactionId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(PaymentTransactionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

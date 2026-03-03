@@ -72,6 +72,9 @@ func (c *Client) GetAccountChangeLockDate(id int64) (*AccountChangeLockDate, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*aclds) == 0 {
+		return nil, nil
+	}
 	return &((*aclds)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountChangeLockDate(criteria *Criteria) (*AccountChangeLo
 	aclds := &AccountChangeLockDates{}
 	if err := c.SearchRead(AccountChangeLockDateModel, criteria, NewOptions().Limit(1), aclds); err != nil {
 		return nil, err
+	}
+	if len(*aclds) == 0 {
+		return nil, nil
 	}
 	return &((*aclds)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountChangeLockDateId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountChangeLockDateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

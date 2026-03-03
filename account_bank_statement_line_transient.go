@@ -81,6 +81,9 @@ func (c *Client) GetAccountBankStatementLineTransient(id int64) (*AccountBankSta
 	if err != nil {
 		return nil, err
 	}
+	if len(*abslts) == 0 {
+		return nil, nil
+	}
 	return &((*abslts)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindAccountBankStatementLineTransient(criteria *Criteria) (*Acc
 	abslts := &AccountBankStatementLineTransients{}
 	if err := c.SearchRead(AccountBankStatementLineTransientModel, criteria, NewOptions().Limit(1), abslts); err != nil {
 		return nil, err
+	}
+	if len(*abslts) == 0 {
+		return nil, nil
 	}
 	return &((*abslts)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindAccountBankStatementLineTransientId(criteria *Criteria, opt
 	ids, err := c.Search(AccountBankStatementLineTransientModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

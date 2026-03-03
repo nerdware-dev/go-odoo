@@ -97,6 +97,9 @@ func (c *Client) GetHrLeaveAccrualLevel(id int64) (*HrLeaveAccrualLevel, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlals) == 0 {
+		return nil, nil
+	}
 	return &((*hlals)[0]), nil
 }
 
@@ -114,6 +117,9 @@ func (c *Client) FindHrLeaveAccrualLevel(criteria *Criteria) (*HrLeaveAccrualLev
 	hlals := &HrLeaveAccrualLevels{}
 	if err := c.SearchRead(HrLeaveAccrualLevelModel, criteria, NewOptions().Limit(1), hlals); err != nil {
 		return nil, err
+	}
+	if len(*hlals) == 0 {
+		return nil, nil
 	}
 	return &((*hlals)[0]), nil
 }
@@ -139,6 +145,9 @@ func (c *Client) FindHrLeaveAccrualLevelId(criteria *Criteria, options *Options)
 	ids, err := c.Search(HrLeaveAccrualLevelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

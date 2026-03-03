@@ -78,6 +78,9 @@ func (c *Client) GetCalendarAlarm(id int64) (*CalendarAlarm, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cas) == 0 {
+		return nil, nil
+	}
 	return &((*cas)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindCalendarAlarm(criteria *Criteria) (*CalendarAlarm, error) {
 	cas := &CalendarAlarms{}
 	if err := c.SearchRead(CalendarAlarmModel, criteria, NewOptions().Limit(1), cas); err != nil {
 		return nil, err
+	}
+	if len(*cas) == 0 {
+		return nil, nil
 	}
 	return &((*cas)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindCalendarAlarmId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(CalendarAlarmModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

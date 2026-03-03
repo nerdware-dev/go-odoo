@@ -83,6 +83,9 @@ func (c *Client) GetAccountFollowupFollowupLine(id int64) (*AccountFollowupFollo
 	if err != nil {
 		return nil, err
 	}
+	if len(*afls) == 0 {
+		return nil, nil
+	}
 	return &((*afls)[0]), nil
 }
 
@@ -100,6 +103,9 @@ func (c *Client) FindAccountFollowupFollowupLine(criteria *Criteria) (*AccountFo
 	afls := &AccountFollowupFollowupLines{}
 	if err := c.SearchRead(AccountFollowupFollowupLineModel, criteria, NewOptions().Limit(1), afls); err != nil {
 		return nil, err
+	}
+	if len(*afls) == 0 {
+		return nil, nil
 	}
 	return &((*afls)[0]), nil
 }
@@ -125,6 +131,9 @@ func (c *Client) FindAccountFollowupFollowupLineId(criteria *Criteria, options *
 	ids, err := c.Search(AccountFollowupFollowupLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

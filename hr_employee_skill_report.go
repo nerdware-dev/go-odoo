@@ -72,6 +72,9 @@ func (c *Client) GetHrEmployeeSkillReport(id int64) (*HrEmployeeSkillReport, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*hesrs) == 0 {
+		return nil, nil
+	}
 	return &((*hesrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindHrEmployeeSkillReport(criteria *Criteria) (*HrEmployeeSkill
 	hesrs := &HrEmployeeSkillReports{}
 	if err := c.SearchRead(HrEmployeeSkillReportModel, criteria, NewOptions().Limit(1), hesrs); err != nil {
 		return nil, err
+	}
+	if len(*hesrs) == 0 {
+		return nil, nil
 	}
 	return &((*hesrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindHrEmployeeSkillReportId(criteria *Criteria, options *Option
 	ids, err := c.Search(HrEmployeeSkillReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

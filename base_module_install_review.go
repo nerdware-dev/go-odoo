@@ -72,6 +72,9 @@ func (c *Client) GetBaseModuleInstallReview(id int64) (*BaseModuleInstallReview,
 	if err != nil {
 		return nil, err
 	}
+	if len(*bmirs) == 0 {
+		return nil, nil
+	}
 	return &((*bmirs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindBaseModuleInstallReview(criteria *Criteria) (*BaseModuleIns
 	bmirs := &BaseModuleInstallReviews{}
 	if err := c.SearchRead(BaseModuleInstallReviewModel, criteria, NewOptions().Limit(1), bmirs); err != nil {
 		return nil, err
+	}
+	if len(*bmirs) == 0 {
+		return nil, nil
 	}
 	return &((*bmirs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindBaseModuleInstallReviewId(criteria *Criteria, options *Opti
 	ids, err := c.Search(BaseModuleInstallReviewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

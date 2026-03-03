@@ -75,6 +75,9 @@ func (c *Client) GetStockReturnPickingLine(id int64) (*StockReturnPickingLine, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*srpls) == 0 {
+		return nil, nil
+	}
 	return &((*srpls)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindStockReturnPickingLine(criteria *Criteria) (*StockReturnPic
 	srpls := &StockReturnPickingLines{}
 	if err := c.SearchRead(StockReturnPickingLineModel, criteria, NewOptions().Limit(1), srpls); err != nil {
 		return nil, err
+	}
+	if len(*srpls) == 0 {
+		return nil, nil
 	}
 	return &((*srpls)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindStockReturnPickingLineId(criteria *Criteria, options *Optio
 	ids, err := c.Search(StockReturnPickingLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

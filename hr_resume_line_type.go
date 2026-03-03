@@ -71,6 +71,9 @@ func (c *Client) GetHrResumeLineType(id int64) (*HrResumeLineType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hrlts) == 0 {
+		return nil, nil
+	}
 	return &((*hrlts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindHrResumeLineType(criteria *Criteria) (*HrResumeLineType, er
 	hrlts := &HrResumeLineTypes{}
 	if err := c.SearchRead(HrResumeLineTypeModel, criteria, NewOptions().Limit(1), hrlts); err != nil {
 		return nil, err
+	}
+	if len(*hrlts) == 0 {
+		return nil, nil
 	}
 	return &((*hrlts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindHrResumeLineTypeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(HrResumeLineTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

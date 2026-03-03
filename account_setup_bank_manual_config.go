@@ -120,6 +120,9 @@ func (c *Client) GetAccountSetupBankManualConfig(id int64) (*AccountSetupBankMan
 	if err != nil {
 		return nil, err
 	}
+	if len(*asbmcs) == 0 {
+		return nil, nil
+	}
 	return &((*asbmcs)[0]), nil
 }
 
@@ -137,6 +140,9 @@ func (c *Client) FindAccountSetupBankManualConfig(criteria *Criteria) (*AccountS
 	asbmcs := &AccountSetupBankManualConfigs{}
 	if err := c.SearchRead(AccountSetupBankManualConfigModel, criteria, NewOptions().Limit(1), asbmcs); err != nil {
 		return nil, err
+	}
+	if len(*asbmcs) == 0 {
+		return nil, nil
 	}
 	return &((*asbmcs)[0]), nil
 }
@@ -162,6 +168,9 @@ func (c *Client) FindAccountSetupBankManualConfigId(criteria *Criteria, options 
 	ids, err := c.Search(AccountSetupBankManualConfigModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

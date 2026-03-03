@@ -75,6 +75,9 @@ func (c *Client) GetAccountAccountTag(id int64) (*AccountAccountTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aats) == 0 {
+		return nil, nil
+	}
 	return &((*aats)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindAccountAccountTag(criteria *Criteria) (*AccountAccountTag, 
 	aats := &AccountAccountTags{}
 	if err := c.SearchRead(AccountAccountTagModel, criteria, NewOptions().Limit(1), aats); err != nil {
 		return nil, err
+	}
+	if len(*aats) == 0 {
+		return nil, nil
 	}
 	return &((*aats)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindAccountAccountTagId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountAccountTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

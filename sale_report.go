@@ -105,6 +105,9 @@ func (c *Client) GetSaleReport(id int64) (*SaleReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srs) == 0 {
+		return nil, nil
+	}
 	return &((*srs)[0]), nil
 }
 
@@ -122,6 +125,9 @@ func (c *Client) FindSaleReport(criteria *Criteria) (*SaleReport, error) {
 	srs := &SaleReports{}
 	if err := c.SearchRead(SaleReportModel, criteria, NewOptions().Limit(1), srs); err != nil {
 		return nil, err
+	}
+	if len(*srs) == 0 {
+		return nil, nil
 	}
 	return &((*srs)[0]), nil
 }
@@ -147,6 +153,9 @@ func (c *Client) FindSaleReportId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(SaleReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

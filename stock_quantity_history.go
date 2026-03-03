@@ -70,6 +70,9 @@ func (c *Client) GetStockQuantityHistory(id int64) (*StockQuantityHistory, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*sqhs) == 0 {
+		return nil, nil
+	}
 	return &((*sqhs)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindStockQuantityHistory(criteria *Criteria) (*StockQuantityHis
 	sqhs := &StockQuantityHistorys{}
 	if err := c.SearchRead(StockQuantityHistoryModel, criteria, NewOptions().Limit(1), sqhs); err != nil {
 		return nil, err
+	}
+	if len(*sqhs) == 0 {
+		return nil, nil
 	}
 	return &((*sqhs)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindStockQuantityHistoryId(criteria *Criteria, options *Options
 	ids, err := c.Search(StockQuantityHistoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

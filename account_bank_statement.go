@@ -84,6 +84,9 @@ func (c *Client) GetAccountBankStatement(id int64) (*AccountBankStatement, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*abss) == 0 {
+		return nil, nil
+	}
 	return &((*abss)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindAccountBankStatement(criteria *Criteria) (*AccountBankState
 	abss := &AccountBankStatements{}
 	if err := c.SearchRead(AccountBankStatementModel, criteria, NewOptions().Limit(1), abss); err != nil {
 		return nil, err
+	}
+	if len(*abss) == 0 {
+		return nil, nil
 	}
 	return &((*abss)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindAccountBankStatementId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountBankStatementModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

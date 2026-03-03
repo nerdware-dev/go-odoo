@@ -74,6 +74,9 @@ func (c *Client) GetProductTag(id int64) (*ProductTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProductTag(criteria *Criteria) (*ProductTag, error) {
 	pts := &ProductTags{}
 	if err := c.SearchRead(ProductTagModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProductTagId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(ProductTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

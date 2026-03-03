@@ -92,6 +92,9 @@ func (c *Client) GetProductPricelistItem(id int64) (*ProductPricelistItem, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*ppis) == 0 {
+		return nil, nil
+	}
 	return &((*ppis)[0]), nil
 }
 
@@ -109,6 +112,9 @@ func (c *Client) FindProductPricelistItem(criteria *Criteria) (*ProductPricelist
 	ppis := &ProductPricelistItems{}
 	if err := c.SearchRead(ProductPricelistItemModel, criteria, NewOptions().Limit(1), ppis); err != nil {
 		return nil, err
+	}
+	if len(*ppis) == 0 {
+		return nil, nil
 	}
 	return &((*ppis)[0]), nil
 }
@@ -134,6 +140,9 @@ func (c *Client) FindProductPricelistItemId(criteria *Criteria, options *Options
 	ids, err := c.Search(ProductPricelistItemModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

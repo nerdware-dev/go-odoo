@@ -13,6 +13,7 @@ type SaleOrderTemplateLine struct {
 	ProductUomCategoryId *Many2One  `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
 	ProductUomId         *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
 	ProductUomQty        *Float     `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	RecurringInvoice     *Bool      `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
 	SaleOrderTemplateId  *Many2One  `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
 	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
@@ -78,6 +79,9 @@ func (c *Client) GetSaleOrderTemplateLine(id int64) (*SaleOrderTemplateLine, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*sotls) == 0 {
+		return nil, nil
+	}
 	return &((*sotls)[0]), nil
 }
 
@@ -95,6 +99,9 @@ func (c *Client) FindSaleOrderTemplateLine(criteria *Criteria) (*SaleOrderTempla
 	sotls := &SaleOrderTemplateLines{}
 	if err := c.SearchRead(SaleOrderTemplateLineModel, criteria, NewOptions().Limit(1), sotls); err != nil {
 		return nil, err
+	}
+	if len(*sotls) == 0 {
+		return nil, nil
 	}
 	return &((*sotls)[0]), nil
 }
@@ -120,6 +127,9 @@ func (c *Client) FindSaleOrderTemplateLineId(criteria *Criteria, options *Option
 	ids, err := c.Search(SaleOrderTemplateLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -143,6 +143,9 @@ func (c *Client) GetDocumentsDocument(id int64) (*DocumentsDocument, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dds) == 0 {
+		return nil, nil
+	}
 	return &((*dds)[0]), nil
 }
 
@@ -160,6 +163,9 @@ func (c *Client) FindDocumentsDocument(criteria *Criteria) (*DocumentsDocument, 
 	dds := &DocumentsDocuments{}
 	if err := c.SearchRead(DocumentsDocumentModel, criteria, NewOptions().Limit(1), dds); err != nil {
 		return nil, err
+	}
+	if len(*dds) == 0 {
+		return nil, nil
 	}
 	return &((*dds)[0]), nil
 }
@@ -185,6 +191,9 @@ func (c *Client) FindDocumentsDocumentId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(DocumentsDocumentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

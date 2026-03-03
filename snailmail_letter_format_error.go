@@ -71,6 +71,9 @@ func (c *Client) GetSnailmailLetterFormatError(id int64) (*SnailmailLetterFormat
 	if err != nil {
 		return nil, err
 	}
+	if len(*slfes) == 0 {
+		return nil, nil
+	}
 	return &((*slfes)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindSnailmailLetterFormatError(criteria *Criteria) (*SnailmailL
 	slfes := &SnailmailLetterFormatErrors{}
 	if err := c.SearchRead(SnailmailLetterFormatErrorModel, criteria, NewOptions().Limit(1), slfes); err != nil {
 		return nil, err
+	}
+	if len(*slfes) == 0 {
+		return nil, nil
 	}
 	return &((*slfes)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindSnailmailLetterFormatErrorId(criteria *Criteria, options *O
 	ids, err := c.Search(SnailmailLetterFormatErrorModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

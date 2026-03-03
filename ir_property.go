@@ -80,6 +80,9 @@ func (c *Client) GetIrProperty(id int64) (*IrProperty, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ips) == 0 {
+		return nil, nil
+	}
 	return &((*ips)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindIrProperty(criteria *Criteria) (*IrProperty, error) {
 	ips := &IrPropertys{}
 	if err := c.SearchRead(IrPropertyModel, criteria, NewOptions().Limit(1), ips); err != nil {
 		return nil, err
+	}
+	if len(*ips) == 0 {
+		return nil, nil
 	}
 	return &((*ips)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindIrPropertyId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(IrPropertyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

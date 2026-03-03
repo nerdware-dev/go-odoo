@@ -73,6 +73,9 @@ func (c *Client) GetOnboardingProgressStep(id int64) (*OnboardingProgressStep, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*opss) == 0 {
+		return nil, nil
+	}
 	return &((*opss)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindOnboardingProgressStep(criteria *Criteria) (*OnboardingProg
 	opss := &OnboardingProgressSteps{}
 	if err := c.SearchRead(OnboardingProgressStepModel, criteria, NewOptions().Limit(1), opss); err != nil {
 		return nil, err
+	}
+	if len(*opss) == 0 {
+		return nil, nil
 	}
 	return &((*opss)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindOnboardingProgressStepId(criteria *Criteria, options *Optio
 	ids, err := c.Search(OnboardingProgressStepModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -74,6 +74,9 @@ func (c *Client) GetDocumentsFacet(id int64) (*DocumentsFacet, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dfs) == 0 {
+		return nil, nil
+	}
 	return &((*dfs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindDocumentsFacet(criteria *Criteria) (*DocumentsFacet, error)
 	dfs := &DocumentsFacets{}
 	if err := c.SearchRead(DocumentsFacetModel, criteria, NewOptions().Limit(1), dfs); err != nil {
 		return nil, err
+	}
+	if len(*dfs) == 0 {
+		return nil, nil
 	}
 	return &((*dfs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindDocumentsFacetId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(DocumentsFacetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

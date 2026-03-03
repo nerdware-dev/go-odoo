@@ -73,6 +73,9 @@ func (c *Client) GetBaseImportImport(id int64) (*BaseImportImport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bis) == 0 {
+		return nil, nil
+	}
 	return &((*bis)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindBaseImportImport(criteria *Criteria) (*BaseImportImport, er
 	bis := &BaseImportImports{}
 	if err := c.SearchRead(BaseImportImportModel, criteria, NewOptions().Limit(1), bis); err != nil {
 		return nil, err
+	}
+	if len(*bis) == 0 {
+		return nil, nil
 	}
 	return &((*bis)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindBaseImportImportId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(BaseImportImportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -77,6 +77,9 @@ func (c *Client) GetResUsersSettings(id int64) (*ResUsersSettings, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*russ) == 0 {
+		return nil, nil
+	}
 	return &((*russ)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindResUsersSettings(criteria *Criteria) (*ResUsersSettings, er
 	russ := &ResUsersSettingss{}
 	if err := c.SearchRead(ResUsersSettingsModel, criteria, NewOptions().Limit(1), russ); err != nil {
 		return nil, err
+	}
+	if len(*russ) == 0 {
+		return nil, nil
 	}
 	return &((*russ)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindResUsersSettingsId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResUsersSettingsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

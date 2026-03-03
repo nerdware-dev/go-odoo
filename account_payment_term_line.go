@@ -76,6 +76,9 @@ func (c *Client) GetAccountPaymentTermLine(id int64) (*AccountPaymentTermLine, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*aptls) == 0 {
+		return nil, nil
+	}
 	return &((*aptls)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindAccountPaymentTermLine(criteria *Criteria) (*AccountPayment
 	aptls := &AccountPaymentTermLines{}
 	if err := c.SearchRead(AccountPaymentTermLineModel, criteria, NewOptions().Limit(1), aptls); err != nil {
 		return nil, err
+	}
+	if len(*aptls) == 0 {
+		return nil, nil
 	}
 	return &((*aptls)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindAccountPaymentTermLineId(criteria *Criteria, options *Optio
 	ids, err := c.Search(AccountPaymentTermLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

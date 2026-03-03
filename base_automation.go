@@ -2,61 +2,39 @@ package odoo
 
 // BaseAutomation represents base.automation model.
 type BaseAutomation struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionServerId                *Many2One  `xmlrpc:"action_server_id,omitempty"`
-	Active                        *Bool      `xmlrpc:"active,omitempty"`
-	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
-	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
-	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
-	ActivitySummary               *String    `xmlrpc:"activity_summary,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	ActivityUserFieldName         *String    `xmlrpc:"activity_user_field_name,omitempty"`
-	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty"`
-	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty"`
-	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType                   *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty"`
-	ChannelIds                    *Relation  `xmlrpc:"channel_ids,omitempty"`
-	ChildIds                      *Relation  `xmlrpc:"child_ids,omitempty"`
-	Code                          *String    `xmlrpc:"code,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CrudModelId                   *Many2One  `xmlrpc:"crud_model_id,omitempty"`
-	CrudModelName                 *String    `xmlrpc:"crud_model_name,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	FieldsLines                   *Relation  `xmlrpc:"fields_lines,omitempty"`
-	FilterDomain                  *String    `xmlrpc:"filter_domain,omitempty"`
-	FilterPreDomain               *String    `xmlrpc:"filter_pre_domain,omitempty"`
-	GroupsId                      *Relation  `xmlrpc:"groups_id,omitempty"`
-	Help                          *String    `xmlrpc:"help,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	LastRun                       *Time      `xmlrpc:"last_run,omitempty"`
-	LinkFieldId                   *Many2One  `xmlrpc:"link_field_id,omitempty"`
-	ModelId                       *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelName                     *String    `xmlrpc:"model_name,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	OnChangeFields                *String    `xmlrpc:"on_change_fields,omitempty"`
-	PartnerIds                    *Relation  `xmlrpc:"partner_ids,omitempty"`
-	Sequence                      *Int       `xmlrpc:"sequence,omitempty"`
-	SmsMassKeepLog                *Bool      `xmlrpc:"sms_mass_keep_log,omitempty"`
-	SmsTemplateId                 *Many2One  `xmlrpc:"sms_template_id,omitempty"`
-	State                         *Selection `xmlrpc:"state,omitempty"`
-	TemplateId                    *Many2One  `xmlrpc:"template_id,omitempty"`
-	TrgDateCalendarId             *Many2One  `xmlrpc:"trg_date_calendar_id,omitempty"`
-	TrgDateId                     *Many2One  `xmlrpc:"trg_date_id,omitempty"`
-	TrgDateRange                  *Int       `xmlrpc:"trg_date_range,omitempty"`
-	TrgDateRangeType              *Selection `xmlrpc:"trg_date_range_type,omitempty"`
-	TrgDateResourceFieldId        *Many2One  `xmlrpc:"trg_date_resource_field_id,omitempty"`
-	Trigger                       *Selection `xmlrpc:"trigger,omitempty"`
-	TriggerFieldIds               *Relation  `xmlrpc:"trigger_field_ids,omitempty"`
-	Type                          *String    `xmlrpc:"type,omitempty"`
-	Usage                         *Selection `xmlrpc:"usage,omitempty"`
-	WebsitePath                   *String    `xmlrpc:"website_path,omitempty"`
-	WebsitePublished              *Bool      `xmlrpc:"website_published,omitempty"`
-	WebsiteUrl                    *String    `xmlrpc:"website_url,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId                         *String    `xmlrpc:"xml_id,omitempty"`
+	ActionServerIds        *Relation  `xmlrpc:"action_server_ids,omitempty" json:"action_server_ids,omitempty"`
+	Active                 *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate             *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description            *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName            *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FilterDomain           *String    `xmlrpc:"filter_domain,omitempty" json:"filter_domain,omitempty"`
+	FilterPreDomain        *String    `xmlrpc:"filter_pre_domain,omitempty" json:"filter_pre_domain,omitempty"`
+	Id                     *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSaleOrderAlert       *Bool      `xmlrpc:"is_sale_order_alert,omitempty" json:"is_sale_order_alert,omitempty"`
+	LastRun                *Time      `xmlrpc:"last_run,omitempty" json:"last_run,omitempty"`
+	LeastDelayMsg          *String    `xmlrpc:"least_delay_msg,omitempty" json:"least_delay_msg,omitempty"`
+	LogWebhookCalls        *Bool      `xmlrpc:"log_webhook_calls,omitempty" json:"log_webhook_calls,omitempty"`
+	ModelId                *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	ModelIsMailThread      *Bool      `xmlrpc:"model_is_mail_thread,omitempty" json:"model_is_mail_thread,omitempty"`
+	ModelName              *String    `xmlrpc:"model_name,omitempty" json:"model_name,omitempty"`
+	Name                   *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OnChangeFieldIds       *Relation  `xmlrpc:"on_change_field_ids,omitempty" json:"on_change_field_ids,omitempty"`
+	RecordGetter           *String    `xmlrpc:"record_getter,omitempty" json:"record_getter,omitempty"`
+	TrgDateCalendarId      *Many2One  `xmlrpc:"trg_date_calendar_id,omitempty" json:"trg_date_calendar_id,omitempty"`
+	TrgDateId              *Many2One  `xmlrpc:"trg_date_id,omitempty" json:"trg_date_id,omitempty"`
+	TrgDateRange           *Int       `xmlrpc:"trg_date_range,omitempty" json:"trg_date_range,omitempty"`
+	TrgDateRangeType       *Selection `xmlrpc:"trg_date_range_type,omitempty" json:"trg_date_range_type,omitempty"`
+	TrgFieldRef            *Many2One  `xmlrpc:"trg_field_ref,omitempty" json:"trg_field_ref,omitempty"`
+	TrgFieldRefDisplayName *String    `xmlrpc:"trg_field_ref_display_name,omitempty" json:"trg_field_ref_display_name,omitempty"`
+	TrgFieldRefModelName   *String    `xmlrpc:"trg_field_ref_model_name,omitempty" json:"trg_field_ref_model_name,omitempty"`
+	TrgSelectionFieldId    *Many2One  `xmlrpc:"trg_selection_field_id,omitempty" json:"trg_selection_field_id,omitempty"`
+	Trigger                *Selection `xmlrpc:"trigger,omitempty" json:"trigger,omitempty"`
+	TriggerFieldIds        *Relation  `xmlrpc:"trigger_field_ids,omitempty" json:"trigger_field_ids,omitempty"`
+	Url                    *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	WebhookUuid            *String    `xmlrpc:"webhook_uuid,omitempty" json:"webhook_uuid,omitempty"`
+	WriteDate              *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseAutomations represents array of base.automation model.
@@ -118,6 +96,9 @@ func (c *Client) GetBaseAutomation(id int64) (*BaseAutomation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bas) == 0 {
+		return nil, nil
+	}
 	return &((*bas)[0]), nil
 }
 
@@ -135,6 +116,9 @@ func (c *Client) FindBaseAutomation(criteria *Criteria) (*BaseAutomation, error)
 	bas := &BaseAutomations{}
 	if err := c.SearchRead(BaseAutomationModel, criteria, NewOptions().Limit(1), bas); err != nil {
 		return nil, err
+	}
+	if len(*bas) == 0 {
+		return nil, nil
 	}
 	return &((*bas)[0]), nil
 }
@@ -160,6 +144,9 @@ func (c *Client) FindBaseAutomationId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(BaseAutomationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,18 +2,18 @@ package odoo
 
 // FleetVehicleAssignationLog represents fleet.vehicle.assignation.log model.
 type FleetVehicleAssignationLog struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	AttachmentNumber *Int      `xmlrpc:"attachment_number,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateEnd          *Time     `xmlrpc:"date_end,omitempty"`
-	DateStart        *Time     `xmlrpc:"date_start,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	DriverId         *Many2One `xmlrpc:"driver_id,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	VehicleId        *Many2One `xmlrpc:"vehicle_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	AttachmentNumber *Int      `xmlrpc:"attachment_number,omitempty" json:"attachment_number,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateEnd          *Time     `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateStart        *Time     `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DriverEmployeeId *Many2One `xmlrpc:"driver_employee_id,omitempty" json:"driver_employee_id,omitempty"`
+	DriverId         *Many2One `xmlrpc:"driver_id,omitempty" json:"driver_id,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	VehicleId        *Many2One `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleAssignationLogs represents array of fleet.vehicle.assignation.log model.
@@ -75,6 +75,9 @@ func (c *Client) GetFleetVehicleAssignationLog(id int64) (*FleetVehicleAssignati
 	if err != nil {
 		return nil, err
 	}
+	if len(*fvals) == 0 {
+		return nil, nil
+	}
 	return &((*fvals)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindFleetVehicleAssignationLog(criteria *Criteria) (*FleetVehic
 	fvals := &FleetVehicleAssignationLogs{}
 	if err := c.SearchRead(FleetVehicleAssignationLogModel, criteria, NewOptions().Limit(1), fvals); err != nil {
 		return nil, err
+	}
+	if len(*fvals) == 0 {
+		return nil, nil
 	}
 	return &((*fvals)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindFleetVehicleAssignationLogId(criteria *Criteria, options *O
 	ids, err := c.Search(FleetVehicleAssignationLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

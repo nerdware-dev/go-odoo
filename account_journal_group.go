@@ -73,6 +73,9 @@ func (c *Client) GetAccountJournalGroup(id int64) (*AccountJournalGroup, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*ajgs) == 0 {
+		return nil, nil
+	}
 	return &((*ajgs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountJournalGroup(criteria *Criteria) (*AccountJournalGro
 	ajgs := &AccountJournalGroups{}
 	if err := c.SearchRead(AccountJournalGroupModel, criteria, NewOptions().Limit(1), ajgs); err != nil {
 		return nil, err
+	}
+	if len(*ajgs) == 0 {
+		return nil, nil
 	}
 	return &((*ajgs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountJournalGroupId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountJournalGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

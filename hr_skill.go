@@ -72,6 +72,9 @@ func (c *Client) GetHrSkill(id int64) (*HrSkill, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hss) == 0 {
+		return nil, nil
+	}
 	return &((*hss)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindHrSkill(criteria *Criteria) (*HrSkill, error) {
 	hss := &HrSkills{}
 	if err := c.SearchRead(HrSkillModel, criteria, NewOptions().Limit(1), hss); err != nil {
 		return nil, err
+	}
+	if len(*hss) == 0 {
+		return nil, nil
 	}
 	return &((*hss)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindHrSkillId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(HrSkillModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

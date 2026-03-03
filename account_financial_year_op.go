@@ -77,6 +77,9 @@ func (c *Client) GetAccountFinancialYearOp(id int64) (*AccountFinancialYearOp, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*afyos) == 0 {
+		return nil, nil
+	}
 	return &((*afyos)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindAccountFinancialYearOp(criteria *Criteria) (*AccountFinanci
 	afyos := &AccountFinancialYearOps{}
 	if err := c.SearchRead(AccountFinancialYearOpModel, criteria, NewOptions().Limit(1), afyos); err != nil {
 		return nil, err
+	}
+	if len(*afyos) == 0 {
+		return nil, nil
 	}
 	return &((*afyos)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindAccountFinancialYearOpId(criteria *Criteria, options *Optio
 	ids, err := c.Search(AccountFinancialYearOpModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

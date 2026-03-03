@@ -108,6 +108,9 @@ func (c *Client) GetAccountReport(id int64) (*AccountReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ars) == 0 {
+		return nil, nil
+	}
 	return &((*ars)[0]), nil
 }
 
@@ -125,6 +128,9 @@ func (c *Client) FindAccountReport(criteria *Criteria) (*AccountReport, error) {
 	ars := &AccountReports{}
 	if err := c.SearchRead(AccountReportModel, criteria, NewOptions().Limit(1), ars); err != nil {
 		return nil, err
+	}
+	if len(*ars) == 0 {
+		return nil, nil
 	}
 	return &((*ars)[0]), nil
 }
@@ -150,6 +156,9 @@ func (c *Client) FindAccountReportId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(AccountReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

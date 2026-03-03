@@ -74,6 +74,9 @@ func (c *Client) GetIrDefault(id int64) (*IrDefault, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IDs) == 0 {
+		return nil, nil
+	}
 	return &((*IDs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindIrDefault(criteria *Criteria) (*IrDefault, error) {
 	IDs := &IrDefaults{}
 	if err := c.SearchRead(IrDefaultModel, criteria, NewOptions().Limit(1), IDs); err != nil {
 		return nil, err
+	}
+	if len(*IDs) == 0 {
+		return nil, nil
 	}
 	return &((*IDs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindIrDefaultId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrDefaultModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

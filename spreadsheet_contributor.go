@@ -72,6 +72,9 @@ func (c *Client) GetSpreadsheetContributor(id int64) (*SpreadsheetContributor, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*scs) == 0 {
+		return nil, nil
+	}
 	return &((*scs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindSpreadsheetContributor(criteria *Criteria) (*SpreadsheetCon
 	scs := &SpreadsheetContributors{}
 	if err := c.SearchRead(SpreadsheetContributorModel, criteria, NewOptions().Limit(1), scs); err != nil {
 		return nil, err
+	}
+	if len(*scs) == 0 {
+		return nil, nil
 	}
 	return &((*scs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindSpreadsheetContributorId(criteria *Criteria, options *Optio
 	ids, err := c.Search(SpreadsheetContributorModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

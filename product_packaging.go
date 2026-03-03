@@ -80,6 +80,9 @@ func (c *Client) GetProductPackaging(id int64) (*ProductPackaging, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pps) == 0 {
+		return nil, nil
+	}
 	return &((*pps)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindProductPackaging(criteria *Criteria) (*ProductPackaging, er
 	pps := &ProductPackagings{}
 	if err := c.SearchRead(ProductPackagingModel, criteria, NewOptions().Limit(1), pps); err != nil {
 		return nil, err
+	}
+	if len(*pps) == 0 {
+		return nil, nil
 	}
 	return &((*pps)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindProductPackagingId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProductPackagingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

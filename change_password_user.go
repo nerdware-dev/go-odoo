@@ -73,6 +73,9 @@ func (c *Client) GetChangePasswordUser(id int64) (*ChangePasswordUser, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cpus) == 0 {
+		return nil, nil
+	}
 	return &((*cpus)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindChangePasswordUser(criteria *Criteria) (*ChangePasswordUser
 	cpus := &ChangePasswordUsers{}
 	if err := c.SearchRead(ChangePasswordUserModel, criteria, NewOptions().Limit(1), cpus); err != nil {
 		return nil, err
+	}
+	if len(*cpus) == 0 {
+		return nil, nil
 	}
 	return &((*cpus)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindChangePasswordUserId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ChangePasswordUserModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

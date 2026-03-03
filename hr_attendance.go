@@ -104,6 +104,9 @@ func (c *Client) GetHrAttendance(id int64) (*HrAttendance, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*has) == 0 {
+		return nil, nil
+	}
 	return &((*has)[0]), nil
 }
 
@@ -121,6 +124,9 @@ func (c *Client) FindHrAttendance(criteria *Criteria) (*HrAttendance, error) {
 	has := &HrAttendances{}
 	if err := c.SearchRead(HrAttendanceModel, criteria, NewOptions().Limit(1), has); err != nil {
 		return nil, err
+	}
+	if len(*has) == 0 {
+		return nil, nil
 	}
 	return &((*has)[0]), nil
 }
@@ -146,6 +152,9 @@ func (c *Client) FindHrAttendanceId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(HrAttendanceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

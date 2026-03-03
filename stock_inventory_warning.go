@@ -70,6 +70,9 @@ func (c *Client) GetStockInventoryWarning(id int64) (*StockInventoryWarning, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*siws) == 0 {
+		return nil, nil
+	}
 	return &((*siws)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindStockInventoryWarning(criteria *Criteria) (*StockInventoryW
 	siws := &StockInventoryWarnings{}
 	if err := c.SearchRead(StockInventoryWarningModel, criteria, NewOptions().Limit(1), siws); err != nil {
 		return nil, err
+	}
+	if len(*siws) == 0 {
+		return nil, nil
 	}
 	return &((*siws)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindStockInventoryWarningId(criteria *Criteria, options *Option
 	ids, err := c.Search(StockInventoryWarningModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

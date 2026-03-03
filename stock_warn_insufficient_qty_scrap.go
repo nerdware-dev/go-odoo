@@ -75,6 +75,9 @@ func (c *Client) GetStockWarnInsufficientQtyScrap(id int64) (*StockWarnInsuffici
 	if err != nil {
 		return nil, err
 	}
+	if len(*swiqss) == 0 {
+		return nil, nil
+	}
 	return &((*swiqss)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindStockWarnInsufficientQtyScrap(criteria *Criteria) (*StockWa
 	swiqss := &StockWarnInsufficientQtyScraps{}
 	if err := c.SearchRead(StockWarnInsufficientQtyScrapModel, criteria, NewOptions().Limit(1), swiqss); err != nil {
 		return nil, err
+	}
+	if len(*swiqss) == 0 {
+		return nil, nil
 	}
 	return &((*swiqss)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindStockWarnInsufficientQtyScrapId(criteria *Criteria, options
 	ids, err := c.Search(StockWarnInsufficientQtyScrapModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

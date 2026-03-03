@@ -72,6 +72,9 @@ func (c *Client) GetCrmMergeOpportunity(id int64) (*CrmMergeOpportunity, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*cmos) == 0 {
+		return nil, nil
+	}
 	return &((*cmos)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindCrmMergeOpportunity(criteria *Criteria) (*CrmMergeOpportuni
 	cmos := &CrmMergeOpportunitys{}
 	if err := c.SearchRead(CrmMergeOpportunityModel, criteria, NewOptions().Limit(1), cmos); err != nil {
 		return nil, err
+	}
+	if len(*cmos) == 0 {
+		return nil, nil
 	}
 	return &((*cmos)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindCrmMergeOpportunityId(criteria *Criteria, options *Options)
 	ids, err := c.Search(CrmMergeOpportunityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

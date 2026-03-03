@@ -72,6 +72,9 @@ func (c *Client) GetLotLabelLayout(id int64) (*LotLabelLayout, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*llls) == 0 {
+		return nil, nil
+	}
 	return &((*llls)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindLotLabelLayout(criteria *Criteria) (*LotLabelLayout, error)
 	llls := &LotLabelLayouts{}
 	if err := c.SearchRead(LotLabelLayoutModel, criteria, NewOptions().Limit(1), llls); err != nil {
 		return nil, err
+	}
+	if len(*llls) == 0 {
+		return nil, nil
 	}
 	return &((*llls)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindLotLabelLayoutId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(LotLabelLayoutModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

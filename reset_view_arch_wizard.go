@@ -76,6 +76,9 @@ func (c *Client) GetResetViewArchWizard(id int64) (*ResetViewArchWizard, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*rvaws) == 0 {
+		return nil, nil
+	}
 	return &((*rvaws)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindResetViewArchWizard(criteria *Criteria) (*ResetViewArchWiza
 	rvaws := &ResetViewArchWizards{}
 	if err := c.SearchRead(ResetViewArchWizardModel, criteria, NewOptions().Limit(1), rvaws); err != nil {
 		return nil, err
+	}
+	if len(*rvaws) == 0 {
+		return nil, nil
 	}
 	return &((*rvaws)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindResetViewArchWizardId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ResetViewArchWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -71,6 +71,9 @@ func (c *Client) GetCalendarEventType(id int64) (*CalendarEventType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cets) == 0 {
+		return nil, nil
+	}
 	return &((*cets)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindCalendarEventType(criteria *Criteria) (*CalendarEventType, 
 	cets := &CalendarEventTypes{}
 	if err := c.SearchRead(CalendarEventTypeModel, criteria, NewOptions().Limit(1), cets); err != nil {
 		return nil, err
+	}
+	if len(*cets) == 0 {
+		return nil, nil
 	}
 	return &((*cets)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindCalendarEventTypeId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(CalendarEventTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

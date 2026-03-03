@@ -72,6 +72,9 @@ func (c *Client) GetStockTrackConfirmation(id int64) (*StockTrackConfirmation, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*stcs) == 0 {
+		return nil, nil
+	}
 	return &((*stcs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindStockTrackConfirmation(criteria *Criteria) (*StockTrackConf
 	stcs := &StockTrackConfirmations{}
 	if err := c.SearchRead(StockTrackConfirmationModel, criteria, NewOptions().Limit(1), stcs); err != nil {
 		return nil, err
+	}
+	if len(*stcs) == 0 {
+		return nil, nil
 	}
 	return &((*stcs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindStockTrackConfirmationId(criteria *Criteria, options *Optio
 	ids, err := c.Search(StockTrackConfirmationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

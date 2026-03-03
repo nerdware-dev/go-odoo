@@ -71,6 +71,9 @@ func (c *Client) GetPhoneBlacklistRemove(id int64) (*PhoneBlacklistRemove, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*pbrs) == 0 {
+		return nil, nil
+	}
 	return &((*pbrs)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindPhoneBlacklistRemove(criteria *Criteria) (*PhoneBlacklistRe
 	pbrs := &PhoneBlacklistRemoves{}
 	if err := c.SearchRead(PhoneBlacklistRemoveModel, criteria, NewOptions().Limit(1), pbrs); err != nil {
 		return nil, err
+	}
+	if len(*pbrs) == 0 {
+		return nil, nil
 	}
 	return &((*pbrs)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindPhoneBlacklistRemoveId(criteria *Criteria, options *Options
 	ids, err := c.Search(PhoneBlacklistRemoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

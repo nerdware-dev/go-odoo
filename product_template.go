@@ -76,6 +76,7 @@ type ProductTemplate struct {
 	ProductDocumentCount                   *Int        `xmlrpc:"product_document_count,omitempty" json:"product_document_count,omitempty"`
 	ProductDocumentIds                     *Relation   `xmlrpc:"product_document_ids,omitempty" json:"product_document_ids,omitempty"`
 	ProductProperties                      interface{} `xmlrpc:"product_properties,omitempty" json:"product_properties,omitempty"`
+	ProductSubscriptionPricingIds          *Relation   `xmlrpc:"product_subscription_pricing_ids,omitempty" json:"product_subscription_pricing_ids,omitempty"`
 	ProductTagIds                          *Relation   `xmlrpc:"product_tag_ids,omitempty" json:"product_tag_ids,omitempty"`
 	ProductTooltip                         *String     `xmlrpc:"product_tooltip,omitempty" json:"product_tooltip,omitempty"`
 	ProductVariantCount                    *Int        `xmlrpc:"product_variant_count,omitempty" json:"product_variant_count,omitempty"`
@@ -96,6 +97,7 @@ type ProductTemplate struct {
 	PurchasedProductQty                    *Float      `xmlrpc:"purchased_product_qty,omitempty" json:"purchased_product_qty,omitempty"`
 	QtyAvailable                           *Float      `xmlrpc:"qty_available,omitempty" json:"qty_available,omitempty"`
 	RatingIds                              *Relation   `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RecurringInvoice                       *Bool       `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
 	ReorderingMaxQty                       *Float      `xmlrpc:"reordering_max_qty,omitempty" json:"reordering_max_qty,omitempty"`
 	ReorderingMinQty                       *Float      `xmlrpc:"reordering_min_qty,omitempty" json:"reordering_min_qty,omitempty"`
 	ResponsibleId                          *Many2One   `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
@@ -200,6 +202,9 @@ func (c *Client) GetProductTemplate(id int64) (*ProductTemplate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -217,6 +222,9 @@ func (c *Client) FindProductTemplate(criteria *Criteria) (*ProductTemplate, erro
 	pts := &ProductTemplates{}
 	if err := c.SearchRead(ProductTemplateModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -242,6 +250,9 @@ func (c *Client) FindProductTemplateId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ProductTemplateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

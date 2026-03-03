@@ -188,8 +188,14 @@ type AccountPayment struct {
 	ReversalMoveId                        *Relation   `xmlrpc:"reversal_move_id,omitempty" json:"reversal_move_id,omitempty"`
 	ReversedEntryId                       *Many2One   `xmlrpc:"reversed_entry_id,omitempty" json:"reversed_entry_id,omitempty"`
 	SaleOrderCount                        *Int        `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
+	SddHasUsableMandate                   *Bool       `xmlrpc:"sdd_has_usable_mandate,omitempty" json:"sdd_has_usable_mandate,omitempty"`
+	SddMandateId                          *Many2One   `xmlrpc:"sdd_mandate_id,omitempty" json:"sdd_mandate_id,omitempty"`
+	SddMandateScheme                      *Selection  `xmlrpc:"sdd_mandate_scheme,omitempty" json:"sdd_mandate_scheme,omitempty"`
+	SddMandateUsable                      *Bool       `xmlrpc:"sdd_mandate_usable,omitempty" json:"sdd_mandate_usable,omitempty"`
 	SecureSequenceNumber                  *Int        `xmlrpc:"secure_sequence_number,omitempty" json:"secure_sequence_number,omitempty"`
 	SendAndPrintValues                    interface{} `xmlrpc:"send_and_print_values,omitempty" json:"send_and_print_values,omitempty"`
+	SepaPainVersion                       *Selection  `xmlrpc:"sepa_pain_version,omitempty" json:"sepa_pain_version,omitempty"`
+	SepaUetr                              *String     `xmlrpc:"sepa_uetr,omitempty" json:"sepa_uetr,omitempty"`
 	SequenceNumber                        *Int        `xmlrpc:"sequence_number,omitempty" json:"sequence_number,omitempty"`
 	SequencePrefix                        *String     `xmlrpc:"sequence_prefix,omitempty" json:"sequence_prefix,omitempty"`
 	ShowCommercialPartnerWarning          *Bool       `xmlrpc:"show_commercial_partner_warning,omitempty" json:"show_commercial_partner_warning,omitempty"`
@@ -301,6 +307,9 @@ func (c *Client) GetAccountPayment(id int64) (*AccountPayment, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aps) == 0 {
+		return nil, nil
+	}
 	return &((*aps)[0]), nil
 }
 
@@ -318,6 +327,9 @@ func (c *Client) FindAccountPayment(criteria *Criteria) (*AccountPayment, error)
 	aps := &AccountPayments{}
 	if err := c.SearchRead(AccountPaymentModel, criteria, NewOptions().Limit(1), aps); err != nil {
 		return nil, err
+	}
+	if len(*aps) == 0 {
+		return nil, nil
 	}
 	return &((*aps)[0]), nil
 }
@@ -343,6 +355,9 @@ func (c *Client) FindAccountPaymentId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AccountPaymentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

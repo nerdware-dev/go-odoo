@@ -76,6 +76,9 @@ func (c *Client) GetAccountAnalyticApplicability(id int64) (*AccountAnalyticAppl
 	if err != nil {
 		return nil, err
 	}
+	if len(*aaas) == 0 {
+		return nil, nil
+	}
 	return &((*aaas)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindAccountAnalyticApplicability(criteria *Criteria) (*AccountA
 	aaas := &AccountAnalyticApplicabilitys{}
 	if err := c.SearchRead(AccountAnalyticApplicabilityModel, criteria, NewOptions().Limit(1), aaas); err != nil {
 		return nil, err
+	}
+	if len(*aaas) == 0 {
+		return nil, nil
 	}
 	return &((*aaas)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindAccountAnalyticApplicabilityId(criteria *Criteria, options 
 	ids, err := c.Search(AccountAnalyticApplicabilityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

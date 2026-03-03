@@ -91,6 +91,9 @@ func (c *Client) GetProductCategory(id int64) (*ProductCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcs) == 0 {
+		return nil, nil
+	}
 	return &((*pcs)[0]), nil
 }
 
@@ -108,6 +111,9 @@ func (c *Client) FindProductCategory(criteria *Criteria) (*ProductCategory, erro
 	pcs := &ProductCategorys{}
 	if err := c.SearchRead(ProductCategoryModel, criteria, NewOptions().Limit(1), pcs); err != nil {
 		return nil, err
+	}
+	if len(*pcs) == 0 {
+		return nil, nil
 	}
 	return &((*pcs)[0]), nil
 }
@@ -133,6 +139,9 @@ func (c *Client) FindProductCategoryId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ProductCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

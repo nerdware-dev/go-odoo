@@ -92,6 +92,9 @@ func (c *Client) GetCalendarRecurrence(id int64) (*CalendarRecurrence, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*crs) == 0 {
+		return nil, nil
+	}
 	return &((*crs)[0]), nil
 }
 
@@ -109,6 +112,9 @@ func (c *Client) FindCalendarRecurrence(criteria *Criteria) (*CalendarRecurrence
 	crs := &CalendarRecurrences{}
 	if err := c.SearchRead(CalendarRecurrenceModel, criteria, NewOptions().Limit(1), crs); err != nil {
 		return nil, err
+	}
+	if len(*crs) == 0 {
+		return nil, nil
 	}
 	return &((*crs)[0]), nil
 }
@@ -134,6 +140,9 @@ func (c *Client) FindCalendarRecurrenceId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(CalendarRecurrenceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

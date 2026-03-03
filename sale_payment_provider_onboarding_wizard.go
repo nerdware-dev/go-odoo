@@ -77,6 +77,9 @@ func (c *Client) GetSalePaymentProviderOnboardingWizard(id int64) (*SalePaymentP
 	if err != nil {
 		return nil, err
 	}
+	if len(*sppows) == 0 {
+		return nil, nil
+	}
 	return &((*sppows)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindSalePaymentProviderOnboardingWizard(criteria *Criteria) (*S
 	sppows := &SalePaymentProviderOnboardingWizards{}
 	if err := c.SearchRead(SalePaymentProviderOnboardingWizardModel, criteria, NewOptions().Limit(1), sppows); err != nil {
 		return nil, err
+	}
+	if len(*sppows) == 0 {
+		return nil, nil
 	}
 	return &((*sppows)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindSalePaymentProviderOnboardingWizardId(criteria *Criteria, o
 	ids, err := c.Search(SalePaymentProviderOnboardingWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

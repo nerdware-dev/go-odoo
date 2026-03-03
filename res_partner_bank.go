@@ -116,6 +116,9 @@ func (c *Client) GetResPartnerBank(id int64) (*ResPartnerBank, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpbs) == 0 {
+		return nil, nil
+	}
 	return &((*rpbs)[0]), nil
 }
 
@@ -133,6 +136,9 @@ func (c *Client) FindResPartnerBank(criteria *Criteria) (*ResPartnerBank, error)
 	rpbs := &ResPartnerBanks{}
 	if err := c.SearchRead(ResPartnerBankModel, criteria, NewOptions().Limit(1), rpbs); err != nil {
 		return nil, err
+	}
+	if len(*rpbs) == 0 {
+		return nil, nil
 	}
 	return &((*rpbs)[0]), nil
 }
@@ -158,6 +164,9 @@ func (c *Client) FindResPartnerBankId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(ResPartnerBankModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

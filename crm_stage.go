@@ -76,6 +76,9 @@ func (c *Client) GetCrmStage(id int64) (*CrmStage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*css) == 0 {
+		return nil, nil
+	}
 	return &((*css)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindCrmStage(criteria *Criteria) (*CrmStage, error) {
 	css := &CrmStages{}
 	if err := c.SearchRead(CrmStageModel, criteria, NewOptions().Limit(1), css); err != nil {
 		return nil, err
+	}
+	if len(*css) == 0 {
+		return nil, nil
 	}
 	return &((*css)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindCrmStageId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(CrmStageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -4,6 +4,7 @@ package odoo
 type AccountDisallowedExpensesCategory struct {
 	AccountIds  *Relation `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
 	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CarCategory *Bool     `xmlrpc:"car_category,omitempty" json:"car_category,omitempty"`
 	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
 	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
@@ -76,6 +77,9 @@ func (c *Client) GetAccountDisallowedExpensesCategory(id int64) (*AccountDisallo
 	if err != nil {
 		return nil, err
 	}
+	if len(*adecs) == 0 {
+		return nil, nil
+	}
 	return &((*adecs)[0]), nil
 }
 
@@ -93,6 +97,9 @@ func (c *Client) FindAccountDisallowedExpensesCategory(criteria *Criteria) (*Acc
 	adecs := &AccountDisallowedExpensesCategorys{}
 	if err := c.SearchRead(AccountDisallowedExpensesCategoryModel, criteria, NewOptions().Limit(1), adecs); err != nil {
 		return nil, err
+	}
+	if len(*adecs) == 0 {
+		return nil, nil
 	}
 	return &((*adecs)[0]), nil
 }
@@ -118,6 +125,9 @@ func (c *Client) FindAccountDisallowedExpensesCategoryId(criteria *Criteria, opt
 	ids, err := c.Search(AccountDisallowedExpensesCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -80,6 +80,9 @@ func (c *Client) GetMailNotification(id int64) (*MailNotification, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mns) == 0 {
+		return nil, nil
+	}
 	return &((*mns)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindMailNotification(criteria *Criteria) (*MailNotification, er
 	mns := &MailNotifications{}
 	if err := c.SearchRead(MailNotificationModel, criteria, NewOptions().Limit(1), mns); err != nil {
 		return nil, err
+	}
+	if len(*mns) == 0 {
+		return nil, nil
 	}
 	return &((*mns)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindMailNotificationId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailNotificationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

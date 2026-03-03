@@ -72,6 +72,9 @@ func (c *Client) GetMailMessageSchedule(id int64) (*MailMessageSchedule, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*mmss) == 0 {
+		return nil, nil
+	}
 	return &((*mmss)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindMailMessageSchedule(criteria *Criteria) (*MailMessageSchedu
 	mmss := &MailMessageSchedules{}
 	if err := c.SearchRead(MailMessageScheduleModel, criteria, NewOptions().Limit(1), mmss); err != nil {
 		return nil, err
+	}
+	if len(*mmss) == 0 {
+		return nil, nil
 	}
 	return &((*mmss)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindMailMessageScheduleId(criteria *Criteria, options *Options)
 	ids, err := c.Search(MailMessageScheduleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

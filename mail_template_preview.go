@@ -84,6 +84,9 @@ func (c *Client) GetMailTemplatePreview(id int64) (*MailTemplatePreview, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*mtps) == 0 {
+		return nil, nil
+	}
 	return &((*mtps)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindMailTemplatePreview(criteria *Criteria) (*MailTemplatePrevi
 	mtps := &MailTemplatePreviews{}
 	if err := c.SearchRead(MailTemplatePreviewModel, criteria, NewOptions().Limit(1), mtps); err != nil {
 		return nil, err
+	}
+	if len(*mtps) == 0 {
+		return nil, nil
 	}
 	return &((*mtps)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindMailTemplatePreviewId(criteria *Criteria, options *Options)
 	ids, err := c.Search(MailTemplatePreviewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

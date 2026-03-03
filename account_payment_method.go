@@ -72,6 +72,9 @@ func (c *Client) GetAccountPaymentMethod(id int64) (*AccountPaymentMethod, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*apms) == 0 {
+		return nil, nil
+	}
 	return &((*apms)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountPaymentMethod(criteria *Criteria) (*AccountPaymentMe
 	apms := &AccountPaymentMethods{}
 	if err := c.SearchRead(AccountPaymentMethodModel, criteria, NewOptions().Limit(1), apms); err != nil {
 		return nil, err
+	}
+	if len(*apms) == 0 {
+		return nil, nil
 	}
 	return &((*apms)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountPaymentMethodId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountPaymentMethodModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

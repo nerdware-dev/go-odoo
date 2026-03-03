@@ -87,6 +87,9 @@ func (c *Client) GetAccountPaymentTerm(id int64) (*AccountPaymentTerm, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*apts) == 0 {
+		return nil, nil
+	}
 	return &((*apts)[0]), nil
 }
 
@@ -104,6 +107,9 @@ func (c *Client) FindAccountPaymentTerm(criteria *Criteria) (*AccountPaymentTerm
 	apts := &AccountPaymentTerms{}
 	if err := c.SearchRead(AccountPaymentTermModel, criteria, NewOptions().Limit(1), apts); err != nil {
 		return nil, err
+	}
+	if len(*apts) == 0 {
+		return nil, nil
 	}
 	return &((*apts)[0]), nil
 }
@@ -129,6 +135,9 @@ func (c *Client) FindAccountPaymentTermId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(AccountPaymentTermModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -77,6 +77,9 @@ func (c *Client) GetAccountResequenceWizard(id int64) (*AccountResequenceWizard,
 	if err != nil {
 		return nil, err
 	}
+	if len(*arws) == 0 {
+		return nil, nil
+	}
 	return &((*arws)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindAccountResequenceWizard(criteria *Criteria) (*AccountResequ
 	arws := &AccountResequenceWizards{}
 	if err := c.SearchRead(AccountResequenceWizardModel, criteria, NewOptions().Limit(1), arws); err != nil {
 		return nil, err
+	}
+	if len(*arws) == 0 {
+		return nil, nil
 	}
 	return &((*arws)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindAccountResequenceWizardId(criteria *Criteria, options *Opti
 	ids, err := c.Search(AccountResequenceWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

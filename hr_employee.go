@@ -31,6 +31,7 @@ type HrEmployee struct {
 	Barcode                     *String     `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
 	BillableTimeTarget          *Float      `xmlrpc:"billable_time_target,omitempty" json:"billable_time_target,omitempty"`
 	Birthday                    *Time       `xmlrpc:"birthday,omitempty" json:"birthday,omitempty"`
+	CarIds                      *Relation   `xmlrpc:"car_ids,omitempty" json:"car_ids,omitempty"`
 	CategoryIds                 *Relation   `xmlrpc:"category_ids,omitempty" json:"category_ids,omitempty"`
 	Certificate                 *Selection  `xmlrpc:"certificate,omitempty" json:"certificate,omitempty"`
 	ChildAllCount               *Int        `xmlrpc:"child_all_count,omitempty" json:"child_all_count,omitempty"`
@@ -60,6 +61,7 @@ type HrEmployee struct {
 	DrivingLicense              *String     `xmlrpc:"driving_license,omitempty" json:"driving_license,omitempty"`
 	EmergencyContact            *String     `xmlrpc:"emergency_contact,omitempty" json:"emergency_contact,omitempty"`
 	EmergencyPhone              *String     `xmlrpc:"emergency_phone,omitempty" json:"emergency_phone,omitempty"`
+	EmployeeCarsCount           *Int        `xmlrpc:"employee_cars_count,omitempty" json:"employee_cars_count,omitempty"`
 	EmployeeProperties          interface{} `xmlrpc:"employee_properties,omitempty" json:"employee_properties,omitempty"`
 	EmployeeSkillIds            *Relation   `xmlrpc:"employee_skill_ids,omitempty" json:"employee_skill_ids,omitempty"`
 	EmployeeType                *Selection  `xmlrpc:"employee_type,omitempty" json:"employee_type,omitempty"`
@@ -101,6 +103,7 @@ type HrEmployee struct {
 	LeaveDateTo                 *Time       `xmlrpc:"leave_date_to,omitempty" json:"leave_date_to,omitempty"`
 	LeaveManagerId              *Many2One   `xmlrpc:"leave_manager_id,omitempty" json:"leave_manager_id,omitempty"`
 	LeavesCount                 *Float      `xmlrpc:"leaves_count,omitempty" json:"leaves_count,omitempty"`
+	LicensePlate                *String     `xmlrpc:"license_plate,omitempty" json:"license_plate,omitempty"`
 	Marital                     *Selection  `xmlrpc:"marital,omitempty" json:"marital,omitempty"`
 	MemberOfDepartment          *Bool       `xmlrpc:"member_of_department,omitempty" json:"member_of_department,omitempty"`
 	MessageAttachmentCount      *Int        `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
@@ -115,6 +118,7 @@ type HrEmployee struct {
 	MessageNeedactionCounter    *Int        `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
 	MessagePartnerIds           *Relation   `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
 	MobilePhone                 *String     `xmlrpc:"mobile_phone,omitempty" json:"mobile_phone,omitempty"`
+	MobilityCard                *String     `xmlrpc:"mobility_card,omitempty" json:"mobility_card,omitempty"`
 	MyActivityDateDeadline      *Time       `xmlrpc:"my_activity_date_deadline,omitempty" json:"my_activity_date_deadline,omitempty"`
 	Name                        *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	NewlyHired                  *Bool       `xmlrpc:"newly_hired,omitempty" json:"newly_hired,omitempty"`
@@ -227,6 +231,9 @@ func (c *Client) GetHrEmployee(id int64) (*HrEmployee, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hes) == 0 {
+		return nil, nil
+	}
 	return &((*hes)[0]), nil
 }
 
@@ -234,7 +241,7 @@ func (c *Client) GetHrEmployee(id int64) (*HrEmployee, error) {
 func (c *Client) GetHrEmployees(ids []int64) (*HrEmployees, error) {
 	hes := &HrEmployees{}
 	if err := c.Read(HrEmployeeModel, ids, nil, hes); err != nil {
-		return hes, err
+		return nil, err
 	}
 	return hes, nil
 }
@@ -244,6 +251,9 @@ func (c *Client) FindHrEmployee(criteria *Criteria) (*HrEmployee, error) {
 	hes := &HrEmployees{}
 	if err := c.SearchRead(HrEmployeeModel, criteria, NewOptions().Limit(1), hes); err != nil {
 		return nil, err
+	}
+	if len(*hes) == 0 {
+		return nil, nil
 	}
 	return &((*hes)[0]), nil
 }
@@ -269,6 +279,9 @@ func (c *Client) FindHrEmployeeId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(HrEmployeeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

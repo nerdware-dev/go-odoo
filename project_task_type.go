@@ -81,6 +81,9 @@ func (c *Client) GetProjectTaskType(id int64) (*ProjectTaskType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptts) == 0 {
+		return nil, nil
+	}
 	return &((*ptts)[0]), nil
 }
 
@@ -88,7 +91,7 @@ func (c *Client) GetProjectTaskType(id int64) (*ProjectTaskType, error) {
 func (c *Client) GetProjectTaskTypes(ids []int64) (*ProjectTaskTypes, error) {
 	ptts := &ProjectTaskTypes{}
 	if err := c.Read(ProjectTaskTypeModel, ids, nil, ptts); err != nil {
-		return ptts, err
+		return nil, err
 	}
 	return ptts, nil
 }
@@ -98,6 +101,9 @@ func (c *Client) FindProjectTaskType(criteria *Criteria) (*ProjectTaskType, erro
 	ptts := &ProjectTaskTypes{}
 	if err := c.SearchRead(ProjectTaskTypeModel, criteria, NewOptions().Limit(1), ptts); err != nil {
 		return nil, err
+	}
+	if len(*ptts) == 0 {
+		return nil, nil
 	}
 	return &((*ptts)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindProjectTaskTypeId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ProjectTaskTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

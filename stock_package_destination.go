@@ -73,6 +73,9 @@ func (c *Client) GetStockPackageDestination(id int64) (*StockPackageDestination,
 	if err != nil {
 		return nil, err
 	}
+	if len(*spds) == 0 {
+		return nil, nil
+	}
 	return &((*spds)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindStockPackageDestination(criteria *Criteria) (*StockPackageD
 	spds := &StockPackageDestinations{}
 	if err := c.SearchRead(StockPackageDestinationModel, criteria, NewOptions().Limit(1), spds); err != nil {
 		return nil, err
+	}
+	if len(*spds) == 0 {
+		return nil, nil
 	}
 	return &((*spds)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindStockPackageDestinationId(criteria *Criteria, options *Opti
 	ids, err := c.Search(StockPackageDestinationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

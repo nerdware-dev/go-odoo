@@ -74,6 +74,9 @@ func (c *Client) GetProjectCreateSaleOrderLine(id int64) (*ProjectCreateSaleOrde
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcsols) == 0 {
+		return nil, nil
+	}
 	return &((*pcsols)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProjectCreateSaleOrderLine(criteria *Criteria) (*ProjectCre
 	pcsols := &ProjectCreateSaleOrderLines{}
 	if err := c.SearchRead(ProjectCreateSaleOrderLineModel, criteria, NewOptions().Limit(1), pcsols); err != nil {
 		return nil, err
+	}
+	if len(*pcsols) == 0 {
+		return nil, nil
 	}
 	return &((*pcsols)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProjectCreateSaleOrderLineId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectCreateSaleOrderLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

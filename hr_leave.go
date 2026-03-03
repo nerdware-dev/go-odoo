@@ -157,6 +157,9 @@ func (c *Client) GetHrLeave(id int64) (*HrLeave, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hls) == 0 {
+		return nil, nil
+	}
 	return &((*hls)[0]), nil
 }
 
@@ -174,6 +177,9 @@ func (c *Client) FindHrLeave(criteria *Criteria) (*HrLeave, error) {
 	hls := &HrLeaves{}
 	if err := c.SearchRead(HrLeaveModel, criteria, NewOptions().Limit(1), hls); err != nil {
 		return nil, err
+	}
+	if len(*hls) == 0 {
+		return nil, nil
 	}
 	return &((*hls)[0]), nil
 }
@@ -199,6 +205,9 @@ func (c *Client) FindHrLeaveId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(HrLeaveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

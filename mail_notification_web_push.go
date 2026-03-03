@@ -71,6 +71,9 @@ func (c *Client) GetMailNotificationWebPush(id int64) (*MailNotificationWebPush,
 	if err != nil {
 		return nil, err
 	}
+	if len(*mnwps) == 0 {
+		return nil, nil
+	}
 	return &((*mnwps)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindMailNotificationWebPush(criteria *Criteria) (*MailNotificat
 	mnwps := &MailNotificationWebPushs{}
 	if err := c.SearchRead(MailNotificationWebPushModel, criteria, NewOptions().Limit(1), mnwps); err != nil {
 		return nil, err
+	}
+	if len(*mnwps) == 0 {
+		return nil, nil
 	}
 	return &((*mnwps)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindMailNotificationWebPushId(criteria *Criteria, options *Opti
 	ids, err := c.Search(MailNotificationWebPushModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

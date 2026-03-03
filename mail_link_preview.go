@@ -78,6 +78,9 @@ func (c *Client) GetMailLinkPreview(id int64) (*MailLinkPreview, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mlps) == 0 {
+		return nil, nil
+	}
 	return &((*mlps)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindMailLinkPreview(criteria *Criteria) (*MailLinkPreview, erro
 	mlps := &MailLinkPreviews{}
 	if err := c.SearchRead(MailLinkPreviewModel, criteria, NewOptions().Limit(1), mlps); err != nil {
 		return nil, err
+	}
+	if len(*mlps) == 0 {
+		return nil, nil
 	}
 	return &((*mlps)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindMailLinkPreviewId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(MailLinkPreviewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

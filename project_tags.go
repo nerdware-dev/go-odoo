@@ -73,6 +73,9 @@ func (c *Client) GetProjectTags(id int64) (*ProjectTags, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -80,7 +83,7 @@ func (c *Client) GetProjectTags(id int64) (*ProjectTags, error) {
 func (c *Client) GetProjectTagss(ids []int64) (*ProjectTagss, error) {
 	pts := &ProjectTagss{}
 	if err := c.Read(ProjectTagsModel, ids, nil, pts); err != nil {
-		return pts, err
+		return nil, err
 	}
 	return pts, nil
 }
@@ -90,6 +93,9 @@ func (c *Client) FindProjectTags(criteria *Criteria) (*ProjectTags, error) {
 	pts := &ProjectTagss{}
 	if err := c.SearchRead(ProjectTagsModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindProjectTagsId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ProjectTagsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

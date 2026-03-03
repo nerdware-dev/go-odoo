@@ -76,6 +76,9 @@ func (c *Client) GetProjectProjectStage(id int64) (*ProjectProjectStage, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*ppss) == 0 {
+		return nil, nil
+	}
 	return &((*ppss)[0]), nil
 }
 
@@ -83,7 +86,7 @@ func (c *Client) GetProjectProjectStage(id int64) (*ProjectProjectStage, error) 
 func (c *Client) GetProjectProjectStages(ids []int64) (*ProjectProjectStages, error) {
 	ppss := &ProjectProjectStages{}
 	if err := c.Read(ProjectProjectStageModel, ids, nil, ppss); err != nil {
-		return ppss, err
+		return nil, err
 	}
 	return ppss, nil
 }
@@ -93,6 +96,9 @@ func (c *Client) FindProjectProjectStage(criteria *Criteria) (*ProjectProjectSta
 	ppss := &ProjectProjectStages{}
 	if err := c.SearchRead(ProjectProjectStageModel, criteria, NewOptions().Limit(1), ppss); err != nil {
 		return nil, err
+	}
+	if len(*ppss) == 0 {
+		return nil, nil
 	}
 	return &((*ppss)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindProjectProjectStageId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ProjectProjectStageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

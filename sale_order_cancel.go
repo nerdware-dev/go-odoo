@@ -83,6 +83,9 @@ func (c *Client) GetSaleOrderCancel(id int64) (*SaleOrderCancel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*socs) == 0 {
+		return nil, nil
+	}
 	return &((*socs)[0]), nil
 }
 
@@ -100,6 +103,9 @@ func (c *Client) FindSaleOrderCancel(criteria *Criteria) (*SaleOrderCancel, erro
 	socs := &SaleOrderCancels{}
 	if err := c.SearchRead(SaleOrderCancelModel, criteria, NewOptions().Limit(1), socs); err != nil {
 		return nil, err
+	}
+	if len(*socs) == 0 {
+		return nil, nil
 	}
 	return &((*socs)[0]), nil
 }
@@ -125,6 +131,9 @@ func (c *Client) FindSaleOrderCancelId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SaleOrderCancelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

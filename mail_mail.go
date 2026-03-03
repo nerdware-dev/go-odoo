@@ -140,6 +140,9 @@ func (c *Client) GetMailMail(id int64) (*MailMail, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mms) == 0 {
+		return nil, nil
+	}
 	return &((*mms)[0]), nil
 }
 
@@ -157,6 +160,9 @@ func (c *Client) FindMailMail(criteria *Criteria) (*MailMail, error) {
 	mms := &MailMails{}
 	if err := c.SearchRead(MailMailModel, criteria, NewOptions().Limit(1), mms); err != nil {
 		return nil, err
+	}
+	if len(*mms) == 0 {
+		return nil, nil
 	}
 	return &((*mms)[0]), nil
 }
@@ -182,6 +188,9 @@ func (c *Client) FindMailMailId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(MailMailModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

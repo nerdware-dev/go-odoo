@@ -73,6 +73,9 @@ func (c *Client) GetMailIceServer(id int64) (*MailIceServer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*miss) == 0 {
+		return nil, nil
+	}
 	return &((*miss)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindMailIceServer(criteria *Criteria) (*MailIceServer, error) {
 	miss := &MailIceServers{}
 	if err := c.SearchRead(MailIceServerModel, criteria, NewOptions().Limit(1), miss); err != nil {
 		return nil, err
+	}
+	if len(*miss) == 0 {
+		return nil, nil
 	}
 	return &((*miss)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindMailIceServerId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(MailIceServerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

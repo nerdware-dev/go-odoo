@@ -71,6 +71,9 @@ func (c *Client) GetWizardIrModelMenuCreate(id int64) (*WizardIrModelMenuCreate,
 	if err != nil {
 		return nil, err
 	}
+	if len(*wimmcs) == 0 {
+		return nil, nil
+	}
 	return &((*wimmcs)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindWizardIrModelMenuCreate(criteria *Criteria) (*WizardIrModel
 	wimmcs := &WizardIrModelMenuCreates{}
 	if err := c.SearchRead(WizardIrModelMenuCreateModel, criteria, NewOptions().Limit(1), wimmcs); err != nil {
 		return nil, err
+	}
+	if len(*wimmcs) == 0 {
+		return nil, nil
 	}
 	return &((*wimmcs)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindWizardIrModelMenuCreateId(criteria *Criteria, options *Opti
 	ids, err := c.Search(WizardIrModelMenuCreateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

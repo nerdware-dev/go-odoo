@@ -145,6 +145,9 @@ func (c *Client) GetPurchaseOrder(id int64) (*PurchaseOrder, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pos) == 0 {
+		return nil, nil
+	}
 	return &((*pos)[0]), nil
 }
 
@@ -162,6 +165,9 @@ func (c *Client) FindPurchaseOrder(criteria *Criteria) (*PurchaseOrder, error) {
 	pos := &PurchaseOrders{}
 	if err := c.SearchRead(PurchaseOrderModel, criteria, NewOptions().Limit(1), pos); err != nil {
 		return nil, err
+	}
+	if len(*pos) == 0 {
+		return nil, nil
 	}
 	return &((*pos)[0]), nil
 }
@@ -187,6 +193,9 @@ func (c *Client) FindPurchaseOrderId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(PurchaseOrderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

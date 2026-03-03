@@ -71,6 +71,9 @@ func (c *Client) GetUtmTag(id int64) (*UtmTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*uts) == 0 {
+		return nil, nil
+	}
 	return &((*uts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindUtmTag(criteria *Criteria) (*UtmTag, error) {
 	uts := &UtmTags{}
 	if err := c.SearchRead(UtmTagModel, criteria, NewOptions().Limit(1), uts); err != nil {
 		return nil, err
+	}
+	if len(*uts) == 0 {
+		return nil, nil
 	}
 	return &((*uts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindUtmTagId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(UtmTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

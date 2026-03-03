@@ -82,6 +82,9 @@ func (c *Client) GetStockPackageLevel(id int64) (*StockPackageLevel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sps) == 0 {
+		return nil, nil
+	}
 	return &((*sps)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindStockPackageLevel(criteria *Criteria) (*StockPackageLevel, 
 	sps := &StockPackageLevels{}
 	if err := c.SearchRead(StockPackageLevelModel, criteria, NewOptions().Limit(1), sps); err != nil {
 		return nil, err
+	}
+	if len(*sps) == 0 {
+		return nil, nil
 	}
 	return &((*sps)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindStockPackageLevelId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(StockPackageLevelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -90,6 +90,9 @@ func (c *Client) GetSaleAdvancePaymentInv(id int64) (*SaleAdvancePaymentInv, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*sapis) == 0 {
+		return nil, nil
+	}
 	return &((*sapis)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindSaleAdvancePaymentInv(criteria *Criteria) (*SaleAdvancePaym
 	sapis := &SaleAdvancePaymentInvs{}
 	if err := c.SearchRead(SaleAdvancePaymentInvModel, criteria, NewOptions().Limit(1), sapis); err != nil {
 		return nil, err
+	}
+	if len(*sapis) == 0 {
+		return nil, nil
 	}
 	return &((*sapis)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindSaleAdvancePaymentInvId(criteria *Criteria, options *Option
 	ids, err := c.Search(SaleAdvancePaymentInvModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

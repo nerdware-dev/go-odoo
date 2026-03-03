@@ -81,6 +81,9 @@ func (c *Client) GetResourceCalendar(id int64) (*ResourceCalendar, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindResourceCalendar(criteria *Criteria) (*ResourceCalendar, er
 	rcs := &ResourceCalendars{}
 	if err := c.SearchRead(ResourceCalendarModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindResourceCalendarId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResourceCalendarModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

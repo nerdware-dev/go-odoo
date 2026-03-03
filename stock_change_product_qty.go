@@ -74,6 +74,9 @@ func (c *Client) GetStockChangeProductQty(id int64) (*StockChangeProductQty, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*scpqs) == 0 {
+		return nil, nil
+	}
 	return &((*scpqs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindStockChangeProductQty(criteria *Criteria) (*StockChangeProd
 	scpqs := &StockChangeProductQtys{}
 	if err := c.SearchRead(StockChangeProductQtyModel, criteria, NewOptions().Limit(1), scpqs); err != nil {
 		return nil, err
+	}
+	if len(*scpqs) == 0 {
+		return nil, nil
 	}
 	return &((*scpqs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindStockChangeProductQtyId(criteria *Criteria, options *Option
 	ids, err := c.Search(StockChangeProductQtyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

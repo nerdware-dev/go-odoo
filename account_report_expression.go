@@ -81,6 +81,9 @@ func (c *Client) GetAccountReportExpression(id int64) (*AccountReportExpression,
 	if err != nil {
 		return nil, err
 	}
+	if len(*ares) == 0 {
+		return nil, nil
+	}
 	return &((*ares)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindAccountReportExpression(criteria *Criteria) (*AccountReport
 	ares := &AccountReportExpressions{}
 	if err := c.SearchRead(AccountReportExpressionModel, criteria, NewOptions().Limit(1), ares); err != nil {
 		return nil, err
+	}
+	if len(*ares) == 0 {
+		return nil, nil
 	}
 	return &((*ares)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindAccountReportExpressionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(AccountReportExpressionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

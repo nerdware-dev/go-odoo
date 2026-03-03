@@ -75,6 +75,9 @@ func (c *Client) GetIrModelConstraint(id int64) (*IrModelConstraint, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imcs) == 0 {
+		return nil, nil
+	}
 	return &((*imcs)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindIrModelConstraint(criteria *Criteria) (*IrModelConstraint, 
 	imcs := &IrModelConstraints{}
 	if err := c.SearchRead(IrModelConstraintModel, criteria, NewOptions().Limit(1), imcs); err != nil {
 		return nil, err
+	}
+	if len(*imcs) == 0 {
+		return nil, nil
 	}
 	return &((*imcs)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindIrModelConstraintId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(IrModelConstraintModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

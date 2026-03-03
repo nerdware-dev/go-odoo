@@ -13,6 +13,7 @@ type WebEditorConverterTest struct {
 	Html         *String    `xmlrpc:"html,omitempty" json:"html,omitempty"`
 	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	Integer      *Int       `xmlrpc:"integer,omitempty" json:"integer,omitempty"`
+	Many2One     *Many2One  `xmlrpc:"many2one,omitempty" json:"many2one,omitempty"`
 	Numeric      *Float     `xmlrpc:"numeric,omitempty" json:"numeric,omitempty"`
 	SelectionStr *Selection `xmlrpc:"selection_str,omitempty" json:"selection_str,omitempty"`
 	Text         *String    `xmlrpc:"text,omitempty" json:"text,omitempty"`
@@ -79,6 +80,9 @@ func (c *Client) GetWebEditorConverterTest(id int64) (*WebEditorConverterTest, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*wcts) == 0 {
+		return nil, nil
+	}
 	return &((*wcts)[0]), nil
 }
 
@@ -96,6 +100,9 @@ func (c *Client) FindWebEditorConverterTest(criteria *Criteria) (*WebEditorConve
 	wcts := &WebEditorConverterTests{}
 	if err := c.SearchRead(WebEditorConverterTestModel, criteria, NewOptions().Limit(1), wcts); err != nil {
 		return nil, err
+	}
+	if len(*wcts) == 0 {
+		return nil, nil
 	}
 	return &((*wcts)[0]), nil
 }
@@ -121,6 +128,9 @@ func (c *Client) FindWebEditorConverterTestId(criteria *Criteria, options *Optio
 	ids, err := c.Search(WebEditorConverterTestModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

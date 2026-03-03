@@ -114,6 +114,9 @@ func (c *Client) GetStockPickingType(id int64) (*StockPickingType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*spts) == 0 {
+		return nil, nil
+	}
 	return &((*spts)[0]), nil
 }
 
@@ -131,6 +134,9 @@ func (c *Client) FindStockPickingType(criteria *Criteria) (*StockPickingType, er
 	spts := &StockPickingTypes{}
 	if err := c.SearchRead(StockPickingTypeModel, criteria, NewOptions().Limit(1), spts); err != nil {
 		return nil, err
+	}
+	if len(*spts) == 0 {
+		return nil, nil
 	}
 	return &((*spts)[0]), nil
 }
@@ -156,6 +162,9 @@ func (c *Client) FindStockPickingTypeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(StockPickingTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

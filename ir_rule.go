@@ -79,6 +79,9 @@ func (c *Client) GetIrRule(id int64) (*IrRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*irs) == 0 {
+		return nil, nil
+	}
 	return &((*irs)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindIrRule(criteria *Criteria) (*IrRule, error) {
 	irs := &IrRules{}
 	if err := c.SearchRead(IrRuleModel, criteria, NewOptions().Limit(1), irs); err != nil {
 		return nil, err
+	}
+	if len(*irs) == 0 {
+		return nil, nil
 	}
 	return &((*irs)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindIrRuleId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(IrRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

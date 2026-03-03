@@ -154,6 +154,9 @@ type AccountMove struct {
 	ReversalMoveId                        *Relation   `xmlrpc:"reversal_move_id,omitempty" json:"reversal_move_id,omitempty"`
 	ReversedEntryId                       *Many2One   `xmlrpc:"reversed_entry_id,omitempty" json:"reversed_entry_id,omitempty"`
 	SaleOrderCount                        *Int        `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
+	SddHasUsableMandate                   *Bool       `xmlrpc:"sdd_has_usable_mandate,omitempty" json:"sdd_has_usable_mandate,omitempty"`
+	SddMandateId                          *Many2One   `xmlrpc:"sdd_mandate_id,omitempty" json:"sdd_mandate_id,omitempty"`
+	SddMandateScheme                      *Selection  `xmlrpc:"sdd_mandate_scheme,omitempty" json:"sdd_mandate_scheme,omitempty"`
 	SecureSequenceNumber                  *Int        `xmlrpc:"secure_sequence_number,omitempty" json:"secure_sequence_number,omitempty"`
 	SendAndPrintValues                    interface{} `xmlrpc:"send_and_print_values,omitempty" json:"send_and_print_values,omitempty"`
 	SequenceNumber                        *Int        `xmlrpc:"sequence_number,omitempty" json:"sequence_number,omitempty"`
@@ -263,6 +266,9 @@ func (c *Client) GetAccountMove(id int64) (*AccountMove, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ams) == 0 {
+		return nil, nil
+	}
 	return &((*ams)[0]), nil
 }
 
@@ -270,7 +276,7 @@ func (c *Client) GetAccountMove(id int64) (*AccountMove, error) {
 func (c *Client) GetAccountMoves(ids []int64) (*AccountMoves, error) {
 	ams := &AccountMoves{}
 	if err := c.Read(AccountMoveModel, ids, nil, ams); err != nil {
-		return ams, err
+		return nil, err
 	}
 	return ams, nil
 }
@@ -280,6 +286,9 @@ func (c *Client) FindAccountMove(criteria *Criteria) (*AccountMove, error) {
 	ams := &AccountMoves{}
 	if err := c.SearchRead(AccountMoveModel, criteria, NewOptions().Limit(1), ams); err != nil {
 		return nil, err
+	}
+	if len(*ams) == 0 {
+		return nil, nil
 	}
 	return &((*ams)[0]), nil
 }
@@ -305,6 +314,9 @@ func (c *Client) FindAccountMoveId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(AccountMoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

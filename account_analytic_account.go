@@ -36,6 +36,8 @@ type AccountAnalyticAccount struct {
 	PurchaseOrderCount       *Int      `xmlrpc:"purchase_order_count,omitempty" json:"purchase_order_count,omitempty"`
 	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
 	RootPlanId               *Many2One `xmlrpc:"root_plan_id,omitempty" json:"root_plan_id,omitempty"`
+	SubscriptionCount        *Int      `xmlrpc:"subscription_count,omitempty" json:"subscription_count,omitempty"`
+	SubscriptionIds          *Relation `xmlrpc:"subscription_ids,omitempty" json:"subscription_ids,omitempty"`
 	TotalPlannedAmount       *Float    `xmlrpc:"total_planned_amount,omitempty" json:"total_planned_amount,omitempty"`
 	TotalPracticalAmount     *Float    `xmlrpc:"total_practical_amount,omitempty" json:"total_practical_amount,omitempty"`
 	VendorBillCount          *Int      `xmlrpc:"vendor_bill_count,omitempty" json:"vendor_bill_count,omitempty"`
@@ -103,6 +105,9 @@ func (c *Client) GetAccountAnalyticAccount(id int64) (*AccountAnalyticAccount, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*aaas) == 0 {
+		return nil, nil
+	}
 	return &((*aaas)[0]), nil
 }
 
@@ -120,6 +125,9 @@ func (c *Client) FindAccountAnalyticAccount(criteria *Criteria) (*AccountAnalyti
 	aaas := &AccountAnalyticAccounts{}
 	if err := c.SearchRead(AccountAnalyticAccountModel, criteria, NewOptions().Limit(1), aaas); err != nil {
 		return nil, err
+	}
+	if len(*aaas) == 0 {
+		return nil, nil
 	}
 	return &((*aaas)[0]), nil
 }
@@ -145,6 +153,9 @@ func (c *Client) FindAccountAnalyticAccountId(criteria *Criteria, options *Optio
 	ids, err := c.Search(AccountAnalyticAccountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

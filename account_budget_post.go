@@ -72,6 +72,9 @@ func (c *Client) GetAccountBudgetPost(id int64) (*AccountBudgetPost, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*abps) == 0 {
+		return nil, nil
+	}
 	return &((*abps)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountBudgetPost(criteria *Criteria) (*AccountBudgetPost, 
 	abps := &AccountBudgetPosts{}
 	if err := c.SearchRead(AccountBudgetPostModel, criteria, NewOptions().Limit(1), abps); err != nil {
 		return nil, err
+	}
+	if len(*abps) == 0 {
+		return nil, nil
 	}
 	return &((*abps)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountBudgetPostId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountBudgetPostModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

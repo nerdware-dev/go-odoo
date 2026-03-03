@@ -99,6 +99,9 @@ func (c *Client) GetDocumentsWorkflowRule(id int64) (*DocumentsWorkflowRule, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*dwrs) == 0 {
+		return nil, nil
+	}
 	return &((*dwrs)[0]), nil
 }
 
@@ -116,6 +119,9 @@ func (c *Client) FindDocumentsWorkflowRule(criteria *Criteria) (*DocumentsWorkfl
 	dwrs := &DocumentsWorkflowRules{}
 	if err := c.SearchRead(DocumentsWorkflowRuleModel, criteria, NewOptions().Limit(1), dwrs); err != nil {
 		return nil, err
+	}
+	if len(*dwrs) == 0 {
+		return nil, nil
 	}
 	return &((*dwrs)[0]), nil
 }
@@ -141,6 +147,9 @@ func (c *Client) FindDocumentsWorkflowRuleId(criteria *Criteria, options *Option
 	ids, err := c.Search(DocumentsWorkflowRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

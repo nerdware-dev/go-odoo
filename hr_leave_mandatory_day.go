@@ -76,6 +76,9 @@ func (c *Client) GetHrLeaveMandatoryDay(id int64) (*HrLeaveMandatoryDay, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlmds) == 0 {
+		return nil, nil
+	}
 	return &((*hlmds)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindHrLeaveMandatoryDay(criteria *Criteria) (*HrLeaveMandatoryD
 	hlmds := &HrLeaveMandatoryDays{}
 	if err := c.SearchRead(HrLeaveMandatoryDayModel, criteria, NewOptions().Limit(1), hlmds); err != nil {
 		return nil, err
+	}
+	if len(*hlmds) == 0 {
+		return nil, nil
 	}
 	return &((*hlmds)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindHrLeaveMandatoryDayId(criteria *Criteria, options *Options)
 	ids, err := c.Search(HrLeaveMandatoryDayModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

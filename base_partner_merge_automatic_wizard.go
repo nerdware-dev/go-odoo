@@ -83,6 +83,9 @@ func (c *Client) GetBasePartnerMergeAutomaticWizard(id int64) (*BasePartnerMerge
 	if err != nil {
 		return nil, err
 	}
+	if len(*bpmaws) == 0 {
+		return nil, nil
+	}
 	return &((*bpmaws)[0]), nil
 }
 
@@ -100,6 +103,9 @@ func (c *Client) FindBasePartnerMergeAutomaticWizard(criteria *Criteria) (*BaseP
 	bpmaws := &BasePartnerMergeAutomaticWizards{}
 	if err := c.SearchRead(BasePartnerMergeAutomaticWizardModel, criteria, NewOptions().Limit(1), bpmaws); err != nil {
 		return nil, err
+	}
+	if len(*bpmaws) == 0 {
+		return nil, nil
 	}
 	return &((*bpmaws)[0]), nil
 }
@@ -125,6 +131,9 @@ func (c *Client) FindBasePartnerMergeAutomaticWizardId(criteria *Criteria, optio
 	ids, err := c.Search(BasePartnerMergeAutomaticWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

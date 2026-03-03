@@ -78,6 +78,9 @@ func (c *Client) GetIrModuleCategory(id int64) (*IrModuleCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imcs) == 0 {
+		return nil, nil
+	}
 	return &((*imcs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindIrModuleCategory(criteria *Criteria) (*IrModuleCategory, er
 	imcs := &IrModuleCategorys{}
 	if err := c.SearchRead(IrModuleCategoryModel, criteria, NewOptions().Limit(1), imcs); err != nil {
 		return nil, err
+	}
+	if len(*imcs) == 0 {
+		return nil, nil
 	}
 	return &((*imcs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindIrModuleCategoryId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(IrModuleCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

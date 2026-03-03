@@ -78,6 +78,9 @@ func (c *Client) GetResourceCalendarLeaves(id int64) (*ResourceCalendarLeaves, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcls) == 0 {
+		return nil, nil
+	}
 	return &((*rcls)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindResourceCalendarLeaves(criteria *Criteria) (*ResourceCalend
 	rcls := &ResourceCalendarLeavess{}
 	if err := c.SearchRead(ResourceCalendarLeavesModel, criteria, NewOptions().Limit(1), rcls); err != nil {
 		return nil, err
+	}
+	if len(*rcls) == 0 {
+		return nil, nil
 	}
 	return &((*rcls)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindResourceCalendarLeavesId(criteria *Criteria, options *Optio
 	ids, err := c.Search(ResourceCalendarLeavesModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

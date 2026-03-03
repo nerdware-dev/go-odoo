@@ -69,6 +69,9 @@ func (c *Client) GetStockTraceabilityReport(id int64) (*StockTraceabilityReport,
 	if err != nil {
 		return nil, err
 	}
+	if len(*strs) == 0 {
+		return nil, nil
+	}
 	return &((*strs)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindStockTraceabilityReport(criteria *Criteria) (*StockTraceabi
 	strs := &StockTraceabilityReports{}
 	if err := c.SearchRead(StockTraceabilityReportModel, criteria, NewOptions().Limit(1), strs); err != nil {
 		return nil, err
+	}
+	if len(*strs) == 0 {
+		return nil, nil
 	}
 	return &((*strs)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindStockTraceabilityReportId(criteria *Criteria, options *Opti
 	ids, err := c.Search(StockTraceabilityReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

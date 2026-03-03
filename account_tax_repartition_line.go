@@ -80,6 +80,9 @@ func (c *Client) GetAccountTaxRepartitionLine(id int64) (*AccountTaxRepartitionL
 	if err != nil {
 		return nil, err
 	}
+	if len(*atrls) == 0 {
+		return nil, nil
+	}
 	return &((*atrls)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindAccountTaxRepartitionLine(criteria *Criteria) (*AccountTaxR
 	atrls := &AccountTaxRepartitionLines{}
 	if err := c.SearchRead(AccountTaxRepartitionLineModel, criteria, NewOptions().Limit(1), atrls); err != nil {
 		return nil, err
+	}
+	if len(*atrls) == 0 {
+		return nil, nil
 	}
 	return &((*atrls)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindAccountTaxRepartitionLineId(criteria *Criteria, options *Op
 	ids, err := c.Search(AccountTaxRepartitionLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

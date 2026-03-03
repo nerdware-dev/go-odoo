@@ -107,6 +107,9 @@ func (c *Client) GetMailComposeMessage(id int64) (*MailComposeMessage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mcms) == 0 {
+		return nil, nil
+	}
 	return &((*mcms)[0]), nil
 }
 
@@ -124,6 +127,9 @@ func (c *Client) FindMailComposeMessage(criteria *Criteria) (*MailComposeMessage
 	mcms := &MailComposeMessages{}
 	if err := c.SearchRead(MailComposeMessageModel, criteria, NewOptions().Limit(1), mcms); err != nil {
 		return nil, err
+	}
+	if len(*mcms) == 0 {
+		return nil, nil
 	}
 	return &((*mcms)[0]), nil
 }
@@ -149,6 +155,9 @@ func (c *Client) FindMailComposeMessageId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(MailComposeMessageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

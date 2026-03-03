@@ -79,6 +79,9 @@ func (c *Client) GetMailActivityPlan(id int64) (*MailActivityPlan, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*MAPs) == 0 {
+		return nil, nil
+	}
 	return &((*MAPs)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindMailActivityPlan(criteria *Criteria) (*MailActivityPlan, er
 	MAPs := &MailActivityPlans{}
 	if err := c.SearchRead(MailActivityPlanModel, criteria, NewOptions().Limit(1), MAPs); err != nil {
 		return nil, err
+	}
+	if len(*MAPs) == 0 {
+		return nil, nil
 	}
 	return &((*MAPs)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindMailActivityPlanId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailActivityPlanModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

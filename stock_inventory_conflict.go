@@ -71,6 +71,9 @@ func (c *Client) GetStockInventoryConflict(id int64) (*StockInventoryConflict, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*sics) == 0 {
+		return nil, nil
+	}
 	return &((*sics)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindStockInventoryConflict(criteria *Criteria) (*StockInventory
 	sics := &StockInventoryConflicts{}
 	if err := c.SearchRead(StockInventoryConflictModel, criteria, NewOptions().Limit(1), sics); err != nil {
 		return nil, err
+	}
+	if len(*sics) == 0 {
+		return nil, nil
 	}
 	return &((*sics)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindStockInventoryConflictId(criteria *Criteria, options *Optio
 	ids, err := c.Search(StockInventoryConflictModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

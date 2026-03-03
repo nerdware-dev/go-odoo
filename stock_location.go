@@ -101,6 +101,9 @@ func (c *Client) GetStockLocation(id int64) (*StockLocation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sls) == 0 {
+		return nil, nil
+	}
 	return &((*sls)[0]), nil
 }
 
@@ -118,6 +121,9 @@ func (c *Client) FindStockLocation(criteria *Criteria) (*StockLocation, error) {
 	sls := &StockLocations{}
 	if err := c.SearchRead(StockLocationModel, criteria, NewOptions().Limit(1), sls); err != nil {
 		return nil, err
+	}
+	if len(*sls) == 0 {
+		return nil, nil
 	}
 	return &((*sls)[0]), nil
 }
@@ -143,6 +149,9 @@ func (c *Client) FindStockLocationId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(StockLocationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

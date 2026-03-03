@@ -74,6 +74,9 @@ func (c *Client) GetDigestTip(id int64) (*DigestTip, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dts) == 0 {
+		return nil, nil
+	}
 	return &((*dts)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindDigestTip(criteria *Criteria) (*DigestTip, error) {
 	dts := &DigestTips{}
 	if err := c.SearchRead(DigestTipModel, criteria, NewOptions().Limit(1), dts); err != nil {
 		return nil, err
+	}
+	if len(*dts) == 0 {
+		return nil, nil
 	}
 	return &((*dts)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindDigestTipId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(DigestTipModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

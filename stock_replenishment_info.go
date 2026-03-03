@@ -78,6 +78,9 @@ func (c *Client) GetStockReplenishmentInfo(id int64) (*StockReplenishmentInfo, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*sris) == 0 {
+		return nil, nil
+	}
 	return &((*sris)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindStockReplenishmentInfo(criteria *Criteria) (*StockReplenish
 	sris := &StockReplenishmentInfos{}
 	if err := c.SearchRead(StockReplenishmentInfoModel, criteria, NewOptions().Limit(1), sris); err != nil {
 		return nil, err
+	}
+	if len(*sris) == 0 {
+		return nil, nil
 	}
 	return &((*sris)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindStockReplenishmentInfoId(criteria *Criteria, options *Optio
 	ids, err := c.Search(StockReplenishmentInfoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

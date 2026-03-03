@@ -69,6 +69,9 @@ func (c *Client) GetStockSchedulerCompute(id int64) (*StockSchedulerCompute, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*sscs) == 0 {
+		return nil, nil
+	}
 	return &((*sscs)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindStockSchedulerCompute(criteria *Criteria) (*StockSchedulerC
 	sscs := &StockSchedulerComputes{}
 	if err := c.SearchRead(StockSchedulerComputeModel, criteria, NewOptions().Limit(1), sscs); err != nil {
 		return nil, err
+	}
+	if len(*sscs) == 0 {
+		return nil, nil
 	}
 	return &((*sscs)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindStockSchedulerComputeId(criteria *Criteria, options *Option
 	ids, err := c.Search(StockSchedulerComputeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

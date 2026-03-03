@@ -90,6 +90,9 @@ func (c *Client) GetBankRecWidget(id int64) (*BankRecWidget, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*brws) == 0 {
+		return nil, nil
+	}
 	return &((*brws)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindBankRecWidget(criteria *Criteria) (*BankRecWidget, error) {
 	brws := &BankRecWidgets{}
 	if err := c.SearchRead(BankRecWidgetModel, criteria, NewOptions().Limit(1), brws); err != nil {
 		return nil, err
+	}
+	if len(*brws) == 0 {
+		return nil, nil
 	}
 	return &((*brws)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindBankRecWidgetId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(BankRecWidgetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

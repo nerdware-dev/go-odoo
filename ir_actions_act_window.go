@@ -91,6 +91,9 @@ func (c *Client) GetIrActionsActWindow(id int64) (*IrActionsActWindow, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iaas) == 0 {
+		return nil, nil
+	}
 	return &((*iaas)[0]), nil
 }
 
@@ -108,6 +111,9 @@ func (c *Client) FindIrActionsActWindow(criteria *Criteria) (*IrActionsActWindow
 	iaas := &IrActionsActWindows{}
 	if err := c.SearchRead(IrActionsActWindowModel, criteria, NewOptions().Limit(1), iaas); err != nil {
 		return nil, err
+	}
+	if len(*iaas) == 0 {
+		return nil, nil
 	}
 	return &((*iaas)[0]), nil
 }
@@ -133,6 +139,9 @@ func (c *Client) FindIrActionsActWindowId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(IrActionsActWindowModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

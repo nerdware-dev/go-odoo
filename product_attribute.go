@@ -77,6 +77,9 @@ func (c *Client) GetProductAttribute(id int64) (*ProductAttribute, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pas) == 0 {
+		return nil, nil
+	}
 	return &((*pas)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindProductAttribute(criteria *Criteria) (*ProductAttribute, er
 	pas := &ProductAttributes{}
 	if err := c.SearchRead(ProductAttributeModel, criteria, NewOptions().Limit(1), pas); err != nil {
 		return nil, err
+	}
+	if len(*pas) == 0 {
+		return nil, nil
 	}
 	return &((*pas)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindProductAttributeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProductAttributeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

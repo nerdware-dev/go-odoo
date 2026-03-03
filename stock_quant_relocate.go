@@ -78,6 +78,9 @@ func (c *Client) GetStockQuantRelocate(id int64) (*StockQuantRelocate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sqrs) == 0 {
+		return nil, nil
+	}
 	return &((*sqrs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindStockQuantRelocate(criteria *Criteria) (*StockQuantRelocate
 	sqrs := &StockQuantRelocates{}
 	if err := c.SearchRead(StockQuantRelocateModel, criteria, NewOptions().Limit(1), sqrs); err != nil {
 		return nil, err
+	}
+	if len(*sqrs) == 0 {
+		return nil, nil
 	}
 	return &((*sqrs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindStockQuantRelocateId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(StockQuantRelocateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

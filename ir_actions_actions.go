@@ -76,6 +76,9 @@ func (c *Client) GetIrActionsActions(id int64) (*IrActionsActions, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iaas) == 0 {
+		return nil, nil
+	}
 	return &((*iaas)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindIrActionsActions(criteria *Criteria) (*IrActionsActions, er
 	iaas := &IrActionsActionss{}
 	if err := c.SearchRead(IrActionsActionsModel, criteria, NewOptions().Limit(1), iaas); err != nil {
 		return nil, err
+	}
+	if len(*iaas) == 0 {
+		return nil, nil
 	}
 	return &((*iaas)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindIrActionsActionsId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(IrActionsActionsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

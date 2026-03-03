@@ -42,6 +42,7 @@ type AccountJournal struct {
 	CreateUid                       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
 	CurrencyId                      *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
 	CurrentStatementBalance         *Float     `xmlrpc:"current_statement_balance,omitempty" json:"current_statement_balance,omitempty"`
+	DebitSepaPainVersion            *Selection `xmlrpc:"debit_sepa_pain_version,omitempty" json:"debit_sepa_pain_version,omitempty"`
 	DefaultAccountId                *Many2One  `xmlrpc:"default_account_id,omitempty" json:"default_account_id,omitempty"`
 	DefaultAccountType              *String    `xmlrpc:"default_account_type,omitempty" json:"default_account_type,omitempty"`
 	DisplayAliasAutoExtractPdfsOnly *Bool      `xmlrpc:"display_alias_auto_extract_pdfs_only,omitempty" json:"display_alias_auto_extract_pdfs_only,omitempty"`
@@ -50,6 +51,7 @@ type AccountJournal struct {
 	ExpiringSynchronizationDate     *Time      `xmlrpc:"expiring_synchronization_date,omitempty" json:"expiring_synchronization_date,omitempty"`
 	ExpiringSynchronizationDueDay   *Int       `xmlrpc:"expiring_synchronization_due_day,omitempty" json:"expiring_synchronization_due_day,omitempty"`
 	HasMessage                      *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	HasSepaCtPaymentMethod          *Bool      `xmlrpc:"has_sepa_ct_payment_method,omitempty" json:"has_sepa_ct_payment_method,omitempty"`
 	HasSequenceHoles                *Bool      `xmlrpc:"has_sequence_holes,omitempty" json:"has_sequence_holes,omitempty"`
 	HasStatementLines               *Bool      `xmlrpc:"has_statement_lines,omitempty" json:"has_statement_lines,omitempty"`
 	Id                              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
@@ -88,6 +90,7 @@ type AccountJournal struct {
 	SaleActivityUserId              *Many2One  `xmlrpc:"sale_activity_user_id,omitempty" json:"sale_activity_user_id,omitempty"`
 	SecureSequenceId                *Many2One  `xmlrpc:"secure_sequence_id,omitempty" json:"secure_sequence_id,omitempty"`
 	SelectedPaymentMethodCodes      *String    `xmlrpc:"selected_payment_method_codes,omitempty" json:"selected_payment_method_codes,omitempty"`
+	SepaPainVersion                 *Selection `xmlrpc:"sepa_pain_version,omitempty" json:"sepa_pain_version,omitempty"`
 	Sequence                        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	SequenceOverrideRegex           *String    `xmlrpc:"sequence_override_regex,omitempty" json:"sequence_override_regex,omitempty"`
 	ShowOnDashboard                 *Bool      `xmlrpc:"show_on_dashboard,omitempty" json:"show_on_dashboard,omitempty"`
@@ -157,6 +160,9 @@ func (c *Client) GetAccountJournal(id int64) (*AccountJournal, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ajs) == 0 {
+		return nil, nil
+	}
 	return &((*ajs)[0]), nil
 }
 
@@ -174,6 +180,9 @@ func (c *Client) FindAccountJournal(criteria *Criteria) (*AccountJournal, error)
 	ajs := &AccountJournals{}
 	if err := c.SearchRead(AccountJournalModel, criteria, NewOptions().Limit(1), ajs); err != nil {
 		return nil, err
+	}
+	if len(*ajs) == 0 {
+		return nil, nil
 	}
 	return &((*ajs)[0]), nil
 }
@@ -199,6 +208,9 @@ func (c *Client) FindAccountJournalId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AccountJournalModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

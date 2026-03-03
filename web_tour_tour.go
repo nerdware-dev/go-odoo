@@ -67,6 +67,9 @@ func (c *Client) GetWebTourTour(id int64) (*WebTourTour, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*wts) == 0 {
+		return nil, nil
+	}
 	return &((*wts)[0]), nil
 }
 
@@ -84,6 +87,9 @@ func (c *Client) FindWebTourTour(criteria *Criteria) (*WebTourTour, error) {
 	wts := &WebTourTours{}
 	if err := c.SearchRead(WebTourTourModel, criteria, NewOptions().Limit(1), wts); err != nil {
 		return nil, err
+	}
+	if len(*wts) == 0 {
+		return nil, nil
 	}
 	return &((*wts)[0]), nil
 }
@@ -109,6 +115,9 @@ func (c *Client) FindWebTourTourId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(WebTourTourModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

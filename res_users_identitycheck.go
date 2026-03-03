@@ -71,6 +71,9 @@ func (c *Client) GetResUsersIdentitycheck(id int64) (*ResUsersIdentitycheck, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruis) == 0 {
+		return nil, nil
+	}
 	return &((*ruis)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindResUsersIdentitycheck(criteria *Criteria) (*ResUsersIdentit
 	ruis := &ResUsersIdentitychecks{}
 	if err := c.SearchRead(ResUsersIdentitycheckModel, criteria, NewOptions().Limit(1), ruis); err != nil {
 		return nil, err
+	}
+	if len(*ruis) == 0 {
+		return nil, nil
 	}
 	return &((*ruis)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindResUsersIdentitycheckId(criteria *Criteria, options *Option
 	ids, err := c.Search(ResUsersIdentitycheckModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

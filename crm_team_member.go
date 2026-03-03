@@ -101,6 +101,9 @@ func (c *Client) GetCrmTeamMember(id int64) (*CrmTeamMember, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ctms) == 0 {
+		return nil, nil
+	}
 	return &((*ctms)[0]), nil
 }
 
@@ -118,6 +121,9 @@ func (c *Client) FindCrmTeamMember(criteria *Criteria) (*CrmTeamMember, error) {
 	ctms := &CrmTeamMembers{}
 	if err := c.SearchRead(CrmTeamMemberModel, criteria, NewOptions().Limit(1), ctms); err != nil {
 		return nil, err
+	}
+	if len(*ctms) == 0 {
+		return nil, nil
 	}
 	return &((*ctms)[0]), nil
 }
@@ -143,6 +149,9 @@ func (c *Client) FindCrmTeamMemberId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(CrmTeamMemberModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

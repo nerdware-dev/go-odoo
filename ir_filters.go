@@ -78,6 +78,9 @@ func (c *Client) GetIrFilters(id int64) (*IrFilters, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IFs) == 0 {
+		return nil, nil
+	}
 	return &((*IFs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindIrFilters(criteria *Criteria) (*IrFilters, error) {
 	IFs := &IrFilterss{}
 	if err := c.SearchRead(IrFiltersModel, criteria, NewOptions().Limit(1), IFs); err != nil {
 		return nil, err
+	}
+	if len(*IFs) == 0 {
+		return nil, nil
 	}
 	return &((*IFs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindIrFiltersId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrFiltersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -92,7 +92,6 @@ type ProjectTask struct {
 	PersonalStageTypeIds            *Relation   `xmlrpc:"personal_stage_type_ids,omitempty" json:"personal_stage_type_ids,omitempty"`
 	PlannedDateBegin                *Time       `xmlrpc:"planned_date_begin,omitempty" json:"planned_date_begin,omitempty"`
 	PlannedDateStart                *Time       `xmlrpc:"planned_date_start,omitempty" json:"planned_date_start,omitempty"`
-	PlannedHours                    *Float      `xmlrpc:"x_studio_planned_hours,omitempty" json:"x_studio_planned_hours,omitempty"`
 	PlanningOverlap                 *String     `xmlrpc:"planning_overlap,omitempty" json:"planning_overlap,omitempty"`
 	PortalEffectiveHours            *Float      `xmlrpc:"portal_effective_hours,omitempty" json:"portal_effective_hours,omitempty"`
 	PortalProgress                  *Float      `xmlrpc:"portal_progress,omitempty" json:"portal_progress,omitempty"`
@@ -157,6 +156,8 @@ type ProjectTask struct {
 	WorkingHoursOpen                *Float      `xmlrpc:"working_hours_open,omitempty" json:"working_hours_open,omitempty"`
 	WriteDate                       *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                        *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XStudioGeschtzteDauer           *Float      `xmlrpc:"x_studio_geschtzte_dauer,omitempty" json:"x_studio_geschtzte_dauer,omitempty"`
+	XStudioPlannedHours             *Float      `xmlrpc:"x_studio_planned_hours,omitempty" json:"x_studio_planned_hours,omitempty"`
 }
 
 // ProjectTasks represents array of project.task model.
@@ -218,6 +219,9 @@ func (c *Client) GetProjectTask(id int64) (*ProjectTask, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -225,7 +229,7 @@ func (c *Client) GetProjectTask(id int64) (*ProjectTask, error) {
 func (c *Client) GetProjectTasks(ids []int64) (*ProjectTasks, error) {
 	pts := &ProjectTasks{}
 	if err := c.Read(ProjectTaskModel, ids, nil, pts); err != nil {
-		return pts, err
+		return nil, err
 	}
 	return pts, nil
 }
@@ -235,6 +239,9 @@ func (c *Client) FindProjectTask(criteria *Criteria) (*ProjectTask, error) {
 	pts := &ProjectTasks{}
 	if err := c.SearchRead(ProjectTaskModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -260,6 +267,9 @@ func (c *Client) FindProjectTaskId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ProjectTaskModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -76,6 +76,9 @@ func (c *Client) GetHrEmployeeSkillLog(id int64) (*HrEmployeeSkillLog, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hesls) == 0 {
+		return nil, nil
+	}
 	return &((*hesls)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindHrEmployeeSkillLog(criteria *Criteria) (*HrEmployeeSkillLog
 	hesls := &HrEmployeeSkillLogs{}
 	if err := c.SearchRead(HrEmployeeSkillLogModel, criteria, NewOptions().Limit(1), hesls); err != nil {
 		return nil, err
+	}
+	if len(*hesls) == 0 {
+		return nil, nil
 	}
 	return &((*hesls)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindHrEmployeeSkillLogId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(HrEmployeeSkillLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

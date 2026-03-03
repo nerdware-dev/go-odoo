@@ -71,6 +71,9 @@ func (c *Client) GetSignTemplateTag(id int64) (*SignTemplateTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*stts) == 0 {
+		return nil, nil
+	}
 	return &((*stts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindSignTemplateTag(criteria *Criteria) (*SignTemplateTag, erro
 	stts := &SignTemplateTags{}
 	if err := c.SearchRead(SignTemplateTagModel, criteria, NewOptions().Limit(1), stts); err != nil {
 		return nil, err
+	}
+	if len(*stts) == 0 {
+		return nil, nil
 	}
 	return &((*stts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindSignTemplateTagId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SignTemplateTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

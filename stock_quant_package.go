@@ -78,6 +78,9 @@ func (c *Client) GetStockQuantPackage(id int64) (*StockQuantPackage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sqps) == 0 {
+		return nil, nil
+	}
 	return &((*sqps)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindStockQuantPackage(criteria *Criteria) (*StockQuantPackage, 
 	sqps := &StockQuantPackages{}
 	if err := c.SearchRead(StockQuantPackageModel, criteria, NewOptions().Limit(1), sqps); err != nil {
 		return nil, err
+	}
+	if len(*sqps) == 0 {
+		return nil, nil
 	}
 	return &((*sqps)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindStockQuantPackageId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(StockQuantPackageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -69,6 +69,9 @@ func (c *Client) GetAccountFollowupMissingInformationWizard(id int64) (*AccountF
 	if err != nil {
 		return nil, err
 	}
+	if len(*amiws) == 0 {
+		return nil, nil
+	}
 	return &((*amiws)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindAccountFollowupMissingInformationWizard(criteria *Criteria)
 	amiws := &AccountFollowupMissingInformationWizards{}
 	if err := c.SearchRead(AccountFollowupMissingInformationWizardModel, criteria, NewOptions().Limit(1), amiws); err != nil {
 		return nil, err
+	}
+	if len(*amiws) == 0 {
+		return nil, nil
 	}
 	return &((*amiws)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindAccountFollowupMissingInformationWizardId(criteria *Criteri
 	ids, err := c.Search(AccountFollowupMissingInformationWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

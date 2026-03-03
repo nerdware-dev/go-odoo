@@ -82,6 +82,9 @@ func (c *Client) GetAccountOnlineAccount(id int64) (*AccountOnlineAccount, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*aoas) == 0 {
+		return nil, nil
+	}
 	return &((*aoas)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindAccountOnlineAccount(criteria *Criteria) (*AccountOnlineAcc
 	aoas := &AccountOnlineAccounts{}
 	if err := c.SearchRead(AccountOnlineAccountModel, criteria, NewOptions().Limit(1), aoas); err != nil {
 		return nil, err
+	}
+	if len(*aoas) == 0 {
+		return nil, nil
 	}
 	return &((*aoas)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindAccountOnlineAccountId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountOnlineAccountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

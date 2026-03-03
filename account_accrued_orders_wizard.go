@@ -78,6 +78,9 @@ func (c *Client) GetAccountAccruedOrdersWizard(id int64) (*AccountAccruedOrdersW
 	if err != nil {
 		return nil, err
 	}
+	if len(*aaows) == 0 {
+		return nil, nil
+	}
 	return &((*aaows)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindAccountAccruedOrdersWizard(criteria *Criteria) (*AccountAcc
 	aaows := &AccountAccruedOrdersWizards{}
 	if err := c.SearchRead(AccountAccruedOrdersWizardModel, criteria, NewOptions().Limit(1), aaows); err != nil {
 		return nil, err
+	}
+	if len(*aaows) == 0 {
+		return nil, nil
 	}
 	return &((*aaows)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindAccountAccruedOrdersWizardId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountAccruedOrdersWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

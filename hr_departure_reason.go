@@ -72,6 +72,9 @@ func (c *Client) GetHrDepartureReason(id int64) (*HrDepartureReason, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hdrs) == 0 {
+		return nil, nil
+	}
 	return &((*hdrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindHrDepartureReason(criteria *Criteria) (*HrDepartureReason, 
 	hdrs := &HrDepartureReasons{}
 	if err := c.SearchRead(HrDepartureReasonModel, criteria, NewOptions().Limit(1), hdrs); err != nil {
 		return nil, err
+	}
+	if len(*hdrs) == 0 {
+		return nil, nil
 	}
 	return &((*hdrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindHrDepartureReasonId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(HrDepartureReasonModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

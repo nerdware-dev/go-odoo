@@ -85,6 +85,9 @@ func (c *Client) GetCrossoveredBudgetLines(id int64) (*CrossoveredBudgetLines, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*cbls) == 0 {
+		return nil, nil
+	}
 	return &((*cbls)[0]), nil
 }
 
@@ -102,6 +105,9 @@ func (c *Client) FindCrossoveredBudgetLines(criteria *Criteria) (*CrossoveredBud
 	cbls := &CrossoveredBudgetLiness{}
 	if err := c.SearchRead(CrossoveredBudgetLinesModel, criteria, NewOptions().Limit(1), cbls); err != nil {
 		return nil, err
+	}
+	if len(*cbls) == 0 {
+		return nil, nil
 	}
 	return &((*cbls)[0]), nil
 }
@@ -127,6 +133,9 @@ func (c *Client) FindCrossoveredBudgetLinesId(criteria *Criteria, options *Optio
 	ids, err := c.Search(CrossoveredBudgetLinesModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

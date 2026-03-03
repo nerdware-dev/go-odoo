@@ -74,6 +74,9 @@ func (c *Client) GetMailWizardInvite(id int64) (*MailWizardInvite, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mwis) == 0 {
+		return nil, nil
+	}
 	return &((*mwis)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindMailWizardInvite(criteria *Criteria) (*MailWizardInvite, er
 	mwis := &MailWizardInvites{}
 	if err := c.SearchRead(MailWizardInviteModel, criteria, NewOptions().Limit(1), mwis); err != nil {
 		return nil, err
+	}
+	if len(*mwis) == 0 {
+		return nil, nil
 	}
 	return &((*mwis)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindMailWizardInviteId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailWizardInviteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

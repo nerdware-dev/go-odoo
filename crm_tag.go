@@ -71,6 +71,9 @@ func (c *Client) GetCrmTag(id int64) (*CrmTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cts) == 0 {
+		return nil, nil
+	}
 	return &((*cts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindCrmTag(criteria *Criteria) (*CrmTag, error) {
 	cts := &CrmTags{}
 	if err := c.SearchRead(CrmTagModel, criteria, NewOptions().Limit(1), cts); err != nil {
 		return nil, err
+	}
+	if len(*cts) == 0 {
+		return nil, nil
 	}
 	return &((*cts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindCrmTagId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(CrmTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

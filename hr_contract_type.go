@@ -73,6 +73,9 @@ func (c *Client) GetHrContractType(id int64) (*HrContractType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hcts) == 0 {
+		return nil, nil
+	}
 	return &((*hcts)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindHrContractType(criteria *Criteria) (*HrContractType, error)
 	hcts := &HrContractTypes{}
 	if err := c.SearchRead(HrContractTypeModel, criteria, NewOptions().Limit(1), hcts); err != nil {
 		return nil, err
+	}
+	if len(*hcts) == 0 {
+		return nil, nil
 	}
 	return &((*hcts)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindHrContractTypeId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(HrContractTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

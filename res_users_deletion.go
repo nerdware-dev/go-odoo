@@ -72,6 +72,9 @@ func (c *Client) GetResUsersDeletion(id int64) (*ResUsersDeletion, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruds) == 0 {
+		return nil, nil
+	}
 	return &((*ruds)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindResUsersDeletion(criteria *Criteria) (*ResUsersDeletion, er
 	ruds := &ResUsersDeletions{}
 	if err := c.SearchRead(ResUsersDeletionModel, criteria, NewOptions().Limit(1), ruds); err != nil {
 		return nil, err
+	}
+	if len(*ruds) == 0 {
+		return nil, nil
 	}
 	return &((*ruds)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindResUsersDeletionId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResUsersDeletionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

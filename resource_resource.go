@@ -78,6 +78,9 @@ func (c *Client) GetResourceResource(id int64) (*ResourceResource, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rrs) == 0 {
+		return nil, nil
+	}
 	return &((*rrs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindResourceResource(criteria *Criteria) (*ResourceResource, er
 	rrs := &ResourceResources{}
 	if err := c.SearchRead(ResourceResourceModel, criteria, NewOptions().Limit(1), rrs); err != nil {
 		return nil, err
+	}
+	if len(*rrs) == 0 {
+		return nil, nil
 	}
 	return &((*rrs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindResourceResourceId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResourceResourceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

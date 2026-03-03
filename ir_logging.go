@@ -77,6 +77,9 @@ func (c *Client) GetIrLogging(id int64) (*IrLogging, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ils) == 0 {
+		return nil, nil
+	}
 	return &((*ils)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindIrLogging(criteria *Criteria) (*IrLogging, error) {
 	ils := &IrLoggings{}
 	if err := c.SearchRead(IrLoggingModel, criteria, NewOptions().Limit(1), ils); err != nil {
 		return nil, err
+	}
+	if len(*ils) == 0 {
+		return nil, nil
 	}
 	return &((*ils)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindIrLoggingId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrLoggingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

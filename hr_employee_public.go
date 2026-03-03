@@ -56,6 +56,7 @@ type HrEmployeePublic struct {
 	LeavesCount                *Float     `xmlrpc:"leaves_count,omitempty" json:"leaves_count,omitempty"`
 	MemberOfDepartment         *Bool      `xmlrpc:"member_of_department,omitempty" json:"member_of_department,omitempty"`
 	MobilePhone                *String    `xmlrpc:"mobile_phone,omitempty" json:"mobile_phone,omitempty"`
+	MobilityCard               *String    `xmlrpc:"mobility_card,omitempty" json:"mobility_card,omitempty"`
 	Name                       *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	NewlyHired                 *Bool      `xmlrpc:"newly_hired,omitempty" json:"newly_hired,omitempty"`
 	ParentId                   *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
@@ -138,6 +139,9 @@ func (c *Client) GetHrEmployeePublic(id int64) (*HrEmployeePublic, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*heps) == 0 {
+		return nil, nil
+	}
 	return &((*heps)[0]), nil
 }
 
@@ -155,6 +159,9 @@ func (c *Client) FindHrEmployeePublic(criteria *Criteria) (*HrEmployeePublic, er
 	heps := &HrEmployeePublics{}
 	if err := c.SearchRead(HrEmployeePublicModel, criteria, NewOptions().Limit(1), heps); err != nil {
 		return nil, err
+	}
+	if len(*heps) == 0 {
+		return nil, nil
 	}
 	return &((*heps)[0]), nil
 }
@@ -180,6 +187,9 @@ func (c *Client) FindHrEmployeePublicId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(HrEmployeePublicModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

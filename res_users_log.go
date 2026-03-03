@@ -69,6 +69,9 @@ func (c *Client) GetResUsersLog(id int64) (*ResUsersLog, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruls) == 0 {
+		return nil, nil
+	}
 	return &((*ruls)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindResUsersLog(criteria *Criteria) (*ResUsersLog, error) {
 	ruls := &ResUsersLogs{}
 	if err := c.SearchRead(ResUsersLogModel, criteria, NewOptions().Limit(1), ruls); err != nil {
 		return nil, err
+	}
+	if len(*ruls) == 0 {
+		return nil, nil
 	}
 	return &((*ruls)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindResUsersLogId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ResUsersLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

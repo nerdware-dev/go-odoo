@@ -71,6 +71,9 @@ func (c *Client) GetIrConfigParameter(id int64) (*IrConfigParameter, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ics) == 0 {
+		return nil, nil
+	}
 	return &((*ics)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindIrConfigParameter(criteria *Criteria) (*IrConfigParameter, 
 	ics := &IrConfigParameters{}
 	if err := c.SearchRead(IrConfigParameterModel, criteria, NewOptions().Limit(1), ics); err != nil {
 		return nil, err
+	}
+	if len(*ics) == 0 {
+		return nil, nil
 	}
 	return &((*ics)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindIrConfigParameterId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(IrConfigParameterModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

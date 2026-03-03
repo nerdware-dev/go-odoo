@@ -79,6 +79,9 @@ func (c *Client) GetCalendarAttendee(id int64) (*CalendarAttendee, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cas) == 0 {
+		return nil, nil
+	}
 	return &((*cas)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindCalendarAttendee(criteria *Criteria) (*CalendarAttendee, er
 	cas := &CalendarAttendees{}
 	if err := c.SearchRead(CalendarAttendeeModel, criteria, NewOptions().Limit(1), cas); err != nil {
 		return nil, err
+	}
+	if len(*cas) == 0 {
+		return nil, nil
 	}
 	return &((*cas)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindCalendarAttendeeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(CalendarAttendeeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

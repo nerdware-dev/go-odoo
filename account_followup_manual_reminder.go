@@ -86,6 +86,9 @@ func (c *Client) GetAccountFollowupManualReminder(id int64) (*AccountFollowupMan
 	if err != nil {
 		return nil, err
 	}
+	if len(*ams) == 0 {
+		return nil, nil
+	}
 	return &((*ams)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindAccountFollowupManualReminder(criteria *Criteria) (*Account
 	ams := &AccountFollowupManualReminders{}
 	if err := c.SearchRead(AccountFollowupManualReminderModel, criteria, NewOptions().Limit(1), ams); err != nil {
 		return nil, err
+	}
+	if len(*ams) == 0 {
+		return nil, nil
 	}
 	return &((*ams)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindAccountFollowupManualReminderId(criteria *Criteria, options
 	ids, err := c.Search(AccountFollowupManualReminderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

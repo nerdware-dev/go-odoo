@@ -2,15 +2,14 @@ package odoo
 
 // FleetServiceType represents fleet.service.type model.
 type FleetServiceType struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Category    *Selection `xmlrpc:"category,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Category    *Selection `xmlrpc:"category,omitempty" json:"category,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetServiceTypes represents array of fleet.service.type model.
@@ -72,6 +71,9 @@ func (c *Client) GetFleetServiceType(id int64) (*FleetServiceType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*fsts) == 0 {
+		return nil, nil
+	}
 	return &((*fsts)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindFleetServiceType(criteria *Criteria) (*FleetServiceType, er
 	fsts := &FleetServiceTypes{}
 	if err := c.SearchRead(FleetServiceTypeModel, criteria, NewOptions().Limit(1), fsts); err != nil {
 		return nil, err
+	}
+	if len(*fsts) == 0 {
+		return nil, nil
 	}
 	return &((*fsts)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindFleetServiceTypeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(FleetServiceTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

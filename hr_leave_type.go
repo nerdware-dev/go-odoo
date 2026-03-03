@@ -102,6 +102,9 @@ func (c *Client) GetHrLeaveType(id int64) (*HrLeaveType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlts) == 0 {
+		return nil, nil
+	}
 	return &((*hlts)[0]), nil
 }
 
@@ -119,6 +122,9 @@ func (c *Client) FindHrLeaveType(criteria *Criteria) (*HrLeaveType, error) {
 	hlts := &HrLeaveTypes{}
 	if err := c.SearchRead(HrLeaveTypeModel, criteria, NewOptions().Limit(1), hlts); err != nil {
 		return nil, err
+	}
+	if len(*hlts) == 0 {
+		return nil, nil
 	}
 	return &((*hlts)[0]), nil
 }
@@ -144,6 +150,9 @@ func (c *Client) FindHrLeaveTypeId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(HrLeaveTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

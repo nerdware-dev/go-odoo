@@ -72,6 +72,9 @@ func (c *Client) GetResPartnerIndustry(id int64) (*ResPartnerIndustry, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpis) == 0 {
+		return nil, nil
+	}
 	return &((*rpis)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindResPartnerIndustry(criteria *Criteria) (*ResPartnerIndustry
 	rpis := &ResPartnerIndustrys{}
 	if err := c.SearchRead(ResPartnerIndustryModel, criteria, NewOptions().Limit(1), rpis); err != nil {
 		return nil, err
+	}
+	if len(*rpis) == 0 {
+		return nil, nil
 	}
 	return &((*rpis)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindResPartnerIndustryId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ResPartnerIndustryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

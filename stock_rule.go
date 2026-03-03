@@ -92,6 +92,9 @@ func (c *Client) GetStockRule(id int64) (*StockRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srs) == 0 {
+		return nil, nil
+	}
 	return &((*srs)[0]), nil
 }
 
@@ -109,6 +112,9 @@ func (c *Client) FindStockRule(criteria *Criteria) (*StockRule, error) {
 	srs := &StockRules{}
 	if err := c.SearchRead(StockRuleModel, criteria, NewOptions().Limit(1), srs); err != nil {
 		return nil, err
+	}
+	if len(*srs) == 0 {
+		return nil, nil
 	}
 	return &((*srs)[0]), nil
 }
@@ -134,6 +140,9 @@ func (c *Client) FindStockRuleId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(StockRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

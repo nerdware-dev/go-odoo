@@ -77,6 +77,9 @@ func (c *Client) GetSmsTemplate(id int64) (*SmsTemplate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sts) == 0 {
+		return nil, nil
+	}
 	return &((*sts)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindSmsTemplate(criteria *Criteria) (*SmsTemplate, error) {
 	sts := &SmsTemplates{}
 	if err := c.SearchRead(SmsTemplateModel, criteria, NewOptions().Limit(1), sts); err != nil {
 		return nil, err
+	}
+	if len(*sts) == 0 {
+		return nil, nil
 	}
 	return &((*sts)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindSmsTemplateId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(SmsTemplateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

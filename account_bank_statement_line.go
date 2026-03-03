@@ -169,6 +169,9 @@ type AccountBankStatementLine struct {
 	ReversedEntryId                       *Many2One   `xmlrpc:"reversed_entry_id,omitempty" json:"reversed_entry_id,omitempty"`
 	RunningBalance                        *Float      `xmlrpc:"running_balance,omitempty" json:"running_balance,omitempty"`
 	SaleOrderCount                        *Int        `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
+	SddHasUsableMandate                   *Bool       `xmlrpc:"sdd_has_usable_mandate,omitempty" json:"sdd_has_usable_mandate,omitempty"`
+	SddMandateId                          *Many2One   `xmlrpc:"sdd_mandate_id,omitempty" json:"sdd_mandate_id,omitempty"`
+	SddMandateScheme                      *Selection  `xmlrpc:"sdd_mandate_scheme,omitempty" json:"sdd_mandate_scheme,omitempty"`
 	SecureSequenceNumber                  *Int        `xmlrpc:"secure_sequence_number,omitempty" json:"secure_sequence_number,omitempty"`
 	SendAndPrintValues                    interface{} `xmlrpc:"send_and_print_values,omitempty" json:"send_and_print_values,omitempty"`
 	Sequence                              *Int        `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
@@ -286,6 +289,9 @@ func (c *Client) GetAccountBankStatementLine(id int64) (*AccountBankStatementLin
 	if err != nil {
 		return nil, err
 	}
+	if len(*absls) == 0 {
+		return nil, nil
+	}
 	return &((*absls)[0]), nil
 }
 
@@ -303,6 +309,9 @@ func (c *Client) FindAccountBankStatementLine(criteria *Criteria) (*AccountBankS
 	absls := &AccountBankStatementLines{}
 	if err := c.SearchRead(AccountBankStatementLineModel, criteria, NewOptions().Limit(1), absls); err != nil {
 		return nil, err
+	}
+	if len(*absls) == 0 {
+		return nil, nil
 	}
 	return &((*absls)[0]), nil
 }
@@ -328,6 +337,9 @@ func (c *Client) FindAccountBankStatementLineId(criteria *Criteria, options *Opt
 	ids, err := c.Search(AccountBankStatementLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

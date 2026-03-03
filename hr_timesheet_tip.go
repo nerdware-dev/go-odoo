@@ -70,6 +70,9 @@ func (c *Client) GetHrTimesheetTip(id int64) (*HrTimesheetTip, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*htts) == 0 {
+		return nil, nil
+	}
 	return &((*htts)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindHrTimesheetTip(criteria *Criteria) (*HrTimesheetTip, error)
 	htts := &HrTimesheetTips{}
 	if err := c.SearchRead(HrTimesheetTipModel, criteria, NewOptions().Limit(1), htts); err != nil {
 		return nil, err
+	}
+	if len(*htts) == 0 {
+		return nil, nil
 	}
 	return &((*htts)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindHrTimesheetTipId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(HrTimesheetTipModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -72,6 +72,9 @@ func (c *Client) GetSaleMassCancelOrders(id int64) (*SaleMassCancelOrders, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*smcos) == 0 {
+		return nil, nil
+	}
 	return &((*smcos)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindSaleMassCancelOrders(criteria *Criteria) (*SaleMassCancelOr
 	smcos := &SaleMassCancelOrderss{}
 	if err := c.SearchRead(SaleMassCancelOrdersModel, criteria, NewOptions().Limit(1), smcos); err != nil {
 		return nil, err
+	}
+	if len(*smcos) == 0 {
+		return nil, nil
 	}
 	return &((*smcos)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindSaleMassCancelOrdersId(criteria *Criteria, options *Options
 	ids, err := c.Search(SaleMassCancelOrdersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

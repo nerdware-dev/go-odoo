@@ -145,6 +145,9 @@ func (c *Client) GetHrExpense(id int64) (*HrExpense, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hes) == 0 {
+		return nil, nil
+	}
 	return &((*hes)[0]), nil
 }
 
@@ -162,6 +165,9 @@ func (c *Client) FindHrExpense(criteria *Criteria) (*HrExpense, error) {
 	hes := &HrExpenses{}
 	if err := c.SearchRead(HrExpenseModel, criteria, NewOptions().Limit(1), hes); err != nil {
 		return nil, err
+	}
+	if len(*hes) == 0 {
+		return nil, nil
 	}
 	return &((*hes)[0]), nil
 }
@@ -187,6 +193,9 @@ func (c *Client) FindHrExpenseId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(HrExpenseModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

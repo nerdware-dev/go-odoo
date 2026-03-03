@@ -72,6 +72,9 @@ func (c *Client) GetSpreadsheetDashboardGroup(id int64) (*SpreadsheetDashboardGr
 	if err != nil {
 		return nil, err
 	}
+	if len(*sdgs) == 0 {
+		return nil, nil
+	}
 	return &((*sdgs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindSpreadsheetDashboardGroup(criteria *Criteria) (*Spreadsheet
 	sdgs := &SpreadsheetDashboardGroups{}
 	if err := c.SearchRead(SpreadsheetDashboardGroupModel, criteria, NewOptions().Limit(1), sdgs); err != nil {
 		return nil, err
+	}
+	if len(*sdgs) == 0 {
+		return nil, nil
 	}
 	return &((*sdgs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindSpreadsheetDashboardGroupId(criteria *Criteria, options *Op
 	ids, err := c.Search(SpreadsheetDashboardGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

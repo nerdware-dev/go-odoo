@@ -72,6 +72,9 @@ func (c *Client) GetIrDemoFailure(id int64) (*IrDemoFailure, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IDs) == 0 {
+		return nil, nil
+	}
 	return &((*IDs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindIrDemoFailure(criteria *Criteria) (*IrDemoFailure, error) {
 	IDs := &IrDemoFailures{}
 	if err := c.SearchRead(IrDemoFailureModel, criteria, NewOptions().Limit(1), IDs); err != nil {
 		return nil, err
+	}
+	if len(*IDs) == 0 {
+		return nil, nil
 	}
 	return &((*IDs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindIrDemoFailureId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrDemoFailureModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

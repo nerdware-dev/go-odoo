@@ -69,6 +69,9 @@ func (c *Client) GetResConfigInstaller(id int64) (*ResConfigInstaller, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcis) == 0 {
+		return nil, nil
+	}
 	return &((*rcis)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindResConfigInstaller(criteria *Criteria) (*ResConfigInstaller
 	rcis := &ResConfigInstallers{}
 	if err := c.SearchRead(ResConfigInstallerModel, criteria, NewOptions().Limit(1), rcis); err != nil {
 		return nil, err
+	}
+	if len(*rcis) == 0 {
+		return nil, nil
 	}
 	return &((*rcis)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindResConfigInstallerId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ResConfigInstallerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

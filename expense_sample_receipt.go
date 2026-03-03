@@ -69,6 +69,9 @@ func (c *Client) GetExpenseSampleReceipt(id int64) (*ExpenseSampleReceipt, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*esrs) == 0 {
+		return nil, nil
+	}
 	return &((*esrs)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindExpenseSampleReceipt(criteria *Criteria) (*ExpenseSampleRec
 	esrs := &ExpenseSampleReceipts{}
 	if err := c.SearchRead(ExpenseSampleReceiptModel, criteria, NewOptions().Limit(1), esrs); err != nil {
 		return nil, err
+	}
+	if len(*esrs) == 0 {
+		return nil, nil
 	}
 	return &((*esrs)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindExpenseSampleReceiptId(criteria *Criteria, options *Options
 	ids, err := c.Search(ExpenseSampleReceiptModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -75,6 +75,9 @@ func (c *Client) GetHrAttendanceOvertime(id int64) (*HrAttendanceOvertime, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*haos) == 0 {
+		return nil, nil
+	}
 	return &((*haos)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindHrAttendanceOvertime(criteria *Criteria) (*HrAttendanceOver
 	haos := &HrAttendanceOvertimes{}
 	if err := c.SearchRead(HrAttendanceOvertimeModel, criteria, NewOptions().Limit(1), haos); err != nil {
 		return nil, err
+	}
+	if len(*haos) == 0 {
+		return nil, nil
 	}
 	return &((*haos)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindHrAttendanceOvertimeId(criteria *Criteria, options *Options
 	ids, err := c.Search(HrAttendanceOvertimeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

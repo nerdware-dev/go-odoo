@@ -86,6 +86,9 @@ func (c *Client) GetReportPaperformat(id int64) (*ReportPaperformat, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rps) == 0 {
+		return nil, nil
+	}
 	return &((*rps)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindReportPaperformat(criteria *Criteria) (*ReportPaperformat, 
 	rps := &ReportPaperformats{}
 	if err := c.SearchRead(ReportPaperformatModel, criteria, NewOptions().Limit(1), rps); err != nil {
 		return nil, err
+	}
+	if len(*rps) == 0 {
+		return nil, nil
 	}
 	return &((*rps)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindReportPaperformatId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(ReportPaperformatModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

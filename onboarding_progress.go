@@ -74,6 +74,9 @@ func (c *Client) GetOnboardingProgress(id int64) (*OnboardingProgress, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ops) == 0 {
+		return nil, nil
+	}
 	return &((*ops)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindOnboardingProgress(criteria *Criteria) (*OnboardingProgress
 	ops := &OnboardingProgresss{}
 	if err := c.SearchRead(OnboardingProgressModel, criteria, NewOptions().Limit(1), ops); err != nil {
 		return nil, err
+	}
+	if len(*ops) == 0 {
+		return nil, nil
 	}
 	return &((*ops)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindOnboardingProgressId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(OnboardingProgressModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,6 +2,7 @@ package odoo
 
 // IrModel represents ir.model model.
 type IrModel struct {
+	Abstract          *Bool      `xmlrpc:"abstract,omitempty" json:"abstract,omitempty"`
 	AccessIds         *Relation  `xmlrpc:"access_ids,omitempty" json:"access_ids,omitempty"`
 	Count             *Int       `xmlrpc:"count,omitempty" json:"count,omitempty"`
 	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
@@ -86,6 +87,9 @@ func (c *Client) GetIrModel(id int64) (*IrModel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ims) == 0 {
+		return nil, nil
+	}
 	return &((*ims)[0]), nil
 }
 
@@ -103,6 +107,9 @@ func (c *Client) FindIrModel(criteria *Criteria) (*IrModel, error) {
 	ims := &IrModels{}
 	if err := c.SearchRead(IrModelModel, criteria, NewOptions().Limit(1), ims); err != nil {
 		return nil, err
+	}
+	if len(*ims) == 0 {
+		return nil, nil
 	}
 	return &((*ims)[0]), nil
 }
@@ -128,6 +135,9 @@ func (c *Client) FindIrModelId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(IrModelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -73,6 +73,9 @@ func (c *Client) GetMailPartnerDevice(id int64) (*MailPartnerDevice, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mpds) == 0 {
+		return nil, nil
+	}
 	return &((*mpds)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindMailPartnerDevice(criteria *Criteria) (*MailPartnerDevice, 
 	mpds := &MailPartnerDevices{}
 	if err := c.SearchRead(MailPartnerDeviceModel, criteria, NewOptions().Limit(1), mpds); err != nil {
 		return nil, err
+	}
+	if len(*mpds) == 0 {
+		return nil, nil
 	}
 	return &((*mpds)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindMailPartnerDeviceId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailPartnerDeviceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

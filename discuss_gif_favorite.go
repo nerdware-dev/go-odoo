@@ -70,6 +70,9 @@ func (c *Client) GetDiscussGifFavorite(id int64) (*DiscussGifFavorite, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dgfs) == 0 {
+		return nil, nil
+	}
 	return &((*dgfs)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindDiscussGifFavorite(criteria *Criteria) (*DiscussGifFavorite
 	dgfs := &DiscussGifFavorites{}
 	if err := c.SearchRead(DiscussGifFavoriteModel, criteria, NewOptions().Limit(1), dgfs); err != nil {
 		return nil, err
+	}
+	if len(*dgfs) == 0 {
+		return nil, nil
 	}
 	return &((*dgfs)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindDiscussGifFavoriteId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(DiscussGifFavoriteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

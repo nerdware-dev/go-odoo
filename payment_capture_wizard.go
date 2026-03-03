@@ -81,6 +81,9 @@ func (c *Client) GetPaymentCaptureWizard(id int64) (*PaymentCaptureWizard, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcws) == 0 {
+		return nil, nil
+	}
 	return &((*pcws)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindPaymentCaptureWizard(criteria *Criteria) (*PaymentCaptureWi
 	pcws := &PaymentCaptureWizards{}
 	if err := c.SearchRead(PaymentCaptureWizardModel, criteria, NewOptions().Limit(1), pcws); err != nil {
 		return nil, err
+	}
+	if len(*pcws) == 0 {
+		return nil, nil
 	}
 	return &((*pcws)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindPaymentCaptureWizardId(criteria *Criteria, options *Options
 	ids, err := c.Search(PaymentCaptureWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

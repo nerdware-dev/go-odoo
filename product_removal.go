@@ -71,6 +71,9 @@ func (c *Client) GetProductRemoval(id int64) (*ProductRemoval, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*prs) == 0 {
+		return nil, nil
+	}
 	return &((*prs)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindProductRemoval(criteria *Criteria) (*ProductRemoval, error)
 	prs := &ProductRemovals{}
 	if err := c.SearchRead(ProductRemovalModel, criteria, NewOptions().Limit(1), prs); err != nil {
 		return nil, err
+	}
+	if len(*prs) == 0 {
+		return nil, nil
 	}
 	return &((*prs)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindProductRemovalId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(ProductRemovalModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

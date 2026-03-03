@@ -73,6 +73,9 @@ func (c *Client) GetResUsersSettingsVolumes(id int64) (*ResUsersSettingsVolumes,
 	if err != nil {
 		return nil, err
 	}
+	if len(*rusvs) == 0 {
+		return nil, nil
+	}
 	return &((*rusvs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindResUsersSettingsVolumes(criteria *Criteria) (*ResUsersSetti
 	rusvs := &ResUsersSettingsVolumess{}
 	if err := c.SearchRead(ResUsersSettingsVolumesModel, criteria, NewOptions().Limit(1), rusvs); err != nil {
 		return nil, err
+	}
+	if len(*rusvs) == 0 {
+		return nil, nil
 	}
 	return &((*rusvs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindResUsersSettingsVolumesId(criteria *Criteria, options *Opti
 	ids, err := c.Search(ResUsersSettingsVolumesModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

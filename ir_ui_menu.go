@@ -2,23 +2,24 @@ package odoo
 
 // IrUiMenu represents ir.ui.menu model.
 type IrUiMenu struct {
-	Action       *String   `xmlrpc:"action,omitempty" json:"action,omitempty"`
-	Active       *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
-	ChildId      *Relation `xmlrpc:"child_id,omitempty" json:"child_id,omitempty"`
-	CompleteName *String   `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	GroupsId     *Relation `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
-	ParentId     *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
-	ParentPath   *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
-	Sequence     *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
-	WebIcon      *String   `xmlrpc:"web_icon,omitempty" json:"web_icon,omitempty"`
-	WebIconData  *String   `xmlrpc:"web_icon_data,omitempty" json:"web_icon_data,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Action                *String   `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	Active                *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ChildId               *Relation `xmlrpc:"child_id,omitempty" json:"child_id,omitempty"`
+	CompleteName          *String   `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate            *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName           *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupsId              *Relation `xmlrpc:"groups_id,omitempty" json:"groups_id,omitempty"`
+	Id                    *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsStudioConfiguration *Bool     `xmlrpc:"is_studio_configuration,omitempty" json:"is_studio_configuration,omitempty"`
+	Name                  *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId              *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath            *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	Sequence              *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WebIcon               *String   `xmlrpc:"web_icon,omitempty" json:"web_icon,omitempty"`
+	WebIconData           *String   `xmlrpc:"web_icon_data,omitempty" json:"web_icon_data,omitempty"`
+	WriteDate             *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrUiMenus represents array of ir.ui.menu model.
@@ -80,6 +81,9 @@ func (c *Client) GetIrUiMenu(id int64) (*IrUiMenu, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iums) == 0 {
+		return nil, nil
+	}
 	return &((*iums)[0]), nil
 }
 
@@ -97,6 +101,9 @@ func (c *Client) FindIrUiMenu(criteria *Criteria) (*IrUiMenu, error) {
 	iums := &IrUiMenus{}
 	if err := c.SearchRead(IrUiMenuModel, criteria, NewOptions().Limit(1), iums); err != nil {
 		return nil, err
+	}
+	if len(*iums) == 0 {
+		return nil, nil
 	}
 	return &((*iums)[0]), nil
 }
@@ -122,6 +129,9 @@ func (c *Client) FindIrUiMenuId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(IrUiMenuModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

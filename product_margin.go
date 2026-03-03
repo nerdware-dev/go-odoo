@@ -72,6 +72,9 @@ func (c *Client) GetProductMargin(id int64) (*ProductMargin, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pms) == 0 {
+		return nil, nil
+	}
 	return &((*pms)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProductMargin(criteria *Criteria) (*ProductMargin, error) {
 	pms := &ProductMargins{}
 	if err := c.SearchRead(ProductMarginModel, criteria, NewOptions().Limit(1), pms); err != nil {
 		return nil, err
+	}
+	if len(*pms) == 0 {
+		return nil, nil
 	}
 	return &((*pms)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProductMarginId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(ProductMarginModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

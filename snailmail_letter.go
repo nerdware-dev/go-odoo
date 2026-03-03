@@ -93,6 +93,9 @@ func (c *Client) GetSnailmailLetter(id int64) (*SnailmailLetter, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sls) == 0 {
+		return nil, nil
+	}
 	return &((*sls)[0]), nil
 }
 
@@ -110,6 +113,9 @@ func (c *Client) FindSnailmailLetter(criteria *Criteria) (*SnailmailLetter, erro
 	sls := &SnailmailLetters{}
 	if err := c.SearchRead(SnailmailLetterModel, criteria, NewOptions().Limit(1), sls); err != nil {
 		return nil, err
+	}
+	if len(*sls) == 0 {
+		return nil, nil
 	}
 	return &((*sls)[0]), nil
 }
@@ -135,6 +141,9 @@ func (c *Client) FindSnailmailLetterId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SnailmailLetterModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

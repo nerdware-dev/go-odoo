@@ -84,6 +84,9 @@ func (c *Client) GetAccountAnalyticPlan(id int64) (*AccountAnalyticPlan, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*aaps) == 0 {
+		return nil, nil
+	}
 	return &((*aaps)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindAccountAnalyticPlan(criteria *Criteria) (*AccountAnalyticPl
 	aaps := &AccountAnalyticPlans{}
 	if err := c.SearchRead(AccountAnalyticPlanModel, criteria, NewOptions().Limit(1), aaps); err != nil {
 		return nil, err
+	}
+	if len(*aaps) == 0 {
+		return nil, nil
 	}
 	return &((*aaps)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindAccountAnalyticPlanId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountAnalyticPlanModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

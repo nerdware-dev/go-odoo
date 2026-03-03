@@ -74,6 +74,9 @@ func (c *Client) GetCrmLeadScoringFrequency(id int64) (*CrmLeadScoringFrequency,
 	if err != nil {
 		return nil, err
 	}
+	if len(*clsfs) == 0 {
+		return nil, nil
+	}
 	return &((*clsfs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindCrmLeadScoringFrequency(criteria *Criteria) (*CrmLeadScorin
 	clsfs := &CrmLeadScoringFrequencys{}
 	if err := c.SearchRead(CrmLeadScoringFrequencyModel, criteria, NewOptions().Limit(1), clsfs); err != nil {
 		return nil, err
+	}
+	if len(*clsfs) == 0 {
+		return nil, nil
 	}
 	return &((*clsfs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindCrmLeadScoringFrequencyId(criteria *Criteria, options *Opti
 	ids, err := c.Search(CrmLeadScoringFrequencyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

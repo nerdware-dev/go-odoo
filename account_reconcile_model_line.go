@@ -87,6 +87,9 @@ func (c *Client) GetAccountReconcileModelLine(id int64) (*AccountReconcileModelL
 	if err != nil {
 		return nil, err
 	}
+	if len(*armls) == 0 {
+		return nil, nil
+	}
 	return &((*armls)[0]), nil
 }
 
@@ -104,6 +107,9 @@ func (c *Client) FindAccountReconcileModelLine(criteria *Criteria) (*AccountReco
 	armls := &AccountReconcileModelLines{}
 	if err := c.SearchRead(AccountReconcileModelLineModel, criteria, NewOptions().Limit(1), armls); err != nil {
 		return nil, err
+	}
+	if len(*armls) == 0 {
+		return nil, nil
 	}
 	return &((*armls)[0]), nil
 }
@@ -129,6 +135,9 @@ func (c *Client) FindAccountReconcileModelLineId(criteria *Criteria, options *Op
 	ids, err := c.Search(AccountReconcileModelLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

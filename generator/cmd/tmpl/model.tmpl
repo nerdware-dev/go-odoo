@@ -2,7 +2,7 @@ package odoo
 
 // {{.StructName}} represents {{ .Name }} model.
 type {{.StructName}} struct { {{range .Fields}}
-	{{.VarName}} {{.Type}} `xmlrpc:"{{.Name}},omitempty"`{{end }}
+	{{.VarName}} {{.Type}} `xmlrpc:"{{.Name}},omitempty" json:"{{.Name}},omitempty"`{{end }}
 }
 
 // {{.StructName}}s represents array of {{ .Name }} model.
@@ -64,6 +64,9 @@ func (c *Client) Get{{.StructName}}(id int64) (*{{.StructName}}, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*{{.VarsName}}) == 0 {
+        return nil, nil
+    }
 	return &((*{{.VarsName}})[0]), nil
 }
 
@@ -82,6 +85,9 @@ func (c *Client) Find{{.StructName}}(criteria *Criteria) (*{{.StructName}}, erro
 	if err := c.SearchRead({{.StructName}}Model, criteria, NewOptions().Limit(1), {{.VarsName}}); err != nil {
 		return nil, err
 	}
+	if len(*{{.VarsName}}) == 0 {
+        return nil, nil
+    }
 	return &((*{{.VarsName}})[0]), nil
 }
 
@@ -107,5 +113,8 @@ func (c *Client) Find{{.StructName}}Id(criteria *Criteria, options *Options) (in
 	if err != nil {
 		return -1, err
 	}
+	if len(ids) == 0 {
+        return -1, nil
+    }
 	return ids[0], nil
 }

@@ -70,6 +70,9 @@ func (c *Client) GetUtmSource(id int64) (*UtmSource, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*uss) == 0 {
+		return nil, nil
+	}
 	return &((*uss)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindUtmSource(criteria *Criteria) (*UtmSource, error) {
 	uss := &UtmSources{}
 	if err := c.SearchRead(UtmSourceModel, criteria, NewOptions().Limit(1), uss); err != nil {
 		return nil, err
+	}
+	if len(*uss) == 0 {
+		return nil, nil
 	}
 	return &((*uss)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindUtmSourceId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(UtmSourceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

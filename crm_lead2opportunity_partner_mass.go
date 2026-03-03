@@ -80,6 +80,9 @@ func (c *Client) GetCrmLead2OpportunityPartnerMass(id int64) (*CrmLead2Opportuni
 	if err != nil {
 		return nil, err
 	}
+	if len(*clpms) == 0 {
+		return nil, nil
+	}
 	return &((*clpms)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindCrmLead2OpportunityPartnerMass(criteria *Criteria) (*CrmLea
 	clpms := &CrmLead2OpportunityPartnerMasss{}
 	if err := c.SearchRead(CrmLead2OpportunityPartnerMassModel, criteria, NewOptions().Limit(1), clpms); err != nil {
 		return nil, err
+	}
+	if len(*clpms) == 0 {
+		return nil, nil
 	}
 	return &((*clpms)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindCrmLead2OpportunityPartnerMassId(criteria *Criteria, option
 	ids, err := c.Search(CrmLead2OpportunityPartnerMassModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,16 +2,21 @@ package odoo
 
 // BaseModuleUninstall represents base.module.uninstall model.
 type BaseModuleUninstall struct {
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
-	ModelIds    *Relation `xmlrpc:"model_ids,omitempty" json:"model_ids,omitempty"`
-	ModuleId    *Many2One `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
-	ModuleIds   *Relation `xmlrpc:"module_ids,omitempty" json:"module_ids,omitempty"`
-	ShowAll     *Bool     `xmlrpc:"show_all,omitempty" json:"show_all,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomFields  *Int      `xmlrpc:"custom_fields,omitempty" json:"custom_fields,omitempty"`
+	CustomModels  *Int      `xmlrpc:"custom_models,omitempty" json:"custom_models,omitempty"`
+	CustomReports *Int      `xmlrpc:"custom_reports,omitempty" json:"custom_reports,omitempty"`
+	CustomViews   *Int      `xmlrpc:"custom_views,omitempty" json:"custom_views,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsStudio      *Bool     `xmlrpc:"is_studio,omitempty" json:"is_studio,omitempty"`
+	ModelIds      *Relation `xmlrpc:"model_ids,omitempty" json:"model_ids,omitempty"`
+	ModuleId      *Many2One `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	ModuleIds     *Relation `xmlrpc:"module_ids,omitempty" json:"module_ids,omitempty"`
+	ShowAll       *Bool     `xmlrpc:"show_all,omitempty" json:"show_all,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleUninstalls represents array of base.module.uninstall model.
@@ -73,6 +78,9 @@ func (c *Client) GetBaseModuleUninstall(id int64) (*BaseModuleUninstall, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*bmus) == 0 {
+		return nil, nil
+	}
 	return &((*bmus)[0]), nil
 }
 
@@ -90,6 +98,9 @@ func (c *Client) FindBaseModuleUninstall(criteria *Criteria) (*BaseModuleUninsta
 	bmus := &BaseModuleUninstalls{}
 	if err := c.SearchRead(BaseModuleUninstallModel, criteria, NewOptions().Limit(1), bmus); err != nil {
 		return nil, err
+	}
+	if len(*bmus) == 0 {
+		return nil, nil
 	}
 	return &((*bmus)[0]), nil
 }
@@ -115,6 +126,9 @@ func (c *Client) FindBaseModuleUninstallId(criteria *Criteria, options *Options)
 	ids, err := c.Search(BaseModuleUninstallModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

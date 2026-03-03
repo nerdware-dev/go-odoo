@@ -70,6 +70,9 @@ func (c *Client) GetDiscussVoiceMetadata(id int64) (*DiscussVoiceMetadata, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*dvms) == 0 {
+		return nil, nil
+	}
 	return &((*dvms)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindDiscussVoiceMetadata(criteria *Criteria) (*DiscussVoiceMeta
 	dvms := &DiscussVoiceMetadatas{}
 	if err := c.SearchRead(DiscussVoiceMetadataModel, criteria, NewOptions().Limit(1), dvms); err != nil {
 		return nil, err
+	}
+	if len(*dvms) == 0 {
+		return nil, nil
 	}
 	return &((*dvms)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindDiscussVoiceMetadataId(criteria *Criteria, options *Options
 	ids, err := c.Search(DiscussVoiceMetadataModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

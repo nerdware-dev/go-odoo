@@ -72,6 +72,9 @@ func (c *Client) GetBasePartnerMergeLine(id int64) (*BasePartnerMergeLine, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*bpmls) == 0 {
+		return nil, nil
+	}
 	return &((*bpmls)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindBasePartnerMergeLine(criteria *Criteria) (*BasePartnerMerge
 	bpmls := &BasePartnerMergeLines{}
 	if err := c.SearchRead(BasePartnerMergeLineModel, criteria, NewOptions().Limit(1), bpmls); err != nil {
 		return nil, err
+	}
+	if len(*bpmls) == 0 {
+		return nil, nil
 	}
 	return &((*bpmls)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindBasePartnerMergeLineId(criteria *Criteria, options *Options
 	ids, err := c.Search(BasePartnerMergeLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

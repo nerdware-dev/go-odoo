@@ -81,6 +81,9 @@ func (c *Client) GetAccountPartialReconcile(id int64) (*AccountPartialReconcile,
 	if err != nil {
 		return nil, err
 	}
+	if len(*aprs) == 0 {
+		return nil, nil
+	}
 	return &((*aprs)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindAccountPartialReconcile(criteria *Criteria) (*AccountPartia
 	aprs := &AccountPartialReconciles{}
 	if err := c.SearchRead(AccountPartialReconcileModel, criteria, NewOptions().Limit(1), aprs); err != nil {
 		return nil, err
+	}
+	if len(*aprs) == 0 {
+		return nil, nil
 	}
 	return &((*aprs)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindAccountPartialReconcileId(criteria *Criteria, options *Opti
 	ids, err := c.Search(AccountPartialReconcileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

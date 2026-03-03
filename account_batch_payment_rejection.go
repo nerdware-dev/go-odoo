@@ -73,6 +73,9 @@ func (c *Client) GetAccountBatchPaymentRejection(id int64) (*AccountBatchPayment
 	if err != nil {
 		return nil, err
 	}
+	if len(*abprs) == 0 {
+		return nil, nil
+	}
 	return &((*abprs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountBatchPaymentRejection(criteria *Criteria) (*AccountB
 	abprs := &AccountBatchPaymentRejections{}
 	if err := c.SearchRead(AccountBatchPaymentRejectionModel, criteria, NewOptions().Limit(1), abprs); err != nil {
 		return nil, err
+	}
+	if len(*abprs) == 0 {
+		return nil, nil
 	}
 	return &((*abprs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountBatchPaymentRejectionId(criteria *Criteria, options 
 	ids, err := c.Search(AccountBatchPaymentRejectionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

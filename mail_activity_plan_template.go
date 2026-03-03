@@ -78,6 +78,9 @@ func (c *Client) GetMailActivityPlanTemplate(id int64) (*MailActivityPlanTemplat
 	if err != nil {
 		return nil, err
 	}
+	if len(*mapts) == 0 {
+		return nil, nil
+	}
 	return &((*mapts)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindMailActivityPlanTemplate(criteria *Criteria) (*MailActivity
 	mapts := &MailActivityPlanTemplates{}
 	if err := c.SearchRead(MailActivityPlanTemplateModel, criteria, NewOptions().Limit(1), mapts); err != nil {
 		return nil, err
+	}
+	if len(*mapts) == 0 {
+		return nil, nil
 	}
 	return &((*mapts)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindMailActivityPlanTemplateId(criteria *Criteria, options *Opt
 	ids, err := c.Search(MailActivityPlanTemplateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

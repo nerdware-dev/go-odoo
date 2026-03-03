@@ -102,6 +102,9 @@ func (c *Client) GetHrDepartment(id int64) (*HrDepartment, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hds) == 0 {
+		return nil, nil
+	}
 	return &((*hds)[0]), nil
 }
 
@@ -119,6 +122,9 @@ func (c *Client) FindHrDepartment(criteria *Criteria) (*HrDepartment, error) {
 	hds := &HrDepartments{}
 	if err := c.SearchRead(HrDepartmentModel, criteria, NewOptions().Limit(1), hds); err != nil {
 		return nil, err
+	}
+	if len(*hds) == 0 {
+		return nil, nil
 	}
 	return &((*hds)[0]), nil
 }
@@ -144,6 +150,9 @@ func (c *Client) FindHrDepartmentId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(HrDepartmentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

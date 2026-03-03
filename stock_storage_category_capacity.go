@@ -75,6 +75,9 @@ func (c *Client) GetStockStorageCategoryCapacity(id int64) (*StockStorageCategor
 	if err != nil {
 		return nil, err
 	}
+	if len(*ssccs) == 0 {
+		return nil, nil
+	}
 	return &((*ssccs)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindStockStorageCategoryCapacity(criteria *Criteria) (*StockSto
 	ssccs := &StockStorageCategoryCapacitys{}
 	if err := c.SearchRead(StockStorageCategoryCapacityModel, criteria, NewOptions().Limit(1), ssccs); err != nil {
 		return nil, err
+	}
+	if len(*ssccs) == 0 {
+		return nil, nil
 	}
 	return &((*ssccs)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindStockStorageCategoryCapacityId(criteria *Criteria, options 
 	ids, err := c.Search(StockStorageCategoryCapacityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

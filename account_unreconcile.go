@@ -69,6 +69,9 @@ func (c *Client) GetAccountUnreconcile(id int64) (*AccountUnreconcile, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aus) == 0 {
+		return nil, nil
+	}
 	return &((*aus)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindAccountUnreconcile(criteria *Criteria) (*AccountUnreconcile
 	aus := &AccountUnreconciles{}
 	if err := c.SearchRead(AccountUnreconcileModel, criteria, NewOptions().Limit(1), aus); err != nil {
 		return nil, err
+	}
+	if len(*aus) == 0 {
+		return nil, nil
 	}
 	return &((*aus)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindAccountUnreconcileId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(AccountUnreconcileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

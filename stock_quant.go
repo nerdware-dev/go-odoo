@@ -102,6 +102,9 @@ func (c *Client) GetStockQuant(id int64) (*StockQuant, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sqs) == 0 {
+		return nil, nil
+	}
 	return &((*sqs)[0]), nil
 }
 
@@ -119,6 +122,9 @@ func (c *Client) FindStockQuant(criteria *Criteria) (*StockQuant, error) {
 	sqs := &StockQuants{}
 	if err := c.SearchRead(StockQuantModel, criteria, NewOptions().Limit(1), sqs); err != nil {
 		return nil, err
+	}
+	if len(*sqs) == 0 {
+		return nil, nil
 	}
 	return &((*sqs)[0]), nil
 }
@@ -144,6 +150,9 @@ func (c *Client) FindStockQuantId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(StockQuantModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

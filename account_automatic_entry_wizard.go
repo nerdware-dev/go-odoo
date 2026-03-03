@@ -85,6 +85,9 @@ func (c *Client) GetAccountAutomaticEntryWizard(id int64) (*AccountAutomaticEntr
 	if err != nil {
 		return nil, err
 	}
+	if len(*aaews) == 0 {
+		return nil, nil
+	}
 	return &((*aaews)[0]), nil
 }
 
@@ -102,6 +105,9 @@ func (c *Client) FindAccountAutomaticEntryWizard(criteria *Criteria) (*AccountAu
 	aaews := &AccountAutomaticEntryWizards{}
 	if err := c.SearchRead(AccountAutomaticEntryWizardModel, criteria, NewOptions().Limit(1), aaews); err != nil {
 		return nil, err
+	}
+	if len(*aaews) == 0 {
+		return nil, nil
 	}
 	return &((*aaews)[0]), nil
 }
@@ -127,6 +133,9 @@ func (c *Client) FindAccountAutomaticEntryWizardId(criteria *Criteria, options *
 	ids, err := c.Search(AccountAutomaticEntryWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

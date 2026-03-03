@@ -73,6 +73,9 @@ func (c *Client) GetCalendarFilters(id int64) (*CalendarFilters, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cfs) == 0 {
+		return nil, nil
+	}
 	return &((*cfs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindCalendarFilters(criteria *Criteria) (*CalendarFilters, erro
 	cfs := &CalendarFilterss{}
 	if err := c.SearchRead(CalendarFiltersModel, criteria, NewOptions().Limit(1), cfs); err != nil {
 		return nil, err
+	}
+	if len(*cfs) == 0 {
+		return nil, nil
 	}
 	return &((*cfs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindCalendarFiltersId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(CalendarFiltersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

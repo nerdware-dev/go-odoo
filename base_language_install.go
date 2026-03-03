@@ -72,6 +72,9 @@ func (c *Client) GetBaseLanguageInstall(id int64) (*BaseLanguageInstall, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*blis) == 0 {
+		return nil, nil
+	}
 	return &((*blis)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindBaseLanguageInstall(criteria *Criteria) (*BaseLanguageInsta
 	blis := &BaseLanguageInstalls{}
 	if err := c.SearchRead(BaseLanguageInstallModel, criteria, NewOptions().Limit(1), blis); err != nil {
 		return nil, err
+	}
+	if len(*blis) == 0 {
+		return nil, nil
 	}
 	return &((*blis)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindBaseLanguageInstallId(criteria *Criteria, options *Options)
 	ids, err := c.Search(BaseLanguageInstallModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -84,6 +84,9 @@ func (c *Client) GetMailTrackingValue(id int64) (*MailTrackingValue, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mtvs) == 0 {
+		return nil, nil
+	}
 	return &((*mtvs)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindMailTrackingValue(criteria *Criteria) (*MailTrackingValue, 
 	mtvs := &MailTrackingValues{}
 	if err := c.SearchRead(MailTrackingValueModel, criteria, NewOptions().Limit(1), mtvs); err != nil {
 		return nil, err
+	}
+	if len(*mtvs) == 0 {
+		return nil, nil
 	}
 	return &((*mtvs)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindMailTrackingValueId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailTrackingValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -79,6 +79,9 @@ func (c *Client) GetMailMessageSubtype(id int64) (*MailMessageSubtype, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mmss) == 0 {
+		return nil, nil
+	}
 	return &((*mmss)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindMailMessageSubtype(criteria *Criteria) (*MailMessageSubtype
 	mmss := &MailMessageSubtypes{}
 	if err := c.SearchRead(MailMessageSubtypeModel, criteria, NewOptions().Limit(1), mmss); err != nil {
 		return nil, err
+	}
+	if len(*mmss) == 0 {
+		return nil, nil
 	}
 	return &((*mmss)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindMailMessageSubtypeId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(MailMessageSubtypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

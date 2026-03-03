@@ -76,6 +76,9 @@ func (c *Client) GetPrivacyLog(id int64) (*PrivacyLog, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pls) == 0 {
+		return nil, nil
+	}
 	return &((*pls)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindPrivacyLog(criteria *Criteria) (*PrivacyLog, error) {
 	pls := &PrivacyLogs{}
 	if err := c.SearchRead(PrivacyLogModel, criteria, NewOptions().Limit(1), pls); err != nil {
 		return nil, err
+	}
+	if len(*pls) == 0 {
+		return nil, nil
 	}
 	return &((*pls)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindPrivacyLogId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(PrivacyLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

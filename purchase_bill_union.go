@@ -74,6 +74,9 @@ func (c *Client) GetPurchaseBillUnion(id int64) (*PurchaseBillUnion, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pbus) == 0 {
+		return nil, nil
+	}
 	return &((*pbus)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindPurchaseBillUnion(criteria *Criteria) (*PurchaseBillUnion, 
 	pbus := &PurchaseBillUnions{}
 	if err := c.SearchRead(PurchaseBillUnionModel, criteria, NewOptions().Limit(1), pbus); err != nil {
 		return nil, err
+	}
+	if len(*pbus) == 0 {
+		return nil, nil
 	}
 	return &((*pbus)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindPurchaseBillUnionId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(PurchaseBillUnionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

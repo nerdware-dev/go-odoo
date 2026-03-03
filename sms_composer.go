@@ -90,6 +90,9 @@ func (c *Client) GetSmsComposer(id int64) (*SmsComposer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*scs) == 0 {
+		return nil, nil
+	}
 	return &((*scs)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindSmsComposer(criteria *Criteria) (*SmsComposer, error) {
 	scs := &SmsComposers{}
 	if err := c.SearchRead(SmsComposerModel, criteria, NewOptions().Limit(1), scs); err != nil {
 		return nil, err
+	}
+	if len(*scs) == 0 {
+		return nil, nil
 	}
 	return &((*scs)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindSmsComposerId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(SmsComposerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

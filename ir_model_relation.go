@@ -72,6 +72,9 @@ func (c *Client) GetIrModelRelation(id int64) (*IrModelRelation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imrs) == 0 {
+		return nil, nil
+	}
 	return &((*imrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindIrModelRelation(criteria *Criteria) (*IrModelRelation, erro
 	imrs := &IrModelRelations{}
 	if err := c.SearchRead(IrModelRelationModel, criteria, NewOptions().Limit(1), imrs); err != nil {
 		return nil, err
+	}
+	if len(*imrs) == 0 {
+		return nil, nil
 	}
 	return &((*imrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindIrModelRelationId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(IrModelRelationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

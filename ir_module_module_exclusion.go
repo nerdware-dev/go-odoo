@@ -73,6 +73,9 @@ func (c *Client) GetIrModuleModuleExclusion(id int64) (*IrModuleModuleExclusion,
 	if err != nil {
 		return nil, err
 	}
+	if len(*immes) == 0 {
+		return nil, nil
+	}
 	return &((*immes)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindIrModuleModuleExclusion(criteria *Criteria) (*IrModuleModul
 	immes := &IrModuleModuleExclusions{}
 	if err := c.SearchRead(IrModuleModuleExclusionModel, criteria, NewOptions().Limit(1), immes); err != nil {
 		return nil, err
+	}
+	if len(*immes) == 0 {
+		return nil, nil
 	}
 	return &((*immes)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindIrModuleModuleExclusionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(IrModuleModuleExclusionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

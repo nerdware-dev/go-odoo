@@ -100,6 +100,9 @@ func (c *Client) GetStockScrap(id int64) (*StockScrap, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sss) == 0 {
+		return nil, nil
+	}
 	return &((*sss)[0]), nil
 }
 
@@ -117,6 +120,9 @@ func (c *Client) FindStockScrap(criteria *Criteria) (*StockScrap, error) {
 	sss := &StockScraps{}
 	if err := c.SearchRead(StockScrapModel, criteria, NewOptions().Limit(1), sss); err != nil {
 		return nil, err
+	}
+	if len(*sss) == 0 {
+		return nil, nil
 	}
 	return &((*sss)[0]), nil
 }
@@ -142,6 +148,9 @@ func (c *Client) FindStockScrapId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(StockScrapModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

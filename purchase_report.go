@@ -94,6 +94,9 @@ func (c *Client) GetPurchaseReport(id int64) (*PurchaseReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*prs) == 0 {
+		return nil, nil
+	}
 	return &((*prs)[0]), nil
 }
 
@@ -111,6 +114,9 @@ func (c *Client) FindPurchaseReport(criteria *Criteria) (*PurchaseReport, error)
 	prs := &PurchaseReports{}
 	if err := c.SearchRead(PurchaseReportModel, criteria, NewOptions().Limit(1), prs); err != nil {
 		return nil, err
+	}
+	if len(*prs) == 0 {
+		return nil, nil
 	}
 	return &((*prs)[0]), nil
 }
@@ -136,6 +142,9 @@ func (c *Client) FindPurchaseReportId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(PurchaseReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

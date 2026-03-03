@@ -72,6 +72,9 @@ func (c *Client) GetProjectTaskCreateTimesheet(id int64) (*ProjectTaskCreateTime
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptcts) == 0 {
+		return nil, nil
+	}
 	return &((*ptcts)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProjectTaskCreateTimesheet(criteria *Criteria) (*ProjectTas
 	ptcts := &ProjectTaskCreateTimesheets{}
 	if err := c.SearchRead(ProjectTaskCreateTimesheetModel, criteria, NewOptions().Limit(1), ptcts); err != nil {
 		return nil, err
+	}
+	if len(*ptcts) == 0 {
+		return nil, nil
 	}
 	return &((*ptcts)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProjectTaskCreateTimesheetId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectTaskCreateTimesheetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

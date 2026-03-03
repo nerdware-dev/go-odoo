@@ -77,6 +77,9 @@ func (c *Client) GetDiscussChannelRtcSession(id int64) (*DiscussChannelRtcSessio
 	if err != nil {
 		return nil, err
 	}
+	if len(*dcrss) == 0 {
+		return nil, nil
+	}
 	return &((*dcrss)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindDiscussChannelRtcSession(criteria *Criteria) (*DiscussChann
 	dcrss := &DiscussChannelRtcSessions{}
 	if err := c.SearchRead(DiscussChannelRtcSessionModel, criteria, NewOptions().Limit(1), dcrss); err != nil {
 		return nil, err
+	}
+	if len(*dcrss) == 0 {
+		return nil, nil
 	}
 	return &((*dcrss)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindDiscussChannelRtcSessionId(criteria *Criteria, options *Opt
 	ids, err := c.Search(DiscussChannelRtcSessionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

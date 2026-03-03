@@ -77,6 +77,9 @@ func (c *Client) GetAccountReportColumn(id int64) (*AccountReportColumn, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*arcs) == 0 {
+		return nil, nil
+	}
 	return &((*arcs)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindAccountReportColumn(criteria *Criteria) (*AccountReportColu
 	arcs := &AccountReportColumns{}
 	if err := c.SearchRead(AccountReportColumnModel, criteria, NewOptions().Limit(1), arcs); err != nil {
 		return nil, err
+	}
+	if len(*arcs) == 0 {
+		return nil, nil
 	}
 	return &((*arcs)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindAccountReportColumnId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountReportColumnModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

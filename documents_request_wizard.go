@@ -80,6 +80,9 @@ func (c *Client) GetDocumentsRequestWizard(id int64) (*DocumentsRequestWizard, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*drs) == 0 {
+		return nil, nil
+	}
 	return &((*drs)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindDocumentsRequestWizard(criteria *Criteria) (*DocumentsReque
 	drs := &DocumentsRequestWizards{}
 	if err := c.SearchRead(DocumentsRequestWizardModel, criteria, NewOptions().Limit(1), drs); err != nil {
 		return nil, err
+	}
+	if len(*drs) == 0 {
+		return nil, nil
 	}
 	return &((*drs)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindDocumentsRequestWizardId(criteria *Criteria, options *Optio
 	ids, err := c.Search(DocumentsRequestWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

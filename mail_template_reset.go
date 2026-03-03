@@ -70,6 +70,9 @@ func (c *Client) GetMailTemplateReset(id int64) (*MailTemplateReset, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mtrs) == 0 {
+		return nil, nil
+	}
 	return &((*mtrs)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindMailTemplateReset(criteria *Criteria) (*MailTemplateReset, 
 	mtrs := &MailTemplateResets{}
 	if err := c.SearchRead(MailTemplateResetModel, criteria, NewOptions().Limit(1), mtrs); err != nil {
 		return nil, err
+	}
+	if len(*mtrs) == 0 {
+		return nil, nil
 	}
 	return &((*mtrs)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindMailTemplateResetId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailTemplateResetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

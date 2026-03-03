@@ -77,6 +77,9 @@ func (c *Client) GetIrModelAccess(id int64) (*IrModelAccess, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imas) == 0 {
+		return nil, nil
+	}
 	return &((*imas)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindIrModelAccess(criteria *Criteria) (*IrModelAccess, error) {
 	imas := &IrModelAccesss{}
 	if err := c.SearchRead(IrModelAccessModel, criteria, NewOptions().Limit(1), imas); err != nil {
 		return nil, err
+	}
+	if len(*imas) == 0 {
+		return nil, nil
 	}
 	return &((*imas)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindIrModelAccessId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrModelAccessModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

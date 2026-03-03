@@ -77,6 +77,9 @@ func (c *Client) GetHrEmployeeCvWizard(id int64) (*HrEmployeeCvWizard, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hecws) == 0 {
+		return nil, nil
+	}
 	return &((*hecws)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindHrEmployeeCvWizard(criteria *Criteria) (*HrEmployeeCvWizard
 	hecws := &HrEmployeeCvWizards{}
 	if err := c.SearchRead(HrEmployeeCvWizardModel, criteria, NewOptions().Limit(1), hecws); err != nil {
 		return nil, err
+	}
+	if len(*hecws) == 0 {
+		return nil, nil
 	}
 	return &((*hecws)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindHrEmployeeCvWizardId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(HrEmployeeCvWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

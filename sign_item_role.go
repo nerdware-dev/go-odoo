@@ -75,6 +75,9 @@ func (c *Client) GetSignItemRole(id int64) (*SignItemRole, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sirs) == 0 {
+		return nil, nil
+	}
 	return &((*sirs)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindSignItemRole(criteria *Criteria) (*SignItemRole, error) {
 	sirs := &SignItemRoles{}
 	if err := c.SearchRead(SignItemRoleModel, criteria, NewOptions().Limit(1), sirs); err != nil {
 		return nil, err
+	}
+	if len(*sirs) == 0 {
+		return nil, nil
 	}
 	return &((*sirs)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindSignItemRoleId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(SignItemRoleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

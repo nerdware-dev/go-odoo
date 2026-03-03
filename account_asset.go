@@ -71,6 +71,7 @@ type AccountAsset struct {
 	TotalDepreciableValue          *Float      `xmlrpc:"total_depreciable_value,omitempty" json:"total_depreciable_value,omitempty"`
 	TotalDepreciationEntriesCount  *Int        `xmlrpc:"total_depreciation_entries_count,omitempty" json:"total_depreciation_entries_count,omitempty"`
 	ValueResidual                  *Float      `xmlrpc:"value_residual,omitempty" json:"value_residual,omitempty"`
+	VehicleId                      *Many2One   `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
 	WebsiteMessageIds              *Relation   `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 	WriteDate                      *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                       *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
@@ -135,6 +136,9 @@ func (c *Client) GetAccountAsset(id int64) (*AccountAsset, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aas) == 0 {
+		return nil, nil
+	}
 	return &((*aas)[0]), nil
 }
 
@@ -152,6 +156,9 @@ func (c *Client) FindAccountAsset(criteria *Criteria) (*AccountAsset, error) {
 	aas := &AccountAssets{}
 	if err := c.SearchRead(AccountAssetModel, criteria, NewOptions().Limit(1), aas); err != nil {
 		return nil, err
+	}
+	if len(*aas) == 0 {
+		return nil, nil
 	}
 	return &((*aas)[0]), nil
 }
@@ -177,6 +184,9 @@ func (c *Client) FindAccountAssetId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(AccountAssetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

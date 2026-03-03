@@ -71,6 +71,9 @@ func (c *Client) GetAccountMissingTransactionWizard(id int64) (*AccountMissingTr
 	if err != nil {
 		return nil, err
 	}
+	if len(*amtws) == 0 {
+		return nil, nil
+	}
 	return &((*amtws)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindAccountMissingTransactionWizard(criteria *Criteria) (*Accou
 	amtws := &AccountMissingTransactionWizards{}
 	if err := c.SearchRead(AccountMissingTransactionWizardModel, criteria, NewOptions().Limit(1), amtws); err != nil {
 		return nil, err
+	}
+	if len(*amtws) == 0 {
+		return nil, nil
 	}
 	return &((*amtws)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindAccountMissingTransactionWizardId(criteria *Criteria, optio
 	ids, err := c.Search(AccountMissingTransactionWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

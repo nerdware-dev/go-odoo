@@ -74,6 +74,9 @@ func (c *Client) GetHrTimesheetAttendanceReport(id int64) (*HrTimesheetAttendanc
 	if err != nil {
 		return nil, err
 	}
+	if len(*htars) == 0 {
+		return nil, nil
+	}
 	return &((*htars)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindHrTimesheetAttendanceReport(criteria *Criteria) (*HrTimeshe
 	htars := &HrTimesheetAttendanceReports{}
 	if err := c.SearchRead(HrTimesheetAttendanceReportModel, criteria, NewOptions().Limit(1), htars); err != nil {
 		return nil, err
+	}
+	if len(*htars) == 0 {
+		return nil, nil
 	}
 	return &((*htars)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindHrTimesheetAttendanceReportId(criteria *Criteria, options *
 	ids, err := c.Search(HrTimesheetAttendanceReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

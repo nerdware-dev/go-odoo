@@ -82,6 +82,9 @@ func (c *Client) GetIrSequence(id int64) (*IrSequence, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iss) == 0 {
+		return nil, nil
+	}
 	return &((*iss)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindIrSequence(criteria *Criteria) (*IrSequence, error) {
 	iss := &IrSequences{}
 	if err := c.SearchRead(IrSequenceModel, criteria, NewOptions().Limit(1), iss); err != nil {
 		return nil, err
+	}
+	if len(*iss) == 0 {
+		return nil, nil
 	}
 	return &((*iss)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindIrSequenceId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(IrSequenceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

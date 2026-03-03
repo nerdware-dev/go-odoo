@@ -74,6 +74,9 @@ func (c *Client) GetStockRulesReport(id int64) (*StockRulesReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srrs) == 0 {
+		return nil, nil
+	}
 	return &((*srrs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindStockRulesReport(criteria *Criteria) (*StockRulesReport, er
 	srrs := &StockRulesReports{}
 	if err := c.SearchRead(StockRulesReportModel, criteria, NewOptions().Limit(1), srrs); err != nil {
 		return nil, err
+	}
+	if len(*srrs) == 0 {
+		return nil, nil
 	}
 	return &((*srrs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindStockRulesReportId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(StockRulesReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

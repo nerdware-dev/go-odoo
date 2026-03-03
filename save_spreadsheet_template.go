@@ -76,6 +76,9 @@ func (c *Client) GetSaveSpreadsheetTemplate(id int64) (*SaveSpreadsheetTemplate,
 	if err != nil {
 		return nil, err
 	}
+	if len(*ssts) == 0 {
+		return nil, nil
+	}
 	return &((*ssts)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindSaveSpreadsheetTemplate(criteria *Criteria) (*SaveSpreadshe
 	ssts := &SaveSpreadsheetTemplates{}
 	if err := c.SearchRead(SaveSpreadsheetTemplateModel, criteria, NewOptions().Limit(1), ssts); err != nil {
 		return nil, err
+	}
+	if len(*ssts) == 0 {
+		return nil, nil
 	}
 	return &((*ssts)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindSaveSpreadsheetTemplateId(criteria *Criteria, options *Opti
 	ids, err := c.Search(SaveSpreadsheetTemplateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

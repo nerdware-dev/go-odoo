@@ -80,6 +80,9 @@ func (c *Client) GetBarcodeRule(id int64) (*BarcodeRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*brs) == 0 {
+		return nil, nil
+	}
 	return &((*brs)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindBarcodeRule(criteria *Criteria) (*BarcodeRule, error) {
 	brs := &BarcodeRules{}
 	if err := c.SearchRead(BarcodeRuleModel, criteria, NewOptions().Limit(1), brs); err != nil {
 		return nil, err
+	}
+	if len(*brs) == 0 {
+		return nil, nil
 	}
 	return &((*brs)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindBarcodeRuleId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(BarcodeRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

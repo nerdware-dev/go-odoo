@@ -91,6 +91,9 @@ func (c *Client) GetDocumentsFolder(id int64) (*DocumentsFolder, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dfs) == 0 {
+		return nil, nil
+	}
 	return &((*dfs)[0]), nil
 }
 
@@ -108,6 +111,9 @@ func (c *Client) FindDocumentsFolder(criteria *Criteria) (*DocumentsFolder, erro
 	dfs := &DocumentsFolders{}
 	if err := c.SearchRead(DocumentsFolderModel, criteria, NewOptions().Limit(1), dfs); err != nil {
 		return nil, err
+	}
+	if len(*dfs) == 0 {
+		return nil, nil
 	}
 	return &((*dfs)[0]), nil
 }
@@ -133,6 +139,9 @@ func (c *Client) FindDocumentsFolderId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(DocumentsFolderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

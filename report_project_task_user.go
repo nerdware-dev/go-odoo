@@ -106,6 +106,9 @@ func (c *Client) GetReportProjectTaskUser(id int64) (*ReportProjectTaskUser, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*rptus) == 0 {
+		return nil, nil
+	}
 	return &((*rptus)[0]), nil
 }
 
@@ -123,6 +126,9 @@ func (c *Client) FindReportProjectTaskUser(criteria *Criteria) (*ReportProjectTa
 	rptus := &ReportProjectTaskUsers{}
 	if err := c.SearchRead(ReportProjectTaskUserModel, criteria, NewOptions().Limit(1), rptus); err != nil {
 		return nil, err
+	}
+	if len(*rptus) == 0 {
+		return nil, nil
 	}
 	return &((*rptus)[0]), nil
 }
@@ -148,6 +154,9 @@ func (c *Client) FindReportProjectTaskUserId(criteria *Criteria, options *Option
 	ids, err := c.Search(ReportProjectTaskUserModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -73,6 +73,9 @@ func (c *Client) GetStockAssignSerial(id int64) (*StockAssignSerial, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sass) == 0 {
+		return nil, nil
+	}
 	return &((*sass)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindStockAssignSerial(criteria *Criteria) (*StockAssignSerial, 
 	sass := &StockAssignSerials{}
 	if err := c.SearchRead(StockAssignSerialModel, criteria, NewOptions().Limit(1), sass); err != nil {
 		return nil, err
+	}
+	if len(*sass) == 0 {
+		return nil, nil
 	}
 	return &((*sass)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindStockAssignSerialId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(StockAssignSerialModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

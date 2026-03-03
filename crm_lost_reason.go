@@ -72,6 +72,9 @@ func (c *Client) GetCrmLostReason(id int64) (*CrmLostReason, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*clrs) == 0 {
+		return nil, nil
+	}
 	return &((*clrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindCrmLostReason(criteria *Criteria) (*CrmLostReason, error) {
 	clrs := &CrmLostReasons{}
 	if err := c.SearchRead(CrmLostReasonModel, criteria, NewOptions().Limit(1), clrs); err != nil {
 		return nil, err
+	}
+	if len(*clrs) == 0 {
+		return nil, nil
 	}
 	return &((*clrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindCrmLostReasonId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(CrmLostReasonModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

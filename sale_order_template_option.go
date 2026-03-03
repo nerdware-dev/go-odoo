@@ -11,6 +11,7 @@ type SaleOrderTemplateOption struct {
 	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
 	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
 	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	RecurringInvoice     *Bool     `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
 	SaleOrderTemplateId  *Many2One `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
 	UomId                *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
 	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
@@ -76,6 +77,9 @@ func (c *Client) GetSaleOrderTemplateOption(id int64) (*SaleOrderTemplateOption,
 	if err != nil {
 		return nil, err
 	}
+	if len(*sotos) == 0 {
+		return nil, nil
+	}
 	return &((*sotos)[0]), nil
 }
 
@@ -93,6 +97,9 @@ func (c *Client) FindSaleOrderTemplateOption(criteria *Criteria) (*SaleOrderTemp
 	sotos := &SaleOrderTemplateOptions{}
 	if err := c.SearchRead(SaleOrderTemplateOptionModel, criteria, NewOptions().Limit(1), sotos); err != nil {
 		return nil, err
+	}
+	if len(*sotos) == 0 {
+		return nil, nil
 	}
 	return &((*sotos)[0]), nil
 }
@@ -118,6 +125,9 @@ func (c *Client) FindSaleOrderTemplateOptionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(SaleOrderTemplateOptionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

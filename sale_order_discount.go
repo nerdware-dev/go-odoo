@@ -75,6 +75,9 @@ func (c *Client) GetSaleOrderDiscount(id int64) (*SaleOrderDiscount, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sods) == 0 {
+		return nil, nil
+	}
 	return &((*sods)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindSaleOrderDiscount(criteria *Criteria) (*SaleOrderDiscount, 
 	sods := &SaleOrderDiscounts{}
 	if err := c.SearchRead(SaleOrderDiscountModel, criteria, NewOptions().Limit(1), sods); err != nil {
 		return nil, err
+	}
+	if len(*sods) == 0 {
+		return nil, nil
 	}
 	return &((*sods)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindSaleOrderDiscountId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(SaleOrderDiscountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

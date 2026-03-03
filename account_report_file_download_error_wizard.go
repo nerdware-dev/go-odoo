@@ -72,6 +72,9 @@ func (c *Client) GetAccountReportFileDownloadErrorWizard(id int64) (*AccountRepo
 	if err != nil {
 		return nil, err
 	}
+	if len(*arfdews) == 0 {
+		return nil, nil
+	}
 	return &((*arfdews)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountReportFileDownloadErrorWizard(criteria *Criteria) (*
 	arfdews := &AccountReportFileDownloadErrorWizards{}
 	if err := c.SearchRead(AccountReportFileDownloadErrorWizardModel, criteria, NewOptions().Limit(1), arfdews); err != nil {
 		return nil, err
+	}
+	if len(*arfdews) == 0 {
+		return nil, nil
 	}
 	return &((*arfdews)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountReportFileDownloadErrorWizardId(criteria *Criteria, 
 	ids, err := c.Search(AccountReportFileDownloadErrorWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

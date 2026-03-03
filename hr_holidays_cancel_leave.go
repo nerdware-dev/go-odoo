@@ -71,6 +71,9 @@ func (c *Client) GetHrHolidaysCancelLeave(id int64) (*HrHolidaysCancelLeave, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*hhcls) == 0 {
+		return nil, nil
+	}
 	return &((*hhcls)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindHrHolidaysCancelLeave(criteria *Criteria) (*HrHolidaysCance
 	hhcls := &HrHolidaysCancelLeaves{}
 	if err := c.SearchRead(HrHolidaysCancelLeaveModel, criteria, NewOptions().Limit(1), hhcls); err != nil {
 		return nil, err
+	}
+	if len(*hhcls) == 0 {
+		return nil, nil
 	}
 	return &((*hhcls)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindHrHolidaysCancelLeaveId(criteria *Criteria, options *Option
 	ids, err := c.Search(HrHolidaysCancelLeaveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

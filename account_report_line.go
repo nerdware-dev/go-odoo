@@ -89,6 +89,9 @@ func (c *Client) GetAccountReportLine(id int64) (*AccountReportLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*arls) == 0 {
+		return nil, nil
+	}
 	return &((*arls)[0]), nil
 }
 
@@ -106,6 +109,9 @@ func (c *Client) FindAccountReportLine(criteria *Criteria) (*AccountReportLine, 
 	arls := &AccountReportLines{}
 	if err := c.SearchRead(AccountReportLineModel, criteria, NewOptions().Limit(1), arls); err != nil {
 		return nil, err
+	}
+	if len(*arls) == 0 {
+		return nil, nil
 	}
 	return &((*arls)[0]), nil
 }
@@ -131,6 +137,9 @@ func (c *Client) FindAccountReportLineId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountReportLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

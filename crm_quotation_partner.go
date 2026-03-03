@@ -72,6 +72,9 @@ func (c *Client) GetCrmQuotationPartner(id int64) (*CrmQuotationPartner, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*cqps) == 0 {
+		return nil, nil
+	}
 	return &((*cqps)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindCrmQuotationPartner(criteria *Criteria) (*CrmQuotationPartn
 	cqps := &CrmQuotationPartners{}
 	if err := c.SearchRead(CrmQuotationPartnerModel, criteria, NewOptions().Limit(1), cqps); err != nil {
 		return nil, err
+	}
+	if len(*cqps) == 0 {
+		return nil, nil
 	}
 	return &((*cqps)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindCrmQuotationPartnerId(criteria *Criteria, options *Options)
 	ids, err := c.Search(CrmQuotationPartnerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

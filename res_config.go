@@ -69,6 +69,9 @@ func (c *Client) GetResConfig(id int64) (*ResConfig, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindResConfig(criteria *Criteria) (*ResConfig, error) {
 	rcs := &ResConfigs{}
 	if err := c.SearchRead(ResConfigModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindResConfigId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(ResConfigModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

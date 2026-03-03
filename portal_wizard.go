@@ -72,6 +72,9 @@ func (c *Client) GetPortalWizard(id int64) (*PortalWizard, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pws) == 0 {
+		return nil, nil
+	}
 	return &((*pws)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindPortalWizard(criteria *Criteria) (*PortalWizard, error) {
 	pws := &PortalWizards{}
 	if err := c.SearchRead(PortalWizardModel, criteria, NewOptions().Limit(1), pws); err != nil {
 		return nil, err
+	}
+	if len(*pws) == 0 {
+		return nil, nil
 	}
 	return &((*pws)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindPortalWizardId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(PortalWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

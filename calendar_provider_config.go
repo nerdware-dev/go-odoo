@@ -76,6 +76,9 @@ func (c *Client) GetCalendarProviderConfig(id int64) (*CalendarProviderConfig, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*cpcs) == 0 {
+		return nil, nil
+	}
 	return &((*cpcs)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindCalendarProviderConfig(criteria *Criteria) (*CalendarProvid
 	cpcs := &CalendarProviderConfigs{}
 	if err := c.SearchRead(CalendarProviderConfigModel, criteria, NewOptions().Limit(1), cpcs); err != nil {
 		return nil, err
+	}
+	if len(*cpcs) == 0 {
+		return nil, nil
 	}
 	return &((*cpcs)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindCalendarProviderConfigId(criteria *Criteria, options *Optio
 	ids, err := c.Search(CalendarProviderConfigModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

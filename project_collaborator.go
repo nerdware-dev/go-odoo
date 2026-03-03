@@ -72,6 +72,9 @@ func (c *Client) GetProjectCollaborator(id int64) (*ProjectCollaborator, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcs) == 0 {
+		return nil, nil
+	}
 	return &((*pcs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProjectCollaborator(criteria *Criteria) (*ProjectCollaborat
 	pcs := &ProjectCollaborators{}
 	if err := c.SearchRead(ProjectCollaboratorModel, criteria, NewOptions().Limit(1), pcs); err != nil {
 		return nil, err
+	}
+	if len(*pcs) == 0 {
+		return nil, nil
 	}
 	return &((*pcs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProjectCollaboratorId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ProjectCollaboratorModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

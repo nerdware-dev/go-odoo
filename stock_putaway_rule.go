@@ -78,6 +78,9 @@ func (c *Client) GetStockPutawayRule(id int64) (*StockPutawayRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sprs) == 0 {
+		return nil, nil
+	}
 	return &((*sprs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindStockPutawayRule(criteria *Criteria) (*StockPutawayRule, er
 	sprs := &StockPutawayRules{}
 	if err := c.SearchRead(StockPutawayRuleModel, criteria, NewOptions().Limit(1), sprs); err != nil {
 		return nil, err
+	}
+	if len(*sprs) == 0 {
+		return nil, nil
 	}
 	return &((*sprs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindStockPutawayRuleId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(StockPutawayRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

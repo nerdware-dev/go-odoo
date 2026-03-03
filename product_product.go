@@ -101,6 +101,7 @@ type ProductProduct struct {
 	ProductDocumentCount                   *Int        `xmlrpc:"product_document_count,omitempty" json:"product_document_count,omitempty"`
 	ProductDocumentIds                     *Relation   `xmlrpc:"product_document_ids,omitempty" json:"product_document_ids,omitempty"`
 	ProductProperties                      interface{} `xmlrpc:"product_properties,omitempty" json:"product_properties,omitempty"`
+	ProductSubscriptionPricingIds          *Relation   `xmlrpc:"product_subscription_pricing_ids,omitempty" json:"product_subscription_pricing_ids,omitempty"`
 	ProductTagIds                          *Relation   `xmlrpc:"product_tag_ids,omitempty" json:"product_tag_ids,omitempty"`
 	ProductTemplateAttributeValueIds       *Relation   `xmlrpc:"product_template_attribute_value_ids,omitempty" json:"product_template_attribute_value_ids,omitempty"`
 	ProductTemplateVariantValueIds         *Relation   `xmlrpc:"product_template_variant_value_ids,omitempty" json:"product_template_variant_value_ids,omitempty"`
@@ -130,6 +131,7 @@ type ProductProduct struct {
 	QtyAvailable                           *Float      `xmlrpc:"qty_available,omitempty" json:"qty_available,omitempty"`
 	QuantitySvl                            *Float      `xmlrpc:"quantity_svl,omitempty" json:"quantity_svl,omitempty"`
 	RatingIds                              *Relation   `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RecurringInvoice                       *Bool       `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
 	ReorderingMaxQty                       *Float      `xmlrpc:"reordering_max_qty,omitempty" json:"reordering_max_qty,omitempty"`
 	ReorderingMinQty                       *Float      `xmlrpc:"reordering_min_qty,omitempty" json:"reordering_min_qty,omitempty"`
 	ResponsibleId                          *Many2One   `xmlrpc:"responsible_id,omitempty" json:"responsible_id,omitempty"`
@@ -250,6 +252,9 @@ func (c *Client) GetProductProduct(id int64) (*ProductProduct, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pps) == 0 {
+		return nil, nil
+	}
 	return &((*pps)[0]), nil
 }
 
@@ -267,6 +272,9 @@ func (c *Client) FindProductProduct(criteria *Criteria) (*ProductProduct, error)
 	pps := &ProductProducts{}
 	if err := c.SearchRead(ProductProductModel, criteria, NewOptions().Limit(1), pps); err != nil {
 		return nil, err
+	}
+	if len(*pps) == 0 {
+		return nil, nil
 	}
 	return &((*pps)[0]), nil
 }
@@ -292,6 +300,9 @@ func (c *Client) FindProductProductId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(ProductProductModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

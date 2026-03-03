@@ -76,6 +76,9 @@ func (c *Client) GetAccountTransferModelLine(id int64) (*AccountTransferModelLin
 	if err != nil {
 		return nil, err
 	}
+	if len(*atmls) == 0 {
+		return nil, nil
+	}
 	return &((*atmls)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindAccountTransferModelLine(criteria *Criteria) (*AccountTrans
 	atmls := &AccountTransferModelLines{}
 	if err := c.SearchRead(AccountTransferModelLineModel, criteria, NewOptions().Limit(1), atmls); err != nil {
 		return nil, err
+	}
+	if len(*atmls) == 0 {
+		return nil, nil
 	}
 	return &((*atmls)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindAccountTransferModelLineId(criteria *Criteria, options *Opt
 	ids, err := c.Search(AccountTransferModelLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -110,6 +110,9 @@ func (c *Client) GetAccountTax(id int64) (*AccountTax, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ats) == 0 {
+		return nil, nil
+	}
 	return &((*ats)[0]), nil
 }
 
@@ -127,6 +130,9 @@ func (c *Client) FindAccountTax(criteria *Criteria) (*AccountTax, error) {
 	ats := &AccountTaxs{}
 	if err := c.SearchRead(AccountTaxModel, criteria, NewOptions().Limit(1), ats); err != nil {
 		return nil, err
+	}
+	if len(*ats) == 0 {
+		return nil, nil
 	}
 	return &((*ats)[0]), nil
 }
@@ -152,6 +158,9 @@ func (c *Client) FindAccountTaxId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(AccountTaxModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

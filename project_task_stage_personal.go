@@ -72,6 +72,9 @@ func (c *Client) GetProjectTaskStagePersonal(id int64) (*ProjectTaskStagePersona
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptsps) == 0 {
+		return nil, nil
+	}
 	return &((*ptsps)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProjectTaskStagePersonal(criteria *Criteria) (*ProjectTaskS
 	ptsps := &ProjectTaskStagePersonals{}
 	if err := c.SearchRead(ProjectTaskStagePersonalModel, criteria, NewOptions().Limit(1), ptsps); err != nil {
 		return nil, err
+	}
+	if len(*ptsps) == 0 {
+		return nil, nil
 	}
 	return &((*ptsps)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProjectTaskStagePersonalId(criteria *Criteria, options *Opt
 	ids, err := c.Search(ProjectTaskStagePersonalModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

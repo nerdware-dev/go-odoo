@@ -78,6 +78,9 @@ func (c *Client) GetProjectShareWizard(id int64) (*ProjectShareWizard, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*psws) == 0 {
+		return nil, nil
+	}
 	return &((*psws)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindProjectShareWizard(criteria *Criteria) (*ProjectShareWizard
 	psws := &ProjectShareWizards{}
 	if err := c.SearchRead(ProjectShareWizardModel, criteria, NewOptions().Limit(1), psws); err != nil {
 		return nil, err
+	}
+	if len(*psws) == 0 {
+		return nil, nil
 	}
 	return &((*psws)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindProjectShareWizardId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ProjectShareWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -47,6 +47,7 @@ type CrmLead struct {
 	ExpectedRevenue                 *Float      `xmlrpc:"expected_revenue,omitempty" json:"expected_revenue,omitempty"`
 	Function                        *String     `xmlrpc:"function,omitempty" json:"function,omitempty"`
 	HasMessage                      *Bool       `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	IapEnrichDone                   *Bool       `xmlrpc:"iap_enrich_done,omitempty" json:"iap_enrich_done,omitempty"`
 	Id                              *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
 	IsAutomatedProbability          *Bool       `xmlrpc:"is_automated_probability,omitempty" json:"is_automated_probability,omitempty"`
 	IsBlacklisted                   *Bool       `xmlrpc:"is_blacklisted,omitempty" json:"is_blacklisted,omitempty"`
@@ -101,6 +102,7 @@ type CrmLead struct {
 	RevealId                        *String     `xmlrpc:"reveal_id,omitempty" json:"reveal_id,omitempty"`
 	SaleAmountTotal                 *Float      `xmlrpc:"sale_amount_total,omitempty" json:"sale_amount_total,omitempty"`
 	SaleOrderCount                  *Int        `xmlrpc:"sale_order_count,omitempty" json:"sale_order_count,omitempty"`
+	ShowEnrichButton                *Bool       `xmlrpc:"show_enrich_button,omitempty" json:"show_enrich_button,omitempty"`
 	SourceId                        *Many2One   `xmlrpc:"source_id,omitempty" json:"source_id,omitempty"`
 	StageId                         *Many2One   `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
 	StateId                         *Many2One   `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
@@ -179,6 +181,9 @@ func (c *Client) GetCrmLead(id int64) (*CrmLead, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cls) == 0 {
+		return nil, nil
+	}
 	return &((*cls)[0]), nil
 }
 
@@ -196,6 +201,9 @@ func (c *Client) FindCrmLead(criteria *Criteria) (*CrmLead, error) {
 	cls := &CrmLeads{}
 	if err := c.SearchRead(CrmLeadModel, criteria, NewOptions().Limit(1), cls); err != nil {
 		return nil, err
+	}
+	if len(*cls) == 0 {
+		return nil, nil
 	}
 	return &((*cls)[0]), nil
 }
@@ -221,6 +229,9 @@ func (c *Client) FindCrmLeadId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(CrmLeadModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

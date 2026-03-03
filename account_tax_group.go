@@ -78,6 +78,9 @@ func (c *Client) GetAccountTaxGroup(id int64) (*AccountTaxGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*atgs) == 0 {
+		return nil, nil
+	}
 	return &((*atgs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindAccountTaxGroup(criteria *Criteria) (*AccountTaxGroup, erro
 	atgs := &AccountTaxGroups{}
 	if err := c.SearchRead(AccountTaxGroupModel, criteria, NewOptions().Limit(1), atgs); err != nil {
 		return nil, err
+	}
+	if len(*atgs) == 0 {
+		return nil, nil
 	}
 	return &((*atgs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindAccountTaxGroupId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(AccountTaxGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -80,6 +80,9 @@ func (c *Client) GetAccountMoveReversal(id int64) (*AccountMoveReversal, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*amrs) == 0 {
+		return nil, nil
+	}
 	return &((*amrs)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindAccountMoveReversal(criteria *Criteria) (*AccountMoveRevers
 	amrs := &AccountMoveReversals{}
 	if err := c.SearchRead(AccountMoveReversalModel, criteria, NewOptions().Limit(1), amrs); err != nil {
 		return nil, err
+	}
+	if len(*amrs) == 0 {
+		return nil, nil
 	}
 	return &((*amrs)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindAccountMoveReversalId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountMoveReversalModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

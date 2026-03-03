@@ -74,6 +74,9 @@ func (c *Client) GetReportLayout(id int64) (*ReportLayout, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rls) == 0 {
+		return nil, nil
+	}
 	return &((*rls)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindReportLayout(criteria *Criteria) (*ReportLayout, error) {
 	rls := &ReportLayouts{}
 	if err := c.SearchRead(ReportLayoutModel, criteria, NewOptions().Limit(1), rls); err != nil {
 		return nil, err
+	}
+	if len(*rls) == 0 {
+		return nil, nil
 	}
 	return &((*rls)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindReportLayoutId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(ReportLayoutModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -29,6 +29,8 @@ type ResConfigSettings struct {
 	AttendanceKioskMode                         *Selection `xmlrpc:"attendance_kiosk_mode,omitempty" json:"attendance_kiosk_mode,omitempty"`
 	AttendanceKioskUrl                          *String    `xmlrpc:"attendance_kiosk_url,omitempty" json:"attendance_kiosk_url,omitempty"`
 	AttendanceKioskUsePin                       *Bool      `xmlrpc:"attendance_kiosk_use_pin,omitempty" json:"attendance_kiosk_use_pin,omitempty"`
+	AuthOauthGoogleClientId                     *String    `xmlrpc:"auth_oauth_google_client_id,omitempty" json:"auth_oauth_google_client_id,omitempty"`
+	AuthOauthGoogleEnabled                      *Bool      `xmlrpc:"auth_oauth_google_enabled,omitempty" json:"auth_oauth_google_enabled,omitempty"`
 	AuthSignupResetPassword                     *Bool      `xmlrpc:"auth_signup_reset_password,omitempty" json:"auth_signup_reset_password,omitempty"`
 	AuthSignupTemplateUserId                    *Many2One  `xmlrpc:"auth_signup_template_user_id,omitempty" json:"auth_signup_template_user_id,omitempty"`
 	AuthSignupUninvited                         *Selection `xmlrpc:"auth_signup_uninvited,omitempty" json:"auth_signup_uninvited,omitempty"`
@@ -65,6 +67,7 @@ type ResConfigSettings struct {
 	DeferredExpenseAccountId                    *Many2One  `xmlrpc:"deferred_expense_account_id,omitempty" json:"deferred_expense_account_id,omitempty"`
 	DeferredJournalId                           *Many2One  `xmlrpc:"deferred_journal_id,omitempty" json:"deferred_journal_id,omitempty"`
 	DeferredRevenueAccountId                    *Many2One  `xmlrpc:"deferred_revenue_account_id,omitempty" json:"deferred_revenue_account_id,omitempty"`
+	DelayAlertContract                          *Int       `xmlrpc:"delay_alert_contract,omitempty" json:"delay_alert_contract,omitempty"`
 	DeletionDelay                               *Int       `xmlrpc:"deletion_delay,omitempty" json:"deletion_delay,omitempty"`
 	DepositDefaultProductId                     *Many2One  `xmlrpc:"deposit_default_product_id,omitempty" json:"deposit_default_product_id,omitempty"`
 	DigestEmails                                *Bool      `xmlrpc:"digest_emails,omitempty" json:"digest_emails,omitempty"`
@@ -73,6 +76,9 @@ type ResConfigSettings struct {
 	DisplayInvoiceAmountTotalWords              *Bool      `xmlrpc:"display_invoice_amount_total_words,omitempty" json:"display_invoice_amount_total_words,omitempty"`
 	DisplayName                                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	DocumentsAccountSettings                    *Bool      `xmlrpc:"documents_account_settings,omitempty" json:"documents_account_settings,omitempty"`
+	DocumentsFleetFolder                        *Many2One  `xmlrpc:"documents_fleet_folder,omitempty" json:"documents_fleet_folder,omitempty"`
+	DocumentsFleetSettings                      *Bool      `xmlrpc:"documents_fleet_settings,omitempty" json:"documents_fleet_settings,omitempty"`
+	DocumentsFleetTags                          *Relation  `xmlrpc:"documents_fleet_tags,omitempty" json:"documents_fleet_tags,omitempty"`
 	DocumentsHrFolder                           *Many2One  `xmlrpc:"documents_hr_folder,omitempty" json:"documents_hr_folder,omitempty"`
 	DocumentsHrSettings                         *Bool      `xmlrpc:"documents_hr_settings,omitempty" json:"documents_hr_settings,omitempty"`
 	DocumentsProductSettings                    *Bool      `xmlrpc:"documents_product_settings,omitempty" json:"documents_product_settings,omitempty"`
@@ -95,8 +101,6 @@ type ResConfigSettings struct {
 	FiscalyearLockDate                          *Time      `xmlrpc:"fiscalyear_lock_date,omitempty" json:"fiscalyear_lock_date,omitempty"`
 	GenerateDeferredExpenseEntriesMethod        *Selection `xmlrpc:"generate_deferred_expense_entries_method,omitempty" json:"generate_deferred_expense_entries_method,omitempty"`
 	GenerateDeferredRevenueEntriesMethod        *Selection `xmlrpc:"generate_deferred_revenue_entries_method,omitempty" json:"generate_deferred_revenue_entries_method,omitempty"`
-	GoogleGmailClientIdentifier                 *String    `xmlrpc:"google_gmail_client_identifier,omitempty" json:"google_gmail_client_identifier,omitempty"`
-	GoogleGmailClientSecret                     *String    `xmlrpc:"google_gmail_client_secret,omitempty" json:"google_gmail_client_secret,omitempty"`
 	GoogleTranslateApiKey                       *String    `xmlrpc:"google_translate_api_key,omitempty" json:"google_translate_api_key,omitempty"`
 	GroupAnalyticAccounting                     *Bool      `xmlrpc:"group_analytic_accounting,omitempty" json:"group_analytic_accounting,omitempty"`
 	GroupAutoDoneSetting                        *Bool      `xmlrpc:"group_auto_done_setting,omitempty" json:"group_auto_done_setting,omitempty"`
@@ -158,6 +162,7 @@ type ResConfigSettings struct {
 	IncomeCurrencyExchangeAccountId             *Many2One  `xmlrpc:"income_currency_exchange_account_id,omitempty" json:"income_currency_exchange_account_id,omitempty"`
 	IncotermId                                  *Many2One  `xmlrpc:"incoterm_id,omitempty" json:"incoterm_id,omitempty"`
 	InternalProjectId                           *Many2One  `xmlrpc:"internal_project_id,omitempty" json:"internal_project_id,omitempty"`
+	InvoiceConsolidation                        *Bool      `xmlrpc:"invoice_consolidation,omitempty" json:"invoice_consolidation,omitempty"`
 	InvoiceIsDownload                           *Bool      `xmlrpc:"invoice_is_download,omitempty" json:"invoice_is_download,omitempty"`
 	InvoiceIsEmail                              *Bool      `xmlrpc:"invoice_is_email,omitempty" json:"invoice_is_email,omitempty"`
 	InvoiceIsUblCii                             *Bool      `xmlrpc:"invoice_is_ubl_cii,omitempty" json:"invoice_is_ubl_cii,omitempty"`
@@ -179,6 +184,9 @@ type ResConfigSettings struct {
 	LeaveTimesheetTaskId                        *Many2One  `xmlrpc:"leave_timesheet_task_id,omitempty" json:"leave_timesheet_task_id,omitempty"`
 	LockConfirmedPo                             *Bool      `xmlrpc:"lock_confirmed_po,omitempty" json:"lock_confirmed_po,omitempty"`
 	MapBoxToken                                 *String    `xmlrpc:"map_box_token,omitempty" json:"map_box_token,omitempty"`
+	MicrosoftOutlookClientIdentifier            *String    `xmlrpc:"microsoft_outlook_client_identifier,omitempty" json:"microsoft_outlook_client_identifier,omitempty"`
+	MicrosoftOutlookClientSecret                *String    `xmlrpc:"microsoft_outlook_client_secret,omitempty" json:"microsoft_outlook_client_secret,omitempty"`
+	Minlength                                   *Int       `xmlrpc:"minlength,omitempty" json:"minlength,omitempty"`
 	ModuleAccount3WayMatch                      *Bool      `xmlrpc:"module_account_3way_match,omitempty" json:"module_account_3way_match,omitempty"`
 	ModuleAccountAccountant                     *Bool      `xmlrpc:"module_account_accountant,omitempty" json:"module_account_accountant,omitempty"`
 	ModuleAccountAvatax                         *Bool      `xmlrpc:"module_account_avatax,omitempty" json:"module_account_avatax,omitempty"`
@@ -307,7 +315,12 @@ type ResConfigSettings struct {
 	SaleHeader                                  *String    `xmlrpc:"sale_header,omitempty" json:"sale_header,omitempty"`
 	SaleHeaderName                              *String    `xmlrpc:"sale_header_name,omitempty" json:"sale_header_name,omitempty"`
 	SaleTaxId                                   *Many2One  `xmlrpc:"sale_tax_id,omitempty" json:"sale_tax_id,omitempty"`
+	SddCreditorIdentifier                       *String    `xmlrpc:"sdd_creditor_identifier,omitempty" json:"sdd_creditor_identifier,omitempty"`
 	SecurityLead                                *Float     `xmlrpc:"security_lead,omitempty" json:"security_lead,omitempty"`
+	SepaInitiatingPartyName                     *String    `xmlrpc:"sepa_initiating_party_name,omitempty" json:"sepa_initiating_party_name,omitempty"`
+	SepaOrgidId                                 *String    `xmlrpc:"sepa_orgid_id,omitempty" json:"sepa_orgid_id,omitempty"`
+	SepaOrgidIssr                               *String    `xmlrpc:"sepa_orgid_issr,omitempty" json:"sepa_orgid_issr,omitempty"`
+	ServerUriGoogle                             *String    `xmlrpc:"server_uri_google,omitempty" json:"server_uri_google,omitempty"`
 	SfuServerKey                                *String    `xmlrpc:"sfu_server_key,omitempty" json:"sfu_server_key,omitempty"`
 	SfuServerUrl                                *String    `xmlrpc:"sfu_server_url,omitempty" json:"sfu_server_url,omitempty"`
 	ShowEffect                                  *Bool      `xmlrpc:"show_effect,omitempty" json:"show_effect,omitempty"`
@@ -321,6 +334,7 @@ type ResConfigSettings struct {
 	StockMoveEmailValidation                    *Bool      `xmlrpc:"stock_move_email_validation,omitempty" json:"stock_move_email_validation,omitempty"`
 	StockMoveSmsValidation                      *Bool      `xmlrpc:"stock_move_sms_validation,omitempty" json:"stock_move_sms_validation,omitempty"`
 	StockSmsConfirmationTemplateId              *Many2One  `xmlrpc:"stock_sms_confirmation_template_id,omitempty" json:"stock_sms_confirmation_template_id,omitempty"`
+	SubscriptionDefaultPlanId                   *Many2One  `xmlrpc:"subscription_default_plan_id,omitempty" json:"subscription_default_plan_id,omitempty"`
 	TaxCalculationRoundingMethod                *Selection `xmlrpc:"tax_calculation_rounding_method,omitempty" json:"tax_calculation_rounding_method,omitempty"`
 	TaxCashBasisJournalId                       *Many2One  `xmlrpc:"tax_cash_basis_journal_id,omitempty" json:"tax_cash_basis_journal_id,omitempty"`
 	TaxExigibility                              *Bool      `xmlrpc:"tax_exigibility,omitempty" json:"tax_exigibility,omitempty"`
@@ -336,6 +350,8 @@ type ResConfigSettings struct {
 	TransferAccountId                           *Many2One  `xmlrpc:"transfer_account_id,omitempty" json:"transfer_account_id,omitempty"`
 	TwilioAccountSid                            *String    `xmlrpc:"twilio_account_sid,omitempty" json:"twilio_account_sid,omitempty"`
 	TwilioAccountToken                          *String    `xmlrpc:"twilio_account_token,omitempty" json:"twilio_account_token,omitempty"`
+	UnsplashAccessKey                           *String    `xmlrpc:"unsplash_access_key,omitempty" json:"unsplash_access_key,omitempty"`
+	UnsplashAppId                               *String    `xmlrpc:"unsplash_app_id,omitempty" json:"unsplash_app_id,omitempty"`
 	UseAngloSaxon                               *Bool      `xmlrpc:"use_anglo_saxon,omitempty" json:"use_anglo_saxon,omitempty"`
 	UseInvoiceTerms                             *Bool      `xmlrpc:"use_invoice_terms,omitempty" json:"use_invoice_terms,omitempty"`
 	UsePoLead                                   *Bool      `xmlrpc:"use_po_lead,omitempty" json:"use_po_lead,omitempty"`
@@ -408,6 +424,9 @@ func (c *Client) GetResConfigSettings(id int64) (*ResConfigSettings, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcss) == 0 {
+		return nil, nil
+	}
 	return &((*rcss)[0]), nil
 }
 
@@ -425,6 +444,9 @@ func (c *Client) FindResConfigSettings(criteria *Criteria) (*ResConfigSettings, 
 	rcss := &ResConfigSettingss{}
 	if err := c.SearchRead(ResConfigSettingsModel, criteria, NewOptions().Limit(1), rcss); err != nil {
 		return nil, err
+	}
+	if len(*rcss) == 0 {
+		return nil, nil
 	}
 	return &((*rcss)[0]), nil
 }
@@ -450,6 +472,9 @@ func (c *Client) FindResConfigSettingsId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(ResConfigSettingsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

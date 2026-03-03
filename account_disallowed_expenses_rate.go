@@ -73,6 +73,9 @@ func (c *Client) GetAccountDisallowedExpensesRate(id int64) (*AccountDisallowedE
 	if err != nil {
 		return nil, err
 	}
+	if len(*aders) == 0 {
+		return nil, nil
+	}
 	return &((*aders)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountDisallowedExpensesRate(criteria *Criteria) (*Account
 	aders := &AccountDisallowedExpensesRates{}
 	if err := c.SearchRead(AccountDisallowedExpensesRateModel, criteria, NewOptions().Limit(1), aders); err != nil {
 		return nil, err
+	}
+	if len(*aders) == 0 {
+		return nil, nil
 	}
 	return &((*aders)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountDisallowedExpensesRateId(criteria *Criteria, options
 	ids, err := c.Search(AccountDisallowedExpensesRateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

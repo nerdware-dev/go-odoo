@@ -122,6 +122,9 @@ func (c *Client) GetDocumentsShare(id int64) (*DocumentsShare, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dss) == 0 {
+		return nil, nil
+	}
 	return &((*dss)[0]), nil
 }
 
@@ -139,6 +142,9 @@ func (c *Client) FindDocumentsShare(criteria *Criteria) (*DocumentsShare, error)
 	dss := &DocumentsShares{}
 	if err := c.SearchRead(DocumentsShareModel, criteria, NewOptions().Limit(1), dss); err != nil {
 		return nil, err
+	}
+	if len(*dss) == 0 {
+		return nil, nil
 	}
 	return &((*dss)[0]), nil
 }
@@ -164,6 +170,9 @@ func (c *Client) FindDocumentsShareId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(DocumentsShareModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

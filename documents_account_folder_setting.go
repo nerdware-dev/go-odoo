@@ -73,6 +73,9 @@ func (c *Client) GetDocumentsAccountFolderSetting(id int64) (*DocumentsAccountFo
 	if err != nil {
 		return nil, err
 	}
+	if len(*dafss) == 0 {
+		return nil, nil
+	}
 	return &((*dafss)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindDocumentsAccountFolderSetting(criteria *Criteria) (*Documen
 	dafss := &DocumentsAccountFolderSettings{}
 	if err := c.SearchRead(DocumentsAccountFolderSettingModel, criteria, NewOptions().Limit(1), dafss); err != nil {
 		return nil, err
+	}
+	if len(*dafss) == 0 {
+		return nil, nil
 	}
 	return &((*dafss)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindDocumentsAccountFolderSettingId(criteria *Criteria, options
 	ids, err := c.Search(DocumentsAccountFolderSettingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

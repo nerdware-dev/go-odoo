@@ -83,6 +83,9 @@ func (c *Client) GetUtmCampaign(id int64) (*UtmCampaign, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ucs) == 0 {
+		return nil, nil
+	}
 	return &((*ucs)[0]), nil
 }
 
@@ -100,6 +103,9 @@ func (c *Client) FindUtmCampaign(criteria *Criteria) (*UtmCampaign, error) {
 	ucs := &UtmCampaigns{}
 	if err := c.SearchRead(UtmCampaignModel, criteria, NewOptions().Limit(1), ucs); err != nil {
 		return nil, err
+	}
+	if len(*ucs) == 0 {
+		return nil, nil
 	}
 	return &((*ucs)[0]), nil
 }
@@ -125,6 +131,9 @@ func (c *Client) FindUtmCampaignId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(UtmCampaignModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -74,6 +74,9 @@ func (c *Client) GetProjectTaskRecurrence(id int64) (*ProjectTaskRecurrence, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptrs) == 0 {
+		return nil, nil
+	}
 	return &((*ptrs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProjectTaskRecurrence(criteria *Criteria) (*ProjectTaskRecu
 	ptrs := &ProjectTaskRecurrences{}
 	if err := c.SearchRead(ProjectTaskRecurrenceModel, criteria, NewOptions().Limit(1), ptrs); err != nil {
 		return nil, err
+	}
+	if len(*ptrs) == 0 {
+		return nil, nil
 	}
 	return &((*ptrs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProjectTaskRecurrenceId(criteria *Criteria, options *Option
 	ids, err := c.Search(ProjectTaskRecurrenceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

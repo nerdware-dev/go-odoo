@@ -52,6 +52,8 @@ type BankRecWidgetLine struct {
 	TaxRepartitionLineId         *Many2One   `xmlrpc:"tax_repartition_line_id,omitempty" json:"tax_repartition_line_id,omitempty"`
 	TaxTagIds                    *Relation   `xmlrpc:"tax_tag_ids,omitempty" json:"tax_tag_ids,omitempty"`
 	TransactionCurrencyId        *Many2One   `xmlrpc:"transaction_currency_id,omitempty" json:"transaction_currency_id,omitempty"`
+	VehicleId                    *Many2One   `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
+	VehicleRequired              *Bool       `xmlrpc:"vehicle_required,omitempty" json:"vehicle_required,omitempty"`
 	WizardId                     *Many2One   `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
 }
 
@@ -114,6 +116,9 @@ func (c *Client) GetBankRecWidgetLine(id int64) (*BankRecWidgetLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*brwls) == 0 {
+		return nil, nil
+	}
 	return &((*brwls)[0]), nil
 }
 
@@ -131,6 +136,9 @@ func (c *Client) FindBankRecWidgetLine(criteria *Criteria) (*BankRecWidgetLine, 
 	brwls := &BankRecWidgetLines{}
 	if err := c.SearchRead(BankRecWidgetLineModel, criteria, NewOptions().Limit(1), brwls); err != nil {
 		return nil, err
+	}
+	if len(*brwls) == 0 {
+		return nil, nil
 	}
 	return &((*brwls)[0]), nil
 }
@@ -156,6 +164,9 @@ func (c *Client) FindBankRecWidgetLineId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(BankRecWidgetLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

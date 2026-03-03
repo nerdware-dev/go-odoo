@@ -70,6 +70,9 @@ func (c *Client) GetChangePasswordWizard(id int64) (*ChangePasswordWizard, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*cpws) == 0 {
+		return nil, nil
+	}
 	return &((*cpws)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindChangePasswordWizard(criteria *Criteria) (*ChangePasswordWi
 	cpws := &ChangePasswordWizards{}
 	if err := c.SearchRead(ChangePasswordWizardModel, criteria, NewOptions().Limit(1), cpws); err != nil {
 		return nil, err
+	}
+	if len(*cpws) == 0 {
+		return nil, nil
 	}
 	return &((*cpws)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindChangePasswordWizardId(criteria *Criteria, options *Options
 	ids, err := c.Search(ChangePasswordWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

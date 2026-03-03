@@ -72,6 +72,9 @@ func (c *Client) GetMailFollowers(id int64) (*MailFollowers, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mfs) == 0 {
+		return nil, nil
+	}
 	return &((*mfs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindMailFollowers(criteria *Criteria) (*MailFollowers, error) {
 	mfs := &MailFollowerss{}
 	if err := c.SearchRead(MailFollowersModel, criteria, NewOptions().Limit(1), mfs); err != nil {
 		return nil, err
+	}
+	if len(*mfs) == 0 {
+		return nil, nil
 	}
 	return &((*mfs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindMailFollowersId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(MailFollowersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

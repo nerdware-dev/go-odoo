@@ -72,6 +72,9 @@ func (c *Client) GetResCountryState(id int64) (*ResCountryState, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcss) == 0 {
+		return nil, nil
+	}
 	return &((*rcss)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindResCountryState(criteria *Criteria) (*ResCountryState, erro
 	rcss := &ResCountryStates{}
 	if err := c.SearchRead(ResCountryStateModel, criteria, NewOptions().Limit(1), rcss); err != nil {
 		return nil, err
+	}
+	if len(*rcss) == 0 {
+		return nil, nil
 	}
 	return &((*rcss)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindResCountryStateId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResCountryStateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -72,6 +72,9 @@ func (c *Client) GetResCountryGroup(id int64) (*ResCountryGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcgs) == 0 {
+		return nil, nil
+	}
 	return &((*rcgs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindResCountryGroup(criteria *Criteria) (*ResCountryGroup, erro
 	rcgs := &ResCountryGroups{}
 	if err := c.SearchRead(ResCountryGroupModel, criteria, NewOptions().Limit(1), rcgs); err != nil {
 		return nil, err
+	}
+	if len(*rcgs) == 0 {
+		return nil, nil
 	}
 	return &((*rcgs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindResCountryGroupId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResCountryGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

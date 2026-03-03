@@ -72,6 +72,9 @@ func (c *Client) GetStockOrderpointSnooze(id int64) (*StockOrderpointSnooze, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*soss) == 0 {
+		return nil, nil
+	}
 	return &((*soss)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindStockOrderpointSnooze(criteria *Criteria) (*StockOrderpoint
 	soss := &StockOrderpointSnoozes{}
 	if err := c.SearchRead(StockOrderpointSnoozeModel, criteria, NewOptions().Limit(1), soss); err != nil {
 		return nil, err
+	}
+	if len(*soss) == 0 {
+		return nil, nil
 	}
 	return &((*soss)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindStockOrderpointSnoozeId(criteria *Criteria, options *Option
 	ids, err := c.Search(StockOrderpointSnoozeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

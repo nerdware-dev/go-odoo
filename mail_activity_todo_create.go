@@ -73,6 +73,9 @@ func (c *Client) GetMailActivityTodoCreate(id int64) (*MailActivityTodoCreate, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*matcs) == 0 {
+		return nil, nil
+	}
 	return &((*matcs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindMailActivityTodoCreate(criteria *Criteria) (*MailActivityTo
 	matcs := &MailActivityTodoCreates{}
 	if err := c.SearchRead(MailActivityTodoCreateModel, criteria, NewOptions().Limit(1), matcs); err != nil {
 		return nil, err
+	}
+	if len(*matcs) == 0 {
+		return nil, nil
 	}
 	return &((*matcs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindMailActivityTodoCreateId(criteria *Criteria, options *Optio
 	ids, err := c.Search(MailActivityTodoCreateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

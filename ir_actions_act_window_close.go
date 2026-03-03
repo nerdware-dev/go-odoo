@@ -76,6 +76,9 @@ func (c *Client) GetIrActionsActWindowClose(id int64) (*IrActionsActWindowClose,
 	if err != nil {
 		return nil, err
 	}
+	if len(*iaas) == 0 {
+		return nil, nil
+	}
 	return &((*iaas)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindIrActionsActWindowClose(criteria *Criteria) (*IrActionsActW
 	iaas := &IrActionsActWindowCloses{}
 	if err := c.SearchRead(IrActionsActWindowCloseModel, criteria, NewOptions().Limit(1), iaas); err != nil {
 		return nil, err
+	}
+	if len(*iaas) == 0 {
+		return nil, nil
 	}
 	return &((*iaas)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindIrActionsActWindowCloseId(criteria *Criteria, options *Opti
 	ids, err := c.Search(IrActionsActWindowCloseModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

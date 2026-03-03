@@ -77,6 +77,9 @@ func (c *Client) GetSnailmailLetterMissingRequiredFields(id int64) (*SnailmailLe
 	if err != nil {
 		return nil, err
 	}
+	if len(*slmrfs) == 0 {
+		return nil, nil
+	}
 	return &((*slmrfs)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindSnailmailLetterMissingRequiredFields(criteria *Criteria) (*
 	slmrfs := &SnailmailLetterMissingRequiredFieldss{}
 	if err := c.SearchRead(SnailmailLetterMissingRequiredFieldsModel, criteria, NewOptions().Limit(1), slmrfs); err != nil {
 		return nil, err
+	}
+	if len(*slmrfs) == 0 {
+		return nil, nil
 	}
 	return &((*slmrfs)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindSnailmailLetterMissingRequiredFieldsId(criteria *Criteria, 
 	ids, err := c.Search(SnailmailLetterMissingRequiredFieldsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

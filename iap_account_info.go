@@ -79,6 +79,9 @@ func (c *Client) GetIapAccountInfo(id int64) (*IapAccountInfo, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iais) == 0 {
+		return nil, nil
+	}
 	return &((*iais)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindIapAccountInfo(criteria *Criteria) (*IapAccountInfo, error)
 	iais := &IapAccountInfos{}
 	if err := c.SearchRead(IapAccountInfoModel, criteria, NewOptions().Limit(1), iais); err != nil {
 		return nil, err
+	}
+	if len(*iais) == 0 {
+		return nil, nil
 	}
 	return &((*iais)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindIapAccountInfoId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(IapAccountInfoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

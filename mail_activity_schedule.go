@@ -90,6 +90,9 @@ func (c *Client) GetMailActivitySchedule(id int64) (*MailActivitySchedule, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*mass) == 0 {
+		return nil, nil
+	}
 	return &((*mass)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindMailActivitySchedule(criteria *Criteria) (*MailActivitySche
 	mass := &MailActivitySchedules{}
 	if err := c.SearchRead(MailActivityScheduleModel, criteria, NewOptions().Limit(1), mass); err != nil {
 		return nil, err
+	}
+	if len(*mass) == 0 {
+		return nil, nil
 	}
 	return &((*mass)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindMailActivityScheduleId(criteria *Criteria, options *Options
 	ids, err := c.Search(MailActivityScheduleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

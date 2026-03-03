@@ -70,6 +70,9 @@ func (c *Client) GetWebEditorConverterTestSub(id int64) (*WebEditorConverterTest
 	if err != nil {
 		return nil, err
 	}
+	if len(*wctss) == 0 {
+		return nil, nil
+	}
 	return &((*wctss)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindWebEditorConverterTestSub(criteria *Criteria) (*WebEditorCo
 	wctss := &WebEditorConverterTestSubs{}
 	if err := c.SearchRead(WebEditorConverterTestSubModel, criteria, NewOptions().Limit(1), wctss); err != nil {
 		return nil, err
+	}
+	if len(*wctss) == 0 {
+		return nil, nil
 	}
 	return &((*wctss)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindWebEditorConverterTestSubId(criteria *Criteria, options *Op
 	ids, err := c.Search(WebEditorConverterTestSubModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

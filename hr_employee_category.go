@@ -72,6 +72,9 @@ func (c *Client) GetHrEmployeeCategory(id int64) (*HrEmployeeCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hecs) == 0 {
+		return nil, nil
+	}
 	return &((*hecs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindHrEmployeeCategory(criteria *Criteria) (*HrEmployeeCategory
 	hecs := &HrEmployeeCategorys{}
 	if err := c.SearchRead(HrEmployeeCategoryModel, criteria, NewOptions().Limit(1), hecs); err != nil {
 		return nil, err
+	}
+	if len(*hecs) == 0 {
+		return nil, nil
 	}
 	return &((*hecs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindHrEmployeeCategoryId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(HrEmployeeCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

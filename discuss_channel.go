@@ -105,6 +105,9 @@ func (c *Client) GetDiscussChannel(id int64) (*DiscussChannel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dcs) == 0 {
+		return nil, nil
+	}
 	return &((*dcs)[0]), nil
 }
 
@@ -122,6 +125,9 @@ func (c *Client) FindDiscussChannel(criteria *Criteria) (*DiscussChannel, error)
 	dcs := &DiscussChannels{}
 	if err := c.SearchRead(DiscussChannelModel, criteria, NewOptions().Limit(1), dcs); err != nil {
 		return nil, err
+	}
+	if len(*dcs) == 0 {
+		return nil, nil
 	}
 	return &((*dcs)[0]), nil
 }
@@ -147,6 +153,9 @@ func (c *Client) FindDiscussChannelId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(DiscussChannelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

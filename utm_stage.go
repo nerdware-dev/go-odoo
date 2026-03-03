@@ -71,6 +71,9 @@ func (c *Client) GetUtmStage(id int64) (*UtmStage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*uss) == 0 {
+		return nil, nil
+	}
 	return &((*uss)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindUtmStage(criteria *Criteria) (*UtmStage, error) {
 	uss := &UtmStages{}
 	if err := c.SearchRead(UtmStageModel, criteria, NewOptions().Limit(1), uss); err != nil {
 		return nil, err
+	}
+	if len(*uss) == 0 {
+		return nil, nil
 	}
 	return &((*uss)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindUtmStageId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(UtmStageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

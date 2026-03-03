@@ -86,6 +86,9 @@ func (c *Client) GetStockRoute(id int64) (*StockRoute, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srs) == 0 {
+		return nil, nil
+	}
 	return &((*srs)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindStockRoute(criteria *Criteria) (*StockRoute, error) {
 	srs := &StockRoutes{}
 	if err := c.SearchRead(StockRouteModel, criteria, NewOptions().Limit(1), srs); err != nil {
 		return nil, err
+	}
+	if len(*srs) == 0 {
+		return nil, nil
 	}
 	return &((*srs)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindStockRouteId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(StockRouteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

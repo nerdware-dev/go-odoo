@@ -86,6 +86,9 @@ func (c *Client) GetResCurrency(id int64) (*ResCurrency, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindResCurrency(criteria *Criteria) (*ResCurrency, error) {
 	rcs := &ResCurrencys{}
 	if err := c.SearchRead(ResCurrencyModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindResCurrencyId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ResCurrencyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

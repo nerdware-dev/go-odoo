@@ -72,6 +72,9 @@ func (c *Client) GetAccountReportFootnote(id int64) (*AccountReportFootnote, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*arfs) == 0 {
+		return nil, nil
+	}
 	return &((*arfs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountReportFootnote(criteria *Criteria) (*AccountReportFo
 	arfs := &AccountReportFootnotes{}
 	if err := c.SearchRead(AccountReportFootnoteModel, criteria, NewOptions().Limit(1), arfs); err != nil {
 		return nil, err
+	}
+	if len(*arfs) == 0 {
+		return nil, nil
 	}
 	return &((*arfs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountReportFootnoteId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountReportFootnoteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -73,6 +73,9 @@ func (c *Client) GetSpreadsheetDocumentToDashboard(id int64) (*SpreadsheetDocume
 	if err != nil {
 		return nil, err
 	}
+	if len(*sdtds) == 0 {
+		return nil, nil
+	}
 	return &((*sdtds)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindSpreadsheetDocumentToDashboard(criteria *Criteria) (*Spread
 	sdtds := &SpreadsheetDocumentToDashboards{}
 	if err := c.SearchRead(SpreadsheetDocumentToDashboardModel, criteria, NewOptions().Limit(1), sdtds); err != nil {
 		return nil, err
+	}
+	if len(*sdtds) == 0 {
+		return nil, nil
 	}
 	return &((*sdtds)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindSpreadsheetDocumentToDashboardId(criteria *Criteria, option
 	ids, err := c.Search(SpreadsheetDocumentToDashboardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -82,6 +82,9 @@ func (c *Client) GetMailAlias(id int64) (*MailAlias, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mas) == 0 {
+		return nil, nil
+	}
 	return &((*mas)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindMailAlias(criteria *Criteria) (*MailAlias, error) {
 	mas := &MailAliass{}
 	if err := c.SearchRead(MailAliasModel, criteria, NewOptions().Limit(1), mas); err != nil {
 		return nil, err
+	}
+	if len(*mas) == 0 {
+		return nil, nil
 	}
 	return &((*mas)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindMailAliasId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(MailAliasModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

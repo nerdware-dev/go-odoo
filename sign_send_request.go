@@ -85,6 +85,9 @@ func (c *Client) GetSignSendRequest(id int64) (*SignSendRequest, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ssrs) == 0 {
+		return nil, nil
+	}
 	return &((*ssrs)[0]), nil
 }
 
@@ -102,6 +105,9 @@ func (c *Client) FindSignSendRequest(criteria *Criteria) (*SignSendRequest, erro
 	ssrs := &SignSendRequests{}
 	if err := c.SearchRead(SignSendRequestModel, criteria, NewOptions().Limit(1), ssrs); err != nil {
 		return nil, err
+	}
+	if len(*ssrs) == 0 {
+		return nil, nil
 	}
 	return &((*ssrs)[0]), nil
 }
@@ -127,6 +133,9 @@ func (c *Client) FindSignSendRequestId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SignSendRequestModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

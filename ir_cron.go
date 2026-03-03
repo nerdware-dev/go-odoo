@@ -12,6 +12,7 @@ type IrCron struct {
 	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
 	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty" json:"activity_user_type,omitempty"`
 	AvailableModelIds             *Relation  `xmlrpc:"available_model_ids,omitempty" json:"available_model_ids,omitempty"`
+	BaseAutomationId              *Many2One  `xmlrpc:"base_automation_id,omitempty" json:"base_automation_id,omitempty"`
 	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
 	BindingType                   *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
 	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
@@ -127,6 +128,9 @@ func (c *Client) GetIrCron(id int64) (*IrCron, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ics) == 0 {
+		return nil, nil
+	}
 	return &((*ics)[0]), nil
 }
 
@@ -144,6 +148,9 @@ func (c *Client) FindIrCron(criteria *Criteria) (*IrCron, error) {
 	ics := &IrCrons{}
 	if err := c.SearchRead(IrCronModel, criteria, NewOptions().Limit(1), ics); err != nil {
 		return nil, err
+	}
+	if len(*ics) == 0 {
+		return nil, nil
 	}
 	return &((*ics)[0]), nil
 }
@@ -169,6 +176,9 @@ func (c *Client) FindIrCronId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(IrCronModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

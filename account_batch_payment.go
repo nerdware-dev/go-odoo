@@ -46,6 +46,11 @@ type AccountBatchPayment struct {
 	PaymentMethodCode           *String    `xmlrpc:"payment_method_code,omitempty" json:"payment_method_code,omitempty"`
 	PaymentMethodId             *Many2One  `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
 	RatingIds                   *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	SctBatchBooking             *Bool      `xmlrpc:"sct_batch_booking,omitempty" json:"sct_batch_booking,omitempty"`
+	SctGeneric                  *Bool      `xmlrpc:"sct_generic,omitempty" json:"sct_generic,omitempty"`
+	SddBatchBooking             *Bool      `xmlrpc:"sdd_batch_booking,omitempty" json:"sdd_batch_booking,omitempty"`
+	SddRequiredCollectionDate   *Time      `xmlrpc:"sdd_required_collection_date,omitempty" json:"sdd_required_collection_date,omitempty"`
+	SddScheme                   *Selection `xmlrpc:"sdd_scheme,omitempty" json:"sdd_scheme,omitempty"`
 	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
 	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
@@ -111,6 +116,9 @@ func (c *Client) GetAccountBatchPayment(id int64) (*AccountBatchPayment, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*abps) == 0 {
+		return nil, nil
+	}
 	return &((*abps)[0]), nil
 }
 
@@ -128,6 +136,9 @@ func (c *Client) FindAccountBatchPayment(criteria *Criteria) (*AccountBatchPayme
 	abps := &AccountBatchPayments{}
 	if err := c.SearchRead(AccountBatchPaymentModel, criteria, NewOptions().Limit(1), abps); err != nil {
 		return nil, err
+	}
+	if len(*abps) == 0 {
+		return nil, nil
 	}
 	return &((*abps)[0]), nil
 }
@@ -153,6 +164,9 @@ func (c *Client) FindAccountBatchPaymentId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountBatchPaymentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

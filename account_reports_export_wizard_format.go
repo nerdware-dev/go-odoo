@@ -73,6 +73,9 @@ func (c *Client) GetAccountReportsExportWizardFormat(id int64) (*AccountReportsE
 	if err != nil {
 		return nil, err
 	}
+	if len(*aewfs) == 0 {
+		return nil, nil
+	}
 	return &((*aewfs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountReportsExportWizardFormat(criteria *Criteria) (*Acco
 	aewfs := &AccountReportsExportWizardFormats{}
 	if err := c.SearchRead(AccountReportsExportWizardFormatModel, criteria, NewOptions().Limit(1), aewfs); err != nil {
 		return nil, err
+	}
+	if len(*aewfs) == 0 {
+		return nil, nil
 	}
 	return &((*aewfs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountReportsExportWizardFormatId(criteria *Criteria, opti
 	ids, err := c.Search(AccountReportsExportWizardFormatModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

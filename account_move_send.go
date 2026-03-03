@@ -90,6 +90,9 @@ func (c *Client) GetAccountMoveSend(id int64) (*AccountMoveSend, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*amss) == 0 {
+		return nil, nil
+	}
 	return &((*amss)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindAccountMoveSend(criteria *Criteria) (*AccountMoveSend, erro
 	amss := &AccountMoveSends{}
 	if err := c.SearchRead(AccountMoveSendModel, criteria, NewOptions().Limit(1), amss); err != nil {
 		return nil, err
+	}
+	if len(*amss) == 0 {
+		return nil, nil
 	}
 	return &((*amss)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindAccountMoveSendId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(AccountMoveSendModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

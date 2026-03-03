@@ -94,6 +94,9 @@ func (c *Client) GetSignRequestItem(id int64) (*SignRequestItem, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sris) == 0 {
+		return nil, nil
+	}
 	return &((*sris)[0]), nil
 }
 
@@ -111,6 +114,9 @@ func (c *Client) FindSignRequestItem(criteria *Criteria) (*SignRequestItem, erro
 	sris := &SignRequestItems{}
 	if err := c.SearchRead(SignRequestItemModel, criteria, NewOptions().Limit(1), sris); err != nil {
 		return nil, err
+	}
+	if len(*sris) == 0 {
+		return nil, nil
 	}
 	return &((*sris)[0]), nil
 }
@@ -136,6 +142,9 @@ func (c *Client) FindSignRequestItemId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SignRequestItemModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

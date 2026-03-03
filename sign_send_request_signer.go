@@ -73,6 +73,9 @@ func (c *Client) GetSignSendRequestSigner(id int64) (*SignSendRequestSigner, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*ssrss) == 0 {
+		return nil, nil
+	}
 	return &((*ssrss)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindSignSendRequestSigner(criteria *Criteria) (*SignSendRequest
 	ssrss := &SignSendRequestSigners{}
 	if err := c.SearchRead(SignSendRequestSignerModel, criteria, NewOptions().Limit(1), ssrss); err != nil {
 		return nil, err
+	}
+	if len(*ssrss) == 0 {
+		return nil, nil
 	}
 	return &((*ssrss)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindSignSendRequestSignerId(criteria *Criteria, options *Option
 	ids, err := c.Search(SignSendRequestSignerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

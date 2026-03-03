@@ -87,6 +87,9 @@ func (c *Client) GetIrActionsReport(id int64) (*IrActionsReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iars) == 0 {
+		return nil, nil
+	}
 	return &((*iars)[0]), nil
 }
 
@@ -104,6 +107,9 @@ func (c *Client) FindIrActionsReport(criteria *Criteria) (*IrActionsReport, erro
 	iars := &IrActionsReports{}
 	if err := c.SearchRead(IrActionsReportModel, criteria, NewOptions().Limit(1), iars); err != nil {
 		return nil, err
+	}
+	if len(*iars) == 0 {
+		return nil, nil
 	}
 	return &((*iars)[0]), nil
 }
@@ -129,6 +135,9 @@ func (c *Client) FindIrActionsReportId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(IrActionsReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

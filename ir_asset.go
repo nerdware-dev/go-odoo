@@ -76,6 +76,9 @@ func (c *Client) GetIrAsset(id int64) (*IrAsset, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ias) == 0 {
+		return nil, nil
+	}
 	return &((*ias)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindIrAsset(criteria *Criteria) (*IrAsset, error) {
 	ias := &IrAssets{}
 	if err := c.SearchRead(IrAssetModel, criteria, NewOptions().Limit(1), ias); err != nil {
 		return nil, err
+	}
+	if len(*ias) == 0 {
+		return nil, nil
 	}
 	return &((*ias)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindIrAssetId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(IrAssetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

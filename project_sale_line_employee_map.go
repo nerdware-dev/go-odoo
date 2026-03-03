@@ -82,6 +82,9 @@ func (c *Client) GetProjectSaleLineEmployeeMap(id int64) (*ProjectSaleLineEmploy
 	if err != nil {
 		return nil, err
 	}
+	if len(*pslems) == 0 {
+		return nil, nil
+	}
 	return &((*pslems)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindProjectSaleLineEmployeeMap(criteria *Criteria) (*ProjectSal
 	pslems := &ProjectSaleLineEmployeeMaps{}
 	if err := c.SearchRead(ProjectSaleLineEmployeeMapModel, criteria, NewOptions().Limit(1), pslems); err != nil {
 		return nil, err
+	}
+	if len(*pslems) == 0 {
+		return nil, nil
 	}
 	return &((*pslems)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindProjectSaleLineEmployeeMapId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectSaleLineEmployeeMapModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -71,6 +71,9 @@ func (c *Client) GetHrExpenseApproveDuplicate(id int64) (*HrExpenseApproveDuplic
 	if err != nil {
 		return nil, err
 	}
+	if len(*heads) == 0 {
+		return nil, nil
+	}
 	return &((*heads)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindHrExpenseApproveDuplicate(criteria *Criteria) (*HrExpenseAp
 	heads := &HrExpenseApproveDuplicates{}
 	if err := c.SearchRead(HrExpenseApproveDuplicateModel, criteria, NewOptions().Limit(1), heads); err != nil {
 		return nil, err
+	}
+	if len(*heads) == 0 {
+		return nil, nil
 	}
 	return &((*heads)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindHrExpenseApproveDuplicateId(criteria *Criteria, options *Op
 	ids, err := c.Search(HrExpenseApproveDuplicateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

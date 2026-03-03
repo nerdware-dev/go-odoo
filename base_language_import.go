@@ -74,6 +74,9 @@ func (c *Client) GetBaseLanguageImport(id int64) (*BaseLanguageImport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*blis) == 0 {
+		return nil, nil
+	}
 	return &((*blis)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindBaseLanguageImport(criteria *Criteria) (*BaseLanguageImport
 	blis := &BaseLanguageImports{}
 	if err := c.SearchRead(BaseLanguageImportModel, criteria, NewOptions().Limit(1), blis); err != nil {
 		return nil, err
+	}
+	if len(*blis) == 0 {
+		return nil, nil
 	}
 	return &((*blis)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindBaseLanguageImportId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(BaseLanguageImportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

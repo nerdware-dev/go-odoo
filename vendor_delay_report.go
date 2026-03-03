@@ -72,6 +72,9 @@ func (c *Client) GetVendorDelayReport(id int64) (*VendorDelayReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*vdrs) == 0 {
+		return nil, nil
+	}
 	return &((*vdrs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindVendorDelayReport(criteria *Criteria) (*VendorDelayReport, 
 	vdrs := &VendorDelayReports{}
 	if err := c.SearchRead(VendorDelayReportModel, criteria, NewOptions().Limit(1), vdrs); err != nil {
 		return nil, err
+	}
+	if len(*vdrs) == 0 {
+		return nil, nil
 	}
 	return &((*vdrs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindVendorDelayReportId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(VendorDelayReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

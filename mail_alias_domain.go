@@ -78,6 +78,9 @@ func (c *Client) GetMailAliasDomain(id int64) (*MailAliasDomain, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mads) == 0 {
+		return nil, nil
+	}
 	return &((*mads)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindMailAliasDomain(criteria *Criteria) (*MailAliasDomain, erro
 	mads := &MailAliasDomains{}
 	if err := c.SearchRead(MailAliasDomainModel, criteria, NewOptions().Limit(1), mads); err != nil {
 		return nil, err
+	}
+	if len(*mads) == 0 {
+		return nil, nil
 	}
 	return &((*mads)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindMailAliasDomainId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(MailAliasDomainModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

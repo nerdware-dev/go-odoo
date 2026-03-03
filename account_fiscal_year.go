@@ -73,6 +73,9 @@ func (c *Client) GetAccountFiscalYear(id int64) (*AccountFiscalYear, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*afys) == 0 {
+		return nil, nil
+	}
 	return &((*afys)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountFiscalYear(criteria *Criteria) (*AccountFiscalYear, 
 	afys := &AccountFiscalYears{}
 	if err := c.SearchRead(AccountFiscalYearModel, criteria, NewOptions().Limit(1), afys); err != nil {
 		return nil, err
+	}
+	if len(*afys) == 0 {
+		return nil, nil
 	}
 	return &((*afys)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountFiscalYearId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountFiscalYearModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

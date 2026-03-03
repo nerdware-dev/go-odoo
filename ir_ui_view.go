@@ -89,6 +89,9 @@ func (c *Client) GetIrUiView(id int64) (*IrUiView, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iuvs) == 0 {
+		return nil, nil
+	}
 	return &((*iuvs)[0]), nil
 }
 
@@ -106,6 +109,9 @@ func (c *Client) FindIrUiView(criteria *Criteria) (*IrUiView, error) {
 	iuvs := &IrUiViews{}
 	if err := c.SearchRead(IrUiViewModel, criteria, NewOptions().Limit(1), iuvs); err != nil {
 		return nil, err
+	}
+	if len(*iuvs) == 0 {
+		return nil, nil
 	}
 	return &((*iuvs)[0]), nil
 }
@@ -131,6 +137,9 @@ func (c *Client) FindIrUiViewId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(IrUiViewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

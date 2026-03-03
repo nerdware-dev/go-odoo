@@ -72,6 +72,9 @@ func (c *Client) GetBaseModuleUpdate(id int64) (*BaseModuleUpdate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bmus) == 0 {
+		return nil, nil
+	}
 	return &((*bmus)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindBaseModuleUpdate(criteria *Criteria) (*BaseModuleUpdate, er
 	bmus := &BaseModuleUpdates{}
 	if err := c.SearchRead(BaseModuleUpdateModel, criteria, NewOptions().Limit(1), bmus); err != nil {
 		return nil, err
+	}
+	if len(*bmus) == 0 {
+		return nil, nil
 	}
 	return &((*bmus)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindBaseModuleUpdateId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(BaseModuleUpdateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

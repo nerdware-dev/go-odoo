@@ -69,6 +69,9 @@ func (c *Client) GetAuthTotpDevice(id int64) (*AuthTotpDevice, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ads) == 0 {
+		return nil, nil
+	}
 	return &((*ads)[0]), nil
 }
 
@@ -86,6 +89,9 @@ func (c *Client) FindAuthTotpDevice(criteria *Criteria) (*AuthTotpDevice, error)
 	ads := &AuthTotpDevices{}
 	if err := c.SearchRead(AuthTotpDeviceModel, criteria, NewOptions().Limit(1), ads); err != nil {
 		return nil, err
+	}
+	if len(*ads) == 0 {
+		return nil, nil
 	}
 	return &((*ads)[0]), nil
 }
@@ -111,6 +117,9 @@ func (c *Client) FindAuthTotpDeviceId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AuthTotpDeviceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

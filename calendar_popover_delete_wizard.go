@@ -71,6 +71,9 @@ func (c *Client) GetCalendarPopoverDeleteWizard(id int64) (*CalendarPopoverDelet
 	if err != nil {
 		return nil, err
 	}
+	if len(*cpdws) == 0 {
+		return nil, nil
+	}
 	return &((*cpdws)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindCalendarPopoverDeleteWizard(criteria *Criteria) (*CalendarP
 	cpdws := &CalendarPopoverDeleteWizards{}
 	if err := c.SearchRead(CalendarPopoverDeleteWizardModel, criteria, NewOptions().Limit(1), cpdws); err != nil {
 		return nil, err
+	}
+	if len(*cpdws) == 0 {
+		return nil, nil
 	}
 	return &((*cpdws)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindCalendarPopoverDeleteWizardId(criteria *Criteria, options *
 	ids, err := c.Search(CalendarPopoverDeleteWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

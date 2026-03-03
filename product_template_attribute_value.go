@@ -84,6 +84,9 @@ func (c *Client) GetProductTemplateAttributeValue(id int64) (*ProductTemplateAtt
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptavs) == 0 {
+		return nil, nil
+	}
 	return &((*ptavs)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindProductTemplateAttributeValue(criteria *Criteria) (*Product
 	ptavs := &ProductTemplateAttributeValues{}
 	if err := c.SearchRead(ProductTemplateAttributeValueModel, criteria, NewOptions().Limit(1), ptavs); err != nil {
 		return nil, err
+	}
+	if len(*ptavs) == 0 {
+		return nil, nil
 	}
 	return &((*ptavs)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindProductTemplateAttributeValueId(criteria *Criteria, options
 	ids, err := c.Search(ProductTemplateAttributeValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

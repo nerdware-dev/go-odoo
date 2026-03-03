@@ -75,6 +75,9 @@ func (c *Client) GetSmsTemplatePreview(id int64) (*SmsTemplatePreview, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*stps) == 0 {
+		return nil, nil
+	}
 	return &((*stps)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindSmsTemplatePreview(criteria *Criteria) (*SmsTemplatePreview
 	stps := &SmsTemplatePreviews{}
 	if err := c.SearchRead(SmsTemplatePreviewModel, criteria, NewOptions().Limit(1), stps); err != nil {
 		return nil, err
+	}
+	if len(*stps) == 0 {
+		return nil, nil
 	}
 	return &((*stps)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindSmsTemplatePreviewId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(SmsTemplatePreviewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

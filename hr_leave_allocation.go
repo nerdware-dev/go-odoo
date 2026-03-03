@@ -135,6 +135,9 @@ func (c *Client) GetHrLeaveAllocation(id int64) (*HrLeaveAllocation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlas) == 0 {
+		return nil, nil
+	}
 	return &((*hlas)[0]), nil
 }
 
@@ -152,6 +155,9 @@ func (c *Client) FindHrLeaveAllocation(criteria *Criteria) (*HrLeaveAllocation, 
 	hlas := &HrLeaveAllocations{}
 	if err := c.SearchRead(HrLeaveAllocationModel, criteria, NewOptions().Limit(1), hlas); err != nil {
 		return nil, err
+	}
+	if len(*hlas) == 0 {
+		return nil, nil
 	}
 	return &((*hlas)[0]), nil
 }
@@ -177,6 +183,9 @@ func (c *Client) FindHrLeaveAllocationId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(HrLeaveAllocationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

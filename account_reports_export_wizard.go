@@ -74,6 +74,9 @@ func (c *Client) GetAccountReportsExportWizard(id int64) (*AccountReportsExportW
 	if err != nil {
 		return nil, err
 	}
+	if len(*aews) == 0 {
+		return nil, nil
+	}
 	return &((*aews)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindAccountReportsExportWizard(criteria *Criteria) (*AccountRep
 	aews := &AccountReportsExportWizards{}
 	if err := c.SearchRead(AccountReportsExportWizardModel, criteria, NewOptions().Limit(1), aews); err != nil {
 		return nil, err
+	}
+	if len(*aews) == 0 {
+		return nil, nil
 	}
 	return &((*aews)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindAccountReportsExportWizardId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountReportsExportWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

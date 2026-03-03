@@ -80,6 +80,9 @@ func (c *Client) GetSpreadsheetDashboardShare(id int64) (*SpreadsheetDashboardSh
 	if err != nil {
 		return nil, err
 	}
+	if len(*sdss) == 0 {
+		return nil, nil
+	}
 	return &((*sdss)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindSpreadsheetDashboardShare(criteria *Criteria) (*Spreadsheet
 	sdss := &SpreadsheetDashboardShares{}
 	if err := c.SearchRead(SpreadsheetDashboardShareModel, criteria, NewOptions().Limit(1), sdss); err != nil {
 		return nil, err
+	}
+	if len(*sdss) == 0 {
+		return nil, nil
 	}
 	return &((*sdss)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindSpreadsheetDashboardShareId(criteria *Criteria, options *Op
 	ids, err := c.Search(SpreadsheetDashboardShareModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

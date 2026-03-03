@@ -2,23 +2,22 @@ package odoo
 
 // AuthOauthProvider represents auth.oauth.provider model.
 type AuthOauthProvider struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	AuthEndpoint       *String   `xmlrpc:"auth_endpoint,omitempty"`
-	Body               *String   `xmlrpc:"body,omitempty"`
-	ClientId           *String   `xmlrpc:"client_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	CssClass           *String   `xmlrpc:"css_class,omitempty"`
-	DataEndpoint       *String   `xmlrpc:"data_endpoint,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Enabled            *Bool     `xmlrpc:"enabled,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	Scope              *String   `xmlrpc:"scope,omitempty"`
-	Sequence           *Int      `xmlrpc:"sequence,omitempty"`
-	ValidationEndpoint *String   `xmlrpc:"validation_endpoint,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	AuthEndpoint       *String   `xmlrpc:"auth_endpoint,omitempty" json:"auth_endpoint,omitempty"`
+	Body               *String   `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	ClientId           *String   `xmlrpc:"client_id,omitempty" json:"client_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CssClass           *String   `xmlrpc:"css_class,omitempty" json:"css_class,omitempty"`
+	DataEndpoint       *String   `xmlrpc:"data_endpoint,omitempty" json:"data_endpoint,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Enabled            *Bool     `xmlrpc:"enabled,omitempty" json:"enabled,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Scope              *String   `xmlrpc:"scope,omitempty" json:"scope,omitempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ValidationEndpoint *String   `xmlrpc:"validation_endpoint,omitempty" json:"validation_endpoint,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AuthOauthProviders represents array of auth.oauth.provider model.
@@ -80,6 +79,9 @@ func (c *Client) GetAuthOauthProvider(id int64) (*AuthOauthProvider, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aops) == 0 {
+		return nil, nil
+	}
 	return &((*aops)[0]), nil
 }
 
@@ -97,6 +99,9 @@ func (c *Client) FindAuthOauthProvider(criteria *Criteria) (*AuthOauthProvider, 
 	aops := &AuthOauthProviders{}
 	if err := c.SearchRead(AuthOauthProviderModel, criteria, NewOptions().Limit(1), aops); err != nil {
 		return nil, err
+	}
+	if len(*aops) == 0 {
+		return nil, nil
 	}
 	return &((*aops)[0]), nil
 }
@@ -122,6 +127,9 @@ func (c *Client) FindAuthOauthProviderId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AuthOauthProviderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

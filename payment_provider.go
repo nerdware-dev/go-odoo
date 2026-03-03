@@ -14,6 +14,7 @@ type PaymentProvider struct {
 	CompanyId                 *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
 	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
 	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomMode                *Selection `xmlrpc:"custom_mode,omitempty" json:"custom_mode,omitempty"`
 	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	DoneMsg                   *String    `xmlrpc:"done_msg,omitempty" json:"done_msg,omitempty"`
 	ExpressCheckoutFormViewId *Many2One  `xmlrpc:"express_checkout_form_view_id,omitempty" json:"express_checkout_form_view_id,omitempty"`
@@ -29,8 +30,11 @@ type PaymentProvider struct {
 	ModuleToBuy               *Bool      `xmlrpc:"module_to_buy,omitempty" json:"module_to_buy,omitempty"`
 	Name                      *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	PaymentMethodIds          *Relation  `xmlrpc:"payment_method_ids,omitempty" json:"payment_method_ids,omitempty"`
+	PaypalEmailAccount        *String    `xmlrpc:"paypal_email_account,omitempty" json:"paypal_email_account,omitempty"`
+	PaypalPdtToken            *String    `xmlrpc:"paypal_pdt_token,omitempty" json:"paypal_pdt_token,omitempty"`
 	PendingMsg                *String    `xmlrpc:"pending_msg,omitempty" json:"pending_msg,omitempty"`
 	PreMsg                    *String    `xmlrpc:"pre_msg,omitempty" json:"pre_msg,omitempty"`
+	QrCode                    *Bool      `xmlrpc:"qr_code,omitempty" json:"qr_code,omitempty"`
 	RedirectFormViewId        *Many2One  `xmlrpc:"redirect_form_view_id,omitempty" json:"redirect_form_view_id,omitempty"`
 	RequireCurrency           *Bool      `xmlrpc:"require_currency,omitempty" json:"require_currency,omitempty"`
 	Sequence                  *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
@@ -112,6 +116,9 @@ func (c *Client) GetPaymentProvider(id int64) (*PaymentProvider, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pps) == 0 {
+		return nil, nil
+	}
 	return &((*pps)[0]), nil
 }
 
@@ -129,6 +136,9 @@ func (c *Client) FindPaymentProvider(criteria *Criteria) (*PaymentProvider, erro
 	pps := &PaymentProviders{}
 	if err := c.SearchRead(PaymentProviderModel, criteria, NewOptions().Limit(1), pps); err != nil {
 		return nil, err
+	}
+	if len(*pps) == 0 {
+		return nil, nil
 	}
 	return &((*pps)[0]), nil
 }
@@ -154,6 +164,9 @@ func (c *Client) FindPaymentProviderId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(PaymentProviderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

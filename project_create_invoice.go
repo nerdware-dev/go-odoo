@@ -74,6 +74,9 @@ func (c *Client) GetProjectCreateInvoice(id int64) (*ProjectCreateInvoice, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcis) == 0 {
+		return nil, nil
+	}
 	return &((*pcis)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProjectCreateInvoice(criteria *Criteria) (*ProjectCreateInv
 	pcis := &ProjectCreateInvoices{}
 	if err := c.SearchRead(ProjectCreateInvoiceModel, criteria, NewOptions().Limit(1), pcis); err != nil {
 		return nil, err
+	}
+	if len(*pcis) == 0 {
+		return nil, nil
 	}
 	return &((*pcis)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProjectCreateInvoiceId(criteria *Criteria, options *Options
 	ids, err := c.Search(ProjectCreateInvoiceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

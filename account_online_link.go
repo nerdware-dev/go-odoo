@@ -109,6 +109,9 @@ func (c *Client) GetAccountOnlineLink(id int64) (*AccountOnlineLink, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aols) == 0 {
+		return nil, nil
+	}
 	return &((*aols)[0]), nil
 }
 
@@ -126,6 +129,9 @@ func (c *Client) FindAccountOnlineLink(criteria *Criteria) (*AccountOnlineLink, 
 	aols := &AccountOnlineLinks{}
 	if err := c.SearchRead(AccountOnlineLinkModel, criteria, NewOptions().Limit(1), aols); err != nil {
 		return nil, err
+	}
+	if len(*aols) == 0 {
+		return nil, nil
 	}
 	return &((*aols)[0]), nil
 }
@@ -151,6 +157,9 @@ func (c *Client) FindAccountOnlineLinkId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountOnlineLinkModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

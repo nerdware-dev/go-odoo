@@ -70,6 +70,9 @@ func (c *Client) GetResUsersApikeysDescription(id int64) (*ResUsersApikeysDescri
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruads) == 0 {
+		return nil, nil
+	}
 	return &((*ruads)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindResUsersApikeysDescription(criteria *Criteria) (*ResUsersAp
 	ruads := &ResUsersApikeysDescriptions{}
 	if err := c.SearchRead(ResUsersApikeysDescriptionModel, criteria, NewOptions().Limit(1), ruads); err != nil {
 		return nil, err
+	}
+	if len(*ruads) == 0 {
+		return nil, nil
 	}
 	return &((*ruads)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindResUsersApikeysDescriptionId(criteria *Criteria, options *O
 	ids, err := c.Search(ResUsersApikeysDescriptionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

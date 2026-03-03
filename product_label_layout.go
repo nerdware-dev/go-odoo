@@ -79,6 +79,9 @@ func (c *Client) GetProductLabelLayout(id int64) (*ProductLabelLayout, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*plls) == 0 {
+		return nil, nil
+	}
 	return &((*plls)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindProductLabelLayout(criteria *Criteria) (*ProductLabelLayout
 	plls := &ProductLabelLayouts{}
 	if err := c.SearchRead(ProductLabelLayoutModel, criteria, NewOptions().Limit(1), plls); err != nil {
 		return nil, err
+	}
+	if len(*plls) == 0 {
+		return nil, nil
 	}
 	return &((*plls)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindProductLabelLayoutId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ProductLabelLayoutModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

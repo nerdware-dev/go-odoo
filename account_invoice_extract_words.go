@@ -80,6 +80,9 @@ func (c *Client) GetAccountInvoiceExtractWords(id int64) (*AccountInvoiceExtract
 	if err != nil {
 		return nil, err
 	}
+	if len(*aiws) == 0 {
+		return nil, nil
+	}
 	return &((*aiws)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindAccountInvoiceExtractWords(criteria *Criteria) (*AccountInv
 	aiws := &AccountInvoiceExtractWordss{}
 	if err := c.SearchRead(AccountInvoiceExtractWordsModel, criteria, NewOptions().Limit(1), aiws); err != nil {
 		return nil, err
+	}
+	if len(*aiws) == 0 {
+		return nil, nil
 	}
 	return &((*aiws)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindAccountInvoiceExtractWordsId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountInvoiceExtractWordsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

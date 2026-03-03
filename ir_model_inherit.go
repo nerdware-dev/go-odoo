@@ -68,6 +68,9 @@ func (c *Client) GetIrModelInherit(id int64) (*IrModelInherit, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imis) == 0 {
+		return nil, nil
+	}
 	return &((*imis)[0]), nil
 }
 
@@ -85,6 +88,9 @@ func (c *Client) FindIrModelInherit(criteria *Criteria) (*IrModelInherit, error)
 	imis := &IrModelInherits{}
 	if err := c.SearchRead(IrModelInheritModel, criteria, NewOptions().Limit(1), imis); err != nil {
 		return nil, err
+	}
+	if len(*imis) == 0 {
+		return nil, nil
 	}
 	return &((*imis)[0]), nil
 }
@@ -110,6 +116,9 @@ func (c *Client) FindIrModelInheritId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(IrModelInheritModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

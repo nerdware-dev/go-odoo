@@ -71,6 +71,9 @@ func (c *Client) GetBaseEnableProfilingWizard(id int64) (*BaseEnableProfilingWiz
 	if err != nil {
 		return nil, err
 	}
+	if len(*bepws) == 0 {
+		return nil, nil
+	}
 	return &((*bepws)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindBaseEnableProfilingWizard(criteria *Criteria) (*BaseEnableP
 	bepws := &BaseEnableProfilingWizards{}
 	if err := c.SearchRead(BaseEnableProfilingWizardModel, criteria, NewOptions().Limit(1), bepws); err != nil {
 		return nil, err
+	}
+	if len(*bepws) == 0 {
+		return nil, nil
 	}
 	return &((*bepws)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindBaseEnableProfilingWizardId(criteria *Criteria, options *Op
 	ids, err := c.Search(BaseEnableProfilingWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -76,6 +76,9 @@ func (c *Client) GetAccountAutoReconcileWizard(id int64) (*AccountAutoReconcileW
 	if err != nil {
 		return nil, err
 	}
+	if len(*aarws) == 0 {
+		return nil, nil
+	}
 	return &((*aarws)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindAccountAutoReconcileWizard(criteria *Criteria) (*AccountAut
 	aarws := &AccountAutoReconcileWizards{}
 	if err := c.SearchRead(AccountAutoReconcileWizardModel, criteria, NewOptions().Limit(1), aarws); err != nil {
 		return nil, err
+	}
+	if len(*aarws) == 0 {
+		return nil, nil
 	}
 	return &((*aarws)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindAccountAutoReconcileWizardId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountAutoReconcileWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

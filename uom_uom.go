@@ -80,6 +80,9 @@ func (c *Client) GetUomUom(id int64) (*UomUom, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*uus) == 0 {
+		return nil, nil
+	}
 	return &((*uus)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindUomUom(criteria *Criteria) (*UomUom, error) {
 	uus := &UomUoms{}
 	if err := c.SearchRead(UomUomModel, criteria, NewOptions().Limit(1), uus); err != nil {
 		return nil, err
+	}
+	if len(*uus) == 0 {
+		return nil, nil
 	}
 	return &((*uus)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindUomUomId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(UomUomModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

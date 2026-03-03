@@ -74,6 +74,9 @@ func (c *Client) GetAuthTotpWizard(id int64) (*AuthTotpWizard, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aws) == 0 {
+		return nil, nil
+	}
 	return &((*aws)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindAuthTotpWizard(criteria *Criteria) (*AuthTotpWizard, error)
 	aws := &AuthTotpWizards{}
 	if err := c.SearchRead(AuthTotpWizardModel, criteria, NewOptions().Limit(1), aws); err != nil {
 		return nil, err
+	}
+	if len(*aws) == 0 {
+		return nil, nil
 	}
 	return &((*aws)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindAuthTotpWizardId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AuthTotpWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

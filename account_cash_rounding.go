@@ -76,6 +76,9 @@ func (c *Client) GetAccountCashRounding(id int64) (*AccountCashRounding, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*acrs) == 0 {
+		return nil, nil
+	}
 	return &((*acrs)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindAccountCashRounding(criteria *Criteria) (*AccountCashRoundi
 	acrs := &AccountCashRoundings{}
 	if err := c.SearchRead(AccountCashRoundingModel, criteria, NewOptions().Limit(1), acrs); err != nil {
 		return nil, err
+	}
+	if len(*acrs) == 0 {
+		return nil, nil
 	}
 	return &((*acrs)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindAccountCashRoundingId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountCashRoundingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

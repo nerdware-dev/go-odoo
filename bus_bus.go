@@ -71,6 +71,9 @@ func (c *Client) GetBusBus(id int64) (*BusBus, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bbs) == 0 {
+		return nil, nil
+	}
 	return &((*bbs)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindBusBus(criteria *Criteria) (*BusBus, error) {
 	bbs := &BusBuss{}
 	if err := c.SearchRead(BusBusModel, criteria, NewOptions().Limit(1), bbs); err != nil {
 		return nil, err
+	}
+	if len(*bbs) == 0 {
+		return nil, nil
 	}
 	return &((*bbs)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindBusBusId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(BusBusModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

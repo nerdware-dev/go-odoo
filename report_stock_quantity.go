@@ -72,6 +72,9 @@ func (c *Client) GetReportStockQuantity(id int64) (*ReportStockQuantity, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*rsqs) == 0 {
+		return nil, nil
+	}
 	return &((*rsqs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindReportStockQuantity(criteria *Criteria) (*ReportStockQuanti
 	rsqs := &ReportStockQuantitys{}
 	if err := c.SearchRead(ReportStockQuantityModel, criteria, NewOptions().Limit(1), rsqs); err != nil {
 		return nil, err
+	}
+	if len(*rsqs) == 0 {
+		return nil, nil
 	}
 	return &((*rsqs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindReportStockQuantityId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ReportStockQuantityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

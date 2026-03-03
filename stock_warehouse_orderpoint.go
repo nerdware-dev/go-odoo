@@ -99,6 +99,9 @@ func (c *Client) GetStockWarehouseOrderpoint(id int64) (*StockWarehouseOrderpoin
 	if err != nil {
 		return nil, err
 	}
+	if len(*swos) == 0 {
+		return nil, nil
+	}
 	return &((*swos)[0]), nil
 }
 
@@ -116,6 +119,9 @@ func (c *Client) FindStockWarehouseOrderpoint(criteria *Criteria) (*StockWarehou
 	swos := &StockWarehouseOrderpoints{}
 	if err := c.SearchRead(StockWarehouseOrderpointModel, criteria, NewOptions().Limit(1), swos); err != nil {
 		return nil, err
+	}
+	if len(*swos) == 0 {
+		return nil, nil
 	}
 	return &((*swos)[0]), nil
 }
@@ -141,6 +147,9 @@ func (c *Client) FindStockWarehouseOrderpointId(criteria *Criteria, options *Opt
 	ids, err := c.Search(StockWarehouseOrderpointModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

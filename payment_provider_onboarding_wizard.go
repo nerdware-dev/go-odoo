@@ -77,6 +77,9 @@ func (c *Client) GetPaymentProviderOnboardingWizard(id int64) (*PaymentProviderO
 	if err != nil {
 		return nil, err
 	}
+	if len(*ppows) == 0 {
+		return nil, nil
+	}
 	return &((*ppows)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindPaymentProviderOnboardingWizard(criteria *Criteria) (*Payme
 	ppows := &PaymentProviderOnboardingWizards{}
 	if err := c.SearchRead(PaymentProviderOnboardingWizardModel, criteria, NewOptions().Limit(1), ppows); err != nil {
 		return nil, err
+	}
+	if len(*ppows) == 0 {
+		return nil, nil
 	}
 	return &((*ppows)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindPaymentProviderOnboardingWizardId(criteria *Criteria, optio
 	ids, err := c.Search(PaymentProviderOnboardingWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

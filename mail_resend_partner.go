@@ -78,6 +78,9 @@ func (c *Client) GetMailResendPartner(id int64) (*MailResendPartner, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mrps) == 0 {
+		return nil, nil
+	}
 	return &((*mrps)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindMailResendPartner(criteria *Criteria) (*MailResendPartner, 
 	mrps := &MailResendPartners{}
 	if err := c.SearchRead(MailResendPartnerModel, criteria, NewOptions().Limit(1), mrps); err != nil {
 		return nil, err
+	}
+	if len(*mrps) == 0 {
+		return nil, nil
 	}
 	return &((*mrps)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindMailResendPartnerId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailResendPartnerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

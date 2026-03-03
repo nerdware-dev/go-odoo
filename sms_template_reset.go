@@ -70,6 +70,9 @@ func (c *Client) GetSmsTemplateReset(id int64) (*SmsTemplateReset, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*strs) == 0 {
+		return nil, nil
+	}
 	return &((*strs)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindSmsTemplateReset(criteria *Criteria) (*SmsTemplateReset, er
 	strs := &SmsTemplateResets{}
 	if err := c.SearchRead(SmsTemplateResetModel, criteria, NewOptions().Limit(1), strs); err != nil {
 		return nil, err
+	}
+	if len(*strs) == 0 {
+		return nil, nil
 	}
 	return &((*strs)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindSmsTemplateResetId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(SmsTemplateResetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -73,6 +73,9 @@ func (c *Client) GetAccountBatchErrorWizard(id int64) (*AccountBatchErrorWizard,
 	if err != nil {
 		return nil, err
 	}
+	if len(*abews) == 0 {
+		return nil, nil
+	}
 	return &((*abews)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountBatchErrorWizard(criteria *Criteria) (*AccountBatchE
 	abews := &AccountBatchErrorWizards{}
 	if err := c.SearchRead(AccountBatchErrorWizardModel, criteria, NewOptions().Limit(1), abews); err != nil {
 		return nil, err
+	}
+	if len(*abews) == 0 {
+		return nil, nil
 	}
 	return &((*abews)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountBatchErrorWizardId(criteria *Criteria, options *Opti
 	ids, err := c.Search(AccountBatchErrorWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

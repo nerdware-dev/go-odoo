@@ -76,6 +76,9 @@ func (c *Client) GetResPartnerCategory(id int64) (*ResPartnerCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpcs) == 0 {
+		return nil, nil
+	}
 	return &((*rpcs)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindResPartnerCategory(criteria *Criteria) (*ResPartnerCategory
 	rpcs := &ResPartnerCategorys{}
 	if err := c.SearchRead(ResPartnerCategoryModel, criteria, NewOptions().Limit(1), rpcs); err != nil {
 		return nil, err
+	}
+	if len(*rpcs) == 0 {
+		return nil, nil
 	}
 	return &((*rpcs)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindResPartnerCategoryId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ResPartnerCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

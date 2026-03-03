@@ -73,6 +73,9 @@ func (c *Client) GetStockTrackLine(id int64) (*StockTrackLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*stls) == 0 {
+		return nil, nil
+	}
 	return &((*stls)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindStockTrackLine(criteria *Criteria) (*StockTrackLine, error)
 	stls := &StockTrackLines{}
 	if err := c.SearchRead(StockTrackLineModel, criteria, NewOptions().Limit(1), stls); err != nil {
 		return nil, err
+	}
+	if len(*stls) == 0 {
+		return nil, nil
 	}
 	return &((*stls)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindStockTrackLineId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(StockTrackLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -76,6 +76,9 @@ func (c *Client) GetProductTemplateAttributeLine(id int64) (*ProductTemplateAttr
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptals) == 0 {
+		return nil, nil
+	}
 	return &((*ptals)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindProductTemplateAttributeLine(criteria *Criteria) (*ProductT
 	ptals := &ProductTemplateAttributeLines{}
 	if err := c.SearchRead(ProductTemplateAttributeLineModel, criteria, NewOptions().Limit(1), ptals); err != nil {
 		return nil, err
+	}
+	if len(*ptals) == 0 {
+		return nil, nil
 	}
 	return &((*ptals)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindProductTemplateAttributeLineId(criteria *Criteria, options 
 	ids, err := c.Search(ProductTemplateAttributeLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

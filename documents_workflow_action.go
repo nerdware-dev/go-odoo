@@ -73,6 +73,9 @@ func (c *Client) GetDocumentsWorkflowAction(id int64) (*DocumentsWorkflowAction,
 	if err != nil {
 		return nil, err
 	}
+	if len(*dwas) == 0 {
+		return nil, nil
+	}
 	return &((*dwas)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindDocumentsWorkflowAction(criteria *Criteria) (*DocumentsWork
 	dwas := &DocumentsWorkflowActions{}
 	if err := c.SearchRead(DocumentsWorkflowActionModel, criteria, NewOptions().Limit(1), dwas); err != nil {
 		return nil, err
+	}
+	if len(*dwas) == 0 {
+		return nil, nil
 	}
 	return &((*dwas)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindDocumentsWorkflowActionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(DocumentsWorkflowActionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

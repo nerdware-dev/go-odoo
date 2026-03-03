@@ -71,6 +71,9 @@ func (c *Client) GetDecimalPrecision(id int64) (*DecimalPrecision, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dps) == 0 {
+		return nil, nil
+	}
 	return &((*dps)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindDecimalPrecision(criteria *Criteria) (*DecimalPrecision, er
 	dps := &DecimalPrecisions{}
 	if err := c.SearchRead(DecimalPrecisionModel, criteria, NewOptions().Limit(1), dps); err != nil {
 		return nil, err
+	}
+	if len(*dps) == 0 {
+		return nil, nil
 	}
 	return &((*dps)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindDecimalPrecisionId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(DecimalPrecisionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

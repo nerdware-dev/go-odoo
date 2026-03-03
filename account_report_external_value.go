@@ -81,6 +81,9 @@ func (c *Client) GetAccountReportExternalValue(id int64) (*AccountReportExternal
 	if err != nil {
 		return nil, err
 	}
+	if len(*arevs) == 0 {
+		return nil, nil
+	}
 	return &((*arevs)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindAccountReportExternalValue(criteria *Criteria) (*AccountRep
 	arevs := &AccountReportExternalValues{}
 	if err := c.SearchRead(AccountReportExternalValueModel, criteria, NewOptions().Limit(1), arevs); err != nil {
 		return nil, err
+	}
+	if len(*arevs) == 0 {
+		return nil, nil
 	}
 	return &((*arevs)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindAccountReportExternalValueId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountReportExternalValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

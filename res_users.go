@@ -4,6 +4,7 @@ package odoo
 type ResUsers struct {
 	AccessesCount                      *Int       `xmlrpc:"accesses_count,omitempty" json:"accesses_count,omitempty"`
 	AccountRepresentedCompanyIds       *Relation  `xmlrpc:"account_represented_company_ids,omitempty" json:"account_represented_company_ids,omitempty"`
+	AccountSepaLei                     *String    `xmlrpc:"account_sepa_lei,omitempty" json:"account_sepa_lei,omitempty"`
 	ActionId                           *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
 	Active                             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
 	ActiveLangCount                    *Int       `xmlrpc:"active_lang_count,omitempty" json:"active_lang_count,omitempty"`
@@ -93,6 +94,7 @@ type ResUsers struct {
 	EmergencyPhone                     *String    `xmlrpc:"emergency_phone,omitempty" json:"emergency_phone,omitempty"`
 	Employee                           *Bool      `xmlrpc:"employee,omitempty" json:"employee,omitempty"`
 	EmployeeBankAccountId              *Many2One  `xmlrpc:"employee_bank_account_id,omitempty" json:"employee_bank_account_id,omitempty"`
+	EmployeeCarsCount                  *Int       `xmlrpc:"employee_cars_count,omitempty" json:"employee_cars_count,omitempty"`
 	EmployeeCount                      *Int       `xmlrpc:"employee_count,omitempty" json:"employee_count,omitempty"`
 	EmployeeCountryId                  *Many2One  `xmlrpc:"employee_country_id,omitempty" json:"employee_country_id,omitempty"`
 	EmployeeId                         *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
@@ -176,6 +178,9 @@ type ResUsers struct {
 	Name                               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	NewPassword                        *String    `xmlrpc:"new_password,omitempty" json:"new_password,omitempty"`
 	NotificationType                   *Selection `xmlrpc:"notification_type,omitempty" json:"notification_type,omitempty"`
+	OauthAccessToken                   *String    `xmlrpc:"oauth_access_token,omitempty" json:"oauth_access_token,omitempty"`
+	OauthProviderId                    *Many2One  `xmlrpc:"oauth_provider_id,omitempty" json:"oauth_provider_id,omitempty"`
+	OauthUid                           *String    `xmlrpc:"oauth_uid,omitempty" json:"oauth_uid,omitempty"`
 	OcnToken                           *String    `xmlrpc:"ocn_token,omitempty" json:"ocn_token,omitempty"`
 	OdoobotFailed                      *Bool      `xmlrpc:"odoobot_failed,omitempty" json:"odoobot_failed,omitempty"`
 	OdoobotState                       *Selection `xmlrpc:"odoobot_state,omitempty" json:"odoobot_state,omitempty"`
@@ -206,6 +211,8 @@ type ResUsers struct {
 	PickingWarnMsg                     *String    `xmlrpc:"picking_warn_msg,omitempty" json:"picking_warn_msg,omitempty"`
 	Pin                                *String    `xmlrpc:"pin,omitempty" json:"pin,omitempty"`
 	PlaceOfBirth                       *String    `xmlrpc:"place_of_birth,omitempty" json:"place_of_birth,omitempty"`
+	PlanToChangeBike                   *Bool      `xmlrpc:"plan_to_change_bike,omitempty" json:"plan_to_change_bike,omitempty"`
+	PlanToChangeCar                    *Bool      `xmlrpc:"plan_to_change_car,omitempty" json:"plan_to_change_car,omitempty"`
 	PrivateCity                        *String    `xmlrpc:"private_city,omitempty" json:"private_city,omitempty"`
 	PrivateCountryId                   *Many2One  `xmlrpc:"private_country_id,omitempty" json:"private_country_id,omitempty"`
 	PrivateEmail                       *String    `xmlrpc:"private_email,omitempty" json:"private_email,omitempty"`
@@ -249,6 +256,8 @@ type ResUsers struct {
 	SaleWarnMsg                        *String    `xmlrpc:"sale_warn_msg,omitempty" json:"sale_warn_msg,omitempty"`
 	SameCompanyRegistryPartnerId       *Many2One  `xmlrpc:"same_company_registry_partner_id,omitempty" json:"same_company_registry_partner_id,omitempty"`
 	SameVatPartnerId                   *Many2One  `xmlrpc:"same_vat_partner_id,omitempty" json:"same_vat_partner_id,omitempty"`
+	SddCount                           *Int       `xmlrpc:"sdd_count,omitempty" json:"sdd_count,omitempty"`
+	SddMandateIds                      *Relation  `xmlrpc:"sdd_mandate_ids,omitempty" json:"sdd_mandate_ids,omitempty"`
 	Self                               *Many2One  `xmlrpc:"self,omitempty" json:"self,omitempty"`
 	Share                              *Bool      `xmlrpc:"share,omitempty" json:"share,omitempty"`
 	ShowCreditLimit                    *Bool      `xmlrpc:"show_credit_limit,omitempty" json:"show_credit_limit,omitempty"`
@@ -274,6 +283,7 @@ type ResUsers struct {
 	Street2                            *String    `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
 	StudyField                         *String    `xmlrpc:"study_field,omitempty" json:"study_field,omitempty"`
 	StudySchool                        *String    `xmlrpc:"study_school,omitempty" json:"study_school,omitempty"`
+	SubscriptionCount                  *Int       `xmlrpc:"subscription_count,omitempty" json:"subscription_count,omitempty"`
 	SupplierInvoiceCount               *Int       `xmlrpc:"supplier_invoice_count,omitempty" json:"supplier_invoice_count,omitempty"`
 	SupplierRank                       *Int       `xmlrpc:"supplier_rank,omitempty" json:"supplier_rank,omitempty"`
 	TargetSalesDone                    *Int       `xmlrpc:"target_sales_done,omitempty" json:"target_sales_done,omitempty"`
@@ -378,6 +388,9 @@ func (c *Client) GetResUsers(id int64) (*ResUsers, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rus) == 0 {
+		return nil, nil
+	}
 	return &((*rus)[0]), nil
 }
 
@@ -395,6 +408,9 @@ func (c *Client) FindResUsers(criteria *Criteria) (*ResUsers, error) {
 	rus := &ResUserss{}
 	if err := c.SearchRead(ResUsersModel, criteria, NewOptions().Limit(1), rus); err != nil {
 		return nil, err
+	}
+	if len(*rus) == 0 {
+		return nil, nil
 	}
 	return &((*rus)[0]), nil
 }
@@ -420,6 +436,9 @@ func (c *Client) FindResUsersId(criteria *Criteria, options *Options) (int64, er
 	ids, err := c.Search(ResUsersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

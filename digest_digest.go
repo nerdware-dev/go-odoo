@@ -94,6 +94,9 @@ func (c *Client) GetDigestDigest(id int64) (*DigestDigest, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dds) == 0 {
+		return nil, nil
+	}
 	return &((*dds)[0]), nil
 }
 
@@ -111,6 +114,9 @@ func (c *Client) FindDigestDigest(criteria *Criteria) (*DigestDigest, error) {
 	dds := &DigestDigests{}
 	if err := c.SearchRead(DigestDigestModel, criteria, NewOptions().Limit(1), dds); err != nil {
 		return nil, err
+	}
+	if len(*dds) == 0 {
+		return nil, nil
 	}
 	return &((*dds)[0]), nil
 }
@@ -136,6 +142,9 @@ func (c *Client) FindDigestDigestId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(DigestDigestModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

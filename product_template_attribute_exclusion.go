@@ -72,6 +72,9 @@ func (c *Client) GetProductTemplateAttributeExclusion(id int64) (*ProductTemplat
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptaes) == 0 {
+		return nil, nil
+	}
 	return &((*ptaes)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProductTemplateAttributeExclusion(criteria *Criteria) (*Pro
 	ptaes := &ProductTemplateAttributeExclusions{}
 	if err := c.SearchRead(ProductTemplateAttributeExclusionModel, criteria, NewOptions().Limit(1), ptaes); err != nil {
 		return nil, err
+	}
+	if len(*ptaes) == 0 {
+		return nil, nil
 	}
 	return &((*ptaes)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProductTemplateAttributeExclusionId(criteria *Criteria, opt
 	ids, err := c.Search(ProductTemplateAttributeExclusionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

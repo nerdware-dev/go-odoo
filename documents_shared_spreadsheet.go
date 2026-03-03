@@ -78,6 +78,9 @@ func (c *Client) GetDocumentsSharedSpreadsheet(id int64) (*DocumentsSharedSpread
 	if err != nil {
 		return nil, err
 	}
+	if len(*dsss) == 0 {
+		return nil, nil
+	}
 	return &((*dsss)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindDocumentsSharedSpreadsheet(criteria *Criteria) (*DocumentsS
 	dsss := &DocumentsSharedSpreadsheets{}
 	if err := c.SearchRead(DocumentsSharedSpreadsheetModel, criteria, NewOptions().Limit(1), dsss); err != nil {
 		return nil, err
+	}
+	if len(*dsss) == 0 {
+		return nil, nil
 	}
 	return &((*dsss)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindDocumentsSharedSpreadsheetId(criteria *Criteria, options *O
 	ids, err := c.Search(DocumentsSharedSpreadsheetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

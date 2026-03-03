@@ -84,6 +84,9 @@ func (c *Client) GetOnboardingOnboardingStep(id int64) (*OnboardingOnboardingSte
 	if err != nil {
 		return nil, err
 	}
+	if len(*ooss) == 0 {
+		return nil, nil
+	}
 	return &((*ooss)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindOnboardingOnboardingStep(criteria *Criteria) (*OnboardingOn
 	ooss := &OnboardingOnboardingSteps{}
 	if err := c.SearchRead(OnboardingOnboardingStepModel, criteria, NewOptions().Limit(1), ooss); err != nil {
 		return nil, err
+	}
+	if len(*ooss) == 0 {
+		return nil, nil
 	}
 	return &((*ooss)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindOnboardingOnboardingStepId(criteria *Criteria, options *Opt
 	ids, err := c.Search(OnboardingOnboardingStepModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

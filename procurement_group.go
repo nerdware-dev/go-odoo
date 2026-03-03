@@ -74,6 +74,9 @@ func (c *Client) GetProcurementGroup(id int64) (*ProcurementGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pgs) == 0 {
+		return nil, nil
+	}
 	return &((*pgs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProcurementGroup(criteria *Criteria) (*ProcurementGroup, er
 	pgs := &ProcurementGroups{}
 	if err := c.SearchRead(ProcurementGroupModel, criteria, NewOptions().Limit(1), pgs); err != nil {
 		return nil, err
+	}
+	if len(*pgs) == 0 {
+		return nil, nil
 	}
 	return &((*pgs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProcurementGroupId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProcurementGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

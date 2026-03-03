@@ -83,6 +83,9 @@ func (c *Client) GetStockValuationLayerRevaluation(id int64) (*StockValuationLay
 	if err != nil {
 		return nil, err
 	}
+	if len(*svlrs) == 0 {
+		return nil, nil
+	}
 	return &((*svlrs)[0]), nil
 }
 
@@ -100,6 +103,9 @@ func (c *Client) FindStockValuationLayerRevaluation(criteria *Criteria) (*StockV
 	svlrs := &StockValuationLayerRevaluations{}
 	if err := c.SearchRead(StockValuationLayerRevaluationModel, criteria, NewOptions().Limit(1), svlrs); err != nil {
 		return nil, err
+	}
+	if len(*svlrs) == 0 {
+		return nil, nil
 	}
 	return &((*svlrs)[0]), nil
 }
@@ -125,6 +131,9 @@ func (c *Client) FindStockValuationLayerRevaluationId(criteria *Criteria, option
 	ids, err := c.Search(StockValuationLayerRevaluationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

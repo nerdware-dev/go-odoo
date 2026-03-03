@@ -11,6 +11,7 @@ type IrActionsServer struct {
 	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
 	ActivityUserType              *Selection `xmlrpc:"activity_user_type,omitempty" json:"activity_user_type,omitempty"`
 	AvailableModelIds             *Relation  `xmlrpc:"available_model_ids,omitempty" json:"available_model_ids,omitempty"`
+	BaseAutomationId              *Many2One  `xmlrpc:"base_automation_id,omitempty" json:"base_automation_id,omitempty"`
 	BindingModelId                *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
 	BindingType                   *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
 	BindingViewTypes              *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
@@ -116,6 +117,9 @@ func (c *Client) GetIrActionsServer(id int64) (*IrActionsServer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iass) == 0 {
+		return nil, nil
+	}
 	return &((*iass)[0]), nil
 }
 
@@ -133,6 +137,9 @@ func (c *Client) FindIrActionsServer(criteria *Criteria) (*IrActionsServer, erro
 	iass := &IrActionsServers{}
 	if err := c.SearchRead(IrActionsServerModel, criteria, NewOptions().Limit(1), iass); err != nil {
 		return nil, err
+	}
+	if len(*iass) == 0 {
+		return nil, nil
 	}
 	return &((*iass)[0]), nil
 }
@@ -158,6 +165,9 @@ func (c *Client) FindIrActionsServerId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(IrActionsServerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

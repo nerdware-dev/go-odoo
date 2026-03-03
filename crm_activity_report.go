@@ -85,6 +85,9 @@ func (c *Client) GetCrmActivityReport(id int64) (*CrmActivityReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cars) == 0 {
+		return nil, nil
+	}
 	return &((*cars)[0]), nil
 }
 
@@ -102,6 +105,9 @@ func (c *Client) FindCrmActivityReport(criteria *Criteria) (*CrmActivityReport, 
 	cars := &CrmActivityReports{}
 	if err := c.SearchRead(CrmActivityReportModel, criteria, NewOptions().Limit(1), cars); err != nil {
 		return nil, err
+	}
+	if len(*cars) == 0 {
+		return nil, nil
 	}
 	return &((*cars)[0]), nil
 }
@@ -127,6 +133,9 @@ func (c *Client) FindCrmActivityReportId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(CrmActivityReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

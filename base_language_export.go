@@ -79,6 +79,9 @@ func (c *Client) GetBaseLanguageExport(id int64) (*BaseLanguageExport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bles) == 0 {
+		return nil, nil
+	}
 	return &((*bles)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindBaseLanguageExport(criteria *Criteria) (*BaseLanguageExport
 	bles := &BaseLanguageExports{}
 	if err := c.SearchRead(BaseLanguageExportModel, criteria, NewOptions().Limit(1), bles); err != nil {
 		return nil, err
+	}
+	if len(*bles) == 0 {
+		return nil, nil
 	}
 	return &((*bles)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindBaseLanguageExportId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(BaseLanguageExportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

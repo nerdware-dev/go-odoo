@@ -73,6 +73,9 @@ func (c *Client) GetMailMessageTranslation(id int64) (*MailMessageTranslation, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*mmts) == 0 {
+		return nil, nil
+	}
 	return &((*mmts)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindMailMessageTranslation(criteria *Criteria) (*MailMessageTra
 	mmts := &MailMessageTranslations{}
 	if err := c.SearchRead(MailMessageTranslationModel, criteria, NewOptions().Limit(1), mmts); err != nil {
 		return nil, err
+	}
+	if len(*mmts) == 0 {
+		return nil, nil
 	}
 	return &((*mmts)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindMailMessageTranslationId(criteria *Criteria, options *Optio
 	ids, err := c.Search(MailMessageTranslationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

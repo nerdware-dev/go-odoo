@@ -75,6 +75,9 @@ func (c *Client) GetHrLeaveEmployeeTypeReport(id int64) (*HrLeaveEmployeeTypeRep
 	if err != nil {
 		return nil, err
 	}
+	if len(*hletrs) == 0 {
+		return nil, nil
+	}
 	return &((*hletrs)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindHrLeaveEmployeeTypeReport(criteria *Criteria) (*HrLeaveEmpl
 	hletrs := &HrLeaveEmployeeTypeReports{}
 	if err := c.SearchRead(HrLeaveEmployeeTypeReportModel, criteria, NewOptions().Limit(1), hletrs); err != nil {
 		return nil, err
+	}
+	if len(*hletrs) == 0 {
+		return nil, nil
 	}
 	return &((*hletrs)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindHrLeaveEmployeeTypeReportId(criteria *Criteria, options *Op
 	ids, err := c.Search(HrLeaveEmployeeTypeReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

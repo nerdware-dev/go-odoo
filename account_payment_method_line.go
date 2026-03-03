@@ -80,6 +80,9 @@ func (c *Client) GetAccountPaymentMethodLine(id int64) (*AccountPaymentMethodLin
 	if err != nil {
 		return nil, err
 	}
+	if len(*apmls) == 0 {
+		return nil, nil
+	}
 	return &((*apmls)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindAccountPaymentMethodLine(criteria *Criteria) (*AccountPayme
 	apmls := &AccountPaymentMethodLines{}
 	if err := c.SearchRead(AccountPaymentMethodLineModel, criteria, NewOptions().Limit(1), apmls); err != nil {
 		return nil, err
+	}
+	if len(*apmls) == 0 {
+		return nil, nil
 	}
 	return &((*apmls)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindAccountPaymentMethodLineId(criteria *Criteria, options *Opt
 	ids, err := c.Search(AccountPaymentMethodLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -78,6 +78,9 @@ func (c *Client) GetIrProfile(id int64) (*IrProfile, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ips) == 0 {
+		return nil, nil
+	}
 	return &((*ips)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindIrProfile(criteria *Criteria) (*IrProfile, error) {
 	ips := &IrProfiles{}
 	if err := c.SearchRead(IrProfileModel, criteria, NewOptions().Limit(1), ips); err != nil {
 		return nil, err
+	}
+	if len(*ips) == 0 {
+		return nil, nil
 	}
 	return &((*ips)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindIrProfileId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrProfileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

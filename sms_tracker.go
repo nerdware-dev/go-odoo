@@ -71,6 +71,9 @@ func (c *Client) GetSmsTracker(id int64) (*SmsTracker, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sts) == 0 {
+		return nil, nil
+	}
 	return &((*sts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindSmsTracker(criteria *Criteria) (*SmsTracker, error) {
 	sts := &SmsTrackers{}
 	if err := c.SearchRead(SmsTrackerModel, criteria, NewOptions().Limit(1), sts); err != nil {
 		return nil, err
+	}
+	if len(*sts) == 0 {
+		return nil, nil
 	}
 	return &((*sts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindSmsTrackerId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(SmsTrackerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

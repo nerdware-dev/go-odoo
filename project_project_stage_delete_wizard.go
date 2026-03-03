@@ -72,6 +72,9 @@ func (c *Client) GetProjectProjectStageDeleteWizard(id int64) (*ProjectProjectSt
 	if err != nil {
 		return nil, err
 	}
+	if len(*ppsdws) == 0 {
+		return nil, nil
+	}
 	return &((*ppsdws)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindProjectProjectStageDeleteWizard(criteria *Criteria) (*Proje
 	ppsdws := &ProjectProjectStageDeleteWizards{}
 	if err := c.SearchRead(ProjectProjectStageDeleteWizardModel, criteria, NewOptions().Limit(1), ppsdws); err != nil {
 		return nil, err
+	}
+	if len(*ppsdws) == 0 {
+		return nil, nil
 	}
 	return &((*ppsdws)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindProjectProjectStageDeleteWizardId(criteria *Criteria, optio
 	ids, err := c.Search(ProjectProjectStageDeleteWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

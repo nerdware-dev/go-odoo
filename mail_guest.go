@@ -86,6 +86,9 @@ func (c *Client) GetMailGuest(id int64) (*MailGuest, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mgs) == 0 {
+		return nil, nil
+	}
 	return &((*mgs)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindMailGuest(criteria *Criteria) (*MailGuest, error) {
 	mgs := &MailGuests{}
 	if err := c.SearchRead(MailGuestModel, criteria, NewOptions().Limit(1), mgs); err != nil {
 		return nil, err
+	}
+	if len(*mgs) == 0 {
+		return nil, nil
 	}
 	return &((*mgs)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindMailGuestId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(MailGuestModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

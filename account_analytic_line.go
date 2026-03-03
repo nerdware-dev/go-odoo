@@ -63,6 +63,7 @@ type AccountAnalyticLine struct {
 	ValidatedStatus          *Selection `xmlrpc:"validated_status,omitempty" json:"validated_status,omitempty"`
 	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XPlan2Id                 *Many2One  `xmlrpc:"x_plan2_id,omitempty" json:"x_plan2_id,omitempty"`
 }
 
 // AccountAnalyticLines represents array of account.analytic.line model.
@@ -124,6 +125,9 @@ func (c *Client) GetAccountAnalyticLine(id int64) (*AccountAnalyticLine, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*aals) == 0 {
+		return nil, nil
+	}
 	return &((*aals)[0]), nil
 }
 
@@ -131,7 +135,7 @@ func (c *Client) GetAccountAnalyticLine(id int64) (*AccountAnalyticLine, error) 
 func (c *Client) GetAccountAnalyticLines(ids []int64) (*AccountAnalyticLines, error) {
 	aals := &AccountAnalyticLines{}
 	if err := c.Read(AccountAnalyticLineModel, ids, nil, aals); err != nil {
-		return aals, err
+		return nil, err
 	}
 	return aals, nil
 }
@@ -141,6 +145,9 @@ func (c *Client) FindAccountAnalyticLine(criteria *Criteria) (*AccountAnalyticLi
 	aals := &AccountAnalyticLines{}
 	if err := c.SearchRead(AccountAnalyticLineModel, criteria, NewOptions().Limit(1), aals); err != nil {
 		return nil, err
+	}
+	if len(*aals) == 0 {
+		return nil, nil
 	}
 	return &((*aals)[0]), nil
 }
@@ -166,6 +173,9 @@ func (c *Client) FindAccountAnalyticLineId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountAnalyticLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -81,6 +81,9 @@ func (c *Client) GetSignLog(id int64) (*SignLog, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sls) == 0 {
+		return nil, nil
+	}
 	return &((*sls)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindSignLog(criteria *Criteria) (*SignLog, error) {
 	sls := &SignLogs{}
 	if err := c.SearchRead(SignLogModel, criteria, NewOptions().Limit(1), sls); err != nil {
 		return nil, err
+	}
+	if len(*sls) == 0 {
+		return nil, nil
 	}
 	return &((*sls)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindSignLogId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(SignLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

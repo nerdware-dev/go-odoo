@@ -71,6 +71,9 @@ func (c *Client) GetUtmMedium(id int64) (*UtmMedium, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ums) == 0 {
+		return nil, nil
+	}
 	return &((*ums)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindUtmMedium(criteria *Criteria) (*UtmMedium, error) {
 	ums := &UtmMediums{}
 	if err := c.SearchRead(UtmMediumModel, criteria, NewOptions().Limit(1), ums); err != nil {
 		return nil, err
+	}
+	if len(*ums) == 0 {
+		return nil, nil
 	}
 	return &((*ums)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindUtmMediumId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(UtmMediumModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

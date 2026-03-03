@@ -98,6 +98,9 @@ func (c *Client) GetProductDocument(id int64) (*ProductDocument, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pds) == 0 {
+		return nil, nil
+	}
 	return &((*pds)[0]), nil
 }
 
@@ -115,6 +118,9 @@ func (c *Client) FindProductDocument(criteria *Criteria) (*ProductDocument, erro
 	pds := &ProductDocuments{}
 	if err := c.SearchRead(ProductDocumentModel, criteria, NewOptions().Limit(1), pds); err != nil {
 		return nil, err
+	}
+	if len(*pds) == 0 {
+		return nil, nil
 	}
 	return &((*pds)[0]), nil
 }
@@ -140,6 +146,9 @@ func (c *Client) FindProductDocumentId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ProductDocumentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

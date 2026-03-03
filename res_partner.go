@@ -3,6 +3,7 @@ package odoo
 // ResPartner represents res.partner model.
 type ResPartner struct {
 	AccountRepresentedCompanyIds       *Relation  `xmlrpc:"account_represented_company_ids,omitempty" json:"account_represented_company_ids,omitempty"`
+	AccountSepaLei                     *String    `xmlrpc:"account_sepa_lei,omitempty" json:"account_sepa_lei,omitempty"`
 	Active                             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
 	ActiveLangCount                    *Int       `xmlrpc:"active_lang_count,omitempty" json:"active_lang_count,omitempty"`
 	ActivityCalendarEventId            *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
@@ -134,6 +135,8 @@ type ResPartner struct {
 	PhoneSanitizedBlacklisted          *Bool      `xmlrpc:"phone_sanitized_blacklisted,omitempty" json:"phone_sanitized_blacklisted,omitempty"`
 	PickingWarn                        *Selection `xmlrpc:"picking_warn,omitempty" json:"picking_warn,omitempty"`
 	PickingWarnMsg                     *String    `xmlrpc:"picking_warn_msg,omitempty" json:"picking_warn_msg,omitempty"`
+	PlanToChangeBike                   *Bool      `xmlrpc:"plan_to_change_bike,omitempty" json:"plan_to_change_bike,omitempty"`
+	PlanToChangeCar                    *Bool      `xmlrpc:"plan_to_change_car,omitempty" json:"plan_to_change_car,omitempty"`
 	ProjectIds                         *Relation  `xmlrpc:"project_ids,omitempty" json:"project_ids,omitempty"`
 	PropertyAccountPayableId           *Many2One  `xmlrpc:"property_account_payable_id,omitempty" json:"property_account_payable_id,omitempty"`
 	PropertyAccountPositionId          *Many2One  `xmlrpc:"property_account_position_id,omitempty" json:"property_account_position_id,omitempty"`
@@ -159,6 +162,8 @@ type ResPartner struct {
 	SaleWarnMsg                        *String    `xmlrpc:"sale_warn_msg,omitempty" json:"sale_warn_msg,omitempty"`
 	SameCompanyRegistryPartnerId       *Many2One  `xmlrpc:"same_company_registry_partner_id,omitempty" json:"same_company_registry_partner_id,omitempty"`
 	SameVatPartnerId                   *Many2One  `xmlrpc:"same_vat_partner_id,omitempty" json:"same_vat_partner_id,omitempty"`
+	SddCount                           *Int       `xmlrpc:"sdd_count,omitempty" json:"sdd_count,omitempty"`
+	SddMandateIds                      *Relation  `xmlrpc:"sdd_mandate_ids,omitempty" json:"sdd_mandate_ids,omitempty"`
 	Self                               *Many2One  `xmlrpc:"self,omitempty" json:"self,omitempty"`
 	ShowCreditLimit                    *Bool      `xmlrpc:"show_credit_limit,omitempty" json:"show_credit_limit,omitempty"`
 	SignatureCount                     *Int       `xmlrpc:"signature_count,omitempty" json:"signature_count,omitempty"`
@@ -171,6 +176,7 @@ type ResPartner struct {
 	StateId                            *Many2One  `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
 	Street                             *String    `xmlrpc:"street,omitempty" json:"street,omitempty"`
 	Street2                            *String    `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	SubscriptionCount                  *Int       `xmlrpc:"subscription_count,omitempty" json:"subscription_count,omitempty"`
 	SupplierInvoiceCount               *Int       `xmlrpc:"supplier_invoice_count,omitempty" json:"supplier_invoice_count,omitempty"`
 	SupplierRank                       *Int       `xmlrpc:"supplier_rank,omitempty" json:"supplier_rank,omitempty"`
 	TaskCount                          *Int       `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
@@ -260,6 +266,9 @@ func (c *Client) GetResPartner(id int64) (*ResPartner, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rps) == 0 {
+		return nil, nil
+	}
 	return &((*rps)[0]), nil
 }
 
@@ -277,6 +286,9 @@ func (c *Client) FindResPartner(criteria *Criteria) (*ResPartner, error) {
 	rps := &ResPartners{}
 	if err := c.SearchRead(ResPartnerModel, criteria, NewOptions().Limit(1), rps); err != nil {
 		return nil, err
+	}
+	if len(*rps) == 0 {
+		return nil, nil
 	}
 	return &((*rps)[0]), nil
 }
@@ -302,6 +314,9 @@ func (c *Client) FindResPartnerId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(ResPartnerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

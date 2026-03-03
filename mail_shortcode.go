@@ -73,6 +73,9 @@ func (c *Client) GetMailShortcode(id int64) (*MailShortcode, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mss) == 0 {
+		return nil, nil
+	}
 	return &((*mss)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindMailShortcode(criteria *Criteria) (*MailShortcode, error) {
 	mss := &MailShortcodes{}
 	if err := c.SearchRead(MailShortcodeModel, criteria, NewOptions().Limit(1), mss); err != nil {
 		return nil, err
+	}
+	if len(*mss) == 0 {
+		return nil, nil
 	}
 	return &((*mss)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindMailShortcodeId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(MailShortcodeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

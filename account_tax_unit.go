@@ -75,6 +75,9 @@ func (c *Client) GetAccountTaxUnit(id int64) (*AccountTaxUnit, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*atus) == 0 {
+		return nil, nil
+	}
 	return &((*atus)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindAccountTaxUnit(criteria *Criteria) (*AccountTaxUnit, error)
 	atus := &AccountTaxUnits{}
 	if err := c.SearchRead(AccountTaxUnitModel, criteria, NewOptions().Limit(1), atus); err != nil {
 		return nil, err
+	}
+	if len(*atus) == 0 {
+		return nil, nil
 	}
 	return &((*atus)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindAccountTaxUnitId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AccountTaxUnitModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

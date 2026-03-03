@@ -74,6 +74,9 @@ func (c *Client) GetAccountFiscalPositionTax(id int64) (*AccountFiscalPositionTa
 	if err != nil {
 		return nil, err
 	}
+	if len(*afpts) == 0 {
+		return nil, nil
+	}
 	return &((*afpts)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindAccountFiscalPositionTax(criteria *Criteria) (*AccountFisca
 	afpts := &AccountFiscalPositionTaxs{}
 	if err := c.SearchRead(AccountFiscalPositionTaxModel, criteria, NewOptions().Limit(1), afpts); err != nil {
 		return nil, err
+	}
+	if len(*afpts) == 0 {
+		return nil, nil
 	}
 	return &((*afpts)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindAccountFiscalPositionTaxId(criteria *Criteria, options *Opt
 	ids, err := c.Search(AccountFiscalPositionTaxModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

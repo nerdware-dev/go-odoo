@@ -71,6 +71,9 @@ func (c *Client) GetMailBlacklistRemove(id int64) (*MailBlacklistRemove, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*mbrs) == 0 {
+		return nil, nil
+	}
 	return &((*mbrs)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindMailBlacklistRemove(criteria *Criteria) (*MailBlacklistRemo
 	mbrs := &MailBlacklistRemoves{}
 	if err := c.SearchRead(MailBlacklistRemoveModel, criteria, NewOptions().Limit(1), mbrs); err != nil {
 		return nil, err
+	}
+	if len(*mbrs) == 0 {
+		return nil, nil
 	}
 	return &((*mbrs)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindMailBlacklistRemoveId(criteria *Criteria, options *Options)
 	ids, err := c.Search(MailBlacklistRemoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

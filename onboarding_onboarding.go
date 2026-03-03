@@ -80,6 +80,9 @@ func (c *Client) GetOnboardingOnboarding(id int64) (*OnboardingOnboarding, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*oos) == 0 {
+		return nil, nil
+	}
 	return &((*oos)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindOnboardingOnboarding(criteria *Criteria) (*OnboardingOnboar
 	oos := &OnboardingOnboardings{}
 	if err := c.SearchRead(OnboardingOnboardingModel, criteria, NewOptions().Limit(1), oos); err != nil {
 		return nil, err
+	}
+	if len(*oos) == 0 {
+		return nil, nil
 	}
 	return &((*oos)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindOnboardingOnboardingId(criteria *Criteria, options *Options
 	ids, err := c.Search(OnboardingOnboardingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

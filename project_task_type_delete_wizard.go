@@ -73,6 +73,9 @@ func (c *Client) GetProjectTaskTypeDeleteWizard(id int64) (*ProjectTaskTypeDelet
 	if err != nil {
 		return nil, err
 	}
+	if len(*pttdws) == 0 {
+		return nil, nil
+	}
 	return &((*pttdws)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindProjectTaskTypeDeleteWizard(criteria *Criteria) (*ProjectTa
 	pttdws := &ProjectTaskTypeDeleteWizards{}
 	if err := c.SearchRead(ProjectTaskTypeDeleteWizardModel, criteria, NewOptions().Limit(1), pttdws); err != nil {
 		return nil, err
+	}
+	if len(*pttdws) == 0 {
+		return nil, nil
 	}
 	return &((*pttdws)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindProjectTaskTypeDeleteWizardId(criteria *Criteria, options *
 	ids, err := c.Search(ProjectTaskTypeDeleteWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

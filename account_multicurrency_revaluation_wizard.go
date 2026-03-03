@@ -77,6 +77,9 @@ func (c *Client) GetAccountMulticurrencyRevaluationWizard(id int64) (*AccountMul
 	if err != nil {
 		return nil, err
 	}
+	if len(*amrws) == 0 {
+		return nil, nil
+	}
 	return &((*amrws)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindAccountMulticurrencyRevaluationWizard(criteria *Criteria) (
 	amrws := &AccountMulticurrencyRevaluationWizards{}
 	if err := c.SearchRead(AccountMulticurrencyRevaluationWizardModel, criteria, NewOptions().Limit(1), amrws); err != nil {
 		return nil, err
+	}
+	if len(*amrws) == 0 {
+		return nil, nil
 	}
 	return &((*amrws)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindAccountMulticurrencyRevaluationWizardId(criteria *Criteria,
 	ids, err := c.Search(AccountMulticurrencyRevaluationWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

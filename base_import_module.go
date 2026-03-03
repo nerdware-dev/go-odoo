@@ -75,6 +75,9 @@ func (c *Client) GetBaseImportModule(id int64) (*BaseImportModule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bims) == 0 {
+		return nil, nil
+	}
 	return &((*bims)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindBaseImportModule(criteria *Criteria) (*BaseImportModule, er
 	bims := &BaseImportModules{}
 	if err := c.SearchRead(BaseImportModuleModel, criteria, NewOptions().Limit(1), bims); err != nil {
 		return nil, err
+	}
+	if len(*bims) == 0 {
+		return nil, nil
 	}
 	return &((*bims)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindBaseImportModuleId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(BaseImportModuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

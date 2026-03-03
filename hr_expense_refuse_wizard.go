@@ -71,6 +71,9 @@ func (c *Client) GetHrExpenseRefuseWizard(id int64) (*HrExpenseRefuseWizard, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*herws) == 0 {
+		return nil, nil
+	}
 	return &((*herws)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindHrExpenseRefuseWizard(criteria *Criteria) (*HrExpenseRefuse
 	herws := &HrExpenseRefuseWizards{}
 	if err := c.SearchRead(HrExpenseRefuseWizardModel, criteria, NewOptions().Limit(1), herws); err != nil {
 		return nil, err
+	}
+	if len(*herws) == 0 {
+		return nil, nil
 	}
 	return &((*herws)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindHrExpenseRefuseWizardId(criteria *Criteria, options *Option
 	ids, err := c.Search(HrExpenseRefuseWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

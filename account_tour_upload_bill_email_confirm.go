@@ -70,6 +70,9 @@ func (c *Client) GetAccountTourUploadBillEmailConfirm(id int64) (*AccountTourUpl
 	if err != nil {
 		return nil, err
 	}
+	if len(*atubecs) == 0 {
+		return nil, nil
+	}
 	return &((*atubecs)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindAccountTourUploadBillEmailConfirm(criteria *Criteria) (*Acc
 	atubecs := &AccountTourUploadBillEmailConfirms{}
 	if err := c.SearchRead(AccountTourUploadBillEmailConfirmModel, criteria, NewOptions().Limit(1), atubecs); err != nil {
 		return nil, err
+	}
+	if len(*atubecs) == 0 {
+		return nil, nil
 	}
 	return &((*atubecs)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindAccountTourUploadBillEmailConfirmId(criteria *Criteria, opt
 	ids, err := c.Search(AccountTourUploadBillEmailConfirmModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

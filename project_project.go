@@ -118,6 +118,7 @@ type ProjectProject struct {
 	SharedDocumentCount          *Int        `xmlrpc:"shared_document_count,omitempty" json:"shared_document_count,omitempty"`
 	SharedDocumentIds            *Relation   `xmlrpc:"shared_document_ids,omitempty" json:"shared_document_ids,omitempty"`
 	StageId                      *Many2One   `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	SubscriptionsCount           *Int        `xmlrpc:"subscriptions_count,omitempty" json:"subscriptions_count,omitempty"`
 	TagIds                       *Relation   `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
 	TaskCount                    *Int        `xmlrpc:"task_count,omitempty" json:"task_count,omitempty"`
 	TaskIds                      *Relation   `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
@@ -200,6 +201,9 @@ func (c *Client) GetProjectProject(id int64) (*ProjectProject, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pps) == 0 {
+		return nil, nil
+	}
 	return &((*pps)[0]), nil
 }
 
@@ -207,7 +211,7 @@ func (c *Client) GetProjectProject(id int64) (*ProjectProject, error) {
 func (c *Client) GetProjectProjects(ids []int64) (*ProjectProjects, error) {
 	pps := &ProjectProjects{}
 	if err := c.Read(ProjectProjectModel, ids, nil, pps); err != nil {
-		return pps, err
+		return nil, err
 	}
 	return pps, nil
 }
@@ -217,6 +221,9 @@ func (c *Client) FindProjectProject(criteria *Criteria) (*ProjectProject, error)
 	pps := &ProjectProjects{}
 	if err := c.SearchRead(ProjectProjectModel, criteria, NewOptions().Limit(1), pps); err != nil {
 		return nil, err
+	}
+	if len(*pps) == 0 {
+		return nil, nil
 	}
 	return &((*pps)[0]), nil
 }
@@ -242,6 +249,9 @@ func (c *Client) FindProjectProjectId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(ProjectProjectModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

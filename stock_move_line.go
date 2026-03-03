@@ -110,6 +110,9 @@ func (c *Client) GetStockMoveLine(id int64) (*StockMoveLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*smls) == 0 {
+		return nil, nil
+	}
 	return &((*smls)[0]), nil
 }
 
@@ -127,6 +130,9 @@ func (c *Client) FindStockMoveLine(criteria *Criteria) (*StockMoveLine, error) {
 	smls := &StockMoveLines{}
 	if err := c.SearchRead(StockMoveLineModel, criteria, NewOptions().Limit(1), smls); err != nil {
 		return nil, err
+	}
+	if len(*smls) == 0 {
+		return nil, nil
 	}
 	return &((*smls)[0]), nil
 }
@@ -152,6 +158,9 @@ func (c *Client) FindStockMoveLineId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(StockMoveLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

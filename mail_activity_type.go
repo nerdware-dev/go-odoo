@@ -93,6 +93,9 @@ func (c *Client) GetMailActivityType(id int64) (*MailActivityType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mats) == 0 {
+		return nil, nil
+	}
 	return &((*mats)[0]), nil
 }
 
@@ -110,6 +113,9 @@ func (c *Client) FindMailActivityType(criteria *Criteria) (*MailActivityType, er
 	mats := &MailActivityTypes{}
 	if err := c.SearchRead(MailActivityTypeModel, criteria, NewOptions().Limit(1), mats); err != nil {
 		return nil, err
+	}
+	if len(*mats) == 0 {
+		return nil, nil
 	}
 	return &((*mats)[0]), nil
 }
@@ -135,6 +141,9 @@ func (c *Client) FindMailActivityTypeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailActivityTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -65,6 +65,9 @@ func (c *Client) GetResUsersApikeysShow(id int64) (*ResUsersApikeysShow, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruass) == 0 {
+		return nil, nil
+	}
 	return &((*ruass)[0]), nil
 }
 
@@ -82,6 +85,9 @@ func (c *Client) FindResUsersApikeysShow(criteria *Criteria) (*ResUsersApikeysSh
 	ruass := &ResUsersApikeysShows{}
 	if err := c.SearchRead(ResUsersApikeysShowModel, criteria, NewOptions().Limit(1), ruass); err != nil {
 		return nil, err
+	}
+	if len(*ruass) == 0 {
+		return nil, nil
 	}
 	return &((*ruass)[0]), nil
 }
@@ -107,6 +113,9 @@ func (c *Client) FindResUsersApikeysShowId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ResUsersApikeysShowModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

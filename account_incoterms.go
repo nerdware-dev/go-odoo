@@ -72,6 +72,9 @@ func (c *Client) GetAccountIncoterms(id int64) (*AccountIncoterms, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ais) == 0 {
+		return nil, nil
+	}
 	return &((*ais)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindAccountIncoterms(criteria *Criteria) (*AccountIncoterms, er
 	ais := &AccountIncotermss{}
 	if err := c.SearchRead(AccountIncotermsModel, criteria, NewOptions().Limit(1), ais); err != nil {
 		return nil, err
+	}
+	if len(*ais) == 0 {
+		return nil, nil
 	}
 	return &((*ais)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindAccountIncotermsId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(AccountIncotermsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

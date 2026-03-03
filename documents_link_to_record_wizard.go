@@ -74,6 +74,9 @@ func (c *Client) GetDocumentsLinkToRecordWizard(id int64) (*DocumentsLinkToRecor
 	if err != nil {
 		return nil, err
 	}
+	if len(*dls) == 0 {
+		return nil, nil
+	}
 	return &((*dls)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindDocumentsLinkToRecordWizard(criteria *Criteria) (*Documents
 	dls := &DocumentsLinkToRecordWizards{}
 	if err := c.SearchRead(DocumentsLinkToRecordWizardModel, criteria, NewOptions().Limit(1), dls); err != nil {
 		return nil, err
+	}
+	if len(*dls) == 0 {
+		return nil, nil
 	}
 	return &((*dls)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindDocumentsLinkToRecordWizardId(criteria *Criteria, options *
 	ids, err := c.Search(DocumentsLinkToRecordWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

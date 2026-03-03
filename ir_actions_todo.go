@@ -73,6 +73,9 @@ func (c *Client) GetIrActionsTodo(id int64) (*IrActionsTodo, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iats) == 0 {
+		return nil, nil
+	}
 	return &((*iats)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindIrActionsTodo(criteria *Criteria) (*IrActionsTodo, error) {
 	iats := &IrActionsTodos{}
 	if err := c.SearchRead(IrActionsTodoModel, criteria, NewOptions().Limit(1), iats); err != nil {
 		return nil, err
+	}
+	if len(*iats) == 0 {
+		return nil, nil
 	}
 	return &((*iats)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindIrActionsTodoId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrActionsTodoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

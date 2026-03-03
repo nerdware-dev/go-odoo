@@ -84,6 +84,9 @@ func (c *Client) GetResourceCalendarAttendance(id int64) (*ResourceCalendarAtten
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcas) == 0 {
+		return nil, nil
+	}
 	return &((*rcas)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindResourceCalendarAttendance(criteria *Criteria) (*ResourceCa
 	rcas := &ResourceCalendarAttendances{}
 	if err := c.SearchRead(ResourceCalendarAttendanceModel, criteria, NewOptions().Limit(1), rcas); err != nil {
 		return nil, err
+	}
+	if len(*rcas) == 0 {
+		return nil, nil
 	}
 	return &((*rcas)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindResourceCalendarAttendanceId(criteria *Criteria, options *O
 	ids, err := c.Search(ResourceCalendarAttendanceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

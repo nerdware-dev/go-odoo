@@ -91,6 +91,9 @@ func (c *Client) GetAssetModify(id int64) (*AssetModify, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ams) == 0 {
+		return nil, nil
+	}
 	return &((*ams)[0]), nil
 }
 
@@ -108,6 +111,9 @@ func (c *Client) FindAssetModify(criteria *Criteria) (*AssetModify, error) {
 	ams := &AssetModifys{}
 	if err := c.SearchRead(AssetModifyModel, criteria, NewOptions().Limit(1), ams); err != nil {
 		return nil, err
+	}
+	if len(*ams) == 0 {
+		return nil, nil
 	}
 	return &((*ams)[0]), nil
 }
@@ -133,6 +139,9 @@ func (c *Client) FindAssetModifyId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(AssetModifyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

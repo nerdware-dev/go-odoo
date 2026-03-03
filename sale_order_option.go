@@ -80,6 +80,9 @@ func (c *Client) GetSaleOrderOption(id int64) (*SaleOrderOption, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*soos) == 0 {
+		return nil, nil
+	}
 	return &((*soos)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindSaleOrderOption(criteria *Criteria) (*SaleOrderOption, erro
 	soos := &SaleOrderOptions{}
 	if err := c.SearchRead(SaleOrderOptionModel, criteria, NewOptions().Limit(1), soos); err != nil {
 		return nil, err
+	}
+	if len(*soos) == 0 {
+		return nil, nil
 	}
 	return &((*soos)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindSaleOrderOptionId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SaleOrderOptionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -72,6 +72,9 @@ func (c *Client) GetUomCategory(id int64) (*UomCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ucs) == 0 {
+		return nil, nil
+	}
 	return &((*ucs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindUomCategory(criteria *Criteria) (*UomCategory, error) {
 	ucs := &UomCategorys{}
 	if err := c.SearchRead(UomCategoryModel, criteria, NewOptions().Limit(1), ucs); err != nil {
 		return nil, err
+	}
+	if len(*ucs) == 0 {
+		return nil, nil
 	}
 	return &((*ucs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindUomCategoryId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(UomCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -74,6 +74,9 @@ func (c *Client) GetBarcodeNomenclature(id int64) (*BarcodeNomenclature, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*bns) == 0 {
+		return nil, nil
+	}
 	return &((*bns)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindBarcodeNomenclature(criteria *Criteria) (*BarcodeNomenclatu
 	bns := &BarcodeNomenclatures{}
 	if err := c.SearchRead(BarcodeNomenclatureModel, criteria, NewOptions().Limit(1), bns); err != nil {
 		return nil, err
+	}
+	if len(*bns) == 0 {
+		return nil, nil
 	}
 	return &((*bns)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindBarcodeNomenclatureId(criteria *Criteria, options *Options)
 	ids, err := c.Search(BarcodeNomenclatureModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

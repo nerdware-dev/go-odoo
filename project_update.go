@@ -112,6 +112,9 @@ func (c *Client) GetProjectUpdate(id int64) (*ProjectUpdate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pus) == 0 {
+		return nil, nil
+	}
 	return &((*pus)[0]), nil
 }
 
@@ -129,6 +132,9 @@ func (c *Client) FindProjectUpdate(criteria *Criteria) (*ProjectUpdate, error) {
 	pus := &ProjectUpdates{}
 	if err := c.SearchRead(ProjectUpdateModel, criteria, NewOptions().Limit(1), pus); err != nil {
 		return nil, err
+	}
+	if len(*pus) == 0 {
+		return nil, nil
 	}
 	return &((*pus)[0]), nil
 }
@@ -154,6 +160,9 @@ func (c *Client) FindProjectUpdateId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(ProjectUpdateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

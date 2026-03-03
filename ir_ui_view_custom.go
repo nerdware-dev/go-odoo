@@ -72,6 +72,9 @@ func (c *Client) GetIrUiViewCustom(id int64) (*IrUiViewCustom, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iuvcs) == 0 {
+		return nil, nil
+	}
 	return &((*iuvcs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindIrUiViewCustom(criteria *Criteria) (*IrUiViewCustom, error)
 	iuvcs := &IrUiViewCustoms{}
 	if err := c.SearchRead(IrUiViewCustomModel, criteria, NewOptions().Limit(1), iuvcs); err != nil {
 		return nil, err
+	}
+	if len(*iuvcs) == 0 {
+		return nil, nil
 	}
 	return &((*iuvcs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindIrUiViewCustomId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(IrUiViewCustomModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -104,6 +104,9 @@ func (c *Client) GetBaseDocumentLayout(id int64) (*BaseDocumentLayout, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bdls) == 0 {
+		return nil, nil
+	}
 	return &((*bdls)[0]), nil
 }
 
@@ -121,6 +124,9 @@ func (c *Client) FindBaseDocumentLayout(criteria *Criteria) (*BaseDocumentLayout
 	bdls := &BaseDocumentLayouts{}
 	if err := c.SearchRead(BaseDocumentLayoutModel, criteria, NewOptions().Limit(1), bdls); err != nil {
 		return nil, err
+	}
+	if len(*bdls) == 0 {
+		return nil, nil
 	}
 	return &((*bdls)[0]), nil
 }
@@ -146,6 +152,9 @@ func (c *Client) FindBaseDocumentLayoutId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(BaseDocumentLayoutModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

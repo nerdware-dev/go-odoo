@@ -13,6 +13,7 @@ type IrModelData struct {
 	Noupdate     *Bool     `xmlrpc:"noupdate,omitempty" json:"noupdate,omitempty"`
 	Reference    *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
 	ResId        *Many2One `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	Studio       *Bool     `xmlrpc:"studio,omitempty" json:"studio,omitempty"`
 	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
@@ -76,6 +77,9 @@ func (c *Client) GetIrModelData(id int64) (*IrModelData, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imds) == 0 {
+		return nil, nil
+	}
 	return &((*imds)[0]), nil
 }
 
@@ -93,6 +97,9 @@ func (c *Client) FindIrModelData(criteria *Criteria) (*IrModelData, error) {
 	imds := &IrModelDatas{}
 	if err := c.SearchRead(IrModelDataModel, criteria, NewOptions().Limit(1), imds); err != nil {
 		return nil, err
+	}
+	if len(*imds) == 0 {
+		return nil, nil
 	}
 	return &((*imds)[0]), nil
 }
@@ -118,6 +125,9 @@ func (c *Client) FindIrModelDataId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(IrModelDataModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

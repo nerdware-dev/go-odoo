@@ -69,6 +69,7 @@ type AccountMoveLine struct {
 	MoveName                     *String     `xmlrpc:"move_name,omitempty" json:"move_name,omitempty"`
 	MoveType                     *Selection  `xmlrpc:"move_type,omitempty" json:"move_type,omitempty"`
 	Name                         *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NeedVehicle                  *Bool       `xmlrpc:"need_vehicle,omitempty" json:"need_vehicle,omitempty"`
 	NextActionDate               *Time       `xmlrpc:"next_action_date,omitempty" json:"next_action_date,omitempty"`
 	NonDeductibleTaxValue        *Float      `xmlrpc:"non_deductible_tax_value,omitempty" json:"non_deductible_tax_value,omitempty"`
 	ParentState                  *Selection  `xmlrpc:"parent_state,omitempty" json:"parent_state,omitempty"`
@@ -92,6 +93,8 @@ type AccountMoveLine struct {
 	StatementId                  *Many2One   `xmlrpc:"statement_id,omitempty" json:"statement_id,omitempty"`
 	StatementLineId              *Many2One   `xmlrpc:"statement_line_id,omitempty" json:"statement_line_id,omitempty"`
 	StockValuationLayerIds       *Relation   `xmlrpc:"stock_valuation_layer_ids,omitempty" json:"stock_valuation_layer_ids,omitempty"`
+	SubscriptionId               *Many2One   `xmlrpc:"subscription_id,omitempty" json:"subscription_id,omitempty"`
+	SubscriptionMrr              *Float      `xmlrpc:"subscription_mrr,omitempty" json:"subscription_mrr,omitempty"`
 	TaxBaseAmount                *Float      `xmlrpc:"tax_base_amount,omitempty" json:"tax_base_amount,omitempty"`
 	TaxCalculationRoundingMethod *Selection  `xmlrpc:"tax_calculation_rounding_method,omitempty" json:"tax_calculation_rounding_method,omitempty"`
 	TaxGroupId                   *Many2One   `xmlrpc:"tax_group_id,omitempty" json:"tax_group_id,omitempty"`
@@ -102,6 +105,7 @@ type AccountMoveLine struct {
 	TaxTagIds                    *Relation   `xmlrpc:"tax_tag_ids,omitempty" json:"tax_tag_ids,omitempty"`
 	TaxTagInvert                 *Bool       `xmlrpc:"tax_tag_invert,omitempty" json:"tax_tag_invert,omitempty"`
 	TermKey                      *String     `xmlrpc:"term_key,omitempty" json:"term_key,omitempty"`
+	VehicleId                    *Many2One   `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
 	WriteDate                    *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid                     *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
@@ -165,6 +169,9 @@ func (c *Client) GetAccountMoveLine(id int64) (*AccountMoveLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*amls) == 0 {
+		return nil, nil
+	}
 	return &((*amls)[0]), nil
 }
 
@@ -172,7 +179,7 @@ func (c *Client) GetAccountMoveLine(id int64) (*AccountMoveLine, error) {
 func (c *Client) GetAccountMoveLines(ids []int64) (*AccountMoveLines, error) {
 	amls := &AccountMoveLines{}
 	if err := c.Read(AccountMoveLineModel, ids, nil, amls); err != nil {
-		return amls, err
+		return nil, err
 	}
 	return amls, nil
 }
@@ -182,6 +189,9 @@ func (c *Client) FindAccountMoveLine(criteria *Criteria) (*AccountMoveLine, erro
 	amls := &AccountMoveLines{}
 	if err := c.SearchRead(AccountMoveLineModel, criteria, NewOptions().Limit(1), amls); err != nil {
 		return nil, err
+	}
+	if len(*amls) == 0 {
+		return nil, nil
 	}
 	return &((*amls)[0]), nil
 }
@@ -207,6 +217,9 @@ func (c *Client) FindAccountMoveLineId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(AccountMoveLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

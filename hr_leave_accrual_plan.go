@@ -86,6 +86,9 @@ func (c *Client) GetHrLeaveAccrualPlan(id int64) (*HrLeaveAccrualPlan, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlaps) == 0 {
+		return nil, nil
+	}
 	return &((*hlaps)[0]), nil
 }
 
@@ -103,6 +106,9 @@ func (c *Client) FindHrLeaveAccrualPlan(criteria *Criteria) (*HrLeaveAccrualPlan
 	hlaps := &HrLeaveAccrualPlans{}
 	if err := c.SearchRead(HrLeaveAccrualPlanModel, criteria, NewOptions().Limit(1), hlaps); err != nil {
 		return nil, err
+	}
+	if len(*hlaps) == 0 {
+		return nil, nil
 	}
 	return &((*hlaps)[0]), nil
 }
@@ -128,6 +134,9 @@ func (c *Client) FindHrLeaveAccrualPlanId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(HrLeaveAccrualPlanModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

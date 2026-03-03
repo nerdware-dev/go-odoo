@@ -84,6 +84,9 @@ func (c *Client) GetPaymentMethod(id int64) (*PaymentMethod, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pms) == 0 {
+		return nil, nil
+	}
 	return &((*pms)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindPaymentMethod(criteria *Criteria) (*PaymentMethod, error) {
 	pms := &PaymentMethods{}
 	if err := c.SearchRead(PaymentMethodModel, criteria, NewOptions().Limit(1), pms); err != nil {
 		return nil, err
+	}
+	if len(*pms) == 0 {
+		return nil, nil
 	}
 	return &((*pms)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindPaymentMethodId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(PaymentMethodModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -70,6 +70,9 @@ func (c *Client) GetValidateAccountMove(id int64) (*ValidateAccountMove, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*vams) == 0 {
+		return nil, nil
+	}
 	return &((*vams)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindValidateAccountMove(criteria *Criteria) (*ValidateAccountMo
 	vams := &ValidateAccountMoves{}
 	if err := c.SearchRead(ValidateAccountMoveModel, criteria, NewOptions().Limit(1), vams); err != nil {
 		return nil, err
+	}
+	if len(*vams) == 0 {
+		return nil, nil
 	}
 	return &((*vams)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindValidateAccountMoveId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ValidateAccountMoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

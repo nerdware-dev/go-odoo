@@ -95,6 +95,9 @@ func (c *Client) GetIrAttachment(id int64) (*IrAttachment, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ias) == 0 {
+		return nil, nil
+	}
 	return &((*ias)[0]), nil
 }
 
@@ -112,6 +115,9 @@ func (c *Client) FindIrAttachment(criteria *Criteria) (*IrAttachment, error) {
 	ias := &IrAttachments{}
 	if err := c.SearchRead(IrAttachmentModel, criteria, NewOptions().Limit(1), ias); err != nil {
 		return nil, err
+	}
+	if len(*ias) == 0 {
+		return nil, nil
 	}
 	return &((*ias)[0]), nil
 }
@@ -137,6 +143,9 @@ func (c *Client) FindIrAttachmentId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(IrAttachmentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

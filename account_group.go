@@ -75,6 +75,9 @@ func (c *Client) GetAccountGroup(id int64) (*AccountGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ags) == 0 {
+		return nil, nil
+	}
 	return &((*ags)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindAccountGroup(criteria *Criteria) (*AccountGroup, error) {
 	ags := &AccountGroups{}
 	if err := c.SearchRead(AccountGroupModel, criteria, NewOptions().Limit(1), ags); err != nil {
 		return nil, err
+	}
+	if len(*ags) == 0 {
+		return nil, nil
 	}
 	return &((*ags)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindAccountGroupId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(AccountGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

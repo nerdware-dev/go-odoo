@@ -76,6 +76,9 @@ func (c *Client) GetPrivacyLookupWizard(id int64) (*PrivacyLookupWizard, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*plws) == 0 {
+		return nil, nil
+	}
 	return &((*plws)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindPrivacyLookupWizard(criteria *Criteria) (*PrivacyLookupWiza
 	plws := &PrivacyLookupWizards{}
 	if err := c.SearchRead(PrivacyLookupWizardModel, criteria, NewOptions().Limit(1), plws); err != nil {
 		return nil, err
+	}
+	if len(*plws) == 0 {
+		return nil, nil
 	}
 	return &((*plws)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindPrivacyLookupWizardId(criteria *Criteria, options *Options)
 	ids, err := c.Search(PrivacyLookupWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

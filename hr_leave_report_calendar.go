@@ -78,6 +78,9 @@ func (c *Client) GetHrLeaveReportCalendar(id int64) (*HrLeaveReportCalendar, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlrcs) == 0 {
+		return nil, nil
+	}
 	return &((*hlrcs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindHrLeaveReportCalendar(criteria *Criteria) (*HrLeaveReportCa
 	hlrcs := &HrLeaveReportCalendars{}
 	if err := c.SearchRead(HrLeaveReportCalendarModel, criteria, NewOptions().Limit(1), hlrcs); err != nil {
 		return nil, err
+	}
+	if len(*hlrcs) == 0 {
+		return nil, nil
 	}
 	return &((*hlrcs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindHrLeaveReportCalendarId(criteria *Criteria, options *Option
 	ids, err := c.Search(HrLeaveReportCalendarModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

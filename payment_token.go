@@ -15,6 +15,7 @@ type PaymentToken struct {
 	ProviderCode      *Selection `xmlrpc:"provider_code,omitempty" json:"provider_code,omitempty"`
 	ProviderId        *Many2One  `xmlrpc:"provider_id,omitempty" json:"provider_id,omitempty"`
 	ProviderRef       *String    `xmlrpc:"provider_ref,omitempty" json:"provider_ref,omitempty"`
+	SddMandateId      *Many2One  `xmlrpc:"sdd_mandate_id,omitempty" json:"sdd_mandate_id,omitempty"`
 	TransactionIds    *Relation  `xmlrpc:"transaction_ids,omitempty" json:"transaction_ids,omitempty"`
 	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
 	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
@@ -79,6 +80,9 @@ func (c *Client) GetPaymentToken(id int64) (*PaymentToken, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -96,6 +100,9 @@ func (c *Client) FindPaymentToken(criteria *Criteria) (*PaymentToken, error) {
 	pts := &PaymentTokens{}
 	if err := c.SearchRead(PaymentTokenModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -121,6 +128,9 @@ func (c *Client) FindPaymentTokenId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(PaymentTokenModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

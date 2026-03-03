@@ -89,6 +89,9 @@ func (c *Client) GetTimesheetsAnalysisReport(id int64) (*TimesheetsAnalysisRepor
 	if err != nil {
 		return nil, err
 	}
+	if len(*tars) == 0 {
+		return nil, nil
+	}
 	return &((*tars)[0]), nil
 }
 
@@ -106,6 +109,9 @@ func (c *Client) FindTimesheetsAnalysisReport(criteria *Criteria) (*TimesheetsAn
 	tars := &TimesheetsAnalysisReports{}
 	if err := c.SearchRead(TimesheetsAnalysisReportModel, criteria, NewOptions().Limit(1), tars); err != nil {
 		return nil, err
+	}
+	if len(*tars) == 0 {
+		return nil, nil
 	}
 	return &((*tars)[0]), nil
 }
@@ -131,6 +137,9 @@ func (c *Client) FindTimesheetsAnalysisReportId(criteria *Criteria, options *Opt
 	ids, err := c.Search(TimesheetsAnalysisReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

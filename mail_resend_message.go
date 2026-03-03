@@ -75,6 +75,9 @@ func (c *Client) GetMailResendMessage(id int64) (*MailResendMessage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mrms) == 0 {
+		return nil, nil
+	}
 	return &((*mrms)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindMailResendMessage(criteria *Criteria) (*MailResendMessage, 
 	mrms := &MailResendMessages{}
 	if err := c.SearchRead(MailResendMessageModel, criteria, NewOptions().Limit(1), mrms); err != nil {
 		return nil, err
+	}
+	if len(*mrms) == 0 {
+		return nil, nil
 	}
 	return &((*mrms)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindMailResendMessageId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailResendMessageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -70,6 +70,9 @@ func (c *Client) GetConfirmStockSms(id int64) (*ConfirmStockSms, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*csss) == 0 {
+		return nil, nil
+	}
 	return &((*csss)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindConfirmStockSms(criteria *Criteria) (*ConfirmStockSms, erro
 	csss := &ConfirmStockSmss{}
 	if err := c.SearchRead(ConfirmStockSmsModel, criteria, NewOptions().Limit(1), csss); err != nil {
 		return nil, err
+	}
+	if len(*csss) == 0 {
+		return nil, nil
 	}
 	return &((*csss)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindConfirmStockSmsId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ConfirmStockSmsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

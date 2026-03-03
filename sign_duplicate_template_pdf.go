@@ -72,6 +72,9 @@ func (c *Client) GetSignDuplicateTemplatePdf(id int64) (*SignDuplicateTemplatePd
 	if err != nil {
 		return nil, err
 	}
+	if len(*sdtps) == 0 {
+		return nil, nil
+	}
 	return &((*sdtps)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindSignDuplicateTemplatePdf(criteria *Criteria) (*SignDuplicat
 	sdtps := &SignDuplicateTemplatePdfs{}
 	if err := c.SearchRead(SignDuplicateTemplatePdfModel, criteria, NewOptions().Limit(1), sdtps); err != nil {
 		return nil, err
+	}
+	if len(*sdtps) == 0 {
+		return nil, nil
 	}
 	return &((*sdtps)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindSignDuplicateTemplatePdfId(criteria *Criteria, options *Opt
 	ids, err := c.Search(SignDuplicateTemplatePdfModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

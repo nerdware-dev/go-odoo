@@ -77,6 +77,9 @@ func (c *Client) GetHrTimesheetMergeWizard(id int64) (*HrTimesheetMergeWizard, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*hmws) == 0 {
+		return nil, nil
+	}
 	return &((*hmws)[0]), nil
 }
 
@@ -94,6 +97,9 @@ func (c *Client) FindHrTimesheetMergeWizard(criteria *Criteria) (*HrTimesheetMer
 	hmws := &HrTimesheetMergeWizards{}
 	if err := c.SearchRead(HrTimesheetMergeWizardModel, criteria, NewOptions().Limit(1), hmws); err != nil {
 		return nil, err
+	}
+	if len(*hmws) == 0 {
+		return nil, nil
 	}
 	return &((*hmws)[0]), nil
 }
@@ -119,6 +125,9 @@ func (c *Client) FindHrTimesheetMergeWizardId(criteria *Criteria, options *Optio
 	ids, err := c.Search(HrTimesheetMergeWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

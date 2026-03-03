@@ -95,6 +95,9 @@ func (c *Client) GetHrJob(id int64) (*HrJob, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hjs) == 0 {
+		return nil, nil
+	}
 	return &((*hjs)[0]), nil
 }
 
@@ -112,6 +115,9 @@ func (c *Client) FindHrJob(criteria *Criteria) (*HrJob, error) {
 	hjs := &HrJobs{}
 	if err := c.SearchRead(HrJobModel, criteria, NewOptions().Limit(1), hjs); err != nil {
 		return nil, err
+	}
+	if len(*hjs) == 0 {
+		return nil, nil
 	}
 	return &((*hjs)[0]), nil
 }
@@ -137,6 +143,9 @@ func (c *Client) FindHrJobId(criteria *Criteria, options *Options) (int64, error
 	ids, err := c.Search(HrJobModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

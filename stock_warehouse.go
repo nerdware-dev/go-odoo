@@ -97,6 +97,9 @@ func (c *Client) GetStockWarehouse(id int64) (*StockWarehouse, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sws) == 0 {
+		return nil, nil
+	}
 	return &((*sws)[0]), nil
 }
 
@@ -114,6 +117,9 @@ func (c *Client) FindStockWarehouse(criteria *Criteria) (*StockWarehouse, error)
 	sws := &StockWarehouses{}
 	if err := c.SearchRead(StockWarehouseModel, criteria, NewOptions().Limit(1), sws); err != nil {
 		return nil, err
+	}
+	if len(*sws) == 0 {
+		return nil, nil
 	}
 	return &((*sws)[0]), nil
 }
@@ -139,6 +145,9 @@ func (c *Client) FindStockWarehouseId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(StockWarehouseModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

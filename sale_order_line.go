@@ -33,6 +33,7 @@ type SaleOrderLine struct {
 	Name                              *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
 	OrderId                           *Many2One   `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
 	OrderPartnerId                    *Many2One   `xmlrpc:"order_partner_id,omitempty" json:"order_partner_id,omitempty"`
+	ParentLineId                      *Many2One   `xmlrpc:"parent_line_id,omitempty" json:"parent_line_id,omitempty"`
 	PriceReduceTaxexcl                *Float      `xmlrpc:"price_reduce_taxexcl,omitempty" json:"price_reduce_taxexcl,omitempty"`
 	PriceReduceTaxinc                 *Float      `xmlrpc:"price_reduce_taxinc,omitempty" json:"price_reduce_taxinc,omitempty"`
 	PriceSubtotal                     *Float      `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
@@ -64,6 +65,8 @@ type SaleOrderLine struct {
 	QtyToDeliver                      *Float      `xmlrpc:"qty_to_deliver,omitempty" json:"qty_to_deliver,omitempty"`
 	QtyToInvoice                      *Float      `xmlrpc:"qty_to_invoice,omitempty" json:"qty_to_invoice,omitempty"`
 	ReachedMilestonesIds              *Relation   `xmlrpc:"reached_milestones_ids,omitempty" json:"reached_milestones_ids,omitempty"`
+	RecurringInvoice                  *Bool       `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
+	RecurringMonthly                  *Float      `xmlrpc:"recurring_monthly,omitempty" json:"recurring_monthly,omitempty"`
 	RemainingHours                    *Float      `xmlrpc:"remaining_hours,omitempty" json:"remaining_hours,omitempty"`
 	RemainingHoursAvailable           *Bool       `xmlrpc:"remaining_hours_available,omitempty" json:"remaining_hours_available,omitempty"`
 	RouteId                           *Many2One   `xmlrpc:"route_id,omitempty" json:"route_id,omitempty"`
@@ -144,6 +147,9 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sols) == 0 {
+		return nil, nil
+	}
 	return &((*sols)[0]), nil
 }
 
@@ -151,7 +157,7 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 func (c *Client) GetSaleOrderLines(ids []int64) (*SaleOrderLines, error) {
 	sols := &SaleOrderLines{}
 	if err := c.Read(SaleOrderLineModel, ids, nil, sols); err != nil {
-		return sols, err
+		return nil, err
 	}
 	return sols, nil
 }
@@ -161,6 +167,9 @@ func (c *Client) FindSaleOrderLine(criteria *Criteria) (*SaleOrderLine, error) {
 	sols := &SaleOrderLines{}
 	if err := c.SearchRead(SaleOrderLineModel, criteria, NewOptions().Limit(1), sols); err != nil {
 		return nil, err
+	}
+	if len(*sols) == 0 {
+		return nil, nil
 	}
 	return &((*sols)[0]), nil
 }
@@ -186,6 +195,9 @@ func (c *Client) FindSaleOrderLineId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(SaleOrderLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

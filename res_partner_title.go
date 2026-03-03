@@ -71,6 +71,9 @@ func (c *Client) GetResPartnerTitle(id int64) (*ResPartnerTitle, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpts) == 0 {
+		return nil, nil
+	}
 	return &((*rpts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindResPartnerTitle(criteria *Criteria) (*ResPartnerTitle, erro
 	rpts := &ResPartnerTitles{}
 	if err := c.SearchRead(ResPartnerTitleModel, criteria, NewOptions().Limit(1), rpts); err != nil {
 		return nil, err
+	}
+	if len(*rpts) == 0 {
+		return nil, nil
 	}
 	return &((*rpts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindResPartnerTitleId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResPartnerTitleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

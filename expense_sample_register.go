@@ -81,6 +81,9 @@ func (c *Client) GetExpenseSampleRegister(id int64) (*ExpenseSampleRegister, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*esrs) == 0 {
+		return nil, nil
+	}
 	return &((*esrs)[0]), nil
 }
 
@@ -98,6 +101,9 @@ func (c *Client) FindExpenseSampleRegister(criteria *Criteria) (*ExpenseSampleRe
 	esrs := &ExpenseSampleRegisters{}
 	if err := c.SearchRead(ExpenseSampleRegisterModel, criteria, NewOptions().Limit(1), esrs); err != nil {
 		return nil, err
+	}
+	if len(*esrs) == 0 {
+		return nil, nil
 	}
 	return &((*esrs)[0]), nil
 }
@@ -123,6 +129,9 @@ func (c *Client) FindExpenseSampleRegisterId(criteria *Criteria, options *Option
 	ids, err := c.Search(ExpenseSampleRegisterModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

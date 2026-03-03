@@ -72,6 +72,9 @@ func (c *Client) GetHrEmployeeDeleteWizard(id int64) (*HrEmployeeDeleteWizard, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*hedws) == 0 {
+		return nil, nil
+	}
 	return &((*hedws)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindHrEmployeeDeleteWizard(criteria *Criteria) (*HrEmployeeDele
 	hedws := &HrEmployeeDeleteWizards{}
 	if err := c.SearchRead(HrEmployeeDeleteWizardModel, criteria, NewOptions().Limit(1), hedws); err != nil {
 		return nil, err
+	}
+	if len(*hedws) == 0 {
+		return nil, nil
 	}
 	return &((*hedws)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindHrEmployeeDeleteWizardId(criteria *Criteria, options *Optio
 	ids, err := c.Search(HrEmployeeDeleteWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

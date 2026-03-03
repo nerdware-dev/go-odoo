@@ -24,6 +24,7 @@ type ResCompany struct {
 	AccountRevaluationIncomeProvisionAccountId  *Many2One   `xmlrpc:"account_revaluation_income_provision_account_id,omitempty" json:"account_revaluation_income_provision_account_id,omitempty"`
 	AccountRevaluationJournalId                 *Many2One   `xmlrpc:"account_revaluation_journal_id,omitempty" json:"account_revaluation_journal_id,omitempty"`
 	AccountSaleTaxId                            *Many2One   `xmlrpc:"account_sale_tax_id,omitempty" json:"account_sale_tax_id,omitempty"`
+	AccountSepaLei                              *String     `xmlrpc:"account_sepa_lei,omitempty" json:"account_sepa_lei,omitempty"`
 	AccountStorno                               *Bool       `xmlrpc:"account_storno,omitempty" json:"account_storno,omitempty"`
 	AccountTaxPeriodicity                       *Selection  `xmlrpc:"account_tax_periodicity,omitempty" json:"account_tax_periodicity,omitempty"`
 	AccountTaxPeriodicityJournalId              *Many2One   `xmlrpc:"account_tax_periodicity_journal_id,omitempty" json:"account_tax_periodicity_journal_id,omitempty"`
@@ -45,6 +46,7 @@ type ResCompany struct {
 	AttendanceKioskUrl                          *String     `xmlrpc:"attendance_kiosk_url,omitempty" json:"attendance_kiosk_url,omitempty"`
 	AttendanceKioskUsePin                       *Bool       `xmlrpc:"attendance_kiosk_use_pin,omitempty" json:"attendance_kiosk_use_pin,omitempty"`
 	AutomaticEntryDefaultJournalId              *Many2One   `xmlrpc:"automatic_entry_default_journal_id,omitempty" json:"automatic_entry_default_journal_id,omitempty"`
+	BackgroundImage                             *String     `xmlrpc:"background_image,omitempty" json:"background_image,omitempty"`
 	BankAccountCodePrefix                       *String     `xmlrpc:"bank_account_code_prefix,omitempty" json:"bank_account_code_prefix,omitempty"`
 	BankIds                                     *Relation   `xmlrpc:"bank_ids,omitempty" json:"bank_ids,omitempty"`
 	BankJournalIds                              *Relation   `xmlrpc:"bank_journal_ids,omitempty" json:"bank_journal_ids,omitempty"`
@@ -82,6 +84,9 @@ type ResCompany struct {
 	DisplayInvoiceAmountTotalWords              *Bool       `xmlrpc:"display_invoice_amount_total_words,omitempty" json:"display_invoice_amount_total_words,omitempty"`
 	DisplayName                                 *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
 	DocumentsAccountSettings                    *Bool       `xmlrpc:"documents_account_settings,omitempty" json:"documents_account_settings,omitempty"`
+	DocumentsFleetFolder                        *Many2One   `xmlrpc:"documents_fleet_folder,omitempty" json:"documents_fleet_folder,omitempty"`
+	DocumentsFleetSettings                      *Bool       `xmlrpc:"documents_fleet_settings,omitempty" json:"documents_fleet_settings,omitempty"`
+	DocumentsFleetTags                          *Relation   `xmlrpc:"documents_fleet_tags,omitempty" json:"documents_fleet_tags,omitempty"`
 	DocumentsHrFolder                           *Many2One   `xmlrpc:"documents_hr_folder,omitempty" json:"documents_hr_folder,omitempty"`
 	DocumentsHrSettings                         *Bool       `xmlrpc:"documents_hr_settings,omitempty" json:"documents_hr_settings,omitempty"`
 	DocumentsProductSettings                    *Bool       `xmlrpc:"documents_product_settings,omitempty" json:"documents_product_settings,omitempty"`
@@ -194,8 +199,12 @@ type ResCompany struct {
 	SaleHeaderName                              *String     `xmlrpc:"sale_header_name,omitempty" json:"sale_header_name,omitempty"`
 	SaleOnboardingPaymentMethod                 *Selection  `xmlrpc:"sale_onboarding_payment_method,omitempty" json:"sale_onboarding_payment_method,omitempty"`
 	SaleOrderTemplateId                         *Many2One   `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
+	SddCreditorIdentifier                       *String     `xmlrpc:"sdd_creditor_identifier,omitempty" json:"sdd_creditor_identifier,omitempty"`
 	SecondaryColor                              *String     `xmlrpc:"secondary_color,omitempty" json:"secondary_color,omitempty"`
 	SecurityLead                                *Float      `xmlrpc:"security_lead,omitempty" json:"security_lead,omitempty"`
+	SepaInitiatingPartyName                     *String     `xmlrpc:"sepa_initiating_party_name,omitempty" json:"sepa_initiating_party_name,omitempty"`
+	SepaOrgidId                                 *String     `xmlrpc:"sepa_orgid_id,omitempty" json:"sepa_orgid_id,omitempty"`
+	SepaOrgidIssr                               *String     `xmlrpc:"sepa_orgid_issr,omitempty" json:"sepa_orgid_issr,omitempty"`
 	Sequence                                    *Int        `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
 	SignTerms                                   *String     `xmlrpc:"sign_terms,omitempty" json:"sign_terms,omitempty"`
 	SignTermsHtml                               *String     `xmlrpc:"sign_terms_html,omitempty" json:"sign_terms_html,omitempty"`
@@ -210,6 +219,7 @@ type ResCompany struct {
 	StockSmsConfirmationTemplateId              *Many2One   `xmlrpc:"stock_sms_confirmation_template_id,omitempty" json:"stock_sms_confirmation_template_id,omitempty"`
 	Street                                      *String     `xmlrpc:"street,omitempty" json:"street,omitempty"`
 	Street2                                     *String     `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	SubscriptionDefaultPlanId                   *Many2One   `xmlrpc:"subscription_default_plan_id,omitempty" json:"subscription_default_plan_id,omitempty"`
 	TaxCalculationRoundingMethod                *Selection  `xmlrpc:"tax_calculation_rounding_method,omitempty" json:"tax_calculation_rounding_method,omitempty"`
 	TaxCashBasisJournalId                       *Many2One   `xmlrpc:"tax_cash_basis_journal_id,omitempty" json:"tax_cash_basis_journal_id,omitempty"`
 	TaxExigibility                              *Bool       `xmlrpc:"tax_exigibility,omitempty" json:"tax_exigibility,omitempty"`
@@ -297,6 +307,9 @@ func (c *Client) GetResCompany(id int64) (*ResCompany, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -314,6 +327,9 @@ func (c *Client) FindResCompany(criteria *Criteria) (*ResCompany, error) {
 	rcs := &ResCompanys{}
 	if err := c.SearchRead(ResCompanyModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -339,6 +355,9 @@ func (c *Client) FindResCompanyId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(ResCompanyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

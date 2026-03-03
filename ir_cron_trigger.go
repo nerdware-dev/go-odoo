@@ -71,6 +71,9 @@ func (c *Client) GetIrCronTrigger(id int64) (*IrCronTrigger, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*icts) == 0 {
+		return nil, nil
+	}
 	return &((*icts)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindIrCronTrigger(criteria *Criteria) (*IrCronTrigger, error) {
 	icts := &IrCronTriggers{}
 	if err := c.SearchRead(IrCronTriggerModel, criteria, NewOptions().Limit(1), icts); err != nil {
 		return nil, err
+	}
+	if len(*icts) == 0 {
+		return nil, nil
 	}
 	return &((*icts)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindIrCronTriggerId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrCronTriggerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

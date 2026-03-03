@@ -71,6 +71,9 @@ func (c *Client) GetStockInventoryAdjustmentName(id int64) (*StockInventoryAdjus
 	if err != nil {
 		return nil, err
 	}
+	if len(*sians) == 0 {
+		return nil, nil
+	}
 	return &((*sians)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindStockInventoryAdjustmentName(criteria *Criteria) (*StockInv
 	sians := &StockInventoryAdjustmentNames{}
 	if err := c.SearchRead(StockInventoryAdjustmentNameModel, criteria, NewOptions().Limit(1), sians); err != nil {
 		return nil, err
+	}
+	if len(*sians) == 0 {
+		return nil, nil
 	}
 	return &((*sians)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindStockInventoryAdjustmentNameId(criteria *Criteria, options 
 	ids, err := c.Search(StockInventoryAdjustmentNameModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

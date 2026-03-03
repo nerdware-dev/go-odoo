@@ -76,6 +76,9 @@ func (c *Client) GetSmsResendRecipient(id int64) (*SmsResendRecipient, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srrs) == 0 {
+		return nil, nil
+	}
 	return &((*srrs)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindSmsResendRecipient(criteria *Criteria) (*SmsResendRecipient
 	srrs := &SmsResendRecipients{}
 	if err := c.SearchRead(SmsResendRecipientModel, criteria, NewOptions().Limit(1), srrs); err != nil {
 		return nil, err
+	}
+	if len(*srrs) == 0 {
+		return nil, nil
 	}
 	return &((*srrs)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindSmsResendRecipientId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(SmsResendRecipientModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

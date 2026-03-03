@@ -88,6 +88,9 @@ func (c *Client) GetProductSupplierinfo(id int64) (*ProductSupplierinfo, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*pss) == 0 {
+		return nil, nil
+	}
 	return &((*pss)[0]), nil
 }
 
@@ -105,6 +108,9 @@ func (c *Client) FindProductSupplierinfo(criteria *Criteria) (*ProductSupplierin
 	pss := &ProductSupplierinfos{}
 	if err := c.SearchRead(ProductSupplierinfoModel, criteria, NewOptions().Limit(1), pss); err != nil {
 		return nil, err
+	}
+	if len(*pss) == 0 {
+		return nil, nil
 	}
 	return &((*pss)[0]), nil
 }
@@ -130,6 +136,9 @@ func (c *Client) FindProductSupplierinfoId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ProductSupplierinfoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

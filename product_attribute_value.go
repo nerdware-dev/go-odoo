@@ -80,6 +80,9 @@ func (c *Client) GetProductAttributeValue(id int64) (*ProductAttributeValue, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*pavs) == 0 {
+		return nil, nil
+	}
 	return &((*pavs)[0]), nil
 }
 
@@ -97,6 +100,9 @@ func (c *Client) FindProductAttributeValue(criteria *Criteria) (*ProductAttribut
 	pavs := &ProductAttributeValues{}
 	if err := c.SearchRead(ProductAttributeValueModel, criteria, NewOptions().Limit(1), pavs); err != nil {
 		return nil, err
+	}
+	if len(*pavs) == 0 {
+		return nil, nil
 	}
 	return &((*pavs)[0]), nil
 }
@@ -122,6 +128,9 @@ func (c *Client) FindProductAttributeValueId(criteria *Criteria, options *Option
 	ids, err := c.Search(ProductAttributeValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

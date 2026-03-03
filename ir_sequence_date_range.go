@@ -74,6 +74,9 @@ func (c *Client) GetIrSequenceDateRange(id int64) (*IrSequenceDateRange, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*isds) == 0 {
+		return nil, nil
+	}
 	return &((*isds)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindIrSequenceDateRange(criteria *Criteria) (*IrSequenceDateRan
 	isds := &IrSequenceDateRanges{}
 	if err := c.SearchRead(IrSequenceDateRangeModel, criteria, NewOptions().Limit(1), isds); err != nil {
 		return nil, err
+	}
+	if len(*isds) == 0 {
+		return nil, nil
 	}
 	return &((*isds)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindIrSequenceDateRangeId(criteria *Criteria, options *Options)
 	ids, err := c.Search(IrSequenceDateRangeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

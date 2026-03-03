@@ -71,6 +71,9 @@ func (c *Client) GetCrmLeadPlsUpdate(id int64) (*CrmLeadPlsUpdate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*clpus) == 0 {
+		return nil, nil
+	}
 	return &((*clpus)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindCrmLeadPlsUpdate(criteria *Criteria) (*CrmLeadPlsUpdate, er
 	clpus := &CrmLeadPlsUpdates{}
 	if err := c.SearchRead(CrmLeadPlsUpdateModel, criteria, NewOptions().Limit(1), clpus); err != nil {
 		return nil, err
+	}
+	if len(*clpus) == 0 {
+		return nil, nil
 	}
 	return &((*clpus)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindCrmLeadPlsUpdateId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(CrmLeadPlsUpdateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

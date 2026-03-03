@@ -78,6 +78,9 @@ func (c *Client) GetPaymentRefundWizard(id int64) (*PaymentRefundWizard, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*prws) == 0 {
+		return nil, nil
+	}
 	return &((*prws)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindPaymentRefundWizard(criteria *Criteria) (*PaymentRefundWiza
 	prws := &PaymentRefundWizards{}
 	if err := c.SearchRead(PaymentRefundWizardModel, criteria, NewOptions().Limit(1), prws); err != nil {
 		return nil, err
+	}
+	if len(*prws) == 0 {
+		return nil, nil
 	}
 	return &((*prws)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindPaymentRefundWizardId(criteria *Criteria, options *Options)
 	ids, err := c.Search(PaymentRefundWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -84,6 +84,9 @@ func (c *Client) GetProductReplenish(id int64) (*ProductReplenish, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*prs) == 0 {
+		return nil, nil
+	}
 	return &((*prs)[0]), nil
 }
 
@@ -101,6 +104,9 @@ func (c *Client) FindProductReplenish(criteria *Criteria) (*ProductReplenish, er
 	prs := &ProductReplenishs{}
 	if err := c.SearchRead(ProductReplenishModel, criteria, NewOptions().Limit(1), prs); err != nil {
 		return nil, err
+	}
+	if len(*prs) == 0 {
+		return nil, nil
 	}
 	return &((*prs)[0]), nil
 }
@@ -126,6 +132,9 @@ func (c *Client) FindProductReplenishId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProductReplenishModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

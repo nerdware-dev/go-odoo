@@ -72,6 +72,9 @@ func (c *Client) GetStockBackorderConfirmationLine(id int64) (*StockBackorderCon
 	if err != nil {
 		return nil, err
 	}
+	if len(*sbcls) == 0 {
+		return nil, nil
+	}
 	return &((*sbcls)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindStockBackorderConfirmationLine(criteria *Criteria) (*StockB
 	sbcls := &StockBackorderConfirmationLines{}
 	if err := c.SearchRead(StockBackorderConfirmationLineModel, criteria, NewOptions().Limit(1), sbcls); err != nil {
 		return nil, err
+	}
+	if len(*sbcls) == 0 {
+		return nil, nil
 	}
 	return &((*sbcls)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindStockBackorderConfirmationLineId(criteria *Criteria, option
 	ids, err := c.Search(StockBackorderConfirmationLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }
