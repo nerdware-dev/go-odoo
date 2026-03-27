@@ -2,92 +2,90 @@ package odoo
 
 // SaleOrderLine represents sale.order.line model.
 type SaleOrderLine struct {
-	LastUpdate                        *Time      `xmlrpc:"__last_update,omitempty"`
-	AnalyticLineIds                   *Relation  `xmlrpc:"analytic_line_ids,omitempty"`
-	AnalyticTagIds                    *Relation  `xmlrpc:"analytic_tag_ids,omitempty"`
-	CompanyId                         *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate                        *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                         *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                        *Many2One  `xmlrpc:"currency_id,omitempty"`
-	CustomerLead                      *Float     `xmlrpc:"customer_lead,omitempty"`
-	Discount                          *Float     `xmlrpc:"discount,omitempty"`
-	DisplayName                       *String    `xmlrpc:"display_name,omitempty"`
-	DisplayQtyWidget                  *Bool      `xmlrpc:"display_qty_widget,omitempty"`
-	DisplayType                       *Selection `xmlrpc:"display_type,omitempty"`
-	FreeQtyToday                      *Float     `xmlrpc:"free_qty_today,omitempty"`
-	Id                                *Int       `xmlrpc:"id,omitempty"`
-	InvoiceLines                      *Relation  `xmlrpc:"invoice_lines,omitempty"`
-	InvoiceStatus                     *Selection `xmlrpc:"invoice_status,omitempty"`
-	IsDelivery                        *Bool      `xmlrpc:"is_delivery,omitempty"`
-	IsDownpayment                     *Bool      `xmlrpc:"is_downpayment,omitempty"`
-	IsExpense                         *Bool      `xmlrpc:"is_expense,omitempty"`
-	IsLate                            *Bool      `xmlrpc:"is_late,omitempty"`
-	IsMto                             *Bool      `xmlrpc:"is_mto,omitempty"`
-	IsProductRentable                 *Bool      `xmlrpc:"is_product_rentable,omitempty"`
-	IsRental                          *Bool      `xmlrpc:"is_rental,omitempty"`
-	IsService                         *Bool      `xmlrpc:"is_service,omitempty"`
-	Margin                            *Float     `xmlrpc:"margin,omitempty"`
-	MoveIds                           *Relation  `xmlrpc:"move_ids,omitempty"`
-	Name                              *String    `xmlrpc:"name,omitempty"`
-	OrderId                           *Many2One  `xmlrpc:"order_id,omitempty"`
-	OrderPartnerId                    *Many2One  `xmlrpc:"order_partner_id,omitempty"`
-	PickedupLotIds                    *Relation  `xmlrpc:"pickedup_lot_ids,omitempty"`
-	PickupDate                        *Time      `xmlrpc:"pickup_date,omitempty"`
-	PriceReduce                       *Float     `xmlrpc:"price_reduce,omitempty"`
-	PriceReduceTaxexcl                *Float     `xmlrpc:"price_reduce_taxexcl,omitempty"`
-	PriceReduceTaxinc                 *Float     `xmlrpc:"price_reduce_taxinc,omitempty"`
-	PriceSubtotal                     *Float     `xmlrpc:"price_subtotal,omitempty"`
-	PriceTax                          *Float     `xmlrpc:"price_tax,omitempty"`
-	PriceTotal                        *Float     `xmlrpc:"price_total,omitempty"`
-	PriceUnit                         *Float     `xmlrpc:"price_unit,omitempty"`
-	ProductCustomAttributeValueIds    *Relation  `xmlrpc:"product_custom_attribute_value_ids,omitempty"`
-	ProductId                         *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductNoVariantAttributeValueIds *Relation  `xmlrpc:"product_no_variant_attribute_value_ids,omitempty"`
-	ProductPackaging                  *Many2One  `xmlrpc:"product_packaging,omitempty"`
-	ProductQty                        *Float     `xmlrpc:"product_qty,omitempty"`
-	ProductTemplateId                 *Many2One  `xmlrpc:"product_template_id,omitempty"`
-	ProductType                       *Selection `xmlrpc:"product_type,omitempty"`
-	ProductUom                        *Many2One  `xmlrpc:"product_uom,omitempty"`
-	ProductUomCategoryId              *Many2One  `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomQty                     *Float     `xmlrpc:"product_uom_qty,omitempty"`
-	ProductUpdatable                  *Bool      `xmlrpc:"product_updatable,omitempty"`
-	ProjectId                         *Many2One  `xmlrpc:"project_id,omitempty"`
-	PurchaseLineCount                 *Int       `xmlrpc:"purchase_line_count,omitempty"`
-	PurchaseLineIds                   *Relation  `xmlrpc:"purchase_line_ids,omitempty"`
-	PurchasePrice                     *Float     `xmlrpc:"purchase_price,omitempty"`
-	QtyAvailableToday                 *Float     `xmlrpc:"qty_available_today,omitempty"`
-	QtyDelivered                      *Float     `xmlrpc:"qty_delivered,omitempty"`
-	QtyDeliveredManual                *Float     `xmlrpc:"qty_delivered_manual,omitempty"`
-	QtyDeliveredMethod                *Selection `xmlrpc:"qty_delivered_method,omitempty"`
-	QtyInvoiced                       *Float     `xmlrpc:"qty_invoiced,omitempty"`
-	QtyReturned                       *Float     `xmlrpc:"qty_returned,omitempty"`
-	QtyToDeliver                      *Float     `xmlrpc:"qty_to_deliver,omitempty"`
-	QtyToInvoice                      *Float     `xmlrpc:"qty_to_invoice,omitempty"`
-	RecomputeDeliveryPrice            *Bool      `xmlrpc:"recompute_delivery_price,omitempty"`
-	RentalUpdatable                   *Bool      `xmlrpc:"rental_updatable,omitempty"`
-	ReportComputeDate                 *Time      `xmlrpc:"report_compute_date,omitempty"`
-	ReportLineIndex                   *Int       `xmlrpc:"report_line_index,omitempty"`
-	ReservationBegin                  *Time      `xmlrpc:"reservation_begin,omitempty"`
-	ReservedLotIds                    *Relation  `xmlrpc:"reserved_lot_ids,omitempty"`
-	ReturnDate                        *Time      `xmlrpc:"return_date,omitempty"`
-	ReturnedLotIds                    *Relation  `xmlrpc:"returned_lot_ids,omitempty"`
-	RouteId                           *Many2One  `xmlrpc:"route_id,omitempty"`
-	SaleOrderOptionIds                *Relation  `xmlrpc:"sale_order_option_ids,omitempty"`
-	SalesmanId                        *Many2One  `xmlrpc:"salesman_id,omitempty"`
-	ScheduledDate                     *Time      `xmlrpc:"scheduled_date,omitempty"`
-	Sequence                          *Int       `xmlrpc:"sequence,omitempty"`
-	State                             *Selection `xmlrpc:"state,omitempty"`
-	SubscriptionId                    *Many2One  `xmlrpc:"subscription_id,omitempty"`
-	TaskId                            *Many2One  `xmlrpc:"task_id,omitempty"`
-	TaxId                             *Relation  `xmlrpc:"tax_id,omitempty"`
-	Tracking                          *Selection `xmlrpc:"tracking,omitempty"`
-	UnavailableLotIds                 *Relation  `xmlrpc:"unavailable_lot_ids,omitempty"`
-	UntaxedAmountInvoiced             *Float     `xmlrpc:"untaxed_amount_invoiced,omitempty"`
-	UntaxedAmountToInvoice            *Float     `xmlrpc:"untaxed_amount_to_invoice,omitempty"`
-	VirtualAvailableAtDate            *Float     `xmlrpc:"virtual_available_at_date,omitempty"`
-	WarehouseId                       *Many2One  `xmlrpc:"warehouse_id,omitempty"`
-	WriteDate                         *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                          *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AnalyticDistribution              interface{} `xmlrpc:"analytic_distribution,omitempty" json:"analytic_distribution,omitempty"`
+	AnalyticDistributionSearch        interface{} `xmlrpc:"analytic_distribution_search,omitempty" json:"analytic_distribution_search,omitempty"`
+	AnalyticLineIds                   *Relation   `xmlrpc:"analytic_line_ids,omitempty" json:"analytic_line_ids,omitempty"`
+	AnalyticPrecision                 *Int        `xmlrpc:"analytic_precision,omitempty" json:"analytic_precision,omitempty"`
+	CompanyId                         *Many2One   `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                        *Time       `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                         *Many2One   `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                        *Many2One   `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	CustomerLead                      *Float      `xmlrpc:"customer_lead,omitempty" json:"customer_lead,omitempty"`
+	Discount                          *Float      `xmlrpc:"discount,omitempty" json:"discount,omitempty"`
+	DisplayName                       *String     `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayQtyWidget                  *Bool       `xmlrpc:"display_qty_widget,omitempty" json:"display_qty_widget,omitempty"`
+	DisplayType                       *Selection  `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	ExpenseId                         *Many2One   `xmlrpc:"expense_id,omitempty" json:"expense_id,omitempty"`
+	ForecastExpectedDate              *Time       `xmlrpc:"forecast_expected_date,omitempty" json:"forecast_expected_date,omitempty"`
+	FreeQtyToday                      *Float      `xmlrpc:"free_qty_today,omitempty" json:"free_qty_today,omitempty"`
+	HasDisplayedWarningUpsell         *Bool       `xmlrpc:"has_displayed_warning_upsell,omitempty" json:"has_displayed_warning_upsell,omitempty"`
+	Id                                *Int        `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoiceLines                      *Relation   `xmlrpc:"invoice_lines,omitempty" json:"invoice_lines,omitempty"`
+	InvoiceStatus                     *Selection  `xmlrpc:"invoice_status,omitempty" json:"invoice_status,omitempty"`
+	IsConfigurableProduct             *Bool       `xmlrpc:"is_configurable_product,omitempty" json:"is_configurable_product,omitempty"`
+	IsDownpayment                     *Bool       `xmlrpc:"is_downpayment,omitempty" json:"is_downpayment,omitempty"`
+	IsExpense                         *Bool       `xmlrpc:"is_expense,omitempty" json:"is_expense,omitempty"`
+	IsMto                             *Bool       `xmlrpc:"is_mto,omitempty" json:"is_mto,omitempty"`
+	IsService                         *Bool       `xmlrpc:"is_service,omitempty" json:"is_service,omitempty"`
+	Margin                            *Float      `xmlrpc:"margin,omitempty" json:"margin,omitempty"`
+	MarginPercent                     *Float      `xmlrpc:"margin_percent,omitempty" json:"margin_percent,omitempty"`
+	MoveIds                           *Relation   `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	Name                              *String     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OrderId                           *Many2One   `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	OrderPartnerId                    *Many2One   `xmlrpc:"order_partner_id,omitempty" json:"order_partner_id,omitempty"`
+	ParentLineId                      *Many2One   `xmlrpc:"parent_line_id,omitempty" json:"parent_line_id,omitempty"`
+	PriceReduceTaxexcl                *Float      `xmlrpc:"price_reduce_taxexcl,omitempty" json:"price_reduce_taxexcl,omitempty"`
+	PriceReduceTaxinc                 *Float      `xmlrpc:"price_reduce_taxinc,omitempty" json:"price_reduce_taxinc,omitempty"`
+	PriceSubtotal                     *Float      `xmlrpc:"price_subtotal,omitempty" json:"price_subtotal,omitempty"`
+	PriceTax                          *Float      `xmlrpc:"price_tax,omitempty" json:"price_tax,omitempty"`
+	PriceTotal                        *Float      `xmlrpc:"price_total,omitempty" json:"price_total,omitempty"`
+	PriceUnit                         *Float      `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	PricelistItemId                   *Many2One   `xmlrpc:"pricelist_item_id,omitempty" json:"pricelist_item_id,omitempty"`
+	ProductCustomAttributeValueIds    *Relation   `xmlrpc:"product_custom_attribute_value_ids,omitempty" json:"product_custom_attribute_value_ids,omitempty"`
+	ProductId                         *Many2One   `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductNoVariantAttributeValueIds *Relation   `xmlrpc:"product_no_variant_attribute_value_ids,omitempty" json:"product_no_variant_attribute_value_ids,omitempty"`
+	ProductPackagingId                *Many2One   `xmlrpc:"product_packaging_id,omitempty" json:"product_packaging_id,omitempty"`
+	ProductPackagingQty               *Float      `xmlrpc:"product_packaging_qty,omitempty" json:"product_packaging_qty,omitempty"`
+	ProductTemplateAttributeValueIds  *Relation   `xmlrpc:"product_template_attribute_value_ids,omitempty" json:"product_template_attribute_value_ids,omitempty"`
+	ProductTemplateId                 *Many2One   `xmlrpc:"product_template_id,omitempty" json:"product_template_id,omitempty"`
+	ProductType                       *Selection  `xmlrpc:"product_type,omitempty" json:"product_type,omitempty"`
+	ProductUom                        *Many2One   `xmlrpc:"product_uom,omitempty" json:"product_uom,omitempty"`
+	ProductUomCategoryId              *Many2One   `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomQty                     *Float      `xmlrpc:"product_uom_qty,omitempty" json:"product_uom_qty,omitempty"`
+	ProductUomReadonly                *Bool       `xmlrpc:"product_uom_readonly,omitempty" json:"product_uom_readonly,omitempty"`
+	ProductUpdatable                  *Bool       `xmlrpc:"product_updatable,omitempty" json:"product_updatable,omitempty"`
+	ProjectId                         *Many2One   `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	PurchaseLineCount                 *Int        `xmlrpc:"purchase_line_count,omitempty" json:"purchase_line_count,omitempty"`
+	PurchaseLineIds                   *Relation   `xmlrpc:"purchase_line_ids,omitempty" json:"purchase_line_ids,omitempty"`
+	PurchasePrice                     *Float      `xmlrpc:"purchase_price,omitempty" json:"purchase_price,omitempty"`
+	QtyAvailableToday                 *Float      `xmlrpc:"qty_available_today,omitempty" json:"qty_available_today,omitempty"`
+	QtyDelivered                      *Float      `xmlrpc:"qty_delivered,omitempty" json:"qty_delivered,omitempty"`
+	QtyDeliveredMethod                *Selection  `xmlrpc:"qty_delivered_method,omitempty" json:"qty_delivered_method,omitempty"`
+	QtyInvoiced                       *Float      `xmlrpc:"qty_invoiced,omitempty" json:"qty_invoiced,omitempty"`
+	QtyToDeliver                      *Float      `xmlrpc:"qty_to_deliver,omitempty" json:"qty_to_deliver,omitempty"`
+	QtyToInvoice                      *Float      `xmlrpc:"qty_to_invoice,omitempty" json:"qty_to_invoice,omitempty"`
+	ReachedMilestonesIds              *Relation   `xmlrpc:"reached_milestones_ids,omitempty" json:"reached_milestones_ids,omitempty"`
+	RecurringInvoice                  *Bool       `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
+	RecurringMonthly                  *Float      `xmlrpc:"recurring_monthly,omitempty" json:"recurring_monthly,omitempty"`
+	RemainingHours                    *Float      `xmlrpc:"remaining_hours,omitempty" json:"remaining_hours,omitempty"`
+	RemainingHoursAvailable           *Bool       `xmlrpc:"remaining_hours_available,omitempty" json:"remaining_hours_available,omitempty"`
+	RouteId                           *Many2One   `xmlrpc:"route_id,omitempty" json:"route_id,omitempty"`
+	SaleOrderOptionIds                *Relation   `xmlrpc:"sale_order_option_ids,omitempty" json:"sale_order_option_ids,omitempty"`
+	SalesmanId                        *Many2One   `xmlrpc:"salesman_id,omitempty" json:"salesman_id,omitempty"`
+	ScheduledDate                     *Time       `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
+	Sequence                          *Int        `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	State                             *Selection  `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TaskId                            *Many2One   `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TaxCalculationRoundingMethod      *Selection  `xmlrpc:"tax_calculation_rounding_method,omitempty" json:"tax_calculation_rounding_method,omitempty"`
+	TaxCountryId                      *Many2One   `xmlrpc:"tax_country_id,omitempty" json:"tax_country_id,omitempty"`
+	TaxId                             *Relation   `xmlrpc:"tax_id,omitempty" json:"tax_id,omitempty"`
+	TimesheetIds                      *Relation   `xmlrpc:"timesheet_ids,omitempty" json:"timesheet_ids,omitempty"`
+	UntaxedAmountInvoiced             *Float      `xmlrpc:"untaxed_amount_invoiced,omitempty" json:"untaxed_amount_invoiced,omitempty"`
+	UntaxedAmountToInvoice            *Float      `xmlrpc:"untaxed_amount_to_invoice,omitempty" json:"untaxed_amount_to_invoice,omitempty"`
+	VirtualAvailableAtDate            *Float      `xmlrpc:"virtual_available_at_date,omitempty" json:"virtual_available_at_date,omitempty"`
+	WarehouseId                       *Many2One   `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WriteDate                         *Time       `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                          *Many2One   `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderLines represents array of sale.order.line model.
@@ -149,6 +147,9 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sols) == 0 {
+		return nil, nil
+	}
 	return &((*sols)[0]), nil
 }
 
@@ -166,6 +167,9 @@ func (c *Client) FindSaleOrderLine(criteria *Criteria) (*SaleOrderLine, error) {
 	sols := &SaleOrderLines{}
 	if err := c.SearchRead(SaleOrderLineModel, criteria, NewOptions().Limit(1), sols); err != nil {
 		return nil, err
+	}
+	if len(*sols) == 0 {
+		return nil, nil
 	}
 	return &((*sols)[0]), nil
 }
@@ -191,6 +195,9 @@ func (c *Client) FindSaleOrderLineId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(SaleOrderLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

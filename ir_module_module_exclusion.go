@@ -2,17 +2,16 @@ package odoo
 
 // IrModuleModuleExclusion represents ir.module.module.exclusion model.
 type IrModuleModuleExclusion struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	ExclusionId *Many2One  `xmlrpc:"exclusion_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	ModuleId    *Many2One  `xmlrpc:"module_id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExclusionId *Many2One  `xmlrpc:"exclusion_id,omitempty" json:"exclusion_id,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId    *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModuleModuleExclusions represents array of ir.module.module.exclusion model.
@@ -74,6 +73,9 @@ func (c *Client) GetIrModuleModuleExclusion(id int64) (*IrModuleModuleExclusion,
 	if err != nil {
 		return nil, err
 	}
+	if len(*immes) == 0 {
+		return nil, nil
+	}
 	return &((*immes)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindIrModuleModuleExclusion(criteria *Criteria) (*IrModuleModul
 	immes := &IrModuleModuleExclusions{}
 	if err := c.SearchRead(IrModuleModuleExclusionModel, criteria, NewOptions().Limit(1), immes); err != nil {
 		return nil, err
+	}
+	if len(*immes) == 0 {
+		return nil, nil
 	}
 	return &((*immes)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindIrModuleModuleExclusionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(IrModuleModuleExclusionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

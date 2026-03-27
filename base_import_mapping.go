@@ -2,16 +2,15 @@ package odoo
 
 // BaseImportMapping represents base_import.mapping model.
 type BaseImportMapping struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	ColumnName  *String   `xmlrpc:"column_name,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldName   *String   `xmlrpc:"field_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	ColumnName  *String   `xmlrpc:"column_name,omitempty" json:"column_name,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldName   *String   `xmlrpc:"field_name,omitempty" json:"field_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportMappings represents array of base_import.mapping model.
@@ -73,6 +72,9 @@ func (c *Client) GetBaseImportMapping(id int64) (*BaseImportMapping, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bms) == 0 {
+		return nil, nil
+	}
 	return &((*bms)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindBaseImportMapping(criteria *Criteria) (*BaseImportMapping, 
 	bms := &BaseImportMappings{}
 	if err := c.SearchRead(BaseImportMappingModel, criteria, NewOptions().Limit(1), bms); err != nil {
 		return nil, err
+	}
+	if len(*bms) == 0 {
+		return nil, nil
 	}
 	return &((*bms)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindBaseImportMappingId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(BaseImportMappingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

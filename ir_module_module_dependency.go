@@ -2,18 +2,13 @@ package odoo
 
 // IrModuleModuleDependency represents ir.module.module.dependency model.
 type IrModuleModuleDependency struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DependId            *Many2One  `xmlrpc:"depend_id,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AutoInstallRequired *Bool      `xmlrpc:"auto_install_required,omitempty" json:"auto_install_required,omitempty"`
+	DependId            *Many2One  `xmlrpc:"depend_id,omitempty" json:"depend_id,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleId            *Many2One  `xmlrpc:"module_id,omitempty" json:"module_id,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State               *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
 }
 
 // IrModuleModuleDependencys represents array of ir.module.module.dependency model.
@@ -75,6 +70,9 @@ func (c *Client) GetIrModuleModuleDependency(id int64) (*IrModuleModuleDependenc
 	if err != nil {
 		return nil, err
 	}
+	if len(*immds) == 0 {
+		return nil, nil
+	}
 	return &((*immds)[0]), nil
 }
 
@@ -92,6 +90,9 @@ func (c *Client) FindIrModuleModuleDependency(criteria *Criteria) (*IrModuleModu
 	immds := &IrModuleModuleDependencys{}
 	if err := c.SearchRead(IrModuleModuleDependencyModel, criteria, NewOptions().Limit(1), immds); err != nil {
 		return nil, err
+	}
+	if len(*immds) == 0 {
+		return nil, nil
 	}
 	return &((*immds)[0]), nil
 }
@@ -117,6 +118,9 @@ func (c *Client) FindIrModuleModuleDependencyId(criteria *Criteria, options *Opt
 	ids, err := c.Search(IrModuleModuleDependencyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

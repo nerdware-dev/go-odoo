@@ -2,16 +2,15 @@ package odoo
 
 // ResCountryGroup represents res.country.group model.
 type ResCountryGroup struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CountryIds   *Relation `xmlrpc:"country_ids,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	PricelistIds *Relation `xmlrpc:"pricelist_ids,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CountryIds   *Relation `xmlrpc:"country_ids,omitempty" json:"country_ids,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PricelistIds *Relation `xmlrpc:"pricelist_ids,omitempty" json:"pricelist_ids,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResCountryGroups represents array of res.country.group model.
@@ -73,6 +72,9 @@ func (c *Client) GetResCountryGroup(id int64) (*ResCountryGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcgs) == 0 {
+		return nil, nil
+	}
 	return &((*rcgs)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindResCountryGroup(criteria *Criteria) (*ResCountryGroup, erro
 	rcgs := &ResCountryGroups{}
 	if err := c.SearchRead(ResCountryGroupModel, criteria, NewOptions().Limit(1), rcgs); err != nil {
 		return nil, err
+	}
+	if len(*rcgs) == 0 {
+		return nil, nil
 	}
 	return &((*rcgs)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindResCountryGroupId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResCountryGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,23 +2,22 @@ package odoo
 
 // IrRule represents ir.rule model.
 type IrRule struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	DomainForce *String   `xmlrpc:"domain_force,omitempty"`
-	Global      *Bool     `xmlrpc:"global,omitempty"`
-	Groups      *Relation `xmlrpc:"groups,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModelId     *Many2One `xmlrpc:"model_id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	PermCreate  *Bool     `xmlrpc:"perm_create,omitempty"`
-	PermRead    *Bool     `xmlrpc:"perm_read,omitempty"`
-	PermUnlink  *Bool     `xmlrpc:"perm_unlink,omitempty"`
-	PermWrite   *Bool     `xmlrpc:"perm_write,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DomainForce *String   `xmlrpc:"domain_force,omitempty" json:"domain_force,omitempty"`
+	Global      *Bool     `xmlrpc:"global,omitempty" json:"global,omitempty"`
+	Groups      *Relation `xmlrpc:"groups,omitempty" json:"groups,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelId     *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PermCreate  *Bool     `xmlrpc:"perm_create,omitempty" json:"perm_create,omitempty"`
+	PermRead    *Bool     `xmlrpc:"perm_read,omitempty" json:"perm_read,omitempty"`
+	PermUnlink  *Bool     `xmlrpc:"perm_unlink,omitempty" json:"perm_unlink,omitempty"`
+	PermWrite   *Bool     `xmlrpc:"perm_write,omitempty" json:"perm_write,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrRules represents array of ir.rule model.
@@ -80,6 +79,9 @@ func (c *Client) GetIrRule(id int64) (*IrRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*irs) == 0 {
+		return nil, nil
+	}
 	return &((*irs)[0]), nil
 }
 
@@ -97,6 +99,9 @@ func (c *Client) FindIrRule(criteria *Criteria) (*IrRule, error) {
 	irs := &IrRules{}
 	if err := c.SearchRead(IrRuleModel, criteria, NewOptions().Limit(1), irs); err != nil {
 		return nil, err
+	}
+	if len(*irs) == 0 {
+		return nil, nil
 	}
 	return &((*irs)[0]), nil
 }
@@ -122,6 +127,9 @@ func (c *Client) FindIrRuleId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(IrRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

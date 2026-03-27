@@ -2,16 +2,15 @@ package odoo
 
 // AccountIncoterms represents account.incoterms model.
 type AccountIncoterms struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	Code        *String   `xmlrpc:"code,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountIncotermss represents array of account.incoterms model.
@@ -73,6 +72,9 @@ func (c *Client) GetAccountIncoterms(id int64) (*AccountIncoterms, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ais) == 0 {
+		return nil, nil
+	}
 	return &((*ais)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindAccountIncoterms(criteria *Criteria) (*AccountIncoterms, er
 	ais := &AccountIncotermss{}
 	if err := c.SearchRead(AccountIncotermsModel, criteria, NewOptions().Limit(1), ais); err != nil {
 		return nil, err
+	}
+	if len(*ais) == 0 {
+		return nil, nil
 	}
 	return &((*ais)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindAccountIncotermsId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(AccountIncotermsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

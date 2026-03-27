@@ -2,25 +2,26 @@ package odoo
 
 // ResLang represents res.lang model.
 type ResLang struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	Active       *Bool      `xmlrpc:"active,omitempty"`
-	Code         *String    `xmlrpc:"code,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateFormat   *String    `xmlrpc:"date_format,omitempty"`
-	DecimalPoint *String    `xmlrpc:"decimal_point,omitempty"`
-	Direction    *Selection `xmlrpc:"direction,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Grouping     *String    `xmlrpc:"grouping,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	IsoCode      *String    `xmlrpc:"iso_code,omitempty"`
-	Name         *String    `xmlrpc:"name,omitempty"`
-	ThousandsSep *String    `xmlrpc:"thousands_sep,omitempty"`
-	TimeFormat   *String    `xmlrpc:"time_format,omitempty"`
-	UrlCode      *String    `xmlrpc:"url_code,omitempty"`
-	WeekStart    *Selection `xmlrpc:"week_start,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active       *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Code         *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFormat   *String    `xmlrpc:"date_format,omitempty" json:"date_format,omitempty"`
+	DecimalPoint *String    `xmlrpc:"decimal_point,omitempty" json:"decimal_point,omitempty"`
+	Direction    *Selection `xmlrpc:"direction,omitempty" json:"direction,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FlagImage    *String    `xmlrpc:"flag_image,omitempty" json:"flag_image,omitempty"`
+	FlagImageUrl *String    `xmlrpc:"flag_image_url,omitempty" json:"flag_image_url,omitempty"`
+	Grouping     *String    `xmlrpc:"grouping,omitempty" json:"grouping,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsoCode      *String    `xmlrpc:"iso_code,omitempty" json:"iso_code,omitempty"`
+	Name         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ThousandsSep *String    `xmlrpc:"thousands_sep,omitempty" json:"thousands_sep,omitempty"`
+	TimeFormat   *String    `xmlrpc:"time_format,omitempty" json:"time_format,omitempty"`
+	UrlCode      *String    `xmlrpc:"url_code,omitempty" json:"url_code,omitempty"`
+	WeekStart    *Selection `xmlrpc:"week_start,omitempty" json:"week_start,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResLangs represents array of res.lang model.
@@ -82,6 +83,9 @@ func (c *Client) GetResLang(id int64) (*ResLang, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rls) == 0 {
+		return nil, nil
+	}
 	return &((*rls)[0]), nil
 }
 
@@ -99,6 +103,9 @@ func (c *Client) FindResLang(criteria *Criteria) (*ResLang, error) {
 	rls := &ResLangs{}
 	if err := c.SearchRead(ResLangModel, criteria, NewOptions().Limit(1), rls); err != nil {
 		return nil, err
+	}
+	if len(*rls) == 0 {
+		return nil, nil
 	}
 	return &((*rls)[0]), nil
 }
@@ -124,6 +131,9 @@ func (c *Client) FindResLangId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(ResLangModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,19 +2,21 @@ package odoo
 
 // StockPutawayRule represents stock.putaway.rule model.
 type StockPutawayRule struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CategoryId    *Many2One `xmlrpc:"category_id,omitempty"`
-	CompanyId     *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	LocationInId  *Many2One `xmlrpc:"location_in_id,omitempty"`
-	LocationOutId *Many2One `xmlrpc:"location_out_id,omitempty"`
-	ProductId     *Many2One `xmlrpc:"product_id,omitempty"`
-	Sequence      *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active            *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategoryId        *Many2One `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	CompanyId         *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationInId      *Many2One `xmlrpc:"location_in_id,omitempty" json:"location_in_id,omitempty"`
+	LocationOutId     *Many2One `xmlrpc:"location_out_id,omitempty" json:"location_out_id,omitempty"`
+	PackageTypeIds    *Relation `xmlrpc:"package_type_ids,omitempty" json:"package_type_ids,omitempty"`
+	ProductId         *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	Sequence          *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StorageCategoryId *Many2One `xmlrpc:"storage_category_id,omitempty" json:"storage_category_id,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPutawayRules represents array of stock.putaway.rule model.
@@ -76,6 +78,9 @@ func (c *Client) GetStockPutawayRule(id int64) (*StockPutawayRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sprs) == 0 {
+		return nil, nil
+	}
 	return &((*sprs)[0]), nil
 }
 
@@ -93,6 +98,9 @@ func (c *Client) FindStockPutawayRule(criteria *Criteria) (*StockPutawayRule, er
 	sprs := &StockPutawayRules{}
 	if err := c.SearchRead(StockPutawayRuleModel, criteria, NewOptions().Limit(1), sprs); err != nil {
 		return nil, err
+	}
+	if len(*sprs) == 0 {
+		return nil, nil
 	}
 	return &((*sprs)[0]), nil
 }
@@ -118,6 +126,9 @@ func (c *Client) FindStockPutawayRuleId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(StockPutawayRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

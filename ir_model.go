@@ -2,33 +2,30 @@ package odoo
 
 // IrModel represents ir.model model.
 type IrModel struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	AccessIds                 *Relation  `xmlrpc:"access_ids,omitempty"`
-	Count                     *Int       `xmlrpc:"count,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	FieldId                   *Relation  `xmlrpc:"field_id,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	Info                      *String    `xmlrpc:"info,omitempty"`
-	InheritedModelIds         *Relation  `xmlrpc:"inherited_model_ids,omitempty"`
-	IsMailActivity            *Bool      `xmlrpc:"is_mail_activity,omitempty"`
-	IsMailBlacklist           *Bool      `xmlrpc:"is_mail_blacklist,omitempty"`
-	IsMailThread              *Bool      `xmlrpc:"is_mail_thread,omitempty"`
-	IsMailThreadSms           *Bool      `xmlrpc:"is_mail_thread_sms,omitempty"`
-	Model                     *String    `xmlrpc:"model,omitempty"`
-	Modules                   *String    `xmlrpc:"modules,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	RuleIds                   *Relation  `xmlrpc:"rule_ids,omitempty"`
-	State                     *Selection `xmlrpc:"state,omitempty"`
-	Transient                 *Bool      `xmlrpc:"transient,omitempty"`
-	ViewIds                   *Relation  `xmlrpc:"view_ids,omitempty"`
-	WebsiteFormAccess         *Bool      `xmlrpc:"website_form_access,omitempty"`
-	WebsiteFormDefaultFieldId *Many2One  `xmlrpc:"website_form_default_field_id,omitempty"`
-	WebsiteFormKey            *String    `xmlrpc:"website_form_key,omitempty"`
-	WebsiteFormLabel          *String    `xmlrpc:"website_form_label,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Abstract          *Bool      `xmlrpc:"abstract,omitempty" json:"abstract,omitempty"`
+	AccessIds         *Relation  `xmlrpc:"access_ids,omitempty" json:"access_ids,omitempty"`
+	Count             *Int       `xmlrpc:"count,omitempty" json:"count,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId           *Relation  `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Info              *String    `xmlrpc:"info,omitempty" json:"info,omitempty"`
+	InheritedModelIds *Relation  `xmlrpc:"inherited_model_ids,omitempty" json:"inherited_model_ids,omitempty"`
+	IsMailActivity    *Bool      `xmlrpc:"is_mail_activity,omitempty" json:"is_mail_activity,omitempty"`
+	IsMailBlacklist   *Bool      `xmlrpc:"is_mail_blacklist,omitempty" json:"is_mail_blacklist,omitempty"`
+	IsMailThread      *Bool      `xmlrpc:"is_mail_thread,omitempty" json:"is_mail_thread,omitempty"`
+	IsMailThreadSms   *Bool      `xmlrpc:"is_mail_thread_sms,omitempty" json:"is_mail_thread_sms,omitempty"`
+	Model             *String    `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	Modules           *String    `xmlrpc:"modules,omitempty" json:"modules,omitempty"`
+	Name              *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Order             *String    `xmlrpc:"order,omitempty" json:"order,omitempty"`
+	RuleIds           *Relation  `xmlrpc:"rule_ids,omitempty" json:"rule_ids,omitempty"`
+	State             *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Transient         *Bool      `xmlrpc:"transient,omitempty" json:"transient,omitempty"`
+	ViewIds           *Relation  `xmlrpc:"view_ids,omitempty" json:"view_ids,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModels represents array of ir.model model.
@@ -90,6 +87,9 @@ func (c *Client) GetIrModel(id int64) (*IrModel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ims) == 0 {
+		return nil, nil
+	}
 	return &((*ims)[0]), nil
 }
 
@@ -107,6 +107,9 @@ func (c *Client) FindIrModel(criteria *Criteria) (*IrModel, error) {
 	ims := &IrModels{}
 	if err := c.SearchRead(IrModelModel, criteria, NewOptions().Limit(1), ims); err != nil {
 		return nil, err
+	}
+	if len(*ims) == 0 {
+		return nil, nil
 	}
 	return &((*ims)[0]), nil
 }
@@ -132,6 +135,9 @@ func (c *Client) FindIrModelId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(IrModelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

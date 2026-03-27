@@ -2,17 +2,16 @@ package odoo
 
 // ChangePasswordUser represents change.password.user model.
 type ChangePasswordUser struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	NewPasswd   *String   `xmlrpc:"new_passwd,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	UserLogin   *String   `xmlrpc:"user_login,omitempty"`
-	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NewPasswd   *String   `xmlrpc:"new_passwd,omitempty" json:"new_passwd,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	UserLogin   *String   `xmlrpc:"user_login,omitempty" json:"user_login,omitempty"`
+	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ChangePasswordUsers represents array of change.password.user model.
@@ -74,6 +73,9 @@ func (c *Client) GetChangePasswordUser(id int64) (*ChangePasswordUser, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cpus) == 0 {
+		return nil, nil
+	}
 	return &((*cpus)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindChangePasswordUser(criteria *Criteria) (*ChangePasswordUser
 	cpus := &ChangePasswordUsers{}
 	if err := c.SearchRead(ChangePasswordUserModel, criteria, NewOptions().Limit(1), cpus); err != nil {
 		return nil, err
+	}
+	if len(*cpus) == 0 {
+		return nil, nil
 	}
 	return &((*cpus)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindChangePasswordUserId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ChangePasswordUserModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

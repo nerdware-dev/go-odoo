@@ -2,19 +2,30 @@ package odoo
 
 // AccountPaymentTerm represents account.payment.term model.
 type AccountPaymentTerm struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LineIds     *Relation `xmlrpc:"line_ids,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Note        *String   `xmlrpc:"note,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active                      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId                   *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DiscountDays                *Int       `xmlrpc:"discount_days,omitempty" json:"discount_days,omitempty"`
+	DiscountPercentage          *Float     `xmlrpc:"discount_percentage,omitempty" json:"discount_percentage,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayOnInvoice            *Bool      `xmlrpc:"display_on_invoice,omitempty" json:"display_on_invoice,omitempty"`
+	EarlyDiscount               *Bool      `xmlrpc:"early_discount,omitempty" json:"early_discount,omitempty"`
+	EarlyPayDiscountComputation *Selection `xmlrpc:"early_pay_discount_computation,omitempty" json:"early_pay_discount_computation,omitempty"`
+	ExampleAmount               *Float     `xmlrpc:"example_amount,omitempty" json:"example_amount,omitempty"`
+	ExampleDate                 *Time      `xmlrpc:"example_date,omitempty" json:"example_date,omitempty"`
+	ExampleInvalid              *Bool      `xmlrpc:"example_invalid,omitempty" json:"example_invalid,omitempty"`
+	ExamplePreview              *String    `xmlrpc:"example_preview,omitempty" json:"example_preview,omitempty"`
+	ExamplePreviewDiscount      *String    `xmlrpc:"example_preview_discount,omitempty" json:"example_preview_discount,omitempty"`
+	FiscalCountryCodes          *String    `xmlrpc:"fiscal_country_codes,omitempty" json:"fiscal_country_codes,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineIds                     *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note                        *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Sequence                    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentTerms represents array of account.payment.term model.
@@ -76,6 +87,9 @@ func (c *Client) GetAccountPaymentTerm(id int64) (*AccountPaymentTerm, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*apts) == 0 {
+		return nil, nil
+	}
 	return &((*apts)[0]), nil
 }
 
@@ -93,6 +107,9 @@ func (c *Client) FindAccountPaymentTerm(criteria *Criteria) (*AccountPaymentTerm
 	apts := &AccountPaymentTerms{}
 	if err := c.SearchRead(AccountPaymentTermModel, criteria, NewOptions().Limit(1), apts); err != nil {
 		return nil, err
+	}
+	if len(*apts) == 0 {
+		return nil, nil
 	}
 	return &((*apts)[0]), nil
 }
@@ -118,6 +135,9 @@ func (c *Client) FindAccountPaymentTermId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(AccountPaymentTermModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

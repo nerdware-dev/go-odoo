@@ -2,21 +2,20 @@ package odoo
 
 // SnailmailLetterMissingRequiredFields represents snailmail.letter.missing.required.fields model.
 type SnailmailLetterMissingRequiredFields struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	City        *String   `xmlrpc:"city,omitempty"`
-	CountryId   *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LetterId    *Many2One `xmlrpc:"letter_id,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	StateId     *Many2One `xmlrpc:"state_id,omitempty"`
-	Street      *String   `xmlrpc:"street,omitempty"`
-	Street2     *String   `xmlrpc:"street2,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
-	Zip         *String   `xmlrpc:"zip,omitempty"`
+	City        *String   `xmlrpc:"city,omitempty" json:"city,omitempty"`
+	CountryId   *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LetterId    *Many2One `xmlrpc:"letter_id,omitempty" json:"letter_id,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	StateId     *Many2One `xmlrpc:"state_id,omitempty" json:"state_id,omitempty"`
+	Street      *String   `xmlrpc:"street,omitempty" json:"street,omitempty"`
+	Street2     *String   `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Zip         *String   `xmlrpc:"zip,omitempty" json:"zip,omitempty"`
 }
 
 // SnailmailLetterMissingRequiredFieldss represents array of snailmail.letter.missing.required.fields model.
@@ -78,6 +77,9 @@ func (c *Client) GetSnailmailLetterMissingRequiredFields(id int64) (*SnailmailLe
 	if err != nil {
 		return nil, err
 	}
+	if len(*slmrfs) == 0 {
+		return nil, nil
+	}
 	return &((*slmrfs)[0]), nil
 }
 
@@ -95,6 +97,9 @@ func (c *Client) FindSnailmailLetterMissingRequiredFields(criteria *Criteria) (*
 	slmrfs := &SnailmailLetterMissingRequiredFieldss{}
 	if err := c.SearchRead(SnailmailLetterMissingRequiredFieldsModel, criteria, NewOptions().Limit(1), slmrfs); err != nil {
 		return nil, err
+	}
+	if len(*slmrfs) == 0 {
+		return nil, nil
 	}
 	return &((*slmrfs)[0]), nil
 }
@@ -120,6 +125,9 @@ func (c *Client) FindSnailmailLetterMissingRequiredFieldsId(criteria *Criteria, 
 	ids, err := c.Search(SnailmailLetterMissingRequiredFieldsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

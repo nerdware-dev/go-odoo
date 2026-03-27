@@ -2,21 +2,23 @@ package odoo
 
 // ProductAttributeValue represents product.attribute.value model.
 type ProductAttributeValue struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AttributeId         *Many2One  `xmlrpc:"attribute_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType         *Selection `xmlrpc:"display_type,omitempty"`
-	HtmlColor           *String    `xmlrpc:"html_color,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	IsCustom            *Bool      `xmlrpc:"is_custom,omitempty"`
-	IsUsedOnProducts    *Bool      `xmlrpc:"is_used_on_products,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	PavAttributeLineIds *Relation  `xmlrpc:"pav_attribute_line_ids,omitempty"`
-	Sequence            *Int       `xmlrpc:"sequence,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttributeId         *Many2One  `xmlrpc:"attribute_id,omitempty" json:"attribute_id,omitempty"`
+	Color               *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate          *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultExtraPrice   *Float     `xmlrpc:"default_extra_price,omitempty" json:"default_extra_price,omitempty"`
+	DisplayName         *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType         *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	HtmlColor           *String    `xmlrpc:"html_color,omitempty" json:"html_color,omitempty"`
+	Id                  *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image               *String    `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	IsCustom            *Bool      `xmlrpc:"is_custom,omitempty" json:"is_custom,omitempty"`
+	IsUsedOnProducts    *Bool      `xmlrpc:"is_used_on_products,omitempty" json:"is_used_on_products,omitempty"`
+	Name                *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PavAttributeLineIds *Relation  `xmlrpc:"pav_attribute_line_ids,omitempty" json:"pav_attribute_line_ids,omitempty"`
+	Sequence            *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate           *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductAttributeValues represents array of product.attribute.value model.
@@ -78,6 +80,9 @@ func (c *Client) GetProductAttributeValue(id int64) (*ProductAttributeValue, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*pavs) == 0 {
+		return nil, nil
+	}
 	return &((*pavs)[0]), nil
 }
 
@@ -95,6 +100,9 @@ func (c *Client) FindProductAttributeValue(criteria *Criteria) (*ProductAttribut
 	pavs := &ProductAttributeValues{}
 	if err := c.SearchRead(ProductAttributeValueModel, criteria, NewOptions().Limit(1), pavs); err != nil {
 		return nil, err
+	}
+	if len(*pavs) == 0 {
+		return nil, nil
 	}
 	return &((*pavs)[0]), nil
 }
@@ -120,6 +128,9 @@ func (c *Client) FindProductAttributeValueId(criteria *Criteria, options *Option
 	ids, err := c.Search(ProductAttributeValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

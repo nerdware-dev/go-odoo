@@ -2,19 +2,17 @@ package odoo
 
 // MailWizardInvite represents mail.wizard.invite model.
 type MailWizardInvite struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	ChannelIds  *Relation `xmlrpc:"channel_ids,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Message     *String   `xmlrpc:"message,omitempty"`
-	PartnerIds  *Relation `xmlrpc:"partner_ids,omitempty"`
-	ResId       *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	SendMail    *Bool     `xmlrpc:"send_mail,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Message     *String   `xmlrpc:"message,omitempty" json:"message,omitempty"`
+	Notify      *Bool     `xmlrpc:"notify,omitempty" json:"notify,omitempty"`
+	PartnerIds  *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	ResId       *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailWizardInvites represents array of mail.wizard.invite model.
@@ -76,6 +74,9 @@ func (c *Client) GetMailWizardInvite(id int64) (*MailWizardInvite, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mwis) == 0 {
+		return nil, nil
+	}
 	return &((*mwis)[0]), nil
 }
 
@@ -93,6 +94,9 @@ func (c *Client) FindMailWizardInvite(criteria *Criteria) (*MailWizardInvite, er
 	mwis := &MailWizardInvites{}
 	if err := c.SearchRead(MailWizardInviteModel, criteria, NewOptions().Limit(1), mwis); err != nil {
 		return nil, err
+	}
+	if len(*mwis) == 0 {
+		return nil, nil
 	}
 	return &((*mwis)[0]), nil
 }
@@ -118,6 +122,9 @@ func (c *Client) FindMailWizardInviteId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailWizardInviteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

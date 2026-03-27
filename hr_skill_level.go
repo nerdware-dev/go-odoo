@@ -2,16 +2,16 @@ package odoo
 
 // HrSkillLevel represents hr.skill.level model.
 type HrSkillLevel struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	LevelProgress *Int      `xmlrpc:"level_progress,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	SkillTypeId   *Many2One `xmlrpc:"skill_type_id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DefaultLevel  *Bool     `xmlrpc:"default_level,omitempty" json:"default_level,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LevelProgress *Int      `xmlrpc:"level_progress,omitempty" json:"level_progress,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SkillTypeId   *Many2One `xmlrpc:"skill_type_id,omitempty" json:"skill_type_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrSkillLevels represents array of hr.skill.level model.
@@ -73,6 +73,9 @@ func (c *Client) GetHrSkillLevel(id int64) (*HrSkillLevel, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hsls) == 0 {
+		return nil, nil
+	}
 	return &((*hsls)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindHrSkillLevel(criteria *Criteria) (*HrSkillLevel, error) {
 	hsls := &HrSkillLevels{}
 	if err := c.SearchRead(HrSkillLevelModel, criteria, NewOptions().Limit(1), hsls); err != nil {
 		return nil, err
+	}
+	if len(*hsls) == 0 {
+		return nil, nil
 	}
 	return &((*hsls)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindHrSkillLevelId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(HrSkillLevelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

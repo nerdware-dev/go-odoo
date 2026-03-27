@@ -2,13 +2,12 @@ package odoo
 
 // AccountUnreconcile represents account.unreconcile model.
 type AccountUnreconcile struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountUnreconciles represents array of account.unreconcile model.
@@ -70,6 +69,9 @@ func (c *Client) GetAccountUnreconcile(id int64) (*AccountUnreconcile, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aus) == 0 {
+		return nil, nil
+	}
 	return &((*aus)[0]), nil
 }
 
@@ -87,6 +89,9 @@ func (c *Client) FindAccountUnreconcile(criteria *Criteria) (*AccountUnreconcile
 	aus := &AccountUnreconciles{}
 	if err := c.SearchRead(AccountUnreconcileModel, criteria, NewOptions().Limit(1), aus); err != nil {
 		return nil, err
+	}
+	if len(*aus) == 0 {
+		return nil, nil
 	}
 	return &((*aus)[0]), nil
 }
@@ -112,6 +117,9 @@ func (c *Client) FindAccountUnreconcileId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(AccountUnreconcileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

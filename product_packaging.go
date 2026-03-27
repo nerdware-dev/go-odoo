@@ -2,27 +2,23 @@ package odoo
 
 // ProductPackaging represents product.packaging model.
 type ProductPackaging struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	Barcode            *String    `xmlrpc:"barcode,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Height             *Int       `xmlrpc:"height,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	Length             *Int       `xmlrpc:"length,omitempty"`
-	MaxWeight          *Float     `xmlrpc:"max_weight,omitempty"`
-	Name               *String    `xmlrpc:"name,omitempty"`
-	PackageCarrierType *Selection `xmlrpc:"package_carrier_type,omitempty"`
-	ProductId          *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomId       *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	Qty                *Float     `xmlrpc:"qty,omitempty"`
-	Sequence           *Int       `xmlrpc:"sequence,omitempty"`
-	ShipperPackageCode *String    `xmlrpc:"shipper_package_code,omitempty"`
-	WeightUomName      *String    `xmlrpc:"weight_uom_name,omitempty"`
-	Width              *Int       `xmlrpc:"width,omitempty"`
-	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Barcode       *String   `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name          *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PackageTypeId *Many2One `xmlrpc:"package_type_id,omitempty" json:"package_type_id,omitempty"`
+	ProductId     *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomId  *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	Purchase      *Bool     `xmlrpc:"purchase,omitempty" json:"purchase,omitempty"`
+	Qty           *Float    `xmlrpc:"qty,omitempty" json:"qty,omitempty"`
+	RouteIds      *Relation `xmlrpc:"route_ids,omitempty" json:"route_ids,omitempty"`
+	Sales         *Bool     `xmlrpc:"sales,omitempty" json:"sales,omitempty"`
+	Sequence      *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductPackagings represents array of product.packaging model.
@@ -84,6 +80,9 @@ func (c *Client) GetProductPackaging(id int64) (*ProductPackaging, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pps) == 0 {
+		return nil, nil
+	}
 	return &((*pps)[0]), nil
 }
 
@@ -101,6 +100,9 @@ func (c *Client) FindProductPackaging(criteria *Criteria) (*ProductPackaging, er
 	pps := &ProductPackagings{}
 	if err := c.SearchRead(ProductPackagingModel, criteria, NewOptions().Limit(1), pps); err != nil {
 		return nil, err
+	}
+	if len(*pps) == 0 {
+		return nil, nil
 	}
 	return &((*pps)[0]), nil
 }
@@ -126,6 +128,9 @@ func (c *Client) FindProductPackagingId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProductPackagingModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

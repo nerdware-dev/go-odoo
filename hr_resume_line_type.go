@@ -2,15 +2,14 @@ package odoo
 
 // HrResumeLineType represents hr.resume.line.type model.
 type HrResumeLineType struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrResumeLineTypes represents array of hr.resume.line.type model.
@@ -72,6 +71,9 @@ func (c *Client) GetHrResumeLineType(id int64) (*HrResumeLineType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hrlts) == 0 {
+		return nil, nil
+	}
 	return &((*hrlts)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindHrResumeLineType(criteria *Criteria) (*HrResumeLineType, er
 	hrlts := &HrResumeLineTypes{}
 	if err := c.SearchRead(HrResumeLineTypeModel, criteria, NewOptions().Limit(1), hrlts); err != nil {
 		return nil, err
+	}
+	if len(*hrlts) == 0 {
+		return nil, nil
 	}
 	return &((*hrlts)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindHrResumeLineTypeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(HrResumeLineTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

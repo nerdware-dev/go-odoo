@@ -2,26 +2,27 @@ package odoo
 
 // ResourceCalendarAttendance represents resource.calendar.attendance model.
 type ResourceCalendarAttendance struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	CalendarId       *Many2One  `xmlrpc:"calendar_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateFrom         *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo           *Time      `xmlrpc:"date_to,omitempty"`
-	DayPeriod        *Selection `xmlrpc:"day_period,omitempty"`
-	Dayofweek        *Selection `xmlrpc:"dayofweek,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType      *Selection `xmlrpc:"display_type,omitempty"`
-	HourFrom         *Float     `xmlrpc:"hour_from,omitempty"`
-	HourTo           *Float     `xmlrpc:"hour_to,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	ResourceId       *Many2One  `xmlrpc:"resource_id,omitempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omitempty"`
-	TwoWeeksCalendar *Bool      `xmlrpc:"two_weeks_calendar,omitempty"`
-	WeekType         *Selection `xmlrpc:"week_type,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CalendarId       *Many2One  `xmlrpc:"calendar_id,omitempty" json:"calendar_id,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom         *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo           *Time      `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DayPeriod        *Selection `xmlrpc:"day_period,omitempty" json:"day_period,omitempty"`
+	Dayofweek        *Selection `xmlrpc:"dayofweek,omitempty" json:"dayofweek,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType      *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	DurationDays     *Float     `xmlrpc:"duration_days,omitempty" json:"duration_days,omitempty"`
+	DurationHours    *Float     `xmlrpc:"duration_hours,omitempty" json:"duration_hours,omitempty"`
+	HourFrom         *Float     `xmlrpc:"hour_from,omitempty" json:"hour_from,omitempty"`
+	HourTo           *Float     `xmlrpc:"hour_to,omitempty" json:"hour_to,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResourceId       *Many2One  `xmlrpc:"resource_id,omitempty" json:"resource_id,omitempty"`
+	Sequence         *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TwoWeeksCalendar *Bool      `xmlrpc:"two_weeks_calendar,omitempty" json:"two_weeks_calendar,omitempty"`
+	WeekType         *Selection `xmlrpc:"week_type,omitempty" json:"week_type,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceCalendarAttendances represents array of resource.calendar.attendance model.
@@ -83,6 +84,9 @@ func (c *Client) GetResourceCalendarAttendance(id int64) (*ResourceCalendarAtten
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcas) == 0 {
+		return nil, nil
+	}
 	return &((*rcas)[0]), nil
 }
 
@@ -100,6 +104,9 @@ func (c *Client) FindResourceCalendarAttendance(criteria *Criteria) (*ResourceCa
 	rcas := &ResourceCalendarAttendances{}
 	if err := c.SearchRead(ResourceCalendarAttendanceModel, criteria, NewOptions().Limit(1), rcas); err != nil {
 		return nil, err
+	}
+	if len(*rcas) == 0 {
+		return nil, nil
 	}
 	return &((*rcas)[0]), nil
 }
@@ -125,6 +132,9 @@ func (c *Client) FindResourceCalendarAttendanceId(criteria *Criteria, options *O
 	ids, err := c.Search(ResourceCalendarAttendanceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,33 +2,44 @@ package odoo
 
 // StockLocation represents stock.location model.
 type StockLocation struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                *Bool      `xmlrpc:"active,omitempty"`
-	Barcode               *String    `xmlrpc:"barcode,omitempty"`
-	ChildIds              *Relation  `xmlrpc:"child_ids,omitempty"`
-	Comment               *String    `xmlrpc:"comment,omitempty"`
-	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty"`
-	CompleteName          *String    `xmlrpc:"complete_name,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	LocationId            *Many2One  `xmlrpc:"location_id,omitempty"`
-	Name                  *String    `xmlrpc:"name,omitempty"`
-	ParentPath            *String    `xmlrpc:"parent_path,omitempty"`
-	Posx                  *Int       `xmlrpc:"posx,omitempty"`
-	Posy                  *Int       `xmlrpc:"posy,omitempty"`
-	Posz                  *Int       `xmlrpc:"posz,omitempty"`
-	PutawayRuleIds        *Relation  `xmlrpc:"putaway_rule_ids,omitempty"`
-	QuantIds              *Relation  `xmlrpc:"quant_ids,omitempty"`
-	RemovalStrategyId     *Many2One  `xmlrpc:"removal_strategy_id,omitempty"`
-	ReturnLocation        *Bool      `xmlrpc:"return_location,omitempty"`
-	ScrapLocation         *Bool      `xmlrpc:"scrap_location,omitempty"`
-	Usage                 *Selection `xmlrpc:"usage,omitempty"`
-	ValuationInAccountId  *Many2One  `xmlrpc:"valuation_in_account_id,omitempty"`
-	ValuationOutAccountId *Many2One  `xmlrpc:"valuation_out_account_id,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                   *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Barcode                  *String    `xmlrpc:"barcode,omitempty" json:"barcode,omitempty"`
+	ChildIds                 *Relation  `xmlrpc:"child_ids,omitempty" json:"child_ids,omitempty"`
+	ChildInternalLocationIds *Relation  `xmlrpc:"child_internal_location_ids,omitempty" json:"child_internal_location_ids,omitempty"`
+	Comment                  *String    `xmlrpc:"comment,omitempty" json:"comment,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompleteName             *String    `xmlrpc:"complete_name,omitempty" json:"complete_name,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CyclicInventoryFrequency *Int       `xmlrpc:"cyclic_inventory_frequency,omitempty" json:"cyclic_inventory_frequency,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForecastWeight           *Float     `xmlrpc:"forecast_weight,omitempty" json:"forecast_weight,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncomingMoveLineIds      *Relation  `xmlrpc:"incoming_move_line_ids,omitempty" json:"incoming_move_line_ids,omitempty"`
+	LastInventoryDate        *Time      `xmlrpc:"last_inventory_date,omitempty" json:"last_inventory_date,omitempty"`
+	LocationId               *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NetWeight                *Float     `xmlrpc:"net_weight,omitempty" json:"net_weight,omitempty"`
+	NextInventoryDate        *Time      `xmlrpc:"next_inventory_date,omitempty" json:"next_inventory_date,omitempty"`
+	OutgoingMoveLineIds      *Relation  `xmlrpc:"outgoing_move_line_ids,omitempty" json:"outgoing_move_line_ids,omitempty"`
+	ParentPath               *String    `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	Posx                     *Int       `xmlrpc:"posx,omitempty" json:"posx,omitempty"`
+	Posy                     *Int       `xmlrpc:"posy,omitempty" json:"posy,omitempty"`
+	Posz                     *Int       `xmlrpc:"posz,omitempty" json:"posz,omitempty"`
+	PutawayRuleIds           *Relation  `xmlrpc:"putaway_rule_ids,omitempty" json:"putaway_rule_ids,omitempty"`
+	QuantIds                 *Relation  `xmlrpc:"quant_ids,omitempty" json:"quant_ids,omitempty"`
+	RemovalStrategyId        *Many2One  `xmlrpc:"removal_strategy_id,omitempty" json:"removal_strategy_id,omitempty"`
+	ReplenishLocation        *Bool      `xmlrpc:"replenish_location,omitempty" json:"replenish_location,omitempty"`
+	ReturnLocation           *Bool      `xmlrpc:"return_location,omitempty" json:"return_location,omitempty"`
+	ScrapLocation            *Bool      `xmlrpc:"scrap_location,omitempty" json:"scrap_location,omitempty"`
+	StorageCategoryId        *Many2One  `xmlrpc:"storage_category_id,omitempty" json:"storage_category_id,omitempty"`
+	Usage                    *Selection `xmlrpc:"usage,omitempty" json:"usage,omitempty"`
+	ValuationInAccountId     *Many2One  `xmlrpc:"valuation_in_account_id,omitempty" json:"valuation_in_account_id,omitempty"`
+	ValuationOutAccountId    *Many2One  `xmlrpc:"valuation_out_account_id,omitempty" json:"valuation_out_account_id,omitempty"`
+	WarehouseId              *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
+	WarehouseViewIds         *Relation  `xmlrpc:"warehouse_view_ids,omitempty" json:"warehouse_view_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockLocations represents array of stock.location model.
@@ -90,6 +101,9 @@ func (c *Client) GetStockLocation(id int64) (*StockLocation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sls) == 0 {
+		return nil, nil
+	}
 	return &((*sls)[0]), nil
 }
 
@@ -107,6 +121,9 @@ func (c *Client) FindStockLocation(criteria *Criteria) (*StockLocation, error) {
 	sls := &StockLocations{}
 	if err := c.SearchRead(StockLocationModel, criteria, NewOptions().Limit(1), sls); err != nil {
 		return nil, err
+	}
+	if len(*sls) == 0 {
+		return nil, nil
 	}
 	return &((*sls)[0]), nil
 }
@@ -132,6 +149,9 @@ func (c *Client) FindStockLocationId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(StockLocationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

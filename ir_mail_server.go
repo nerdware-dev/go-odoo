@@ -2,22 +2,32 @@ package odoo
 
 // IrMailServer represents ir.mail_server model.
 type IrMailServer struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Active         *Bool      `xmlrpc:"active,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	Sequence       *Int       `xmlrpc:"sequence,omitempty"`
-	SmtpDebug      *Bool      `xmlrpc:"smtp_debug,omitempty"`
-	SmtpEncryption *Selection `xmlrpc:"smtp_encryption,omitempty"`
-	SmtpHost       *String    `xmlrpc:"smtp_host,omitempty"`
-	SmtpPass       *String    `xmlrpc:"smtp_pass,omitempty"`
-	SmtpPort       *Int       `xmlrpc:"smtp_port,omitempty"`
-	SmtpUser       *String    `xmlrpc:"smtp_user,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate                            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FromFilter                            *String    `xmlrpc:"from_filter,omitempty" json:"from_filter,omitempty"`
+	Id                                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMicrosoftOutlookConfigured          *Bool      `xmlrpc:"is_microsoft_outlook_configured,omitempty" json:"is_microsoft_outlook_configured,omitempty"`
+	MailTemplateIds                       *Relation  `xmlrpc:"mail_template_ids,omitempty" json:"mail_template_ids,omitempty"`
+	MicrosoftOutlookAccessToken           *String    `xmlrpc:"microsoft_outlook_access_token,omitempty" json:"microsoft_outlook_access_token,omitempty"`
+	MicrosoftOutlookAccessTokenExpiration *Int       `xmlrpc:"microsoft_outlook_access_token_expiration,omitempty" json:"microsoft_outlook_access_token_expiration,omitempty"`
+	MicrosoftOutlookRefreshToken          *String    `xmlrpc:"microsoft_outlook_refresh_token,omitempty" json:"microsoft_outlook_refresh_token,omitempty"`
+	MicrosoftOutlookUri                   *String    `xmlrpc:"microsoft_outlook_uri,omitempty" json:"microsoft_outlook_uri,omitempty"`
+	Name                                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence                              *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	SmtpAuthentication                    *Selection `xmlrpc:"smtp_authentication,omitempty" json:"smtp_authentication,omitempty"`
+	SmtpAuthenticationInfo                *String    `xmlrpc:"smtp_authentication_info,omitempty" json:"smtp_authentication_info,omitempty"`
+	SmtpDebug                             *Bool      `xmlrpc:"smtp_debug,omitempty" json:"smtp_debug,omitempty"`
+	SmtpEncryption                        *Selection `xmlrpc:"smtp_encryption,omitempty" json:"smtp_encryption,omitempty"`
+	SmtpHost                              *String    `xmlrpc:"smtp_host,omitempty" json:"smtp_host,omitempty"`
+	SmtpPass                              *String    `xmlrpc:"smtp_pass,omitempty" json:"smtp_pass,omitempty"`
+	SmtpPort                              *Int       `xmlrpc:"smtp_port,omitempty" json:"smtp_port,omitempty"`
+	SmtpSslCertificate                    *String    `xmlrpc:"smtp_ssl_certificate,omitempty" json:"smtp_ssl_certificate,omitempty"`
+	SmtpSslPrivateKey                     *String    `xmlrpc:"smtp_ssl_private_key,omitempty" json:"smtp_ssl_private_key,omitempty"`
+	SmtpUser                              *String    `xmlrpc:"smtp_user,omitempty" json:"smtp_user,omitempty"`
+	WriteDate                             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrMailServers represents array of ir.mail_server model.
@@ -79,6 +89,9 @@ func (c *Client) GetIrMailServer(id int64) (*IrMailServer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ims) == 0 {
+		return nil, nil
+	}
 	return &((*ims)[0]), nil
 }
 
@@ -96,6 +109,9 @@ func (c *Client) FindIrMailServer(criteria *Criteria) (*IrMailServer, error) {
 	ims := &IrMailServers{}
 	if err := c.SearchRead(IrMailServerModel, criteria, NewOptions().Limit(1), ims); err != nil {
 		return nil, err
+	}
+	if len(*ims) == 0 {
+		return nil, nil
 	}
 	return &((*ims)[0]), nil
 }
@@ -121,6 +137,9 @@ func (c *Client) FindIrMailServerId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(IrMailServerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

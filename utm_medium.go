@@ -2,15 +2,14 @@ package odoo
 
 // UtmMedium represents utm.medium model.
 type UtmMedium struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UtmMediums represents array of utm.medium model.
@@ -72,6 +71,9 @@ func (c *Client) GetUtmMedium(id int64) (*UtmMedium, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ums) == 0 {
+		return nil, nil
+	}
 	return &((*ums)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindUtmMedium(criteria *Criteria) (*UtmMedium, error) {
 	ums := &UtmMediums{}
 	if err := c.SearchRead(UtmMediumModel, criteria, NewOptions().Limit(1), ums); err != nil {
 		return nil, err
+	}
+	if len(*ums) == 0 {
+		return nil, nil
 	}
 	return &((*ums)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindUtmMediumId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(UtmMediumModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

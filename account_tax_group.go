@@ -2,18 +2,21 @@ package odoo
 
 // AccountTaxGroup represents account.tax.group model.
 type AccountTaxGroup struct {
-	LastUpdate                         *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate                         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                        *String   `xmlrpc:"display_name,omitempty"`
-	Id                                 *Int      `xmlrpc:"id,omitempty"`
-	Name                               *String   `xmlrpc:"name,omitempty"`
-	PropertyAdvanceTaxPaymentAccountId *Many2One `xmlrpc:"property_advance_tax_payment_account_id,omitempty"`
-	PropertyTaxPayableAccountId        *Many2One `xmlrpc:"property_tax_payable_account_id,omitempty"`
-	PropertyTaxReceivableAccountId     *Many2One `xmlrpc:"property_tax_receivable_account_id,omitempty"`
-	Sequence                           *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate                          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                           *Many2One `xmlrpc:"write_uid,omitempty"`
+	AdvanceTaxPaymentAccountId *Many2One `xmlrpc:"advance_tax_payment_account_id,omitempty" json:"advance_tax_payment_account_id,omitempty"`
+	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode                *String   `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
+	CountryId                  *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate                 *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                         *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                       *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PrecedingSubtotal          *String   `xmlrpc:"preceding_subtotal,omitempty" json:"preceding_subtotal,omitempty"`
+	Sequence                   *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TaxPayableAccountId        *Many2One `xmlrpc:"tax_payable_account_id,omitempty" json:"tax_payable_account_id,omitempty"`
+	TaxReceivableAccountId     *Many2One `xmlrpc:"tax_receivable_account_id,omitempty" json:"tax_receivable_account_id,omitempty"`
+	WriteDate                  *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxGroups represents array of account.tax.group model.
@@ -75,6 +78,9 @@ func (c *Client) GetAccountTaxGroup(id int64) (*AccountTaxGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*atgs) == 0 {
+		return nil, nil
+	}
 	return &((*atgs)[0]), nil
 }
 
@@ -92,6 +98,9 @@ func (c *Client) FindAccountTaxGroup(criteria *Criteria) (*AccountTaxGroup, erro
 	atgs := &AccountTaxGroups{}
 	if err := c.SearchRead(AccountTaxGroupModel, criteria, NewOptions().Limit(1), atgs); err != nil {
 		return nil, err
+	}
+	if len(*atgs) == 0 {
+		return nil, nil
 	}
 	return &((*atgs)[0]), nil
 }
@@ -117,6 +126,9 @@ func (c *Client) FindAccountTaxGroupId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(AccountTaxGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,13 +2,13 @@ package odoo
 
 // ValidateAccountMove represents validate.account.move model.
 type ValidateAccountMove struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ForcePost   *Bool     `xmlrpc:"force_post,omitempty" json:"force_post,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ValidateAccountMoves represents array of validate.account.move model.
@@ -70,6 +70,9 @@ func (c *Client) GetValidateAccountMove(id int64) (*ValidateAccountMove, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*vams) == 0 {
+		return nil, nil
+	}
 	return &((*vams)[0]), nil
 }
 
@@ -87,6 +90,9 @@ func (c *Client) FindValidateAccountMove(criteria *Criteria) (*ValidateAccountMo
 	vams := &ValidateAccountMoves{}
 	if err := c.SearchRead(ValidateAccountMoveModel, criteria, NewOptions().Limit(1), vams); err != nil {
 		return nil, err
+	}
+	if len(*vams) == 0 {
+		return nil, nil
 	}
 	return &((*vams)[0]), nil
 }
@@ -112,6 +118,9 @@ func (c *Client) FindValidateAccountMoveId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ValidateAccountMoveModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

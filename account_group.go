@@ -2,17 +2,18 @@ package odoo
 
 // AccountGroup represents account.group model.
 type AccountGroup struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CodePrefix  *String   `xmlrpc:"code_prefix,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
-	ParentPath  *String   `xmlrpc:"parent_path,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CodePrefixEnd   *String   `xmlrpc:"code_prefix_end,omitempty" json:"code_prefix_end,omitempty"`
+	CodePrefixStart *String   `xmlrpc:"code_prefix_start,omitempty" json:"code_prefix_start,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId        *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	ParentPath      *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountGroups represents array of account.group model.
@@ -74,6 +75,9 @@ func (c *Client) GetAccountGroup(id int64) (*AccountGroup, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ags) == 0 {
+		return nil, nil
+	}
 	return &((*ags)[0]), nil
 }
 
@@ -91,6 +95,9 @@ func (c *Client) FindAccountGroup(criteria *Criteria) (*AccountGroup, error) {
 	ags := &AccountGroups{}
 	if err := c.SearchRead(AccountGroupModel, criteria, NewOptions().Limit(1), ags); err != nil {
 		return nil, err
+	}
+	if len(*ags) == 0 {
+		return nil, nil
 	}
 	return &((*ags)[0]), nil
 }
@@ -116,6 +123,9 @@ func (c *Client) FindAccountGroupId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(AccountGroupModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

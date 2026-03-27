@@ -2,16 +2,15 @@ package odoo
 
 // AccountChangeLockDate represents account.change.lock.date model.
 type AccountChangeLockDate struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	FiscalyearLockDate *Time     `xmlrpc:"fiscalyear_lock_date,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	PeriodLockDate     *Time     `xmlrpc:"period_lock_date,omitempty"`
-	TaxLockDate        *Time     `xmlrpc:"tax_lock_date,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalyearLockDate *Time     `xmlrpc:"fiscalyear_lock_date,omitempty" json:"fiscalyear_lock_date,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PeriodLockDate     *Time     `xmlrpc:"period_lock_date,omitempty" json:"period_lock_date,omitempty"`
+	TaxLockDate        *Time     `xmlrpc:"tax_lock_date,omitempty" json:"tax_lock_date,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountChangeLockDates represents array of account.change.lock.date model.
@@ -73,6 +72,9 @@ func (c *Client) GetAccountChangeLockDate(id int64) (*AccountChangeLockDate, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*aclds) == 0 {
+		return nil, nil
+	}
 	return &((*aclds)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindAccountChangeLockDate(criteria *Criteria) (*AccountChangeLo
 	aclds := &AccountChangeLockDates{}
 	if err := c.SearchRead(AccountChangeLockDateModel, criteria, NewOptions().Limit(1), aclds); err != nil {
 		return nil, err
+	}
+	if len(*aclds) == 0 {
+		return nil, nil
 	}
 	return &((*aclds)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindAccountChangeLockDateId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountChangeLockDateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

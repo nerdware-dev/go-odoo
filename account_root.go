@@ -2,12 +2,11 @@ package odoo
 
 // AccountRoot represents account.root model.
 type AccountRoot struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId    *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
 }
 
 // AccountRoots represents array of account.root model.
@@ -69,6 +68,9 @@ func (c *Client) GetAccountRoot(id int64) (*AccountRoot, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ars) == 0 {
+		return nil, nil
+	}
 	return &((*ars)[0]), nil
 }
 
@@ -86,6 +88,9 @@ func (c *Client) FindAccountRoot(criteria *Criteria) (*AccountRoot, error) {
 	ars := &AccountRoots{}
 	if err := c.SearchRead(AccountRootModel, criteria, NewOptions().Limit(1), ars); err != nil {
 		return nil, err
+	}
+	if len(*ars) == 0 {
+		return nil, nil
 	}
 	return &((*ars)[0]), nil
 }
@@ -111,6 +116,9 @@ func (c *Client) FindAccountRootId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(AccountRootModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

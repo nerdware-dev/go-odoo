@@ -2,24 +2,23 @@ package odoo
 
 // AccountTaxRepartitionLine represents account.tax.repartition.line model.
 type AccountTaxRepartitionLine struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountId       *Many2One  `xmlrpc:"account_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId       *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Factor          *Float     `xmlrpc:"factor,omitempty"`
-	FactorPercent   *Float     `xmlrpc:"factor_percent,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	InvoiceTaxId    *Many2One  `xmlrpc:"invoice_tax_id,omitempty"`
-	RefundTaxId     *Many2One  `xmlrpc:"refund_tax_id,omitempty"`
-	RepartitionType *Selection `xmlrpc:"repartition_type,omitempty"`
-	Sequence        *Int       `xmlrpc:"sequence,omitempty"`
-	TagIds          *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaxId           *Many2One  `xmlrpc:"tax_id,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountId       *Many2One  `xmlrpc:"account_id,omitempty" json:"account_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentType    *Selection `xmlrpc:"document_type,omitempty" json:"document_type,omitempty"`
+	Factor          *Float     `xmlrpc:"factor,omitempty" json:"factor,omitempty"`
+	FactorPercent   *Float     `xmlrpc:"factor_percent,omitempty" json:"factor_percent,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RepartitionType *Selection `xmlrpc:"repartition_type,omitempty" json:"repartition_type,omitempty"`
+	Sequence        *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TagIds          *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TagIdsDomain    *String    `xmlrpc:"tag_ids_domain,omitempty" json:"tag_ids_domain,omitempty"`
+	TaxId           *Many2One  `xmlrpc:"tax_id,omitempty" json:"tax_id,omitempty"`
+	UseInTaxClosing *Bool      `xmlrpc:"use_in_tax_closing,omitempty" json:"use_in_tax_closing,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxRepartitionLines represents array of account.tax.repartition.line model.
@@ -81,6 +80,9 @@ func (c *Client) GetAccountTaxRepartitionLine(id int64) (*AccountTaxRepartitionL
 	if err != nil {
 		return nil, err
 	}
+	if len(*atrls) == 0 {
+		return nil, nil
+	}
 	return &((*atrls)[0]), nil
 }
 
@@ -98,6 +100,9 @@ func (c *Client) FindAccountTaxRepartitionLine(criteria *Criteria) (*AccountTaxR
 	atrls := &AccountTaxRepartitionLines{}
 	if err := c.SearchRead(AccountTaxRepartitionLineModel, criteria, NewOptions().Limit(1), atrls); err != nil {
 		return nil, err
+	}
+	if len(*atrls) == 0 {
+		return nil, nil
 	}
 	return &((*atrls)[0]), nil
 }
@@ -123,6 +128,9 @@ func (c *Client) FindAccountTaxRepartitionLineId(criteria *Criteria, options *Op
 	ids, err := c.Search(AccountTaxRepartitionLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

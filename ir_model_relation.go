@@ -2,16 +2,15 @@ package odoo
 
 // IrModelRelation represents ir.model.relation model.
 type IrModelRelation struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Model       *Many2One `xmlrpc:"model,omitempty"`
-	Module      *Many2One `xmlrpc:"module,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Model       *Many2One `xmlrpc:"model,omitempty" json:"model,omitempty"`
+	Module      *Many2One `xmlrpc:"module,omitempty" json:"module,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModelRelations represents array of ir.model.relation model.
@@ -73,6 +72,9 @@ func (c *Client) GetIrModelRelation(id int64) (*IrModelRelation, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imrs) == 0 {
+		return nil, nil
+	}
 	return &((*imrs)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindIrModelRelation(criteria *Criteria) (*IrModelRelation, erro
 	imrs := &IrModelRelations{}
 	if err := c.SearchRead(IrModelRelationModel, criteria, NewOptions().Limit(1), imrs); err != nil {
 		return nil, err
+	}
+	if len(*imrs) == 0 {
+		return nil, nil
 	}
 	return &((*imrs)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindIrModelRelationId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(IrModelRelationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

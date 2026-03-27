@@ -2,21 +2,19 @@ package odoo
 
 // ProjectCreateSaleOrder represents project.create.sale.order model.
 type ProjectCreateSaleOrder struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	BillableType *Selection `xmlrpc:"billable_type,omitempty"`
-	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId   *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	LineIds      *Relation  `xmlrpc:"line_ids,omitempty"`
-	PartnerId    *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PriceUnit    *Float     `xmlrpc:"price_unit,omitempty"`
-	ProductId    *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProjectId    *Many2One  `xmlrpc:"project_id,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CommercialPartnerId *Many2One `xmlrpc:"commercial_partner_id,omitempty" json:"commercial_partner_id,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InfoInvoice         *String   `xmlrpc:"info_invoice,omitempty" json:"info_invoice,omitempty"`
+	LineIds             *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ProjectId           *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCreateSaleOrders represents array of project.create.sale.order model.
@@ -78,6 +76,9 @@ func (c *Client) GetProjectCreateSaleOrder(id int64) (*ProjectCreateSaleOrder, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcsos) == 0 {
+		return nil, nil
+	}
 	return &((*pcsos)[0]), nil
 }
 
@@ -95,6 +96,9 @@ func (c *Client) FindProjectCreateSaleOrder(criteria *Criteria) (*ProjectCreateS
 	pcsos := &ProjectCreateSaleOrders{}
 	if err := c.SearchRead(ProjectCreateSaleOrderModel, criteria, NewOptions().Limit(1), pcsos); err != nil {
 		return nil, err
+	}
+	if len(*pcsos) == 0 {
+		return nil, nil
 	}
 	return &((*pcsos)[0]), nil
 }
@@ -120,6 +124,9 @@ func (c *Client) FindProjectCreateSaleOrderId(criteria *Criteria, options *Optio
 	ids, err := c.Search(ProjectCreateSaleOrderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

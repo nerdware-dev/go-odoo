@@ -2,18 +2,21 @@ package odoo
 
 // CalendarAlarm represents calendar.alarm model.
 type CalendarAlarm struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AlarmType       *Selection `xmlrpc:"alarm_type,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Duration        *Int       `xmlrpc:"duration,omitempty"`
-	DurationMinutes *Int       `xmlrpc:"duration_minutes,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Interval        *Selection `xmlrpc:"interval,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AlarmType            *Selection `xmlrpc:"alarm_type,omitempty" json:"alarm_type,omitempty"`
+	Body                 *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration             *Int       `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	DurationMinutes      *Int       `xmlrpc:"duration_minutes,omitempty" json:"duration_minutes,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Interval             *Selection `xmlrpc:"interval,omitempty" json:"interval,omitempty"`
+	MailTemplateId       *Many2One  `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SmsNotifyResponsible *Bool      `xmlrpc:"sms_notify_responsible,omitempty" json:"sms_notify_responsible,omitempty"`
+	SmsTemplateId        *Many2One  `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarAlarms represents array of calendar.alarm model.
@@ -75,6 +78,9 @@ func (c *Client) GetCalendarAlarm(id int64) (*CalendarAlarm, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cas) == 0 {
+		return nil, nil
+	}
 	return &((*cas)[0]), nil
 }
 
@@ -92,6 +98,9 @@ func (c *Client) FindCalendarAlarm(criteria *Criteria) (*CalendarAlarm, error) {
 	cas := &CalendarAlarms{}
 	if err := c.SearchRead(CalendarAlarmModel, criteria, NewOptions().Limit(1), cas); err != nil {
 		return nil, err
+	}
+	if len(*cas) == 0 {
+		return nil, nil
 	}
 	return &((*cas)[0]), nil
 }
@@ -117,6 +126,9 @@ func (c *Client) FindCalendarAlarmId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(CalendarAlarmModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

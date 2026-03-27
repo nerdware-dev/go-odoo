@@ -2,16 +2,14 @@ package odoo
 
 // ResPartnerTitle represents res.partner.title model.
 type ResPartnerTitle struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Salutation  *String   `xmlrpc:"salutation,omitempty"`
-	Shortcut    *String   `xmlrpc:"shortcut,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Shortcut    *String   `xmlrpc:"shortcut,omitempty" json:"shortcut,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResPartnerTitles represents array of res.partner.title model.
@@ -73,6 +71,9 @@ func (c *Client) GetResPartnerTitle(id int64) (*ResPartnerTitle, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpts) == 0 {
+		return nil, nil
+	}
 	return &((*rpts)[0]), nil
 }
 
@@ -90,6 +91,9 @@ func (c *Client) FindResPartnerTitle(criteria *Criteria) (*ResPartnerTitle, erro
 	rpts := &ResPartnerTitles{}
 	if err := c.SearchRead(ResPartnerTitleModel, criteria, NewOptions().Limit(1), rpts); err != nil {
 		return nil, err
+	}
+	if len(*rpts) == 0 {
+		return nil, nil
 	}
 	return &((*rpts)[0]), nil
 }
@@ -115,6 +119,9 @@ func (c *Client) FindResPartnerTitleId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResPartnerTitleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

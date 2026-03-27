@@ -2,15 +2,14 @@ package odoo
 
 // ProductRemoval represents product.removal model.
 type ProductRemoval struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Method      *String   `xmlrpc:"method,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Method      *String   `xmlrpc:"method,omitempty" json:"method,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductRemovals represents array of product.removal model.
@@ -72,6 +71,9 @@ func (c *Client) GetProductRemoval(id int64) (*ProductRemoval, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*prs) == 0 {
+		return nil, nil
+	}
 	return &((*prs)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindProductRemoval(criteria *Criteria) (*ProductRemoval, error)
 	prs := &ProductRemovals{}
 	if err := c.SearchRead(ProductRemovalModel, criteria, NewOptions().Limit(1), prs); err != nil {
 		return nil, err
+	}
+	if len(*prs) == 0 {
+		return nil, nil
 	}
 	return &((*prs)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindProductRemovalId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(ProductRemovalModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,24 +2,23 @@ package odoo
 
 // DocumentsRequestWizard represents documents.request_wizard model.
 type DocumentsRequestWizard struct {
-	LastUpdate                    *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty"`
-	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty"`
-	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty"`
-	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	CreateDate                    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName                   *String    `xmlrpc:"display_name,omitempty"`
-	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty"`
-	Id                            *Int       `xmlrpc:"id,omitempty"`
-	Name                          *String    `xmlrpc:"name,omitempty"`
-	OwnerId                       *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty"`
-	ResId                         *Int       `xmlrpc:"res_id,omitempty"`
-	ResModel                      *String    `xmlrpc:"res_model,omitempty"`
-	TagIds                        *Relation  `xmlrpc:"tag_ids,omitempty"`
-	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActivityDateDeadlineRange     *Int       `xmlrpc:"activity_date_deadline_range,omitempty" json:"activity_date_deadline_range,omitempty"`
+	ActivityDateDeadlineRangeType *Selection `xmlrpc:"activity_date_deadline_range_type,omitempty" json:"activity_date_deadline_range_type,omitempty"`
+	ActivityNote                  *String    `xmlrpc:"activity_note,omitempty" json:"activity_note,omitempty"`
+	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	CreateDate                    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FolderId                      *Many2One  `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	Id                            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId                     *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	RequesteeId                   *Many2One  `xmlrpc:"requestee_id,omitempty" json:"requestee_id,omitempty"`
+	ResId                         *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel                      *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	TagIds                        *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	WriteDate                     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsRequestWizards represents array of documents.request_wizard model.
@@ -81,6 +80,9 @@ func (c *Client) GetDocumentsRequestWizard(id int64) (*DocumentsRequestWizard, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*drs) == 0 {
+		return nil, nil
+	}
 	return &((*drs)[0]), nil
 }
 
@@ -98,6 +100,9 @@ func (c *Client) FindDocumentsRequestWizard(criteria *Criteria) (*DocumentsReque
 	drs := &DocumentsRequestWizards{}
 	if err := c.SearchRead(DocumentsRequestWizardModel, criteria, NewOptions().Limit(1), drs); err != nil {
 		return nil, err
+	}
+	if len(*drs) == 0 {
+		return nil, nil
 	}
 	return &((*drs)[0]), nil
 }
@@ -123,6 +128,9 @@ func (c *Client) FindDocumentsRequestWizardId(criteria *Criteria, options *Optio
 	ids, err := c.Search(DocumentsRequestWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

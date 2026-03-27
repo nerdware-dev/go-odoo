@@ -2,18 +2,17 @@ package odoo
 
 // IrDefault represents ir.default model.
 type IrDefault struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	Condition   *String   `xmlrpc:"condition,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldId     *Many2One `xmlrpc:"field_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	JsonValue   *String   `xmlrpc:"json_value,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId   *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Condition   *String   `xmlrpc:"condition,omitempty" json:"condition,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId     *Many2One `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JsonValue   *String   `xmlrpc:"json_value,omitempty" json:"json_value,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrDefaults represents array of ir.default model.
@@ -75,6 +74,9 @@ func (c *Client) GetIrDefault(id int64) (*IrDefault, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IDs) == 0 {
+		return nil, nil
+	}
 	return &((*IDs)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindIrDefault(criteria *Criteria) (*IrDefault, error) {
 	IDs := &IrDefaults{}
 	if err := c.SearchRead(IrDefaultModel, criteria, NewOptions().Limit(1), IDs); err != nil {
 		return nil, err
+	}
+	if len(*IDs) == 0 {
+		return nil, nil
 	}
 	return &((*IDs)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindIrDefaultId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrDefaultModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

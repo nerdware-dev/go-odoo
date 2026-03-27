@@ -2,52 +2,27 @@ package odoo
 
 // AccountBankStatement represents account.bank.statement model.
 type AccountBankStatement struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountingDate           *Time      `xmlrpc:"accounting_date,omitempty"`
-	AllLinesReconciled       *Bool      `xmlrpc:"all_lines_reconciled,omitempty"`
-	AttachmentIds            *Relation  `xmlrpc:"attachment_ids,omitempty"`
-	BalanceEnd               *Float     `xmlrpc:"balance_end,omitempty"`
-	BalanceEndReal           *Float     `xmlrpc:"balance_end_real,omitempty"`
-	BalanceStart             *Float     `xmlrpc:"balance_start,omitempty"`
-	CashboxEndId             *Many2One  `xmlrpc:"cashbox_end_id,omitempty"`
-	CashboxStartId           *Many2One  `xmlrpc:"cashbox_start_id,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId               *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                     *Time      `xmlrpc:"date,omitempty"`
-	DateDone                 *Time      `xmlrpc:"date_done,omitempty"`
-	Difference               *Float     `xmlrpc:"difference,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	IsDifferenceZero         *Bool      `xmlrpc:"is_difference_zero,omitempty"`
-	JournalId                *Many2One  `xmlrpc:"journal_id,omitempty"`
-	JournalType              *Selection `xmlrpc:"journal_type,omitempty"`
-	LineIds                  *Relation  `xmlrpc:"line_ids,omitempty"`
-	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	MoveLineCount            *Int       `xmlrpc:"move_line_count,omitempty"`
-	MoveLineIds              *Relation  `xmlrpc:"move_line_ids,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	Reference                *String    `xmlrpc:"reference,omitempty"`
-	State                    *Selection `xmlrpc:"state,omitempty"`
-	TotalEntryEncoding       *Float     `xmlrpc:"total_entry_encoding,omitempty"`
-	UserId                   *Many2One  `xmlrpc:"user_id,omitempty"`
-	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttachmentIds      *Relation `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	BalanceEnd         *Float    `xmlrpc:"balance_end,omitempty" json:"balance_end,omitempty"`
+	BalanceEndReal     *Float    `xmlrpc:"balance_end_real,omitempty" json:"balance_end_real,omitempty"`
+	BalanceStart       *Float    `xmlrpc:"balance_start,omitempty" json:"balance_start,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date               *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FirstLineIndex     *String   `xmlrpc:"first_line_index,omitempty" json:"first_line_index,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsComplete         *Bool     `xmlrpc:"is_complete,omitempty" json:"is_complete,omitempty"`
+	IsValid            *Bool     `xmlrpc:"is_valid,omitempty" json:"is_valid,omitempty"`
+	JournalId          *Many2One `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LineIds            *Relation `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProblemDescription *String   `xmlrpc:"problem_description,omitempty" json:"problem_description,omitempty"`
+	Reference          *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBankStatements represents array of account.bank.statement model.
@@ -109,6 +84,9 @@ func (c *Client) GetAccountBankStatement(id int64) (*AccountBankStatement, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*abss) == 0 {
+		return nil, nil
+	}
 	return &((*abss)[0]), nil
 }
 
@@ -126,6 +104,9 @@ func (c *Client) FindAccountBankStatement(criteria *Criteria) (*AccountBankState
 	abss := &AccountBankStatements{}
 	if err := c.SearchRead(AccountBankStatementModel, criteria, NewOptions().Limit(1), abss); err != nil {
 		return nil, err
+	}
+	if len(*abss) == 0 {
+		return nil, nil
 	}
 	return &((*abss)[0]), nil
 }
@@ -151,6 +132,9 @@ func (c *Client) FindAccountBankStatementId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountBankStatementModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

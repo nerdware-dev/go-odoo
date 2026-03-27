@@ -2,17 +2,16 @@ package odoo
 
 // BaseImportImport represents base_import.import model.
 type BaseImportImport struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	File        *String   `xmlrpc:"file,omitempty"`
-	FileName    *String   `xmlrpc:"file_name,omitempty"`
-	FileType    *String   `xmlrpc:"file_type,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	File        *String   `xmlrpc:"file,omitempty" json:"file,omitempty"`
+	FileName    *String   `xmlrpc:"file_name,omitempty" json:"file_name,omitempty"`
+	FileType    *String   `xmlrpc:"file_type,omitempty" json:"file_type,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseImportImports represents array of base_import.import model.
@@ -74,6 +73,9 @@ func (c *Client) GetBaseImportImport(id int64) (*BaseImportImport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bis) == 0 {
+		return nil, nil
+	}
 	return &((*bis)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindBaseImportImport(criteria *Criteria) (*BaseImportImport, er
 	bis := &BaseImportImports{}
 	if err := c.SearchRead(BaseImportImportModel, criteria, NewOptions().Limit(1), bis); err != nil {
 		return nil, err
+	}
+	if len(*bis) == 0 {
+		return nil, nil
 	}
 	return &((*bis)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindBaseImportImportId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(BaseImportImportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

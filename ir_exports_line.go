@@ -2,15 +2,14 @@ package odoo
 
 // IrExportsLine represents ir.exports.line model.
 type IrExportsLine struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	ExportId    *Many2One `xmlrpc:"export_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportId    *Many2One `xmlrpc:"export_id,omitempty" json:"export_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrExportsLines represents array of ir.exports.line model.
@@ -72,6 +71,9 @@ func (c *Client) GetIrExportsLine(id int64) (*IrExportsLine, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iels) == 0 {
+		return nil, nil
+	}
 	return &((*iels)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindIrExportsLine(criteria *Criteria) (*IrExportsLine, error) {
 	iels := &IrExportsLines{}
 	if err := c.SearchRead(IrExportsLineModel, criteria, NewOptions().Limit(1), iels); err != nil {
 		return nil, err
+	}
+	if len(*iels) == 0 {
+		return nil, nil
 	}
 	return &((*iels)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindIrExportsLineId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrExportsLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

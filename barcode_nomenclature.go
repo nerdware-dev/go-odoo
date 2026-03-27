@@ -2,16 +2,17 @@ package odoo
 
 // BarcodeNomenclature represents barcode.nomenclature model.
 type BarcodeNomenclature struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	RuleIds     *Relation  `xmlrpc:"rule_ids,omitempty"`
-	UpcEanConv  *Selection `xmlrpc:"upc_ean_conv,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Gs1SeparatorFnc1  *String    `xmlrpc:"gs1_separator_fnc1,omitempty" json:"gs1_separator_fnc1,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsGs1Nomenclature *Bool      `xmlrpc:"is_gs1_nomenclature,omitempty" json:"is_gs1_nomenclature,omitempty"`
+	Name              *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	RuleIds           *Relation  `xmlrpc:"rule_ids,omitempty" json:"rule_ids,omitempty"`
+	UpcEanConv        *Selection `xmlrpc:"upc_ean_conv,omitempty" json:"upc_ean_conv,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BarcodeNomenclatures represents array of barcode.nomenclature model.
@@ -73,6 +74,9 @@ func (c *Client) GetBarcodeNomenclature(id int64) (*BarcodeNomenclature, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*bns) == 0 {
+		return nil, nil
+	}
 	return &((*bns)[0]), nil
 }
 
@@ -90,6 +94,9 @@ func (c *Client) FindBarcodeNomenclature(criteria *Criteria) (*BarcodeNomenclatu
 	bns := &BarcodeNomenclatures{}
 	if err := c.SearchRead(BarcodeNomenclatureModel, criteria, NewOptions().Limit(1), bns); err != nil {
 		return nil, err
+	}
+	if len(*bns) == 0 {
+		return nil, nil
 	}
 	return &((*bns)[0]), nil
 }
@@ -115,6 +122,9 @@ func (c *Client) FindBarcodeNomenclatureId(criteria *Criteria, options *Options)
 	ids, err := c.Search(BarcodeNomenclatureModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

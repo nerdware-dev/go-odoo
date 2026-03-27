@@ -2,25 +2,24 @@ package odoo
 
 // AccountTransferModel represents account.transfer.model model.
 type AccountTransferModel struct {
-	LastUpdate   *Time      `xmlrpc:"__last_update,omitempty"`
-	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty"`
-	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateStart    *Time      `xmlrpc:"date_start,omitempty"`
-	DateStop     *Time      `xmlrpc:"date_stop,omitempty"`
-	DisplayName  *String    `xmlrpc:"display_name,omitempty"`
-	Frequency    *Selection `xmlrpc:"frequency,omitempty"`
-	Id           *Int       `xmlrpc:"id,omitempty"`
-	JournalId    *Many2One  `xmlrpc:"journal_id,omitempty"`
-	LineIds      *Relation  `xmlrpc:"line_ids,omitempty"`
-	MoveIds      *Relation  `xmlrpc:"move_ids,omitempty"`
-	MoveIdsCount *Int       `xmlrpc:"move_ids_count,omitempty"`
-	Name         *String    `xmlrpc:"name,omitempty"`
-	State        *Selection `xmlrpc:"state,omitempty"`
-	TotalPercent *Float     `xmlrpc:"total_percent,omitempty"`
-	WriteDate    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountIds   *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	CompanyId    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateStart    *Time      `xmlrpc:"date_start,omitempty" json:"date_start,omitempty"`
+	DateStop     *Time      `xmlrpc:"date_stop,omitempty" json:"date_stop,omitempty"`
+	DisplayName  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Frequency    *Selection `xmlrpc:"frequency,omitempty" json:"frequency,omitempty"`
+	Id           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId    *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	LineIds      *Relation  `xmlrpc:"line_ids,omitempty" json:"line_ids,omitempty"`
+	MoveIds      *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	MoveIdsCount *Int       `xmlrpc:"move_ids_count,omitempty" json:"move_ids_count,omitempty"`
+	Name         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	State        *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TotalPercent *Float     `xmlrpc:"total_percent,omitempty" json:"total_percent,omitempty"`
+	WriteDate    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTransferModels represents array of account.transfer.model model.
@@ -82,6 +81,9 @@ func (c *Client) GetAccountTransferModel(id int64) (*AccountTransferModel, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*atms) == 0 {
+		return nil, nil
+	}
 	return &((*atms)[0]), nil
 }
 
@@ -99,6 +101,9 @@ func (c *Client) FindAccountTransferModel(criteria *Criteria) (*AccountTransferM
 	atms := &AccountTransferModels{}
 	if err := c.SearchRead(AccountTransferModelModel, criteria, NewOptions().Limit(1), atms); err != nil {
 		return nil, err
+	}
+	if len(*atms) == 0 {
+		return nil, nil
 	}
 	return &((*atms)[0]), nil
 }
@@ -124,6 +129,9 @@ func (c *Client) FindAccountTransferModelId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountTransferModelModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,15 +2,14 @@ package odoo
 
 // IrDemoFailureWizard represents ir.demo_failure.wizard model.
 type IrDemoFailureWizard struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	FailureIds    *Relation `xmlrpc:"failure_ids,omitempty"`
-	FailuresCount *Int      `xmlrpc:"failures_count,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureIds    *Relation `xmlrpc:"failure_ids,omitempty" json:"failure_ids,omitempty"`
+	FailuresCount *Int      `xmlrpc:"failures_count,omitempty" json:"failures_count,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrDemoFailureWizards represents array of ir.demo_failure.wizard model.
@@ -72,6 +71,9 @@ func (c *Client) GetIrDemoFailureWizard(id int64) (*IrDemoFailureWizard, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*idws) == 0 {
+		return nil, nil
+	}
 	return &((*idws)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindIrDemoFailureWizard(criteria *Criteria) (*IrDemoFailureWiza
 	idws := &IrDemoFailureWizards{}
 	if err := c.SearchRead(IrDemoFailureWizardModel, criteria, NewOptions().Limit(1), idws); err != nil {
 		return nil, err
+	}
+	if len(*idws) == 0 {
+		return nil, nil
 	}
 	return &((*idws)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindIrDemoFailureWizardId(criteria *Criteria, options *Options)
 	ids, err := c.Search(IrDemoFailureWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

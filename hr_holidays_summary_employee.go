@@ -2,16 +2,15 @@ package odoo
 
 // HrHolidaysSummaryEmployee represents hr.holidays.summary.employee model.
 type HrHolidaysSummaryEmployee struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateFrom    *Time      `xmlrpc:"date_from,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Emp         *Relation  `xmlrpc:"emp,omitempty"`
-	HolidayType *Selection `xmlrpc:"holiday_type,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom    *Time      `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Emp         *Relation  `xmlrpc:"emp,omitempty" json:"emp,omitempty"`
+	HolidayType *Selection `xmlrpc:"holiday_type,omitempty" json:"holiday_type,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrHolidaysSummaryEmployees represents array of hr.holidays.summary.employee model.
@@ -73,6 +72,9 @@ func (c *Client) GetHrHolidaysSummaryEmployee(id int64) (*HrHolidaysSummaryEmplo
 	if err != nil {
 		return nil, err
 	}
+	if len(*hhses) == 0 {
+		return nil, nil
+	}
 	return &((*hhses)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindHrHolidaysSummaryEmployee(criteria *Criteria) (*HrHolidaysS
 	hhses := &HrHolidaysSummaryEmployees{}
 	if err := c.SearchRead(HrHolidaysSummaryEmployeeModel, criteria, NewOptions().Limit(1), hhses); err != nil {
 		return nil, err
+	}
+	if len(*hhses) == 0 {
+		return nil, nil
 	}
 	return &((*hhses)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindHrHolidaysSummaryEmployeeId(criteria *Criteria, options *Op
 	ids, err := c.Search(HrHolidaysSummaryEmployeeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

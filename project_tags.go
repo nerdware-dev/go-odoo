@@ -2,15 +2,16 @@ package odoo
 
 // ProjectTags represents project.tags model.
 type ProjectTags struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Color       *Int      `xmlrpc:"color,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Color       *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProjectIds  *Relation `xmlrpc:"project_ids,omitempty" json:"project_ids,omitempty"`
+	TaskIds     *Relation `xmlrpc:"task_ids,omitempty" json:"task_ids,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTagss represents array of project.tags model.
@@ -72,6 +73,9 @@ func (c *Client) GetProjectTags(id int64) (*ProjectTags, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pts) == 0 {
+		return nil, nil
+	}
 	return &((*pts)[0]), nil
 }
 
@@ -89,6 +93,9 @@ func (c *Client) FindProjectTags(criteria *Criteria) (*ProjectTags, error) {
 	pts := &ProjectTagss{}
 	if err := c.SearchRead(ProjectTagsModel, criteria, NewOptions().Limit(1), pts); err != nil {
 		return nil, err
+	}
+	if len(*pts) == 0 {
+		return nil, nil
 	}
 	return &((*pts)[0]), nil
 }
@@ -114,6 +121,9 @@ func (c *Client) FindProjectTagsId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ProjectTagsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

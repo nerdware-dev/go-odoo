@@ -2,17 +2,17 @@ package odoo
 
 // ProjectCreateInvoice represents project.create.invoice model.
 type ProjectCreateInvoice struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	AmountToInvoice *Float    `xmlrpc:"amount_to_invoice,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	ProjectId       *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleOrderId     *Many2One `xmlrpc:"sale_order_id,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CandidateOrders *Relation `xmlrpc:"_candidate_orders,omitempty" json:"_candidate_orders,omitempty"`
+	AmountToInvoice *Float    `xmlrpc:"amount_to_invoice,omitempty" json:"amount_to_invoice,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProjectId       *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleOrderId     *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCreateInvoices represents array of project.create.invoice model.
@@ -74,6 +74,9 @@ func (c *Client) GetProjectCreateInvoice(id int64) (*ProjectCreateInvoice, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcis) == 0 {
+		return nil, nil
+	}
 	return &((*pcis)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindProjectCreateInvoice(criteria *Criteria) (*ProjectCreateInv
 	pcis := &ProjectCreateInvoices{}
 	if err := c.SearchRead(ProjectCreateInvoiceModel, criteria, NewOptions().Limit(1), pcis); err != nil {
 		return nil, err
+	}
+	if len(*pcis) == 0 {
+		return nil, nil
 	}
 	return &((*pcis)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindProjectCreateInvoiceId(criteria *Criteria, options *Options
 	ids, err := c.Search(ProjectCreateInvoiceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

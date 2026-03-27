@@ -2,20 +2,19 @@ package odoo
 
 // AccountPaymentTermLine represents account.payment.term.line model.
 type AccountPaymentTermLine struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DayOfTheMonth *Int       `xmlrpc:"day_of_the_month,omitempty"`
-	Days          *Int       `xmlrpc:"days,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	Option        *Selection `xmlrpc:"option,omitempty"`
-	PaymentId     *Many2One  `xmlrpc:"payment_id,omitempty"`
-	Sequence      *Int       `xmlrpc:"sequence,omitempty"`
-	Value         *Selection `xmlrpc:"value,omitempty"`
-	ValueAmount   *Float     `xmlrpc:"value_amount,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DaysNextMonth        *String    `xmlrpc:"days_next_month,omitempty" json:"days_next_month,omitempty"`
+	DelayType            *Selection `xmlrpc:"delay_type,omitempty" json:"delay_type,omitempty"`
+	DisplayDaysNextMonth *Bool      `xmlrpc:"display_days_next_month,omitempty" json:"display_days_next_month,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NbDays               *Int       `xmlrpc:"nb_days,omitempty" json:"nb_days,omitempty"`
+	PaymentId            *Many2One  `xmlrpc:"payment_id,omitempty" json:"payment_id,omitempty"`
+	Value                *Selection `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	ValueAmount          *Float     `xmlrpc:"value_amount,omitempty" json:"value_amount,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentTermLines represents array of account.payment.term.line model.
@@ -77,6 +76,9 @@ func (c *Client) GetAccountPaymentTermLine(id int64) (*AccountPaymentTermLine, e
 	if err != nil {
 		return nil, err
 	}
+	if len(*aptls) == 0 {
+		return nil, nil
+	}
 	return &((*aptls)[0]), nil
 }
 
@@ -94,6 +96,9 @@ func (c *Client) FindAccountPaymentTermLine(criteria *Criteria) (*AccountPayment
 	aptls := &AccountPaymentTermLines{}
 	if err := c.SearchRead(AccountPaymentTermLineModel, criteria, NewOptions().Limit(1), aptls); err != nil {
 		return nil, err
+	}
+	if len(*aptls) == 0 {
+		return nil, nil
 	}
 	return &((*aptls)[0]), nil
 }
@@ -119,6 +124,9 @@ func (c *Client) FindAccountPaymentTermLineId(criteria *Criteria, options *Optio
 	ids, err := c.Search(AccountPaymentTermLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

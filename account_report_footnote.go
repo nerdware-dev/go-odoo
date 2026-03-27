@@ -2,16 +2,15 @@ package odoo
 
 // AccountReportFootnote represents account.report.footnote model.
 type AccountReportFootnote struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Line        *String   `xmlrpc:"line,omitempty"`
-	ManagerId   *Many2One `xmlrpc:"manager_id,omitempty"`
-	Text        *String   `xmlrpc:"text,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LineId      *String   `xmlrpc:"line_id,omitempty" json:"line_id,omitempty"`
+	ReportId    *Many2One `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	Text        *String   `xmlrpc:"text,omitempty" json:"text,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportFootnotes represents array of account.report.footnote model.
@@ -73,6 +72,9 @@ func (c *Client) GetAccountReportFootnote(id int64) (*AccountReportFootnote, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*arfs) == 0 {
+		return nil, nil
+	}
 	return &((*arfs)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindAccountReportFootnote(criteria *Criteria) (*AccountReportFo
 	arfs := &AccountReportFootnotes{}
 	if err := c.SearchRead(AccountReportFootnoteModel, criteria, NewOptions().Limit(1), arfs); err != nil {
 		return nil, err
+	}
+	if len(*arfs) == 0 {
+		return nil, nil
 	}
 	return &((*arfs)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindAccountReportFootnoteId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountReportFootnoteModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

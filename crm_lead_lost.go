@@ -2,14 +2,15 @@ package odoo
 
 // CrmLeadLost represents crm.lead.lost model.
 type CrmLeadLost struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	LostReasonId *Many2One `xmlrpc:"lost_reason_id,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeadIds      *Relation `xmlrpc:"lead_ids,omitempty" json:"lead_ids,omitempty"`
+	LostFeedback *String   `xmlrpc:"lost_feedback,omitempty" json:"lost_feedback,omitempty"`
+	LostReasonId *Many2One `xmlrpc:"lost_reason_id,omitempty" json:"lost_reason_id,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLeadLosts represents array of crm.lead.lost model.
@@ -71,6 +72,9 @@ func (c *Client) GetCrmLeadLost(id int64) (*CrmLeadLost, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*clls) == 0 {
+		return nil, nil
+	}
 	return &((*clls)[0]), nil
 }
 
@@ -88,6 +92,9 @@ func (c *Client) FindCrmLeadLost(criteria *Criteria) (*CrmLeadLost, error) {
 	clls := &CrmLeadLosts{}
 	if err := c.SearchRead(CrmLeadLostModel, criteria, NewOptions().Limit(1), clls); err != nil {
 		return nil, err
+	}
+	if len(*clls) == 0 {
+		return nil, nil
 	}
 	return &((*clls)[0]), nil
 }
@@ -113,6 +120,9 @@ func (c *Client) FindCrmLeadLostId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(CrmLeadLostModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

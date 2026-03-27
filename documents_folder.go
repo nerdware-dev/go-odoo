@@ -2,27 +2,34 @@ package odoo
 
 // DocumentsFolder represents documents.folder model.
 type DocumentsFolder struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	ActionCount       *Int      `xmlrpc:"action_count,omitempty"`
-	ChildrenFolderIds *Relation `xmlrpc:"children_folder_ids,omitempty"`
-	CompanyId         *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description       *String   `xmlrpc:"description,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	DocumentCount     *Int      `xmlrpc:"document_count,omitempty"`
-	DocumentIds       *Relation `xmlrpc:"document_ids,omitempty"`
-	FacetIds          *Relation `xmlrpc:"facet_ids,omitempty"`
-	GroupIds          *Relation `xmlrpc:"group_ids,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	Name              *String   `xmlrpc:"name,omitempty"`
-	ParentFolderId    *Many2One `xmlrpc:"parent_folder_id,omitempty"`
-	ReadGroupIds      *Relation `xmlrpc:"read_group_ids,omitempty"`
-	Sequence          *Int      `xmlrpc:"sequence,omitempty"`
-	ShareLinkIds      *Relation `xmlrpc:"share_link_ids,omitempty"`
-	UserSpecific      *Bool     `xmlrpc:"user_specific,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	ActionCount        *Int      `xmlrpc:"action_count,omitempty" json:"action_count,omitempty"`
+	Active             *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ChildrenFolderIds  *Relation `xmlrpc:"children_folder_ids,omitempty" json:"children_folder_ids,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DeletionDelay      *Int      `xmlrpc:"deletion_delay,omitempty" json:"deletion_delay,omitempty"`
+	Description        *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocumentCount      *Int      `xmlrpc:"document_count,omitempty" json:"document_count,omitempty"`
+	DocumentIds        *Relation `xmlrpc:"document_ids,omitempty" json:"document_ids,omitempty"`
+	FacetIds           *Relation `xmlrpc:"facet_ids,omitempty" json:"facet_ids,omitempty"`
+	GroupIds           *Relation `xmlrpc:"group_ids,omitempty" json:"group_ids,omitempty"`
+	HasWriteAccess     *Bool     `xmlrpc:"has_write_access,omitempty" json:"has_write_access,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsShared           *Bool     `xmlrpc:"is_shared,omitempty" json:"is_shared,omitempty"`
+	Name               *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentFolderId     *Many2One `xmlrpc:"parent_folder_id,omitempty" json:"parent_folder_id,omitempty"`
+	ParentPath         *String   `xmlrpc:"parent_path,omitempty" json:"parent_path,omitempty"`
+	ProductTemplateIds *Relation `xmlrpc:"product_template_ids,omitempty" json:"product_template_ids,omitempty"`
+	ProjectIds         *Relation `xmlrpc:"project_ids,omitempty" json:"project_ids,omitempty"`
+	ReadGroupIds       *Relation `xmlrpc:"read_group_ids,omitempty" json:"read_group_ids,omitempty"`
+	Sequence           *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ShareLinkIds       *Relation `xmlrpc:"share_link_ids,omitempty" json:"share_link_ids,omitempty"`
+	UserSpecific       *Bool     `xmlrpc:"user_specific,omitempty" json:"user_specific,omitempty"`
+	UserSpecificWrite  *Bool     `xmlrpc:"user_specific_write,omitempty" json:"user_specific_write,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsFolders represents array of documents.folder model.
@@ -84,6 +91,9 @@ func (c *Client) GetDocumentsFolder(id int64) (*DocumentsFolder, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dfs) == 0 {
+		return nil, nil
+	}
 	return &((*dfs)[0]), nil
 }
 
@@ -101,6 +111,9 @@ func (c *Client) FindDocumentsFolder(criteria *Criteria) (*DocumentsFolder, erro
 	dfs := &DocumentsFolders{}
 	if err := c.SearchRead(DocumentsFolderModel, criteria, NewOptions().Limit(1), dfs); err != nil {
 		return nil, err
+	}
+	if len(*dfs) == 0 {
+		return nil, nil
 	}
 	return &((*dfs)[0]), nil
 }
@@ -126,6 +139,9 @@ func (c *Client) FindDocumentsFolderId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(DocumentsFolderModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

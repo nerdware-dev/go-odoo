@@ -2,18 +2,17 @@ package odoo
 
 // ProjectCreateSaleOrderLine represents project.create.sale.order.line model.
 type ProjectCreateSaleOrderLine struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty"`
-	ProductId   *Many2One `xmlrpc:"product_id,omitempty"`
-	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	ProductId   *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectCreateSaleOrderLines represents array of project.create.sale.order.line model.
@@ -75,6 +74,9 @@ func (c *Client) GetProjectCreateSaleOrderLine(id int64) (*ProjectCreateSaleOrde
 	if err != nil {
 		return nil, err
 	}
+	if len(*pcsols) == 0 {
+		return nil, nil
+	}
 	return &((*pcsols)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindProjectCreateSaleOrderLine(criteria *Criteria) (*ProjectCre
 	pcsols := &ProjectCreateSaleOrderLines{}
 	if err := c.SearchRead(ProjectCreateSaleOrderLineModel, criteria, NewOptions().Limit(1), pcsols); err != nil {
 		return nil, err
+	}
+	if len(*pcsols) == 0 {
+		return nil, nil
 	}
 	return &((*pcsols)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindProjectCreateSaleOrderLineId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectCreateSaleOrderLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

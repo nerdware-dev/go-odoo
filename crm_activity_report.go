@@ -2,28 +2,28 @@ package odoo
 
 // CrmActivityReport represents crm.activity.report model.
 type CrmActivityReport struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	Active             *Bool      `xmlrpc:"active,omitempty"`
-	AuthorId           *Many2One  `xmlrpc:"author_id,omitempty"`
-	Body               *String    `xmlrpc:"body,omitempty"`
-	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId          *Many2One  `xmlrpc:"country_id,omitempty"`
-	Date               *Time      `xmlrpc:"date,omitempty"`
-	DateClosed         *Time      `xmlrpc:"date_closed,omitempty"`
-	DateConversion     *Time      `xmlrpc:"date_conversion,omitempty"`
-	DateDeadline       *Time      `xmlrpc:"date_deadline,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	LeadCreateDate     *Time      `xmlrpc:"lead_create_date,omitempty"`
-	LeadId             *Many2One  `xmlrpc:"lead_id,omitempty"`
-	LeadType           *Selection `xmlrpc:"lead_type,omitempty"`
-	MailActivityTypeId *Many2One  `xmlrpc:"mail_activity_type_id,omitempty"`
-	PartnerId          *Many2One  `xmlrpc:"partner_id,omitempty"`
-	StageId            *Many2One  `xmlrpc:"stage_id,omitempty"`
-	SubtypeId          *Many2One  `xmlrpc:"subtype_id,omitempty"`
-	TeamId             *Many2One  `xmlrpc:"team_id,omitempty"`
-	UserId             *Many2One  `xmlrpc:"user_id,omitempty"`
-	WonStatus          *Selection `xmlrpc:"won_status,omitempty"`
+	Active             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AuthorId           *Many2One  `xmlrpc:"author_id,omitempty" json:"author_id,omitempty"`
+	Body               *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CompanyId          *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryId          *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	Date               *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DateClosed         *Time      `xmlrpc:"date_closed,omitempty" json:"date_closed,omitempty"`
+	DateConversion     *Time      `xmlrpc:"date_conversion,omitempty" json:"date_conversion,omitempty"`
+	DateDeadline       *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeadCreateDate     *Time      `xmlrpc:"lead_create_date,omitempty" json:"lead_create_date,omitempty"`
+	LeadId             *Many2One  `xmlrpc:"lead_id,omitempty" json:"lead_id,omitempty"`
+	LeadType           *Selection `xmlrpc:"lead_type,omitempty" json:"lead_type,omitempty"`
+	MailActivityTypeId *Many2One  `xmlrpc:"mail_activity_type_id,omitempty" json:"mail_activity_type_id,omitempty"`
+	PartnerId          *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	StageId            *Many2One  `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	SubtypeId          *Many2One  `xmlrpc:"subtype_id,omitempty" json:"subtype_id,omitempty"`
+	TagIds             *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TeamId             *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UserId             *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WonStatus          *Selection `xmlrpc:"won_status,omitempty" json:"won_status,omitempty"`
 }
 
 // CrmActivityReports represents array of crm.activity.report model.
@@ -85,6 +85,9 @@ func (c *Client) GetCrmActivityReport(id int64) (*CrmActivityReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cars) == 0 {
+		return nil, nil
+	}
 	return &((*cars)[0]), nil
 }
 
@@ -102,6 +105,9 @@ func (c *Client) FindCrmActivityReport(criteria *Criteria) (*CrmActivityReport, 
 	cars := &CrmActivityReports{}
 	if err := c.SearchRead(CrmActivityReportModel, criteria, NewOptions().Limit(1), cars); err != nil {
 		return nil, err
+	}
+	if len(*cars) == 0 {
+		return nil, nil
 	}
 	return &((*cars)[0]), nil
 }
@@ -127,6 +133,9 @@ func (c *Client) FindCrmActivityReportId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(CrmActivityReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

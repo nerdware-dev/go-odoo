@@ -2,16 +2,15 @@ package odoo
 
 // AccountPaymentMethod represents account.payment.method model.
 type AccountPaymentMethod struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Code        *String    `xmlrpc:"code,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	PaymentType *Selection `xmlrpc:"payment_type,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Code        *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentType *Selection `xmlrpc:"payment_type,omitempty" json:"payment_type,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountPaymentMethods represents array of account.payment.method model.
@@ -73,6 +72,9 @@ func (c *Client) GetAccountPaymentMethod(id int64) (*AccountPaymentMethod, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*apms) == 0 {
+		return nil, nil
+	}
 	return &((*apms)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindAccountPaymentMethod(criteria *Criteria) (*AccountPaymentMe
 	apms := &AccountPaymentMethods{}
 	if err := c.SearchRead(AccountPaymentMethodModel, criteria, NewOptions().Limit(1), apms); err != nil {
 		return nil, err
+	}
+	if len(*apms) == 0 {
+		return nil, nil
 	}
 	return &((*apms)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindAccountPaymentMethodId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountPaymentMethodModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,34 +2,53 @@ package odoo
 
 // AccountTax represents account.tax model.
 type AccountTax struct {
-	LastUpdate                   *Time      `xmlrpc:"__last_update,omitempty"`
-	Active                       *Bool      `xmlrpc:"active,omitempty"`
-	Amount                       *Float     `xmlrpc:"amount,omitempty"`
-	AmountType                   *Selection `xmlrpc:"amount_type,omitempty"`
-	Analytic                     *Bool      `xmlrpc:"analytic,omitempty"`
-	CashBasisBaseAccountId       *Many2One  `xmlrpc:"cash_basis_base_account_id,omitempty"`
-	CashBasisTransitionAccountId *Many2One  `xmlrpc:"cash_basis_transition_account_id,omitempty"`
-	ChildrenTaxIds               *Relation  `xmlrpc:"children_tax_ids,omitempty"`
-	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
-	CountryId                    *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Description                  *String    `xmlrpc:"description,omitempty"`
-	DisplayName                  *String    `xmlrpc:"display_name,omitempty"`
-	HideTaxExigibility           *Bool      `xmlrpc:"hide_tax_exigibility,omitempty"`
-	Id                           *Int       `xmlrpc:"id,omitempty"`
-	IncludeBaseAmount            *Bool      `xmlrpc:"include_base_amount,omitempty"`
-	InvoiceRepartitionLineIds    *Relation  `xmlrpc:"invoice_repartition_line_ids,omitempty"`
-	L10NDeDatevCode              *String    `xmlrpc:"l10n_de_datev_code,omitempty"`
-	Name                         *String    `xmlrpc:"name,omitempty"`
-	PriceInclude                 *Bool      `xmlrpc:"price_include,omitempty"`
-	RefundRepartitionLineIds     *Relation  `xmlrpc:"refund_repartition_line_ids,omitempty"`
-	Sequence                     *Int       `xmlrpc:"sequence,omitempty"`
-	TaxExigibility               *Selection `xmlrpc:"tax_exigibility,omitempty"`
-	TaxGroupId                   *Many2One  `xmlrpc:"tax_group_id,omitempty"`
-	TypeTaxUse                   *Selection `xmlrpc:"type_tax_use,omitempty"`
-	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                       *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Amount                       *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AmountType                   *Selection `xmlrpc:"amount_type,omitempty" json:"amount_type,omitempty"`
+	Analytic                     *Bool      `xmlrpc:"analytic,omitempty" json:"analytic,omitempty"`
+	CashBasisTransitionAccountId *Many2One  `xmlrpc:"cash_basis_transition_account_id,omitempty" json:"cash_basis_transition_account_id,omitempty"`
+	ChildrenTaxIds               *Relation  `xmlrpc:"children_tax_ids,omitempty" json:"children_tax_ids,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryCode                  *String    `xmlrpc:"country_code,omitempty" json:"country_code,omitempty"`
+	CountryId                    *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description                  *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasMessage                   *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	HideTaxExigibility           *Bool      `xmlrpc:"hide_tax_exigibility,omitempty" json:"hide_tax_exigibility,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncludeBaseAmount            *Bool      `xmlrpc:"include_base_amount,omitempty" json:"include_base_amount,omitempty"`
+	InvoiceLabel                 *String    `xmlrpc:"invoice_label,omitempty" json:"invoice_label,omitempty"`
+	InvoiceRepartitionLineIds    *Relation  `xmlrpc:"invoice_repartition_line_ids,omitempty" json:"invoice_repartition_line_ids,omitempty"`
+	IsBaseAffected               *Bool      `xmlrpc:"is_base_affected,omitempty" json:"is_base_affected,omitempty"`
+	IsUsed                       *Bool      `xmlrpc:"is_used,omitempty" json:"is_used,omitempty"`
+	L10NDeDatevCode              *String    `xmlrpc:"l10n_de_datev_code,omitempty" json:"l10n_de_datev_code,omitempty"`
+	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NameSearchable               *String    `xmlrpc:"name_searchable,omitempty" json:"name_searchable,omitempty"`
+	PriceInclude                 *Bool      `xmlrpc:"price_include,omitempty" json:"price_include,omitempty"`
+	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	RefundRepartitionLineIds     *Relation  `xmlrpc:"refund_repartition_line_ids,omitempty" json:"refund_repartition_line_ids,omitempty"`
+	RepartitionLineIds           *Relation  `xmlrpc:"repartition_line_ids,omitempty" json:"repartition_line_ids,omitempty"`
+	RepartitionLinesStr          *String    `xmlrpc:"repartition_lines_str,omitempty" json:"repartition_lines_str,omitempty"`
+	Sequence                     *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TaxExigibility               *Selection `xmlrpc:"tax_exigibility,omitempty" json:"tax_exigibility,omitempty"`
+	TaxGroupId                   *Many2One  `xmlrpc:"tax_group_id,omitempty" json:"tax_group_id,omitempty"`
+	TaxScope                     *Selection `xmlrpc:"tax_scope,omitempty" json:"tax_scope,omitempty"`
+	TypeTaxUse                   *Selection `xmlrpc:"type_tax_use,omitempty" json:"type_tax_use,omitempty"`
+	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountTaxs represents array of account.tax model.
@@ -91,6 +110,9 @@ func (c *Client) GetAccountTax(id int64) (*AccountTax, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ats) == 0 {
+		return nil, nil
+	}
 	return &((*ats)[0]), nil
 }
 
@@ -108,6 +130,9 @@ func (c *Client) FindAccountTax(criteria *Criteria) (*AccountTax, error) {
 	ats := &AccountTaxs{}
 	if err := c.SearchRead(AccountTaxModel, criteria, NewOptions().Limit(1), ats); err != nil {
 		return nil, err
+	}
+	if len(*ats) == 0 {
+		return nil, nil
 	}
 	return &((*ats)[0]), nil
 }
@@ -133,6 +158,9 @@ func (c *Client) FindAccountTaxId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(AccountTaxModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

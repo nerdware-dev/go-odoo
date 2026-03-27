@@ -2,16 +2,24 @@ package odoo
 
 // IapAccount represents iap.account model.
 type IapAccount struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountToken *String   `xmlrpc:"account_token,omitempty"`
-	CompanyIds   *Relation `xmlrpc:"company_ids,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	ServiceName  *String   `xmlrpc:"service_name,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountInfoId    *Many2One `xmlrpc:"account_info_id,omitempty" json:"account_info_id,omitempty"`
+	AccountInfoIds   *Relation `xmlrpc:"account_info_ids,omitempty" json:"account_info_ids,omitempty"`
+	AccountToken     *String   `xmlrpc:"account_token,omitempty" json:"account_token,omitempty"`
+	Balance          *String   `xmlrpc:"balance,omitempty" json:"balance,omitempty"`
+	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty" json:"company_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description      *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ServiceName      *String   `xmlrpc:"service_name,omitempty" json:"service_name,omitempty"`
+	ShowToken        *Bool     `xmlrpc:"show_token,omitempty" json:"show_token,omitempty"`
+	WarnMe           *Bool     `xmlrpc:"warn_me,omitempty" json:"warn_me,omitempty"`
+	WarningEmail     *String   `xmlrpc:"warning_email,omitempty" json:"warning_email,omitempty"`
+	WarningThreshold *Float    `xmlrpc:"warning_threshold,omitempty" json:"warning_threshold,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IapAccounts represents array of iap.account model.
@@ -73,6 +81,9 @@ func (c *Client) GetIapAccount(id int64) (*IapAccount, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ias) == 0 {
+		return nil, nil
+	}
 	return &((*ias)[0]), nil
 }
 
@@ -90,6 +101,9 @@ func (c *Client) FindIapAccount(criteria *Criteria) (*IapAccount, error) {
 	ias := &IapAccounts{}
 	if err := c.SearchRead(IapAccountModel, criteria, NewOptions().Limit(1), ias); err != nil {
 		return nil, err
+	}
+	if len(*ias) == 0 {
+		return nil, nil
 	}
 	return &((*ias)[0]), nil
 }
@@ -115,6 +129,9 @@ func (c *Client) FindIapAccountId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(IapAccountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

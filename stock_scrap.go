@@ -2,47 +2,43 @@ package odoo
 
 // StockScrap represents stock.scrap model.
 type StockScrap struct {
-	LastUpdate               *Time      `xmlrpc:"__last_update,omitempty"`
-	BarcodeScanned           *String    `xmlrpc:"_barcode_scanned,omitempty"`
-	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate               *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateDone                 *Time      `xmlrpc:"date_done,omitempty"`
-	DisplayName              *String    `xmlrpc:"display_name,omitempty"`
-	Id                       *Int       `xmlrpc:"id,omitempty"`
-	LocationId               *Many2One  `xmlrpc:"location_id,omitempty"`
-	LotId                    *Many2One  `xmlrpc:"lot_id,omitempty"`
-	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty"`
-	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omitempty"`
-	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty"`
-	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty"`
-	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty"`
-	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty"`
-	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty"`
-	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty"`
-	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omitempty"`
-	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty"`
-	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty"`
-	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty"`
-	MessageUnread            *Bool      `xmlrpc:"message_unread,omitempty"`
-	MessageUnreadCounter     *Int       `xmlrpc:"message_unread_counter,omitempty"`
-	MoveId                   *Many2One  `xmlrpc:"move_id,omitempty"`
-	Name                     *String    `xmlrpc:"name,omitempty"`
-	Origin                   *String    `xmlrpc:"origin,omitempty"`
-	OwnerId                  *Many2One  `xmlrpc:"owner_id,omitempty"`
-	PackageId                *Many2One  `xmlrpc:"package_id,omitempty"`
-	PickingId                *Many2One  `xmlrpc:"picking_id,omitempty"`
-	ProductBarcode           *String    `xmlrpc:"product_barcode,omitempty"`
-	ProductId                *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId     *Many2One  `xmlrpc:"product_uom_category_id,omitempty"`
-	ProductUomId             *Many2One  `xmlrpc:"product_uom_id,omitempty"`
-	ScrapLocationId          *Many2One  `xmlrpc:"scrap_location_id,omitempty"`
-	ScrapQty                 *Float     `xmlrpc:"scrap_qty,omitempty"`
-	State                    *Selection `xmlrpc:"state,omitempty"`
-	Tracking                 *Selection `xmlrpc:"tracking,omitempty"`
-	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty"`
-	WriteDate                *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateDone                 *Time      `xmlrpc:"date_done,omitempty" json:"date_done,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasMessage               *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationId               *Many2One  `xmlrpc:"location_id,omitempty" json:"location_id,omitempty"`
+	LotId                    *Many2One  `xmlrpc:"lot_id,omitempty" json:"lot_id,omitempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError       *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds               *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MoveIds                  *Relation  `xmlrpc:"move_ids,omitempty" json:"move_ids,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Origin                   *String    `xmlrpc:"origin,omitempty" json:"origin,omitempty"`
+	OwnerId                  *Many2One  `xmlrpc:"owner_id,omitempty" json:"owner_id,omitempty"`
+	PackageId                *Many2One  `xmlrpc:"package_id,omitempty" json:"package_id,omitempty"`
+	PickingId                *Many2One  `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	ProductId                *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId     *Many2One  `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	ProductUomId             *Many2One  `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	RatingIds                *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	ScrapLocationId          *Many2One  `xmlrpc:"scrap_location_id,omitempty" json:"scrap_location_id,omitempty"`
+	ScrapQty                 *Float     `xmlrpc:"scrap_qty,omitempty" json:"scrap_qty,omitempty"`
+	ShouldReplenish          *Bool      `xmlrpc:"should_replenish,omitempty" json:"should_replenish,omitempty"`
+	State                    *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Tracking                 *Selection `xmlrpc:"tracking,omitempty" json:"tracking,omitempty"`
+	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockScraps represents array of stock.scrap model.
@@ -104,6 +100,9 @@ func (c *Client) GetStockScrap(id int64) (*StockScrap, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sss) == 0 {
+		return nil, nil
+	}
 	return &((*sss)[0]), nil
 }
 
@@ -121,6 +120,9 @@ func (c *Client) FindStockScrap(criteria *Criteria) (*StockScrap, error) {
 	sss := &StockScraps{}
 	if err := c.SearchRead(StockScrapModel, criteria, NewOptions().Limit(1), sss); err != nil {
 		return nil, err
+	}
+	if len(*sss) == 0 {
+		return nil, nil
 	}
 	return &((*sss)[0]), nil
 }
@@ -146,6 +148,9 @@ func (c *Client) FindStockScrapId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(StockScrapModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

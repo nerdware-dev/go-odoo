@@ -2,15 +2,14 @@ package odoo
 
 // FleetVehicleState represents fleet.vehicle.state model.
 type FleetVehicleState struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleStates represents array of fleet.vehicle.state model.
@@ -72,6 +71,9 @@ func (c *Client) GetFleetVehicleState(id int64) (*FleetVehicleState, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*fvss) == 0 {
+		return nil, nil
+	}
 	return &((*fvss)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindFleetVehicleState(criteria *Criteria) (*FleetVehicleState, 
 	fvss := &FleetVehicleStates{}
 	if err := c.SearchRead(FleetVehicleStateModel, criteria, NewOptions().Limit(1), fvss); err != nil {
 		return nil, err
+	}
+	if len(*fvss) == 0 {
+		return nil, nil
 	}
 	return &((*fvss)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindFleetVehicleStateId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(FleetVehicleStateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

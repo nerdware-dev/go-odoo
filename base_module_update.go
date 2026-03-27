@@ -2,16 +2,15 @@ package odoo
 
 // BaseModuleUpdate represents base.module.update model.
 type BaseModuleUpdate struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	Added       *Int       `xmlrpc:"added,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	Updated     *Int       `xmlrpc:"updated,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Added       *Int       `xmlrpc:"added,omitempty" json:"added,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Updated     *Int       `xmlrpc:"updated,omitempty" json:"updated,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleUpdates represents array of base.module.update model.
@@ -73,6 +72,9 @@ func (c *Client) GetBaseModuleUpdate(id int64) (*BaseModuleUpdate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bmus) == 0 {
+		return nil, nil
+	}
 	return &((*bmus)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindBaseModuleUpdate(criteria *Criteria) (*BaseModuleUpdate, er
 	bmus := &BaseModuleUpdates{}
 	if err := c.SearchRead(BaseModuleUpdateModel, criteria, NewOptions().Limit(1), bmus); err != nil {
 		return nil, err
+	}
+	if len(*bmus) == 0 {
+		return nil, nil
 	}
 	return &((*bmus)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindBaseModuleUpdateId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(BaseModuleUpdateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

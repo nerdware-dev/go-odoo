@@ -2,45 +2,26 @@ package odoo
 
 // UtmCampaign represents utm.campaign model.
 type UtmCampaign struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	Bounced            *Int      `xmlrpc:"bounced,omitempty"`
-	BouncedRatio       *Int      `xmlrpc:"bounced_ratio,omitempty"`
-	ClickCount         *Int      `xmlrpc:"click_count,omitempty"`
-	Color              *Int      `xmlrpc:"color,omitempty"`
-	CompanyId          *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	CrmLeadActivated   *Bool     `xmlrpc:"crm_lead_activated,omitempty"`
-	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty"`
-	Delivered          *Int      `xmlrpc:"delivered,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Failed             *Int      `xmlrpc:"failed,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	Ignored            *Int      `xmlrpc:"ignored,omitempty"`
-	InvoicedAmount     *Int      `xmlrpc:"invoiced_amount,omitempty"`
-	IsWebsite          *Bool     `xmlrpc:"is_website,omitempty"`
-	LeadCount          *Int      `xmlrpc:"lead_count,omitempty"`
-	MailingClicked     *Int      `xmlrpc:"mailing_clicked,omitempty"`
-	MailingClicksRatio *Int      `xmlrpc:"mailing_clicks_ratio,omitempty"`
-	MailingItems       *Int      `xmlrpc:"mailing_items,omitempty"`
-	MailingMailCount   *Int      `xmlrpc:"mailing_mail_count,omitempty"`
-	MailingMailIds     *Relation `xmlrpc:"mailing_mail_ids,omitempty"`
-	Name               *String   `xmlrpc:"name,omitempty"`
-	Opened             *Int      `xmlrpc:"opened,omitempty"`
-	OpenedRatio        *Int      `xmlrpc:"opened_ratio,omitempty"`
-	OpportunityCount   *Int      `xmlrpc:"opportunity_count,omitempty"`
-	QuotationCount     *Int      `xmlrpc:"quotation_count,omitempty"`
-	ReceivedRatio      *Int      `xmlrpc:"received_ratio,omitempty"`
-	Replied            *Int      `xmlrpc:"replied,omitempty"`
-	RepliedRatio       *Int      `xmlrpc:"replied_ratio,omitempty"`
-	Scheduled          *Int      `xmlrpc:"scheduled,omitempty"`
-	Sent               *Int      `xmlrpc:"sent,omitempty"`
-	StageId            *Many2One `xmlrpc:"stage_id,omitempty"`
-	TagIds             *Relation `xmlrpc:"tag_ids,omitempty"`
-	Total              *Int      `xmlrpc:"total,omitempty"`
-	UserId             *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active         *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Color          *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CompanyId      *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CrmLeadCount   *Int      `xmlrpc:"crm_lead_count,omitempty" json:"crm_lead_count,omitempty"`
+	CurrencyId     *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InvoicedAmount *Int      `xmlrpc:"invoiced_amount,omitempty" json:"invoiced_amount,omitempty"`
+	IsAutoCampaign *Bool     `xmlrpc:"is_auto_campaign,omitempty" json:"is_auto_campaign,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	QuotationCount *Int      `xmlrpc:"quotation_count,omitempty" json:"quotation_count,omitempty"`
+	StageId        *Many2One `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	TagIds         *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	Title          *String   `xmlrpc:"title,omitempty" json:"title,omitempty"`
+	UseLeads       *Bool     `xmlrpc:"use_leads,omitempty" json:"use_leads,omitempty"`
+	UserId         *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UtmCampaigns represents array of utm.campaign model.
@@ -102,6 +83,9 @@ func (c *Client) GetUtmCampaign(id int64) (*UtmCampaign, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ucs) == 0 {
+		return nil, nil
+	}
 	return &((*ucs)[0]), nil
 }
 
@@ -119,6 +103,9 @@ func (c *Client) FindUtmCampaign(criteria *Criteria) (*UtmCampaign, error) {
 	ucs := &UtmCampaigns{}
 	if err := c.SearchRead(UtmCampaignModel, criteria, NewOptions().Limit(1), ucs); err != nil {
 		return nil, err
+	}
+	if len(*ucs) == 0 {
+		return nil, nil
 	}
 	return &((*ucs)[0]), nil
 }
@@ -144,6 +131,9 @@ func (c *Client) FindUtmCampaignId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(UtmCampaignModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

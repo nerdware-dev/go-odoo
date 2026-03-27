@@ -2,16 +2,15 @@ package odoo
 
 // IrExports represents ir.exports model.
 type IrExports struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	ExportFields *Relation `xmlrpc:"export_fields,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	Name         *String   `xmlrpc:"name,omitempty"`
-	Resource     *String   `xmlrpc:"resource,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportFields *Relation `xmlrpc:"export_fields,omitempty" json:"export_fields,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name         *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Resource     *String   `xmlrpc:"resource,omitempty" json:"resource,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrExportss represents array of ir.exports model.
@@ -73,6 +72,9 @@ func (c *Client) GetIrExports(id int64) (*IrExports, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ies) == 0 {
+		return nil, nil
+	}
 	return &((*ies)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindIrExports(criteria *Criteria) (*IrExports, error) {
 	ies := &IrExportss{}
 	if err := c.SearchRead(IrExportsModel, criteria, NewOptions().Limit(1), ies); err != nil {
 		return nil, err
+	}
+	if len(*ies) == 0 {
+		return nil, nil
 	}
 	return &((*ies)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindIrExportsId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrExportsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

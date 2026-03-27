@@ -2,22 +2,20 @@ package odoo
 
 // SaleOrderTemplateOption represents sale.order.template.option model.
 type SaleOrderTemplateOption struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId            *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	Discount             *Float    `xmlrpc:"discount,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	Name                 *String   `xmlrpc:"name,omitempty"`
-	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty"`
-	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
-	Quantity             *Float    `xmlrpc:"quantity,omitempty"`
-	SaleOrderTemplateId  *Many2One `xmlrpc:"sale_order_template_id,omitempty"`
-	UomId                *Many2One `xmlrpc:"uom_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId            *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	RecurringInvoice     *Bool     `xmlrpc:"recurring_invoice,omitempty" json:"recurring_invoice,omitempty"`
+	SaleOrderTemplateId  *Many2One `xmlrpc:"sale_order_template_id,omitempty" json:"sale_order_template_id,omitempty"`
+	UomId                *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderTemplateOptions represents array of sale.order.template.option model.
@@ -79,6 +77,9 @@ func (c *Client) GetSaleOrderTemplateOption(id int64) (*SaleOrderTemplateOption,
 	if err != nil {
 		return nil, err
 	}
+	if len(*sotos) == 0 {
+		return nil, nil
+	}
 	return &((*sotos)[0]), nil
 }
 
@@ -96,6 +97,9 @@ func (c *Client) FindSaleOrderTemplateOption(criteria *Criteria) (*SaleOrderTemp
 	sotos := &SaleOrderTemplateOptions{}
 	if err := c.SearchRead(SaleOrderTemplateOptionModel, criteria, NewOptions().Limit(1), sotos); err != nil {
 		return nil, err
+	}
+	if len(*sotos) == 0 {
+		return nil, nil
 	}
 	return &((*sotos)[0]), nil
 }
@@ -121,6 +125,9 @@ func (c *Client) FindSaleOrderTemplateOptionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(SaleOrderTemplateOptionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

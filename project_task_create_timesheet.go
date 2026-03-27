@@ -2,16 +2,15 @@ package odoo
 
 // ProjectTaskCreateTimesheet represents project.task.create.timesheet model.
 type ProjectTaskCreateTimesheet struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description *String   `xmlrpc:"description,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	TaskId      *Many2One `xmlrpc:"task_id,omitempty"`
-	TimeSpent   *Float    `xmlrpc:"time_spent,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TaskId      *Many2One `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TimeSpent   *Float    `xmlrpc:"time_spent,omitempty" json:"time_spent,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectTaskCreateTimesheets represents array of project.task.create.timesheet model.
@@ -73,6 +72,9 @@ func (c *Client) GetProjectTaskCreateTimesheet(id int64) (*ProjectTaskCreateTime
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptcts) == 0 {
+		return nil, nil
+	}
 	return &((*ptcts)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindProjectTaskCreateTimesheet(criteria *Criteria) (*ProjectTas
 	ptcts := &ProjectTaskCreateTimesheets{}
 	if err := c.SearchRead(ProjectTaskCreateTimesheetModel, criteria, NewOptions().Limit(1), ptcts); err != nil {
 		return nil, err
+	}
+	if len(*ptcts) == 0 {
+		return nil, nil
 	}
 	return &((*ptcts)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindProjectTaskCreateTimesheetId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectTaskCreateTimesheetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

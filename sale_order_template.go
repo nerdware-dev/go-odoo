@@ -2,23 +2,33 @@ package odoo
 
 // SaleOrderTemplate represents sale.order.template model.
 type SaleOrderTemplate struct {
-	LastUpdate                 *Time     `xmlrpc:"__last_update,omitempty"`
-	Active                     *Bool     `xmlrpc:"active,omitempty"`
-	CompanyId                  *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                 *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                  *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName                *String   `xmlrpc:"display_name,omitempty"`
-	Id                         *Int      `xmlrpc:"id,omitempty"`
-	MailTemplateId             *Many2One `xmlrpc:"mail_template_id,omitempty"`
-	Name                       *String   `xmlrpc:"name,omitempty"`
-	Note                       *String   `xmlrpc:"note,omitempty"`
-	NumberOfDays               *Int      `xmlrpc:"number_of_days,omitempty"`
-	RequirePayment             *Bool     `xmlrpc:"require_payment,omitempty"`
-	RequireSignature           *Bool     `xmlrpc:"require_signature,omitempty"`
-	SaleOrderTemplateLineIds   *Relation `xmlrpc:"sale_order_template_line_ids,omitempty"`
-	SaleOrderTemplateOptionIds *Relation `xmlrpc:"sale_order_template_option_ids,omitempty"`
-	WriteDate                  *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                   *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active                     *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CompanyId                  *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DurationUnit               *Selection `xmlrpc:"duration_unit,omitempty" json:"duration_unit,omitempty"`
+	DurationValue              *Int       `xmlrpc:"duration_value,omitempty" json:"duration_value,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsSubscription             *Bool      `xmlrpc:"is_subscription,omitempty" json:"is_subscription,omitempty"`
+	IsUnlimited                *Bool      `xmlrpc:"is_unlimited,omitempty" json:"is_unlimited,omitempty"`
+	JournalId                  *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MailTemplateId             *Many2One  `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Name                       *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note                       *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	NumberOfDays               *Int       `xmlrpc:"number_of_days,omitempty" json:"number_of_days,omitempty"`
+	PlanId                     *Many2One  `xmlrpc:"plan_id,omitempty" json:"plan_id,omitempty"`
+	PrepaymentPercent          *Float     `xmlrpc:"prepayment_percent,omitempty" json:"prepayment_percent,omitempty"`
+	RequirePayment             *Bool      `xmlrpc:"require_payment,omitempty" json:"require_payment,omitempty"`
+	RequireSignature           *Bool      `xmlrpc:"require_signature,omitempty" json:"require_signature,omitempty"`
+	SaleFooter                 *String    `xmlrpc:"sale_footer,omitempty" json:"sale_footer,omitempty"`
+	SaleFooterName             *String    `xmlrpc:"sale_footer_name,omitempty" json:"sale_footer_name,omitempty"`
+	SaleHeader                 *String    `xmlrpc:"sale_header,omitempty" json:"sale_header,omitempty"`
+	SaleHeaderName             *String    `xmlrpc:"sale_header_name,omitempty" json:"sale_header_name,omitempty"`
+	SaleOrderTemplateLineIds   *Relation  `xmlrpc:"sale_order_template_line_ids,omitempty" json:"sale_order_template_line_ids,omitempty"`
+	SaleOrderTemplateOptionIds *Relation  `xmlrpc:"sale_order_template_option_ids,omitempty" json:"sale_order_template_option_ids,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderTemplates represents array of sale.order.template model.
@@ -80,6 +90,9 @@ func (c *Client) GetSaleOrderTemplate(id int64) (*SaleOrderTemplate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*sots) == 0 {
+		return nil, nil
+	}
 	return &((*sots)[0]), nil
 }
 
@@ -97,6 +110,9 @@ func (c *Client) FindSaleOrderTemplate(criteria *Criteria) (*SaleOrderTemplate, 
 	sots := &SaleOrderTemplates{}
 	if err := c.SearchRead(SaleOrderTemplateModel, criteria, NewOptions().Limit(1), sots); err != nil {
 		return nil, err
+	}
+	if len(*sots) == 0 {
+		return nil, nil
 	}
 	return &((*sots)[0]), nil
 }
@@ -122,6 +138,9 @@ func (c *Client) FindSaleOrderTemplateId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(SaleOrderTemplateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

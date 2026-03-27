@@ -2,29 +2,49 @@ package odoo
 
 // ReportProjectTaskUser represents report.project.task.user model.
 type ReportProjectTaskUser struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	DateAssign          *Time      `xmlrpc:"date_assign,omitempty"`
-	DateDeadline        *Time      `xmlrpc:"date_deadline,omitempty"`
-	DateEnd             *Time      `xmlrpc:"date_end,omitempty"`
-	DateLastStageUpdate *Time      `xmlrpc:"date_last_stage_update,omitempty"`
-	DelayEndingsDays    *Float     `xmlrpc:"delay_endings_days,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	HoursEffective      *Float     `xmlrpc:"hours_effective,omitempty"`
-	HoursPlanned        *Float     `xmlrpc:"hours_planned,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	Nbr                 *Int       `xmlrpc:"nbr,omitempty"`
-	PartnerId           *Many2One  `xmlrpc:"partner_id,omitempty"`
-	Priority            *Selection `xmlrpc:"priority,omitempty"`
-	Progress            *Float     `xmlrpc:"progress,omitempty"`
-	ProjectId           *Many2One  `xmlrpc:"project_id,omitempty"`
-	RemainingHours      *Float     `xmlrpc:"remaining_hours,omitempty"`
-	StageId             *Many2One  `xmlrpc:"stage_id,omitempty"`
-	State               *Selection `xmlrpc:"state,omitempty"`
-	UserId              *Many2One  `xmlrpc:"user_id,omitempty"`
-	WorkingDaysClose    *Float     `xmlrpc:"working_days_close,omitempty"`
-	WorkingDaysOpen     *Float     `xmlrpc:"working_days_open,omitempty"`
+	Active                   *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AllocatedHours           *Float     `xmlrpc:"allocated_hours,omitempty" json:"allocated_hours,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	DateAssign               *Time      `xmlrpc:"date_assign,omitempty" json:"date_assign,omitempty"`
+	DateDeadline             *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DateEnd                  *Time      `xmlrpc:"date_end,omitempty" json:"date_end,omitempty"`
+	DateLastStageUpdate      *Time      `xmlrpc:"date_last_stage_update,omitempty" json:"date_last_stage_update,omitempty"`
+	DelayEndingsDays         *Float     `xmlrpc:"delay_endings_days,omitempty" json:"delay_endings_days,omitempty"`
+	DependentIds             *Relation  `xmlrpc:"dependent_ids,omitempty" json:"dependent_ids,omitempty"`
+	Description              *String    `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EffectiveHours           *Float     `xmlrpc:"effective_hours,omitempty" json:"effective_hours,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MilestoneId              *Many2One  `xmlrpc:"milestone_id,omitempty" json:"milestone_id,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Nbr                      *Int       `xmlrpc:"nbr,omitempty" json:"nbr,omitempty"`
+	Overtime                 *Float     `xmlrpc:"overtime,omitempty" json:"overtime,omitempty"`
+	ParentId                 *Many2One  `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	PartnerId                *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PersonalStageTypeIds     *Relation  `xmlrpc:"personal_stage_type_ids,omitempty" json:"personal_stage_type_ids,omitempty"`
+	PlannedDateBegin         *Time      `xmlrpc:"planned_date_begin,omitempty" json:"planned_date_begin,omitempty"`
+	Priority                 *Selection `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Progress                 *Float     `xmlrpc:"progress,omitempty" json:"progress,omitempty"`
+	ProjectId                *Many2One  `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	RatingAvg                *Float     `xmlrpc:"rating_avg,omitempty" json:"rating_avg,omitempty"`
+	RatingLastValue          *Float     `xmlrpc:"rating_last_value,omitempty" json:"rating_last_value,omitempty"`
+	RemainingHours           *Float     `xmlrpc:"remaining_hours,omitempty" json:"remaining_hours,omitempty"`
+	RemainingHoursPercentage *Float     `xmlrpc:"remaining_hours_percentage,omitempty" json:"remaining_hours_percentage,omitempty"`
+	RemainingHoursSo         *Float     `xmlrpc:"remaining_hours_so,omitempty" json:"remaining_hours_so,omitempty"`
+	SaleLineId               *Many2One  `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	SaleOrderId              *Many2One  `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	StageId                  *Many2One  `xmlrpc:"stage_id,omitempty" json:"stage_id,omitempty"`
+	State                    *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	TagIds                   *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaskId                   *Many2One  `xmlrpc:"task_id,omitempty" json:"task_id,omitempty"`
+	TotalHoursSpent          *Float     `xmlrpc:"total_hours_spent,omitempty" json:"total_hours_spent,omitempty"`
+	UserIds                  *Relation  `xmlrpc:"user_ids,omitempty" json:"user_ids,omitempty"`
+	WorkingDaysClose         *Float     `xmlrpc:"working_days_close,omitempty" json:"working_days_close,omitempty"`
+	WorkingDaysOpen          *Float     `xmlrpc:"working_days_open,omitempty" json:"working_days_open,omitempty"`
+	WorkingHoursClose        *Float     `xmlrpc:"working_hours_close,omitempty" json:"working_hours_close,omitempty"`
+	WorkingHoursOpen         *Float     `xmlrpc:"working_hours_open,omitempty" json:"working_hours_open,omitempty"`
 }
 
 // ReportProjectTaskUsers represents array of report.project.task.user model.
@@ -86,6 +106,9 @@ func (c *Client) GetReportProjectTaskUser(id int64) (*ReportProjectTaskUser, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*rptus) == 0 {
+		return nil, nil
+	}
 	return &((*rptus)[0]), nil
 }
 
@@ -103,6 +126,9 @@ func (c *Client) FindReportProjectTaskUser(criteria *Criteria) (*ReportProjectTa
 	rptus := &ReportProjectTaskUsers{}
 	if err := c.SearchRead(ReportProjectTaskUserModel, criteria, NewOptions().Limit(1), rptus); err != nil {
 		return nil, err
+	}
+	if len(*rptus) == 0 {
+		return nil, nil
 	}
 	return &((*rptus)[0]), nil
 }
@@ -128,6 +154,9 @@ func (c *Client) FindReportProjectTaskUserId(criteria *Criteria, options *Option
 	ids, err := c.Search(ReportProjectTaskUserModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

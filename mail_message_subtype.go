@@ -2,22 +2,22 @@ package odoo
 
 // MailMessageSubtype represents mail.message.subtype model.
 type MailMessageSubtype struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	Default       *Bool     `xmlrpc:"default,omitempty"`
-	Description   *String   `xmlrpc:"description,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Hidden        *Bool     `xmlrpc:"hidden,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Internal      *Bool     `xmlrpc:"internal,omitempty"`
-	Name          *String   `xmlrpc:"name,omitempty"`
-	ParentId      *Many2One `xmlrpc:"parent_id,omitempty"`
-	RelationField *String   `xmlrpc:"relation_field,omitempty"`
-	ResModel      *String   `xmlrpc:"res_model,omitempty"`
-	Sequence      *Int      `xmlrpc:"sequence,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Default         *Bool     `xmlrpc:"default,omitempty" json:"default,omitempty"`
+	Description     *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Hidden          *Bool     `xmlrpc:"hidden,omitempty" json:"hidden,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Internal        *Bool     `xmlrpc:"internal,omitempty" json:"internal,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ParentId        *Many2One `xmlrpc:"parent_id,omitempty" json:"parent_id,omitempty"`
+	RelationField   *String   `xmlrpc:"relation_field,omitempty" json:"relation_field,omitempty"`
+	ResModel        *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	Sequence        *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TrackRecipients *Bool     `xmlrpc:"track_recipients,omitempty" json:"track_recipients,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailMessageSubtypes represents array of mail.message.subtype model.
@@ -79,6 +79,9 @@ func (c *Client) GetMailMessageSubtype(id int64) (*MailMessageSubtype, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mmss) == 0 {
+		return nil, nil
+	}
 	return &((*mmss)[0]), nil
 }
 
@@ -96,6 +99,9 @@ func (c *Client) FindMailMessageSubtype(criteria *Criteria) (*MailMessageSubtype
 	mmss := &MailMessageSubtypes{}
 	if err := c.SearchRead(MailMessageSubtypeModel, criteria, NewOptions().Limit(1), mmss); err != nil {
 		return nil, err
+	}
+	if len(*mmss) == 0 {
+		return nil, nil
 	}
 	return &((*mmss)[0]), nil
 }
@@ -121,6 +127,9 @@ func (c *Client) FindMailMessageSubtypeId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(MailMessageSubtypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

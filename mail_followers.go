@@ -2,14 +2,15 @@ package odoo
 
 // MailFollowers represents mail.followers model.
 type MailFollowers struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	ChannelId   *Many2One `xmlrpc:"channel_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	ResId       *Many2One `xmlrpc:"res_id,omitempty"`
-	ResModel    *String   `xmlrpc:"res_model,omitempty"`
-	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email       *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsActive    *Bool     `xmlrpc:"is_active,omitempty" json:"is_active,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	ResId       *Many2One `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel    *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	SubtypeIds  *Relation `xmlrpc:"subtype_ids,omitempty" json:"subtype_ids,omitempty"`
 }
 
 // MailFollowerss represents array of mail.followers model.
@@ -71,6 +72,9 @@ func (c *Client) GetMailFollowers(id int64) (*MailFollowers, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mfs) == 0 {
+		return nil, nil
+	}
 	return &((*mfs)[0]), nil
 }
 
@@ -88,6 +92,9 @@ func (c *Client) FindMailFollowers(criteria *Criteria) (*MailFollowers, error) {
 	mfs := &MailFollowerss{}
 	if err := c.SearchRead(MailFollowersModel, criteria, NewOptions().Limit(1), mfs); err != nil {
 		return nil, err
+	}
+	if len(*mfs) == 0 {
+		return nil, nil
 	}
 	return &((*mfs)[0]), nil
 }
@@ -113,6 +120,9 @@ func (c *Client) FindMailFollowersId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(MailFollowersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

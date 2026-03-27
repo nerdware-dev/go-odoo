@@ -2,24 +2,23 @@ package odoo
 
 // SaleOrderOption represents sale.order.option model.
 type SaleOrderOption struct {
-	LastUpdate           *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate           *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty"`
-	Discount             *Float    `xmlrpc:"discount,omitempty"`
-	DisplayName          *String   `xmlrpc:"display_name,omitempty"`
-	Id                   *Int      `xmlrpc:"id,omitempty"`
-	IsPresent            *Bool     `xmlrpc:"is_present,omitempty"`
-	LineId               *Many2One `xmlrpc:"line_id,omitempty"`
-	Name                 *String   `xmlrpc:"name,omitempty"`
-	OrderId              *Many2One `xmlrpc:"order_id,omitempty"`
-	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty"`
-	ProductId            *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty"`
-	Quantity             *Float    `xmlrpc:"quantity,omitempty"`
-	Sequence             *Int      `xmlrpc:"sequence,omitempty"`
-	UomId                *Many2One `xmlrpc:"uom_id,omitempty"`
-	WriteDate            *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate           *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Discount             *Float    `xmlrpc:"discount,omitempty" json:"discount,omitempty"`
+	DisplayName          *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                   *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsPresent            *Bool     `xmlrpc:"is_present,omitempty" json:"is_present,omitempty"`
+	LineId               *Many2One `xmlrpc:"line_id,omitempty" json:"line_id,omitempty"`
+	Name                 *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	OrderId              *Many2One `xmlrpc:"order_id,omitempty" json:"order_id,omitempty"`
+	PriceUnit            *Float    `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	ProductId            *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductUomCategoryId *Many2One `xmlrpc:"product_uom_category_id,omitempty" json:"product_uom_category_id,omitempty"`
+	Quantity             *Float    `xmlrpc:"quantity,omitempty" json:"quantity,omitempty"`
+	Sequence             *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	UomId                *Many2One `xmlrpc:"uom_id,omitempty" json:"uom_id,omitempty"`
+	WriteDate            *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SaleOrderOptions represents array of sale.order.option model.
@@ -81,6 +80,9 @@ func (c *Client) GetSaleOrderOption(id int64) (*SaleOrderOption, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*soos) == 0 {
+		return nil, nil
+	}
 	return &((*soos)[0]), nil
 }
 
@@ -98,6 +100,9 @@ func (c *Client) FindSaleOrderOption(criteria *Criteria) (*SaleOrderOption, erro
 	soos := &SaleOrderOptions{}
 	if err := c.SearchRead(SaleOrderOptionModel, criteria, NewOptions().Limit(1), soos); err != nil {
 		return nil, err
+	}
+	if len(*soos) == 0 {
+		return nil, nil
 	}
 	return &((*soos)[0]), nil
 }
@@ -123,6 +128,9 @@ func (c *Client) FindSaleOrderOptionId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(SaleOrderOptionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

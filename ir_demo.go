@@ -2,13 +2,12 @@ package odoo
 
 // IrDemo represents ir.demo model.
 type IrDemo struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrDemos represents array of ir.demo model.
@@ -70,6 +69,9 @@ func (c *Client) GetIrDemo(id int64) (*IrDemo, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IDs) == 0 {
+		return nil, nil
+	}
 	return &((*IDs)[0]), nil
 }
 
@@ -87,6 +89,9 @@ func (c *Client) FindIrDemo(criteria *Criteria) (*IrDemo, error) {
 	IDs := &IrDemos{}
 	if err := c.SearchRead(IrDemoModel, criteria, NewOptions().Limit(1), IDs); err != nil {
 		return nil, err
+	}
+	if len(*IDs) == 0 {
+		return nil, nil
 	}
 	return &((*IDs)[0]), nil
 }
@@ -112,6 +117,9 @@ func (c *Client) FindIrDemoId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(IrDemoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,13 +2,12 @@ package odoo
 
 // ResUsersLog represents res.users.log model.
 type ResUsersLog struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResUsersLogs represents array of res.users.log model.
@@ -70,6 +69,9 @@ func (c *Client) GetResUsersLog(id int64) (*ResUsersLog, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ruls) == 0 {
+		return nil, nil
+	}
 	return &((*ruls)[0]), nil
 }
 
@@ -87,6 +89,9 @@ func (c *Client) FindResUsersLog(criteria *Criteria) (*ResUsersLog, error) {
 	ruls := &ResUsersLogs{}
 	if err := c.SearchRead(ResUsersLogModel, criteria, NewOptions().Limit(1), ruls); err != nil {
 		return nil, err
+	}
+	if len(*ruls) == 0 {
+		return nil, nil
 	}
 	return &((*ruls)[0]), nil
 }
@@ -112,6 +117,9 @@ func (c *Client) FindResUsersLogId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(ResUsersLogModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

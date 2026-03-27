@@ -2,18 +2,17 @@ package odoo
 
 // IrSequenceDateRange represents ir.sequence.date_range model.
 type IrSequenceDateRange struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DateFrom         *Time     `xmlrpc:"date_from,omitempty"`
-	DateTo           *Time     `xmlrpc:"date_to,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	NumberNext       *Int      `xmlrpc:"number_next,omitempty"`
-	NumberNextActual *Int      `xmlrpc:"number_next_actual,omitempty"`
-	SequenceId       *Many2One `xmlrpc:"sequence_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateFrom         *Time     `xmlrpc:"date_from,omitempty" json:"date_from,omitempty"`
+	DateTo           *Time     `xmlrpc:"date_to,omitempty" json:"date_to,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NumberNext       *Int      `xmlrpc:"number_next,omitempty" json:"number_next,omitempty"`
+	NumberNextActual *Int      `xmlrpc:"number_next_actual,omitempty" json:"number_next_actual,omitempty"`
+	SequenceId       *Many2One `xmlrpc:"sequence_id,omitempty" json:"sequence_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrSequenceDateRanges represents array of ir.sequence.date_range model.
@@ -75,6 +74,9 @@ func (c *Client) GetIrSequenceDateRange(id int64) (*IrSequenceDateRange, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*isds) == 0 {
+		return nil, nil
+	}
 	return &((*isds)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindIrSequenceDateRange(criteria *Criteria) (*IrSequenceDateRan
 	isds := &IrSequenceDateRanges{}
 	if err := c.SearchRead(IrSequenceDateRangeModel, criteria, NewOptions().Limit(1), isds); err != nil {
 		return nil, err
+	}
+	if len(*isds) == 0 {
+		return nil, nil
 	}
 	return &((*isds)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindIrSequenceDateRangeId(criteria *Criteria, options *Options)
 	ids, err := c.Search(IrSequenceDateRangeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

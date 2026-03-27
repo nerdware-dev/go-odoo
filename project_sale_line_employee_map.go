@@ -2,17 +2,25 @@ package odoo
 
 // ProjectSaleLineEmployeeMap represents project.sale.line.employee.map model.
 type ProjectSaleLineEmployeeMap struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	EmployeeId  *Many2One `xmlrpc:"employee_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PriceUnit   *Float    `xmlrpc:"price_unit,omitempty"`
-	ProjectId   *Many2One `xmlrpc:"project_id,omitempty"`
-	SaleLineId  *Many2One `xmlrpc:"sale_line_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId           *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Cost                *Float    `xmlrpc:"cost,omitempty" json:"cost,omitempty"`
+	CostCurrencyId      *Many2One `xmlrpc:"cost_currency_id,omitempty" json:"cost_currency_id,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId          *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayCost         *Float    `xmlrpc:"display_cost,omitempty" json:"display_cost,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId          *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	ExistingEmployeeIds *Relation `xmlrpc:"existing_employee_ids,omitempty" json:"existing_employee_ids,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsCostChanged       *Bool     `xmlrpc:"is_cost_changed,omitempty" json:"is_cost_changed,omitempty"`
+	PartnerId           *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PriceUnit           *Float    `xmlrpc:"price_unit,omitempty" json:"price_unit,omitempty"`
+	ProjectId           *Many2One `xmlrpc:"project_id,omitempty" json:"project_id,omitempty"`
+	SaleLineId          *Many2One `xmlrpc:"sale_line_id,omitempty" json:"sale_line_id,omitempty"`
+	SaleOrderId         *Many2One `xmlrpc:"sale_order_id,omitempty" json:"sale_order_id,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProjectSaleLineEmployeeMaps represents array of project.sale.line.employee.map model.
@@ -74,6 +82,9 @@ func (c *Client) GetProjectSaleLineEmployeeMap(id int64) (*ProjectSaleLineEmploy
 	if err != nil {
 		return nil, err
 	}
+	if len(*pslems) == 0 {
+		return nil, nil
+	}
 	return &((*pslems)[0]), nil
 }
 
@@ -91,6 +102,9 @@ func (c *Client) FindProjectSaleLineEmployeeMap(criteria *Criteria) (*ProjectSal
 	pslems := &ProjectSaleLineEmployeeMaps{}
 	if err := c.SearchRead(ProjectSaleLineEmployeeMapModel, criteria, NewOptions().Limit(1), pslems); err != nil {
 		return nil, err
+	}
+	if len(*pslems) == 0 {
+		return nil, nil
 	}
 	return &((*pslems)[0]), nil
 }
@@ -116,6 +130,9 @@ func (c *Client) FindProjectSaleLineEmployeeMapId(criteria *Criteria, options *O
 	ids, err := c.Search(ProjectSaleLineEmployeeMapModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

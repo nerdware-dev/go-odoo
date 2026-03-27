@@ -2,20 +2,23 @@ package odoo
 
 // MailNotification represents mail.notification model.
 type MailNotification struct {
-	LastUpdate         *Time      `xmlrpc:"__last_update,omitempty"`
-	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
-	FailureReason      *String    `xmlrpc:"failure_reason,omitempty"`
-	FailureType        *Selection `xmlrpc:"failure_type,omitempty"`
-	Id                 *Int       `xmlrpc:"id,omitempty"`
-	IsRead             *Bool      `xmlrpc:"is_read,omitempty"`
-	MailId             *Many2One  `xmlrpc:"mail_id,omitempty"`
-	MailMessageId      *Many2One  `xmlrpc:"mail_message_id,omitempty"`
-	NotificationStatus *Selection `xmlrpc:"notification_status,omitempty"`
-	NotificationType   *Selection `xmlrpc:"notification_type,omitempty"`
-	ReadDate           *Time      `xmlrpc:"read_date,omitempty"`
-	ResPartnerId       *Many2One  `xmlrpc:"res_partner_id,omitempty"`
-	SmsId              *Many2One  `xmlrpc:"sms_id,omitempty"`
-	SmsNumber          *String    `xmlrpc:"sms_number,omitempty"`
+	AuthorId           *Many2One  `xmlrpc:"author_id,omitempty" json:"author_id,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureReason      *String    `xmlrpc:"failure_reason,omitempty" json:"failure_reason,omitempty"`
+	FailureType        *Selection `xmlrpc:"failure_type,omitempty" json:"failure_type,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsRead             *Bool      `xmlrpc:"is_read,omitempty" json:"is_read,omitempty"`
+	LetterId           *Many2One  `xmlrpc:"letter_id,omitempty" json:"letter_id,omitempty"`
+	MailMailId         *Many2One  `xmlrpc:"mail_mail_id,omitempty" json:"mail_mail_id,omitempty"`
+	MailMessageId      *Many2One  `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	NotificationStatus *Selection `xmlrpc:"notification_status,omitempty" json:"notification_status,omitempty"`
+	NotificationType   *Selection `xmlrpc:"notification_type,omitempty" json:"notification_type,omitempty"`
+	ReadDate           *Time      `xmlrpc:"read_date,omitempty" json:"read_date,omitempty"`
+	ResPartnerId       *Many2One  `xmlrpc:"res_partner_id,omitempty" json:"res_partner_id,omitempty"`
+	SmsId              *Many2One  `xmlrpc:"sms_id,omitempty" json:"sms_id,omitempty"`
+	SmsIdInt           *Int       `xmlrpc:"sms_id_int,omitempty" json:"sms_id_int,omitempty"`
+	SmsNumber          *String    `xmlrpc:"sms_number,omitempty" json:"sms_number,omitempty"`
+	SmsTrackerIds      *Relation  `xmlrpc:"sms_tracker_ids,omitempty" json:"sms_tracker_ids,omitempty"`
 }
 
 // MailNotifications represents array of mail.notification model.
@@ -77,6 +80,9 @@ func (c *Client) GetMailNotification(id int64) (*MailNotification, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mns) == 0 {
+		return nil, nil
+	}
 	return &((*mns)[0]), nil
 }
 
@@ -94,6 +100,9 @@ func (c *Client) FindMailNotification(criteria *Criteria) (*MailNotification, er
 	mns := &MailNotifications{}
 	if err := c.SearchRead(MailNotificationModel, criteria, NewOptions().Limit(1), mns); err != nil {
 		return nil, err
+	}
+	if len(*mns) == 0 {
+		return nil, nil
 	}
 	return &((*mns)[0]), nil
 }
@@ -119,6 +128,9 @@ func (c *Client) FindMailNotificationId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(MailNotificationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

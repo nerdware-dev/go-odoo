@@ -2,34 +2,37 @@ package odoo
 
 // MailActivity represents mail.activity model.
 type MailActivity struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	ActivityCategory          *Selection `xmlrpc:"activity_category,omitempty"`
-	ActivityDecoration        *Selection `xmlrpc:"activity_decoration,omitempty"`
-	ActivityTypeId            *Many2One  `xmlrpc:"activity_type_id,omitempty"`
-	Automated                 *Bool      `xmlrpc:"automated,omitempty"`
-	CalendarEventId           *Many2One  `xmlrpc:"calendar_event_id,omitempty"`
-	CanWrite                  *Bool      `xmlrpc:"can_write,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateDeadline              *Time      `xmlrpc:"date_deadline,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	ForceNext                 *Bool      `xmlrpc:"force_next,omitempty"`
-	HasRecommendedActivities  *Bool      `xmlrpc:"has_recommended_activities,omitempty"`
-	Icon                      *String    `xmlrpc:"icon,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	MailTemplateIds           *Relation  `xmlrpc:"mail_template_ids,omitempty"`
-	Note                      *String    `xmlrpc:"note,omitempty"`
-	PreviousActivityTypeId    *Many2One  `xmlrpc:"previous_activity_type_id,omitempty"`
-	RecommendedActivityTypeId *Many2One  `xmlrpc:"recommended_activity_type_id,omitempty"`
-	ResId                     *Many2One  `xmlrpc:"res_id,omitempty"`
-	ResModel                  *String    `xmlrpc:"res_model,omitempty"`
-	ResModelId                *Many2One  `xmlrpc:"res_model_id,omitempty"`
-	ResName                   *String    `xmlrpc:"res_name,omitempty"`
-	State                     *Selection `xmlrpc:"state,omitempty"`
-	Summary                   *String    `xmlrpc:"summary,omitempty"`
-	UserId                    *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                    *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	ActivityCategory          *Selection `xmlrpc:"activity_category,omitempty" json:"activity_category,omitempty"`
+	ActivityDecoration        *Selection `xmlrpc:"activity_decoration,omitempty" json:"activity_decoration,omitempty"`
+	ActivityTypeId            *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	AttachmentIds             *Relation  `xmlrpc:"attachment_ids,omitempty" json:"attachment_ids,omitempty"`
+	Automated                 *Bool      `xmlrpc:"automated,omitempty" json:"automated,omitempty"`
+	CalendarEventId           *Many2One  `xmlrpc:"calendar_event_id,omitempty" json:"calendar_event_id,omitempty"`
+	CanWrite                  *Bool      `xmlrpc:"can_write,omitempty" json:"can_write,omitempty"`
+	ChainingType              *Selection `xmlrpc:"chaining_type,omitempty" json:"chaining_type,omitempty"`
+	CreateDate                *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DateDeadline              *Time      `xmlrpc:"date_deadline,omitempty" json:"date_deadline,omitempty"`
+	DateDone                  *Time      `xmlrpc:"date_done,omitempty" json:"date_done,omitempty"`
+	DisplayName               *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasRecommendedActivities  *Bool      `xmlrpc:"has_recommended_activities,omitempty" json:"has_recommended_activities,omitempty"`
+	Icon                      *String    `xmlrpc:"icon,omitempty" json:"icon,omitempty"`
+	Id                        *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailTemplateIds           *Relation  `xmlrpc:"mail_template_ids,omitempty" json:"mail_template_ids,omitempty"`
+	Note                      *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PreviousActivityTypeId    *Many2One  `xmlrpc:"previous_activity_type_id,omitempty" json:"previous_activity_type_id,omitempty"`
+	RecommendedActivityTypeId *Many2One  `xmlrpc:"recommended_activity_type_id,omitempty" json:"recommended_activity_type_id,omitempty"`
+	RequestPartnerId          *Many2One  `xmlrpc:"request_partner_id,omitempty" json:"request_partner_id,omitempty"`
+	ResId                     *Many2One  `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel                  *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResModelId                *Many2One  `xmlrpc:"res_model_id,omitempty" json:"res_model_id,omitempty"`
+	ResName                   *String    `xmlrpc:"res_name,omitempty" json:"res_name,omitempty"`
+	State                     *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Summary                   *String    `xmlrpc:"summary,omitempty" json:"summary,omitempty"`
+	UserId                    *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate                 *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailActivitys represents array of mail.activity model.
@@ -91,6 +94,9 @@ func (c *Client) GetMailActivity(id int64) (*MailActivity, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mas) == 0 {
+		return nil, nil
+	}
 	return &((*mas)[0]), nil
 }
 
@@ -108,6 +114,9 @@ func (c *Client) FindMailActivity(criteria *Criteria) (*MailActivity, error) {
 	mas := &MailActivitys{}
 	if err := c.SearchRead(MailActivityModel, criteria, NewOptions().Limit(1), mas); err != nil {
 		return nil, err
+	}
+	if len(*mas) == 0 {
+		return nil, nil
 	}
 	return &((*mas)[0]), nil
 }
@@ -133,6 +142,9 @@ func (c *Client) FindMailActivityId(criteria *Criteria, options *Options) (int64
 	ids, err := c.Search(MailActivityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

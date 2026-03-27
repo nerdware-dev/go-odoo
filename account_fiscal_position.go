@@ -2,28 +2,31 @@ package odoo
 
 // AccountFiscalPosition represents account.fiscal.position model.
 type AccountFiscalPosition struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountIds     *Relation `xmlrpc:"account_ids,omitempty"`
-	Active         *Bool     `xmlrpc:"active,omitempty"`
-	AutoApply      *Bool     `xmlrpc:"auto_apply,omitempty"`
-	CompanyId      *Many2One `xmlrpc:"company_id,omitempty"`
-	CountryGroupId *Many2One `xmlrpc:"country_group_id,omitempty"`
-	CountryId      *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	Note           *String   `xmlrpc:"note,omitempty"`
-	Sequence       *Int      `xmlrpc:"sequence,omitempty"`
-	StateIds       *Relation `xmlrpc:"state_ids,omitempty"`
-	StatesCount    *Int      `xmlrpc:"states_count,omitempty"`
-	TaxIds         *Relation `xmlrpc:"tax_ids,omitempty"`
-	VatRequired    *Bool     `xmlrpc:"vat_required,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
-	ZipFrom        *String   `xmlrpc:"zip_from,omitempty"`
-	ZipTo          *String   `xmlrpc:"zip_to,omitempty"`
+	AccountIds           *Relation  `xmlrpc:"account_ids,omitempty" json:"account_ids,omitempty"`
+	Active               *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AutoApply            *Bool      `xmlrpc:"auto_apply,omitempty" json:"auto_apply,omitempty"`
+	CompanyCountryId     *Many2One  `xmlrpc:"company_country_id,omitempty" json:"company_country_id,omitempty"`
+	CompanyId            *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CountryGroupId       *Many2One  `xmlrpc:"country_group_id,omitempty" json:"country_group_id,omitempty"`
+	CountryId            *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate           *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName          *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FiscalCountryCodes   *String    `xmlrpc:"fiscal_country_codes,omitempty" json:"fiscal_country_codes,omitempty"`
+	ForeignVat           *String    `xmlrpc:"foreign_vat,omitempty" json:"foreign_vat,omitempty"`
+	ForeignVatHeaderMode *Selection `xmlrpc:"foreign_vat_header_mode,omitempty" json:"foreign_vat_header_mode,omitempty"`
+	Id                   *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                 *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Note                 *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	Sequence             *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	StateIds             *Relation  `xmlrpc:"state_ids,omitempty" json:"state_ids,omitempty"`
+	StatesCount          *Int       `xmlrpc:"states_count,omitempty" json:"states_count,omitempty"`
+	TaxIds               *Relation  `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	VatRequired          *Bool      `xmlrpc:"vat_required,omitempty" json:"vat_required,omitempty"`
+	WriteDate            *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ZipFrom              *String    `xmlrpc:"zip_from,omitempty" json:"zip_from,omitempty"`
+	ZipTo                *String    `xmlrpc:"zip_to,omitempty" json:"zip_to,omitempty"`
 }
 
 // AccountFiscalPositions represents array of account.fiscal.position model.
@@ -85,6 +88,9 @@ func (c *Client) GetAccountFiscalPosition(id int64) (*AccountFiscalPosition, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*afps) == 0 {
+		return nil, nil
+	}
 	return &((*afps)[0]), nil
 }
 
@@ -102,6 +108,9 @@ func (c *Client) FindAccountFiscalPosition(criteria *Criteria) (*AccountFiscalPo
 	afps := &AccountFiscalPositions{}
 	if err := c.SearchRead(AccountFiscalPositionModel, criteria, NewOptions().Limit(1), afps); err != nil {
 		return nil, err
+	}
+	if len(*afps) == 0 {
+		return nil, nil
 	}
 	return &((*afps)[0]), nil
 }
@@ -127,6 +136,9 @@ func (c *Client) FindAccountFiscalPositionId(criteria *Criteria, options *Option
 	ids, err := c.Search(AccountFiscalPositionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,24 +2,23 @@ package odoo
 
 // ResBank represents res.bank model.
 type ResBank struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	Bic         *String   `xmlrpc:"bic,omitempty"`
-	City        *String   `xmlrpc:"city,omitempty"`
-	Country     *Many2One `xmlrpc:"country,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Email       *String   `xmlrpc:"email,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Phone       *String   `xmlrpc:"phone,omitempty"`
-	State       *Many2One `xmlrpc:"state,omitempty"`
-	Street      *String   `xmlrpc:"street,omitempty"`
-	Street2     *String   `xmlrpc:"street2,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
-	Zip         *String   `xmlrpc:"zip,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Bic         *String   `xmlrpc:"bic,omitempty" json:"bic,omitempty"`
+	City        *String   `xmlrpc:"city,omitempty" json:"city,omitempty"`
+	Country     *Many2One `xmlrpc:"country,omitempty" json:"country,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email       *String   `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Phone       *String   `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	State       *Many2One `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	Street      *String   `xmlrpc:"street,omitempty" json:"street,omitempty"`
+	Street2     *String   `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Zip         *String   `xmlrpc:"zip,omitempty" json:"zip,omitempty"`
 }
 
 // ResBanks represents array of res.bank model.
@@ -81,6 +80,9 @@ func (c *Client) GetResBank(id int64) (*ResBank, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rbs) == 0 {
+		return nil, nil
+	}
 	return &((*rbs)[0]), nil
 }
 
@@ -98,6 +100,9 @@ func (c *Client) FindResBank(criteria *Criteria) (*ResBank, error) {
 	rbs := &ResBanks{}
 	if err := c.SearchRead(ResBankModel, criteria, NewOptions().Limit(1), rbs); err != nil {
 		return nil, err
+	}
+	if len(*rbs) == 0 {
+		return nil, nil
 	}
 	return &((*rbs)[0]), nil
 }
@@ -123,6 +128,9 @@ func (c *Client) FindResBankId(criteria *Criteria, options *Options) (int64, err
 	ids, err := c.Search(ResBankModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

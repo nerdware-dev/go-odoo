@@ -2,17 +2,17 @@ package odoo
 
 // StockChangeProductQty represents stock.change.product.qty model.
 type StockChangeProductQty struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	NewQuantity         *Float    `xmlrpc:"new_quantity,omitempty"`
-	ProductId           *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductTmplId       *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	ProductVariantCount *Int      `xmlrpc:"product_variant_count,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NewQuantity         *Float    `xmlrpc:"new_quantity,omitempty" json:"new_quantity,omitempty"`
+	ProductId           *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId       *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	ProductUomId        *Many2One `xmlrpc:"product_uom_id,omitempty" json:"product_uom_id,omitempty"`
+	ProductVariantCount *Int      `xmlrpc:"product_variant_count,omitempty" json:"product_variant_count,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockChangeProductQtys represents array of stock.change.product.qty model.
@@ -74,6 +74,9 @@ func (c *Client) GetStockChangeProductQty(id int64) (*StockChangeProductQty, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*scpqs) == 0 {
+		return nil, nil
+	}
 	return &((*scpqs)[0]), nil
 }
 
@@ -91,6 +94,9 @@ func (c *Client) FindStockChangeProductQty(criteria *Criteria) (*StockChangeProd
 	scpqs := &StockChangeProductQtys{}
 	if err := c.SearchRead(StockChangeProductQtyModel, criteria, NewOptions().Limit(1), scpqs); err != nil {
 		return nil, err
+	}
+	if len(*scpqs) == 0 {
+		return nil, nil
 	}
 	return &((*scpqs)[0]), nil
 }
@@ -116,6 +122,9 @@ func (c *Client) FindStockChangeProductQtyId(criteria *Criteria, options *Option
 	ids, err := c.Search(StockChangeProductQtyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,18 +2,17 @@ package odoo
 
 // DocumentsFacet represents documents.facet model.
 type DocumentsFacet struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FolderId    *Many2One `xmlrpc:"folder_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	Sequence    *Int      `xmlrpc:"sequence,omitempty"`
-	TagIds      *Relation `xmlrpc:"tag_ids,omitempty"`
-	Tooltip     *String   `xmlrpc:"tooltip,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FolderId    *Many2One `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence    *Int      `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	TagIds      *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	Tooltip     *String   `xmlrpc:"tooltip,omitempty" json:"tooltip,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsFacets represents array of documents.facet model.
@@ -75,6 +74,9 @@ func (c *Client) GetDocumentsFacet(id int64) (*DocumentsFacet, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dfs) == 0 {
+		return nil, nil
+	}
 	return &((*dfs)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindDocumentsFacet(criteria *Criteria) (*DocumentsFacet, error)
 	dfs := &DocumentsFacets{}
 	if err := c.SearchRead(DocumentsFacetModel, criteria, NewOptions().Limit(1), dfs); err != nil {
 		return nil, err
+	}
+	if len(*dfs) == 0 {
+		return nil, nil
 	}
 	return &((*dfs)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindDocumentsFacetId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(DocumentsFacetModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

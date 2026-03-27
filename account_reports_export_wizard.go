@@ -2,19 +2,17 @@ package odoo
 
 // AccountReportsExportWizard represents account_reports.export.wizard model.
 type AccountReportsExportWizard struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	DocName         *String   `xmlrpc:"doc_name,omitempty"`
-	ExportFormatIds *Relation `xmlrpc:"export_format_ids,omitempty"`
-	FolderId        *Many2One `xmlrpc:"folder_id,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	ReportId        *Int      `xmlrpc:"report_id,omitempty"`
-	ReportModel     *String   `xmlrpc:"report_model,omitempty"`
-	TagIds          *Relation `xmlrpc:"tag_ids,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DocName         *String   `xmlrpc:"doc_name,omitempty" json:"doc_name,omitempty"`
+	ExportFormatIds *Relation `xmlrpc:"export_format_ids,omitempty" json:"export_format_ids,omitempty"`
+	FolderId        *Many2One `xmlrpc:"folder_id,omitempty" json:"folder_id,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ReportId        *Many2One `xmlrpc:"report_id,omitempty" json:"report_id,omitempty"`
+	TagIds          *Relation `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportsExportWizards represents array of account_reports.export.wizard model.
@@ -76,6 +74,9 @@ func (c *Client) GetAccountReportsExportWizard(id int64) (*AccountReportsExportW
 	if err != nil {
 		return nil, err
 	}
+	if len(*aews) == 0 {
+		return nil, nil
+	}
 	return &((*aews)[0]), nil
 }
 
@@ -93,6 +94,9 @@ func (c *Client) FindAccountReportsExportWizard(criteria *Criteria) (*AccountRep
 	aews := &AccountReportsExportWizards{}
 	if err := c.SearchRead(AccountReportsExportWizardModel, criteria, NewOptions().Limit(1), aews); err != nil {
 		return nil, err
+	}
+	if len(*aews) == 0 {
+		return nil, nil
 	}
 	return &((*aews)[0]), nil
 }
@@ -118,6 +122,9 @@ func (c *Client) FindAccountReportsExportWizardId(criteria *Criteria, options *O
 	ids, err := c.Search(AccountReportsExportWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

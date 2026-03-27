@@ -2,15 +2,14 @@ package odoo
 
 // CrmLeadScoringFrequencyField represents crm.lead.scoring.frequency.field model.
 type CrmLeadScoringFrequencyField struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FieldId     *Many2One `xmlrpc:"field_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FieldId     *Many2One `xmlrpc:"field_id,omitempty" json:"field_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLeadScoringFrequencyFields represents array of crm.lead.scoring.frequency.field model.
@@ -72,6 +71,9 @@ func (c *Client) GetCrmLeadScoringFrequencyField(id int64) (*CrmLeadScoringFrequ
 	if err != nil {
 		return nil, err
 	}
+	if len(*clsffs) == 0 {
+		return nil, nil
+	}
 	return &((*clsffs)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindCrmLeadScoringFrequencyField(criteria *Criteria) (*CrmLeadS
 	clsffs := &CrmLeadScoringFrequencyFields{}
 	if err := c.SearchRead(CrmLeadScoringFrequencyFieldModel, criteria, NewOptions().Limit(1), clsffs); err != nil {
 		return nil, err
+	}
+	if len(*clsffs) == 0 {
+		return nil, nil
 	}
 	return &((*clsffs)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindCrmLeadScoringFrequencyFieldId(criteria *Criteria, options 
 	ids, err := c.Search(CrmLeadScoringFrequencyFieldModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

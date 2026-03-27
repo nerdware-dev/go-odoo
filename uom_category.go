@@ -2,15 +2,15 @@ package odoo
 
 // UomCategory represents uom.category model.
 type UomCategory struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	MeasureType *Selection `xmlrpc:"measure_type,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ReferenceUomId *Many2One `xmlrpc:"reference_uom_id,omitempty" json:"reference_uom_id,omitempty"`
+	UomIds         *Relation `xmlrpc:"uom_ids,omitempty" json:"uom_ids,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UomCategorys represents array of uom.category model.
@@ -72,6 +72,9 @@ func (c *Client) GetUomCategory(id int64) (*UomCategory, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*ucs) == 0 {
+		return nil, nil
+	}
 	return &((*ucs)[0]), nil
 }
 
@@ -89,6 +92,9 @@ func (c *Client) FindUomCategory(criteria *Criteria) (*UomCategory, error) {
 	ucs := &UomCategorys{}
 	if err := c.SearchRead(UomCategoryModel, criteria, NewOptions().Limit(1), ucs); err != nil {
 		return nil, err
+	}
+	if len(*ucs) == 0 {
+		return nil, nil
 	}
 	return &((*ucs)[0]), nil
 }
@@ -114,6 +120,9 @@ func (c *Client) FindUomCategoryId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(UomCategoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

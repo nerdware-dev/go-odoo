@@ -2,35 +2,55 @@ package odoo
 
 // AccountAccount represents account.account model.
 type AccountAccount struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	AssetModel     *Many2One  `xmlrpc:"asset_model,omitempty"`
-	AssetType      *Selection `xmlrpc:"asset_type,omitempty"`
-	CanCreateAsset *Bool      `xmlrpc:"can_create_asset,omitempty"`
-	Code           *String    `xmlrpc:"code,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateAsset    *Selection `xmlrpc:"create_asset,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId     *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Deprecated     *Bool      `xmlrpc:"deprecated,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FormViewRef    *String    `xmlrpc:"form_view_ref,omitempty"`
-	GroupId        *Many2One  `xmlrpc:"group_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	InternalGroup  *Selection `xmlrpc:"internal_group,omitempty"`
-	InternalType   *Selection `xmlrpc:"internal_type,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	Note           *String    `xmlrpc:"note,omitempty"`
-	OpeningCredit  *Float     `xmlrpc:"opening_credit,omitempty"`
-	OpeningDebit   *Float     `xmlrpc:"opening_debit,omitempty"`
-	Reconcile      *Bool      `xmlrpc:"reconcile,omitempty"`
-	RootId         *Many2One  `xmlrpc:"root_id,omitempty"`
-	TagIds         *Relation  `xmlrpc:"tag_ids,omitempty"`
-	TaxIds         *Relation  `xmlrpc:"tax_ids,omitempty"`
-	Used           *Bool      `xmlrpc:"used,omitempty"`
-	UserTypeId     *Many2One  `xmlrpc:"user_type_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountType                  *Selection `xmlrpc:"account_type,omitempty" json:"account_type,omitempty"`
+	AllowedJournalIds            *Relation  `xmlrpc:"allowed_journal_ids,omitempty" json:"allowed_journal_ids,omitempty"`
+	AssetModel                   *Many2One  `xmlrpc:"asset_model,omitempty" json:"asset_model,omitempty"`
+	CanCreateAsset               *Bool      `xmlrpc:"can_create_asset,omitempty" json:"can_create_asset,omitempty"`
+	Code                         *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CompanyCurrencyId            *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateAsset                  *Selection `xmlrpc:"create_asset,omitempty" json:"create_asset,omitempty"`
+	CreateDate                   *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                   *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	CurrentBalance               *Float     `xmlrpc:"current_balance,omitempty" json:"current_balance,omitempty"`
+	Deprecated                   *Bool      `xmlrpc:"deprecated,omitempty" json:"deprecated,omitempty"`
+	DisallowedExpensesCategoryId *Many2One  `xmlrpc:"disallowed_expenses_category_id,omitempty" json:"disallowed_expenses_category_id,omitempty"`
+	DisplayName                  *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExcludeProvisionCurrencyIds  *Relation  `xmlrpc:"exclude_provision_currency_ids,omitempty" json:"exclude_provision_currency_ids,omitempty"`
+	FormViewRef                  *String    `xmlrpc:"form_view_ref,omitempty" json:"form_view_ref,omitempty"`
+	GroupId                      *Many2One  `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	HasMessage                   *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                           *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IncludeInitialBalance        *Bool      `xmlrpc:"include_initial_balance,omitempty" json:"include_initial_balance,omitempty"`
+	InternalGroup                *Selection `xmlrpc:"internal_group,omitempty" json:"internal_group,omitempty"`
+	MessageAttachmentCount       *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds           *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError              *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter       *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError           *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                   *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower            *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction            *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter     *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds            *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MultipleAssetsPerLine        *Bool      `xmlrpc:"multiple_assets_per_line,omitempty" json:"multiple_assets_per_line,omitempty"`
+	Name                         *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NonTrade                     *Bool      `xmlrpc:"non_trade,omitempty" json:"non_trade,omitempty"`
+	Note                         *String    `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	OpeningBalance               *Float     `xmlrpc:"opening_balance,omitempty" json:"opening_balance,omitempty"`
+	OpeningCredit                *Float     `xmlrpc:"opening_credit,omitempty" json:"opening_credit,omitempty"`
+	OpeningDebit                 *Float     `xmlrpc:"opening_debit,omitempty" json:"opening_debit,omitempty"`
+	RatingIds                    *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	Reconcile                    *Bool      `xmlrpc:"reconcile,omitempty" json:"reconcile,omitempty"`
+	RelatedTaxesAmount           *Int       `xmlrpc:"related_taxes_amount,omitempty" json:"related_taxes_amount,omitempty"`
+	RootId                       *Many2One  `xmlrpc:"root_id,omitempty" json:"root_id,omitempty"`
+	TagIds                       *Relation  `xmlrpc:"tag_ids,omitempty" json:"tag_ids,omitempty"`
+	TaxIds                       *Relation  `xmlrpc:"tax_ids,omitempty" json:"tax_ids,omitempty"`
+	Used                         *Bool      `xmlrpc:"used,omitempty" json:"used,omitempty"`
+	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                    *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccounts represents array of account.account model.
@@ -92,6 +112,9 @@ func (c *Client) GetAccountAccount(id int64) (*AccountAccount, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aas) == 0 {
+		return nil, nil
+	}
 	return &((*aas)[0]), nil
 }
 
@@ -109,6 +132,9 @@ func (c *Client) FindAccountAccount(criteria *Criteria) (*AccountAccount, error)
 	aas := &AccountAccounts{}
 	if err := c.SearchRead(AccountAccountModel, criteria, NewOptions().Limit(1), aas); err != nil {
 		return nil, err
+	}
+	if len(*aas) == 0 {
+		return nil, nil
 	}
 	return &((*aas)[0]), nil
 }
@@ -134,6 +160,9 @@ func (c *Client) FindAccountAccountId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(AccountAccountModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

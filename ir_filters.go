@@ -2,22 +2,21 @@ package odoo
 
 // IrFilters represents ir.filters model.
 type IrFilters struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId    *Many2One  `xmlrpc:"action_id,omitempty"`
-	Active      *Bool      `xmlrpc:"active,omitempty"`
-	Context     *String    `xmlrpc:"context,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Domain      *String    `xmlrpc:"domain,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	IsDefault   *Bool      `xmlrpc:"is_default,omitempty"`
-	ModelId     *Selection `xmlrpc:"model_id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Sort        *String    `xmlrpc:"sort,omitempty"`
-	UserId      *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActionId    *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	Active      *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Context     *String    `xmlrpc:"context,omitempty" json:"context,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Domain      *String    `xmlrpc:"domain,omitempty" json:"domain,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsDefault   *Bool      `xmlrpc:"is_default,omitempty" json:"is_default,omitempty"`
+	ModelId     *Selection `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sort        *String    `xmlrpc:"sort,omitempty" json:"sort,omitempty"`
+	UserId      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrFilterss represents array of ir.filters model.
@@ -79,6 +78,9 @@ func (c *Client) GetIrFilters(id int64) (*IrFilters, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*IFs) == 0 {
+		return nil, nil
+	}
 	return &((*IFs)[0]), nil
 }
 
@@ -96,6 +98,9 @@ func (c *Client) FindIrFilters(criteria *Criteria) (*IrFilters, error) {
 	IFs := &IrFilterss{}
 	if err := c.SearchRead(IrFiltersModel, criteria, NewOptions().Limit(1), IFs); err != nil {
 		return nil, err
+	}
+	if len(*IFs) == 0 {
+		return nil, nil
 	}
 	return &((*IFs)[0]), nil
 }
@@ -121,6 +126,9 @@ func (c *Client) FindIrFiltersId(criteria *Criteria, options *Options) (int64, e
 	ids, err := c.Search(IrFiltersModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

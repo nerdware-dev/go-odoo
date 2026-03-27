@@ -2,22 +2,21 @@ package odoo
 
 // IrActionsActUrl represents ir.actions.act_url model.
 type IrActionsActUrl struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Help             *String    `xmlrpc:"help,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	Target           *Selection `xmlrpc:"target,omitempty"`
-	Type             *String    `xmlrpc:"type,omitempty"`
-	Url              *String    `xmlrpc:"url,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId            *String    `xmlrpc:"xml_id,omitempty"`
+	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
+	BindingType      *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
+	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Target           *Selection `xmlrpc:"target,omitempty" json:"target,omitempty"`
+	Type             *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	Url              *String    `xmlrpc:"url,omitempty" json:"url,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId            *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrActionsActUrls represents array of ir.actions.act_url model.
@@ -79,6 +78,9 @@ func (c *Client) GetIrActionsActUrl(id int64) (*IrActionsActUrl, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iaas) == 0 {
+		return nil, nil
+	}
 	return &((*iaas)[0]), nil
 }
 
@@ -96,6 +98,9 @@ func (c *Client) FindIrActionsActUrl(criteria *Criteria) (*IrActionsActUrl, erro
 	iaas := &IrActionsActUrls{}
 	if err := c.SearchRead(IrActionsActUrlModel, criteria, NewOptions().Limit(1), iaas); err != nil {
 		return nil, err
+	}
+	if len(*iaas) == 0 {
+		return nil, nil
 	}
 	return &((*iaas)[0]), nil
 }
@@ -121,6 +126,9 @@ func (c *Client) FindIrActionsActUrlId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(IrActionsActUrlModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,30 +2,35 @@ package odoo
 
 // FetchmailServer represents fetchmail.server model.
 type FetchmailServer struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	Active        *Bool      `xmlrpc:"active,omitempty"`
-	Attach        *Bool      `xmlrpc:"attach,omitempty"`
-	Configuration *String    `xmlrpc:"configuration,omitempty"`
-	CreateDate    *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	IsSsl         *Bool      `xmlrpc:"is_ssl,omitempty"`
-	MessageIds    *Relation  `xmlrpc:"message_ids,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	ObjectId      *Many2One  `xmlrpc:"object_id,omitempty"`
-	Original      *Bool      `xmlrpc:"original,omitempty"`
-	Password      *String    `xmlrpc:"password,omitempty"`
-	Port          *Int       `xmlrpc:"port,omitempty"`
-	Priority      *Int       `xmlrpc:"priority,omitempty"`
-	Script        *String    `xmlrpc:"script,omitempty"`
-	Server        *String    `xmlrpc:"server,omitempty"`
-	ServerType    *Selection `xmlrpc:"server_type,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	User          *String    `xmlrpc:"user,omitempty"`
-	WriteDate     *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Attach                                *Bool      `xmlrpc:"attach,omitempty" json:"attach,omitempty"`
+	Configuration                         *String    `xmlrpc:"configuration,omitempty" json:"configuration,omitempty"`
+	CreateDate                            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date                                  *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsMicrosoftOutlookConfigured          *Bool      `xmlrpc:"is_microsoft_outlook_configured,omitempty" json:"is_microsoft_outlook_configured,omitempty"`
+	IsSsl                                 *Bool      `xmlrpc:"is_ssl,omitempty" json:"is_ssl,omitempty"`
+	MessageIds                            *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MicrosoftOutlookAccessToken           *String    `xmlrpc:"microsoft_outlook_access_token,omitempty" json:"microsoft_outlook_access_token,omitempty"`
+	MicrosoftOutlookAccessTokenExpiration *Int       `xmlrpc:"microsoft_outlook_access_token_expiration,omitempty" json:"microsoft_outlook_access_token_expiration,omitempty"`
+	MicrosoftOutlookRefreshToken          *String    `xmlrpc:"microsoft_outlook_refresh_token,omitempty" json:"microsoft_outlook_refresh_token,omitempty"`
+	MicrosoftOutlookUri                   *String    `xmlrpc:"microsoft_outlook_uri,omitempty" json:"microsoft_outlook_uri,omitempty"`
+	Name                                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ObjectId                              *Many2One  `xmlrpc:"object_id,omitempty" json:"object_id,omitempty"`
+	Original                              *Bool      `xmlrpc:"original,omitempty" json:"original,omitempty"`
+	Password                              *String    `xmlrpc:"password,omitempty" json:"password,omitempty"`
+	Port                                  *Int       `xmlrpc:"port,omitempty" json:"port,omitempty"`
+	Priority                              *Int       `xmlrpc:"priority,omitempty" json:"priority,omitempty"`
+	Script                                *String    `xmlrpc:"script,omitempty" json:"script,omitempty"`
+	Server                                *String    `xmlrpc:"server,omitempty" json:"server,omitempty"`
+	ServerType                            *Selection `xmlrpc:"server_type,omitempty" json:"server_type,omitempty"`
+	ServerTypeInfo                        *String    `xmlrpc:"server_type_info,omitempty" json:"server_type_info,omitempty"`
+	State                                 *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	User                                  *String    `xmlrpc:"user,omitempty" json:"user,omitempty"`
+	WriteDate                             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FetchmailServers represents array of fetchmail.server model.
@@ -87,6 +92,9 @@ func (c *Client) GetFetchmailServer(id int64) (*FetchmailServer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*fss) == 0 {
+		return nil, nil
+	}
 	return &((*fss)[0]), nil
 }
 
@@ -104,6 +112,9 @@ func (c *Client) FindFetchmailServer(criteria *Criteria) (*FetchmailServer, erro
 	fss := &FetchmailServers{}
 	if err := c.SearchRead(FetchmailServerModel, criteria, NewOptions().Limit(1), fss); err != nil {
 		return nil, err
+	}
+	if len(*fss) == 0 {
+		return nil, nil
 	}
 	return &((*fss)[0]), nil
 }
@@ -129,6 +140,9 @@ func (c *Client) FindFetchmailServerId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(FetchmailServerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

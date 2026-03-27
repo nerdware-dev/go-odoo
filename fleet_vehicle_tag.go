@@ -2,15 +2,14 @@ package odoo
 
 // FleetVehicleTag represents fleet.vehicle.tag model.
 type FleetVehicleTag struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Color       *Int      `xmlrpc:"color,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Color       *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleTags represents array of fleet.vehicle.tag model.
@@ -72,6 +71,9 @@ func (c *Client) GetFleetVehicleTag(id int64) (*FleetVehicleTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*fvts) == 0 {
+		return nil, nil
+	}
 	return &((*fvts)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindFleetVehicleTag(criteria *Criteria) (*FleetVehicleTag, erro
 	fvts := &FleetVehicleTags{}
 	if err := c.SearchRead(FleetVehicleTagModel, criteria, NewOptions().Limit(1), fvts); err != nil {
 		return nil, err
+	}
+	if len(*fvts) == 0 {
+		return nil, nil
 	}
 	return &((*fvts)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindFleetVehicleTagId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(FleetVehicleTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

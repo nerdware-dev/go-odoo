@@ -2,16 +2,15 @@ package odoo
 
 // IrUiViewCustom represents ir.ui.view.custom model.
 type IrUiViewCustom struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Arch        *String   `xmlrpc:"arch,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	RefId       *Many2One `xmlrpc:"ref_id,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Arch        *String   `xmlrpc:"arch,omitempty" json:"arch,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	RefId       *Many2One `xmlrpc:"ref_id,omitempty" json:"ref_id,omitempty"`
+	UserId      *Many2One `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrUiViewCustoms represents array of ir.ui.view.custom model.
@@ -73,6 +72,9 @@ func (c *Client) GetIrUiViewCustom(id int64) (*IrUiViewCustom, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iuvcs) == 0 {
+		return nil, nil
+	}
 	return &((*iuvcs)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindIrUiViewCustom(criteria *Criteria) (*IrUiViewCustom, error)
 	iuvcs := &IrUiViewCustoms{}
 	if err := c.SearchRead(IrUiViewCustomModel, criteria, NewOptions().Limit(1), iuvcs); err != nil {
 		return nil, err
+	}
+	if len(*iuvcs) == 0 {
+		return nil, nil
 	}
 	return &((*iuvcs)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindIrUiViewCustomId(criteria *Criteria, options *Options) (int
 	ids, err := c.Search(IrUiViewCustomModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,14 +2,13 @@ package odoo
 
 // BaseModuleUpgrade represents base.module.upgrade model.
 type BaseModuleUpgrade struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModuleInfo  *String   `xmlrpc:"module_info,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModuleInfo  *String   `xmlrpc:"module_info,omitempty" json:"module_info,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BaseModuleUpgrades represents array of base.module.upgrade model.
@@ -71,6 +70,9 @@ func (c *Client) GetBaseModuleUpgrade(id int64) (*BaseModuleUpgrade, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bmus) == 0 {
+		return nil, nil
+	}
 	return &((*bmus)[0]), nil
 }
 
@@ -88,6 +90,9 @@ func (c *Client) FindBaseModuleUpgrade(criteria *Criteria) (*BaseModuleUpgrade, 
 	bmus := &BaseModuleUpgrades{}
 	if err := c.SearchRead(BaseModuleUpgradeModel, criteria, NewOptions().Limit(1), bmus); err != nil {
 		return nil, err
+	}
+	if len(*bmus) == 0 {
+		return nil, nil
 	}
 	return &((*bmus)[0]), nil
 }
@@ -113,6 +118,9 @@ func (c *Client) FindBaseModuleUpgradeId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(BaseModuleUpgradeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

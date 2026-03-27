@@ -2,32 +2,59 @@ package odoo
 
 // AccountBatchPayment represents account.batch.payment model.
 type AccountBatchPayment struct {
-	LastUpdate                *Time      `xmlrpc:"__last_update,omitempty"`
-	Amount                    *Float     `xmlrpc:"amount,omitempty"`
-	AvailablePaymentMethodIds *Relation  `xmlrpc:"available_payment_method_ids,omitempty"`
-	BatchType                 *Selection `xmlrpc:"batch_type,omitempty"`
-	CreateDate                *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId                *Many2One  `xmlrpc:"currency_id,omitempty"`
-	Date                      *Time      `xmlrpc:"date,omitempty"`
-	DisplayName               *String    `xmlrpc:"display_name,omitempty"`
-	ExportFile                *String    `xmlrpc:"export_file,omitempty"`
-	ExportFileCreateDate      *Time      `xmlrpc:"export_file_create_date,omitempty"`
-	ExportFilename            *String    `xmlrpc:"export_filename,omitempty"`
-	FileGenerationEnabled     *Bool      `xmlrpc:"file_generation_enabled,omitempty"`
-	Id                        *Int       `xmlrpc:"id,omitempty"`
-	JournalId                 *Many2One  `xmlrpc:"journal_id,omitempty"`
-	Name                      *String    `xmlrpc:"name,omitempty"`
-	PaymentIds                *Relation  `xmlrpc:"payment_ids,omitempty"`
-	PaymentMethodCode         *String    `xmlrpc:"payment_method_code,omitempty"`
-	PaymentMethodId           *Many2One  `xmlrpc:"payment_method_id,omitempty"`
-	SctGeneric                *Bool      `xmlrpc:"sct_generic,omitempty"`
-	SctWarning                *String    `xmlrpc:"sct_warning,omitempty"`
-	SddBatchBooking           *Bool      `xmlrpc:"sdd_batch_booking,omitempty"`
-	SddRequiredCollectionDate *Time      `xmlrpc:"sdd_required_collection_date,omitempty"`
-	State                     *Selection `xmlrpc:"state,omitempty"`
-	WriteDate                 *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActivityCalendarEventId     *Many2One  `xmlrpc:"activity_calendar_event_id,omitempty" json:"activity_calendar_event_id,omitempty"`
+	ActivityDateDeadline        *Time      `xmlrpc:"activity_date_deadline,omitempty" json:"activity_date_deadline,omitempty"`
+	ActivityExceptionDecoration *Selection `xmlrpc:"activity_exception_decoration,omitempty" json:"activity_exception_decoration,omitempty"`
+	ActivityExceptionIcon       *String    `xmlrpc:"activity_exception_icon,omitempty" json:"activity_exception_icon,omitempty"`
+	ActivityIds                 *Relation  `xmlrpc:"activity_ids,omitempty" json:"activity_ids,omitempty"`
+	ActivityState               *Selection `xmlrpc:"activity_state,omitempty" json:"activity_state,omitempty"`
+	ActivitySummary             *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeIcon            *String    `xmlrpc:"activity_type_icon,omitempty" json:"activity_type_icon,omitempty"`
+	ActivityTypeId              *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	ActivityUserId              *Many2One  `xmlrpc:"activity_user_id,omitempty" json:"activity_user_id,omitempty"`
+	Amount                      *Float     `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	AmountResidual              *Float     `xmlrpc:"amount_residual,omitempty" json:"amount_residual,omitempty"`
+	AmountResidualCurrency      *Float     `xmlrpc:"amount_residual_currency,omitempty" json:"amount_residual_currency,omitempty"`
+	AvailablePaymentMethodIds   *Relation  `xmlrpc:"available_payment_method_ids,omitempty" json:"available_payment_method_ids,omitempty"`
+	BatchType                   *Selection `xmlrpc:"batch_type,omitempty" json:"batch_type,omitempty"`
+	CompanyCurrencyId           *Many2One  `xmlrpc:"company_currency_id,omitempty" json:"company_currency_id,omitempty"`
+	CreateDate                  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId                  *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date                        *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName                 *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportFile                  *String    `xmlrpc:"export_file,omitempty" json:"export_file,omitempty"`
+	ExportFileCreateDate        *Time      `xmlrpc:"export_file_create_date,omitempty" json:"export_file_create_date,omitempty"`
+	ExportFilename              *String    `xmlrpc:"export_filename,omitempty" json:"export_filename,omitempty"`
+	FileGenerationEnabled       *Bool      `xmlrpc:"file_generation_enabled,omitempty" json:"file_generation_enabled,omitempty"`
+	HasMessage                  *Bool      `xmlrpc:"has_message,omitempty" json:"has_message,omitempty"`
+	Id                          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JournalId                   *Many2One  `xmlrpc:"journal_id,omitempty" json:"journal_id,omitempty"`
+	MessageAttachmentCount      *Int       `xmlrpc:"message_attachment_count,omitempty" json:"message_attachment_count,omitempty"`
+	MessageFollowerIds          *Relation  `xmlrpc:"message_follower_ids,omitempty" json:"message_follower_ids,omitempty"`
+	MessageHasError             *Bool      `xmlrpc:"message_has_error,omitempty" json:"message_has_error,omitempty"`
+	MessageHasErrorCounter      *Int       `xmlrpc:"message_has_error_counter,omitempty" json:"message_has_error_counter,omitempty"`
+	MessageHasSmsError          *Bool      `xmlrpc:"message_has_sms_error,omitempty" json:"message_has_sms_error,omitempty"`
+	MessageIds                  *Relation  `xmlrpc:"message_ids,omitempty" json:"message_ids,omitempty"`
+	MessageIsFollower           *Bool      `xmlrpc:"message_is_follower,omitempty" json:"message_is_follower,omitempty"`
+	MessageNeedaction           *Bool      `xmlrpc:"message_needaction,omitempty" json:"message_needaction,omitempty"`
+	MessageNeedactionCounter    *Int       `xmlrpc:"message_needaction_counter,omitempty" json:"message_needaction_counter,omitempty"`
+	MessagePartnerIds           *Relation  `xmlrpc:"message_partner_ids,omitempty" json:"message_partner_ids,omitempty"`
+	MyActivityDateDeadline      *Time      `xmlrpc:"my_activity_date_deadline,omitempty" json:"my_activity_date_deadline,omitempty"`
+	Name                        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaymentIds                  *Relation  `xmlrpc:"payment_ids,omitempty" json:"payment_ids,omitempty"`
+	PaymentMethodCode           *String    `xmlrpc:"payment_method_code,omitempty" json:"payment_method_code,omitempty"`
+	PaymentMethodId             *Many2One  `xmlrpc:"payment_method_id,omitempty" json:"payment_method_id,omitempty"`
+	RatingIds                   *Relation  `xmlrpc:"rating_ids,omitempty" json:"rating_ids,omitempty"`
+	SctBatchBooking             *Bool      `xmlrpc:"sct_batch_booking,omitempty" json:"sct_batch_booking,omitempty"`
+	SctGeneric                  *Bool      `xmlrpc:"sct_generic,omitempty" json:"sct_generic,omitempty"`
+	SddBatchBooking             *Bool      `xmlrpc:"sdd_batch_booking,omitempty" json:"sdd_batch_booking,omitempty"`
+	SddRequiredCollectionDate   *Time      `xmlrpc:"sdd_required_collection_date,omitempty" json:"sdd_required_collection_date,omitempty"`
+	SddScheme                   *Selection `xmlrpc:"sdd_scheme,omitempty" json:"sdd_scheme,omitempty"`
+	State                       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WebsiteMessageIds           *Relation  `xmlrpc:"website_message_ids,omitempty" json:"website_message_ids,omitempty"`
+	WriteDate                   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountBatchPayments represents array of account.batch.payment model.
@@ -89,6 +116,9 @@ func (c *Client) GetAccountBatchPayment(id int64) (*AccountBatchPayment, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*abps) == 0 {
+		return nil, nil
+	}
 	return &((*abps)[0]), nil
 }
 
@@ -106,6 +136,9 @@ func (c *Client) FindAccountBatchPayment(criteria *Criteria) (*AccountBatchPayme
 	abps := &AccountBatchPayments{}
 	if err := c.SearchRead(AccountBatchPaymentModel, criteria, NewOptions().Limit(1), abps); err != nil {
 		return nil, err
+	}
+	if len(*abps) == 0 {
+		return nil, nil
 	}
 	return &((*abps)[0]), nil
 }
@@ -131,6 +164,9 @@ func (c *Client) FindAccountBatchPaymentId(criteria *Criteria, options *Options)
 	ids, err := c.Search(AccountBatchPaymentModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

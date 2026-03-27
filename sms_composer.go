@@ -2,33 +2,33 @@ package odoo
 
 // SmsComposer represents sms.composer model.
 type SmsComposer struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	ActiveDomain          *String    `xmlrpc:"active_domain,omitempty"`
-	ActiveDomainCount     *Int       `xmlrpc:"active_domain_count,omitempty"`
-	Body                  *String    `xmlrpc:"body,omitempty"`
-	CompositionMode       *Selection `xmlrpc:"composition_mode,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	MassForceSend         *Bool      `xmlrpc:"mass_force_send,omitempty"`
-	MassKeepLog           *Bool      `xmlrpc:"mass_keep_log,omitempty"`
-	MassUseBlacklist      *Bool      `xmlrpc:"mass_use_blacklist,omitempty"`
-	NumberFieldName       *String    `xmlrpc:"number_field_name,omitempty"`
-	Numbers               *String    `xmlrpc:"numbers,omitempty"`
-	PartnerIds            *Relation  `xmlrpc:"partner_ids,omitempty"`
-	RecipientCount        *Int       `xmlrpc:"recipient_count,omitempty"`
-	RecipientDescription  *String    `xmlrpc:"recipient_description,omitempty"`
-	RecipientInvalidCount *Int       `xmlrpc:"recipient_invalid_count,omitempty"`
-	ResId                 *Int       `xmlrpc:"res_id,omitempty"`
-	ResIds                *String    `xmlrpc:"res_ids,omitempty"`
-	ResIdsCount           *Int       `xmlrpc:"res_ids_count,omitempty"`
-	ResModel              *String    `xmlrpc:"res_model,omitempty"`
-	SanitizedNumbers      *String    `xmlrpc:"sanitized_numbers,omitempty"`
-	TemplateId            *Many2One  `xmlrpc:"template_id,omitempty"`
-	UseActiveDomain       *Bool      `xmlrpc:"use_active_domain,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Body                       *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CommentSingleRecipient     *Bool      `xmlrpc:"comment_single_recipient,omitempty" json:"comment_single_recipient,omitempty"`
+	CompositionMode            *Selection `xmlrpc:"composition_mode,omitempty" json:"composition_mode,omitempty"`
+	CreateDate                 *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                  *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName                *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                         *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MassForceSend              *Bool      `xmlrpc:"mass_force_send,omitempty" json:"mass_force_send,omitempty"`
+	MassKeepLog                *Bool      `xmlrpc:"mass_keep_log,omitempty" json:"mass_keep_log,omitempty"`
+	MassUseBlacklist           *Bool      `xmlrpc:"mass_use_blacklist,omitempty" json:"mass_use_blacklist,omitempty"`
+	NumberFieldName            *String    `xmlrpc:"number_field_name,omitempty" json:"number_field_name,omitempty"`
+	Numbers                    *String    `xmlrpc:"numbers,omitempty" json:"numbers,omitempty"`
+	RecipientInvalidCount      *Int       `xmlrpc:"recipient_invalid_count,omitempty" json:"recipient_invalid_count,omitempty"`
+	RecipientSingleDescription *String    `xmlrpc:"recipient_single_description,omitempty" json:"recipient_single_description,omitempty"`
+	RecipientSingleNumber      *String    `xmlrpc:"recipient_single_number,omitempty" json:"recipient_single_number,omitempty"`
+	RecipientSingleNumberItf   *String    `xmlrpc:"recipient_single_number_itf,omitempty" json:"recipient_single_number_itf,omitempty"`
+	RecipientSingleValid       *Bool      `xmlrpc:"recipient_single_valid,omitempty" json:"recipient_single_valid,omitempty"`
+	RecipientValidCount        *Int       `xmlrpc:"recipient_valid_count,omitempty" json:"recipient_valid_count,omitempty"`
+	ResId                      *Int       `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResIds                     *String    `xmlrpc:"res_ids,omitempty" json:"res_ids,omitempty"`
+	ResIdsCount                *Int       `xmlrpc:"res_ids_count,omitempty" json:"res_ids_count,omitempty"`
+	ResModel                   *String    `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResModelDescription        *String    `xmlrpc:"res_model_description,omitempty" json:"res_model_description,omitempty"`
+	SanitizedNumbers           *String    `xmlrpc:"sanitized_numbers,omitempty" json:"sanitized_numbers,omitempty"`
+	TemplateId                 *Many2One  `xmlrpc:"template_id,omitempty" json:"template_id,omitempty"`
+	WriteDate                  *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                   *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsComposers represents array of sms.composer model.
@@ -90,6 +90,9 @@ func (c *Client) GetSmsComposer(id int64) (*SmsComposer, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*scs) == 0 {
+		return nil, nil
+	}
 	return &((*scs)[0]), nil
 }
 
@@ -107,6 +110,9 @@ func (c *Client) FindSmsComposer(criteria *Criteria) (*SmsComposer, error) {
 	scs := &SmsComposers{}
 	if err := c.SearchRead(SmsComposerModel, criteria, NewOptions().Limit(1), scs); err != nil {
 		return nil, err
+	}
+	if len(*scs) == 0 {
+		return nil, nil
 	}
 	return &((*scs)[0]), nil
 }
@@ -132,6 +138,9 @@ func (c *Client) FindSmsComposerId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(SmsComposerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

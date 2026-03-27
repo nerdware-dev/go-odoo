@@ -2,17 +2,16 @@ package odoo
 
 // DocumentsWorkflowAction represents documents.workflow.action model.
 type DocumentsWorkflowAction struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Action         *Selection `xmlrpc:"action,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FacetId        *Many2One  `xmlrpc:"facet_id,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	TagId          *Many2One  `xmlrpc:"tag_id,omitempty"`
-	WorkflowRuleId *Many2One  `xmlrpc:"workflow_rule_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Action         *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FacetId        *Many2One  `xmlrpc:"facet_id,omitempty" json:"facet_id,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	TagId          *Many2One  `xmlrpc:"tag_id,omitempty" json:"tag_id,omitempty"`
+	WorkflowRuleId *Many2One  `xmlrpc:"workflow_rule_id,omitempty" json:"workflow_rule_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DocumentsWorkflowActions represents array of documents.workflow.action model.
@@ -74,6 +73,9 @@ func (c *Client) GetDocumentsWorkflowAction(id int64) (*DocumentsWorkflowAction,
 	if err != nil {
 		return nil, err
 	}
+	if len(*dwas) == 0 {
+		return nil, nil
+	}
 	return &((*dwas)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindDocumentsWorkflowAction(criteria *Criteria) (*DocumentsWork
 	dwas := &DocumentsWorkflowActions{}
 	if err := c.SearchRead(DocumentsWorkflowActionModel, criteria, NewOptions().Limit(1), dwas); err != nil {
 		return nil, err
+	}
+	if len(*dwas) == 0 {
+		return nil, nil
 	}
 	return &((*dwas)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindDocumentsWorkflowActionId(criteria *Criteria, options *Opti
 	ids, err := c.Search(DocumentsWorkflowActionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

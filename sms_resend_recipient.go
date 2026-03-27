@@ -2,20 +2,19 @@ package odoo
 
 // SmsResendRecipient represents sms.resend.recipient model.
 type SmsResendRecipient struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	FailureType    *Selection `xmlrpc:"failure_type,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	NotificationId *Many2One  `xmlrpc:"notification_id,omitempty"`
-	PartnerId      *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PartnerName    *String    `xmlrpc:"partner_name,omitempty"`
-	Resend         *Bool      `xmlrpc:"resend,omitempty"`
-	SmsNumber      *String    `xmlrpc:"sms_number,omitempty"`
-	SmsResendId    *Many2One  `xmlrpc:"sms_resend_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FailureType    *Selection `xmlrpc:"failure_type,omitempty" json:"failure_type,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	NotificationId *Many2One  `xmlrpc:"notification_id,omitempty" json:"notification_id,omitempty"`
+	PartnerId      *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PartnerName    *String    `xmlrpc:"partner_name,omitempty" json:"partner_name,omitempty"`
+	Resend         *Bool      `xmlrpc:"resend,omitempty" json:"resend,omitempty"`
+	SmsNumber      *String    `xmlrpc:"sms_number,omitempty" json:"sms_number,omitempty"`
+	SmsResendId    *Many2One  `xmlrpc:"sms_resend_id,omitempty" json:"sms_resend_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsResendRecipients represents array of sms.resend.recipient model.
@@ -77,6 +76,9 @@ func (c *Client) GetSmsResendRecipient(id int64) (*SmsResendRecipient, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srrs) == 0 {
+		return nil, nil
+	}
 	return &((*srrs)[0]), nil
 }
 
@@ -94,6 +96,9 @@ func (c *Client) FindSmsResendRecipient(criteria *Criteria) (*SmsResendRecipient
 	srrs := &SmsResendRecipients{}
 	if err := c.SearchRead(SmsResendRecipientModel, criteria, NewOptions().Limit(1), srrs); err != nil {
 		return nil, err
+	}
+	if len(*srrs) == 0 {
+		return nil, nil
 	}
 	return &((*srrs)[0]), nil
 }
@@ -119,6 +124,9 @@ func (c *Client) FindSmsResendRecipientId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(SmsResendRecipientModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

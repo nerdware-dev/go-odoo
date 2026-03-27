@@ -2,30 +2,29 @@ package odoo
 
 // StockReport represents stock.report model.
 type StockReport struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	CategId         *Many2One  `xmlrpc:"categ_id,omitempty"`
-	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreationDate    *Time      `xmlrpc:"creation_date,omitempty"`
-	CycleTime       *Float     `xmlrpc:"cycle_time,omitempty"`
-	DateDone        *Time      `xmlrpc:"date_done,omitempty"`
-	Delay           *Float     `xmlrpc:"delay,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	InventoryId     *Many2One  `xmlrpc:"inventory_id,omitempty"`
-	IsBackorder     *Bool      `xmlrpc:"is_backorder,omitempty"`
-	IsLate          *Bool      `xmlrpc:"is_late,omitempty"`
-	OperationType   *String    `xmlrpc:"operation_type,omitempty"`
-	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty"`
-	PickingId       *Many2One  `xmlrpc:"picking_id,omitempty"`
-	PickingName     *String    `xmlrpc:"picking_name,omitempty"`
-	PickingTypeCode *Selection `xmlrpc:"picking_type_code,omitempty"`
-	ProductId       *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductQty      *Float     `xmlrpc:"product_qty,omitempty"`
-	Reference       *String    `xmlrpc:"reference,omitempty"`
-	ScheduledDate   *Time      `xmlrpc:"scheduled_date,omitempty"`
-	State           *Selection `xmlrpc:"state,omitempty"`
-	StockValue      *Float     `xmlrpc:"stock_value,omitempty"`
-	Valuation       *Float     `xmlrpc:"valuation,omitempty"`
+	CategId         *Many2One  `xmlrpc:"categ_id,omitempty" json:"categ_id,omitempty"`
+	CompanyId       *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreationDate    *Time      `xmlrpc:"creation_date,omitempty" json:"creation_date,omitempty"`
+	CycleTime       *Float     `xmlrpc:"cycle_time,omitempty" json:"cycle_time,omitempty"`
+	DateDone        *Time      `xmlrpc:"date_done,omitempty" json:"date_done,omitempty"`
+	Delay           *Float     `xmlrpc:"delay,omitempty" json:"delay,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsBackorder     *Bool      `xmlrpc:"is_backorder,omitempty" json:"is_backorder,omitempty"`
+	IsLate          *Bool      `xmlrpc:"is_late,omitempty" json:"is_late,omitempty"`
+	OperationType   *String    `xmlrpc:"operation_type,omitempty" json:"operation_type,omitempty"`
+	OperationTypeId *Many2One  `xmlrpc:"operation_type_id,omitempty" json:"operation_type_id,omitempty"`
+	PartnerId       *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PickingId       *Many2One  `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	PickingName     *String    `xmlrpc:"picking_name,omitempty" json:"picking_name,omitempty"`
+	PickingTypeCode *Selection `xmlrpc:"picking_type_code,omitempty" json:"picking_type_code,omitempty"`
+	ProductId       *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductQty      *Float     `xmlrpc:"product_qty,omitempty" json:"product_qty,omitempty"`
+	Reference       *String    `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	ScheduledDate   *Time      `xmlrpc:"scheduled_date,omitempty" json:"scheduled_date,omitempty"`
+	State           *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StockValue      *Float     `xmlrpc:"stock_value,omitempty" json:"stock_value,omitempty"`
+	Valuation       *Float     `xmlrpc:"valuation,omitempty" json:"valuation,omitempty"`
 }
 
 // StockReports represents array of stock.report model.
@@ -87,6 +86,9 @@ func (c *Client) GetStockReport(id int64) (*StockReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srs) == 0 {
+		return nil, nil
+	}
 	return &((*srs)[0]), nil
 }
 
@@ -104,6 +106,9 @@ func (c *Client) FindStockReport(criteria *Criteria) (*StockReport, error) {
 	srs := &StockReports{}
 	if err := c.SearchRead(StockReportModel, criteria, NewOptions().Limit(1), srs); err != nil {
 		return nil, err
+	}
+	if len(*srs) == 0 {
+		return nil, nil
 	}
 	return &((*srs)[0]), nil
 }
@@ -129,6 +134,9 @@ func (c *Client) FindStockReportId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(StockReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,17 +2,16 @@ package odoo
 
 // IrActionsTodo represents ir.actions.todo model.
 type IrActionsTodo struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ActionId    *Many2One  `xmlrpc:"action_id,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Sequence    *Int       `xmlrpc:"sequence,omitempty"`
-	State       *Selection `xmlrpc:"state,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ActionId    *Many2One  `xmlrpc:"action_id,omitempty" json:"action_id,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Sequence    *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	State       *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrActionsTodos represents array of ir.actions.todo model.
@@ -74,6 +73,9 @@ func (c *Client) GetIrActionsTodo(id int64) (*IrActionsTodo, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iats) == 0 {
+		return nil, nil
+	}
 	return &((*iats)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindIrActionsTodo(criteria *Criteria) (*IrActionsTodo, error) {
 	iats := &IrActionsTodos{}
 	if err := c.SearchRead(IrActionsTodoModel, criteria, NewOptions().Limit(1), iats); err != nil {
 		return nil, err
+	}
+	if len(*iats) == 0 {
+		return nil, nil
 	}
 	return &((*iats)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindIrActionsTodoId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrActionsTodoModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

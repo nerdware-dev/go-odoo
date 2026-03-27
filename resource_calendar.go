@@ -2,22 +2,24 @@ package odoo
 
 // ResourceCalendar represents resource.calendar model.
 type ResourceCalendar struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	AttendanceIds       *Relation  `xmlrpc:"attendance_ids,omitempty"`
-	CompanyId           *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	GlobalLeaveIds      *Relation  `xmlrpc:"global_leave_ids,omitempty"`
-	HoursPerDay         *Float     `xmlrpc:"hours_per_day,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	LeaveIds            *Relation  `xmlrpc:"leave_ids,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	TwoWeeksCalendar    *Bool      `xmlrpc:"two_weeks_calendar,omitempty"`
-	TwoWeeksExplanation *String    `xmlrpc:"two_weeks_explanation,omitempty"`
-	Tz                  *Selection `xmlrpc:"tz,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active                *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	AssociatedLeavesCount *Int       `xmlrpc:"associated_leaves_count,omitempty" json:"associated_leaves_count,omitempty"`
+	AttendanceIds         *Relation  `xmlrpc:"attendance_ids,omitempty" json:"attendance_ids,omitempty"`
+	CompanyId             *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GlobalLeaveIds        *Relation  `xmlrpc:"global_leave_ids,omitempty" json:"global_leave_ids,omitempty"`
+	HoursPerDay           *Float     `xmlrpc:"hours_per_day,omitempty" json:"hours_per_day,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeaveIds              *Relation  `xmlrpc:"leave_ids,omitempty" json:"leave_ids,omitempty"`
+	Name                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	TwoWeeksCalendar      *Bool      `xmlrpc:"two_weeks_calendar,omitempty" json:"two_weeks_calendar,omitempty"`
+	TwoWeeksExplanation   *String    `xmlrpc:"two_weeks_explanation,omitempty" json:"two_weeks_explanation,omitempty"`
+	Tz                    *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	TzOffset              *String    `xmlrpc:"tz_offset,omitempty" json:"tz_offset,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceCalendars represents array of resource.calendar model.
@@ -79,6 +81,9 @@ func (c *Client) GetResourceCalendar(id int64) (*ResourceCalendar, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -96,6 +101,9 @@ func (c *Client) FindResourceCalendar(criteria *Criteria) (*ResourceCalendar, er
 	rcs := &ResourceCalendars{}
 	if err := c.SearchRead(ResourceCalendarModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -121,6 +129,9 @@ func (c *Client) FindResourceCalendarId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResourceCalendarModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,20 +2,23 @@ package odoo
 
 // BarcodeRule represents barcode.rule model.
 type BarcodeRule struct {
-	LastUpdate            *Time      `xmlrpc:"__last_update,omitempty"`
-	Alias                 *String    `xmlrpc:"alias,omitempty"`
-	BarcodeNomenclatureId *Many2One  `xmlrpc:"barcode_nomenclature_id,omitempty"`
-	CreateDate            *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName           *String    `xmlrpc:"display_name,omitempty"`
-	Encoding              *Selection `xmlrpc:"encoding,omitempty"`
-	Id                    *Int       `xmlrpc:"id,omitempty"`
-	Name                  *String    `xmlrpc:"name,omitempty"`
-	Pattern               *String    `xmlrpc:"pattern,omitempty"`
-	Sequence              *Int       `xmlrpc:"sequence,omitempty"`
-	Type                  *Selection `xmlrpc:"type,omitempty"`
-	WriteDate             *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Alias                 *String    `xmlrpc:"alias,omitempty" json:"alias,omitempty"`
+	AssociatedUomId       *Many2One  `xmlrpc:"associated_uom_id,omitempty" json:"associated_uom_id,omitempty"`
+	BarcodeNomenclatureId *Many2One  `xmlrpc:"barcode_nomenclature_id,omitempty" json:"barcode_nomenclature_id,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Encoding              *Selection `xmlrpc:"encoding,omitempty" json:"encoding,omitempty"`
+	Gs1ContentType        *Selection `xmlrpc:"gs1_content_type,omitempty" json:"gs1_content_type,omitempty"`
+	Gs1DecimalUsage       *Bool      `xmlrpc:"gs1_decimal_usage,omitempty" json:"gs1_decimal_usage,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsGs1Nomenclature     *Bool      `xmlrpc:"is_gs1_nomenclature,omitempty" json:"is_gs1_nomenclature,omitempty"`
+	Name                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Pattern               *String    `xmlrpc:"pattern,omitempty" json:"pattern,omitempty"`
+	Sequence              *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	Type                  *Selection `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // BarcodeRules represents array of barcode.rule model.
@@ -77,6 +80,9 @@ func (c *Client) GetBarcodeRule(id int64) (*BarcodeRule, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*brs) == 0 {
+		return nil, nil
+	}
 	return &((*brs)[0]), nil
 }
 
@@ -94,6 +100,9 @@ func (c *Client) FindBarcodeRule(criteria *Criteria) (*BarcodeRule, error) {
 	brs := &BarcodeRules{}
 	if err := c.SearchRead(BarcodeRuleModel, criteria, NewOptions().Limit(1), brs); err != nil {
 		return nil, err
+	}
+	if len(*brs) == 0 {
+		return nil, nil
 	}
 	return &((*brs)[0]), nil
 }
@@ -119,6 +128,9 @@ func (c *Client) FindBarcodeRuleId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(BarcodeRuleModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

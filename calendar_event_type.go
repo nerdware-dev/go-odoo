@@ -2,14 +2,14 @@ package odoo
 
 // CalendarEventType represents calendar.event.type model.
 type CalendarEventType struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Color       *Int      `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CalendarEventTypes represents array of calendar.event.type model.
@@ -71,6 +71,9 @@ func (c *Client) GetCalendarEventType(id int64) (*CalendarEventType, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*cets) == 0 {
+		return nil, nil
+	}
 	return &((*cets)[0]), nil
 }
 
@@ -88,6 +91,9 @@ func (c *Client) FindCalendarEventType(criteria *Criteria) (*CalendarEventType, 
 	cets := &CalendarEventTypes{}
 	if err := c.SearchRead(CalendarEventTypeModel, criteria, NewOptions().Limit(1), cets); err != nil {
 		return nil, err
+	}
+	if len(*cets) == 0 {
+		return nil, nil
 	}
 	return &((*cets)[0]), nil
 }
@@ -113,6 +119,9 @@ func (c *Client) FindCalendarEventTypeId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(CalendarEventTypeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

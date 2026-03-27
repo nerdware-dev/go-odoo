@@ -2,22 +2,23 @@ package odoo
 
 // UomUom represents uom.uom model.
 type UomUom struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	Active          *Bool      `xmlrpc:"active,omitempty"`
-	CategoryId      *Many2One  `xmlrpc:"category_id,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Factor          *Float     `xmlrpc:"factor,omitempty"`
-	FactorInv       *Float     `xmlrpc:"factor_inv,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	MeasureType     *Selection `xmlrpc:"measure_type,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	Rounding        *Float     `xmlrpc:"rounding,omitempty"`
-	TimesheetWidget *String    `xmlrpc:"timesheet_widget,omitempty"`
-	UomType         *Selection `xmlrpc:"uom_type,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active             *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CategoryId         *Many2One  `xmlrpc:"category_id,omitempty" json:"category_id,omitempty"`
+	Color              *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Factor             *Float     `xmlrpc:"factor,omitempty" json:"factor,omitempty"`
+	FactorInv          *Float     `xmlrpc:"factor_inv,omitempty" json:"factor_inv,omitempty"`
+	FiscalCountryCodes *String    `xmlrpc:"fiscal_country_codes,omitempty" json:"fiscal_country_codes,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name               *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Ratio              *Float     `xmlrpc:"ratio,omitempty" json:"ratio,omitempty"`
+	Rounding           *Float     `xmlrpc:"rounding,omitempty" json:"rounding,omitempty"`
+	TimesheetWidget    *String    `xmlrpc:"timesheet_widget,omitempty" json:"timesheet_widget,omitempty"`
+	UomType            *Selection `xmlrpc:"uom_type,omitempty" json:"uom_type,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // UomUoms represents array of uom.uom model.
@@ -79,6 +80,9 @@ func (c *Client) GetUomUom(id int64) (*UomUom, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*uus) == 0 {
+		return nil, nil
+	}
 	return &((*uus)[0]), nil
 }
 
@@ -96,6 +100,9 @@ func (c *Client) FindUomUom(criteria *Criteria) (*UomUom, error) {
 	uus := &UomUoms{}
 	if err := c.SearchRead(UomUomModel, criteria, NewOptions().Limit(1), uus); err != nil {
 		return nil, err
+	}
+	if len(*uus) == 0 {
+		return nil, nil
 	}
 	return &((*uus)[0]), nil
 }
@@ -121,6 +128,9 @@ func (c *Client) FindUomUomId(criteria *Criteria, options *Options) (int64, erro
 	ids, err := c.Search(UomUomModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

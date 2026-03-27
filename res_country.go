@@ -2,25 +2,25 @@ package odoo
 
 // ResCountry represents res.country model.
 type ResCountry struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
-	AddressFormat   *String    `xmlrpc:"address_format,omitempty"`
-	AddressViewId   *Many2One  `xmlrpc:"address_view_id,omitempty"`
-	Code            *String    `xmlrpc:"code,omitempty"`
-	CountryGroupIds *Relation  `xmlrpc:"country_group_ids,omitempty"`
-	CreateDate      *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty"`
-	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
-	Id              *Int       `xmlrpc:"id,omitempty"`
-	Image           *String    `xmlrpc:"image,omitempty"`
-	Intrastat       *Bool      `xmlrpc:"intrastat,omitempty"`
-	Name            *String    `xmlrpc:"name,omitempty"`
-	NamePosition    *Selection `xmlrpc:"name_position,omitempty"`
-	PhoneCode       *Int       `xmlrpc:"phone_code,omitempty"`
-	StateIds        *Relation  `xmlrpc:"state_ids,omitempty"`
-	VatLabel        *String    `xmlrpc:"vat_label,omitempty"`
-	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AddressFormat   *String    `xmlrpc:"address_format,omitempty" json:"address_format,omitempty"`
+	AddressViewId   *Many2One  `xmlrpc:"address_view_id,omitempty" json:"address_view_id,omitempty"`
+	Code            *String    `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CountryGroupIds *Relation  `xmlrpc:"country_group_ids,omitempty" json:"country_group_ids,omitempty"`
+	CreateDate      *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId      *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName     *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ImageUrl        *String    `xmlrpc:"image_url,omitempty" json:"image_url,omitempty"`
+	Name            *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NamePosition    *Selection `xmlrpc:"name_position,omitempty" json:"name_position,omitempty"`
+	PhoneCode       *Int       `xmlrpc:"phone_code,omitempty" json:"phone_code,omitempty"`
+	StateIds        *Relation  `xmlrpc:"state_ids,omitempty" json:"state_ids,omitempty"`
+	StateRequired   *Bool      `xmlrpc:"state_required,omitempty" json:"state_required,omitempty"`
+	VatLabel        *String    `xmlrpc:"vat_label,omitempty" json:"vat_label,omitempty"`
+	WriteDate       *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	ZipRequired     *Bool      `xmlrpc:"zip_required,omitempty" json:"zip_required,omitempty"`
 }
 
 // ResCountrys represents array of res.country model.
@@ -82,6 +82,9 @@ func (c *Client) GetResCountry(id int64) (*ResCountry, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcs) == 0 {
+		return nil, nil
+	}
 	return &((*rcs)[0]), nil
 }
 
@@ -99,6 +102,9 @@ func (c *Client) FindResCountry(criteria *Criteria) (*ResCountry, error) {
 	rcs := &ResCountrys{}
 	if err := c.SearchRead(ResCountryModel, criteria, NewOptions().Limit(1), rcs); err != nil {
 		return nil, err
+	}
+	if len(*rcs) == 0 {
+		return nil, nil
 	}
 	return &((*rcs)[0]), nil
 }
@@ -124,6 +130,9 @@ func (c *Client) FindResCountryId(criteria *Criteria, options *Options) (int64, 
 	ids, err := c.Search(ResCountryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

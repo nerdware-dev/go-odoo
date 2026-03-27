@@ -2,15 +2,14 @@ package odoo
 
 // DecimalPrecision represents decimal.precision model.
 type DecimalPrecision struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	Digits      *Int      `xmlrpc:"digits,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Digits      *Int      `xmlrpc:"digits,omitempty" json:"digits,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // DecimalPrecisions represents array of decimal.precision model.
@@ -72,6 +71,9 @@ func (c *Client) GetDecimalPrecision(id int64) (*DecimalPrecision, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*dps) == 0 {
+		return nil, nil
+	}
 	return &((*dps)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindDecimalPrecision(criteria *Criteria) (*DecimalPrecision, er
 	dps := &DecimalPrecisions{}
 	if err := c.SearchRead(DecimalPrecisionModel, criteria, NewOptions().Limit(1), dps); err != nil {
 		return nil, err
+	}
+	if len(*dps) == 0 {
+		return nil, nil
 	}
 	return &((*dps)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindDecimalPrecisionId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(DecimalPrecisionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

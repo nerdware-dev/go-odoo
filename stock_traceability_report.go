@@ -2,13 +2,12 @@ package odoo
 
 // StockTraceabilityReport represents stock.traceability.report model.
 type StockTraceabilityReport struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockTraceabilityReports represents array of stock.traceability.report model.
@@ -70,6 +69,9 @@ func (c *Client) GetStockTraceabilityReport(id int64) (*StockTraceabilityReport,
 	if err != nil {
 		return nil, err
 	}
+	if len(*strs) == 0 {
+		return nil, nil
+	}
 	return &((*strs)[0]), nil
 }
 
@@ -87,6 +89,9 @@ func (c *Client) FindStockTraceabilityReport(criteria *Criteria) (*StockTraceabi
 	strs := &StockTraceabilityReports{}
 	if err := c.SearchRead(StockTraceabilityReportModel, criteria, NewOptions().Limit(1), strs); err != nil {
 		return nil, err
+	}
+	if len(*strs) == 0 {
+		return nil, nil
 	}
 	return &((*strs)[0]), nil
 }
@@ -112,6 +117,9 @@ func (c *Client) FindStockTraceabilityReportId(criteria *Criteria, options *Opti
 	ids, err := c.Search(StockTraceabilityReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

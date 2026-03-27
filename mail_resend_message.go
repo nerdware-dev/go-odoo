@@ -2,18 +2,18 @@ package odoo
 
 // MailResendMessage represents mail.resend.message model.
 type MailResendMessage struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate      *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	HasCancel       *Bool     `xmlrpc:"has_cancel,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	MailMessageId   *Many2One `xmlrpc:"mail_message_id,omitempty"`
-	NotificationIds *Relation `xmlrpc:"notification_ids,omitempty"`
-	PartnerIds      *Relation `xmlrpc:"partner_ids,omitempty"`
-	PartnerReadonly *Bool     `xmlrpc:"partner_readonly,omitempty"`
-	WriteDate       *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty"`
+	CanCancel       *Bool     `xmlrpc:"can_cancel,omitempty" json:"can_cancel,omitempty"`
+	CanResend       *Bool     `xmlrpc:"can_resend,omitempty" json:"can_resend,omitempty"`
+	CreateDate      *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid       *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MailMessageId   *Many2One `xmlrpc:"mail_message_id,omitempty" json:"mail_message_id,omitempty"`
+	NotificationIds *Relation `xmlrpc:"notification_ids,omitempty" json:"notification_ids,omitempty"`
+	PartnerIds      *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	PartnerReadonly *Bool     `xmlrpc:"partner_readonly,omitempty" json:"partner_readonly,omitempty"`
+	WriteDate       *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid        *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailResendMessages represents array of mail.resend.message model.
@@ -75,6 +75,9 @@ func (c *Client) GetMailResendMessage(id int64) (*MailResendMessage, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mrms) == 0 {
+		return nil, nil
+	}
 	return &((*mrms)[0]), nil
 }
 
@@ -92,6 +95,9 @@ func (c *Client) FindMailResendMessage(criteria *Criteria) (*MailResendMessage, 
 	mrms := &MailResendMessages{}
 	if err := c.SearchRead(MailResendMessageModel, criteria, NewOptions().Limit(1), mrms); err != nil {
 		return nil, err
+	}
+	if len(*mrms) == 0 {
+		return nil, nil
 	}
 	return &((*mrms)[0]), nil
 }
@@ -117,6 +123,9 @@ func (c *Client) FindMailResendMessageId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(MailResendMessageModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

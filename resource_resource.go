@@ -2,21 +2,21 @@ package odoo
 
 // ResourceResource represents resource.resource model.
 type ResourceResource struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Active         *Bool      `xmlrpc:"active,omitempty"`
-	CalendarId     *Many2One  `xmlrpc:"calendar_id,omitempty"`
-	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *String    `xmlrpc:"name,omitempty"`
-	ResourceType   *Selection `xmlrpc:"resource_type,omitempty"`
-	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omitempty"`
-	Tz             *Selection `xmlrpc:"tz,omitempty"`
-	UserId         *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active         *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CalendarId     *Many2One  `xmlrpc:"calendar_id,omitempty" json:"calendar_id,omitempty"`
+	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId     *Relation  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	ResourceType   *Selection `xmlrpc:"resource_type,omitempty" json:"resource_type,omitempty"`
+	TimeEfficiency *Float     `xmlrpc:"time_efficiency,omitempty" json:"time_efficiency,omitempty"`
+	Tz             *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
+	UserId         *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResourceResources represents array of resource.resource model.
@@ -78,6 +78,9 @@ func (c *Client) GetResourceResource(id int64) (*ResourceResource, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rrs) == 0 {
+		return nil, nil
+	}
 	return &((*rrs)[0]), nil
 }
 
@@ -95,6 +98,9 @@ func (c *Client) FindResourceResource(criteria *Criteria) (*ResourceResource, er
 	rrs := &ResourceResources{}
 	if err := c.SearchRead(ResourceResourceModel, criteria, NewOptions().Limit(1), rrs); err != nil {
 		return nil, err
+	}
+	if len(*rrs) == 0 {
+		return nil, nil
 	}
 	return &((*rrs)[0]), nil
 }
@@ -120,6 +126,9 @@ func (c *Client) FindResourceResourceId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ResourceResourceModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

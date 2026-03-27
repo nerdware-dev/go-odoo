@@ -2,16 +2,17 @@ package odoo
 
 // AccountFiscalPositionTax represents account.fiscal.position.tax model.
 type AccountFiscalPositionTax struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	PositionId  *Many2One `xmlrpc:"position_id,omitempty"`
-	TaxDestId   *Many2One `xmlrpc:"tax_dest_id,omitempty"`
-	TaxSrcId    *Many2One `xmlrpc:"tax_src_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId     *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PositionId    *Many2One `xmlrpc:"position_id,omitempty" json:"position_id,omitempty"`
+	TaxDestActive *Bool     `xmlrpc:"tax_dest_active,omitempty" json:"tax_dest_active,omitempty"`
+	TaxDestId     *Many2One `xmlrpc:"tax_dest_id,omitempty" json:"tax_dest_id,omitempty"`
+	TaxSrcId      *Many2One `xmlrpc:"tax_src_id,omitempty" json:"tax_src_id,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFiscalPositionTaxs represents array of account.fiscal.position.tax model.
@@ -73,6 +74,9 @@ func (c *Client) GetAccountFiscalPositionTax(id int64) (*AccountFiscalPositionTa
 	if err != nil {
 		return nil, err
 	}
+	if len(*afpts) == 0 {
+		return nil, nil
+	}
 	return &((*afpts)[0]), nil
 }
 
@@ -90,6 +94,9 @@ func (c *Client) FindAccountFiscalPositionTax(criteria *Criteria) (*AccountFisca
 	afpts := &AccountFiscalPositionTaxs{}
 	if err := c.SearchRead(AccountFiscalPositionTaxModel, criteria, NewOptions().Limit(1), afpts); err != nil {
 		return nil, err
+	}
+	if len(*afpts) == 0 {
+		return nil, nil
 	}
 	return &((*afpts)[0]), nil
 }
@@ -115,6 +122,9 @@ func (c *Client) FindAccountFiscalPositionTaxId(criteria *Criteria, options *Opt
 	ids, err := c.Search(AccountFiscalPositionTaxModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,20 +2,19 @@ package odoo
 
 // IrActionsActions represents ir.actions.actions model.
 type IrActionsActions struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty"`
-	BindingType      *Selection `xmlrpc:"binding_type,omitempty"`
-	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Help             *String    `xmlrpc:"help,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	Type             *String    `xmlrpc:"type,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
-	XmlId            *String    `xmlrpc:"xml_id,omitempty"`
+	BindingModelId   *Many2One  `xmlrpc:"binding_model_id,omitempty" json:"binding_model_id,omitempty"`
+	BindingType      *Selection `xmlrpc:"binding_type,omitempty" json:"binding_type,omitempty"`
+	BindingViewTypes *String    `xmlrpc:"binding_view_types,omitempty" json:"binding_view_types,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Help             *String    `xmlrpc:"help,omitempty" json:"help,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Type             *String    `xmlrpc:"type,omitempty" json:"type,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	XmlId            *String    `xmlrpc:"xml_id,omitempty" json:"xml_id,omitempty"`
 }
 
 // IrActionsActionss represents array of ir.actions.actions model.
@@ -77,6 +76,9 @@ func (c *Client) GetIrActionsActions(id int64) (*IrActionsActions, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*iaas) == 0 {
+		return nil, nil
+	}
 	return &((*iaas)[0]), nil
 }
 
@@ -94,6 +96,9 @@ func (c *Client) FindIrActionsActions(criteria *Criteria) (*IrActionsActions, er
 	iaas := &IrActionsActionss{}
 	if err := c.SearchRead(IrActionsActionsModel, criteria, NewOptions().Limit(1), iaas); err != nil {
 		return nil, err
+	}
+	if len(*iaas) == 0 {
+		return nil, nil
 	}
 	return &((*iaas)[0]), nil
 }
@@ -119,6 +124,9 @@ func (c *Client) FindIrActionsActionsId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(IrActionsActionsModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

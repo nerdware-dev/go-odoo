@@ -2,16 +2,15 @@ package odoo
 
 // ResCountryState represents res.country.state model.
 type ResCountryState struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Code        *String   `xmlrpc:"code,omitempty"`
-	CountryId   *Many2One `xmlrpc:"country_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Code        *String   `xmlrpc:"code,omitempty" json:"code,omitempty"`
+	CountryId   *Many2One `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResCountryStates represents array of res.country.state model.
@@ -73,6 +72,9 @@ func (c *Client) GetResCountryState(id int64) (*ResCountryState, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcss) == 0 {
+		return nil, nil
+	}
 	return &((*rcss)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindResCountryState(criteria *Criteria) (*ResCountryState, erro
 	rcss := &ResCountryStates{}
 	if err := c.SearchRead(ResCountryStateModel, criteria, NewOptions().Limit(1), rcss); err != nil {
 		return nil, err
+	}
+	if len(*rcss) == 0 {
+		return nil, nil
 	}
 	return &((*rcss)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindResCountryStateId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResCountryStateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

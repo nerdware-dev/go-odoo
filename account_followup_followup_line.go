@@ -2,28 +2,26 @@ package odoo
 
 // AccountFollowupFollowupLine represents account_followup.followup.line model.
 type AccountFollowupFollowupLine struct {
-	LastUpdate                *Time     `xmlrpc:"__last_update,omitempty"`
-	AutoExecute               *Bool     `xmlrpc:"auto_execute,omitempty"`
-	CompanyId                 *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate                *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty"`
-	Delay                     *Int      `xmlrpc:"delay,omitempty"`
-	Description               *String   `xmlrpc:"description,omitempty"`
-	DisplayName               *String   `xmlrpc:"display_name,omitempty"`
-	Id                        *Int      `xmlrpc:"id,omitempty"`
-	JoinInvoices              *Bool     `xmlrpc:"join_invoices,omitempty"`
-	ManualAction              *Bool     `xmlrpc:"manual_action,omitempty"`
-	ManualActionNote          *String   `xmlrpc:"manual_action_note,omitempty"`
-	ManualActionResponsibleId *Many2One `xmlrpc:"manual_action_responsible_id,omitempty"`
-	ManualActionTypeId        *Many2One `xmlrpc:"manual_action_type_id,omitempty"`
-	Name                      *String   `xmlrpc:"name,omitempty"`
-	PrintLetter               *Bool     `xmlrpc:"print_letter,omitempty"`
-	SendEmail                 *Bool     `xmlrpc:"send_email,omitempty"`
-	SendLetter                *Bool     `xmlrpc:"send_letter,omitempty"`
-	SendSms                   *Bool     `xmlrpc:"send_sms,omitempty"`
-	SmsDescription            *String   `xmlrpc:"sms_description,omitempty"`
-	WriteDate                 *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty"`
+	ActivityDefaultResponsibleType *Selection `xmlrpc:"activity_default_responsible_type,omitempty" json:"activity_default_responsible_type,omitempty"`
+	ActivityNote                   *String    `xmlrpc:"activity_note,omitempty" json:"activity_note,omitempty"`
+	ActivitySummary                *String    `xmlrpc:"activity_summary,omitempty" json:"activity_summary,omitempty"`
+	ActivityTypeId                 *Many2One  `xmlrpc:"activity_type_id,omitempty" json:"activity_type_id,omitempty"`
+	AutoExecute                    *Bool      `xmlrpc:"auto_execute,omitempty" json:"auto_execute,omitempty"`
+	CompanyId                      *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CreateActivity                 *Bool      `xmlrpc:"create_activity,omitempty" json:"create_activity,omitempty"`
+	CreateDate                     *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                      *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Delay                          *Int       `xmlrpc:"delay,omitempty" json:"delay,omitempty"`
+	DisplayName                    *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                             *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	JoinInvoices                   *Bool      `xmlrpc:"join_invoices,omitempty" json:"join_invoices,omitempty"`
+	MailTemplateId                 *Many2One  `xmlrpc:"mail_template_id,omitempty" json:"mail_template_id,omitempty"`
+	Name                           *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	SendEmail                      *Bool      `xmlrpc:"send_email,omitempty" json:"send_email,omitempty"`
+	SendSms                        *Bool      `xmlrpc:"send_sms,omitempty" json:"send_sms,omitempty"`
+	SmsTemplateId                  *Many2One  `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	WriteDate                      *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                       *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFollowupFollowupLines represents array of account_followup.followup.line model.
@@ -85,6 +83,9 @@ func (c *Client) GetAccountFollowupFollowupLine(id int64) (*AccountFollowupFollo
 	if err != nil {
 		return nil, err
 	}
+	if len(*afls) == 0 {
+		return nil, nil
+	}
 	return &((*afls)[0]), nil
 }
 
@@ -102,6 +103,9 @@ func (c *Client) FindAccountFollowupFollowupLine(criteria *Criteria) (*AccountFo
 	afls := &AccountFollowupFollowupLines{}
 	if err := c.SearchRead(AccountFollowupFollowupLineModel, criteria, NewOptions().Limit(1), afls); err != nil {
 		return nil, err
+	}
+	if len(*afls) == 0 {
+		return nil, nil
 	}
 	return &((*afls)[0]), nil
 }
@@ -127,6 +131,9 @@ func (c *Client) FindAccountFollowupFollowupLineId(criteria *Criteria, options *
 	ids, err := c.Search(AccountFollowupFollowupLineModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

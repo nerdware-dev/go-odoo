@@ -2,14 +2,13 @@ package odoo
 
 // StockQuantityHistory represents stock.quantity.history model.
 type StockQuantityHistory struct {
-	LastUpdate        *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate        *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName       *String   `xmlrpc:"display_name,omitempty"`
-	Id                *Int      `xmlrpc:"id,omitempty"`
-	InventoryDatetime *Time     `xmlrpc:"inventory_datetime,omitempty"`
-	WriteDate         *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate        *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InventoryDatetime *Time     `xmlrpc:"inventory_datetime,omitempty" json:"inventory_datetime,omitempty"`
+	WriteDate         *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockQuantityHistorys represents array of stock.quantity.history model.
@@ -71,6 +70,9 @@ func (c *Client) GetStockQuantityHistory(id int64) (*StockQuantityHistory, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*sqhs) == 0 {
+		return nil, nil
+	}
 	return &((*sqhs)[0]), nil
 }
 
@@ -88,6 +90,9 @@ func (c *Client) FindStockQuantityHistory(criteria *Criteria) (*StockQuantityHis
 	sqhs := &StockQuantityHistorys{}
 	if err := c.SearchRead(StockQuantityHistoryModel, criteria, NewOptions().Limit(1), sqhs); err != nil {
 		return nil, err
+	}
+	if len(*sqhs) == 0 {
+		return nil, nil
 	}
 	return &((*sqhs)[0]), nil
 }
@@ -113,6 +118,9 @@ func (c *Client) FindStockQuantityHistoryId(criteria *Criteria, options *Options
 	ids, err := c.Search(StockQuantityHistoryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

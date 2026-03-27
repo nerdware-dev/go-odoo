@@ -2,16 +2,16 @@ package odoo
 
 // AccountReportsExportWizardFormat represents account_reports.export.wizard.format model.
 type AccountReportsExportWizardFormat struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	ExportWizardId *Many2One `xmlrpc:"export_wizard_id,omitempty"`
-	FunToCall      *String   `xmlrpc:"fun_to_call,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	Name           *String   `xmlrpc:"name,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExportWizardId *Many2One `xmlrpc:"export_wizard_id,omitempty" json:"export_wizard_id,omitempty"`
+	FunParam       *String   `xmlrpc:"fun_param,omitempty" json:"fun_param,omitempty"`
+	FunToCall      *String   `xmlrpc:"fun_to_call,omitempty" json:"fun_to_call,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name           *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountReportsExportWizardFormats represents array of account_reports.export.wizard.format model.
@@ -73,6 +73,9 @@ func (c *Client) GetAccountReportsExportWizardFormat(id int64) (*AccountReportsE
 	if err != nil {
 		return nil, err
 	}
+	if len(*aewfs) == 0 {
+		return nil, nil
+	}
 	return &((*aewfs)[0]), nil
 }
 
@@ -90,6 +93,9 @@ func (c *Client) FindAccountReportsExportWizardFormat(criteria *Criteria) (*Acco
 	aewfs := &AccountReportsExportWizardFormats{}
 	if err := c.SearchRead(AccountReportsExportWizardFormatModel, criteria, NewOptions().Limit(1), aewfs); err != nil {
 		return nil, err
+	}
+	if len(*aewfs) == 0 {
+		return nil, nil
 	}
 	return &((*aewfs)[0]), nil
 }
@@ -115,6 +121,9 @@ func (c *Client) FindAccountReportsExportWizardFormatId(criteria *Criteria, opti
 	ids, err := c.Search(AccountReportsExportWizardFormatModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

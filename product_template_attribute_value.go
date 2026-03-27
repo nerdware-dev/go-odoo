@@ -2,25 +2,27 @@ package odoo
 
 // ProductTemplateAttributeValue represents product.template.attribute.value model.
 type ProductTemplateAttributeValue struct {
-	LastUpdate              *Time      `xmlrpc:"__last_update,omitempty"`
-	AttributeId             *Many2One  `xmlrpc:"attribute_id,omitempty"`
-	AttributeLineId         *Many2One  `xmlrpc:"attribute_line_id,omitempty"`
-	CreateDate              *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName             *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType             *Selection `xmlrpc:"display_type,omitempty"`
-	ExcludeFor              *Relation  `xmlrpc:"exclude_for,omitempty"`
-	HtmlColor               *String    `xmlrpc:"html_color,omitempty"`
-	Id                      *Int       `xmlrpc:"id,omitempty"`
-	IsCustom                *Bool      `xmlrpc:"is_custom,omitempty"`
-	Name                    *String    `xmlrpc:"name,omitempty"`
-	PriceExtra              *Float     `xmlrpc:"price_extra,omitempty"`
-	ProductAttributeValueId *Many2One  `xmlrpc:"product_attribute_value_id,omitempty"`
-	ProductTmplId           *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	PtavActive              *Bool      `xmlrpc:"ptav_active,omitempty"`
-	PtavProductVariantIds   *Relation  `xmlrpc:"ptav_product_variant_ids,omitempty"`
-	WriteDate               *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttributeId             *Many2One  `xmlrpc:"attribute_id,omitempty" json:"attribute_id,omitempty"`
+	AttributeLineId         *Many2One  `xmlrpc:"attribute_line_id,omitempty" json:"attribute_line_id,omitempty"`
+	Color                   *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CreateDate              *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid               *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId              *Many2One  `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName             *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType             *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	ExcludeFor              *Relation  `xmlrpc:"exclude_for,omitempty" json:"exclude_for,omitempty"`
+	HtmlColor               *String    `xmlrpc:"html_color,omitempty" json:"html_color,omitempty"`
+	Id                      *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Image                   *String    `xmlrpc:"image,omitempty" json:"image,omitempty"`
+	IsCustom                *Bool      `xmlrpc:"is_custom,omitempty" json:"is_custom,omitempty"`
+	Name                    *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PriceExtra              *Float     `xmlrpc:"price_extra,omitempty" json:"price_extra,omitempty"`
+	ProductAttributeValueId *Many2One  `xmlrpc:"product_attribute_value_id,omitempty" json:"product_attribute_value_id,omitempty"`
+	ProductTmplId           *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	PtavActive              *Bool      `xmlrpc:"ptav_active,omitempty" json:"ptav_active,omitempty"`
+	PtavProductVariantIds   *Relation  `xmlrpc:"ptav_product_variant_ids,omitempty" json:"ptav_product_variant_ids,omitempty"`
+	WriteDate               *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductTemplateAttributeValues represents array of product.template.attribute.value model.
@@ -82,6 +84,9 @@ func (c *Client) GetProductTemplateAttributeValue(id int64) (*ProductTemplateAtt
 	if err != nil {
 		return nil, err
 	}
+	if len(*ptavs) == 0 {
+		return nil, nil
+	}
 	return &((*ptavs)[0]), nil
 }
 
@@ -99,6 +104,9 @@ func (c *Client) FindProductTemplateAttributeValue(criteria *Criteria) (*Product
 	ptavs := &ProductTemplateAttributeValues{}
 	if err := c.SearchRead(ProductTemplateAttributeValueModel, criteria, NewOptions().Limit(1), ptavs); err != nil {
 		return nil, err
+	}
+	if len(*ptavs) == 0 {
+		return nil, nil
 	}
 	return &((*ptavs)[0]), nil
 }
@@ -124,6 +132,9 @@ func (c *Client) FindProductTemplateAttributeValueId(criteria *Criteria, options
 	ids, err := c.Search(ProductTemplateAttributeValueModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

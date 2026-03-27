@@ -2,28 +2,47 @@ package odoo
 
 // BaseDocumentLayout represents base.document.layout model.
 type BaseDocumentLayout struct {
-	LastUpdate             *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId              *Many2One  `xmlrpc:"company_id,omitempty"`
-	CreateDate             *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid              *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CustomColors           *Bool      `xmlrpc:"custom_colors,omitempty"`
-	DisplayName            *String    `xmlrpc:"display_name,omitempty"`
-	ExternalReportLayoutId *Many2One  `xmlrpc:"external_report_layout_id,omitempty"`
-	Font                   *Selection `xmlrpc:"font,omitempty"`
-	Id                     *Int       `xmlrpc:"id,omitempty"`
-	Logo                   *String    `xmlrpc:"logo,omitempty"`
-	LogoPrimaryColor       *String    `xmlrpc:"logo_primary_color,omitempty"`
-	LogoSecondaryColor     *String    `xmlrpc:"logo_secondary_color,omitempty"`
-	PaperformatId          *Many2One  `xmlrpc:"paperformat_id,omitempty"`
-	Preview                *String    `xmlrpc:"preview,omitempty"`
-	PreviewLogo            *String    `xmlrpc:"preview_logo,omitempty"`
-	PrimaryColor           *String    `xmlrpc:"primary_color,omitempty"`
-	ReportFooter           *String    `xmlrpc:"report_footer,omitempty"`
-	ReportHeader           *String    `xmlrpc:"report_header,omitempty"`
-	ReportLayoutId         *Many2One  `xmlrpc:"report_layout_id,omitempty"`
-	SecondaryColor         *String    `xmlrpc:"secondary_color,omitempty"`
-	WriteDate              *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid               *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AccountFiscalCountryId   *Many2One  `xmlrpc:"account_fiscal_country_id,omitempty" json:"account_fiscal_country_id,omitempty"`
+	BankIds                  *Relation  `xmlrpc:"bank_ids,omitempty" json:"bank_ids,omitempty"`
+	City                     *String    `xmlrpc:"city,omitempty" json:"city,omitempty"`
+	CompanyDetails           *String    `xmlrpc:"company_details,omitempty" json:"company_details,omitempty"`
+	CompanyId                *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompanyRegistry          *String    `xmlrpc:"company_registry,omitempty" json:"company_registry,omitempty"`
+	CountryId                *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate               *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CustomColors             *Bool      `xmlrpc:"custom_colors,omitempty" json:"custom_colors,omitempty"`
+	DisplayName              *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email                    *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	ExternalReportLayoutId   *Many2One  `xmlrpc:"external_report_layout_id,omitempty" json:"external_report_layout_id,omitempty"`
+	Font                     *Selection `xmlrpc:"font,omitempty" json:"font,omitempty"`
+	Id                       *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsCompanyDetailsEmpty    *Bool      `xmlrpc:"is_company_details_empty,omitempty" json:"is_company_details_empty,omitempty"`
+	L10NDin5008DocumentTitle *String    `xmlrpc:"l10n_din5008_document_title,omitempty" json:"l10n_din5008_document_title,omitempty"`
+	L10NDin5008TemplateData  *String    `xmlrpc:"l10n_din5008_template_data,omitempty" json:"l10n_din5008_template_data,omitempty"`
+	LayoutBackground         *Selection `xmlrpc:"layout_background,omitempty" json:"layout_background,omitempty"`
+	LayoutBackgroundImage    *String    `xmlrpc:"layout_background_image,omitempty" json:"layout_background_image,omitempty"`
+	Logo                     *String    `xmlrpc:"logo,omitempty" json:"logo,omitempty"`
+	LogoPrimaryColor         *String    `xmlrpc:"logo_primary_color,omitempty" json:"logo_primary_color,omitempty"`
+	LogoSecondaryColor       *String    `xmlrpc:"logo_secondary_color,omitempty" json:"logo_secondary_color,omitempty"`
+	Name                     *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PaperformatId            *Many2One  `xmlrpc:"paperformat_id,omitempty" json:"paperformat_id,omitempty"`
+	PartnerId                *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	Phone                    *String    `xmlrpc:"phone,omitempty" json:"phone,omitempty"`
+	Preview                  *String    `xmlrpc:"preview,omitempty" json:"preview,omitempty"`
+	PreviewLogo              *String    `xmlrpc:"preview_logo,omitempty" json:"preview_logo,omitempty"`
+	PrimaryColor             *String    `xmlrpc:"primary_color,omitempty" json:"primary_color,omitempty"`
+	ReportFooter             *String    `xmlrpc:"report_footer,omitempty" json:"report_footer,omitempty"`
+	ReportHeader             *String    `xmlrpc:"report_header,omitempty" json:"report_header,omitempty"`
+	ReportLayoutId           *Many2One  `xmlrpc:"report_layout_id,omitempty" json:"report_layout_id,omitempty"`
+	SecondaryColor           *String    `xmlrpc:"secondary_color,omitempty" json:"secondary_color,omitempty"`
+	Street                   *String    `xmlrpc:"street,omitempty" json:"street,omitempty"`
+	Street2                  *String    `xmlrpc:"street2,omitempty" json:"street2,omitempty"`
+	Vat                      *String    `xmlrpc:"vat,omitempty" json:"vat,omitempty"`
+	Website                  *String    `xmlrpc:"website,omitempty" json:"website,omitempty"`
+	WriteDate                *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                 *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
+	Zip                      *String    `xmlrpc:"zip,omitempty" json:"zip,omitempty"`
 }
 
 // BaseDocumentLayouts represents array of base.document.layout model.
@@ -85,6 +104,9 @@ func (c *Client) GetBaseDocumentLayout(id int64) (*BaseDocumentLayout, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*bdls) == 0 {
+		return nil, nil
+	}
 	return &((*bdls)[0]), nil
 }
 
@@ -102,6 +124,9 @@ func (c *Client) FindBaseDocumentLayout(criteria *Criteria) (*BaseDocumentLayout
 	bdls := &BaseDocumentLayouts{}
 	if err := c.SearchRead(BaseDocumentLayoutModel, criteria, NewOptions().Limit(1), bdls); err != nil {
 		return nil, err
+	}
+	if len(*bdls) == 0 {
+		return nil, nil
 	}
 	return &((*bdls)[0]), nil
 }
@@ -127,6 +152,9 @@ func (c *Client) FindBaseDocumentLayoutId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(BaseDocumentLayoutModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,18 +2,17 @@ package odoo
 
 // CrmLeadScoringFrequency represents crm.lead.scoring.frequency model.
 type CrmLeadScoringFrequency struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	LostCount   *Float    `xmlrpc:"lost_count,omitempty"`
-	TeamId      *Many2One `xmlrpc:"team_id,omitempty"`
-	Value       *String   `xmlrpc:"value,omitempty"`
-	Variable    *String   `xmlrpc:"variable,omitempty"`
-	WonCount    *Float    `xmlrpc:"won_count,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LostCount   *Float    `xmlrpc:"lost_count,omitempty" json:"lost_count,omitempty"`
+	TeamId      *Many2One `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	Value       *String   `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	Variable    *String   `xmlrpc:"variable,omitempty" json:"variable,omitempty"`
+	WonCount    *Float    `xmlrpc:"won_count,omitempty" json:"won_count,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLeadScoringFrequencys represents array of crm.lead.scoring.frequency model.
@@ -75,6 +74,9 @@ func (c *Client) GetCrmLeadScoringFrequency(id int64) (*CrmLeadScoringFrequency,
 	if err != nil {
 		return nil, err
 	}
+	if len(*clsfs) == 0 {
+		return nil, nil
+	}
 	return &((*clsfs)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindCrmLeadScoringFrequency(criteria *Criteria) (*CrmLeadScorin
 	clsfs := &CrmLeadScoringFrequencys{}
 	if err := c.SearchRead(CrmLeadScoringFrequencyModel, criteria, NewOptions().Limit(1), clsfs); err != nil {
 		return nil, err
+	}
+	if len(*clsfs) == 0 {
+		return nil, nil
 	}
 	return &((*clsfs)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindCrmLeadScoringFrequencyId(criteria *Criteria, options *Opti
 	ids, err := c.Search(CrmLeadScoringFrequencyModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

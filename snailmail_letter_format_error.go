@@ -2,15 +2,14 @@ package odoo
 
 // SnailmailLetterFormatError represents snailmail.letter.format.error model.
 type SnailmailLetterFormatError struct {
-	LastUpdate     *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate     *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String   `xmlrpc:"display_name,omitempty"`
-	Id             *Int      `xmlrpc:"id,omitempty"`
-	MessageId      *Many2One `xmlrpc:"message_id,omitempty"`
-	SnailmailCover *Bool     `xmlrpc:"snailmail_cover,omitempty"`
-	WriteDate      *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate     *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid      *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName    *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id             *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	MessageId      *Many2One `xmlrpc:"message_id,omitempty" json:"message_id,omitempty"`
+	SnailmailCover *Bool     `xmlrpc:"snailmail_cover,omitempty" json:"snailmail_cover,omitempty"`
+	WriteDate      *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid       *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SnailmailLetterFormatErrors represents array of snailmail.letter.format.error model.
@@ -72,6 +71,9 @@ func (c *Client) GetSnailmailLetterFormatError(id int64) (*SnailmailLetterFormat
 	if err != nil {
 		return nil, err
 	}
+	if len(*slfes) == 0 {
+		return nil, nil
+	}
 	return &((*slfes)[0]), nil
 }
 
@@ -89,6 +91,9 @@ func (c *Client) FindSnailmailLetterFormatError(criteria *Criteria) (*SnailmailL
 	slfes := &SnailmailLetterFormatErrors{}
 	if err := c.SearchRead(SnailmailLetterFormatErrorModel, criteria, NewOptions().Limit(1), slfes); err != nil {
 		return nil, err
+	}
+	if len(*slfes) == 0 {
+		return nil, nil
 	}
 	return &((*slfes)[0]), nil
 }
@@ -114,6 +119,9 @@ func (c *Client) FindSnailmailLetterFormatErrorId(criteria *Criteria, options *O
 	ids, err := c.Search(SnailmailLetterFormatErrorModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,20 +2,18 @@ package odoo
 
 // AccountAccountTag represents account.account.tag model.
 type AccountAccountTag struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	Active           *Bool      `xmlrpc:"active,omitempty"`
-	Applicability    *Selection `xmlrpc:"applicability,omitempty"`
-	Color            *Int       `xmlrpc:"color,omitempty"`
-	CountryId        *Many2One  `xmlrpc:"country_id,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	TaxNegate        *Bool      `xmlrpc:"tax_negate,omitempty"`
-	TaxReportLineIds *Relation  `xmlrpc:"tax_report_line_ids,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Active        *Bool      `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	Applicability *Selection `xmlrpc:"applicability,omitempty" json:"applicability,omitempty"`
+	Color         *Int       `xmlrpc:"color,omitempty" json:"color,omitempty"`
+	CountryId     *Many2One  `xmlrpc:"country_id,omitempty" json:"country_id,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	TaxNegate     *Bool      `xmlrpc:"tax_negate,omitempty" json:"tax_negate,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountAccountTags represents array of account.account.tag model.
@@ -77,6 +75,9 @@ func (c *Client) GetAccountAccountTag(id int64) (*AccountAccountTag, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*aats) == 0 {
+		return nil, nil
+	}
 	return &((*aats)[0]), nil
 }
 
@@ -94,6 +95,9 @@ func (c *Client) FindAccountAccountTag(criteria *Criteria) (*AccountAccountTag, 
 	aats := &AccountAccountTags{}
 	if err := c.SearchRead(AccountAccountTagModel, criteria, NewOptions().Limit(1), aats); err != nil {
 		return nil, err
+	}
+	if len(*aats) == 0 {
+		return nil, nil
 	}
 	return &((*aats)[0]), nil
 }
@@ -119,6 +123,9 @@ func (c *Client) FindAccountAccountTagId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(AccountAccountTagModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,16 +2,21 @@ package odoo
 
 // HrLeaveReportCalendar represents hr.leave.report.calendar model.
 type HrLeaveReportCalendar struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Duration      *Float     `xmlrpc:"duration,omitempty"`
-	EmployeeId    *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	Name          *String    `xmlrpc:"name,omitempty"`
-	StartDatetime *Time      `xmlrpc:"start_datetime,omitempty"`
-	StopDatetime  *Time      `xmlrpc:"stop_datetime,omitempty"`
-	Tz            *Selection `xmlrpc:"tz,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	DepartmentId  *Many2One  `xmlrpc:"department_id,omitempty" json:"department_id,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Duration      *Float     `xmlrpc:"duration,omitempty" json:"duration,omitempty"`
+	EmployeeId    *Many2One  `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsAbsent      *Bool      `xmlrpc:"is_absent,omitempty" json:"is_absent,omitempty"`
+	IsHatched     *Bool      `xmlrpc:"is_hatched,omitempty" json:"is_hatched,omitempty"`
+	IsStriked     *Bool      `xmlrpc:"is_striked,omitempty" json:"is_striked,omitempty"`
+	JobId         *Many2One  `xmlrpc:"job_id,omitempty" json:"job_id,omitempty"`
+	Name          *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	StartDatetime *Time      `xmlrpc:"start_datetime,omitempty" json:"start_datetime,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	StopDatetime  *Time      `xmlrpc:"stop_datetime,omitempty" json:"stop_datetime,omitempty"`
+	Tz            *Selection `xmlrpc:"tz,omitempty" json:"tz,omitempty"`
 }
 
 // HrLeaveReportCalendars represents array of hr.leave.report.calendar model.
@@ -73,6 +78,9 @@ func (c *Client) GetHrLeaveReportCalendar(id int64) (*HrLeaveReportCalendar, err
 	if err != nil {
 		return nil, err
 	}
+	if len(*hlrcs) == 0 {
+		return nil, nil
+	}
 	return &((*hlrcs)[0]), nil
 }
 
@@ -90,6 +98,9 @@ func (c *Client) FindHrLeaveReportCalendar(criteria *Criteria) (*HrLeaveReportCa
 	hlrcs := &HrLeaveReportCalendars{}
 	if err := c.SearchRead(HrLeaveReportCalendarModel, criteria, NewOptions().Limit(1), hlrcs); err != nil {
 		return nil, err
+	}
+	if len(*hlrcs) == 0 {
+		return nil, nil
 	}
 	return &((*hlrcs)[0]), nil
 }
@@ -115,6 +126,9 @@ func (c *Client) FindHrLeaveReportCalendarId(criteria *Criteria, options *Option
 	ids, err := c.Search(HrLeaveReportCalendarModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

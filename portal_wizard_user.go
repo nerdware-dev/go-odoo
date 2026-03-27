@@ -2,18 +2,20 @@ package odoo
 
 // PortalWizardUser represents portal.wizard.user model.
 type PortalWizardUser struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Email       *String   `xmlrpc:"email,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	InPortal    *Bool     `xmlrpc:"in_portal,omitempty"`
-	PartnerId   *Many2One `xmlrpc:"partner_id,omitempty"`
-	UserId      *Many2One `xmlrpc:"user_id,omitempty"`
-	WizardId    *Many2One `xmlrpc:"wizard_id,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate  *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Email       *String    `xmlrpc:"email,omitempty" json:"email,omitempty"`
+	EmailState  *Selection `xmlrpc:"email_state,omitempty" json:"email_state,omitempty"`
+	Id          *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	IsInternal  *Bool      `xmlrpc:"is_internal,omitempty" json:"is_internal,omitempty"`
+	IsPortal    *Bool      `xmlrpc:"is_portal,omitempty" json:"is_portal,omitempty"`
+	LoginDate   *Time      `xmlrpc:"login_date,omitempty" json:"login_date,omitempty"`
+	PartnerId   *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	UserId      *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WizardId    *Many2One  `xmlrpc:"wizard_id,omitempty" json:"wizard_id,omitempty"`
+	WriteDate   *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PortalWizardUsers represents array of portal.wizard.user model.
@@ -75,6 +77,9 @@ func (c *Client) GetPortalWizardUser(id int64) (*PortalWizardUser, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pwus) == 0 {
+		return nil, nil
+	}
 	return &((*pwus)[0]), nil
 }
 
@@ -92,6 +97,9 @@ func (c *Client) FindPortalWizardUser(criteria *Criteria) (*PortalWizardUser, er
 	pwus := &PortalWizardUsers{}
 	if err := c.SearchRead(PortalWizardUserModel, criteria, NewOptions().Limit(1), pwus); err != nil {
 		return nil, err
+	}
+	if len(*pwus) == 0 {
+		return nil, nil
 	}
 	return &((*pwus)[0]), nil
 }
@@ -117,6 +125,9 @@ func (c *Client) FindPortalWizardUserId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(PortalWizardUserModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,17 +2,16 @@ package odoo
 
 // MailShortcode represents mail.shortcode model.
 type MailShortcode struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	Description  *String   `xmlrpc:"description,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	MessageIds   *Many2One `xmlrpc:"message_ids,omitempty"`
-	Source       *String   `xmlrpc:"source,omitempty"`
-	Substitution *String   `xmlrpc:"substitution,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Description  *String   `xmlrpc:"description,omitempty" json:"description,omitempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id           *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LastUsed     *Time     `xmlrpc:"last_used,omitempty" json:"last_used,omitempty"`
+	Source       *String   `xmlrpc:"source,omitempty" json:"source,omitempty"`
+	Substitution *String   `xmlrpc:"substitution,omitempty" json:"substitution,omitempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // MailShortcodes represents array of mail.shortcode model.
@@ -74,6 +73,9 @@ func (c *Client) GetMailShortcode(id int64) (*MailShortcode, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*mss) == 0 {
+		return nil, nil
+	}
 	return &((*mss)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindMailShortcode(criteria *Criteria) (*MailShortcode, error) {
 	mss := &MailShortcodes{}
 	if err := c.SearchRead(MailShortcodeModel, criteria, NewOptions().Limit(1), mss); err != nil {
 		return nil, err
+	}
+	if len(*mss) == 0 {
+		return nil, nil
 	}
 	return &((*mss)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindMailShortcodeId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(MailShortcodeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,21 +2,20 @@ package odoo
 
 // ProductAttribute represents product.attribute model.
 type ProductAttribute struct {
-	LastUpdate       *Time      `xmlrpc:"__last_update,omitempty"`
-	AttributeLineIds *Relation  `xmlrpc:"attribute_line_ids,omitempty"`
-	CreateDate       *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty"`
-	CreateVariant    *Selection `xmlrpc:"create_variant,omitempty"`
-	DisplayName      *String    `xmlrpc:"display_name,omitempty"`
-	DisplayType      *Selection `xmlrpc:"display_type,omitempty"`
-	Id               *Int       `xmlrpc:"id,omitempty"`
-	IsUsedOnProducts *Bool      `xmlrpc:"is_used_on_products,omitempty"`
-	Name             *String    `xmlrpc:"name,omitempty"`
-	ProductTmplIds   *Relation  `xmlrpc:"product_tmpl_ids,omitempty"`
-	Sequence         *Int       `xmlrpc:"sequence,omitempty"`
-	ValueIds         *Relation  `xmlrpc:"value_ids,omitempty"`
-	WriteDate        *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty"`
+	AttributeLineIds      *Relation  `xmlrpc:"attribute_line_ids,omitempty" json:"attribute_line_ids,omitempty"`
+	CreateDate            *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid             *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CreateVariant         *Selection `xmlrpc:"create_variant,omitempty" json:"create_variant,omitempty"`
+	DisplayName           *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DisplayType           *Selection `xmlrpc:"display_type,omitempty" json:"display_type,omitempty"`
+	Id                    *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name                  *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	NumberRelatedProducts *Int       `xmlrpc:"number_related_products,omitempty" json:"number_related_products,omitempty"`
+	ProductTmplIds        *Relation  `xmlrpc:"product_tmpl_ids,omitempty" json:"product_tmpl_ids,omitempty"`
+	Sequence              *Int       `xmlrpc:"sequence,omitempty" json:"sequence,omitempty"`
+	ValueIds              *Relation  `xmlrpc:"value_ids,omitempty" json:"value_ids,omitempty"`
+	WriteDate             *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid              *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ProductAttributes represents array of product.attribute model.
@@ -78,6 +77,9 @@ func (c *Client) GetProductAttribute(id int64) (*ProductAttribute, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pas) == 0 {
+		return nil, nil
+	}
 	return &((*pas)[0]), nil
 }
 
@@ -95,6 +97,9 @@ func (c *Client) FindProductAttribute(criteria *Criteria) (*ProductAttribute, er
 	pas := &ProductAttributes{}
 	if err := c.SearchRead(ProductAttributeModel, criteria, NewOptions().Limit(1), pas); err != nil {
 		return nil, err
+	}
+	if len(*pas) == 0 {
+		return nil, nil
 	}
 	return &((*pas)[0]), nil
 }
@@ -120,6 +125,9 @@ func (c *Client) FindProductAttributeId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(ProductAttributeModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,19 +2,19 @@ package odoo
 
 // PortalShare represents portal.share model.
 type PortalShare struct {
-	LastUpdate    *Time     `xmlrpc:"__last_update,omitempty"`
-	AccessWarning *String   `xmlrpc:"access_warning,omitempty"`
-	CreateDate    *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName   *String   `xmlrpc:"display_name,omitempty"`
-	Id            *Int      `xmlrpc:"id,omitempty"`
-	Note          *String   `xmlrpc:"note,omitempty"`
-	PartnerIds    *Relation `xmlrpc:"partner_ids,omitempty"`
-	ResId         *Int      `xmlrpc:"res_id,omitempty"`
-	ResModel      *String   `xmlrpc:"res_model,omitempty"`
-	ShareLink     *String   `xmlrpc:"share_link,omitempty"`
-	WriteDate     *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccessWarning *String   `xmlrpc:"access_warning,omitempty" json:"access_warning,omitempty"`
+	CreateDate    *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Note          *String   `xmlrpc:"note,omitempty" json:"note,omitempty"`
+	PartnerIds    *Relation `xmlrpc:"partner_ids,omitempty" json:"partner_ids,omitempty"`
+	ResId         *Int      `xmlrpc:"res_id,omitempty" json:"res_id,omitempty"`
+	ResModel      *String   `xmlrpc:"res_model,omitempty" json:"res_model,omitempty"`
+	ResourceRef   *String   `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	ShareLink     *String   `xmlrpc:"share_link,omitempty" json:"share_link,omitempty"`
+	WriteDate     *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // PortalShares represents array of portal.share model.
@@ -76,6 +76,9 @@ func (c *Client) GetPortalShare(id int64) (*PortalShare, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pss) == 0 {
+		return nil, nil
+	}
 	return &((*pss)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindPortalShare(criteria *Criteria) (*PortalShare, error) {
 	pss := &PortalShares{}
 	if err := c.SearchRead(PortalShareModel, criteria, NewOptions().Limit(1), pss); err != nil {
 		return nil, err
+	}
+	if len(*pss) == 0 {
+		return nil, nil
 	}
 	return &((*pss)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindPortalShareId(criteria *Criteria, options *Options) (int64,
 	ids, err := c.Search(PortalShareModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

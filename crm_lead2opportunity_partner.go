@@ -2,19 +2,20 @@ package odoo
 
 // CrmLead2OpportunityPartner represents crm.lead2opportunity.partner model.
 type CrmLead2OpportunityPartner struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
-	Action         *Selection `xmlrpc:"action,omitempty"`
-	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName    *String    `xmlrpc:"display_name,omitempty"`
-	Id             *Int       `xmlrpc:"id,omitempty"`
-	Name           *Selection `xmlrpc:"name,omitempty"`
-	OpportunityIds *Relation  `xmlrpc:"opportunity_ids,omitempty"`
-	PartnerId      *Many2One  `xmlrpc:"partner_id,omitempty"`
-	TeamId         *Many2One  `xmlrpc:"team_id,omitempty"`
-	UserId         *Many2One  `xmlrpc:"user_id,omitempty"`
-	WriteDate      *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid       *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Action            *Selection `xmlrpc:"action,omitempty" json:"action,omitempty"`
+	CreateDate        *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid         *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName       *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DuplicatedLeadIds *Relation  `xmlrpc:"duplicated_lead_ids,omitempty" json:"duplicated_lead_ids,omitempty"`
+	ForceAssignment   *Bool      `xmlrpc:"force_assignment,omitempty" json:"force_assignment,omitempty"`
+	Id                *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LeadId            *Many2One  `xmlrpc:"lead_id,omitempty" json:"lead_id,omitempty"`
+	Name              *Selection `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId         *Many2One  `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	TeamId            *Many2One  `xmlrpc:"team_id,omitempty" json:"team_id,omitempty"`
+	UserId            *Many2One  `xmlrpc:"user_id,omitempty" json:"user_id,omitempty"`
+	WriteDate         *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid          *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // CrmLead2OpportunityPartners represents array of crm.lead2opportunity.partner model.
@@ -76,6 +77,9 @@ func (c *Client) GetCrmLead2OpportunityPartner(id int64) (*CrmLead2OpportunityPa
 	if err != nil {
 		return nil, err
 	}
+	if len(*clps) == 0 {
+		return nil, nil
+	}
 	return &((*clps)[0]), nil
 }
 
@@ -93,6 +97,9 @@ func (c *Client) FindCrmLead2OpportunityPartner(criteria *Criteria) (*CrmLead2Op
 	clps := &CrmLead2OpportunityPartners{}
 	if err := c.SearchRead(CrmLead2OpportunityPartnerModel, criteria, NewOptions().Limit(1), clps); err != nil {
 		return nil, err
+	}
+	if len(*clps) == 0 {
+		return nil, nil
 	}
 	return &((*clps)[0]), nil
 }
@@ -118,6 +125,9 @@ func (c *Client) FindCrmLead2OpportunityPartnerId(criteria *Criteria, options *O
 	ids, err := c.Search(CrmLead2OpportunityPartnerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

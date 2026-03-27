@@ -2,27 +2,18 @@ package odoo
 
 // SmsTemplatePreview represents sms.template.preview model.
 type SmsTemplatePreview struct {
-	LastUpdate          *Time      `xmlrpc:"__last_update,omitempty"`
-	Body                *String    `xmlrpc:"body,omitempty"`
-	Copyvalue           *String    `xmlrpc:"copyvalue,omitempty"`
-	CreateDate          *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String    `xmlrpc:"display_name,omitempty"`
-	Id                  *Int       `xmlrpc:"id,omitempty"`
-	Lang                *Selection `xmlrpc:"lang,omitempty"`
-	Model               *String    `xmlrpc:"model,omitempty"`
-	ModelId             *Many2One  `xmlrpc:"model_id,omitempty"`
-	ModelObjectField    *Many2One  `xmlrpc:"model_object_field,omitempty"`
-	Name                *String    `xmlrpc:"name,omitempty"`
-	NullValue           *String    `xmlrpc:"null_value,omitempty"`
-	ResId               *Int       `xmlrpc:"res_id,omitempty"`
-	ResourceRef         *String    `xmlrpc:"resource_ref,omitempty"`
-	SidebarActionId     *Many2One  `xmlrpc:"sidebar_action_id,omitempty"`
-	SmsTemplateId       *Many2One  `xmlrpc:"sms_template_id,omitempty"`
-	SubModelObjectField *Many2One  `xmlrpc:"sub_model_object_field,omitempty"`
-	SubObject           *Many2One  `xmlrpc:"sub_object,omitempty"`
-	WriteDate           *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One  `xmlrpc:"write_uid,omitempty"`
+	Body          *String    `xmlrpc:"body,omitempty" json:"body,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Lang          *Selection `xmlrpc:"lang,omitempty" json:"lang,omitempty"`
+	ModelId       *Many2One  `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	NoRecord      *Bool      `xmlrpc:"no_record,omitempty" json:"no_record,omitempty"`
+	ResourceRef   *String    `xmlrpc:"resource_ref,omitempty" json:"resource_ref,omitempty"`
+	SmsTemplateId *Many2One  `xmlrpc:"sms_template_id,omitempty" json:"sms_template_id,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // SmsTemplatePreviews represents array of sms.template.preview model.
@@ -84,6 +75,9 @@ func (c *Client) GetSmsTemplatePreview(id int64) (*SmsTemplatePreview, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*stps) == 0 {
+		return nil, nil
+	}
 	return &((*stps)[0]), nil
 }
 
@@ -101,6 +95,9 @@ func (c *Client) FindSmsTemplatePreview(criteria *Criteria) (*SmsTemplatePreview
 	stps := &SmsTemplatePreviews{}
 	if err := c.SearchRead(SmsTemplatePreviewModel, criteria, NewOptions().Limit(1), stps); err != nil {
 		return nil, err
+	}
+	if len(*stps) == 0 {
+		return nil, nil
 	}
 	return &((*stps)[0]), nil
 }
@@ -126,6 +123,9 @@ func (c *Client) FindSmsTemplatePreviewId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(SmsTemplatePreviewModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

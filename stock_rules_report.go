@@ -2,18 +2,17 @@ package odoo
 
 // StockRulesReport represents stock.rules.report model.
 type StockRulesReport struct {
-	LastUpdate         *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate         *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName        *String   `xmlrpc:"display_name,omitempty"`
-	Id                 *Int      `xmlrpc:"id,omitempty"`
-	ProductHasVariants *Bool     `xmlrpc:"product_has_variants,omitempty"`
-	ProductId          *Many2One `xmlrpc:"product_id,omitempty"`
-	ProductTmplId      *Many2One `xmlrpc:"product_tmpl_id,omitempty"`
-	SoRouteIds         *Relation `xmlrpc:"so_route_ids,omitempty"`
-	WarehouseIds       *Relation `xmlrpc:"warehouse_ids,omitempty"`
-	WriteDate          *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductHasVariants *Bool     `xmlrpc:"product_has_variants,omitempty" json:"product_has_variants,omitempty"`
+	ProductId          *Many2One `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductTmplId      *Many2One `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	SoRouteIds         *Relation `xmlrpc:"so_route_ids,omitempty" json:"so_route_ids,omitempty"`
+	WarehouseIds       *Relation `xmlrpc:"warehouse_ids,omitempty" json:"warehouse_ids,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockRulesReports represents array of stock.rules.report model.
@@ -75,6 +74,9 @@ func (c *Client) GetStockRulesReport(id int64) (*StockRulesReport, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*srrs) == 0 {
+		return nil, nil
+	}
 	return &((*srrs)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindStockRulesReport(criteria *Criteria) (*StockRulesReport, er
 	srrs := &StockRulesReports{}
 	if err := c.SearchRead(StockRulesReportModel, criteria, NewOptions().Limit(1), srrs); err != nil {
 		return nil, err
+	}
+	if len(*srrs) == 0 {
+		return nil, nil
 	}
 	return &((*srrs)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindStockRulesReportId(criteria *Criteria, options *Options) (i
 	ids, err := c.Search(StockRulesReportModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

@@ -2,17 +2,18 @@ package odoo
 
 // ResCurrencyRate represents res.currency.rate model.
 type ResCurrencyRate struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	CompanyId   *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	CurrencyId  *Many2One `xmlrpc:"currency_id,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *Time     `xmlrpc:"name,omitempty"`
-	Rate        *Float    `xmlrpc:"rate,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	CompanyId          *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CompanyRate        *Float    `xmlrpc:"company_rate,omitempty" json:"company_rate,omitempty"`
+	CreateDate         *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid          *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	CurrencyId         *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	DisplayName        *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id                 *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	InverseCompanyRate *Float    `xmlrpc:"inverse_company_rate,omitempty" json:"inverse_company_rate,omitempty"`
+	Name               *Time     `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Rate               *Float    `xmlrpc:"rate,omitempty" json:"rate,omitempty"`
+	WriteDate          *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid           *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResCurrencyRates represents array of res.currency.rate model.
@@ -74,6 +75,9 @@ func (c *Client) GetResCurrencyRate(id int64) (*ResCurrencyRate, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rcrs) == 0 {
+		return nil, nil
+	}
 	return &((*rcrs)[0]), nil
 }
 
@@ -91,6 +95,9 @@ func (c *Client) FindResCurrencyRate(criteria *Criteria) (*ResCurrencyRate, erro
 	rcrs := &ResCurrencyRates{}
 	if err := c.SearchRead(ResCurrencyRateModel, criteria, NewOptions().Limit(1), rcrs); err != nil {
 		return nil, err
+	}
+	if len(*rcrs) == 0 {
+		return nil, nil
 	}
 	return &((*rcrs)[0]), nil
 }
@@ -116,6 +123,9 @@ func (c *Client) FindResCurrencyRateId(criteria *Criteria, options *Options) (in
 	ids, err := c.Search(ResCurrencyRateModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

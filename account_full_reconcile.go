@@ -2,17 +2,15 @@ package odoo
 
 // AccountFullReconcile represents account.full.reconcile model.
 type AccountFullReconcile struct {
-	LastUpdate          *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate          *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName         *String   `xmlrpc:"display_name,omitempty"`
-	ExchangeMoveId      *Many2One `xmlrpc:"exchange_move_id,omitempty"`
-	Id                  *Int      `xmlrpc:"id,omitempty"`
-	Name                *String   `xmlrpc:"name,omitempty"`
-	PartialReconcileIds *Relation `xmlrpc:"partial_reconcile_ids,omitempty"`
-	ReconciledLineIds   *Relation `xmlrpc:"reconciled_line_ids,omitempty"`
-	WriteDate           *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate          *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid           *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName         *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	ExchangeMoveId      *Many2One `xmlrpc:"exchange_move_id,omitempty" json:"exchange_move_id,omitempty"`
+	Id                  *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PartialReconcileIds *Relation `xmlrpc:"partial_reconcile_ids,omitempty" json:"partial_reconcile_ids,omitempty"`
+	ReconciledLineIds   *Relation `xmlrpc:"reconciled_line_ids,omitempty" json:"reconciled_line_ids,omitempty"`
+	WriteDate           *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid            *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // AccountFullReconciles represents array of account.full.reconcile model.
@@ -74,6 +72,9 @@ func (c *Client) GetAccountFullReconcile(id int64) (*AccountFullReconcile, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*afrs) == 0 {
+		return nil, nil
+	}
 	return &((*afrs)[0]), nil
 }
 
@@ -91,6 +92,9 @@ func (c *Client) FindAccountFullReconcile(criteria *Criteria) (*AccountFullRecon
 	afrs := &AccountFullReconciles{}
 	if err := c.SearchRead(AccountFullReconcileModel, criteria, NewOptions().Limit(1), afrs); err != nil {
 		return nil, err
+	}
+	if len(*afrs) == 0 {
+		return nil, nil
 	}
 	return &((*afrs)[0]), nil
 }
@@ -116,6 +120,9 @@ func (c *Client) FindAccountFullReconcileId(criteria *Criteria, options *Options
 	ids, err := c.Search(AccountFullReconcileModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

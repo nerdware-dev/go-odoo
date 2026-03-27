@@ -2,19 +2,19 @@ package odoo
 
 // FleetVehicleOdometer represents fleet.vehicle.odometer model.
 type FleetVehicleOdometer struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	Date        *Time      `xmlrpc:"date,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	DriverId    *Many2One  `xmlrpc:"driver_id,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	Name        *String    `xmlrpc:"name,omitempty"`
-	Unit        *Selection `xmlrpc:"unit,omitempty"`
-	Value       *Float     `xmlrpc:"value,omitempty"`
-	VehicleId   *Many2One  `xmlrpc:"vehicle_id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	Date             *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName      *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	DriverEmployeeId *Many2One  `xmlrpc:"driver_employee_id,omitempty" json:"driver_employee_id,omitempty"`
+	DriverId         *Many2One  `xmlrpc:"driver_id,omitempty" json:"driver_id,omitempty"`
+	Id               *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name             *String    `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	Unit             *Selection `xmlrpc:"unit,omitempty" json:"unit,omitempty"`
+	Value            *Float     `xmlrpc:"value,omitempty" json:"value,omitempty"`
+	VehicleId        *Many2One  `xmlrpc:"vehicle_id,omitempty" json:"vehicle_id,omitempty"`
+	WriteDate        *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // FleetVehicleOdometers represents array of fleet.vehicle.odometer model.
@@ -76,6 +76,9 @@ func (c *Client) GetFleetVehicleOdometer(id int64) (*FleetVehicleOdometer, error
 	if err != nil {
 		return nil, err
 	}
+	if len(*fvos) == 0 {
+		return nil, nil
+	}
 	return &((*fvos)[0]), nil
 }
 
@@ -93,6 +96,9 @@ func (c *Client) FindFleetVehicleOdometer(criteria *Criteria) (*FleetVehicleOdom
 	fvos := &FleetVehicleOdometers{}
 	if err := c.SearchRead(FleetVehicleOdometerModel, criteria, NewOptions().Limit(1), fvos); err != nil {
 		return nil, err
+	}
+	if len(*fvos) == 0 {
+		return nil, nil
 	}
 	return &((*fvos)[0]), nil
 }
@@ -118,6 +124,9 @@ func (c *Client) FindFleetVehicleOdometerId(criteria *Criteria, options *Options
 	ids, err := c.Search(FleetVehicleOdometerModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

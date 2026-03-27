@@ -2,17 +2,16 @@ package odoo
 
 // StockPackageDestination represents stock.package.destination model.
 type StockPackageDestination struct {
-	LastUpdate       *Time     `xmlrpc:"__last_update,omitempty"`
-	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
-	FilteredLocation *Relation `xmlrpc:"filtered_location,omitempty"`
-	Id               *Int      `xmlrpc:"id,omitempty"`
-	LocationDestId   *Many2One `xmlrpc:"location_dest_id,omitempty"`
-	MoveLineIds      *Relation `xmlrpc:"move_line_ids,omitempty"`
-	PickingId        *Many2One `xmlrpc:"picking_id,omitempty"`
-	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FilteredLocation *Relation `xmlrpc:"filtered_location,omitempty" json:"filtered_location,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	LocationDestId   *Many2One `xmlrpc:"location_dest_id,omitempty" json:"location_dest_id,omitempty"`
+	MoveLineIds      *Relation `xmlrpc:"move_line_ids,omitempty" json:"move_line_ids,omitempty"`
+	PickingId        *Many2One `xmlrpc:"picking_id,omitempty" json:"picking_id,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // StockPackageDestinations represents array of stock.package.destination model.
@@ -74,6 +73,9 @@ func (c *Client) GetStockPackageDestination(id int64) (*StockPackageDestination,
 	if err != nil {
 		return nil, err
 	}
+	if len(*spds) == 0 {
+		return nil, nil
+	}
 	return &((*spds)[0]), nil
 }
 
@@ -91,6 +93,9 @@ func (c *Client) FindStockPackageDestination(criteria *Criteria) (*StockPackageD
 	spds := &StockPackageDestinations{}
 	if err := c.SearchRead(StockPackageDestinationModel, criteria, NewOptions().Limit(1), spds); err != nil {
 		return nil, err
+	}
+	if len(*spds) == 0 {
+		return nil, nil
 	}
 	return &((*spds)[0]), nil
 }
@@ -116,6 +121,9 @@ func (c *Client) FindStockPackageDestinationId(criteria *Criteria, options *Opti
 	ids, err := c.Search(StockPackageDestinationModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

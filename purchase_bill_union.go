@@ -2,18 +2,17 @@ package odoo
 
 // PurchaseBillUnion represents purchase.bill.union model.
 type PurchaseBillUnion struct {
-	LastUpdate      *Time     `xmlrpc:"__last_update,omitempty"`
-	Amount          *Float    `xmlrpc:"amount,omitempty"`
-	CompanyId       *Many2One `xmlrpc:"company_id,omitempty"`
-	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty"`
-	Date            *Time     `xmlrpc:"date,omitempty"`
-	DisplayName     *String   `xmlrpc:"display_name,omitempty"`
-	Id              *Int      `xmlrpc:"id,omitempty"`
-	Name            *String   `xmlrpc:"name,omitempty"`
-	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty"`
-	PurchaseOrderId *Many2One `xmlrpc:"purchase_order_id,omitempty"`
-	Reference       *String   `xmlrpc:"reference,omitempty"`
-	VendorBillId    *Many2One `xmlrpc:"vendor_bill_id,omitempty"`
+	Amount          *Float    `xmlrpc:"amount,omitempty" json:"amount,omitempty"`
+	CompanyId       *Many2One `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	CurrencyId      *Many2One `xmlrpc:"currency_id,omitempty" json:"currency_id,omitempty"`
+	Date            *Time     `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName     *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id              *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name            *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PartnerId       *Many2One `xmlrpc:"partner_id,omitempty" json:"partner_id,omitempty"`
+	PurchaseOrderId *Many2One `xmlrpc:"purchase_order_id,omitempty" json:"purchase_order_id,omitempty"`
+	Reference       *String   `xmlrpc:"reference,omitempty" json:"reference,omitempty"`
+	VendorBillId    *Many2One `xmlrpc:"vendor_bill_id,omitempty" json:"vendor_bill_id,omitempty"`
 }
 
 // PurchaseBillUnions represents array of purchase.bill.union model.
@@ -75,6 +74,9 @@ func (c *Client) GetPurchaseBillUnion(id int64) (*PurchaseBillUnion, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*pbus) == 0 {
+		return nil, nil
+	}
 	return &((*pbus)[0]), nil
 }
 
@@ -92,6 +94,9 @@ func (c *Client) FindPurchaseBillUnion(criteria *Criteria) (*PurchaseBillUnion, 
 	pbus := &PurchaseBillUnions{}
 	if err := c.SearchRead(PurchaseBillUnionModel, criteria, NewOptions().Limit(1), pbus); err != nil {
 		return nil, err
+	}
+	if len(*pbus) == 0 {
+		return nil, nil
 	}
 	return &((*pbus)[0]), nil
 }
@@ -117,6 +122,9 @@ func (c *Client) FindPurchaseBillUnionId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(PurchaseBillUnionModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

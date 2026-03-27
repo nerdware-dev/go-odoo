@@ -2,17 +2,21 @@ package odoo
 
 // HrDepartureWizard represents hr.departure.wizard model.
 type HrDepartureWizard struct {
-	LastUpdate           *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate           *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid            *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DepartureDescription *String    `xmlrpc:"departure_description,omitempty"`
-	DepartureReason      *Selection `xmlrpc:"departure_reason,omitempty"`
-	DisplayName          *String    `xmlrpc:"display_name,omitempty"`
-	EmployeeId           *Many2One  `xmlrpc:"employee_id,omitempty"`
-	Id                   *Int       `xmlrpc:"id,omitempty"`
-	PlanId               *Many2One  `xmlrpc:"plan_id,omitempty"`
-	WriteDate            *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid             *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ArchiveAllocation         *Bool     `xmlrpc:"archive_allocation,omitempty" json:"archive_allocation,omitempty"`
+	CancelLeaves              *Bool     `xmlrpc:"cancel_leaves,omitempty" json:"cancel_leaves,omitempty"`
+	CreateDate                *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid                 *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DepartureDate             *Time     `xmlrpc:"departure_date,omitempty" json:"departure_date,omitempty"`
+	DepartureDescription      *String   `xmlrpc:"departure_description,omitempty" json:"departure_description,omitempty"`
+	DepartureReasonId         *Many2One `xmlrpc:"departure_reason_id,omitempty" json:"departure_reason_id,omitempty"`
+	DisplayName               *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	EmployeeId                *Many2One `xmlrpc:"employee_id,omitempty" json:"employee_id,omitempty"`
+	Id                        *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	PrivateEmail              *String   `xmlrpc:"private_email,omitempty" json:"private_email,omitempty"`
+	ReleaseCampanyCar         *Bool     `xmlrpc:"release_campany_car,omitempty" json:"release_campany_car,omitempty"`
+	SendHrDocumentsAccessLink *Bool     `xmlrpc:"send_hr_documents_access_link,omitempty" json:"send_hr_documents_access_link,omitempty"`
+	WriteDate                 *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid                  *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // HrDepartureWizards represents array of hr.departure.wizard model.
@@ -74,6 +78,9 @@ func (c *Client) GetHrDepartureWizard(id int64) (*HrDepartureWizard, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*hdws) == 0 {
+		return nil, nil
+	}
 	return &((*hdws)[0]), nil
 }
 
@@ -91,6 +98,9 @@ func (c *Client) FindHrDepartureWizard(criteria *Criteria) (*HrDepartureWizard, 
 	hdws := &HrDepartureWizards{}
 	if err := c.SearchRead(HrDepartureWizardModel, criteria, NewOptions().Limit(1), hdws); err != nil {
 		return nil, err
+	}
+	if len(*hdws) == 0 {
+		return nil, nil
 	}
 	return &((*hdws)[0]), nil
 }
@@ -116,6 +126,9 @@ func (c *Client) FindHrDepartureWizardId(criteria *Criteria, options *Options) (
 	ids, err := c.Search(HrDepartureWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

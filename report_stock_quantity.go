@@ -2,17 +2,15 @@ package odoo
 
 // ReportStockQuantity represents report.stock.quantity model.
 type ReportStockQuantity struct {
-	LastUpdate    *Time      `xmlrpc:"__last_update,omitempty"`
-	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty"`
-	Date          *Time      `xmlrpc:"date,omitempty"`
-	DisplayName   *String    `xmlrpc:"display_name,omitempty"`
-	Id            *Int       `xmlrpc:"id,omitempty"`
-	MoveIds       *Relation  `xmlrpc:"move_ids,omitempty"`
-	ProductId     *Many2One  `xmlrpc:"product_id,omitempty"`
-	ProductQty    *Float     `xmlrpc:"product_qty,omitempty"`
-	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
-	State         *Selection `xmlrpc:"state,omitempty"`
-	WarehouseId   *Many2One  `xmlrpc:"warehouse_id,omitempty"`
+	CompanyId     *Many2One  `xmlrpc:"company_id,omitempty" json:"company_id,omitempty"`
+	Date          *Time      `xmlrpc:"date,omitempty" json:"date,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ProductId     *Many2One  `xmlrpc:"product_id,omitempty" json:"product_id,omitempty"`
+	ProductQty    *Float     `xmlrpc:"product_qty,omitempty" json:"product_qty,omitempty"`
+	ProductTmplId *Many2One  `xmlrpc:"product_tmpl_id,omitempty" json:"product_tmpl_id,omitempty"`
+	State         *Selection `xmlrpc:"state,omitempty" json:"state,omitempty"`
+	WarehouseId   *Many2One  `xmlrpc:"warehouse_id,omitempty" json:"warehouse_id,omitempty"`
 }
 
 // ReportStockQuantitys represents array of report.stock.quantity model.
@@ -74,6 +72,9 @@ func (c *Client) GetReportStockQuantity(id int64) (*ReportStockQuantity, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*rsqs) == 0 {
+		return nil, nil
+	}
 	return &((*rsqs)[0]), nil
 }
 
@@ -91,6 +92,9 @@ func (c *Client) FindReportStockQuantity(criteria *Criteria) (*ReportStockQuanti
 	rsqs := &ReportStockQuantitys{}
 	if err := c.SearchRead(ReportStockQuantityModel, criteria, NewOptions().Limit(1), rsqs); err != nil {
 		return nil, err
+	}
+	if len(*rsqs) == 0 {
+		return nil, nil
 	}
 	return &((*rsqs)[0]), nil
 }
@@ -116,6 +120,9 @@ func (c *Client) FindReportStockQuantityId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ReportStockQuantityModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

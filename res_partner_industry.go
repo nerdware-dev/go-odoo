@@ -2,16 +2,15 @@ package odoo
 
 // ResPartnerIndustry represents res.partner.industry model.
 type ResPartnerIndustry struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	FullName    *String   `xmlrpc:"full_name,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	FullName    *String   `xmlrpc:"full_name,omitempty" json:"full_name,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResPartnerIndustrys represents array of res.partner.industry model.
@@ -73,6 +72,9 @@ func (c *Client) GetResPartnerIndustry(id int64) (*ResPartnerIndustry, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*rpis) == 0 {
+		return nil, nil
+	}
 	return &((*rpis)[0]), nil
 }
 
@@ -90,6 +92,9 @@ func (c *Client) FindResPartnerIndustry(criteria *Criteria) (*ResPartnerIndustry
 	rpis := &ResPartnerIndustrys{}
 	if err := c.SearchRead(ResPartnerIndustryModel, criteria, NewOptions().Limit(1), rpis); err != nil {
 		return nil, err
+	}
+	if len(*rpis) == 0 {
+		return nil, nil
 	}
 	return &((*rpis)[0]), nil
 }
@@ -115,6 +120,9 @@ func (c *Client) FindResPartnerIndustryId(criteria *Criteria, options *Options) 
 	ids, err := c.Search(ResPartnerIndustryModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

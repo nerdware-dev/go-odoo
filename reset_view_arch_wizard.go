@@ -2,17 +2,19 @@ package odoo
 
 // ResetViewArchWizard represents reset.view.arch.wizard model.
 type ResetViewArchWizard struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	ArchDiff    *String    `xmlrpc:"arch_diff,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	ResetMode   *Selection `xmlrpc:"reset_mode,omitempty"`
-	ViewId      *Many2One  `xmlrpc:"view_id,omitempty"`
-	ViewName    *String    `xmlrpc:"view_name,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	ArchDiff      *String    `xmlrpc:"arch_diff,omitempty" json:"arch_diff,omitempty"`
+	ArchToCompare *String    `xmlrpc:"arch_to_compare,omitempty" json:"arch_to_compare,omitempty"`
+	CompareViewId *Many2One  `xmlrpc:"compare_view_id,omitempty" json:"compare_view_id,omitempty"`
+	CreateDate    *Time      `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid     *Many2One  `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName   *String    `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	HasDiff       *Bool      `xmlrpc:"has_diff,omitempty" json:"has_diff,omitempty"`
+	Id            *Int       `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ResetMode     *Selection `xmlrpc:"reset_mode,omitempty" json:"reset_mode,omitempty"`
+	ViewId        *Many2One  `xmlrpc:"view_id,omitempty" json:"view_id,omitempty"`
+	ViewName      *String    `xmlrpc:"view_name,omitempty" json:"view_name,omitempty"`
+	WriteDate     *Time      `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid      *Many2One  `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // ResetViewArchWizards represents array of reset.view.arch.wizard model.
@@ -74,6 +76,9 @@ func (c *Client) GetResetViewArchWizard(id int64) (*ResetViewArchWizard, error) 
 	if err != nil {
 		return nil, err
 	}
+	if len(*rvaws) == 0 {
+		return nil, nil
+	}
 	return &((*rvaws)[0]), nil
 }
 
@@ -91,6 +96,9 @@ func (c *Client) FindResetViewArchWizard(criteria *Criteria) (*ResetViewArchWiza
 	rvaws := &ResetViewArchWizards{}
 	if err := c.SearchRead(ResetViewArchWizardModel, criteria, NewOptions().Limit(1), rvaws); err != nil {
 		return nil, err
+	}
+	if len(*rvaws) == 0 {
+		return nil, nil
 	}
 	return &((*rvaws)[0]), nil
 }
@@ -116,6 +124,9 @@ func (c *Client) FindResetViewArchWizardId(criteria *Criteria, options *Options)
 	ids, err := c.Search(ResetViewArchWizardModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }

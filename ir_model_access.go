@@ -2,21 +2,20 @@ package odoo
 
 // IrModelAccess represents ir.model.access model.
 type IrModelAccess struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
-	Active      *Bool     `xmlrpc:"active,omitempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName *String   `xmlrpc:"display_name,omitempty"`
-	GroupId     *Many2One `xmlrpc:"group_id,omitempty"`
-	Id          *Int      `xmlrpc:"id,omitempty"`
-	ModelId     *Many2One `xmlrpc:"model_id,omitempty"`
-	Name        *String   `xmlrpc:"name,omitempty"`
-	PermCreate  *Bool     `xmlrpc:"perm_create,omitempty"`
-	PermRead    *Bool     `xmlrpc:"perm_read,omitempty"`
-	PermUnlink  *Bool     `xmlrpc:"perm_unlink,omitempty"`
-	PermWrite   *Bool     `xmlrpc:"perm_write,omitempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
+	Active      *Bool     `xmlrpc:"active,omitempty" json:"active,omitempty"`
+	CreateDate  *Time     `xmlrpc:"create_date,omitempty" json:"create_date,omitempty"`
+	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty" json:"create_uid,omitempty"`
+	DisplayName *String   `xmlrpc:"display_name,omitempty" json:"display_name,omitempty"`
+	GroupId     *Many2One `xmlrpc:"group_id,omitempty" json:"group_id,omitempty"`
+	Id          *Int      `xmlrpc:"id,omitempty" json:"id,omitempty"`
+	ModelId     *Many2One `xmlrpc:"model_id,omitempty" json:"model_id,omitempty"`
+	Name        *String   `xmlrpc:"name,omitempty" json:"name,omitempty"`
+	PermCreate  *Bool     `xmlrpc:"perm_create,omitempty" json:"perm_create,omitempty"`
+	PermRead    *Bool     `xmlrpc:"perm_read,omitempty" json:"perm_read,omitempty"`
+	PermUnlink  *Bool     `xmlrpc:"perm_unlink,omitempty" json:"perm_unlink,omitempty"`
+	PermWrite   *Bool     `xmlrpc:"perm_write,omitempty" json:"perm_write,omitempty"`
+	WriteDate   *Time     `xmlrpc:"write_date,omitempty" json:"write_date,omitempty"`
+	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty" json:"write_uid,omitempty"`
 }
 
 // IrModelAccesss represents array of ir.model.access model.
@@ -78,6 +77,9 @@ func (c *Client) GetIrModelAccess(id int64) (*IrModelAccess, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(*imas) == 0 {
+		return nil, nil
+	}
 	return &((*imas)[0]), nil
 }
 
@@ -95,6 +97,9 @@ func (c *Client) FindIrModelAccess(criteria *Criteria) (*IrModelAccess, error) {
 	imas := &IrModelAccesss{}
 	if err := c.SearchRead(IrModelAccessModel, criteria, NewOptions().Limit(1), imas); err != nil {
 		return nil, err
+	}
+	if len(*imas) == 0 {
+		return nil, nil
 	}
 	return &((*imas)[0]), nil
 }
@@ -120,6 +125,9 @@ func (c *Client) FindIrModelAccessId(criteria *Criteria, options *Options) (int6
 	ids, err := c.Search(IrModelAccessModel, criteria, options)
 	if err != nil {
 		return -1, err
+	}
+	if len(ids) == 0 {
+		return -1, nil
 	}
 	return ids[0], nil
 }
